@@ -10,13 +10,13 @@ namespace BB84.EntityFrameworkCore.Models;
 /// <inheritdoc cref="IIdentityModel{TKey}"/>
 public abstract class IdentityModel<TKey> : IIdentityModel<TKey> where TKey : IEquatable<TKey>
 {
-  /// <inheritdoc/>
-  [Column(Order = 1)]
-  public TKey Id { get; } = default!;
+	/// <inheritdoc/>
+	[Column(Order = 1)]
+	public TKey Id { get; } = default!;
 
-  /// <inheritdoc/>
-  [Column(Order = 2)]
-  public byte[] Timestamp { get; } = default!;
+	/// <inheritdoc/>
+	[Column(Order = 2)]
+	public byte[] Timestamp { get; } = default!;
 }
 
 /// <inheritdoc/>

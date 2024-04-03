@@ -10,53 +10,53 @@ namespace BB84.EntityFrameworkCore.Repository;
 /// </summary>
 /// <inheritdoc cref="IEnumeratorRepository{TEntity}"/>
 public abstract class EnumeratorRepository<TEntity>(DbContext dbContext) : IdentityRepository<TEntity, int>(dbContext),
-  IEnumeratorRepository<TEntity> where TEntity : class, IEnumeratorModel
+	IEnumeratorRepository<TEntity> where TEntity : class, IEnumeratorModel
 {
-  /// <inheritdoc/>
-  public TEntity? GetByName(string name, bool ignoreQueryFilters = false, bool trackChanges = false)
-  {
-    IQueryable<TEntity> query = PrepareQuery(
-      expression: x => x.Name == name,
-      ignoreQueryFilters: ignoreQueryFilters,
-      trackChanges: trackChanges
-      );
+	/// <inheritdoc/>
+	public TEntity? GetByName(string name, bool ignoreQueryFilters = false, bool trackChanges = false)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: x => x.Name == name,
+			ignoreQueryFilters: ignoreQueryFilters,
+			trackChanges: trackChanges
+			);
 
-    return query.SingleOrDefault();
-  }
+		return query.SingleOrDefault();
+	}
 
-  /// <inheritdoc/>
-  public async Task<TEntity?> GetByNameAsync(string name, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)
-  {
-    IQueryable<TEntity> query = PrepareQuery(
-      expression: x => x.Name == name,
-      ignoreQueryFilters: ignoreQueryFilters,
-      trackChanges: trackChanges
-      );
+	/// <inheritdoc/>
+	public async Task<TEntity?> GetByNameAsync(string name, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: x => x.Name == name,
+			ignoreQueryFilters: ignoreQueryFilters,
+			trackChanges: trackChanges
+			);
 
-    return await query.SingleOrDefaultAsync(cancellationToken);
-  }
+		return await query.SingleOrDefaultAsync(cancellationToken);
+	}
 
-  /// <inheritdoc/>
-  public IEnumerable<TEntity> GetByNames(IEnumerable<string> names, bool ignoreQueryFilters = false, bool trackChanges = false)
-  {
-    IQueryable<TEntity> query = PrepareQuery(
-      expression: x => names.Contains(x.Name),
-      ignoreQueryFilters: ignoreQueryFilters,
-      trackChanges: trackChanges
-      );
+	/// <inheritdoc/>
+	public IEnumerable<TEntity> GetByNames(IEnumerable<string> names, bool ignoreQueryFilters = false, bool trackChanges = false)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: x => names.Contains(x.Name),
+			ignoreQueryFilters: ignoreQueryFilters,
+			trackChanges: trackChanges
+			);
 
-    return [.. query];
-  }
+		return [.. query];
+	}
 
-  /// <inheritdoc/>
-  public async Task<IEnumerable<TEntity>> GetByNamesAsync(IEnumerable<string> names, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)
-  {
-    IQueryable<TEntity> query = PrepareQuery(
-      expression: x => names.Contains(x.Name),
-      ignoreQueryFilters: ignoreQueryFilters,
-      trackChanges: trackChanges
-      );
+	/// <inheritdoc/>
+	public async Task<IEnumerable<TEntity>> GetByNamesAsync(IEnumerable<string> names, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: x => names.Contains(x.Name),
+			ignoreQueryFilters: ignoreQueryFilters,
+			trackChanges: trackChanges
+			);
 
-    return await query.ToListAsync(cancellationToken);
-  }
+		return await query.ToListAsync(cancellationToken);
+	}
 }

@@ -5,8 +5,8 @@
 /// </summary>
 public interface IConcurrency
 {
-  /// <summary>
-  /// The current timestamp or row version.
-  /// </summary>
-  byte[] Timestamp { get; }
+	/// <summary>
+	/// The current timestamp or row version.
+	/// </summary>
+	byte[] Timestamp { get; }
 }
