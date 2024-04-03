@@ -10,21 +10,21 @@ namespace BB84.EntityFrameworkCore.Models;
 /// <inheritdoc cref="IAuditedModel{TKey, TCreated, TModified}"/>
 public abstract class AuditedModel<TKey, TCreated, TModified> : IAuditedModel<TKey, TCreated, TModified> where TKey : IEquatable<TKey>
 {
-  /// <inheritdoc/>
-  [Column(Order = 1)]
-  public TKey Id { get; } = default!;
+	/// <inheritdoc/>
+	[Column(Order = 1)]
+	public TKey Id { get; } = default!;
 
-  /// <inheritdoc/>
-  [Column(Order = 2)]
-  public byte[] Timestamp { get; } = default!;
+	/// <inheritdoc/>
+	[Column(Order = 2)]
+	public byte[] Timestamp { get; } = default!;
 
-  /// <inheritdoc/>
-  [Column(Order = 3)]
-  public TCreated CreatedBy { get; set; } = default!;
+	/// <inheritdoc/>
+	[Column(Order = 3)]
+	public TCreated CreatedBy { get; set; } = default!;
 
-  /// <inheritdoc/>
-  [Column(Order = 4)]
-  public TModified ModifiedBy { get; set; } = default!;
+	/// <inheritdoc/>
+	[Column(Order = 4)]
+	public TModified ModifiedBy { get; set; } = default!;
 }
 
 /// <inheritdoc/>

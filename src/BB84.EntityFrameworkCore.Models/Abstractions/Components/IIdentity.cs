@@ -6,10 +6,10 @@
 /// <typeparam name="TKey">The type of the primary key.</typeparam>
 public interface IIdentity<TKey> where TKey : IEquatable<TKey>
 {
-  /// <summary>
-  /// The primary key of the database table.
-  /// </summary>
-  TKey Id { get; }
+	/// <summary>
+	/// The primary key of the database table.
+	/// </summary>
+	TKey Id { get; }
 }
 
 /// <inheritdoc/>

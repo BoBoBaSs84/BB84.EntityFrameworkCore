@@ -7,15 +7,15 @@
 /// <typeparam name="TModified">The type of the modified by column.</typeparam>
 public interface IAudited<TCreated, TModified>
 {
-  /// <summary>
-  /// The creator of the data row.
-  /// </summary>
-  TCreated CreatedBy { get; set; }
+	/// <summary>
+	/// The creator of the data row.
+	/// </summary>
+	TCreated CreatedBy { get; set; }
 
-  /// <summary>
-  /// The last modifier of the data row.
-  /// </summary>
-  TModified ModifiedBy { get; set; }
+	/// <summary>
+	/// The last modifier of the data row.
+	/// </summary>
+	TModified ModifiedBy { get; set; }
 }
 
 /// <inheritdoc/>
