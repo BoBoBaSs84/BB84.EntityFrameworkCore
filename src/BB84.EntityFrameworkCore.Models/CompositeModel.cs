@@ -24,5 +24,5 @@ public abstract class CompositeModel<TCreated, TModified> : ICompositeModel<TCre
 }
 
 /// <inheritdoc/>
-public abstract class CompositeModel : CompositeModel<string, string?>, ICompositeModel<string, string?>
+public abstract class CompositeModel : CompositeModel<string, string?>, ICompositeModel
 { }
