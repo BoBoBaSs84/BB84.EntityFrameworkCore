@@ -1,9 +1,9 @@
 ﻿using BB84.EntityFrameworkCore.Models.Abstractions;
-using BB84.EntityFrameworkCore.Repository.Abstractions;
+using BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
 
-namespace BB84.EntityFrameworkCore.Repository;
+namespace BB84.EntityFrameworkCore.Repositories;
 
 /// <summary>
 /// The identity repository class.

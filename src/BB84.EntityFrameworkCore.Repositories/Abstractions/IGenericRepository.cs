@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace BB84.EntityFrameworkCore.Repository.Abstractions;
+namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 /// <summary>
 /// The generic repository interface.

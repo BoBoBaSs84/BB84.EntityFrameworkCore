@@ -5,7 +5,7 @@ using BB84.EntityFrameworkCore.Models.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace BB84.EntityFrameworkCore.Repository.Configurations;
+namespace BB84.EntityFrameworkCore.Repositories.Configurations;
 
 /// <summary>
 /// The enumerator base configuration class.

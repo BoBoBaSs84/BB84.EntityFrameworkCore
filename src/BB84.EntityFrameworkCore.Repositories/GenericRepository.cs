@@ -1,11 +1,11 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 
-using BB84.EntityFrameworkCore.Repository.Abstractions;
+using BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
 
-namespace BB84.EntityFrameworkCore.Repository;
+namespace BB84.EntityFrameworkCore.Repositories;
 
 /// <summary>
 /// The generic repository class.

@@ -5,16 +5,16 @@ using BB84.EntityFrameworkCore.Models.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace BB84.EntityFrameworkCore.Repository.Configurations;
+namespace BB84.EntityFrameworkCore.Repositories.Configurations;
 
 /// <summary>
-/// The identity base configuration class.
+/// The audited base configuration class.
 /// </summary>
 /// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
-/// <inheritdoc cref="IIdentityModel{TKey}"/>
+/// <inheritdoc cref="IAuditedModel{TKey, TCreated, TModified}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
-public abstract class IdentityBaseConfiguration<TEntity, TKey> : IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IIdentityModel<TKey>
+public abstract class AuditedBaseConfiguration<TEntity, TKey, TCreated, TModified> : IEntityTypeConfiguration<TEntity>
+	where TEntity : class, IAuditedModel<TKey, TCreated, TModified>
 	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
@@ -31,10 +31,18 @@ public abstract class IdentityBaseConfiguration<TEntity, TKey> : IEntityTypeConf
 		builder.Property(e => e.Timestamp)
 			.IsRowVersion()
 			.HasColumnOrder(2);
+
+		builder.Property(e => e.CreatedBy)
+			.IsRequired()
+			.HasColumnOrder(3);
+
+		builder.Property(e => e.ModifiedBy)
+			.IsRequired(false)
+			.HasColumnOrder(4);
 	}
 }
 
 /// <inheritdoc/>
-public abstract class IdentityBaseConfiguration<TEntity> : IdentityBaseConfiguration<TEntity, Guid>,
-	IEntityTypeConfiguration<TEntity> where TEntity : class, IIdentityModel
+public abstract class AuditedBaseConfiguration<TEntity> : AuditedBaseConfiguration<TEntity, Guid, string, string?>,
+	IEntityTypeConfiguration<TEntity> where TEntity : class, IAuditedModel
 { }

@@ -8,7 +8,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\BB84.EntityFrameworkCore.Repository\BB84.EntityFrameworkCore.Repository.csproj" />
+		<ProjectReference Include="..\..\src\BB84.EntityFrameworkCore.Repositories\BB84.EntityFrameworkCore.Repositories.csproj" />
 	</ItemGroup>
 
 </Project>
