@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-using BB84.EntityFrameworkCore.Models.Abstractions;
+﻿using BB84.EntityFrameworkCore.Models.Abstractions;
 
 namespace BB84.EntityFrameworkCore.Models;
 
@@ -11,15 +9,12 @@ namespace BB84.EntityFrameworkCore.Models;
 public abstract class CompositeModel<TCreated, TModified> : ICompositeModel<TCreated, TModified>
 {
 	/// <inheritdoc/>
-	[Column(Order = 1)]
 	public byte[] Timestamp { get; } = default!;
 
 	/// <inheritdoc/>
-	[Column(Order = 2)]
 	public TCreated CreatedBy { get; set; } = default!;
 
 	/// <inheritdoc/>
-	[Column(Order = 3)]
 	public TModified ModifiedBy { get; set; } = default!;
 }
 

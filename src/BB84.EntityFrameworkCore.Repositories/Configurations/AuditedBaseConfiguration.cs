@@ -24,21 +24,22 @@ public abstract class AuditedBaseConfiguration<TEntity, TKey, TCreated, TModifie
 			.IsClustered(false);
 
 		builder.Property(e => e.Id)
+			.HasColumnOrder(1)
 			.HasDefaultValueSql("NEWID()")
-			.ValueGeneratedOnAdd()
-			.HasColumnOrder(1);
+			.ValueGeneratedOnAdd();
 
 		builder.Property(e => e.Timestamp)
-			.IsRowVersion()
-			.HasColumnOrder(2);
+			.HasColumnOrder(2)
+			.IsConcurrencyToken()
+			.ValueGeneratedOnAddOrUpdate();
 
-		builder.Property(e => e.CreatedBy)
-			.IsRequired()
-			.HasColumnOrder(3);
+		builder.Property(e => e.CreatedBy)			
+			.HasColumnOrder(3)
+			.IsRequired();
 
 		builder.Property(e => e.ModifiedBy)
-			.IsRequired(false)
-			.HasColumnOrder(4);
+			.HasColumnOrder(4)
+			.IsRequired(false);
 	}
 }
 

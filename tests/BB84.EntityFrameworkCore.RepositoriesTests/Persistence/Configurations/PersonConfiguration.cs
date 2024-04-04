@@ -3,5 +3,5 @@ using BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Models;
 
 namespace BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Configurations;
 
-internal sealed class PersonConfiguration : IdentityBaseConfiguration<Person>
+internal sealed class PersonConfiguration : AuditedBaseConfiguration<Person>
 { }

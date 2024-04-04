@@ -20,16 +20,17 @@ public abstract class CompositeBaseConfiguration<TEntity, TCreated, TModified> :
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
 	{
 		builder.Property(e => e.Timestamp)
-			.IsRowVersion()
-			.HasColumnOrder(1);
+			.HasColumnOrder(3)
+			.IsConcurrencyToken()
+			.ValueGeneratedOnAddOrUpdate();
 
 		builder.Property(e => e.CreatedBy)
-			.IsRequired()
-			.HasColumnOrder(2);
+			.HasColumnOrder(4)
+			.IsRequired();
 
 		builder.Property(e => e.ModifiedBy)
-			.IsRequired(false)
-			.HasColumnOrder(3);
+			.HasColumnOrder(5)
+			.IsRequired(false);
 	}
 }
 

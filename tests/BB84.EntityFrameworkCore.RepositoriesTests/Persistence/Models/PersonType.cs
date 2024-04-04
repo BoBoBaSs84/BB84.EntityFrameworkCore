@@ -2,5 +2,5 @@
 
 namespace BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Models;
 
-public sealed class Salutation : EnumeratorModel
+public sealed class PersonType : EnumeratorModel
 { }

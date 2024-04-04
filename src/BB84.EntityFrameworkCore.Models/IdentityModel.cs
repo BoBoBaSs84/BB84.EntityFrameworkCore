@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-using BB84.EntityFrameworkCore.Models.Abstractions;
+﻿using BB84.EntityFrameworkCore.Models.Abstractions;
 
 namespace BB84.EntityFrameworkCore.Models;
 
@@ -11,11 +9,9 @@ namespace BB84.EntityFrameworkCore.Models;
 public abstract class IdentityModel<TKey> : IIdentityModel<TKey> where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
-	[Column(Order = 1)]
-	public TKey Id { get; } = default!;
+	public TKey Id { get; set; } = default!;
 
 	/// <inheritdoc/>
-	[Column(Order = 2)]
 	public byte[] Timestamp { get; } = default!;
 }
 

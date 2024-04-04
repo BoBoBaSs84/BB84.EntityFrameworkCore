@@ -9,7 +9,7 @@ public interface IIdentity<TKey> where TKey : IEquatable<TKey>
 	/// <summary>
 	/// The primary key of the database table.
 	/// </summary>
-	TKey Id { get; }
+	TKey Id { get; set; }
 }
 
 /// <inheritdoc/>

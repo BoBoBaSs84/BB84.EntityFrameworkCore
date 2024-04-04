@@ -6,9 +6,8 @@ namespace BB84.EntityFrameworkCore.RepositoriesTests.Persistence;
 
 public sealed class TestDbContext(DbContextOptions<TestDbContext> options) : DbContext(options)
 {
-	public DbSet<Person> People { get; set; }
-	public DbSet<Trait> Traits { get; set; }
-	public DbSet<Salutation> Salations { get; set; }
+	public DbSet<Person> Persons { get; set; }
+	public DbSet<PersonType> PersonType { get; set; }
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{

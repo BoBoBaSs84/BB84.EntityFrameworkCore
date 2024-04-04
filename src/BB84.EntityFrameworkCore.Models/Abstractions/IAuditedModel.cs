@@ -7,12 +7,12 @@ namespace BB84.EntityFrameworkCore.Models.Abstractions;
 /// </summary>
 /// <inheritdoc cref="IIdentity{TKey}"/>
 /// <inheritdoc cref="IAudited{TCreated, TModified}"/>
-public interface IAuditedModel<TKey, TCreated, TModified> : IIdentity<TKey>, IConcurrency, IAudited<TCreated, TModified> where TKey : IEquatable<TKey>
+public interface IAuditedModel<TKey, TCreated, TModified> : IIdentityModel<TKey>, IAudited<TCreated, TModified> where TKey : IEquatable<TKey>
 { }
 
 /// <inheritdoc/>
 /// <remarks>
 /// The primary key is of type <see cref="Guid"/>.
 /// </remarks>
-public interface IAuditedModel : IAuditedModel<Guid, string, string?>
+public interface IAuditedModel : IAuditedModel<Guid, string, string?>, IIdentityModel
 { }

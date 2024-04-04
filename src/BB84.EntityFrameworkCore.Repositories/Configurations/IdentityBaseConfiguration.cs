@@ -25,12 +25,13 @@ public abstract class IdentityBaseConfiguration<TEntity, TKey> : IEntityTypeConf
 
 		builder.Property(e => e.Id)
 			.HasDefaultValueSql("NEWID()")
-			.ValueGeneratedOnAdd()
-			.HasColumnOrder(1);
+			.HasColumnOrder(1)
+			.ValueGeneratedOnAdd();
 
 		builder.Property(e => e.Timestamp)
-			.IsRowVersion()
-			.HasColumnOrder(2);
+			.IsConcurrencyToken()
+			.HasColumnOrder(2)
+			.ValueGeneratedOnAddOrUpdate();
 	}
 }
 

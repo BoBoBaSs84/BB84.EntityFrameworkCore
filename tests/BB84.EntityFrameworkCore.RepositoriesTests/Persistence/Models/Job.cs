@@ -2,10 +2,10 @@
 
 namespace BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Models;
 
-public sealed class Trait : AuditedModel
+public sealed class Job : AuditedModel
 {
+	public string Name { get; set; }
 	public string Description { get; set; }
-	public int Severety { get; set; }
 
-	public ICollection<PersonTrait>? PersonTraits { get; set; }
+	public ICollection<PersonJob> PersonJobs { get; set; }
 }

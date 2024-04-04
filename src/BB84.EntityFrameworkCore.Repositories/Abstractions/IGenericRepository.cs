@@ -77,7 +77,7 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
 	/// <returns>The number of <typeparamref name="TEntity"/>.</returns>
 	int Count(
-		Expression<Func<TEntity, bool>>? expression = null,
+		Expression<Func<TEntity, bool>>? expression,
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
 		bool ignoreQueryFilters = false
 		);
@@ -99,7 +99,7 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
 	/// <returns>The number of <typeparamref name="TEntity"/>.</returns>
 	Task<int> CountAsync(
-		Expression<Func<TEntity, bool>>? expression = null,
+		Expression<Func<TEntity, bool>>? expression,
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
 		bool ignoreQueryFilters = false,
 		CancellationToken cancellationToken = default

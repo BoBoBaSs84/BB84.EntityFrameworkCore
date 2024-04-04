@@ -18,32 +18,33 @@ public abstract class EnumeratorBaseConfiguration<TEntity> : IEntityTypeConfigur
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
 	{
 		builder.HasKey(x => x.Id)
-			.IsClustered();
+			.IsClustered(false);
 
 		builder.Property(e => e.Id)
-			.IsRequired()
-			.HasColumnOrder(1);
+			.HasColumnOrder(1)
+			.IsRequired();
 
 		builder.Property(e => e.Timestamp)
-			.IsRowVersion()
-			.HasColumnOrder(2);
+			.HasColumnOrder(2)
+			.IsConcurrencyToken()
+			.ValueGeneratedOnAddOrUpdate();
 
 		builder.Property(e => e.Name)
+			.HasColumnOrder(3)
 			.HasMaxLength(50)
-			.IsRequired()
-			.HasColumnOrder(3);
+			.IsRequired();
 
 		builder.Property(e => e.Description)
+			.HasColumnOrder(4)
 			.HasMaxLength(250)
-			.IsRequired(false)
-			.HasColumnOrder(4);
+			.IsRequired(false);
 
 		builder.Property(e => e.IsDeleted)
-			.HasDefaultValue(false)
-			.HasColumnOrder(5);
+			.HasColumnOrder(5)
+			.HasDefaultValue(false);
 
 		builder.HasIndex(e => e.Name)
-			.IsClustered()
+			.IsClustered(false)
 			.IsUnique();
 	}
 }
