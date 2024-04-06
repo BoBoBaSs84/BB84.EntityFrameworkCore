@@ -1,0 +1,5 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Description>This package contains frequently used models and their respective abstractions.</Description>
+	</PropertyGroup>
+</Project>
