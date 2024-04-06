@@ -15,17 +15,13 @@ namespace BB84.EntityFrameworkCore.Repositories;
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, generic repository.")]
 public abstract class GenericRepository<TEntity>(DbContext dbContext) : IGenericRepository<TEntity> where TEntity : class
 {
-	/// <summary>
-	/// The database context to work with.
-	/// </summary>
-	protected DbContext DbContext
-		=> dbContext;
+	private readonly DbContext _dbContext = dbContext;
 
 	/// <summary>
 	/// The collection of all <typeparamref name="TEntity"/> within the database context.
 	/// </summary>
 	protected DbSet<TEntity> DbSet
-		=> dbContext.Set<TEntity>();
+		=> _dbContext.Set<TEntity>();
 
 	/// <inheritdoc/>
 	public void Create(TEntity entity)
@@ -85,6 +81,28 @@ public abstract class GenericRepository<TEntity>(DbContext dbContext) : IGeneric
 			);
 
 		return await query.CountAsync(cancellationToken);
+	}
+
+	/// <inheritdoc/>
+	public void Delete(TEntity entity)
+		=> DbSet.Remove(entity);
+
+	/// <inheritdoc/>
+	public void Delete(IEnumerable<TEntity> entities)
+		=> DbSet.RemoveRange(entities);
+
+	/// <inheritdoc/>
+	public Task DeleteAsync(TEntity entity)
+	{
+		DbSet.Remove(entity);
+		return Task.CompletedTask;
+	}
+
+	/// <inheritdoc/>
+	public Task DeleteAsync(IEnumerable<TEntity> entities)
+	{
+		DbSet.RemoveRange(entities);
+		return Task.CompletedTask;
 	}
 
 	/// <inheritdoc/>
@@ -169,28 +187,6 @@ public abstract class GenericRepository<TEntity>(DbContext dbContext) : IGeneric
 			);
 
 		return await query.FirstOrDefaultAsync(cancellationToken);
-	}
-
-	/// <inheritdoc/>
-	public void Delete(TEntity entity)
-		=> DbSet.Remove(entity);
-
-	/// <inheritdoc/>
-	public void Delete(IEnumerable<TEntity> entities)
-		=> DbSet.RemoveRange(entities);
-
-	/// <inheritdoc/>
-	public Task DeleteAsync(TEntity entity)
-	{
-		DbSet.Remove(entity);
-		return Task.CompletedTask;
-	}
-
-	/// <inheritdoc/>
-	public Task DeleteAsync(IEnumerable<TEntity> entities)
-	{
-		DbSet.RemoveRange(entities);
-		return Task.CompletedTask;
 	}
 
 	/// <inheritdoc/>

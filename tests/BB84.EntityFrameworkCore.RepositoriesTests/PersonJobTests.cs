@@ -98,4 +98,96 @@ public sealed class PersonJobTests : UnitTestBase
 
 		Assert.AreEqual(0, count);
 	}
+
+	[TestMethod]
+	public void DeleteTest()
+	{
+		using TestDbContext dbContext = new(GetContextOptions());
+		PersonJobRepository repository = new(dbContext);
+
+		PersonJob personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
+
+		repository.Delete(personJob);
+	}
+
+	[TestMethod]
+	public void DeleteRangeTest()
+	{
+		using TestDbContext dbContext = new(GetContextOptions());
+		PersonJobRepository repository = new(dbContext);
+
+		List<PersonJob> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
+
+		repository.Delete(personJobs);
+	}
+
+	[TestMethod]
+	public async Task DeleteAsyncTest()
+	{
+		using TestDbContext dbContext = new(GetContextOptions());
+		PersonJobRepository repository = new(dbContext);
+
+		PersonJob personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
+
+		await repository.DeleteAsync(personJob)
+			.ConfigureAwait(false);
+	}
+
+	[TestMethod]
+	public async Task DeleteRangeAsyncTest()
+	{
+		using TestDbContext dbContext = new(GetContextOptions());
+		PersonJobRepository repository = new(dbContext);
+
+		List<PersonJob> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
+
+		await repository.DeleteAsync(personJobs)
+			.ConfigureAwait(false);
+	}
+
+	[TestMethod]
+	public void UpdateTest()
+	{
+		using TestDbContext dbContext = new(GetContextOptions());
+		PersonJobRepository repository = new(dbContext);
+
+		PersonJob personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
+
+		repository.Update(personJob);
+	}
+
+	[TestMethod]
+	public void UpdateRangeTest()
+	{
+		using TestDbContext dbContext = new(GetContextOptions());
+		PersonJobRepository repository = new(dbContext);
+
+		List<PersonJob> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
+
+		repository.Update(personJobs);
+	}
+
+	[TestMethod]
+	public async Task UpdateAsyncTest()
+	{
+		using TestDbContext dbContext = new(GetContextOptions());
+		PersonJobRepository repository = new(dbContext);
+
+		PersonJob personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
+
+		await repository.UpdateAsync(personJob)
+			.ConfigureAwait(false);
+	}
+
+	[TestMethod]
+	public async Task UpdateRangeAsyncTest()
+	{
+		using TestDbContext dbContext = new(GetContextOptions());
+		PersonJobRepository repository = new(dbContext);
+
+		List<PersonJob> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
+
+		await repository.UpdateAsync(personJobs)
+			.ConfigureAwait(false);
+	}
 }
