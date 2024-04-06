@@ -54,4 +54,32 @@ public sealed class PersonTypeTests : UnitTestBase
 		Assert.IsNotNull(result);
 		Assert.AreEqual(2, result.Count());
 	}
+
+	[TestMethod]
+	public void GetByConditionTest()
+	{
+		using TestDbContext dbContext = new(GetContextOptions());
+		PersonRepository repository = new(dbContext);
+
+		Person? person = repository.GetByCondition(
+			expression: x => x.Id.Equals(Guid.Empty),
+			includeProperties: [nameof(Person.Type)]
+			);
+
+		Assert.IsNull(person);
+	}
+
+	[TestMethod]
+	public async Task GetByConditionAsyncTest()
+	{
+		using TestDbContext dbContext = new(GetContextOptions());
+		PersonRepository repository = new(dbContext);
+
+		Person? person = await repository.GetByConditionAsync(
+			expression: x => x.Id.Equals(Guid.Empty),
+			includeProperties: [nameof(Person.Type)]
+			).ConfigureAwait(false);
+
+		Assert.IsNull(person);
+	}
 }
