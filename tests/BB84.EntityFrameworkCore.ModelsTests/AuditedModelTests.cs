@@ -20,6 +20,6 @@ public sealed class AuditedModelTests
 		Assert.IsNull(model.ModifiedBy);
 	}
 
-	private class TestClass : AuditedModel
+	private sealed class TestClass : AuditedModel
 	{ }
 }

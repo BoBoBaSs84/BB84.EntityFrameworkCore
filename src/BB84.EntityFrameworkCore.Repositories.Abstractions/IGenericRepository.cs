@@ -67,7 +67,7 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// </summary>
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
 	/// <returns>The total number of <typeparamref name="TEntity"/>.</returns>
-	int Count(bool ignoreQueryFilters = false);
+	int CountAll(bool ignoreQueryFilters = false);
 
 	/// <summary>
 	/// Returns the number of <typeparamref name="TEntity"/> based on the specified <paramref name="expression"/>.
@@ -77,7 +77,7 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
 	/// <returns>The number of <typeparamref name="TEntity"/>.</returns>
 	int Count(
-		Expression<Func<TEntity, bool>>? expression,
+		Expression<Func<TEntity, bool>>? expression = null,
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
 		bool ignoreQueryFilters = false
 		);
@@ -88,7 +88,7 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
 	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of <typeparamref name="TEntity"/>.</returns>
-	Task<int> CountAsync(bool ignoreQueryFilters = false, CancellationToken cancellationToken = default);
+	Task<int> CountAllAsync(bool ignoreQueryFilters = false, CancellationToken cancellationToken = default);
 
 	/// <summary>
 	/// Returns the number of <typeparamref name="TEntity"/> based on the specified <paramref name="expression"/>.
@@ -99,7 +99,7 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
 	/// <returns>The number of <typeparamref name="TEntity"/>.</returns>
 	Task<int> CountAsync(
-		Expression<Func<TEntity, bool>>? expression,
+		Expression<Func<TEntity, bool>>? expression = null,
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
 		bool ignoreQueryFilters = false,
 		CancellationToken cancellationToken = default

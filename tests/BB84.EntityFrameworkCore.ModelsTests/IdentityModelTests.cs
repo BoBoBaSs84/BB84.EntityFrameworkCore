@@ -18,6 +18,6 @@ public sealed class IdentityModelTests
 		Assert.IsNull(model.Timestamp);
 	}
 
-	private class TestClass : IdentityModel
+	private sealed class TestClass : IdentityModel
 	{ }
 }

@@ -30,9 +30,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB84.EntityFrameworkCore.Mo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB84.EntityFrameworkCore.RepositoriesTests", "tests\BB84.EntityFrameworkCore.RepositoriesTests\BB84.EntityFrameworkCore.RepositoriesTests.csproj", "{B6AE6D2F-6F73-477E-BC83-A408DCD38FA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB84.EntityFrameworkCore.Repositories.Abstractions", "src\BB84.EntityFrameworkCore.Repositories.Abstractions\BB84.EntityFrameworkCore.Repositories.Abstractions.csproj", "{DE677E4D-3F7B-454F-9379-15ADC1B62F25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB84.EntityFrameworkCore.Repositories.Abstractions", "src\BB84.EntityFrameworkCore.Repositories.Abstractions\BB84.EntityFrameworkCore.Repositories.Abstractions.csproj", "{DE677E4D-3F7B-454F-9379-15ADC1B62F25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB84.EntityFrameworkCore.Models.Abstractions", "src\BB84.EntityFrameworkCore.Models.Abstractions\BB84.EntityFrameworkCore.Models.Abstractions.csproj", "{069567B0-C395-4EB3-BC07-AB6ABA69B85C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB84.EntityFrameworkCore.Models.Abstractions", "src\BB84.EntityFrameworkCore.Models.Abstractions\BB84.EntityFrameworkCore.Models.Abstractions.csproj", "{069567B0-C395-4EB3-BC07-AB6ABA69B85C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
