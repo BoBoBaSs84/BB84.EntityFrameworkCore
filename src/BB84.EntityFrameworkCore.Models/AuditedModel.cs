@@ -16,5 +16,9 @@ public abstract class AuditedModel<TKey, TCreated, TModified> : IdentityModel<TK
 }
 
 /// <inheritdoc/>
+public abstract class AuditedModel<TCreated, TModified> : AuditedModel<Guid, TCreated, TModified>, IAuditedModel<TCreated, TModified>
+{ }
+
+/// <inheritdoc/>
 public abstract class AuditedModel : AuditedModel<Guid, string, string?>, IAuditedModel
 { }

@@ -19,6 +19,6 @@ public sealed class CompositeModelTests
 		Assert.IsNull(model.ModifiedBy);
 	}
 
-	private class TestClass : CompositeModel
+	private sealed class TestClass : CompositeModel
 	{ }
 }
