@@ -14,5 +14,9 @@ public interface IAuditedModel<TKey, TCreated, TModified> : IIdentityModel<TKey>
 /// <remarks>
 /// The primary key is of type <see cref="Guid"/>.
 /// </remarks>
-public interface IAuditedModel : IAuditedModel<Guid, string, string?>, IIdentityModel
+public interface IAuditedModel<TCreated, TModified> : IAuditedModel<Guid, TCreated, TModified>, IIdentityModel
+{ }
+
+/// <inheritdoc/>
+public interface IAuditedModel : IAuditedModel<string, string?>
 { }
