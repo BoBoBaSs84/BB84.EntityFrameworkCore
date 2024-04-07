@@ -40,7 +40,7 @@ public abstract class GenericRepository<TEntity>(DbContext dbContext) : IGeneric
 		=> await DbSet.AddRangeAsync(entities, cancellationToken);
 
 	/// <inheritdoc/>
-	public int Count(bool ignoreQueryFilters = false)
+	public int CountAll(bool ignoreQueryFilters = false)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			ignoreQueryFilters: ignoreQueryFilters
@@ -50,7 +50,7 @@ public abstract class GenericRepository<TEntity>(DbContext dbContext) : IGeneric
 	}
 
 	/// <inheritdoc/>
-	public int Count(Expression<Func<TEntity, bool>>? expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false)
+	public int Count(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: expression,
@@ -62,7 +62,7 @@ public abstract class GenericRepository<TEntity>(DbContext dbContext) : IGeneric
 	}
 
 	/// <inheritdoc/>
-	public async Task<int> CountAsync(bool ignoreQueryFilters = false, CancellationToken cancellationToken = default)
+	public async Task<int> CountAllAsync(bool ignoreQueryFilters = false, CancellationToken cancellationToken = default)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			ignoreQueryFilters: ignoreQueryFilters
@@ -72,7 +72,7 @@ public abstract class GenericRepository<TEntity>(DbContext dbContext) : IGeneric
 	}
 
 	/// <inheritdoc/>
-	public async Task<int> CountAsync(Expression<Func<TEntity, bool>>? expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, CancellationToken cancellationToken = default)
+	public async Task<int> CountAsync(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, CancellationToken cancellationToken = default)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: expression,

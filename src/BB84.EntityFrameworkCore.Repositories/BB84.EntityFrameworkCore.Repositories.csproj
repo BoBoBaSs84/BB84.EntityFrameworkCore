@@ -1,15 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
-		<Description>This package contains frequently used repositories and their respective abstractions.</Description>
+		<Description>This package contains frequently used repository implementations of their respective abstractions.</Description>
 	</PropertyGroup>
-
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
 	</ItemGroup>
-
 	<ItemGroup>
 		<ProjectReference Include="..\BB84.EntityFrameworkCore.Models\BB84.EntityFrameworkCore.Models.csproj" />
+		<ProjectReference Include="..\BB84.EntityFrameworkCore.Repositories.Abstractions\BB84.EntityFrameworkCore.Repositories.Abstractions.csproj" />
 	</ItemGroup>
-
 </Project>

@@ -21,6 +21,6 @@ public sealed class EnumeratorModelTests
 		Assert.IsFalse(model.IsDeleted);
 	}
 
-	private class TestClass : EnumeratorModel
+	private sealed class TestClass : EnumeratorModel
 	{ }
 }

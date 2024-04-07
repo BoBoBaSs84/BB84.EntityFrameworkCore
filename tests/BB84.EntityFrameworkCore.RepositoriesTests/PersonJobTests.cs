@@ -54,12 +54,12 @@ public sealed class PersonJobTests : UnitTestBase
 	}
 
 	[TestMethod]
-	public void CountTest()
+	public void CountAllTest()
 	{
 		using TestDbContext dbContext = new(GetContextOptions());
 		PersonJobRepository repository = new(dbContext);
 
-		var count = repository.Count();
+		var count = repository.CountAll(false);
 
 		Assert.AreEqual(0, count);
 	}
@@ -76,12 +76,12 @@ public sealed class PersonJobTests : UnitTestBase
 	}
 
 	[TestMethod]
-	public async Task CountAsyncTest()
+	public async Task CountAllAsyncTest()
 	{
 		using TestDbContext dbContext = new(GetContextOptions());
 		PersonJobRepository repository = new(dbContext);
 
-		var count = await repository.CountAsync(true)
+		var count = await repository.CountAllAsync(false)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(0, count);
