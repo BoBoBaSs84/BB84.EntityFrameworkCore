@@ -2,7 +2,7 @@
 
 namespace BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Models;
 
-public sealed class PersonJob : CompositeModel
+public sealed class PersonJob : AuditedCompositeModel
 {
 	public Guid PersonId { get; set; }
 	public Guid JobId { get; set; }

@@ -10,7 +10,7 @@ public sealed class PersonTests : UnitTestBase
 	[TestMethod]
 	public void GetByIdTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
 		Person? person = repository.GetById(Guid.Empty);
@@ -21,7 +21,7 @@ public sealed class PersonTests : UnitTestBase
 	[TestMethod]
 	public void GetByIdsTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
 		IEnumerable<Person> persons = repository.GetByIds([Guid.NewGuid(), Guid.NewGuid()]);
@@ -32,7 +32,7 @@ public sealed class PersonTests : UnitTestBase
 	[TestMethod]
 	public async Task GetByIdAsyncTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
 		Person? person = await repository.GetByIdAsync(Guid.Empty)
@@ -44,7 +44,7 @@ public sealed class PersonTests : UnitTestBase
 	[TestMethod]
 	public async Task GetByIdsAsyncTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
 		IEnumerable<Person> persons = await repository.GetByIdsAsync([Guid.NewGuid(), Guid.NewGuid()])
@@ -56,7 +56,7 @@ public sealed class PersonTests : UnitTestBase
 	[TestMethod]
 	public void GetAllTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
 		IEnumerable<Person> persons = repository.GetAll(true, true);
@@ -67,7 +67,7 @@ public sealed class PersonTests : UnitTestBase
 	[TestMethod]
 	public async Task GetAllAsyncTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
 		IEnumerable<Person> persons = await repository.GetAllAsync(true, true)
@@ -79,7 +79,7 @@ public sealed class PersonTests : UnitTestBase
 	[TestMethod]
 	public void GetManyByConditionTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
 		IEnumerable<Person> persons = repository.GetManyByCondition(
@@ -94,7 +94,7 @@ public sealed class PersonTests : UnitTestBase
 	[TestMethod]
 	public async Task GetManyByConditionAsyncTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
 		IEnumerable<Person> persons = await repository.GetManyByConditionAsync(
