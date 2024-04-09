@@ -36,7 +36,10 @@ public sealed class SoftDeletableInterceptor : SaveChangesInterceptor
 		foreach (EntityEntry<ISoftDeletable> entry in entites)
 		{
 			if (entry.State is EntityState.Deleted)
+			{
 				entry.Entity.IsDeleted = true;
+				entry.State = EntityState.Modified;
+			}
 		}
 	}
 }
