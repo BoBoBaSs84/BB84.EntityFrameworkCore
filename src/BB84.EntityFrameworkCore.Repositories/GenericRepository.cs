@@ -15,13 +15,16 @@ namespace BB84.EntityFrameworkCore.Repositories;
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, generic repository.")]
 public abstract class GenericRepository<TEntity>(DbContext dbContext) : IGenericRepository<TEntity> where TEntity : class
 {
-	private readonly DbContext _dbContext = dbContext;
+	/// <summary>
+	/// The current database context to work with.
+	/// </summary>
+	protected DbContext DbContext => dbContext;
 
 	/// <summary>
 	/// The collection of all <typeparamref name="TEntity"/> within the database context.
 	/// </summary>
 	protected DbSet<TEntity> DbSet
-		=> _dbContext.Set<TEntity>();
+		=> DbContext.Set<TEntity>();
 
 	/// <inheritdoc/>
 	public void Create(TEntity entity)

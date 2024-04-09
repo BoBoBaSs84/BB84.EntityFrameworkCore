@@ -34,6 +34,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB84.EntityFrameworkCore.Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BB84.EntityFrameworkCore.Models.Abstractions", "src\BB84.EntityFrameworkCore.Models.Abstractions\BB84.EntityFrameworkCore.Models.Abstractions.csproj", "{069567B0-C395-4EB3-BC07-AB6ABA69B85C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB84.EntityFrameworkCore.Repositories.SqlServer", "src\BB84.EntityFrameworkCore.Repositories.SqlServer\BB84.EntityFrameworkCore.Repositories.SqlServer.csproj", "{2B409F14-A686-4AA3-9393-DD653F01B496}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,10 @@ Global
 		{069567B0-C395-4EB3-BC07-AB6ABA69B85C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{069567B0-C395-4EB3-BC07-AB6ABA69B85C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{069567B0-C395-4EB3-BC07-AB6ABA69B85C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B409F14-A686-4AA3-9393-DD653F01B496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B409F14-A686-4AA3-9393-DD653F01B496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B409F14-A686-4AA3-9393-DD653F01B496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B409F14-A686-4AA3-9393-DD653F01B496}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +81,7 @@ Global
 		{B6AE6D2F-6F73-477E-BC83-A408DCD38FA5} = {C3F6ECA2-55CD-4DA1-BEF7-F9B56ADB84E2}
 		{DE677E4D-3F7B-454F-9379-15ADC1B62F25} = {AD1CC5E3-EAB7-4177-B5C5-69051FAC7C75}
 		{069567B0-C395-4EB3-BC07-AB6ABA69B85C} = {AD1CC5E3-EAB7-4177-B5C5-69051FAC7C75}
+		{2B409F14-A686-4AA3-9393-DD653F01B496} = {AD1CC5E3-EAB7-4177-B5C5-69051FAC7C75}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {338A35D2-1B96-4516-A2C8-725215E542C3}
