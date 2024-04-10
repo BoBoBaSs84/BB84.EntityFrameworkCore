@@ -3,7 +3,7 @@
 		<Description>This package contains frequently used repository implementations of their respective abstractions.</Description>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\BB84.EntityFrameworkCore.Models\BB84.EntityFrameworkCore.Models.csproj" />

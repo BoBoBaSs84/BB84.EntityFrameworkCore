@@ -5,7 +5,7 @@ using BB84.EntityFrameworkCore.Models.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace BB84.EntityFrameworkCore.Repositories.Configurations;
+namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 
 /// <summary>
 /// The audited base configuration class.
@@ -13,7 +13,7 @@ namespace BB84.EntityFrameworkCore.Repositories.Configurations;
 /// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
 /// <inheritdoc cref="IAuditedModel{TKey, TCreated, TModified}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
-public abstract class AuditedBaseConfiguration<TEntity, TKey, TCreated, TModified> : IEntityTypeConfiguration<TEntity>
+public abstract class AuditedConfiguration<TEntity, TKey, TCreated, TModified> : IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IAuditedModel<TKey, TCreated, TModified>
 	where TKey : IEquatable<TKey>
 {
@@ -21,11 +21,10 @@ public abstract class AuditedBaseConfiguration<TEntity, TKey, TCreated, TModifie
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
 	{
 		builder.HasKey(e => e.Id)
-			.IsClustered(false);
+			.IsClustered();
 
 		builder.Property(e => e.Id)
 			.HasColumnOrder(1)
-			.HasDefaultValueSql("NEWID()")
 			.ValueGeneratedOnAdd();
 
 		builder.Property(e => e.Timestamp)
@@ -33,7 +32,7 @@ public abstract class AuditedBaseConfiguration<TEntity, TKey, TCreated, TModifie
 			.IsConcurrencyToken()
 			.ValueGeneratedOnAddOrUpdate();
 
-		builder.Property(e => e.CreatedBy)			
+		builder.Property(e => e.CreatedBy)
 			.HasColumnOrder(3)
 			.IsRequired();
 
@@ -44,6 +43,6 @@ public abstract class AuditedBaseConfiguration<TEntity, TKey, TCreated, TModifie
 }
 
 /// <inheritdoc/>
-public abstract class AuditedBaseConfiguration<TEntity> : AuditedBaseConfiguration<TEntity, Guid, string, string?>,
+public abstract class AuditedConfiguration<TEntity> : AuditedConfiguration<TEntity, Guid, string, string?>,
 	IEntityTypeConfiguration<TEntity> where TEntity : class, IAuditedModel
 { }

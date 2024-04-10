@@ -10,7 +10,7 @@ public sealed class PersonTypeTests : UnitTestBase
 	[TestMethod]
 	public void GetByNameTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonTypeRepository repository = new(dbContext);
 
 		PersonType? result = repository.GetByName("Male");
@@ -21,7 +21,7 @@ public sealed class PersonTypeTests : UnitTestBase
 	[TestMethod]
 	public void GetByNamesTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonTypeRepository repository = new(dbContext);
 
 		IEnumerable<PersonType> result = repository.GetByNames(["Male", "Female"]);
@@ -33,7 +33,7 @@ public sealed class PersonTypeTests : UnitTestBase
 	[TestMethod]
 	public async Task GetByNameAsyncTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonTypeRepository repository = new(dbContext);
 
 		PersonType? result = await repository.GetByNameAsync("Male")
@@ -45,7 +45,7 @@ public sealed class PersonTypeTests : UnitTestBase
 	[TestMethod]
 	public async Task GetByNamesAsyncTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonTypeRepository repository = new(dbContext);
 
 		IEnumerable<PersonType> result = await repository.GetByNamesAsync(["Male", "Female"])
@@ -58,7 +58,7 @@ public sealed class PersonTypeTests : UnitTestBase
 	[TestMethod]
 	public void GetByConditionTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
 		Person? person = repository.GetByCondition(
@@ -72,7 +72,7 @@ public sealed class PersonTypeTests : UnitTestBase
 	[TestMethod]
 	public async Task GetByConditionAsyncTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
 		Person? person = await repository.GetByConditionAsync(
@@ -81,5 +81,33 @@ public sealed class PersonTypeTests : UnitTestBase
 			).ConfigureAwait(false);
 
 		Assert.IsNull(person);
+	}
+
+	[TestMethod]
+	public void SoftDeleteTest()
+	{
+		using TestDbContext dbContext = GetTestContext();
+		PersonTypeRepository repository = new(dbContext);
+
+		PersonType? result = repository.GetById(1, false, true);
+		Assert.IsNotNull(result);
+
+		repository.Delete(result);
+		dbContext.SaveChanges();
+		Assert.IsTrue(result.IsDeleted);
+	}
+
+	[TestMethod]
+	public async Task SoftDeleteAsyncTest()
+	{
+		using TestDbContext dbContext = GetTestContext();
+		PersonTypeRepository repository = new(dbContext);
+
+		PersonType? result = await repository.GetByIdAsync(2, false, true);
+		Assert.IsNotNull(result);
+
+		await repository.DeleteAsync(result);
+		await dbContext.SaveChangesAsync();
+		Assert.IsTrue(result.IsDeleted);
 	}
 }

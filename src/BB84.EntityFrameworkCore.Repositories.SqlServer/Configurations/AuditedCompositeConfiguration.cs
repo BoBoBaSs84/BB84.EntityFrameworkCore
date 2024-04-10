@@ -5,16 +5,16 @@ using BB84.EntityFrameworkCore.Models.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace BB84.EntityFrameworkCore.Repositories.Configurations;
+namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 
 /// <summary>
-/// The composite base configuration class.
+/// The audited composite configuration class.
 /// </summary>
 /// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
-/// <inheritdoc cref="ICompositeModel{TCreated, TModified}"/>
+/// <inheritdoc cref="IAuditedCompositeModel{TCreated, TModified}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
-public abstract class CompositeBaseConfiguration<TEntity, TCreated, TModified> : IEntityTypeConfiguration<TEntity>
-	where TEntity : class, ICompositeModel<TCreated, TModified>
+public abstract class AuditedCompositeConfiguration<TEntity, TCreated, TModified> : IEntityTypeConfiguration<TEntity>
+	where TEntity : class, IAuditedCompositeModel<TCreated, TModified>
 {
 	/// <inheritdoc/>
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
@@ -35,6 +35,6 @@ public abstract class CompositeBaseConfiguration<TEntity, TCreated, TModified> :
 }
 
 /// <inheritdoc/>
-public abstract class CompositeBaseConfiguration<TEntity> : CompositeBaseConfiguration<TEntity, string, string?>,
-	IEntityTypeConfiguration<TEntity> where TEntity : class, ICompositeModel
+public abstract class AuditedCompositeConfiguration<TEntity> : AuditedCompositeConfiguration<TEntity, string, string?>, IEntityTypeConfiguration<TEntity>
+	where TEntity : class, IAuditedCompositeModel
 { }
