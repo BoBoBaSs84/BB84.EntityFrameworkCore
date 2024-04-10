@@ -27,20 +27,10 @@ jobs:
         install: localdb
 
     - name: Restore
-      if: github.event_name != 'push'
       run: dotnet restore
     
     - name: Build
-      if: github.event_name != 'push'
       run: dotnet build --no-restore --configuration release --verbosity minimal
     
     - name: Test
-      if: github.event_name != 'push'
       run: dotnet test --no-build --configuration release --verbosity minimal
-
-    - name: Self Build - Publish (main only)
-      if: github.event_name == 'push'
-      shell: bash
-      run: |
-        dotnet tool install --global dotnet-releaser
-        dotnet-releaser run --nuget-token "${{secrets.NUGET_TOKEN}}" --github-token "${{secrets.GITHUB_TOKEN}}" dotnet-releaser.toml
