@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Setup MSSQL
+      uses: potatoqualitee/mssqlsuite@v1.7
+      with:
+        install: localdb
+
+    - name: Restore
+      if: github.event_name != 'push'
+      run: dotnet restore
+    
+    - name: Build
+      if: github.event_name != 'push'
+      run: dotnet build --no-restore --configuration release --verbosity minimal
+    
+    - name: Test
+      if: github.event_name != 'push'
+      run: dotnet test --no-build --configuration release --verbosity minimal
+
+    - name: Self Build - Publish (main only)
+      if: github.event_name == 'push'
+      shell: bash
+      run: |
+        dotnet tool install --global dotnet-releaser
+        dotnet-releaser run --nuget-token "${{secrets.NUGET_TOKEN}}" --github-token "${{secrets.GITHUB_TOKEN}}" dotnet-releaser.toml
