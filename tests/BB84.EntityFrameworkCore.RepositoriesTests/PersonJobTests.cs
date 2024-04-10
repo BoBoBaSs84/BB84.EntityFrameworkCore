@@ -10,7 +10,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public void CreateTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		PersonJob personJob = new();
@@ -21,7 +21,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public void CreateRangeTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		List<PersonJob> personJobs = [new(), new()];
@@ -32,7 +32,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public async Task CreateAsyncTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		PersonJob personJob = new();
@@ -44,7 +44,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public async Task CreateRangeAsyncTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		List<PersonJob> personJobs = [new(), new()];
@@ -56,7 +56,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public void CountAllTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		var count = repository.CountAll(false);
@@ -67,7 +67,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public void CountByConditionTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		var count = repository.Count(x => x.PersonId.Equals(Guid.Empty));
@@ -78,7 +78,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public async Task CountAllAsyncTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		var count = await repository.CountAllAsync(false)
@@ -90,7 +90,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public async Task CountByConditionAsyncTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		var count = await repository.CountAsync(expression: x => x.PersonId.Equals(Guid.Empty))
@@ -102,7 +102,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public void DeleteTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		PersonJob personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
@@ -113,7 +113,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public void DeleteRangeTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		List<PersonJob> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
@@ -124,7 +124,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public async Task DeleteAsyncTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		PersonJob personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
@@ -136,7 +136,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public async Task DeleteRangeAsyncTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		List<PersonJob> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
@@ -148,7 +148,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public void UpdateTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		PersonJob personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
@@ -159,7 +159,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public void UpdateRangeTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		List<PersonJob> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
@@ -170,7 +170,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public async Task UpdateAsyncTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		PersonJob personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
@@ -182,7 +182,7 @@ public sealed class PersonJobTests : UnitTestBase
 	[TestMethod]
 	public async Task UpdateRangeAsyncTest()
 	{
-		using TestDbContext dbContext = new(GetContextOptions());
+		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
 		List<PersonJob> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];

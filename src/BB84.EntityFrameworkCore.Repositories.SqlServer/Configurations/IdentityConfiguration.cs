@@ -5,7 +5,7 @@ using BB84.EntityFrameworkCore.Models.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace BB84.EntityFrameworkCore.Repositories.Configurations;
+namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 
 /// <summary>
 /// The identity base configuration class.
@@ -13,7 +13,7 @@ namespace BB84.EntityFrameworkCore.Repositories.Configurations;
 /// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
 /// <inheritdoc cref="IIdentityModel{TKey}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
-public abstract class IdentityBaseConfiguration<TEntity, TKey> : IEntityTypeConfiguration<TEntity>
+public abstract class IdentityConfiguration<TEntity, TKey> : IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IIdentityModel<TKey>
 	where TKey : IEquatable<TKey>
 {
@@ -21,10 +21,9 @@ public abstract class IdentityBaseConfiguration<TEntity, TKey> : IEntityTypeConf
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
 	{
 		builder.HasKey(e => e.Id)
-			.IsClustered(false);
+			.IsClustered();
 
 		builder.Property(e => e.Id)
-			.HasDefaultValueSql("NEWID()")
 			.HasColumnOrder(1)
 			.ValueGeneratedOnAdd();
 
@@ -36,6 +35,6 @@ public abstract class IdentityBaseConfiguration<TEntity, TKey> : IEntityTypeConf
 }
 
 /// <inheritdoc/>
-public abstract class IdentityBaseConfiguration<TEntity> : IdentityBaseConfiguration<TEntity, Guid>,
+public abstract class IdentityConfiguration<TEntity> : IdentityConfiguration<TEntity, Guid>,
 	IEntityTypeConfiguration<TEntity> where TEntity : class, IIdentityModel
 { }
