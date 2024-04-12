@@ -1,15 +1,16 @@
 <Project>
 
-	<PropertyGroup>
+	<PropertyGroup Label="Versioning">
 		<VersionMajor>1</VersionMajor>
-		<VersionMinor>0</VersionMinor>
+		<VersionMinor>1</VersionMinor>
 		<VersionPatch>$([System.DateTime]::UtcNow.ToString("MMdd"))</VersionPatch>
 		<VersionRevision>$([System.DateTime]::UtcNow.ToString("HHmm"))</VersionRevision>
 		<VersionPrefix>$(VersionMajor).$(VersionMinor).$(VersionPatch).$(VersionRevision)</VersionPrefix>
 		<VersionSuffix Condition="$(Configuration.Equals('Debug'))">Development</VersionSuffix>
+		<FileVersion>$(VersionMajor).$(VersionMinor).$(VersionPatch)</FileVersion>
 	</PropertyGroup>
 
-	<PropertyGroup>
+	<PropertyGroup Label="Technical">
 		<AllowUnsafeBlocks>false</AllowUnsafeBlocks>
 		<AnalysisLevel>latest</AnalysisLevel>
 		<AnalysisMode>recommended</AnalysisMode>
@@ -35,7 +36,7 @@
 		<DebugType>none</DebugType>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="!$(MSBuildProjectName.EndsWith('Tests'))">
+	<PropertyGroup Condition="!$(MSBuildProjectName.EndsWith('Tests'))" Label="MetaData">
 		<Author>BoBoBaSs84</Author>
 		<Product>BB84.EntityFrameworkCore</Product>
 		<Authors>$(Author)</Authors>
@@ -48,7 +49,9 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/$(Author)/$(Product)</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageReleaseNotes>https://github.com/$(Author)/$(Product)/releases/tag/v$(FileVersion)</PackageReleaseNotes>		
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<PackageVersion>$(FileVersion)</PackageVersion>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/$(Author)/$(Product)</RepositoryUrl>

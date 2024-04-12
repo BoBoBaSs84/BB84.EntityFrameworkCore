@@ -10,3 +10,35 @@
 
 # BB84.EntityFrameworkCore
 A reusable repository pattern in ASP.NET Core. Contains frequently used model and repository abstractions.
+
+## Packages
+
+### BB84.EntityFrameworkCore.Models
+
+This package contains frequently used base models.
+
+### BB84.EntityFrameworkCore.Models.Abstractions
+
+This package contains frequently used base model abstractions.
+
+### BB84.EntityFrameworkCore.Repositories
+
+This package contains frequently used base repositories.
+
+### BB84.EntityFrameworkCore.Repositories.Abstractions
+
+This package contains frequently used base repository abstractions.
+
+### BB84.EntityFrameworkCore
+
+This package contains frequently used sql server configurations and extensions.
+
+## Documentation
+
+### API
+
+Soon.
+
+### WIKI
+
+Soon.
