@@ -37,25 +37,27 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="!$(MSBuildProjectName.EndsWith('Tests'))" Label="MetaData">
-		<Author>BoBoBaSs84</Author>
-		<Product>BB84.EntityFrameworkCore</Product>
-		<Authors>$(Author)</Authors>
-		<Company>https://github.com/$(Author)</Company>
-		<Copyright>Copyright © $([System.DateTime]::UtcNow.Year) $(Author)</Copyright>
+		<Authors>BoBoBaSs84</Authors>
+		<Company>https://github.com/BoBoBaSs84</Company>
+		<Copyright>Copyright © $([System.DateTime]::UtcNow.Year) BoBoBaSs84</Copyright>
 		<Description>A reusable repository pattern in ASP.NET Core. Contains frequently used model and repository abstractions.</Description>
-		<PackageIcon>icon.png</PackageIcon>
-		<PackageId>$(AssemblyName)</PackageId>
-		<PackageTags>library;csharp;ef-core;entity-framework-core</PackageTags>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageProjectUrl>https://github.com/$(Author)/$(Product)</PackageProjectUrl>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageReleaseNotes>https://github.com/$(Author)/$(Product)/releases/tag/v$(FileVersion)</PackageReleaseNotes>		
-		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-		<PackageVersion>$(FileVersion)</PackageVersion>
+		<Product>BB84.EntityFrameworkCore</Product>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<RepositoryUrl>https://github.com/$(Author)/$(Product)</RepositoryUrl>
+		<RepositoryUrl>https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore</RepositoryUrl>
 		<Title>$(AssemblyName)</Title>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="!$(MSBuildProjectName.EndsWith('Tests'))" Label="Package">
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageId>$(AssemblyName)</PackageId>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageReleaseNotes>https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/releases/tag/v$(FileVersion)</PackageReleaseNotes>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<PackageTags>library;csharp;ef-core;entity-framework-core</PackageTags>
+		<PackageVersion>$(FileVersion)</PackageVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$(MSBuildProjectName.EndsWith('Tests'))">
@@ -67,7 +69,7 @@
 	<ItemGroup Condition="!$(MSBuildProjectName.EndsWith('Tests'))">
 		<InternalsVisibleTo Include="$(AssemblyName)Tests" Key="0024000004800000940000000602000000240000525341310004000001000100698058721e036c6e68b591fd67d4d90827ea70f1075e5dee6162b7f60527c2da737406b2a05dcec35b0d583a64e57277925b2d4a26795d29c0b894d4860b03e7705d0fd215755e61e0eec86611aa383d20610cef7c1ddbe6b5fd36e9cd842b67b178a7c01e4da14f094a1f75cba97ed783d0cd0d866c0c913a94c60d69d883be" />
 		<None Include="..\..\LICENSE" Pack="True" PackagePath="" />
-		<None Include="..\..\$(PackageIcon)" Pack="True" PackagePath="" />
+		<None Include="..\..\icon.png" Pack="True" PackagePath="" />
 		<None Include="README.md" Pack="True" PackagePath="" />
 	</ItemGroup>
 
