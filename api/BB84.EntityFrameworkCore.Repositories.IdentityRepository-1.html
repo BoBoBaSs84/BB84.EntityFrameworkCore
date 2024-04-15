@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class IdentityRepository&lt;TEntity&gt; </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class IdentityRepository&lt;TEntity&gt; ">
+      
+      <meta name="description" content="The identity repository class.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/main/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_IdentityRepository_1.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.IdentityRepository%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`1">
+
+
+
+  <h1 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_1" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`1" class="text-break">
+Class IdentityRepository&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BB84.html">BB84</a>.<a class="xref" href="BB84.EntityFrameworkCore.html">EntityFrameworkCore</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.html">Repositories</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The identity repository class.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class IdentityRepository&lt;TEntity&gt; : IdentityRepository&lt;TEntity, Guid&gt;, IIdentityRepository&lt;TEntity&gt;, IIdentityRepository&lt;TEntity, Guid&gt;, IGenericRepository&lt;TEntity&gt; where TEntity : class, IIdentityModel</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd><p>The entity to work with.</p>
+</dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html">GenericRepository</a>&lt;TEntity&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html">IdentityRepository</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</div>
+      <div><span class="xref">IdentityRepository&lt;TEntity&gt;</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-1.html">IIdentityRepository</a>&lt;TEntity&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html">IIdentityRepository</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html">IGenericRepository</a>&lt;TEntity&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetById__1_System_Boolean_System_Boolean_">IdentityRepository&lt;TEntity, Guid&gt;.GetById(Guid, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdAsync__1_System_Boolean_System_Boolean_System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, Guid&gt;.GetByIdAsync(Guid, bool, bool, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIds_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_">IdentityRepository&lt;TEntity, Guid&gt;.GetByIds(IEnumerable&lt;Guid&gt;, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdsAsync_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, Guid&gt;.GetByIdsAsync(IEnumerable&lt;Guid&gt;, bool, bool, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DbContext">GenericRepository&lt;TEntity&gt;.DbContext</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DbSet">GenericRepository&lt;TEntity&gt;.DbSet</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Create__0_">GenericRepository&lt;TEntity&gt;.Create(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Create_System_Collections_Generic_IEnumerable__0__">GenericRepository&lt;TEntity&gt;.Create(IEnumerable&lt;TEntity&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CreateAsync__0_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.CreateAsync(TEntity, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CreateAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.CreateAsync(IEnumerable&lt;TEntity&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountAll_System_Boolean_">GenericRepository&lt;TEntity&gt;.CountAll(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Count_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_">GenericRepository&lt;TEntity&gt;.Count(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountAllAsync_System_Boolean_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.CountAllAsync(bool, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.CountAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Delete__0_">GenericRepository&lt;TEntity&gt;.Delete(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Delete_System_Collections_Generic_IEnumerable__0__">GenericRepository&lt;TEntity&gt;.Delete(IEnumerable&lt;TEntity&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync__0_">GenericRepository&lt;TEntity&gt;.DeleteAsync(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync_System_Collections_Generic_IEnumerable__0__">GenericRepository&lt;TEntity&gt;.DeleteAsync(IEnumerable&lt;TEntity&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetAll_System_Boolean_System_Boolean_">GenericRepository&lt;TEntity&gt;.GetAll(bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetAllAsync_System_Boolean_System_Boolean_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.GetAllAsync(bool, bool, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___">GenericRepository&lt;TEntity&gt;.GetManyByCondition(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, bool, params string[])</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___">GenericRepository&lt;TEntity&gt;.GetManyByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, bool, CancellationToken, params string[])</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_String___">GenericRepository&lt;TEntity&gt;.GetByCondition(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, bool, params string[])</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___">GenericRepository&lt;TEntity&gt;.GetByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, bool, CancellationToken, params string[])</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Update__0_">GenericRepository&lt;TEntity&gt;.Update(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Update_System_Collections_Generic_IEnumerable__0__">GenericRepository&lt;TEntity&gt;.Update(IEnumerable&lt;TEntity&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync__0_">GenericRepository&lt;TEntity&gt;.UpdateAsync(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync_System_Collections_Generic_IEnumerable__0__">GenericRepository&lt;TEntity&gt;.UpdateAsync(IEnumerable&lt;TEntity&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_PrepareQuery_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___">GenericRepository&lt;TEntity&gt;.PrepareQuery(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, bool, params string[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_1_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p><code class="typeparamref">TEntity</code> must implement the <a class="xref" href="BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel.html">IIdentityModel</a> interface.</p>
+</div>
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_1__ctor_" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`1.#ctor*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_1__ctor_Microsoft_EntityFrameworkCore_DbContext_" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+  IdentityRepository(DbContext)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The identity repository class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IdentityRepository(DbContext dbContext)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dbContext</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext">DbContext</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_1__ctor_Microsoft_EntityFrameworkCore_DbContext__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><code class="typeparamref">TEntity</code> must implement the <a class="xref" href="BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel.html">IIdentityModel</a> interface.</p>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L66" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

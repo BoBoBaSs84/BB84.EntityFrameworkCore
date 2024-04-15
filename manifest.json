@@ -1,0 +1,567 @@
+{
+  "source_base_path": "/home/runner/work/BB84.EntityFrameworkCore/BB84.EntityFrameworkCore/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.Components.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel-3.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.ICompositeModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.ICompositeModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IEnumeratorModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IEnumeratorModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.Abstractions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.AuditedModel-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.AuditedModel-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.AuditedModel-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.AuditedModel-3.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.AuditedModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.AuditedModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.CompositeModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.CompositeModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.EnumeratorModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.IdentityModel-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.IdentityModel-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.IdentityModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.IdentityModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.Abstractions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.Abstractions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-3.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

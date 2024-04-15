@@ -1,0 +1,1913 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: BB84.EntityFrameworkCore.Models
+  name: BB84.EntityFrameworkCore.Models
+  href: api/BB84.EntityFrameworkCore.Models.html
+  commentId: N:BB84.EntityFrameworkCore.Models
+  fullName: BB84.EntityFrameworkCore.Models
+  nameWithType: BB84.EntityFrameworkCore.Models
+- uid: BB84.EntityFrameworkCore.Models.Abstractions
+  name: BB84.EntityFrameworkCore.Models.Abstractions
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.html
+  commentId: N:BB84.EntityFrameworkCore.Models.Abstractions
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions
+  nameWithType: BB84.EntityFrameworkCore.Models.Abstractions
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components
+  name: BB84.EntityFrameworkCore.Models.Abstractions.Components
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.html
+  commentId: N:BB84.EntityFrameworkCore.Models.Abstractions.Components
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components
+  nameWithType: BB84.EntityFrameworkCore.Models.Abstractions.Components
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited
+  name: IAudited
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited
+  nameWithType: IAudited
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2
+  name: IAudited<TCreated, TModified>
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited-2.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2
+  name.vb: IAudited(Of TCreated, TModified)
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited<TCreated, TModified>
+  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited(Of TCreated, TModified)
+  nameWithType: IAudited<TCreated, TModified>
+  nameWithType.vb: IAudited(Of TCreated, TModified)
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.CreatedBy
+  name: CreatedBy
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited-2.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IAudited_2_CreatedBy
+  commentId: P:BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.CreatedBy
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited<TCreated, TModified>.CreatedBy
+  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited(Of TCreated, TModified).CreatedBy
+  nameWithType: IAudited<TCreated, TModified>.CreatedBy
+  nameWithType.vb: IAudited(Of TCreated, TModified).CreatedBy
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.CreatedBy*
+  name: CreatedBy
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited-2.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IAudited_2_CreatedBy_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.CreatedBy
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited<TCreated, TModified>.CreatedBy
+  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited(Of TCreated, TModified).CreatedBy
+  nameWithType: IAudited<TCreated, TModified>.CreatedBy
+  nameWithType.vb: IAudited(Of TCreated, TModified).CreatedBy
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.ModifiedBy
+  name: ModifiedBy
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited-2.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IAudited_2_ModifiedBy
+  commentId: P:BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.ModifiedBy
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited<TCreated, TModified>.ModifiedBy
+  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited(Of TCreated, TModified).ModifiedBy
+  nameWithType: IAudited<TCreated, TModified>.ModifiedBy
+  nameWithType.vb: IAudited(Of TCreated, TModified).ModifiedBy
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.ModifiedBy*
+  name: ModifiedBy
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited-2.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IAudited_2_ModifiedBy_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.ModifiedBy
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited<TCreated, TModified>.ModifiedBy
+  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited(Of TCreated, TModified).ModifiedBy
+  nameWithType: IAudited<TCreated, TModified>.ModifiedBy
+  nameWithType.vb: IAudited(Of TCreated, TModified).ModifiedBy
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency
+  name: IConcurrency
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency
+  nameWithType: IConcurrency
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.Timestamp
+  name: Timestamp
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IConcurrency_Timestamp
+  commentId: P:BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.Timestamp
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.Timestamp
+  nameWithType: IConcurrency.Timestamp
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.Timestamp*
+  name: Timestamp
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IConcurrency_Timestamp_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.Timestamp
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.Timestamp
+  nameWithType: IConcurrency.Timestamp
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator
+  name: IEnumerator
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator
+  nameWithType: IEnumerator
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Description
+  name: Description
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IEnumerator_Description
+  commentId: P:BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Description
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Description
+  nameWithType: IEnumerator.Description
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Description*
+  name: Description
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IEnumerator_Description_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Description
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Description
+  nameWithType: IEnumerator.Description
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Name
+  name: Name
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IEnumerator_Name
+  commentId: P:BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Name
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Name
+  nameWithType: IEnumerator.Name
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Name*
+  name: Name
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IEnumerator_Name_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Name
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Name
+  nameWithType: IEnumerator.Name
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity
+  name: IIdentity
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity
+  nameWithType: IIdentity
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity`1
+  name: IIdentity<TKey>
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity-1.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity`1
+  name.vb: IIdentity(Of TKey)
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity<TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity(Of TKey)
+  nameWithType: IIdentity<TKey>
+  nameWithType.vb: IIdentity(Of TKey)
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity`1.Id
+  name: Id
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity-1.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IIdentity_1_Id
+  commentId: P:BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity`1.Id
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity<TKey>.Id
+  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity(Of TKey).Id
+  nameWithType: IIdentity<TKey>.Id
+  nameWithType.vb: IIdentity(Of TKey).Id
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity`1.Id*
+  name: Id
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity-1.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IIdentity_1_Id_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity`1.Id
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity<TKey>.Id
+  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity(Of TKey).Id
+  nameWithType: IIdentity<TKey>.Id
+  nameWithType.vb: IIdentity(Of TKey).Id
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable
+  name: ISoftDeletable
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable
+  nameWithType: ISoftDeletable
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.IsDeleted
+  name: IsDeleted
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_ISoftDeletable_IsDeleted
+  commentId: P:BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.IsDeleted
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.IsDeleted
+  nameWithType: ISoftDeletable.IsDeleted
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.IsDeleted*
+  name: IsDeleted
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_ISoftDeletable_IsDeleted_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.IsDeleted
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.IsDeleted
+  nameWithType: ISoftDeletable.IsDeleted
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel
+  name: IAuditedCompositeModel
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel
+  nameWithType: IAuditedCompositeModel
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel`2
+  name: IAuditedCompositeModel<TCreated, TModified>
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel-2.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel`2
+  name.vb: IAuditedCompositeModel(Of TCreated, TModified)
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel<TCreated, TModified>
+  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel(Of TCreated, TModified)
+  nameWithType: IAuditedCompositeModel<TCreated, TModified>
+  nameWithType.vb: IAuditedCompositeModel(Of TCreated, TModified)
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel
+  name: IAuditedModel
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel
+  nameWithType: IAuditedModel
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel`2
+  name: IAuditedModel<TCreated, TModified>
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel-2.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel`2
+  name.vb: IAuditedModel(Of TCreated, TModified)
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel<TCreated, TModified>
+  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel(Of TCreated, TModified)
+  nameWithType: IAuditedModel<TCreated, TModified>
+  nameWithType.vb: IAuditedModel(Of TCreated, TModified)
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel`3
+  name: IAuditedModel<TKey, TCreated, TModified>
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel-3.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel`3
+  name.vb: IAuditedModel(Of TKey, TCreated, TModified)
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel<TKey, TCreated, TModified>
+  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel(Of TKey, TCreated, TModified)
+  nameWithType: IAuditedModel<TKey, TCreated, TModified>
+  nameWithType.vb: IAuditedModel(Of TKey, TCreated, TModified)
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.ICompositeModel
+  name: ICompositeModel
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.ICompositeModel.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.ICompositeModel
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.ICompositeModel
+  nameWithType: ICompositeModel
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.IEnumeratorModel
+  name: IEnumeratorModel
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IEnumeratorModel.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IEnumeratorModel
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IEnumeratorModel
+  nameWithType: IEnumeratorModel
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel
+  name: IIdentityModel
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel
+  nameWithType: IIdentityModel
+- uid: BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel`1
+  name: IIdentityModel<TKey>
+  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel-1.html
+  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel`1
+  name.vb: IIdentityModel(Of TKey)
+  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel<TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel(Of TKey)
+  nameWithType: IIdentityModel<TKey>
+  nameWithType.vb: IIdentityModel(Of TKey)
+- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel
+  name: AuditedCompositeModel
+  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel.html
+  commentId: T:BB84.EntityFrameworkCore.Models.AuditedCompositeModel
+  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel
+  nameWithType: AuditedCompositeModel
+- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2
+  name: AuditedCompositeModel<TCreated, TModified>
+  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.html
+  commentId: T:BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2
+  name.vb: AuditedCompositeModel(Of TCreated, TModified)
+  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel<TCreated, TModified>
+  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedCompositeModel(Of TCreated, TModified)
+  nameWithType: AuditedCompositeModel<TCreated, TModified>
+  nameWithType.vb: AuditedCompositeModel(Of TCreated, TModified)
+- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.CreatedBy
+  name: CreatedBy
+  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.html#BB84_EntityFrameworkCore_Models_AuditedCompositeModel_2_CreatedBy
+  commentId: P:BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.CreatedBy
+  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel<TCreated, TModified>.CreatedBy
+  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedCompositeModel(Of TCreated, TModified).CreatedBy
+  nameWithType: AuditedCompositeModel<TCreated, TModified>.CreatedBy
+  nameWithType.vb: AuditedCompositeModel(Of TCreated, TModified).CreatedBy
+- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.CreatedBy*
+  name: CreatedBy
+  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.html#BB84_EntityFrameworkCore_Models_AuditedCompositeModel_2_CreatedBy_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.CreatedBy
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel<TCreated, TModified>.CreatedBy
+  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedCompositeModel(Of TCreated, TModified).CreatedBy
+  nameWithType: AuditedCompositeModel<TCreated, TModified>.CreatedBy
+  nameWithType.vb: AuditedCompositeModel(Of TCreated, TModified).CreatedBy
+- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.ModifiedBy
+  name: ModifiedBy
+  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.html#BB84_EntityFrameworkCore_Models_AuditedCompositeModel_2_ModifiedBy
+  commentId: P:BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.ModifiedBy
+  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel<TCreated, TModified>.ModifiedBy
+  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedCompositeModel(Of TCreated, TModified).ModifiedBy
+  nameWithType: AuditedCompositeModel<TCreated, TModified>.ModifiedBy
+  nameWithType.vb: AuditedCompositeModel(Of TCreated, TModified).ModifiedBy
+- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.ModifiedBy*
+  name: ModifiedBy
+  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.html#BB84_EntityFrameworkCore_Models_AuditedCompositeModel_2_ModifiedBy_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.ModifiedBy
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel<TCreated, TModified>.ModifiedBy
+  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedCompositeModel(Of TCreated, TModified).ModifiedBy
+  nameWithType: AuditedCompositeModel<TCreated, TModified>.ModifiedBy
+  nameWithType.vb: AuditedCompositeModel(Of TCreated, TModified).ModifiedBy
+- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.Timestamp
+  name: Timestamp
+  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.html#BB84_EntityFrameworkCore_Models_AuditedCompositeModel_2_Timestamp
+  commentId: P:BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.Timestamp
+  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel<TCreated, TModified>.Timestamp
+  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedCompositeModel(Of TCreated, TModified).Timestamp
+  nameWithType: AuditedCompositeModel<TCreated, TModified>.Timestamp
+  nameWithType.vb: AuditedCompositeModel(Of TCreated, TModified).Timestamp
+- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.Timestamp*
+  name: Timestamp
+  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.html#BB84_EntityFrameworkCore_Models_AuditedCompositeModel_2_Timestamp_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.Timestamp
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel<TCreated, TModified>.Timestamp
+  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedCompositeModel(Of TCreated, TModified).Timestamp
+  nameWithType: AuditedCompositeModel<TCreated, TModified>.Timestamp
+  nameWithType.vb: AuditedCompositeModel(Of TCreated, TModified).Timestamp
+- uid: BB84.EntityFrameworkCore.Models.AuditedModel
+  name: AuditedModel
+  href: api/BB84.EntityFrameworkCore.Models.AuditedModel.html
+  commentId: T:BB84.EntityFrameworkCore.Models.AuditedModel
+  fullName: BB84.EntityFrameworkCore.Models.AuditedModel
+  nameWithType: AuditedModel
+- uid: BB84.EntityFrameworkCore.Models.AuditedModel`2
+  name: AuditedModel<TCreated, TModified>
+  href: api/BB84.EntityFrameworkCore.Models.AuditedModel-2.html
+  commentId: T:BB84.EntityFrameworkCore.Models.AuditedModel`2
+  name.vb: AuditedModel(Of TCreated, TModified)
+  fullName: BB84.EntityFrameworkCore.Models.AuditedModel<TCreated, TModified>
+  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedModel(Of TCreated, TModified)
+  nameWithType: AuditedModel<TCreated, TModified>
+  nameWithType.vb: AuditedModel(Of TCreated, TModified)
+- uid: BB84.EntityFrameworkCore.Models.AuditedModel`3
+  name: AuditedModel<TKey, TCreated, TModified>
+  href: api/BB84.EntityFrameworkCore.Models.AuditedModel-3.html
+  commentId: T:BB84.EntityFrameworkCore.Models.AuditedModel`3
+  name.vb: AuditedModel(Of TKey, TCreated, TModified)
+  fullName: BB84.EntityFrameworkCore.Models.AuditedModel<TKey, TCreated, TModified>
+  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedModel(Of TKey, TCreated, TModified)
+  nameWithType: AuditedModel<TKey, TCreated, TModified>
+  nameWithType.vb: AuditedModel(Of TKey, TCreated, TModified)
+- uid: BB84.EntityFrameworkCore.Models.AuditedModel`3.CreatedBy
+  name: CreatedBy
+  href: api/BB84.EntityFrameworkCore.Models.AuditedModel-3.html#BB84_EntityFrameworkCore_Models_AuditedModel_3_CreatedBy
+  commentId: P:BB84.EntityFrameworkCore.Models.AuditedModel`3.CreatedBy
+  fullName: BB84.EntityFrameworkCore.Models.AuditedModel<TKey, TCreated, TModified>.CreatedBy
+  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedModel(Of TKey, TCreated, TModified).CreatedBy
+  nameWithType: AuditedModel<TKey, TCreated, TModified>.CreatedBy
+  nameWithType.vb: AuditedModel(Of TKey, TCreated, TModified).CreatedBy
+- uid: BB84.EntityFrameworkCore.Models.AuditedModel`3.CreatedBy*
+  name: CreatedBy
+  href: api/BB84.EntityFrameworkCore.Models.AuditedModel-3.html#BB84_EntityFrameworkCore_Models_AuditedModel_3_CreatedBy_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.AuditedModel`3.CreatedBy
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.AuditedModel<TKey, TCreated, TModified>.CreatedBy
+  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedModel(Of TKey, TCreated, TModified).CreatedBy
+  nameWithType: AuditedModel<TKey, TCreated, TModified>.CreatedBy
+  nameWithType.vb: AuditedModel(Of TKey, TCreated, TModified).CreatedBy
+- uid: BB84.EntityFrameworkCore.Models.AuditedModel`3.ModifiedBy
+  name: ModifiedBy
+  href: api/BB84.EntityFrameworkCore.Models.AuditedModel-3.html#BB84_EntityFrameworkCore_Models_AuditedModel_3_ModifiedBy
+  commentId: P:BB84.EntityFrameworkCore.Models.AuditedModel`3.ModifiedBy
+  fullName: BB84.EntityFrameworkCore.Models.AuditedModel<TKey, TCreated, TModified>.ModifiedBy
+  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedModel(Of TKey, TCreated, TModified).ModifiedBy
+  nameWithType: AuditedModel<TKey, TCreated, TModified>.ModifiedBy
+  nameWithType.vb: AuditedModel(Of TKey, TCreated, TModified).ModifiedBy
+- uid: BB84.EntityFrameworkCore.Models.AuditedModel`3.ModifiedBy*
+  name: ModifiedBy
+  href: api/BB84.EntityFrameworkCore.Models.AuditedModel-3.html#BB84_EntityFrameworkCore_Models_AuditedModel_3_ModifiedBy_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.AuditedModel`3.ModifiedBy
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.AuditedModel<TKey, TCreated, TModified>.ModifiedBy
+  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedModel(Of TKey, TCreated, TModified).ModifiedBy
+  nameWithType: AuditedModel<TKey, TCreated, TModified>.ModifiedBy
+  nameWithType.vb: AuditedModel(Of TKey, TCreated, TModified).ModifiedBy
+- uid: BB84.EntityFrameworkCore.Models.CompositeModel
+  name: CompositeModel
+  href: api/BB84.EntityFrameworkCore.Models.CompositeModel.html
+  commentId: T:BB84.EntityFrameworkCore.Models.CompositeModel
+  fullName: BB84.EntityFrameworkCore.Models.CompositeModel
+  nameWithType: CompositeModel
+- uid: BB84.EntityFrameworkCore.Models.CompositeModel.Timestamp
+  name: Timestamp
+  href: api/BB84.EntityFrameworkCore.Models.CompositeModel.html#BB84_EntityFrameworkCore_Models_CompositeModel_Timestamp
+  commentId: P:BB84.EntityFrameworkCore.Models.CompositeModel.Timestamp
+  fullName: BB84.EntityFrameworkCore.Models.CompositeModel.Timestamp
+  nameWithType: CompositeModel.Timestamp
+- uid: BB84.EntityFrameworkCore.Models.CompositeModel.Timestamp*
+  name: Timestamp
+  href: api/BB84.EntityFrameworkCore.Models.CompositeModel.html#BB84_EntityFrameworkCore_Models_CompositeModel_Timestamp_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.CompositeModel.Timestamp
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.CompositeModel.Timestamp
+  nameWithType: CompositeModel.Timestamp
+- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel
+  name: EnumeratorModel
+  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html
+  commentId: T:BB84.EntityFrameworkCore.Models.EnumeratorModel
+  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel
+  nameWithType: EnumeratorModel
+- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Description
+  name: Description
+  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Description
+  commentId: P:BB84.EntityFrameworkCore.Models.EnumeratorModel.Description
+  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Description
+  nameWithType: EnumeratorModel.Description
+- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Description*
+  name: Description
+  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Description_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.EnumeratorModel.Description
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Description
+  nameWithType: EnumeratorModel.Description
+- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Id
+  name: Id
+  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Id
+  commentId: P:BB84.EntityFrameworkCore.Models.EnumeratorModel.Id
+  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Id
+  nameWithType: EnumeratorModel.Id
+- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Id*
+  name: Id
+  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Id_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.EnumeratorModel.Id
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Id
+  nameWithType: EnumeratorModel.Id
+- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.IsDeleted
+  name: IsDeleted
+  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_IsDeleted
+  commentId: P:BB84.EntityFrameworkCore.Models.EnumeratorModel.IsDeleted
+  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.IsDeleted
+  nameWithType: EnumeratorModel.IsDeleted
+- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.IsDeleted*
+  name: IsDeleted
+  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_IsDeleted_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.EnumeratorModel.IsDeleted
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.IsDeleted
+  nameWithType: EnumeratorModel.IsDeleted
+- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Name
+  name: Name
+  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Name
+  commentId: P:BB84.EntityFrameworkCore.Models.EnumeratorModel.Name
+  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Name
+  nameWithType: EnumeratorModel.Name
+- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Name*
+  name: Name
+  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Name_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.EnumeratorModel.Name
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Name
+  nameWithType: EnumeratorModel.Name
+- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Timestamp
+  name: Timestamp
+  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Timestamp
+  commentId: P:BB84.EntityFrameworkCore.Models.EnumeratorModel.Timestamp
+  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Timestamp
+  nameWithType: EnumeratorModel.Timestamp
+- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Timestamp*
+  name: Timestamp
+  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Timestamp_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.EnumeratorModel.Timestamp
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Timestamp
+  nameWithType: EnumeratorModel.Timestamp
+- uid: BB84.EntityFrameworkCore.Models.IdentityModel
+  name: IdentityModel
+  href: api/BB84.EntityFrameworkCore.Models.IdentityModel.html
+  commentId: T:BB84.EntityFrameworkCore.Models.IdentityModel
+  fullName: BB84.EntityFrameworkCore.Models.IdentityModel
+  nameWithType: IdentityModel
+- uid: BB84.EntityFrameworkCore.Models.IdentityModel`1
+  name: IdentityModel<TKey>
+  href: api/BB84.EntityFrameworkCore.Models.IdentityModel-1.html
+  commentId: T:BB84.EntityFrameworkCore.Models.IdentityModel`1
+  name.vb: IdentityModel(Of TKey)
+  fullName: BB84.EntityFrameworkCore.Models.IdentityModel<TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Models.IdentityModel(Of TKey)
+  nameWithType: IdentityModel<TKey>
+  nameWithType.vb: IdentityModel(Of TKey)
+- uid: BB84.EntityFrameworkCore.Models.IdentityModel`1.Id
+  name: Id
+  href: api/BB84.EntityFrameworkCore.Models.IdentityModel-1.html#BB84_EntityFrameworkCore_Models_IdentityModel_1_Id
+  commentId: P:BB84.EntityFrameworkCore.Models.IdentityModel`1.Id
+  fullName: BB84.EntityFrameworkCore.Models.IdentityModel<TKey>.Id
+  fullName.vb: BB84.EntityFrameworkCore.Models.IdentityModel(Of TKey).Id
+  nameWithType: IdentityModel<TKey>.Id
+  nameWithType.vb: IdentityModel(Of TKey).Id
+- uid: BB84.EntityFrameworkCore.Models.IdentityModel`1.Id*
+  name: Id
+  href: api/BB84.EntityFrameworkCore.Models.IdentityModel-1.html#BB84_EntityFrameworkCore_Models_IdentityModel_1_Id_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.IdentityModel`1.Id
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.IdentityModel<TKey>.Id
+  fullName.vb: BB84.EntityFrameworkCore.Models.IdentityModel(Of TKey).Id
+  nameWithType: IdentityModel<TKey>.Id
+  nameWithType.vb: IdentityModel(Of TKey).Id
+- uid: BB84.EntityFrameworkCore.Models.IdentityModel`1.Timestamp
+  name: Timestamp
+  href: api/BB84.EntityFrameworkCore.Models.IdentityModel-1.html#BB84_EntityFrameworkCore_Models_IdentityModel_1_Timestamp
+  commentId: P:BB84.EntityFrameworkCore.Models.IdentityModel`1.Timestamp
+  fullName: BB84.EntityFrameworkCore.Models.IdentityModel<TKey>.Timestamp
+  fullName.vb: BB84.EntityFrameworkCore.Models.IdentityModel(Of TKey).Timestamp
+  nameWithType: IdentityModel<TKey>.Timestamp
+  nameWithType.vb: IdentityModel(Of TKey).Timestamp
+- uid: BB84.EntityFrameworkCore.Models.IdentityModel`1.Timestamp*
+  name: Timestamp
+  href: api/BB84.EntityFrameworkCore.Models.IdentityModel-1.html#BB84_EntityFrameworkCore_Models_IdentityModel_1_Timestamp_
+  commentId: Overload:BB84.EntityFrameworkCore.Models.IdentityModel`1.Timestamp
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Models.IdentityModel<TKey>.Timestamp
+  fullName.vb: BB84.EntityFrameworkCore.Models.IdentityModel(Of TKey).Timestamp
+  nameWithType: IdentityModel<TKey>.Timestamp
+  nameWithType.vb: IdentityModel(Of TKey).Timestamp
+- uid: BB84.EntityFrameworkCore.Repositories
+  name: BB84.EntityFrameworkCore.Repositories
+  href: api/BB84.EntityFrameworkCore.Repositories.html
+  commentId: N:BB84.EntityFrameworkCore.Repositories
+  fullName: BB84.EntityFrameworkCore.Repositories
+  nameWithType: BB84.EntityFrameworkCore.Repositories
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions
+  name: BB84.EntityFrameworkCore.Repositories.Abstractions
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.html
+  commentId: N:BB84.EntityFrameworkCore.Repositories.Abstractions
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions
+  nameWithType: BB84.EntityFrameworkCore.Repositories.Abstractions
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1
+  name: IEnumeratorRepository<TEntity>
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1
+  name.vb: IEnumeratorRepository(Of TEntity)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity)
+  nameWithType: IEnumeratorRepository<TEntity>
+  nameWithType.vb: IEnumeratorRepository(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByName(System.String,System.Boolean,System.Boolean)
+  name: GetByName(string, bool, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByName_System_String_System_Boolean_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByName(System.String,System.Boolean,System.Boolean)
+  name.vb: GetByName(String, Boolean, Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByName(string, bool, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByName(String, Boolean, Boolean)
+  nameWithType: IEnumeratorRepository<TEntity>.GetByName(string, bool, bool)
+  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByName(String, Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByName*
+  name: GetByName
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByName_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByName
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByName
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByName
+  nameWithType: IEnumeratorRepository<TEntity>.GetByName
+  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByName
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNameAsync(System.String,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name: GetByNameAsync(string, bool, bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNameAsync_System_String_System_Boolean_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNameAsync(System.String,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name.vb: GetByNameAsync(String, Boolean, Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByNameAsync(string, bool, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByNameAsync(String, Boolean, Boolean, System.Threading.CancellationToken)
+  nameWithType: IEnumeratorRepository<TEntity>.GetByNameAsync(string, bool, bool, CancellationToken)
+  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByNameAsync(String, Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNameAsync*
+  name: GetByNameAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNameAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNameAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByNameAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByNameAsync
+  nameWithType: IEnumeratorRepository<TEntity>.GetByNameAsync
+  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByNameAsync
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNames(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean)
+  name: GetByNames(IEnumerable<string>, bool, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNames_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNames(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean)
+  name.vb: GetByNames(IEnumerable(Of String), Boolean, Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByNames(System.Collections.Generic.IEnumerable<string>, bool, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByNames(System.Collections.Generic.IEnumerable(Of String), Boolean, Boolean)
+  nameWithType: IEnumeratorRepository<TEntity>.GetByNames(IEnumerable<string>, bool, bool)
+  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByNames(IEnumerable(Of String), Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNames*
+  name: GetByNames
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNames_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNames
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByNames
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByNames
+  nameWithType: IEnumeratorRepository<TEntity>.GetByNames
+  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByNames
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNamesAsync(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name: GetByNamesAsync(IEnumerable<string>, bool, bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNamesAsync_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNamesAsync(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name.vb: GetByNamesAsync(IEnumerable(Of String), Boolean, Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByNamesAsync(System.Collections.Generic.IEnumerable<string>, bool, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByNamesAsync(System.Collections.Generic.IEnumerable(Of String), Boolean, Boolean, System.Threading.CancellationToken)
+  nameWithType: IEnumeratorRepository<TEntity>.GetByNamesAsync(IEnumerable<string>, bool, bool, CancellationToken)
+  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByNamesAsync(IEnumerable(Of String), Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNamesAsync*
+  name: GetByNamesAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNamesAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNamesAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByNamesAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByNamesAsync
+  nameWithType: IEnumeratorRepository<TEntity>.GetByNamesAsync
+  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByNamesAsync
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1
+  name: IGenericRepository<TEntity>
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1
+  name.vb: IGenericRepository(Of TEntity)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity)
+  nameWithType: IGenericRepository<TEntity>
+  nameWithType.vb: IGenericRepository(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean)
+  name: Count(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Count_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean)
+  name.vb: Count(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.Count(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>?, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).Count(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean)
+  nameWithType: IGenericRepository<TEntity>.Count(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool)
+  nameWithType.vb: IGenericRepository(Of TEntity).Count(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Count*
+  name: Count
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Count_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Count
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.Count
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).Count
+  nameWithType: IGenericRepository<TEntity>.Count
+  nameWithType.vb: IGenericRepository(Of TEntity).Count
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountAll(System.Boolean)
+  name: CountAll(bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountAll_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountAll(System.Boolean)
+  name.vb: CountAll(Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.CountAll(bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).CountAll(Boolean)
+  nameWithType: IGenericRepository<TEntity>.CountAll(bool)
+  nameWithType.vb: IGenericRepository(Of TEntity).CountAll(Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountAll*
+  name: CountAll
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountAll_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountAll
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.CountAll
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).CountAll
+  nameWithType: IGenericRepository<TEntity>.CountAll
+  nameWithType.vb: IGenericRepository(Of TEntity).CountAll
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountAllAsync(System.Boolean,System.Threading.CancellationToken)
+  name: CountAllAsync(bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountAllAsync_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountAllAsync(System.Boolean,System.Threading.CancellationToken)
+  name.vb: CountAllAsync(Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.CountAllAsync(bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).CountAllAsync(Boolean, System.Threading.CancellationToken)
+  nameWithType: IGenericRepository<TEntity>.CountAllAsync(bool, CancellationToken)
+  nameWithType.vb: IGenericRepository(Of TEntity).CountAllAsync(Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountAllAsync*
+  name: CountAllAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountAllAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountAllAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.CountAllAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).CountAllAsync
+  nameWithType: IGenericRepository<TEntity>.CountAllAsync
+  nameWithType.vb: IGenericRepository(Of TEntity).CountAllAsync
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Threading.CancellationToken)
+  name: CountAsync(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Threading.CancellationToken)
+  name.vb: CountAsync(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.CountAsync(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>?, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).CountAsync(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, System.Threading.CancellationToken)
+  nameWithType: IGenericRepository<TEntity>.CountAsync(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, CancellationToken)
+  nameWithType.vb: IGenericRepository(Of TEntity).CountAsync(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountAsync*
+  name: CountAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.CountAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).CountAsync
+  nameWithType: IGenericRepository<TEntity>.CountAsync
+  nameWithType.vb: IGenericRepository(Of TEntity).CountAsync
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Create(System.Collections.Generic.IEnumerable{`0})
+  name: Create(IEnumerable<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Create_System_Collections_Generic_IEnumerable__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Create(System.Collections.Generic.IEnumerable{`0})
+  name.vb: Create(IEnumerable(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.Create(System.Collections.Generic.IEnumerable<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).Create(System.Collections.Generic.IEnumerable(Of TEntity))
+  nameWithType: IGenericRepository<TEntity>.Create(IEnumerable<TEntity>)
+  nameWithType.vb: IGenericRepository(Of TEntity).Create(IEnumerable(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Create(`0)
+  name: Create(TEntity)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Create__0_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Create(`0)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.Create(TEntity)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).Create(TEntity)
+  nameWithType: IGenericRepository<TEntity>.Create(TEntity)
+  nameWithType.vb: IGenericRepository(Of TEntity).Create(TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Create*
+  name: Create
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Create_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Create
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.Create
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).Create
+  nameWithType: IGenericRepository<TEntity>.Create
+  nameWithType.vb: IGenericRepository(Of TEntity).Create
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CreateAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)
+  name: CreateAsync(IEnumerable<TEntity>, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CreateAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CreateAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)
+  name.vb: CreateAsync(IEnumerable(Of TEntity), CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.CreateAsync(System.Collections.Generic.IEnumerable<TEntity>, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).CreateAsync(System.Collections.Generic.IEnumerable(Of TEntity), System.Threading.CancellationToken)
+  nameWithType: IGenericRepository<TEntity>.CreateAsync(IEnumerable<TEntity>, CancellationToken)
+  nameWithType.vb: IGenericRepository(Of TEntity).CreateAsync(IEnumerable(Of TEntity), CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CreateAsync(`0,System.Threading.CancellationToken)
+  name: CreateAsync(TEntity, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CreateAsync__0_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CreateAsync(`0,System.Threading.CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.CreateAsync(TEntity, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).CreateAsync(TEntity, System.Threading.CancellationToken)
+  nameWithType: IGenericRepository<TEntity>.CreateAsync(TEntity, CancellationToken)
+  nameWithType.vb: IGenericRepository(Of TEntity).CreateAsync(TEntity, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CreateAsync*
+  name: CreateAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CreateAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CreateAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.CreateAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).CreateAsync
+  nameWithType: IGenericRepository<TEntity>.CreateAsync
+  nameWithType.vb: IGenericRepository(Of TEntity).CreateAsync
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Delete(System.Collections.Generic.IEnumerable{`0})
+  name: Delete(IEnumerable<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Delete_System_Collections_Generic_IEnumerable__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Delete(System.Collections.Generic.IEnumerable{`0})
+  name.vb: Delete(IEnumerable(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.Delete(System.Collections.Generic.IEnumerable<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).Delete(System.Collections.Generic.IEnumerable(Of TEntity))
+  nameWithType: IGenericRepository<TEntity>.Delete(IEnumerable<TEntity>)
+  nameWithType.vb: IGenericRepository(Of TEntity).Delete(IEnumerable(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Delete(`0)
+  name: Delete(TEntity)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Delete__0_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Delete(`0)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.Delete(TEntity)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).Delete(TEntity)
+  nameWithType: IGenericRepository<TEntity>.Delete(TEntity)
+  nameWithType.vb: IGenericRepository(Of TEntity).Delete(TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Delete*
+  name: Delete
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Delete_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Delete
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.Delete
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).Delete
+  nameWithType: IGenericRepository<TEntity>.Delete
+  nameWithType.vb: IGenericRepository(Of TEntity).Delete
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0})
+  name: DeleteAsync(IEnumerable<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync_System_Collections_Generic_IEnumerable__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0})
+  name.vb: DeleteAsync(IEnumerable(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.DeleteAsync(System.Collections.Generic.IEnumerable<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).DeleteAsync(System.Collections.Generic.IEnumerable(Of TEntity))
+  nameWithType: IGenericRepository<TEntity>.DeleteAsync(IEnumerable<TEntity>)
+  nameWithType.vb: IGenericRepository(Of TEntity).DeleteAsync(IEnumerable(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(`0)
+  name: DeleteAsync(TEntity)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync__0_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(`0)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.DeleteAsync(TEntity)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).DeleteAsync(TEntity)
+  nameWithType: IGenericRepository<TEntity>.DeleteAsync(TEntity)
+  nameWithType.vb: IGenericRepository(Of TEntity).DeleteAsync(TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync*
+  name: DeleteAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.DeleteAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).DeleteAsync
+  nameWithType: IGenericRepository<TEntity>.DeleteAsync
+  nameWithType.vb: IGenericRepository(Of TEntity).DeleteAsync
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetAll(System.Boolean,System.Boolean)
+  name: GetAll(bool, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetAll_System_Boolean_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetAll(System.Boolean,System.Boolean)
+  name.vb: GetAll(Boolean, Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetAll(bool, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetAll(Boolean, Boolean)
+  nameWithType: IGenericRepository<TEntity>.GetAll(bool, bool)
+  nameWithType.vb: IGenericRepository(Of TEntity).GetAll(Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetAll*
+  name: GetAll
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetAll_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetAll
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetAll
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetAll
+  nameWithType: IGenericRepository<TEntity>.GetAll
+  nameWithType.vb: IGenericRepository(Of TEntity).GetAll
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetAllAsync(System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name: GetAllAsync(bool, bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetAllAsync_System_Boolean_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetAllAsync(System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name.vb: GetAllAsync(Boolean, Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetAllAsync(bool, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetAllAsync(Boolean, Boolean, System.Threading.CancellationToken)
+  nameWithType: IGenericRepository<TEntity>.GetAllAsync(bool, bool, CancellationToken)
+  nameWithType.vb: IGenericRepository(Of TEntity).GetAllAsync(Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetAllAsync*
+  name: GetAllAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetAllAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetAllAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetAllAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetAllAsync
+  nameWithType: IGenericRepository<TEntity>.GetAllAsync
+  nameWithType.vb: IGenericRepository(Of TEntity).GetAllAsync
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.String[])
+  name: GetByCondition(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, bool, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.String[])
+  name.vb: GetByCondition(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetByCondition(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>?, bool, bool, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetByCondition(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, Boolean, ParamArray String())
+  nameWithType: IGenericRepository<TEntity>.GetByCondition(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, bool, params string[])
+  nameWithType.vb: IGenericRepository(Of TEntity).GetByCondition(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, ParamArray String())
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByCondition*
+  name: GetByCondition
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetByCondition_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByCondition
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetByCondition
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetByCondition
+  nameWithType: IGenericRepository<TEntity>.GetByCondition
+  nameWithType.vb: IGenericRepository(Of TEntity).GetByCondition
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name: GetByConditionAsync(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, bool, CancellationToken, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name.vb: GetByConditionAsync(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, CancellationToken, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetByConditionAsync(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>?, bool, bool, System.Threading.CancellationToken, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetByConditionAsync(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, Boolean, System.Threading.CancellationToken, ParamArray String())
+  nameWithType: IGenericRepository<TEntity>.GetByConditionAsync(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, bool, CancellationToken, params string[])
+  nameWithType.vb: IGenericRepository(Of TEntity).GetByConditionAsync(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, CancellationToken, ParamArray String())
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByConditionAsync*
+  name: GetByConditionAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetByConditionAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByConditionAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetByConditionAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetByConditionAsync
+  nameWithType: IGenericRepository<TEntity>.GetByConditionAsync
+  nameWithType.vb: IGenericRepository(Of TEntity).GetByConditionAsync
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])
+  name: GetManyByCondition(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetManyByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])
+  name.vb: GetManyByCondition(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetManyByCondition(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>?, bool, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetManyByCondition(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, ParamArray String())
+  nameWithType: IGenericRepository<TEntity>.GetManyByCondition(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
+  nameWithType.vb: IGenericRepository(Of TEntity).GetManyByCondition(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, ParamArray String())
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByCondition*
+  name: GetManyByCondition
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetManyByCondition_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByCondition
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetManyByCondition
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetManyByCondition
+  nameWithType: IGenericRepository<TEntity>.GetManyByCondition
+  nameWithType.vb: IGenericRepository(Of TEntity).GetManyByCondition
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken,System.String[])
+  name: GetManyByConditionAsync(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, CancellationToken, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetManyByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken,System.String[])
+  name.vb: GetManyByConditionAsync(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, CancellationToken, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetManyByConditionAsync(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>?, bool, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IOrderedQueryable<TEntity>>?, int?, int?, bool, System.Threading.CancellationToken, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetManyByConditionAsync(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, System.Threading.CancellationToken, ParamArray String())
+  nameWithType: IGenericRepository<TEntity>.GetManyByConditionAsync(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, CancellationToken, params string[])
+  nameWithType.vb: IGenericRepository(Of TEntity).GetManyByConditionAsync(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, CancellationToken, ParamArray String())
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByConditionAsync*
+  name: GetManyByConditionAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetManyByConditionAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByConditionAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetManyByConditionAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetManyByConditionAsync
+  nameWithType: IGenericRepository<TEntity>.GetManyByConditionAsync
+  nameWithType.vb: IGenericRepository(Of TEntity).GetManyByConditionAsync
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Update(System.Collections.Generic.IEnumerable{`0})
+  name: Update(IEnumerable<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Update_System_Collections_Generic_IEnumerable__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Update(System.Collections.Generic.IEnumerable{`0})
+  name.vb: Update(IEnumerable(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.Update(System.Collections.Generic.IEnumerable<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).Update(System.Collections.Generic.IEnumerable(Of TEntity))
+  nameWithType: IGenericRepository<TEntity>.Update(IEnumerable<TEntity>)
+  nameWithType.vb: IGenericRepository(Of TEntity).Update(IEnumerable(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Update(`0)
+  name: Update(TEntity)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Update__0_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Update(`0)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.Update(TEntity)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).Update(TEntity)
+  nameWithType: IGenericRepository<TEntity>.Update(TEntity)
+  nameWithType.vb: IGenericRepository(Of TEntity).Update(TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Update*
+  name: Update
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Update_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Update
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.Update
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).Update
+  nameWithType: IGenericRepository<TEntity>.Update
+  nameWithType.vb: IGenericRepository(Of TEntity).Update
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0})
+  name: UpdateAsync(IEnumerable<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync_System_Collections_Generic_IEnumerable__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0})
+  name.vb: UpdateAsync(IEnumerable(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.UpdateAsync(System.Collections.Generic.IEnumerable<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).UpdateAsync(System.Collections.Generic.IEnumerable(Of TEntity))
+  nameWithType: IGenericRepository<TEntity>.UpdateAsync(IEnumerable<TEntity>)
+  nameWithType.vb: IGenericRepository(Of TEntity).UpdateAsync(IEnumerable(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(`0)
+  name: UpdateAsync(TEntity)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync__0_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(`0)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.UpdateAsync(TEntity)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).UpdateAsync(TEntity)
+  nameWithType: IGenericRepository<TEntity>.UpdateAsync(TEntity)
+  nameWithType.vb: IGenericRepository(Of TEntity).UpdateAsync(TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync*
+  name: UpdateAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.UpdateAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).UpdateAsync
+  nameWithType: IGenericRepository<TEntity>.UpdateAsync
+  nameWithType.vb: IGenericRepository(Of TEntity).UpdateAsync
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`1
+  name: IIdentityRepository<TEntity>
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-1.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`1
+  name.vb: IIdentityRepository(Of TEntity)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity)
+  nameWithType: IIdentityRepository<TEntity>
+  nameWithType.vb: IIdentityRepository(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2
+  name: IIdentityRepository<TEntity, TKey>
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2
+  name.vb: IIdentityRepository(Of TEntity, TKey)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey)
+  nameWithType: IIdentityRepository<TEntity, TKey>
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetById(`1,System.Boolean,System.Boolean)
+  name: GetById(TKey, bool, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetById__1_System_Boolean_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetById(`1,System.Boolean,System.Boolean)
+  name.vb: GetById(TKey, Boolean, Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetById(TKey, bool, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetById(TKey, Boolean, Boolean)
+  nameWithType: IIdentityRepository<TEntity, TKey>.GetById(TKey, bool, bool)
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetById(TKey, Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetById*
+  name: GetById
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetById_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetById
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetById
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetById
+  nameWithType: IIdentityRepository<TEntity, TKey>.GetById
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetById
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdAsync(`1,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name: GetByIdAsync(TKey, bool, bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIdAsync__1_System_Boolean_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdAsync(`1,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name.vb: GetByIdAsync(TKey, Boolean, Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetByIdAsync(TKey, bool, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetByIdAsync(TKey, Boolean, Boolean, System.Threading.CancellationToken)
+  nameWithType: IIdentityRepository<TEntity, TKey>.GetByIdAsync(TKey, bool, bool, CancellationToken)
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetByIdAsync(TKey, Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdAsync*
+  name: GetByIdAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIdAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetByIdAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetByIdAsync
+  nameWithType: IIdentityRepository<TEntity, TKey>.GetByIdAsync
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetByIdAsync
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean)
+  name: GetByIds(IEnumerable<TKey>, bool, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIds_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean)
+  name.vb: GetByIds(IEnumerable(Of TKey), Boolean, Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetByIds(System.Collections.Generic.IEnumerable<TKey>, bool, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetByIds(System.Collections.Generic.IEnumerable(Of TKey), Boolean, Boolean)
+  nameWithType: IIdentityRepository<TEntity, TKey>.GetByIds(IEnumerable<TKey>, bool, bool)
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetByIds(IEnumerable(Of TKey), Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIds*
+  name: GetByIds
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIds_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIds
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetByIds
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetByIds
+  nameWithType: IIdentityRepository<TEntity, TKey>.GetByIds
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetByIds
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name: GetByIdsAsync(IEnumerable<TKey>, bool, bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIdsAsync_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name.vb: GetByIdsAsync(IEnumerable(Of TKey), Boolean, Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetByIdsAsync(System.Collections.Generic.IEnumerable<TKey>, bool, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetByIdsAsync(System.Collections.Generic.IEnumerable(Of TKey), Boolean, Boolean, System.Threading.CancellationToken)
+  nameWithType: IIdentityRepository<TEntity, TKey>.GetByIdsAsync(IEnumerable<TKey>, bool, bool, CancellationToken)
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetByIdsAsync(IEnumerable(Of TKey), Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdsAsync*
+  name: GetByIdsAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIdsAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdsAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetByIdsAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetByIdsAsync
+  nameWithType: IIdentityRepository<TEntity, TKey>.GetByIdsAsync
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetByIdsAsync
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1
+  name: EnumeratorRepository<TEntity>
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1
+  name.vb: EnumeratorRepository(Of TEntity)
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity)
+  nameWithType: EnumeratorRepository<TEntity>
+  nameWithType.vb: EnumeratorRepository(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)
+  name: EnumeratorRepository(DbContext)
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1__ctor_Microsoft_EntityFrameworkCore_DbContext_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)
+  name.vb: New(DbContext)
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.EnumeratorRepository(Microsoft.EntityFrameworkCore.DbContext)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).New(Microsoft.EntityFrameworkCore.DbContext)
+  nameWithType: EnumeratorRepository<TEntity>.EnumeratorRepository(DbContext)
+  nameWithType.vb: EnumeratorRepository(Of TEntity).New(DbContext)
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.#ctor*
+  name: EnumeratorRepository
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1__ctor_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.EnumeratorRepository
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).New
+  nameWithType: EnumeratorRepository<TEntity>.EnumeratorRepository
+  nameWithType.vb: EnumeratorRepository(Of TEntity).New
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByName(System.String,System.Boolean,System.Boolean)
+  name: GetByName(string, bool, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByName_System_String_System_Boolean_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByName(System.String,System.Boolean,System.Boolean)
+  name.vb: GetByName(String, Boolean, Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByName(string, bool, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByName(String, Boolean, Boolean)
+  nameWithType: EnumeratorRepository<TEntity>.GetByName(string, bool, bool)
+  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByName(String, Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByName*
+  name: GetByName
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByName_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByName
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByName
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByName
+  nameWithType: EnumeratorRepository<TEntity>.GetByName
+  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByName
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNameAsync(System.String,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name: GetByNameAsync(string, bool, bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByNameAsync_System_String_System_Boolean_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNameAsync(System.String,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name.vb: GetByNameAsync(String, Boolean, Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByNameAsync(string, bool, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByNameAsync(String, Boolean, Boolean, System.Threading.CancellationToken)
+  nameWithType: EnumeratorRepository<TEntity>.GetByNameAsync(string, bool, bool, CancellationToken)
+  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByNameAsync(String, Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNameAsync*
+  name: GetByNameAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByNameAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNameAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByNameAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByNameAsync
+  nameWithType: EnumeratorRepository<TEntity>.GetByNameAsync
+  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByNameAsync
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNames(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean)
+  name: GetByNames(IEnumerable<string>, bool, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByNames_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNames(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean)
+  name.vb: GetByNames(IEnumerable(Of String), Boolean, Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByNames(System.Collections.Generic.IEnumerable<string>, bool, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByNames(System.Collections.Generic.IEnumerable(Of String), Boolean, Boolean)
+  nameWithType: EnumeratorRepository<TEntity>.GetByNames(IEnumerable<string>, bool, bool)
+  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByNames(IEnumerable(Of String), Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNames*
+  name: GetByNames
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByNames_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNames
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByNames
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByNames
+  nameWithType: EnumeratorRepository<TEntity>.GetByNames
+  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByNames
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNamesAsync(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name: GetByNamesAsync(IEnumerable<string>, bool, bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByNamesAsync_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNamesAsync(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name.vb: GetByNamesAsync(IEnumerable(Of String), Boolean, Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByNamesAsync(System.Collections.Generic.IEnumerable<string>, bool, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByNamesAsync(System.Collections.Generic.IEnumerable(Of String), Boolean, Boolean, System.Threading.CancellationToken)
+  nameWithType: EnumeratorRepository<TEntity>.GetByNamesAsync(IEnumerable<string>, bool, bool, CancellationToken)
+  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByNamesAsync(IEnumerable(Of String), Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNamesAsync*
+  name: GetByNamesAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByNamesAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNamesAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByNamesAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByNamesAsync
+  nameWithType: EnumeratorRepository<TEntity>.GetByNamesAsync
+  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByNamesAsync
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1
+  name: GenericRepository<TEntity>
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.GenericRepository`1
+  name.vb: GenericRepository(Of TEntity)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity)
+  nameWithType: GenericRepository<TEntity>
+  nameWithType.vb: GenericRepository(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)
+  name: GenericRepository(DbContext)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1__ctor_Microsoft_EntityFrameworkCore_DbContext_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)
+  name.vb: New(DbContext)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GenericRepository(Microsoft.EntityFrameworkCore.DbContext)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).New(Microsoft.EntityFrameworkCore.DbContext)
+  nameWithType: GenericRepository<TEntity>.GenericRepository(DbContext)
+  nameWithType.vb: GenericRepository(Of TEntity).New(DbContext)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.#ctor*
+  name: GenericRepository
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1__ctor_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GenericRepository
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).New
+  nameWithType: GenericRepository<TEntity>.GenericRepository
+  nameWithType.vb: GenericRepository(Of TEntity).New
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean)
+  name: Count(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Count_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean)
+  name.vb: Count(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.Count(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>?, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).Count(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean)
+  nameWithType: GenericRepository<TEntity>.Count(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool)
+  nameWithType.vb: GenericRepository(Of TEntity).Count(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Count*
+  name: Count
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Count_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Count
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.Count
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).Count
+  nameWithType: GenericRepository<TEntity>.Count
+  nameWithType.vb: GenericRepository(Of TEntity).Count
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountAll(System.Boolean)
+  name: CountAll(bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountAll_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountAll(System.Boolean)
+  name.vb: CountAll(Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.CountAll(bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).CountAll(Boolean)
+  nameWithType: GenericRepository<TEntity>.CountAll(bool)
+  nameWithType.vb: GenericRepository(Of TEntity).CountAll(Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountAll*
+  name: CountAll
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountAll_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountAll
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.CountAll
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).CountAll
+  nameWithType: GenericRepository<TEntity>.CountAll
+  nameWithType.vb: GenericRepository(Of TEntity).CountAll
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountAllAsync(System.Boolean,System.Threading.CancellationToken)
+  name: CountAllAsync(bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountAllAsync_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountAllAsync(System.Boolean,System.Threading.CancellationToken)
+  name.vb: CountAllAsync(Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.CountAllAsync(bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).CountAllAsync(Boolean, System.Threading.CancellationToken)
+  nameWithType: GenericRepository<TEntity>.CountAllAsync(bool, CancellationToken)
+  nameWithType.vb: GenericRepository(Of TEntity).CountAllAsync(Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountAllAsync*
+  name: CountAllAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountAllAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountAllAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.CountAllAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).CountAllAsync
+  nameWithType: GenericRepository<TEntity>.CountAllAsync
+  nameWithType.vb: GenericRepository(Of TEntity).CountAllAsync
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Threading.CancellationToken)
+  name: CountAsync(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Threading.CancellationToken)
+  name.vb: CountAsync(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.CountAsync(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>?, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).CountAsync(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, System.Threading.CancellationToken)
+  nameWithType: GenericRepository<TEntity>.CountAsync(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, CancellationToken)
+  nameWithType.vb: GenericRepository(Of TEntity).CountAsync(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountAsync*
+  name: CountAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.CountAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).CountAsync
+  nameWithType: GenericRepository<TEntity>.CountAsync
+  nameWithType.vb: GenericRepository(Of TEntity).CountAsync
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Create(System.Collections.Generic.IEnumerable{`0})
+  name: Create(IEnumerable<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Create_System_Collections_Generic_IEnumerable__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Create(System.Collections.Generic.IEnumerable{`0})
+  name.vb: Create(IEnumerable(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.Create(System.Collections.Generic.IEnumerable<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).Create(System.Collections.Generic.IEnumerable(Of TEntity))
+  nameWithType: GenericRepository<TEntity>.Create(IEnumerable<TEntity>)
+  nameWithType.vb: GenericRepository(Of TEntity).Create(IEnumerable(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Create(`0)
+  name: Create(TEntity)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Create__0_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Create(`0)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.Create(TEntity)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).Create(TEntity)
+  nameWithType: GenericRepository<TEntity>.Create(TEntity)
+  nameWithType.vb: GenericRepository(Of TEntity).Create(TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Create*
+  name: Create
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Create_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Create
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.Create
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).Create
+  nameWithType: GenericRepository<TEntity>.Create
+  nameWithType.vb: GenericRepository(Of TEntity).Create
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CreateAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)
+  name: CreateAsync(IEnumerable<TEntity>, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CreateAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CreateAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)
+  name.vb: CreateAsync(IEnumerable(Of TEntity), CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.CreateAsync(System.Collections.Generic.IEnumerable<TEntity>, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).CreateAsync(System.Collections.Generic.IEnumerable(Of TEntity), System.Threading.CancellationToken)
+  nameWithType: GenericRepository<TEntity>.CreateAsync(IEnumerable<TEntity>, CancellationToken)
+  nameWithType.vb: GenericRepository(Of TEntity).CreateAsync(IEnumerable(Of TEntity), CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CreateAsync(`0,System.Threading.CancellationToken)
+  name: CreateAsync(TEntity, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CreateAsync__0_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CreateAsync(`0,System.Threading.CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.CreateAsync(TEntity, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).CreateAsync(TEntity, System.Threading.CancellationToken)
+  nameWithType: GenericRepository<TEntity>.CreateAsync(TEntity, CancellationToken)
+  nameWithType.vb: GenericRepository(Of TEntity).CreateAsync(TEntity, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CreateAsync*
+  name: CreateAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CreateAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CreateAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.CreateAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).CreateAsync
+  nameWithType: GenericRepository<TEntity>.CreateAsync
+  nameWithType.vb: GenericRepository(Of TEntity).CreateAsync
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DbContext
+  name: DbContext
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DbContext
+  commentId: P:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DbContext
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.DbContext
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).DbContext
+  nameWithType: GenericRepository<TEntity>.DbContext
+  nameWithType.vb: GenericRepository(Of TEntity).DbContext
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DbContext*
+  name: DbContext
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DbContext_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DbContext
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.DbContext
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).DbContext
+  nameWithType: GenericRepository<TEntity>.DbContext
+  nameWithType.vb: GenericRepository(Of TEntity).DbContext
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DbSet
+  name: DbSet
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DbSet
+  commentId: P:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DbSet
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.DbSet
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).DbSet
+  nameWithType: GenericRepository<TEntity>.DbSet
+  nameWithType.vb: GenericRepository(Of TEntity).DbSet
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DbSet*
+  name: DbSet
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DbSet_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DbSet
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.DbSet
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).DbSet
+  nameWithType: GenericRepository<TEntity>.DbSet
+  nameWithType.vb: GenericRepository(Of TEntity).DbSet
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Delete(System.Collections.Generic.IEnumerable{`0})
+  name: Delete(IEnumerable<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Delete_System_Collections_Generic_IEnumerable__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Delete(System.Collections.Generic.IEnumerable{`0})
+  name.vb: Delete(IEnumerable(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.Delete(System.Collections.Generic.IEnumerable<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).Delete(System.Collections.Generic.IEnumerable(Of TEntity))
+  nameWithType: GenericRepository<TEntity>.Delete(IEnumerable<TEntity>)
+  nameWithType.vb: GenericRepository(Of TEntity).Delete(IEnumerable(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Delete(`0)
+  name: Delete(TEntity)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Delete__0_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Delete(`0)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.Delete(TEntity)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).Delete(TEntity)
+  nameWithType: GenericRepository<TEntity>.Delete(TEntity)
+  nameWithType.vb: GenericRepository(Of TEntity).Delete(TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Delete*
+  name: Delete
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Delete_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Delete
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.Delete
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).Delete
+  nameWithType: GenericRepository<TEntity>.Delete
+  nameWithType.vb: GenericRepository(Of TEntity).Delete
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0})
+  name: DeleteAsync(IEnumerable<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync_System_Collections_Generic_IEnumerable__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0})
+  name.vb: DeleteAsync(IEnumerable(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.DeleteAsync(System.Collections.Generic.IEnumerable<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).DeleteAsync(System.Collections.Generic.IEnumerable(Of TEntity))
+  nameWithType: GenericRepository<TEntity>.DeleteAsync(IEnumerable<TEntity>)
+  nameWithType.vb: GenericRepository(Of TEntity).DeleteAsync(IEnumerable(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(`0)
+  name: DeleteAsync(TEntity)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync__0_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(`0)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.DeleteAsync(TEntity)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).DeleteAsync(TEntity)
+  nameWithType: GenericRepository<TEntity>.DeleteAsync(TEntity)
+  nameWithType.vb: GenericRepository(Of TEntity).DeleteAsync(TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync*
+  name: DeleteAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.DeleteAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).DeleteAsync
+  nameWithType: GenericRepository<TEntity>.DeleteAsync
+  nameWithType.vb: GenericRepository(Of TEntity).DeleteAsync
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetAll(System.Boolean,System.Boolean)
+  name: GetAll(bool, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetAll_System_Boolean_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetAll(System.Boolean,System.Boolean)
+  name.vb: GetAll(Boolean, Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetAll(bool, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetAll(Boolean, Boolean)
+  nameWithType: GenericRepository<TEntity>.GetAll(bool, bool)
+  nameWithType.vb: GenericRepository(Of TEntity).GetAll(Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetAll*
+  name: GetAll
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetAll_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetAll
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetAll
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetAll
+  nameWithType: GenericRepository<TEntity>.GetAll
+  nameWithType.vb: GenericRepository(Of TEntity).GetAll
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetAllAsync(System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name: GetAllAsync(bool, bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetAllAsync_System_Boolean_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetAllAsync(System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name.vb: GetAllAsync(Boolean, Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetAllAsync(bool, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetAllAsync(Boolean, Boolean, System.Threading.CancellationToken)
+  nameWithType: GenericRepository<TEntity>.GetAllAsync(bool, bool, CancellationToken)
+  nameWithType.vb: GenericRepository(Of TEntity).GetAllAsync(Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetAllAsync*
+  name: GetAllAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetAllAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetAllAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetAllAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetAllAsync
+  nameWithType: GenericRepository<TEntity>.GetAllAsync
+  nameWithType.vb: GenericRepository(Of TEntity).GetAllAsync
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.String[])
+  name: GetByCondition(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, bool, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.String[])
+  name.vb: GetByCondition(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetByCondition(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>?, bool, bool, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetByCondition(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, Boolean, ParamArray String())
+  nameWithType: GenericRepository<TEntity>.GetByCondition(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, bool, params string[])
+  nameWithType.vb: GenericRepository(Of TEntity).GetByCondition(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, ParamArray String())
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByCondition*
+  name: GetByCondition
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByCondition_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByCondition
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetByCondition
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetByCondition
+  nameWithType: GenericRepository<TEntity>.GetByCondition
+  nameWithType.vb: GenericRepository(Of TEntity).GetByCondition
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name: GetByConditionAsync(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, bool, CancellationToken, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name.vb: GetByConditionAsync(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, CancellationToken, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetByConditionAsync(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>?, bool, bool, System.Threading.CancellationToken, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetByConditionAsync(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, Boolean, System.Threading.CancellationToken, ParamArray String())
+  nameWithType: GenericRepository<TEntity>.GetByConditionAsync(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, bool, CancellationToken, params string[])
+  nameWithType.vb: GenericRepository(Of TEntity).GetByConditionAsync(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, CancellationToken, ParamArray String())
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByConditionAsync*
+  name: GetByConditionAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByConditionAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByConditionAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetByConditionAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetByConditionAsync
+  nameWithType: GenericRepository<TEntity>.GetByConditionAsync
+  nameWithType.vb: GenericRepository(Of TEntity).GetByConditionAsync
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])
+  name: GetManyByCondition(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])
+  name.vb: GetManyByCondition(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetManyByCondition(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>?, bool, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetManyByCondition(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, ParamArray String())
+  nameWithType: GenericRepository<TEntity>.GetManyByCondition(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
+  nameWithType.vb: GenericRepository(Of TEntity).GetManyByCondition(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, ParamArray String())
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByCondition*
+  name: GetManyByCondition
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByCondition_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByCondition
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetManyByCondition
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetManyByCondition
+  nameWithType: GenericRepository<TEntity>.GetManyByCondition
+  nameWithType.vb: GenericRepository(Of TEntity).GetManyByCondition
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken,System.String[])
+  name: GetManyByConditionAsync(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, CancellationToken, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken,System.String[])
+  name.vb: GetManyByConditionAsync(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, CancellationToken, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetManyByConditionAsync(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>?, bool, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IOrderedQueryable<TEntity>>?, int?, int?, bool, System.Threading.CancellationToken, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetManyByConditionAsync(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, System.Threading.CancellationToken, ParamArray String())
+  nameWithType: GenericRepository<TEntity>.GetManyByConditionAsync(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, CancellationToken, params string[])
+  nameWithType.vb: GenericRepository(Of TEntity).GetManyByConditionAsync(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, CancellationToken, ParamArray String())
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByConditionAsync*
+  name: GetManyByConditionAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByConditionAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByConditionAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetManyByConditionAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetManyByConditionAsync
+  nameWithType: GenericRepository<TEntity>.GetManyByConditionAsync
+  nameWithType.vb: GenericRepository(Of TEntity).GetManyByConditionAsync
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.PrepareQuery(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])
+  name: PrepareQuery(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_PrepareQuery_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.PrepareQuery(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])
+  name.vb: PrepareQuery(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.PrepareQuery(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>?, bool, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).PrepareQuery(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, ParamArray String())
+  nameWithType: GenericRepository<TEntity>.PrepareQuery(Expression<Func<TEntity, bool>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
+  nameWithType.vb: GenericRepository(Of TEntity).PrepareQuery(Expression(Of Func(Of TEntity, Boolean)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, ParamArray String())
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.PrepareQuery*
+  name: PrepareQuery
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_PrepareQuery_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.PrepareQuery
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.PrepareQuery
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).PrepareQuery
+  nameWithType: GenericRepository<TEntity>.PrepareQuery
+  nameWithType.vb: GenericRepository(Of TEntity).PrepareQuery
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Update(System.Collections.Generic.IEnumerable{`0})
+  name: Update(IEnumerable<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Update_System_Collections_Generic_IEnumerable__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Update(System.Collections.Generic.IEnumerable{`0})
+  name.vb: Update(IEnumerable(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.Update(System.Collections.Generic.IEnumerable<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).Update(System.Collections.Generic.IEnumerable(Of TEntity))
+  nameWithType: GenericRepository<TEntity>.Update(IEnumerable<TEntity>)
+  nameWithType.vb: GenericRepository(Of TEntity).Update(IEnumerable(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Update(`0)
+  name: Update(TEntity)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Update__0_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Update(`0)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.Update(TEntity)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).Update(TEntity)
+  nameWithType: GenericRepository<TEntity>.Update(TEntity)
+  nameWithType.vb: GenericRepository(Of TEntity).Update(TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Update*
+  name: Update
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Update_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Update
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.Update
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).Update
+  nameWithType: GenericRepository<TEntity>.Update
+  nameWithType.vb: GenericRepository(Of TEntity).Update
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0})
+  name: UpdateAsync(IEnumerable<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync_System_Collections_Generic_IEnumerable__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0})
+  name.vb: UpdateAsync(IEnumerable(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.UpdateAsync(System.Collections.Generic.IEnumerable<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).UpdateAsync(System.Collections.Generic.IEnumerable(Of TEntity))
+  nameWithType: GenericRepository<TEntity>.UpdateAsync(IEnumerable<TEntity>)
+  nameWithType.vb: GenericRepository(Of TEntity).UpdateAsync(IEnumerable(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(`0)
+  name: UpdateAsync(TEntity)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync__0_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(`0)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.UpdateAsync(TEntity)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).UpdateAsync(TEntity)
+  nameWithType: GenericRepository<TEntity>.UpdateAsync(TEntity)
+  nameWithType.vb: GenericRepository(Of TEntity).UpdateAsync(TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync*
+  name: UpdateAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.UpdateAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).UpdateAsync
+  nameWithType: GenericRepository<TEntity>.UpdateAsync
+  nameWithType.vb: GenericRepository(Of TEntity).UpdateAsync
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`1
+  name: IdentityRepository<TEntity>
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-1.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.IdentityRepository`1
+  name.vb: IdentityRepository(Of TEntity)
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity)
+  nameWithType: IdentityRepository<TEntity>
+  nameWithType.vb: IdentityRepository(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)
+  name: IdentityRepository(DbContext)
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-1.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_1__ctor_Microsoft_EntityFrameworkCore_DbContext_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)
+  name.vb: New(DbContext)
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity>.IdentityRepository(Microsoft.EntityFrameworkCore.DbContext)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity).New(Microsoft.EntityFrameworkCore.DbContext)
+  nameWithType: IdentityRepository<TEntity>.IdentityRepository(DbContext)
+  nameWithType.vb: IdentityRepository(Of TEntity).New(DbContext)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`1.#ctor*
+  name: IdentityRepository
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-1.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_1__ctor_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.IdentityRepository`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity>.IdentityRepository
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity).New
+  nameWithType: IdentityRepository<TEntity>.IdentityRepository
+  nameWithType.vb: IdentityRepository(Of TEntity).New
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2
+  name: IdentityRepository<TEntity, TKey>
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2
+  name.vb: IdentityRepository(Of TEntity, TKey)
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey)
+  nameWithType: IdentityRepository<TEntity, TKey>
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.#ctor(Microsoft.EntityFrameworkCore.DbContext)
+  name: IdentityRepository(DbContext)
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2__ctor_Microsoft_EntityFrameworkCore_DbContext_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.#ctor(Microsoft.EntityFrameworkCore.DbContext)
+  name.vb: New(DbContext)
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.IdentityRepository(Microsoft.EntityFrameworkCore.DbContext)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).New(Microsoft.EntityFrameworkCore.DbContext)
+  nameWithType: IdentityRepository<TEntity, TKey>.IdentityRepository(DbContext)
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).New(DbContext)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.#ctor*
+  name: IdentityRepository
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2__ctor_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.IdentityRepository
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).New
+  nameWithType: IdentityRepository<TEntity, TKey>.IdentityRepository
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).New
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetById(`1,System.Boolean,System.Boolean)
+  name: GetById(TKey, bool, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetById__1_System_Boolean_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetById(`1,System.Boolean,System.Boolean)
+  name.vb: GetById(TKey, Boolean, Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetById(TKey, bool, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetById(TKey, Boolean, Boolean)
+  nameWithType: IdentityRepository<TEntity, TKey>.GetById(TKey, bool, bool)
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetById(TKey, Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetById*
+  name: GetById
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetById_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetById
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetById
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetById
+  nameWithType: IdentityRepository<TEntity, TKey>.GetById
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetById
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdAsync(`1,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name: GetByIdAsync(TKey, bool, bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdAsync__1_System_Boolean_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdAsync(`1,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name.vb: GetByIdAsync(TKey, Boolean, Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetByIdAsync(TKey, bool, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetByIdAsync(TKey, Boolean, Boolean, System.Threading.CancellationToken)
+  nameWithType: IdentityRepository<TEntity, TKey>.GetByIdAsync(TKey, bool, bool, CancellationToken)
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetByIdAsync(TKey, Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdAsync*
+  name: GetByIdAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetByIdAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetByIdAsync
+  nameWithType: IdentityRepository<TEntity, TKey>.GetByIdAsync
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetByIdAsync
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean)
+  name: GetByIds(IEnumerable<TKey>, bool, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIds_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean)
+  name.vb: GetByIds(IEnumerable(Of TKey), Boolean, Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetByIds(System.Collections.Generic.IEnumerable<TKey>, bool, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetByIds(System.Collections.Generic.IEnumerable(Of TKey), Boolean, Boolean)
+  nameWithType: IdentityRepository<TEntity, TKey>.GetByIds(IEnumerable<TKey>, bool, bool)
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetByIds(IEnumerable(Of TKey), Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIds*
+  name: GetByIds
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIds_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIds
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetByIds
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetByIds
+  nameWithType: IdentityRepository<TEntity, TKey>.GetByIds
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetByIds
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name: GetByIdsAsync(IEnumerable<TKey>, bool, bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdsAsync_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  name.vb: GetByIdsAsync(IEnumerable(Of TKey), Boolean, Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetByIdsAsync(System.Collections.Generic.IEnumerable<TKey>, bool, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetByIdsAsync(System.Collections.Generic.IEnumerable(Of TKey), Boolean, Boolean, System.Threading.CancellationToken)
+  nameWithType: IdentityRepository<TEntity, TKey>.GetByIdsAsync(IEnumerable<TKey>, bool, bool, CancellationToken)
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetByIdsAsync(IEnumerable(Of TKey), Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdsAsync*
+  name: GetByIdsAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdsAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdsAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetByIdsAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetByIdsAsync
+  nameWithType: IdentityRepository<TEntity, TKey>.GetByIdsAsync
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetByIdsAsync
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations
+  name: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.html
+  commentId: N:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations
+  nameWithType: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`1
+  name: AuditedCompositeConfiguration<TEntity>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-1.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`1
+  name.vb: AuditedCompositeConfiguration(Of TEntity)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration<TEntity>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration(Of TEntity)
+  nameWithType: AuditedCompositeConfiguration<TEntity>
+  nameWithType.vb: AuditedCompositeConfiguration(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`3
+  name: AuditedCompositeConfiguration<TEntity, TCreated, TModified>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-3.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`3
+  name.vb: AuditedCompositeConfiguration(Of TEntity, TCreated, TModified)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration<TEntity, TCreated, TModified>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration(Of TEntity, TCreated, TModified)
+  nameWithType: AuditedCompositeConfiguration<TEntity, TCreated, TModified>
+  nameWithType.vb: AuditedCompositeConfiguration(Of TEntity, TCreated, TModified)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name: Configure(EntityTypeBuilder<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-3.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedCompositeConfiguration_3_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name.vb: Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration<TEntity, TCreated, TModified>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration(Of TEntity, TCreated, TModified).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: AuditedCompositeConfiguration<TEntity, TCreated, TModified>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: AuditedCompositeConfiguration(Of TEntity, TCreated, TModified).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`3.Configure*
+  name: Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-3.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedCompositeConfiguration_3_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`3.Configure
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration<TEntity, TCreated, TModified>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration(Of TEntity, TCreated, TModified).Configure
+  nameWithType: AuditedCompositeConfiguration<TEntity, TCreated, TModified>.Configure
+  nameWithType.vb: AuditedCompositeConfiguration(Of TEntity, TCreated, TModified).Configure
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`1
+  name: AuditedConfiguration<TEntity>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-1.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`1
+  name.vb: AuditedConfiguration(Of TEntity)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity)
+  nameWithType: AuditedConfiguration<TEntity>
+  nameWithType.vb: AuditedConfiguration(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`4
+  name: AuditedConfiguration<TEntity, TKey, TCreated, TModified>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`4
+  name.vb: AuditedConfiguration(Of TEntity, TKey, TCreated, TModified)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey, TCreated, TModified>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity, TKey, TCreated, TModified)
+  nameWithType: AuditedConfiguration<TEntity, TKey, TCreated, TModified>
+  nameWithType.vb: AuditedConfiguration(Of TEntity, TKey, TCreated, TModified)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`4.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name: Configure(EntityTypeBuilder<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_4_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`4.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name.vb: Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey, TCreated, TModified>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity, TKey, TCreated, TModified).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: AuditedConfiguration<TEntity, TKey, TCreated, TModified>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: AuditedConfiguration(Of TEntity, TKey, TCreated, TModified).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`4.Configure*
+  name: Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_4_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`4.Configure
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey, TCreated, TModified>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity, TKey, TCreated, TModified).Configure
+  nameWithType: AuditedConfiguration<TEntity, TKey, TCreated, TModified>.Configure
+  nameWithType.vb: AuditedConfiguration(Of TEntity, TKey, TCreated, TModified).Configure
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration`1
+  name: CompositeConfiguration<TEntity>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration-1.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration`1
+  name.vb: CompositeConfiguration(Of TEntity)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration<TEntity>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration(Of TEntity)
+  nameWithType: CompositeConfiguration<TEntity>
+  nameWithType.vb: CompositeConfiguration(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name: Configure(EntityTypeBuilder<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_CompositeConfiguration_1_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name.vb: Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration<TEntity>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration(Of TEntity).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: CompositeConfiguration<TEntity>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: CompositeConfiguration(Of TEntity).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration`1.Configure*
+  name: Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_CompositeConfiguration_1_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration`1.Configure
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration<TEntity>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration(Of TEntity).Configure
+  nameWithType: CompositeConfiguration<TEntity>.Configure
+  nameWithType.vb: CompositeConfiguration(Of TEntity).Configure
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`1
+  name: EnumeratorConfiguration<TEntity>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration-1.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`1
+  name.vb: EnumeratorConfiguration(Of TEntity)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration<TEntity>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration(Of TEntity)
+  nameWithType: EnumeratorConfiguration<TEntity>
+  nameWithType.vb: EnumeratorConfiguration(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name: Configure(EntityTypeBuilder<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_EnumeratorConfiguration_1_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name.vb: Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration<TEntity>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration(Of TEntity).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: EnumeratorConfiguration<TEntity>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: EnumeratorConfiguration(Of TEntity).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`1.Configure*
+  name: Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_EnumeratorConfiguration_1_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`1.Configure
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration<TEntity>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration(Of TEntity).Configure
+  nameWithType: EnumeratorConfiguration<TEntity>.Configure
+  nameWithType.vb: EnumeratorConfiguration(Of TEntity).Configure
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration`1
+  name: IdentityConfiguration<TEntity>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-1.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration`1
+  name.vb: IdentityConfiguration(Of TEntity)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration<TEntity>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration(Of TEntity)
+  nameWithType: IdentityConfiguration<TEntity>
+  nameWithType.vb: IdentityConfiguration(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration`2
+  name: IdentityConfiguration<TEntity, TKey>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-2.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration`2
+  name.vb: IdentityConfiguration(Of TEntity, TKey)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration<TEntity, TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration(Of TEntity, TKey)
+  nameWithType: IdentityConfiguration<TEntity, TKey>
+  nameWithType.vb: IdentityConfiguration(Of TEntity, TKey)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration`2.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name: Configure(EntityTypeBuilder<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-2.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_IdentityConfiguration_2_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration`2.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name.vb: Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration<TEntity, TKey>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration(Of TEntity, TKey).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: IdentityConfiguration<TEntity, TKey>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: IdentityConfiguration(Of TEntity, TKey).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration`2.Configure*
+  name: Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-2.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_IdentityConfiguration_2_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration`2.Configure
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration<TEntity, TKey>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration(Of TEntity, TKey).Configure
+  nameWithType: IdentityConfiguration<TEntity, TKey>.Configure
+  nameWithType.vb: IdentityConfiguration(Of TEntity, TKey).Configure
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions
+  name: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.html
+  commentId: N:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions
+  nameWithType: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions
+  name: EntityTypeBuilderExtensions
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions
+  nameWithType: EntityTypeBuilderExtensions
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder,System.String,System.String,System.String)
+  name: ToHistoryTable(EntityTypeBuilder, string?, string?, string)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_EntityTypeBuilderExtensions_ToHistoryTable_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder_System_String_System_String_System_String_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder,System.String,System.String,System.String)
+  name.vb: ToHistoryTable(EntityTypeBuilder, String, String, String)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder, string?, string?, string)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder, String, String, String)
+  nameWithType: EntityTypeBuilderExtensions.ToHistoryTable(EntityTypeBuilder, string?, string?, string)
+  nameWithType.vb: EntityTypeBuilderExtensions.ToHistoryTable(EntityTypeBuilder, String, String, String)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable*
+  name: ToHistoryTable
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_EntityTypeBuilderExtensions_ToHistoryTable_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable
+  nameWithType: EntityTypeBuilderExtensions.ToHistoryTable
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors
+  name: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.html
+  commentId: N:BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors
+  nameWithType: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor
+  name: SoftDeletableInterceptor
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor
+  nameWithType: SoftDeletableInterceptor
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChanges(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32})
+  name: SavingChanges(DbContextEventData, InterceptionResult<int>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_SoftDeletableInterceptor_SavingChanges_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChanges(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32})
+  name.vb: SavingChanges(DbContextEventData, InterceptionResult(Of Integer))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChanges(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData, Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult<int>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChanges(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData, Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult(Of Integer))
+  nameWithType: SoftDeletableInterceptor.SavingChanges(DbContextEventData, InterceptionResult<int>)
+  nameWithType.vb: SoftDeletableInterceptor.SavingChanges(DbContextEventData, InterceptionResult(Of Integer))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChanges*
+  name: SavingChanges
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_SoftDeletableInterceptor_SavingChanges_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChanges
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChanges
+  nameWithType: SoftDeletableInterceptor.SavingChanges
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChangesAsync(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32},System.Threading.CancellationToken)
+  name: SavingChangesAsync(DbContextEventData, InterceptionResult<int>, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_SoftDeletableInterceptor_SavingChangesAsync_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChangesAsync(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32},System.Threading.CancellationToken)
+  name.vb: SavingChangesAsync(DbContextEventData, InterceptionResult(Of Integer), CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChangesAsync(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData, Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult<int>, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChangesAsync(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData, Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult(Of Integer), System.Threading.CancellationToken)
+  nameWithType: SoftDeletableInterceptor.SavingChangesAsync(DbContextEventData, InterceptionResult<int>, CancellationToken)
+  nameWithType.vb: SoftDeletableInterceptor.SavingChangesAsync(DbContextEventData, InterceptionResult(Of Integer), CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChangesAsync*
+  name: SavingChangesAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_SoftDeletableInterceptor_SavingChangesAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChangesAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChangesAsync
+  nameWithType: SoftDeletableInterceptor.SavingChangesAsync

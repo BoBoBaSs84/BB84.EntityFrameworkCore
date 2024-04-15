@@ -1,0 +1,421 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Interface IEnumeratorRepository&lt;TEntity&gt; </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface IEnumeratorRepository&lt;TEntity&gt; ">
+      
+      <meta name="description" content="The enumerator repository interface.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/main/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1">
+
+
+
+  <h1 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1" class="text-break">
+Interface IEnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IEnumeratorRepository.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BB84.html">BB84</a>.<a class="xref" href="BB84.EntityFrameworkCore.html">EntityFrameworkCore</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.html">Repositories</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.html">Abstractions</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.Abstractions.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The enumerator repository interface.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IEnumeratorRepository&lt;TEntity&gt; : IIdentityRepository&lt;TEntity, int&gt;, IGenericRepository&lt;TEntity&gt; where TEntity : class, IEnumeratorModel</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd><p>The entity to work with.</p>
+</dd>
+  </dl>
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetById__1_System_Boolean_System_Boolean_">IIdentityRepository&lt;TEntity, int&gt;.GetById(int, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIdAsync__1_System_Boolean_System_Boolean_System_Threading_CancellationToken_">IIdentityRepository&lt;TEntity, int&gt;.GetByIdAsync(int, bool, bool, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIds_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_">IIdentityRepository&lt;TEntity, int&gt;.GetByIds(IEnumerable&lt;int&gt;, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIdsAsync_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_Threading_CancellationToken_">IIdentityRepository&lt;TEntity, int&gt;.GetByIdsAsync(IEnumerable&lt;int&gt;, bool, bool, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Create__0_">IGenericRepository&lt;TEntity&gt;.Create(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Create_System_Collections_Generic_IEnumerable__0__">IGenericRepository&lt;TEntity&gt;.Create(IEnumerable&lt;TEntity&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CreateAsync__0_System_Threading_CancellationToken_">IGenericRepository&lt;TEntity&gt;.CreateAsync(TEntity, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CreateAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_">IGenericRepository&lt;TEntity&gt;.CreateAsync(IEnumerable&lt;TEntity&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Delete__0_">IGenericRepository&lt;TEntity&gt;.Delete(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Delete_System_Collections_Generic_IEnumerable__0__">IGenericRepository&lt;TEntity&gt;.Delete(IEnumerable&lt;TEntity&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync__0_">IGenericRepository&lt;TEntity&gt;.DeleteAsync(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync_System_Collections_Generic_IEnumerable__0__">IGenericRepository&lt;TEntity&gt;.DeleteAsync(IEnumerable&lt;TEntity&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountAll_System_Boolean_">IGenericRepository&lt;TEntity&gt;.CountAll(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Count_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_">IGenericRepository&lt;TEntity&gt;.Count(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountAllAsync_System_Boolean_System_Threading_CancellationToken_">IGenericRepository&lt;TEntity&gt;.CountAllAsync(bool, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_">IGenericRepository&lt;TEntity&gt;.CountAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetAll_System_Boolean_System_Boolean_">IGenericRepository&lt;TEntity&gt;.GetAll(bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetAllAsync_System_Boolean_System_Boolean_System_Threading_CancellationToken_">IGenericRepository&lt;TEntity&gt;.GetAllAsync(bool, bool, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetManyByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___">IGenericRepository&lt;TEntity&gt;.GetManyByCondition(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, bool, params string[])</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetManyByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___">IGenericRepository&lt;TEntity&gt;.GetManyByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, bool, CancellationToken, params string[])</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_String___">IGenericRepository&lt;TEntity&gt;.GetByCondition(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, bool, params string[])</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___">IGenericRepository&lt;TEntity&gt;.GetByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, bool, CancellationToken, params string[])</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Update__0_">IGenericRepository&lt;TEntity&gt;.Update(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Update_System_Collections_Generic_IEnumerable__0__">IGenericRepository&lt;TEntity&gt;.Update(IEnumerable&lt;TEntity&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync__0_">IGenericRepository&lt;TEntity&gt;.UpdateAsync(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync_System_Collections_Generic_IEnumerable__0__">IGenericRepository&lt;TEntity&gt;.UpdateAsync(IEnumerable&lt;TEntity&gt;)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p><code class="typeparamref">TEntity</code> must implement the <a class="xref" href="BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel.html">IIdentityModel</a> interface.</p>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByName_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByName*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByName_System_String_System_Boolean_System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByName(System.String,System.Boolean,System.Boolean)">
+  GetByName(string, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IEnumeratorRepository.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an <code class="typeparamref">TEntity</code> by its name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TEntity? GetByName(string name, bool ignoreQueryFilters = false, bool trackChanges = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the <code class="typeparamref">TEntity</code>.</p>
+</dd>
+    <dt><code>ignoreQueryFilters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Should model-level entity query filters be applied?</p>
+</dd>
+    <dt><code>trackChanges</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Should the fetched entity be tracked?</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TEntity</span></dt>
+    <dd><p>The <code class="typeparamref">TEntity</code> or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNameAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNameAsync*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNameAsync_System_String_System_Boolean_System_Boolean_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNameAsync(System.String,System.Boolean,System.Boolean,System.Threading.CancellationToken)">
+  GetByNameAsync(string, bool, bool, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IEnumeratorRepository.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns an <code class="typeparamref">TEntity</code> by its name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;TEntity?&gt; GetByNameAsync(string name, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the <code class="typeparamref">TEntity</code>.</p>
+</dd>
+    <dt><code>ignoreQueryFilters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Should model-level entity query filters be applied?</p>
+</dd>
+    <dt><code>trackChanges</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Should the fetched entity be tracked?</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token to cancel the request.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TEntity&gt;</dt>
+    <dd><p>The <code class="typeparamref">TEntity</code> or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNames_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNames*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNames_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNames(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean)">
+  GetByNames(IEnumerable&lt;string&gt;, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IEnumeratorRepository.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a collection of <code class="typeparamref">TEntity</code> by their names.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;TEntity&gt; GetByNames(IEnumerable&lt;string&gt; names, bool ignoreQueryFilters = false, bool trackChanges = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>names</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>The names of the <code class="typeparamref">TEntity</code>.</p>
+</dd>
+    <dt><code>ignoreQueryFilters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Should model-level entity query filters be applied?</p>
+</dd>
+    <dt><code>trackChanges</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Should the fetched entities be tracked?</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TEntity&gt;</dt>
+    <dd><p>A collection of <code class="typeparamref">TEntity</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNamesAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNamesAsync*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNamesAsync_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNamesAsync(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean,System.Threading.CancellationToken)">
+  GetByNamesAsync(IEnumerable&lt;string&gt;, bool, bool, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IEnumeratorRepository.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a collection of <code class="typeparamref">TEntity</code> by their names.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;TEntity&gt;&gt; GetByNamesAsync(IEnumerable&lt;string&gt; names, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>names</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>The names of the <code class="typeparamref">TEntity</code>.</p>
+</dd>
+    <dt><code>ignoreQueryFilters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Should model-level entity query filters be applied?</p>
+</dd>
+    <dt><code>trackChanges</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Should the fetched entities be tracked?</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TEntity&gt;&gt;</dt>
+    <dd><p>A collection of <code class="typeparamref">TEntity</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IEnumeratorRepository.cs/#L12" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
