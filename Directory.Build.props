@@ -4,7 +4,7 @@
 		<VersionMajor>1</VersionMajor>
 		<VersionMinor>1</VersionMinor>
 		<VersionPatch>$([System.DateTime]::UtcNow.ToString("MMdd"))</VersionPatch>
-		<VersionRevision>$([System.DateTime]::UtcNow.ToString("HHmm"))</VersionRevision>
+		<VersionRevision>$([System.DateTime]::UtcNow.TimeOfDay.TotalMinutes.ToString("0"))</VersionRevision>
 		<VersionPrefix>$(VersionMajor).$(VersionMinor).$(VersionPatch).$(VersionRevision)</VersionPrefix>
 		<VersionSuffix Condition="$(Configuration.Equals('Debug'))">Development</VersionSuffix>
 		<FileVersion>$(VersionMajor).$(VersionMinor).$(VersionPatch)</FileVersion>
@@ -42,7 +42,6 @@
 		<Copyright>Copyright © $([System.DateTime]::UtcNow.Year) BoBoBaSs84</Copyright>
 		<Description>A reusable repository pattern in ASP.NET Core. Contains frequently used model and repository abstractions.</Description>
 		<Product>BB84.EntityFrameworkCore</Product>
-		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore</RepositoryUrl>
 		<Title>$(AssemblyName)</Title>
@@ -68,9 +67,9 @@
 
 	<ItemGroup Condition="!$(MSBuildProjectName.EndsWith('Tests'))">
 		<InternalsVisibleTo Include="$(AssemblyName)Tests" Key="0024000004800000940000000602000000240000525341310004000001000100698058721e036c6e68b591fd67d4d90827ea70f1075e5dee6162b7f60527c2da737406b2a05dcec35b0d583a64e57277925b2d4a26795d29c0b894d4860b03e7705d0fd215755e61e0eec86611aa383d20610cef7c1ddbe6b5fd36e9cd842b67b178a7c01e4da14f094a1f75cba97ed783d0cd0d866c0c913a94c60d69d883be" />
-		<None Include="..\..\LICENSE" Pack="True" PackagePath="" />
-		<None Include="..\..\icon.png" Pack="True" PackagePath="" />
-		<None Include="README.md" Pack="True" PackagePath="" />
+		<None Include="..\..\LICENSE" Pack="True" PackagePath="\" />
+		<None Include="..\..\icon.png" Pack="True" PackagePath="\" />
+		<None Include="README.md" Pack="True" PackagePath="\" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(MSBuildProjectName.EndsWith('Tests'))">
