@@ -5,7 +5,7 @@
 	<ItemGroup>
 		<PackageVersion Include="MSTest.TestAdapter" Version="3.4.3" />
 		<PackageVersion Include="MSTest.TestFramework" Version="3.4.3" />
-		<PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+		<PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
 		<PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
 		<PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
 		<PackageVersion Include="coverlet.collector" Version="6.0.2" />
