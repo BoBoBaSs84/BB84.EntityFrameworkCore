@@ -63,6 +63,6 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 }
 
 /// <inheritdoc/>
-public abstract class IdentityRepository<TEntity>(DbContext dbContext) : IdentityRepository<TEntity, Guid>(dbContext),
+public abstract class IdentityRepository<TEntity>(IDbContext dbContext) : IdentityRepository<TEntity, Guid>(dbContext),
 	IIdentityRepository<TEntity> where TEntity : class, IIdentityModel
 { }
