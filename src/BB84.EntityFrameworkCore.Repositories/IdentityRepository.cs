@@ -9,7 +9,7 @@ namespace BB84.EntityFrameworkCore.Repositories;
 /// The identity repository class.
 /// </summary>
 /// <inheritdoc cref="IIdentityRepository{TEntity, TKey}"/>
-public abstract class IdentityRepository<TEntity, TKey>(DbContext dbContext) : GenericRepository<TEntity>(dbContext), IIdentityRepository<TEntity, TKey>
+public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : GenericRepository<TEntity>(dbContext), IIdentityRepository<TEntity, TKey>
 	where TEntity : class, IIdentityModel<TKey>
 	where TKey : IEquatable<TKey>
 {
