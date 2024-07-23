@@ -511,6 +511,72 @@ references:
   commentId: N:BB84.EntityFrameworkCore.Repositories.Abstractions
   fullName: BB84.EntityFrameworkCore.Repositories.Abstractions
   nameWithType: BB84.EntityFrameworkCore.Repositories.Abstractions
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext
+  name: IDbContext
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext
+  nameWithType: IDbContext
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChanges
+  name: SaveChanges()
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SaveChanges
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChanges
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChanges()
+  nameWithType: IDbContext.SaveChanges()
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChanges(System.Boolean)
+  name: SaveChanges(bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SaveChanges_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChanges(System.Boolean)
+  name.vb: SaveChanges(Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChanges(bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChanges(Boolean)
+  nameWithType: IDbContext.SaveChanges(bool)
+  nameWithType.vb: IDbContext.SaveChanges(Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChanges*
+  name: SaveChanges
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SaveChanges_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChanges
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChanges
+  nameWithType: IDbContext.SaveChanges
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesAsync(System.Boolean,System.Threading.CancellationToken)
+  name: SaveChangesAsync(bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SaveChangesAsync_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesAsync(System.Boolean,System.Threading.CancellationToken)
+  name.vb: SaveChangesAsync(Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesAsync(bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesAsync(Boolean, System.Threading.CancellationToken)
+  nameWithType: IDbContext.SaveChangesAsync(bool, CancellationToken)
+  nameWithType.vb: IDbContext.SaveChangesAsync(Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesAsync(System.Threading.CancellationToken)
+  name: SaveChangesAsync(CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SaveChangesAsync_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesAsync(System.Threading.CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesAsync(System.Threading.CancellationToken)
+  nameWithType: IDbContext.SaveChangesAsync(CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesAsync*
+  name: SaveChangesAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SaveChangesAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesAsync
+  nameWithType: IDbContext.SaveChangesAsync
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Set*
+  name: Set
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_Set_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Set
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Set
+  nameWithType: IDbContext.Set
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Set``1
+  name: Set<TEntity>()
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_Set__1
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Set``1
+  name.vb: Set(Of TEntity)()
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Set<TEntity>()
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Set(Of TEntity)()
+  nameWithType: IDbContext.Set<TEntity>()
+  nameWithType.vb: IDbContext.Set(Of TEntity)()
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1
   name: IEnumeratorRepository<TEntity>
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html
@@ -1036,15 +1102,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity)
   nameWithType: EnumeratorRepository<TEntity>
   nameWithType.vb: EnumeratorRepository(Of TEntity)
-- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)
-  name: EnumeratorRepository(DbContext)
-  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1__ctor_Microsoft_EntityFrameworkCore_DbContext_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)
-  name.vb: New(DbContext)
-  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.EnumeratorRepository(Microsoft.EntityFrameworkCore.DbContext)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).New(Microsoft.EntityFrameworkCore.DbContext)
-  nameWithType: EnumeratorRepository<TEntity>.EnumeratorRepository(DbContext)
-  nameWithType.vb: EnumeratorRepository(Of TEntity).New(DbContext)
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  name: EnumeratorRepository(IDbContext)
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  name.vb: New(IDbContext)
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.EnumeratorRepository(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).New(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  nameWithType: EnumeratorRepository<TEntity>.EnumeratorRepository(IDbContext)
+  nameWithType.vb: EnumeratorRepository(Of TEntity).New(IDbContext)
 - uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.#ctor*
   name: EnumeratorRepository
   href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1__ctor_
@@ -1136,15 +1202,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity)
   nameWithType: GenericRepository<TEntity>
   nameWithType.vb: GenericRepository(Of TEntity)
-- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)
-  name: GenericRepository(DbContext)
-  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1__ctor_Microsoft_EntityFrameworkCore_DbContext_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)
-  name.vb: New(DbContext)
-  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GenericRepository(Microsoft.EntityFrameworkCore.DbContext)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).New(Microsoft.EntityFrameworkCore.DbContext)
-  nameWithType: GenericRepository<TEntity>.GenericRepository(DbContext)
-  nameWithType.vb: GenericRepository(Of TEntity).New(DbContext)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  name: GenericRepository(IDbContext)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  name.vb: New(IDbContext)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GenericRepository(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).New(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  nameWithType: GenericRepository<TEntity>.GenericRepository(IDbContext)
+  nameWithType.vb: GenericRepository(Of TEntity).New(IDbContext)
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.#ctor*
   name: GenericRepository
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1__ctor_
@@ -1279,23 +1345,6 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).CreateAsync
   nameWithType: GenericRepository<TEntity>.CreateAsync
   nameWithType.vb: GenericRepository(Of TEntity).CreateAsync
-- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DbContext
-  name: DbContext
-  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DbContext
-  commentId: P:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DbContext
-  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.DbContext
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).DbContext
-  nameWithType: GenericRepository<TEntity>.DbContext
-  nameWithType.vb: GenericRepository(Of TEntity).DbContext
-- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DbContext*
-  name: DbContext
-  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DbContext_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DbContext
-  isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.DbContext
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).DbContext
-  nameWithType: GenericRepository<TEntity>.DbContext
-  nameWithType.vb: GenericRepository(Of TEntity).DbContext
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DbSet
   name: DbSet
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DbSet
@@ -1552,15 +1601,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity)
   nameWithType: IdentityRepository<TEntity>
   nameWithType.vb: IdentityRepository(Of TEntity)
-- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)
-  name: IdentityRepository(DbContext)
-  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-1.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_1__ctor_Microsoft_EntityFrameworkCore_DbContext_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)
-  name.vb: New(DbContext)
-  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity>.IdentityRepository(Microsoft.EntityFrameworkCore.DbContext)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity).New(Microsoft.EntityFrameworkCore.DbContext)
-  nameWithType: IdentityRepository<TEntity>.IdentityRepository(DbContext)
-  nameWithType.vb: IdentityRepository(Of TEntity).New(DbContext)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`1.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  name: IdentityRepository(IDbContext)
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-1.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_1__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`1.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  name.vb: New(IDbContext)
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity>.IdentityRepository(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity).New(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  nameWithType: IdentityRepository<TEntity>.IdentityRepository(IDbContext)
+  nameWithType.vb: IdentityRepository(Of TEntity).New(IDbContext)
 - uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`1.#ctor*
   name: IdentityRepository
   href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-1.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_1__ctor_
@@ -1580,15 +1629,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey)
   nameWithType: IdentityRepository<TEntity, TKey>
   nameWithType.vb: IdentityRepository(Of TEntity, TKey)
-- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.#ctor(Microsoft.EntityFrameworkCore.DbContext)
-  name: IdentityRepository(DbContext)
-  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2__ctor_Microsoft_EntityFrameworkCore_DbContext_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.#ctor(Microsoft.EntityFrameworkCore.DbContext)
-  name.vb: New(DbContext)
-  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.IdentityRepository(Microsoft.EntityFrameworkCore.DbContext)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).New(Microsoft.EntityFrameworkCore.DbContext)
-  nameWithType: IdentityRepository<TEntity, TKey>.IdentityRepository(DbContext)
-  nameWithType.vb: IdentityRepository(Of TEntity, TKey).New(DbContext)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  name: IdentityRepository(IDbContext)
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  name.vb: New(IDbContext)
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.IdentityRepository(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).New(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  nameWithType: IdentityRepository<TEntity, TKey>.IdentityRepository(IDbContext)
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).New(IDbContext)
 - uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.#ctor*
   name: IdentityRepository
   href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2__ctor_

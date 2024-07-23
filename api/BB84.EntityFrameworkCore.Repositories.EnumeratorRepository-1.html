@@ -146,9 +146,6 @@ Class EnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-secondar
       <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdsAsync_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, int&gt;.GetByIdsAsync(IEnumerable&lt;int&gt;, bool, bool, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DbContext">GenericRepository&lt;TEntity&gt;.DbContext</a>
-    </div>
-    <div>
       <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DbSet">GenericRepository&lt;TEntity&gt;.DbSet</a>
     </div>
     <div>
@@ -257,8 +254,8 @@ Class EnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-secondar
 
   <a id="BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1__ctor_" data-uid="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.#ctor*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1__ctor_Microsoft_EntityFrameworkCore_DbContext_" data-uid="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
-  EnumeratorRepository(DbContext)
+  <h3 id="BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_" data-uid="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)">
+  EnumeratorRepository(IDbContext)
   <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/EnumeratorRepository.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -267,12 +264,12 @@ Class EnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-secondar
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected EnumeratorRepository(DbContext dbContext)</code></pre>
+    <pre><code class="lang-csharp hljs">protected EnumeratorRepository(IDbContext dbContext)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dbContext</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext">DbContext</a></dt>
+    <dt><code>dbContext</code> <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html">IDbContext</a></dt>
     <dd></dd>
   </dl>
 
@@ -283,7 +280,7 @@ Class EnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-secondar
 
 
 
-  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1__ctor_Microsoft_EntityFrameworkCore_DbContext__remarks">Remarks</h4>
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext__remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p><code class="typeparamref">TEntity</code> must implement the <a class="xref" href="BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel.html">IIdentityModel</a> interface.</p>
 </div>
 
