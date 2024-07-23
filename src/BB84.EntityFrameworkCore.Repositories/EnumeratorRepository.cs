@@ -9,7 +9,7 @@ namespace BB84.EntityFrameworkCore.Repositories;
 /// The enumerator repository class.
 /// </summary>
 /// <inheritdoc cref="IEnumeratorRepository{TEntity}"/>
-public abstract class EnumeratorRepository<TEntity>(DbContext dbContext) : IdentityRepository<TEntity, int>(dbContext),
+public abstract class EnumeratorRepository<TEntity>(IDbContext dbContext) : IdentityRepository<TEntity, int>(dbContext),
 	IEnumeratorRepository<TEntity> where TEntity : class, IEnumeratorModel
 {
 	/// <inheritdoc/>
