@@ -21,7 +21,7 @@ public abstract class AuditedConfiguration<TEntity, TKey, TCreated, TModified> :
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
 	{
 		builder.HasKey(e => e.Id)
-			.IsClustered();
+			.IsClustered(false);
 
 		builder.Property(e => e.Id)
 			.HasColumnOrder(1)
