@@ -517,6 +517,58 @@ references:
   commentId: T:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext
   fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext
   nameWithType: IDbContext
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ChangeTracker
+  name: ChangeTracker
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_ChangeTracker
+  commentId: P:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ChangeTracker
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ChangeTracker
+  nameWithType: IDbContext.ChangeTracker
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ChangeTracker*
+  name: ChangeTracker
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_ChangeTracker_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ChangeTracker
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ChangeTracker
+  nameWithType: IDbContext.ChangeTracker
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ContextId
+  name: ContextId
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_ContextId
+  commentId: P:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ContextId
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ContextId
+  nameWithType: IDbContext.ContextId
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ContextId*
+  name: ContextId
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_ContextId_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ContextId
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ContextId
+  nameWithType: IDbContext.ContextId
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Database
+  name: Database
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_Database
+  commentId: P:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Database
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Database
+  nameWithType: IDbContext.Database
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Database*
+  name: Database
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_Database_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Database
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Database
+  nameWithType: IDbContext.Database
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Model
+  name: Model
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_Model
+  commentId: P:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Model
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Model
+  nameWithType: IDbContext.Model
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Model*
+  name: Model
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_Model_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Model
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Model
+  nameWithType: IDbContext.Model
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChanges
   name: SaveChanges()
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SaveChanges
@@ -561,6 +613,24 @@ references:
   isSpec: "True"
   fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesAsync
   nameWithType: IDbContext.SaveChangesAsync
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesFailed
+  name: SaveChangesFailed
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SaveChangesFailed
+  commentId: E:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesFailed
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesFailed
+  nameWithType: IDbContext.SaveChangesFailed
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SavedChanges
+  name: SavedChanges
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SavedChanges
+  commentId: E:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SavedChanges
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SavedChanges
+  nameWithType: IDbContext.SavedChanges
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SavingChanges
+  name: SavingChanges
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SavingChanges
+  commentId: E:BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SavingChanges
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SavingChanges
+  nameWithType: IDbContext.SavingChanges
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Set*
   name: Set
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_Set_

@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext" class="text-break">
-Interface IDbContext  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L12"><i class="bi bi-code-slash"></i></a>
+Interface IDbContext  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -98,7 +98,7 @@ Interface IDbContext  <a class="header-action link-secondary" title="View source
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IDbContext : IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IDbContext : IAsyncDisposable, IDisposable</code></pre>
   </div>
 
 
@@ -110,6 +110,9 @@ Interface IDbContext  <a class="header-action link-secondary" title="View source
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync">IAsyncDisposable.DisposeAsync()</a>
+    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable.dispose">IDisposable.Dispose()</a>
     </div>
@@ -123,6 +126,149 @@ Interface IDbContext  <a class="header-action link-secondary" title="View source
 </div>
 
 
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_ChangeTracker_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ChangeTracker*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_ChangeTracker" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ChangeTracker">
+  ChangeTracker
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Provides access to information and operations for entity instances this context is tracking.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ChangeTracker ChangeTracker { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.changetracking.changetracker">ChangeTracker</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_ChangeTracker_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>See <a href="https://aka.ms/efcore-docs-change-tracking">EF Core change tracking</a> for more information and examples.</p>
+</div>
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_ContextId_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ContextId*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_ContextId" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.ContextId">
+  ContextId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A unique identifier for the context instance and pool lease, if any.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">DbContextId ContextId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontextid">DbContextId</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_ContextId_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This identifier is primarily intended as a correlation ID for logging and debugging such
+that it is easy to identify that multiple events are using the same or different context instances.</p>
+</div>
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_Database_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Database*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_Database" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Database">
+  Database
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Provides access to database related information and operations for this context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">DatabaseFacade Database { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.infrastructure.databasefacade">DatabaseFacade</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_Model_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Model*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_Model" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Model">
+  Model
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The metadata about the shape of entities, the relationships between them, and how they map to the database.
+May not include all the information necessary to initialize the database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IModel Model { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.imodel">IModel</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_Model_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>See <a href="https://aka.ms/efcore-docs-modeling">Modeling entity types and relationships</a> for more information and examples.</p>
+</div>
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -131,7 +277,7 @@ Interface IDbContext  <a class="header-action link-secondary" title="View source
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SaveChanges" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChanges">
   SaveChanges()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Saves all changes made in this context to the database.</p>
@@ -192,7 +338,7 @@ This is usually because the data in the database has been modified since it was 
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SaveChanges_System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChanges(System.Boolean)">
   SaveChanges(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Saves all changes made in this context to the database.</p>
@@ -260,7 +406,7 @@ This is usually because the data in the database has been modified since it was 
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SaveChangesAsync_System_Boolean_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesAsync(System.Boolean,System.Threading.CancellationToken)">
   SaveChangesAsync(bool, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Saves all changes made in this context to the database.</p>
@@ -335,7 +481,7 @@ This is usually because the data in the database has been modified since it was 
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SaveChangesAsync_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesAsync(System.Threading.CancellationToken)">
   SaveChangesAsync(CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Saves all changes made in this context to the database.</p>
@@ -406,7 +552,7 @@ This is usually because the data in the database has been modified since it was 
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_Set__1" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.Set``1">
   Set&lt;TEntity&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet&lt;TEntity&gt;</a> that can be used to query and save instances of <code class="typeparamref">TEntity</code>.</p>
@@ -454,11 +600,120 @@ This is usually because the data in the database has been modified since it was 
 
 
 
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SaveChangesFailed" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SaveChangesFailed">
+  SaveChangesFailed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>An event fired if a call to <see cref="O:SaveChanges"></see> or <see cref="O:SaveChangesAsync"></see> fails with an exception.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event EventHandler&lt;SaveChangesFailedEventArgs&gt;? SaveChangesFailed</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.savechangesfailedeventargs">SaveChangesFailedEventArgs</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SaveChangesFailed_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>See <a href="https://aka.ms/efcore-docs-saving-data">Saving data in EF Core</a> and
+<a href="https://aka.ms/efcore-docs-events">EF Core events</a> for more information and examples.</p>
+</div>
+
+
+
+
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SavedChanges" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SavedChanges">
+  SavedChanges
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>An event fired at the end of a call to <see cref="O:SaveChanges"></see> or <see cref="O:SaveChangesAsync"></see></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event EventHandler&lt;SavedChangesEventArgs&gt;? SavedChanges</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.savedchangeseventargs">SavedChangesEventArgs</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SavedChanges_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>See <a href="https://aka.ms/efcore-docs-saving-data">Saving data in EF Core</a> and
+<a href="https://aka.ms/efcore-docs-events">EF Core events</a> for more information and examples.</p>
+</div>
+
+
+
+
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SavingChanges" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.SavingChanges">
+  SavingChanges
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>An event fired at the beginning of a call to <see cref="O:SaveChanges"></see> or <see cref="O:SaveChangesAsync"></see></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event EventHandler&lt;SavingChangesEventArgs&gt;? SavingChanges</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.savingchangeseventargs">SavingChangesEventArgs</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_SavingChanges_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>See <a href="https://aka.ms/efcore-docs-saving-data">Saving data in EF Core</a> and
+<a href="https://aka.ms/efcore-docs-events">EF Core events</a> for more information and examples.</p>
+</div>
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L12" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/Abstractions/IDbContext.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
 
