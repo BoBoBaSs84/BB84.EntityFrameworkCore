@@ -2,7 +2,7 @@
 
 	<PropertyGroup Label="Versioning">
 		<VersionMajor>1</VersionMajor>
-		<VersionMinor>2</VersionMinor>
+		<VersionMinor>3</VersionMinor>
 		<VersionPatch>$([System.DateTime]::UtcNow.ToString("MMdd"))</VersionPatch>
 		<VersionRevision>$([System.DateTime]::UtcNow.TimeOfDay.TotalMinutes.ToString("0"))</VersionRevision>
 		<VersionPrefix>$(VersionMajor).$(VersionMinor).$(VersionPatch).$(VersionRevision)</VersionPrefix>
@@ -37,13 +37,14 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="!$(MSBuildProjectName.EndsWith('Tests'))" Label="MetaData">
-		<Authors>BoBoBaSs84</Authors>
-		<Company>https://github.com/BoBoBaSs84</Company>
-		<Copyright>Copyright © $([System.DateTime]::UtcNow.Year) BoBoBaSs84</Copyright>
-		<Description>A reusable repository pattern in ASP.NET Core. Contains frequently used model and repository abstractions.</Description>
+		<Author>BoBoBaSs84</Author>
+		<Authors>$(Author)</Authors>
+		<Company>https://github.com/$(Author)</Company>
+		<Copyright>Copyright © $([System.DateTime]::UtcNow.Year) $(Author)</Copyright>
+		<Description>A reusable repository pattern in ASP.NET Core. Contains frequently used model abstraction, their standard implementations and repository abstractions with their standard implementation.</Description>
 		<Product>BB84.EntityFrameworkCore</Product>
 		<RepositoryType>git</RepositoryType>
-		<RepositoryUrl>https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore</RepositoryUrl>
+		<RepositoryUrl>https://github.com/$(Author)/$(Product)</RepositoryUrl>
 		<Title>$(AssemblyName)</Title>
 	</PropertyGroup>
 
