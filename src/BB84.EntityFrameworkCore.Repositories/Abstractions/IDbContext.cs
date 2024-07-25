@@ -11,6 +11,15 @@ namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 /// </remarks>
 public interface IDbContext : IDisposable
 {
+	/// <inheritdoc cref="DbContext.SavingChanges"/>
+	event EventHandler<SavingChangesEventArgs>? SavingChanges;
+	
+	/// <inheritdoc cref="DbContext.SavedChanges"/>
+	event EventHandler<SavedChangesEventArgs>? SavedChanges;
+	
+	/// <inheritdoc cref="DbContext.SaveChangesFailed"/>
+	event EventHandler<SaveChangesFailedEventArgs>? SaveChangesFailed;
+
 	/// <inheritdoc cref="DbContext.Set{TEntity}()"/>
 	DbSet<TEntity> Set<TEntity>() where TEntity : class;
 
