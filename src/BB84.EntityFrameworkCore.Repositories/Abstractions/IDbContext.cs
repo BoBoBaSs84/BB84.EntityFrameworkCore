@@ -1,5 +1,8 @@
 ﻿#pragma warning disable CA1716 // Identifiers should not match keywords
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 
@@ -9,16 +12,28 @@ namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 /// <remarks>
 /// Every custom database context should inherit from this interface.
 /// </remarks>
-public interface IDbContext : IDisposable
+public interface IDbContext : IAsyncDisposable, IDisposable
 {
 	/// <inheritdoc cref="DbContext.SavingChanges"/>
 	event EventHandler<SavingChangesEventArgs>? SavingChanges;
-	
+
 	/// <inheritdoc cref="DbContext.SavedChanges"/>
 	event EventHandler<SavedChangesEventArgs>? SavedChanges;
-	
+
 	/// <inheritdoc cref="DbContext.SaveChangesFailed"/>
 	event EventHandler<SaveChangesFailedEventArgs>? SaveChangesFailed;
+
+	/// <inheritdoc cref="DbContext.ChangeTracker"/>
+	ChangeTracker ChangeTracker { get; }
+
+	/// <inheritdoc cref="DbContext.ContextId"/>
+	DbContextId ContextId { get; }
+
+	/// <inheritdoc cref="DbContext.Database"/>
+	DatabaseFacade Database { get; }
+
+	/// <inheritdoc cref="DbContext.Model"/>
+	IModel Model { get; }
 
 	/// <inheritdoc cref="DbContext.Set{TEntity}()"/>
 	DbSet<TEntity> Set<TEntity>() where TEntity : class;
