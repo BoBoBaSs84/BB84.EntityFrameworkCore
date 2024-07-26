@@ -43,6 +43,22 @@ public abstract class AuditedConfiguration<TEntity, TKey, TCreated, TModified> :
 }
 
 /// <inheritdoc/>
+[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity> : AuditedConfiguration<TEntity, Guid, string, string?>,
 	IEntityTypeConfiguration<TEntity> where TEntity : class, IAuditedModel
-{ }
+{
+	/// <inheritdoc/>
+	public override void Configure(EntityTypeBuilder<TEntity> builder)
+	{
+		base.Configure(builder);
+
+		builder.Property(p => p.Id)
+			.HasDefaultValueSql("NEWID()");
+
+		builder.Property(e => e.CreatedBy)
+			.HasColumnType("sysname");
+
+		builder.Property(e => e.ModifiedBy)
+			.HasColumnType("sysname");
+	}
+}

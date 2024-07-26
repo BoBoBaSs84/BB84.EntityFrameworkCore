@@ -35,6 +35,18 @@ public abstract class AuditedCompositeConfiguration<TEntity, TCreated, TModified
 }
 
 /// <inheritdoc/>
+[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedCompositeConfiguration<TEntity> : AuditedCompositeConfiguration<TEntity, string, string?>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IAuditedCompositeModel
-{ }
+{
+	public override void Configure(EntityTypeBuilder<TEntity> builder)
+	{
+		base.Configure(builder);
+
+		builder.Property(e => e.CreatedBy)
+			.HasColumnType("sysname");
+
+		builder.Property(e => e.ModifiedBy)
+			.HasColumnType("sysname");
+	}
+}
