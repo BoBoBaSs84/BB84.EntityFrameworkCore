@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using BB84.EntityFrameworkCore.Models.Abstractions.Components;
+﻿using BB84.EntityFrameworkCore.Models.Abstractions.Components;
 
 namespace BB84.EntityFrameworkCore.Models.Abstractions;
 
