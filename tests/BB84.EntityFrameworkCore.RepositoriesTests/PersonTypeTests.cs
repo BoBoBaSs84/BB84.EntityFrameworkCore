@@ -93,7 +93,7 @@ public sealed class PersonTypeTests : UnitTestBase
 		Assert.IsNotNull(result);
 
 		repository.Delete(result);
-		dbContext.SaveChanges();
+		_ = dbContext.SaveChanges();
 		Assert.IsTrue(result.IsDeleted);
 	}
 
@@ -107,7 +107,7 @@ public sealed class PersonTypeTests : UnitTestBase
 		Assert.IsNotNull(result);
 
 		await repository.DeleteAsync(result);
-		await dbContext.SaveChangesAsync();
+		_ = await dbContext.SaveChangesAsync();
 		Assert.IsTrue(result.IsDeleted);
 	}
 }

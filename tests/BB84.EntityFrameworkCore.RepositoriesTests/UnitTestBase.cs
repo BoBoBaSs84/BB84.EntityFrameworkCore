@@ -15,7 +15,7 @@ public abstract class UnitTestBase
 	{
 		using TestDbContext dbContext = new(GetContextOptions(), Interceptor);
 
-		dbContext.Database.EnsureCreated();
+		_ = dbContext.Database.EnsureCreated();
 	}
 
 	[AssemblyCleanup]
@@ -23,7 +23,7 @@ public abstract class UnitTestBase
 	{
 		using TestDbContext dbContext = new(GetContextOptions(), Interceptor);
 
-		dbContext.Database.EnsureDeleted();
+		_ = dbContext.Database.EnsureDeleted();
 	}
 
 	public static DbContextOptions<TestDbContext> GetContextOptions()
