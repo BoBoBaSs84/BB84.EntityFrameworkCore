@@ -1805,6 +1805,24 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration(Of TEntity)
   nameWithType: AuditedCompositeConfiguration<TEntity>
   nameWithType.vb: AuditedCompositeConfiguration(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name: Configure(EntityTypeBuilder<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedCompositeConfiguration_1_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name.vb: Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration<TEntity>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration(Of TEntity).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: AuditedCompositeConfiguration<TEntity>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: AuditedCompositeConfiguration(Of TEntity).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`1.Configure*
+  name: Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedCompositeConfiguration_1_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`1.Configure
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration<TEntity>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration(Of TEntity).Configure
+  nameWithType: AuditedCompositeConfiguration<TEntity>.Configure
+  nameWithType.vb: AuditedCompositeConfiguration(Of TEntity).Configure
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`3
   name: AuditedCompositeConfiguration<TEntity, TCreated, TModified>
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-3.html
@@ -1841,6 +1859,24 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity)
   nameWithType: AuditedConfiguration<TEntity>
   nameWithType.vb: AuditedConfiguration(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name: Configure(EntityTypeBuilder<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_1_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name.vb: Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: AuditedConfiguration<TEntity>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: AuditedConfiguration(Of TEntity).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`1.Configure*
+  name: Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_1_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`1.Configure
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity).Configure
+  nameWithType: AuditedConfiguration<TEntity>.Configure
+  nameWithType.vb: AuditedConfiguration(Of TEntity).Configure
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`4
   name: AuditedConfiguration<TEntity, TKey, TCreated, TModified>
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.html
@@ -1931,6 +1967,24 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration(Of TEntity)
   nameWithType: IdentityConfiguration<TEntity>
   nameWithType.vb: IdentityConfiguration(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name: Configure(EntityTypeBuilder<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_IdentityConfiguration_1_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name.vb: Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration<TEntity>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration(Of TEntity).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: IdentityConfiguration<TEntity>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: IdentityConfiguration(Of TEntity).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration`1.Configure*
+  name: Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_IdentityConfiguration_1_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration`1.Configure
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration<TEntity>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration(Of TEntity).Configure
+  nameWithType: IdentityConfiguration<TEntity>.Configure
+  nameWithType.vb: IdentityConfiguration(Of TEntity).Configure
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration`2
   name: IdentityConfiguration<TEntity, TKey>
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-2.html
