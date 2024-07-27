@@ -12,7 +12,7 @@ internal sealed class PersonJobConfiguration : AuditedCompositeConfiguration<Per
 	{
 		base.Configure(builder);
 
-		builder.HasKey(e => new { e.PersonId, e.JobId })
+		_ = builder.HasKey(e => new { e.PersonId, e.JobId })
 			.IsClustered();
 	}
 }

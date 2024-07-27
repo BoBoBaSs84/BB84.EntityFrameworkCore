@@ -12,6 +12,6 @@ internal sealed class PersonConfiguration : AuditedConfiguration<Person>
 	{
 		base.Configure(builder);
 
-		builder.ToHistoryTable();
+		_ = builder.ToHistoryTable();
 	}
 }

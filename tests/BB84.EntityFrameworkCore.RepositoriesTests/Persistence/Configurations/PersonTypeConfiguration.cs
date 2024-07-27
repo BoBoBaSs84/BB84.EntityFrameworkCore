@@ -9,7 +9,7 @@ internal sealed class PersonTypeConfiguration : EnumeratorConfiguration<PersonTy
 {
 	public override void Configure(EntityTypeBuilder<PersonType> builder)
 	{
-		builder.HasData(new List<PersonType>()
+		_ = builder.HasData(new List<PersonType>()
 		{
 			new()
 			{

@@ -10,6 +10,6 @@ internal sealed class JobTypeConfiguration : CompositeConfiguration<JobType>
 	{
 		base.Configure(builder);
 
-		builder.HasNoKey();
+		_ = builder.HasNoKey();
 	}
 }

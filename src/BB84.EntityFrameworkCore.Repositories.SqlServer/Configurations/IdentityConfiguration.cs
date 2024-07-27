@@ -35,6 +35,16 @@ public abstract class IdentityConfiguration<TEntity, TKey> : IEntityTypeConfigur
 }
 
 /// <inheritdoc/>
+[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class IdentityConfiguration<TEntity> : IdentityConfiguration<TEntity, Guid>,
 	IEntityTypeConfiguration<TEntity> where TEntity : class, IIdentityModel
-{ }
+{
+	/// <inheritdoc/>
+	public override void Configure(EntityTypeBuilder<TEntity> builder)
+	{
+		base.Configure(builder);
+
+		builder.Property(p => p.Id)
+			.HasDefaultValueSql("NEWID()");
+	}
+}
