@@ -32,11 +32,11 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 
 	/// <inheritdoc/>
 	public async Task CreateAsync(TEntity entity, CancellationToken cancellationToken = default)
-		=> await DbSet.AddAsync(entity, cancellationToken);
+		=> await DbSet.AddAsync(entity, cancellationToken).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public async Task CreateAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
-		=> await DbSet.AddRangeAsync(entities, cancellationToken);
+		=> await DbSet.AddRangeAsync(entities, cancellationToken).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public int CountAll(bool ignoreQueryFilters = false)
@@ -67,7 +67,8 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 			ignoreQueryFilters: ignoreQueryFilters
 			);
 
-		return await query.CountAsync(cancellationToken);
+		return await query.CountAsync(cancellationToken)
+			.ConfigureAwait(false);
 	}
 
 	/// <inheritdoc/>
@@ -79,7 +80,8 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 			ignoreQueryFilters: ignoreQueryFilters
 			);
 
-		return await query.CountAsync(cancellationToken);
+		return await query.CountAsync(cancellationToken)
+			.ConfigureAwait(false);
 	}
 
 	/// <inheritdoc/>
@@ -144,7 +146,8 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 			trackChanges: trackChanges
 			);
 
-		return await query.ToListAsync(cancellationToken);
+		return await query.ToListAsync(cancellationToken)
+			.ConfigureAwait(false);
 	}
 
 	/// <inheritdoc/>
@@ -178,7 +181,8 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 			includeProperties: includeProperties
 			);
 
-		return await query.ToListAsync(cancellationToken);
+		return await query.ToListAsync(cancellationToken)
+			.ConfigureAwait(false);
 	}
 
 	/// <inheritdoc/>
@@ -206,7 +210,8 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 			includeProperties: includeProperties
 			);
 
-		return await query.FirstOrDefaultAsync(cancellationToken);
+		return await query.FirstOrDefaultAsync(cancellationToken)
+			.ConfigureAwait(false);
 	}
 
 	/// <inheritdoc/>
