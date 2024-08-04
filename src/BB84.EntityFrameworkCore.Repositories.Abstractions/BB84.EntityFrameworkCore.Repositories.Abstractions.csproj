@@ -3,6 +3,9 @@
 		<Description>This package contains frequently used repository abstractions.</Description>
 	</PropertyGroup>
 	<ItemGroup>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
+	</ItemGroup>
+	<ItemGroup>
 		<ProjectReference Include="..\BB84.EntityFrameworkCore.Models.Abstractions\BB84.EntityFrameworkCore.Models.Abstractions.csproj" />
 	</ItemGroup>
 </Project>
