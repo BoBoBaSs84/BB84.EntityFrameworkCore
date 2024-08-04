@@ -8,6 +8,52 @@ namespace BB84.EntityFrameworkCore.RepositoriesTests;
 public sealed class PersonTests : UnitTestBase
 {
 	[TestMethod]
+	public void DeleteByIdTest()
+	{
+		using TestDbContext dbContext = GetTestContext();
+		PersonRepository repository = new(dbContext);
+
+		int deleted = repository.DeleteById(Guid.NewGuid());
+
+		Assert.AreEqual(0, deleted);
+	}
+
+	[TestMethod]
+	public void DeleteByIdsTest()
+	{
+		using TestDbContext dbContext = GetTestContext();
+		PersonRepository repository = new(dbContext);
+
+		int deleted = repository.DeleteByIds([Guid.NewGuid(), Guid.NewGuid()]);
+
+		Assert.AreEqual(0, deleted);
+	}
+
+	[TestMethod]
+	public async Task DeleteByIdAsyncTest()
+	{
+		using TestDbContext dbContext = GetTestContext();
+		PersonRepository repository = new(dbContext);
+
+		int deleted = await repository.DeleteByIdAsync(Guid.NewGuid())
+			.ConfigureAwait(false);
+
+		Assert.AreEqual(0, deleted);
+	}
+
+	[TestMethod]
+	public async Task DeleteByIdsAsyncTest()
+	{
+		using TestDbContext dbContext = GetTestContext();
+		PersonRepository repository = new(dbContext);
+
+		int deleted = await repository.DeleteByIdsAsync([Guid.NewGuid(), Guid.NewGuid()])
+			.ConfigureAwait(false);
+
+		Assert.AreEqual(0, deleted);
+	}
+
+	[TestMethod]
 	public void GetByIdTest()
 	{
 		using TestDbContext dbContext = GetTestContext();

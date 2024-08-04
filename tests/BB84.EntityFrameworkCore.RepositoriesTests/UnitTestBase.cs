@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace BB84.EntityFrameworkCore.RepositoriesTests;
 
 [TestClass]
+[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, unit testing.")]
 public abstract class UnitTestBase
 {
 	private static readonly SoftDeletableInterceptor Interceptor = new();
@@ -15,7 +16,7 @@ public abstract class UnitTestBase
 	{
 		using TestDbContext dbContext = new(GetContextOptions(), Interceptor);
 
-		_ = dbContext.Database.EnsureCreated();
+		dbContext.Database.EnsureCreated();
 	}
 
 	[AssemblyCleanup]
@@ -23,7 +24,7 @@ public abstract class UnitTestBase
 	{
 		using TestDbContext dbContext = new(GetContextOptions(), Interceptor);
 
-		_ = dbContext.Database.EnsureDeleted();
+		dbContext.Database.EnsureDeleted();
 	}
 
 	public static DbContextOptions<TestDbContext> GetContextOptions()
