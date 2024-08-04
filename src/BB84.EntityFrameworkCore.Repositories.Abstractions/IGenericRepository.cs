@@ -1,5 +1,7 @@
 ﻿using System.Linq.Expressions;
 
+using Microsoft.EntityFrameworkCore.Query;
+
 namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 /// <summary>
@@ -49,6 +51,14 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	void Delete(IEnumerable<TEntity> entities);
 
 	/// <summary>
+	/// Deletes all database rows for the entity instances which match the <paramref name="expression"/>
+	/// from the database.
+	/// </summary>
+	/// <param name="expression">The condition to fulfill to be deleted.</param>
+	/// <returns>The total number of rows deleted in the database.</returns>
+	int Delete(Expression<Func<TEntity, bool>>? expression);
+
+	/// <summary>
 	/// Deletes an <typeparamref name="TEntity"/>.
 	/// </summary>
 	/// <param name="entity">The <typeparamref name="TEntity"/> to delete.</param>
@@ -61,6 +71,15 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// <param name="entities">The collection of <typeparamref name="TEntity"/> to delete.</param>
 	/// <returns><see cref="Task"/></returns>
 	Task DeleteAsync(IEnumerable<TEntity> entities);
+
+	/// <summary>
+	/// Deletes all database rows for the entity instances which match the <paramref name="expression"/>
+	/// from the database.
+	/// </summary>
+	/// <param name="expression">The condition to fulfill to be deleted.</param>
+	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <returns>The total number of rows deleted in the database.</returns>
+	Task<int> DeleteAsync(Expression<Func<TEntity, bool>>? expression, CancellationToken cancellationToken = default);
 
 	/// <summary>
 	/// Returns the total number of <typeparamref name="TEntity"/>.
@@ -223,6 +242,18 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	void Update(IEnumerable<TEntity> entities);
 
 	/// <summary>
+	/// Updates all database rows for the entity instances which match the <paramref name="expression"/>
+	/// from the database.
+	/// </summary>
+	/// <param name="expression">The condition to fulfill to be updated.</param>
+	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
+	/// <returns>The total number of rows updated in the database.</returns>
+	int Update(
+		Expression<Func<TEntity, bool>> expression,
+		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls
+		);
+
+	/// <summary>
 	/// Updates an <typeparamref name="TEntity"/>.
 	/// </summary>
 	/// <param name="entity">The <typeparamref name="TEntity"/> to update.</param>
@@ -235,4 +266,18 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// <param name="entities">The collection of <typeparamref name="TEntity"/> to update.</param>
 	/// <returns><see cref="Task"/></returns>
 	Task UpdateAsync(IEnumerable<TEntity> entities);
+
+	/// <summary>
+	/// Updates all database rows for the entity instances which match the <paramref name="expression"/>
+	/// from the database.
+	/// </summary>
+	/// <param name="expression">The condition to fulfill to be updated.</param>
+	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
+	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <returns>The total number of rows updated in the database.</returns>
+	Task<int> UpdateAsync(
+		Expression<Func<TEntity, bool>> expression,
+		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
+		CancellationToken cancellationToken = default
+		);
 }

@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace BB84.EntityFrameworkCore.Repositories;
 
@@ -90,6 +91,16 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		=> DbSet.RemoveRange(entities);
 
 	/// <inheritdoc/>
+	public int Delete(Expression<Func<TEntity, bool>>? expression)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression
+			);
+
+		return query.ExecuteDelete();
+	}
+
+	/// <inheritdoc/>
 	public Task DeleteAsync(TEntity entity)
 	{
 		DbSet.Remove(entity);
@@ -101,6 +112,17 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	{
 		DbSet.RemoveRange(entities);
 		return Task.CompletedTask;
+	}
+
+	/// <inheritdoc/>
+	public async Task<int> DeleteAsync(Expression<Func<TEntity, bool>>? expression, CancellationToken cancellationToken = default)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression
+			);
+
+		return await query.ExecuteDeleteAsync(cancellationToken)
+			.ConfigureAwait(false);
 	}
 
 	/// <inheritdoc/>
@@ -196,6 +218,16 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		=> DbSet.UpdateRange(entities);
 
 	/// <inheritdoc/>
+	public int Update(Expression<Func<TEntity, bool>> expression, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression
+			);
+
+		return query.ExecuteUpdate(setPropertyCalls);
+	}
+
+	/// <inheritdoc/>
 	public Task UpdateAsync(TEntity entity)
 	{
 		DbSet.Update(entity);
@@ -207,6 +239,17 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	{
 		DbSet.UpdateRange(entities);
 		return Task.CompletedTask;
+	}
+
+	/// <inheritdoc/>
+	public async Task<int> UpdateAsync(Expression<Func<TEntity, bool>> expression, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls, CancellationToken cancellationToken = default)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression
+			);
+
+		return await query.ExecuteUpdateAsync(setPropertyCalls, cancellationToken)
+			.ConfigureAwait(false);
 	}
 
 	/// <summary>
