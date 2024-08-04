@@ -133,8 +133,8 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// <param name="queryFilter">The function used to filter the entities.</param>
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
 	/// <param name="orderBy">The function used to order the entities.</param>
-	/// <param name="take">The number of records to limit the results to.</param>
 	/// <param name="skip">The number of records to skip.</param>
+	/// <param name="take">The number of records to limit the results to.</param>
 	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
 	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
 	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
@@ -143,8 +143,8 @@ public interface IGenericRepository<TEntity> where TEntity : class
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
 		bool ignoreQueryFilters = false,
 		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
-		int? take = null,
 		int? skip = null,
+		int? take = null,
 		bool trackChanges = false,
 		params string[] includeProperties
 		);
@@ -156,8 +156,8 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// <param name="queryFilter">The function used to filter the entities.</param>
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
 	/// <param name="orderBy">The function used to order the entities.</param>
-	/// <param name="take">The number of records to limit the results to.</param>
 	/// <param name="skip">The number of records to skip.</param>
+	/// <param name="take">The number of records to limit the results to.</param>
 	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
 	/// <param name="cancellationToken">The cancellation token.</param>
 	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
@@ -167,8 +167,8 @@ public interface IGenericRepository<TEntity> where TEntity : class
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
 		bool ignoreQueryFilters = false,
 		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
-		int? take = null,
 		int? skip = null,
+		int? take = null,
 		bool trackChanges = false,
 		CancellationToken cancellationToken = default,
 		params string[] includeProperties

@@ -126,15 +126,15 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
-	public IEnumerable<TEntity> GetManyByCondition(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? take = null, int? skip = null, bool trackChanges = false, params string[] includeProperties)
+	public IEnumerable<TEntity> GetManyByCondition(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: expression,
 			queryFilter: queryFilter,
 			ignoreQueryFilters: ignoreQueryFilters,
 			orderBy: orderBy,
-			take: take,
 			skip: skip,
+			take: take,
 			trackChanges: trackChanges,
 			includeProperties: includeProperties
 			);
@@ -143,15 +143,15 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
-	public async Task<IEnumerable<TEntity>> GetManyByConditionAsync(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? take = null, int? skip = null, bool trackChanges = false, CancellationToken cancellationToken = default, params string[] includeProperties)
+	public async Task<IEnumerable<TEntity>> GetManyByConditionAsync(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, CancellationToken cancellationToken = default, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: expression,
 			queryFilter: queryFilter,
 			ignoreQueryFilters: ignoreQueryFilters,
 			orderBy: orderBy,
-			take: take,
 			skip: skip,
+			take: take,
 			trackChanges: trackChanges,
 			includeProperties: includeProperties
 			);
@@ -221,7 +221,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
 	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
 	/// <returns>A <see cref="IQueryable"/> of type <typeparamref name="TEntity"/>.</returns>
-	protected IQueryable<TEntity> PrepareQuery(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? take = null, int? skip = null, bool trackChanges = false, params string[] includeProperties)
+	protected IQueryable<TEntity> PrepareQuery(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = !trackChanges ? DbSet.AsNoTracking() : DbSet;
 
