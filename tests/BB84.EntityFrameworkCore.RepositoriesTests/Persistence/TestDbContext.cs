@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BB84.EntityFrameworkCore.RepositoriesTests.Persistence;
 
+[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, unit testing.")]
 public sealed class TestDbContext(DbContextOptions<TestDbContext> options, SoftDeletableInterceptor softDeletableInterceptor) : DbContext(options), ITestDbContext
 {
 	private readonly SoftDeletableInterceptor _softDeletableInterceptor = softDeletableInterceptor;
@@ -16,12 +17,12 @@ public sealed class TestDbContext(DbContextOptions<TestDbContext> options, SoftD
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
 		base.OnModelCreating(modelBuilder);
-		_ = modelBuilder.ApplyConfigurationsFromAssembly(typeof(UnitTestBase).Assembly);
+		modelBuilder.ApplyConfigurationsFromAssembly(typeof(UnitTestBase).Assembly);
 	}
 
 	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 	{
 		base.OnConfiguring(optionsBuilder);
-		_ = optionsBuilder.AddInterceptors(_softDeletableInterceptor);
+		optionsBuilder.AddInterceptors(_softDeletableInterceptor);
 	}
 }

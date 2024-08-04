@@ -84,7 +84,7 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 
 	/// <inheritdoc/>
 	public int Update(TKey id, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls)
-		=> Update(x => x.Equals(id), setPropertyCalls);
+		=> Update(x => x.Id.Equals(id), setPropertyCalls);
 
 	/// <inheritdoc/>
 	public int Update(IEnumerable<TKey> ids, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls)
