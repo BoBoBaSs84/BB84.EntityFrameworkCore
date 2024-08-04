@@ -13,7 +13,7 @@ public sealed class PersonTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
-		int deleted = repository.DeleteById(Guid.NewGuid());
+		int deleted = repository.Delete(Guid.NewGuid());
 
 		Assert.AreEqual(0, deleted);
 	}
@@ -24,7 +24,7 @@ public sealed class PersonTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
-		int deleted = repository.DeleteByIds([Guid.NewGuid(), Guid.NewGuid()]);
+		int deleted = repository.Delete([Guid.NewGuid(), Guid.NewGuid()]);
 
 		Assert.AreEqual(0, deleted);
 	}
@@ -35,7 +35,7 @@ public sealed class PersonTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
-		int deleted = await repository.DeleteByIdAsync(Guid.NewGuid())
+		int deleted = await repository.DeleteAsync(Guid.NewGuid())
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(0, deleted);
@@ -47,7 +47,7 @@ public sealed class PersonTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
-		int deleted = await repository.DeleteByIdsAsync([Guid.NewGuid(), Guid.NewGuid()])
+		int deleted = await repository.DeleteAsync([Guid.NewGuid(), Guid.NewGuid()])
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(0, deleted);

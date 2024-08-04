@@ -12,25 +12,23 @@ namespace BB84.EntityFrameworkCore.Repositories;
 /// The identity repository class.
 /// </summary>
 /// <inheritdoc cref="IIdentityRepository{TEntity, TKey}"/>
-public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : GenericRepository<TEntity>(dbContext), IIdentityRepository<TEntity, TKey>
-	where TEntity : class, IIdentityModel<TKey>
-	where TKey : IEquatable<TKey>
+public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : GenericRepository<TEntity>(dbContext), IIdentityRepository<TEntity, TKey> where TEntity : class, IIdentityModel<TKey> where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
-	public int DeleteById(TKey id)
+	public int Delete(TKey id)
 		=> Delete(x => x.Id.Equals(id));
 
 	/// <inheritdoc/>
-	public int DeleteByIds(IEnumerable<TKey> ids)
+	public int Delete(IEnumerable<TKey> ids)
 		=> Delete(x => ids.Contains(x.Id));
 
 	/// <inheritdoc/>
-	public async Task<int> DeleteByIdAsync(TKey id, CancellationToken cancellationToken = default)
-		=> await DeleteAsync(x => x.Id.Equals(id), cancellationToken).ConfigureAwait(false);
+	public async Task<int> DeleteAsync(TKey id, CancellationToken token = default)
+		=> await DeleteAsync(x => x.Id.Equals(id), token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public async Task<int> DeleteByIdsAsync(IEnumerable<TKey> ids, CancellationToken cancellationToken = default)
-		=> await DeleteAsync(x => ids.Contains(x.Id), cancellationToken).ConfigureAwait(false);
+	public async Task<int> DeleteAsync(IEnumerable<TKey> ids, CancellationToken token = default)
+		=> await DeleteAsync(x => ids.Contains(x.Id), token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public TEntity? GetById(TKey id, bool ignoreQueryFilters = false, bool trackChanges = false)
@@ -45,7 +43,7 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 	}
 
 	/// <inheritdoc/>
-	public async Task<TEntity?> GetByIdAsync(TKey id, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)
+	public async Task<TEntity?> GetByIdAsync(TKey id, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: x => x.Id.Equals(id),
@@ -53,7 +51,7 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 			trackChanges: trackChanges
 			);
 
-		return await query.SingleOrDefaultAsync(cancellationToken)
+		return await query.SingleOrDefaultAsync(token)
 			.ConfigureAwait(false);
 	}
 
@@ -70,7 +68,7 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 	}
 
 	/// <inheritdoc/>
-	public async Task<IEnumerable<TEntity>> GetByIdsAsync(IEnumerable<TKey> ids, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)
+	public async Task<IEnumerable<TEntity>> GetByIdsAsync(IEnumerable<TKey> ids, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: x => ids.Contains(x.Id),
@@ -78,7 +76,7 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 			trackChanges: trackChanges
 			);
 
-		return await query.ToListAsync(cancellationToken)
+		return await query.ToListAsync(token)
 			.ConfigureAwait(false);
 	}
 
@@ -91,15 +89,14 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 		=> Update(x => ids.Equals(x.Id), setPropertyCalls);
 
 	/// <inheritdoc/>
-	public async Task<int> UpdateAsync(TKey id, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls, CancellationToken cancellationToken = default)
-		=> await UpdateAsync(x => x.Id.Equals(id), setPropertyCalls, cancellationToken).ConfigureAwait(false);
+	public async Task<int> UpdateAsync(TKey id, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls, CancellationToken token = default)
+		=> await UpdateAsync(x => x.Id.Equals(id), setPropertyCalls, token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public async Task<int> UpdateAsync(IEnumerable<TKey> ids, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls, CancellationToken cancellationToken = default)
-		=> await UpdateAsync(x => ids.Contains(x.Id), setPropertyCalls, cancellationToken).ConfigureAwait(false);
+	public async Task<int> UpdateAsync(IEnumerable<TKey> ids, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls, CancellationToken token = default)
+		=> await UpdateAsync(x => ids.Contains(x.Id), setPropertyCalls, token).ConfigureAwait(false);
 }
 
 /// <inheritdoc/>
-public abstract class IdentityRepository<TEntity>(IDbContext dbContext) : IdentityRepository<TEntity, Guid>(dbContext),
-	IIdentityRepository<TEntity> where TEntity : class, IIdentityModel
+public abstract class IdentityRepository<TEntity>(IDbContext dbContext) : IdentityRepository<TEntity, Guid>(dbContext), IIdentityRepository<TEntity> where TEntity : class, IIdentityModel
 { }

@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 
 using BB84.EntityFrameworkCore.Repositories.Abstractions;
 
@@ -13,7 +12,6 @@ namespace BB84.EntityFrameworkCore.Repositories;
 /// </summary>
 /// <inheritdoc cref="IGenericRepository{TEntity}"/>
 /// <param name="dbContext">The database context to work with.</param>	
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, generic repository.")]
 public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGenericRepository<TEntity> where TEntity : class
 {
 	/// <summary>
@@ -31,12 +29,12 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		=> DbSet.AddRange(entities);
 
 	/// <inheritdoc/>
-	public async Task CreateAsync(TEntity entity, CancellationToken cancellationToken = default)
-		=> await DbSet.AddAsync(entity, cancellationToken).ConfigureAwait(false);
+	public async Task CreateAsync(TEntity entity, CancellationToken token = default)
+		=> await DbSet.AddAsync(entity, token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public async Task CreateAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
-		=> await DbSet.AddRangeAsync(entities, cancellationToken).ConfigureAwait(false);
+	public async Task CreateAsync(IEnumerable<TEntity> entities, CancellationToken token = default)
+		=> await DbSet.AddRangeAsync(entities, token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public int CountAll(bool ignoreQueryFilters = false)
@@ -61,18 +59,18 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
-	public async Task<int> CountAllAsync(bool ignoreQueryFilters = false, CancellationToken cancellationToken = default)
+	public async Task<int> CountAllAsync(bool ignoreQueryFilters = false, CancellationToken token = default)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			ignoreQueryFilters: ignoreQueryFilters
 			);
 
-		return await query.CountAsync(cancellationToken)
+		return await query.CountAsync(token)
 			.ConfigureAwait(false);
 	}
 
 	/// <inheritdoc/>
-	public async Task<int> CountAsync(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, CancellationToken cancellationToken = default)
+	public async Task<int> CountAsync(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, CancellationToken token = default)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: expression,
@@ -80,7 +78,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 			ignoreQueryFilters: ignoreQueryFilters
 			);
 
-		return await query.CountAsync(cancellationToken)
+		return await query.CountAsync(token)
 			.ConfigureAwait(false);
 	}
 
@@ -94,38 +92,19 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 
 	/// <inheritdoc/>
 	public int Delete(Expression<Func<TEntity, bool>>? expression)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression
-			);
-
-		return query.ExecuteDelete();
-	}
+		=> PrepareQuery(expression).ExecuteDelete();
 
 	/// <inheritdoc/>
-	public Task DeleteAsync(TEntity entity)
-	{
-		DbSet.Remove(entity);
-		return Task.CompletedTask;
-	}
+	public async Task DeleteAsync(TEntity entity, CancellationToken token = default)
+		=> await Task.Run(() => DbSet.Remove(entity), token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public Task DeleteAsync(IEnumerable<TEntity> entities)
-	{
-		DbSet.RemoveRange(entities);
-		return Task.CompletedTask;
-	}
+	public async Task DeleteAsync(IEnumerable<TEntity> entities, CancellationToken token = default)
+		=> await Task.Run(() => DbSet.RemoveRange(entities), token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public async Task<int> DeleteAsync(Expression<Func<TEntity, bool>>? expression, CancellationToken cancellationToken = default)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression
-			);
-
-		return await query.ExecuteDeleteAsync(cancellationToken)
-			.ConfigureAwait(false);
-	}
+	public async Task<int> DeleteAsync(Expression<Func<TEntity, bool>>? expression, CancellationToken token = default)
+		=> await PrepareQuery(expression).ExecuteDeleteAsync(token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public IEnumerable<TEntity> GetAll(bool ignoreQueryFilters = false, bool trackChanges = false)
@@ -139,14 +118,14 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
-	public async Task<IEnumerable<TEntity>> GetAllAsync(bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)
+	public async Task<IEnumerable<TEntity>> GetAllAsync(bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			ignoreQueryFilters: ignoreQueryFilters,
 			trackChanges: trackChanges
 			);
 
-		return await query.ToListAsync(cancellationToken)
+		return await query.ToListAsync(token)
 			.ConfigureAwait(false);
 	}
 
@@ -168,7 +147,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
-	public async Task<IEnumerable<TEntity>> GetManyByConditionAsync(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, CancellationToken cancellationToken = default, params string[] includeProperties)
+	public async Task<IEnumerable<TEntity>> GetManyByConditionAsync(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: expression,
@@ -181,7 +160,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 			includeProperties: includeProperties
 			);
 
-		return await query.ToListAsync(cancellationToken)
+		return await query.ToListAsync(token)
 			.ConfigureAwait(false);
 	}
 
@@ -200,7 +179,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
-	public async Task<TEntity?> GetByConditionAsync(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default, params string[] includeProperties)
+	public async Task<TEntity?> GetByConditionAsync(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: expression,
@@ -210,7 +189,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 			includeProperties: includeProperties
 			);
 
-		return await query.FirstOrDefaultAsync(cancellationToken)
+		return await query.FirstOrDefaultAsync(token)
 			.ConfigureAwait(false);
 	}
 
@@ -224,38 +203,19 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 
 	/// <inheritdoc/>
 	public int Update(Expression<Func<TEntity, bool>> expression, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression
-			);
-
-		return query.ExecuteUpdate(setPropertyCalls);
-	}
+		=> PrepareQuery(expression).ExecuteUpdate(setPropertyCalls);
 
 	/// <inheritdoc/>
-	public Task UpdateAsync(TEntity entity)
-	{
-		DbSet.Update(entity);
-		return Task.CompletedTask;
-	}
+	public async Task UpdateAsync(TEntity entity, CancellationToken token = default)
+		=> await Task.Run(() => DbSet.Update(entity), token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public Task UpdateAsync(IEnumerable<TEntity> entities)
-	{
-		DbSet.UpdateRange(entities);
-		return Task.CompletedTask;
-	}
+	public async Task UpdateAsync(IEnumerable<TEntity> entities, CancellationToken token = default)
+		=> await Task.Run(() => DbSet.UpdateRange(entities), token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public async Task<int> UpdateAsync(Expression<Func<TEntity, bool>> expression, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls, CancellationToken cancellationToken = default)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression
-			);
-
-		return await query.ExecuteUpdateAsync(setPropertyCalls, cancellationToken)
-			.ConfigureAwait(false);
-	}
+	public async Task<int> UpdateAsync(Expression<Func<TEntity, bool>> expression, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls, CancellationToken token = default)
+		=> await PrepareQuery(expression).ExecuteUpdateAsync(setPropertyCalls, token).ConfigureAwait(false);
 
 	/// <summary>
 	/// Prepares the <see cref="IQueryable"/> of type <typeparamref name="TEntity"/> before it gets executed.

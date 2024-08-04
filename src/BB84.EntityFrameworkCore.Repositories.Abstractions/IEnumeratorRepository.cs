@@ -12,7 +12,7 @@ namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 public interface IEnumeratorRepository<TEntity> : IIdentityRepository<TEntity, int> where TEntity : class, IEnumeratorModel
 {
 	/// <summary>
-	/// Returns an <typeparamref name="TEntity"/> by its name.
+	/// Returns an <typeparamref name="TEntity"/> by its name or <see langword="null"/>.
 	/// </summary>
 	/// <param name="name">The name of the <typeparamref name="TEntity"/>.</param>
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
@@ -25,7 +25,7 @@ public interface IEnumeratorRepository<TEntity> : IIdentityRepository<TEntity, i
 		);
 
 	/// <summary>
-	/// Returns an <typeparamref name="TEntity"/> by its name.
+	/// Returns an <typeparamref name="TEntity"/> by its name or <see langword="null"/>.
 	/// </summary>
 	/// <param name="name">The name of the <typeparamref name="TEntity"/>.</param>
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
@@ -40,7 +40,7 @@ public interface IEnumeratorRepository<TEntity> : IIdentityRepository<TEntity, i
 		);
 
 	/// <summary>
-	/// Returns a collection of <typeparamref name="TEntity"/> by their names.
+	/// Returns a collection of <typeparamref name="TEntity"/> by their names or an empty result.
 	/// </summary>
 	/// <param name="names">The names of the <typeparamref name="TEntity"/>.</param>
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
@@ -53,7 +53,7 @@ public interface IEnumeratorRepository<TEntity> : IIdentityRepository<TEntity, i
 		);
 
 	/// <summary>
-	/// Returns a collection of <typeparamref name="TEntity"/> by their names.
+	/// Returns a collection of <typeparamref name="TEntity"/> by their names or an empty result.
 	/// </summary>
 	/// <param name="names">The names of the <typeparamref name="TEntity"/>.</param>
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>

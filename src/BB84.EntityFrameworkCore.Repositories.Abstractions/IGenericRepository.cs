@@ -11,75 +11,77 @@ namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 public interface IGenericRepository<TEntity> where TEntity : class
 {
 	/// <summary>
-	/// Creates an <typeparamref name="TEntity"/>.
+	/// Creates a new database row for the <typeparamref name="TEntity"/> instance.
 	/// </summary>
 	/// <param name="entity">The <typeparamref name="TEntity"/> to create.</param>
 	void Create(TEntity entity);
 
 	/// <summary>
-	/// Creates a collection of <typeparamref name="TEntity"/>.
+	/// Creates multiple new database rows for the <typeparamref name="TEntity"/> instance.
 	/// </summary>
 	/// <param name="entities">The collection of <typeparamref name="TEntity"/> to create.</param>
 	void Create(IEnumerable<TEntity> entities);
 
 	/// <summary>
-	/// Creates an <typeparamref name="TEntity"/>.
+	/// Creates a new database row for the <typeparamref name="TEntity"/> instance.
 	/// </summary>
 	/// <param name="entity">The <typeparamref name="TEntity"/> to create.</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns><see cref="Task"/></returns>
-	Task CreateAsync(TEntity entity, CancellationToken cancellationToken = default);
+	Task CreateAsync(TEntity entity, CancellationToken token = default);
 
 	/// <summary>
-	/// Creates a collection of <typeparamref name="TEntity"/>.
+	/// Creates multiple new database rows for the <typeparamref name="TEntity"/> instance.
 	/// </summary>
 	/// <param name="entities">The collection of <typeparamref name="TEntity"/> to create.</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns><see cref="Task"/></returns>
-	Task CreateAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default);
+	Task CreateAsync(IEnumerable<TEntity> entities, CancellationToken token = default);
 
 	/// <summary>
-	/// Deletes an <typeparamref name="TEntity"/>.
+	/// Deletes an existing database row for the <typeparamref name="TEntity"/> instance.
 	/// </summary>
 	/// <param name="entity">The <typeparamref name="TEntity"/> to delete.</param>
 	void Delete(TEntity entity);
 
 	/// <summary>
-	/// Deletes a collection of <typeparamref name="TEntity"/>.
+	/// Deletes multiple existing database rows for the <typeparamref name="TEntity"/> instance.
 	/// </summary>
 	/// <param name="entities">The collection of <typeparamref name="TEntity"/> to delete.</param>
 	void Delete(IEnumerable<TEntity> entities);
 
 	/// <summary>
-	/// Deletes all database rows for the entity instances which match the <paramref name="expression"/>
-	/// from the database.
+	/// Deletes all database rows for the <typeparamref name="TEntity"/> instances which match
+	/// the <paramref name="expression"/> from the database.
 	/// </summary>
 	/// <param name="expression">The condition to fulfill to be deleted.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
 	int Delete(Expression<Func<TEntity, bool>>? expression);
 
 	/// <summary>
-	/// Deletes an <typeparamref name="TEntity"/>.
+	/// Deletes an existing database row for the <typeparamref name="TEntity"/> instance.
 	/// </summary>
 	/// <param name="entity">The <typeparamref name="TEntity"/> to delete.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns><see cref="Task"/></returns>
-	Task DeleteAsync(TEntity entity);
+	Task DeleteAsync(TEntity entity, CancellationToken token = default);
 
 	/// <summary>
-	/// Deletes a collection of <typeparamref name="TEntity"/>.
+	/// Deletes multiple existing database rows for the <typeparamref name="TEntity"/> instance.
 	/// </summary>
 	/// <param name="entities">The collection of <typeparamref name="TEntity"/> to delete.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns><see cref="Task"/></returns>
-	Task DeleteAsync(IEnumerable<TEntity> entities);
+	Task DeleteAsync(IEnumerable<TEntity> entities, CancellationToken token = default);
 
 	/// <summary>
-	/// Deletes all database rows for the entity instances which match the <paramref name="expression"/>
-	/// from the database.
+	/// Deletes all database rows for the <typeparamref name="TEntity"/> instances which match
+	/// the <paramref name="expression"/> from the database.
 	/// </summary>
 	/// <param name="expression">The condition to fulfill to be deleted.</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
-	Task<int> DeleteAsync(Expression<Func<TEntity, bool>>? expression, CancellationToken cancellationToken = default);
+	Task<int> DeleteAsync(Expression<Func<TEntity, bool>>? expression, CancellationToken token = default);
 
 	/// <summary>
 	/// Returns the total number of <typeparamref name="TEntity"/>.
@@ -105,9 +107,9 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// Returns the total number of <typeparamref name="TEntity"/>.
 	/// </summary>
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of <typeparamref name="TEntity"/>.</returns>
-	Task<int> CountAllAsync(bool ignoreQueryFilters = false, CancellationToken cancellationToken = default);
+	Task<int> CountAllAsync(bool ignoreQueryFilters = false, CancellationToken token = default);
 
 	/// <summary>
 	/// Returns the number of <typeparamref name="TEntity"/> based on the specified <paramref name="expression"/>.
@@ -115,13 +117,13 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// <param name="expression">The condition to fulfill to be counted.</param>
 	/// <param name="queryFilter">The function used to filter the entities.</param>
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The number of <typeparamref name="TEntity"/>.</returns>
 	Task<int> CountAsync(
 		Expression<Func<TEntity, bool>>? expression = null,
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
 		bool ignoreQueryFilters = false,
-		CancellationToken cancellationToken = default
+		CancellationToken token = default
 		);
 
 	/// <summary>
@@ -137,12 +139,12 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// </summary>
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
 	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>A colection of <typeparamref name="TEntity"/>.</returns>
 	Task<IEnumerable<TEntity>> GetAllAsync(
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
-		CancellationToken cancellationToken = default
+		CancellationToken token = default
 		);
 
 	/// <summary>
@@ -178,7 +180,7 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// <param name="skip">The number of records to skip.</param>
 	/// <param name="take">The number of records to limit the results to.</param>
 	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
-	/// <param name="cancellationToken">The cancellation token.</param>
+	/// <param name="token">The cancellation token.</param>
 	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
 	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
 	Task<IEnumerable<TEntity>> GetManyByConditionAsync(
@@ -189,7 +191,7 @@ public interface IGenericRepository<TEntity> where TEntity : class
 		int? skip = null,
 		int? take = null,
 		bool trackChanges = false,
-		CancellationToken cancellationToken = default,
+		CancellationToken token = default,
 		params string[] includeProperties
 		);
 
@@ -217,7 +219,7 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// <param name="queryFilter">The function used to filter the entities.</param>
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
 	/// <param name="trackChanges">Should the fetched entity be tracked?</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <param name="includeProperties">Any other navigation properties to include when returning the entity.</param>
 	/// <returns>The found <typeparamref name="TEntity"/> or <see langword="null"/>.</returns>
 	Task<TEntity?> GetByConditionAsync(
@@ -225,25 +227,25 @@ public interface IGenericRepository<TEntity> where TEntity : class
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
-		CancellationToken cancellationToken = default,
+		CancellationToken token = default,
 		params string[] includeProperties
 		);
 
 	/// <summary>
-	/// Updates an <typeparamref name="TEntity"/>.
+	/// Updates an existing database row for the <typeparamref name="TEntity"/> instance.
 	/// </summary>
 	/// <param name="entity">The <typeparamref name="TEntity"/> to update.</param>
 	void Update(TEntity entity);
 
 	/// <summary>
-	/// Updates a collection of <typeparamref name="TEntity"/>.
+	/// Updates multiple existing database rows for the <typeparamref name="TEntity"/> instance.
 	/// </summary>
 	/// <param name="entities">The collection of <typeparamref name="TEntity"/> to update.</param>
 	void Update(IEnumerable<TEntity> entities);
 
 	/// <summary>
-	/// Updates all database rows for the entity instances which match the <paramref name="expression"/>
-	/// from the database.
+	/// Updates all database rows for the <typeparamref name="TEntity"/> instances which match
+	/// the <paramref name="expression"/> from the database.
 	/// </summary>
 	/// <param name="expression">The condition to fulfill to be updated.</param>
 	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
@@ -254,30 +256,32 @@ public interface IGenericRepository<TEntity> where TEntity : class
 		);
 
 	/// <summary>
-	/// Updates an <typeparamref name="TEntity"/>.
+	/// Updates an existing database row for the <typeparamref name="TEntity"/> instance.
 	/// </summary>
 	/// <param name="entity">The <typeparamref name="TEntity"/> to update.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns><see cref="Task"/></returns>
-	Task UpdateAsync(TEntity entity);
+	Task UpdateAsync(TEntity entity, CancellationToken token = default);
 
 	/// <summary>
-	/// Updates a collection of <typeparamref name="TEntity"/>.
+	/// Updates multiple existing database rows for the <typeparamref name="TEntity"/> instance.
 	/// </summary>
 	/// <param name="entities">The collection of <typeparamref name="TEntity"/> to update.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns><see cref="Task"/></returns>
-	Task UpdateAsync(IEnumerable<TEntity> entities);
+	Task UpdateAsync(IEnumerable<TEntity> entities, CancellationToken token = default);
 
 	/// <summary>
-	/// Updates all database rows for the entity instances which match the <paramref name="expression"/>
-	/// from the database.
+	/// Updates all database rows for the <typeparamref name="TEntity"/> instances which match
+	/// the <paramref name="expression"/> from the database.
 	/// </summary>
 	/// <param name="expression">The condition to fulfill to be updated.</param>
 	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of rows updated in the database.</returns>
 	Task<int> UpdateAsync(
 		Expression<Func<TEntity, bool>> expression,
 		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
-		CancellationToken cancellationToken = default
+		CancellationToken token = default
 		);
 }

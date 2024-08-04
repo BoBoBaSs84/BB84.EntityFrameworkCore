@@ -14,43 +14,41 @@ namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 /// <remarks>
 /// <typeparamref name="TEntity"/> must implement the <see cref="IIdentityModel"/> interface.
 /// </remarks>
-public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity>
-	where TEntity : class, IIdentityModel<TKey>
-	where TKey : IEquatable<TKey>
+public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity> where TEntity : class, IIdentityModel<TKey> where TKey : IEquatable<TKey>
 {
 	/// <summary>
-	/// Deletes a database rows for the entity instances which matches the <paramref name="id"/>
-	/// from the database.
+	/// Deletes the database row for the <typeparamref name="TEntity"/> instance which matches
+	/// the <paramref name="id"/> from the database.
 	/// </summary>
 	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
-	int DeleteById(TKey id);
+	int Delete(TKey id);
 
 	/// <summary>
-	/// Deletes all database rows for the entity instances which matches the <paramref name="ids"/>
-	/// from the database.
+	/// Deletes all database rows for the <typeparamref name="TEntity"/> instances which matches
+	/// the <paramref name="ids"/> from the database.
 	/// </summary>
 	/// <param name="ids">The primary keys of the <typeparamref name="TEntity"/>.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
-	int DeleteByIds(IEnumerable<TKey> ids);
+	int Delete(IEnumerable<TKey> ids);
 
 	/// <summary>
-	/// Deletes a database rows for the entity instances which matches the <paramref name="id"/>
-	/// from the database.
+	/// Deletes the database row for the <typeparamref name="TEntity"/> instance which matches
+	/// the <paramref name="id"/> from the database.
 	/// </summary>
 	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
-	Task<int> DeleteByIdAsync(TKey id, CancellationToken cancellationToken = default);
+	Task<int> DeleteAsync(TKey id, CancellationToken token = default);
 
 	/// <summary>
-	/// Deletes all database rows for the entity instances which matches the <paramref name="ids"/>
-	/// from the database.
+	/// Deletes all database rows for the <typeparamref name="TEntity"/> instances which matches
+	/// the <paramref name="ids"/> from the database.
 	/// </summary>
 	/// <param name="ids">The primary keys of the <typeparamref name="TEntity"/>.</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
-	Task<int> DeleteByIdsAsync(IEnumerable<TKey> ids, CancellationToken cancellationToken = default);
+	Task<int> DeleteAsync(IEnumerable<TKey> ids, CancellationToken token = default);
 
 	/// <summary>
 	/// Returns an <typeparamref name="TEntity"/> by its primary key.
@@ -71,13 +69,13 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
 	/// <param name="trackChanges">Should the fetched entity be tracked?</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The <typeparamref name="TEntity"/> or <see langword="null"/>.</returns>
 	Task<TEntity?> GetByIdAsync(
 		TKey id,
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
-		CancellationToken cancellationToken = default
+		CancellationToken token = default
 		);
 
 	/// <summary>
@@ -99,18 +97,18 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// <param name="ids">The primary key of the <typeparamref name="TEntity"/>.</param>
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
 	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
 	Task<IEnumerable<TEntity>> GetByIdsAsync(
 		IEnumerable<TKey> ids,
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
-		CancellationToken cancellationToken = default
+		CancellationToken token = default
 		);
 
 	/// <summary>
-	/// Updates the database row for the <typeparamref name="TEntity"/> instance which match the <paramref name="id"/>
-	/// from the database.
+	/// Updates the database row for the <typeparamref name="TEntity"/> instance which matches
+	/// the <paramref name="id"/> from the database.
 	/// </summary>
 	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
 	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
@@ -121,8 +119,8 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		);
 
 	/// <summary>
-	/// Updates all database rows for the <typeparamref name="TEntity"/> instances which match the <paramref name="ids"/>
-	/// from the database.
+	/// Updates all database rows for the <typeparamref name="TEntity"/> instances which matches
+	/// the <paramref name="ids"/> from the database.
 	/// </summary>
 	/// <param name="ids">The primary key of the <typeparamref name="TEntity"/>.</param>
 	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
@@ -133,34 +131,34 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		);
 
 	/// <summary>
-	/// Updates the database row for the <typeparamref name="TEntity"/> instance which match the <paramref name="id"/>.
+	/// Updates the database row for the <typeparamref name="TEntity"/> instance which matches
+	/// the <paramref name="id"/> from the database.
 	/// </summary>
 	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
 	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of rows updated in the database.</returns>
 	Task<int> UpdateAsync(
 		TKey id,
 		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
-		CancellationToken cancellationToken = default
+		CancellationToken token = default
 		);
 
 	/// <summary>
-	/// Updates all database rows for the <typeparamref name="TEntity"/> instances which match the <paramref name="ids"/>
-	/// from the database.
+	/// Updates all database rows for the <typeparamref name="TEntity"/> instances which matches
+	/// the <paramref name="ids"/> from the database.
 	/// </summary>
 	/// <param name="ids">The primary key of the <typeparamref name="TEntity"/>.</param>
 	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of rows updated in the database.</returns>
 	Task<int> UpdateAsync(
 		IEnumerable<TKey> ids,
 		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
-		CancellationToken cancellationToken = default
+		CancellationToken token = default
 		);
 }
 
 /// <inheritdoc/>
-public interface IIdentityRepository<TEntity> : IIdentityRepository<TEntity, Guid>
-	where TEntity : class, IIdentityModel
+public interface IIdentityRepository<TEntity> : IIdentityRepository<TEntity, Guid> where TEntity : class, IIdentityModel
 { }
