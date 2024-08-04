@@ -39,6 +39,7 @@ public abstract class AuditedCompositeConfiguration<TEntity, TCreated, TModified
 public abstract class AuditedCompositeConfiguration<TEntity> : AuditedCompositeConfiguration<TEntity, string, string?>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IAuditedCompositeModel
 {
+	/// <inheritdoc/>
 	public override void Configure(EntityTypeBuilder<TEntity> builder)
 	{
 		base.Configure(builder);
