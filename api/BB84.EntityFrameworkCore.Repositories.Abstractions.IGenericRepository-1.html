@@ -127,7 +127,7 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Count_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean)">
   Count(Expression&lt;Func&lt;TEntity, bool&gt;&gt;?, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L100"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the number of <code class="typeparamref">TEntity</code> based on the specified <code class="paramref">expression</code>.</p>
@@ -172,7 +172,7 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountAll_System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountAll(System.Boolean)">
   CountAll(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L91"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the total number of <code class="typeparamref">TEntity</code>.</p>
@@ -211,7 +211,7 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountAllAsync_System_Boolean_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountAllAsync(System.Boolean,System.Threading.CancellationToken)">
   CountAllAsync(bool, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L112"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the total number of <code class="typeparamref">TEntity</code>.</p>
@@ -219,7 +219,7 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;int&gt; CountAllAsync(bool ignoreQueryFilters = false, CancellationToken cancellationToken = default)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;int&gt; CountAllAsync(bool ignoreQueryFilters = false, CancellationToken token = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -227,7 +227,7 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
     <dt><code>ignoreQueryFilters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>Should model-level entity query filters be applied?</p>
 </dd>
-    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd><p>The cancellation token to cancel the request.</p>
 </dd>
   </dl>
@@ -253,7 +253,7 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Threading.CancellationToken)">
   CountAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;?, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L122"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the number of <code class="typeparamref">TEntity</code> based on the specified <code class="paramref">expression</code>.</p>
@@ -261,7 +261,7 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;int&gt; CountAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;? expression = null, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;? queryFilter = null, bool ignoreQueryFilters = false, CancellationToken cancellationToken = default)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;int&gt; CountAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;? expression = null, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;? queryFilter = null, bool ignoreQueryFilters = false, CancellationToken token = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -275,7 +275,7 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
     <dt><code>ignoreQueryFilters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>Should model-level entity query filters be applied?</p>
 </dd>
-    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd><p>The cancellation token to cancel the request.</p>
 </dd>
   </dl>
@@ -304,7 +304,7 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
   <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Creates a collection of <code class="typeparamref">TEntity</code>.</p>
+  <div class="markdown level1 summary"><p>Creates multiple new database rows for the <code class="typeparamref">TEntity</code> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -337,7 +337,7 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
   <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Creates an <code class="typeparamref">TEntity</code>.</p>
+  <div class="markdown level1 summary"><p>Creates a new database row for the <code class="typeparamref">TEntity</code> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -370,12 +370,12 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
   <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Creates a collection of <code class="typeparamref">TEntity</code>.</p>
+  <div class="markdown level1 summary"><p>Creates multiple new database rows for the <code class="typeparamref">TEntity</code> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task CreateAsync(IEnumerable&lt;TEntity&gt; entities, CancellationToken cancellationToken = default)</code></pre>
+    <pre><code class="lang-csharp hljs">Task CreateAsync(IEnumerable&lt;TEntity&gt; entities, CancellationToken token = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -383,7 +383,7 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
     <dt><code>entities</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TEntity&gt;</dt>
     <dd><p>The collection of <code class="typeparamref">TEntity</code> to create.</p>
 </dd>
-    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd><p>The cancellation token to cancel the request.</p>
 </dd>
   </dl>
@@ -412,12 +412,12 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
   <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Creates an <code class="typeparamref">TEntity</code>.</p>
+  <div class="markdown level1 summary"><p>Creates a new database row for the <code class="typeparamref">TEntity</code> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task CreateAsync(TEntity entity, CancellationToken cancellationToken = default)</code></pre>
+    <pre><code class="lang-csharp hljs">Task CreateAsync(TEntity entity, CancellationToken token = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -425,7 +425,7 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
     <dt><code>entity</code> <span class="xref">TEntity</span></dt>
     <dd><p>The <code class="typeparamref">TEntity</code> to create.</p>
 </dd>
-    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd><p>The cancellation token to cancel the request.</p>
 </dd>
   </dl>
@@ -454,7 +454,7 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
   <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Deletes a collection of <code class="typeparamref">TEntity</code>.</p>
+  <div class="markdown level1 summary"><p>Deletes multiple existing database rows for the <code class="typeparamref">TEntity</code> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -487,8 +487,8 @@ Interface IGenericRepository&lt;TEntity&gt;  <a class="header-action link-second
   <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Deletes all database rows for the entity instances which match the <code class="paramref">expression</code>
-from the database.</p>
+  <div class="markdown level1 summary"><p>Deletes all database rows for the <code class="typeparamref">TEntity</code> instances which match
+the <code class="paramref">expression</code> from the database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -527,7 +527,7 @@ from the database.</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Deletes an <code class="typeparamref">TEntity</code>.</p>
+  <div class="markdown level1 summary"><p>Deletes an existing database row for the <code class="typeparamref">TEntity</code> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -555,23 +555,26 @@ from the database.</p>
 
   <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync_System_Collections_Generic_IEnumerable__0__" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0})">
-  DeleteAsync(IEnumerable&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)">
+  DeleteAsync(IEnumerable&lt;TEntity&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Deletes a collection of <code class="typeparamref">TEntity</code>.</p>
+  <div class="markdown level1 summary"><p>Deletes multiple existing database rows for the <code class="typeparamref">TEntity</code> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task DeleteAsync(IEnumerable&lt;TEntity&gt; entities)</code></pre>
+    <pre><code class="lang-csharp hljs">Task DeleteAsync(IEnumerable&lt;TEntity&gt; entities, CancellationToken token = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entities</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TEntity&gt;</dt>
     <dd><p>The collection of <code class="typeparamref">TEntity</code> to delete.</p>
+</dd>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token to cancel the request.</p>
 </dd>
   </dl>
 
@@ -596,16 +599,16 @@ from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)">
   DeleteAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L84"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Deletes all database rows for the entity instances which match the <code class="paramref">expression</code>
-from the database.</p>
+  <div class="markdown level1 summary"><p>Deletes all database rows for the <code class="typeparamref">TEntity</code> instances which match
+the <code class="paramref">expression</code> from the database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;int&gt; DeleteAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;? expression, CancellationToken cancellationToken = default)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;int&gt; DeleteAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;? expression, CancellationToken token = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -613,7 +616,7 @@ from the database.</p>
     <dt><code>expression</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;&gt;</dt>
     <dd><p>The condition to fulfill to be deleted.</p>
 </dd>
-    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd><p>The cancellation token to cancel the request.</p>
 </dd>
   </dl>
@@ -637,23 +640,26 @@ from the database.</p>
 
   <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync__0_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(`0)">
-  DeleteAsync(TEntity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync__0_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(`0,System.Threading.CancellationToken)">
+  DeleteAsync(TEntity, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L67"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Deletes an <code class="typeparamref">TEntity</code>.</p>
+  <div class="markdown level1 summary"><p>Deletes an existing database row for the <code class="typeparamref">TEntity</code> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task DeleteAsync(TEntity entity)</code></pre>
+    <pre><code class="lang-csharp hljs">Task DeleteAsync(TEntity entity, CancellationToken token = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entity</code> <span class="xref">TEntity</span></dt>
     <dd><p>The <code class="typeparamref">TEntity</code> to delete.</p>
+</dd>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token to cancel the request.</p>
 </dd>
   </dl>
 
@@ -678,7 +684,7 @@ from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetAll_System_Boolean_System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetAll(System.Boolean,System.Boolean)">
   GetAll(bool, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L135"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a collection of all <code class="typeparamref">TEntity</code>.</p>
@@ -720,7 +726,7 @@ from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetAllAsync_System_Boolean_System_Boolean_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetAllAsync(System.Boolean,System.Boolean,System.Threading.CancellationToken)">
   GetAllAsync(bool, bool, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L142"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L144"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a collection of all <code class="typeparamref">TEntity</code>.</p>
@@ -728,7 +734,7 @@ from the database.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;TEntity&gt;&gt; GetAllAsync(bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;TEntity&gt;&gt; GetAllAsync(bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -739,7 +745,7 @@ from the database.</p>
     <dt><code>trackChanges</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>Should the fetched entities be tracked?</p>
 </dd>
-    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd><p>The cancellation token to cancel the request.</p>
 </dd>
   </dl>
@@ -765,7 +771,7 @@ from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.String[])">
   GetByCondition(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool, bool, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L205"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L207"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a <code class="typeparamref">TEntity</code> by a certain <code class="paramref">expression</code>.</p>
@@ -816,7 +822,7 @@ from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])">
   GetByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool, bool, CancellationToken, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L223"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L225"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a <code class="typeparamref">TEntity</code> by a certain <code class="paramref">expression</code>.</p>
@@ -824,7 +830,7 @@ from the database.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;TEntity?&gt; GetByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt; expression, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;? queryFilter = null, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default, params string[] includeProperties)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;TEntity?&gt; GetByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt; expression, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;? queryFilter = null, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -841,7 +847,7 @@ from the database.</p>
     <dt><code>trackChanges</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>Should the fetched entity be tracked?</p>
 </dd>
-    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd><p>The cancellation token to cancel the request.</p>
 </dd>
     <dt><code>includeProperties</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
@@ -870,7 +876,7 @@ from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetManyByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])">
   GetManyByCondition(Expression&lt;Func&lt;TEntity, bool&gt;&gt;?, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;?, int?, int?, bool, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L160"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L162"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a collection of <code class="typeparamref">TEntity</code> based on the specified <code class="paramref">expression</code>.</p>
@@ -930,7 +936,7 @@ from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetManyByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken,System.String[])">
   GetManyByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;?, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;?, int?, int?, bool, CancellationToken, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L184"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L186"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a collection of <code class="typeparamref">TEntity</code> based on the specified <code class="paramref">expression</code>.</p>
@@ -938,7 +944,7 @@ from the database.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;TEntity&gt;&gt; GetManyByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;? expression = null, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;? queryFilter = null, bool ignoreQueryFilters = false, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, CancellationToken cancellationToken = default, params string[] includeProperties)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;TEntity&gt;&gt; GetManyByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;? expression = null, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;? queryFilter = null, bool ignoreQueryFilters = false, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -964,7 +970,7 @@ from the database.</p>
     <dt><code>trackChanges</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p>Should the fetched entities be tracked?</p>
 </dd>
-    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd><p>The cancellation token.</p>
 </dd>
     <dt><code>includeProperties</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
@@ -993,10 +999,10 @@ from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Update_System_Collections_Generic_IEnumerable__0__" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Update(System.Collections.Generic.IEnumerable{`0})">
   Update(IEnumerable&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L242"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L244"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Updates a collection of <code class="typeparamref">TEntity</code>.</p>
+  <div class="markdown level1 summary"><p>Updates multiple existing database rows for the <code class="typeparamref">TEntity</code> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1026,11 +1032,11 @@ from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Update_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Update(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0},Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0}}})">
   Update(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L251"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L253"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Updates all database rows for the entity instances which match the <code class="paramref">expression</code>
-from the database.</p>
+  <div class="markdown level1 summary"><p>Updates all database rows for the <code class="typeparamref">TEntity</code> instances which match
+the <code class="paramref">expression</code> from the database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1069,10 +1075,10 @@ from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Update__0_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Update(`0)">
   Update(TEntity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L236"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L238"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Updates an <code class="typeparamref">TEntity</code>.</p>
+  <div class="markdown level1 summary"><p>Updates an existing database row for the <code class="typeparamref">TEntity</code> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -1100,23 +1106,26 @@ from the database.</p>
 
   <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync_System_Collections_Generic_IEnumerable__0__" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0})">
-  UpdateAsync(IEnumerable&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L268"><i class="bi bi-code-slash"></i></a>
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)">
+  UpdateAsync(IEnumerable&lt;TEntity&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L272"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Updates a collection of <code class="typeparamref">TEntity</code>.</p>
+  <div class="markdown level1 summary"><p>Updates multiple existing database rows for the <code class="typeparamref">TEntity</code> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task UpdateAsync(IEnumerable&lt;TEntity&gt; entities)</code></pre>
+    <pre><code class="lang-csharp hljs">Task UpdateAsync(IEnumerable&lt;TEntity&gt; entities, CancellationToken token = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entities</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TEntity&gt;</dt>
     <dd><p>The collection of <code class="typeparamref">TEntity</code> to update.</p>
+</dd>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token to cancel the request.</p>
 </dd>
   </dl>
 
@@ -1141,16 +1150,16 @@ from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0},Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0}}},System.Threading.CancellationToken)">
   UpdateAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L278"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L282"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Updates all database rows for the entity instances which match the <code class="paramref">expression</code>
-from the database.</p>
+  <div class="markdown level1 summary"><p>Updates all database rows for the <code class="typeparamref">TEntity</code> instances which match
+the <code class="paramref">expression</code> from the database.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;int&gt; UpdateAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt; expression, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt; setPropertyCalls, CancellationToken cancellationToken = default)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;int&gt; UpdateAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt; expression, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt; setPropertyCalls, CancellationToken token = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -1161,7 +1170,7 @@ from the database.</p>
     <dt><code>setPropertyCalls</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.query.setpropertycalls-1">SetPropertyCalls</a>&lt;TEntity&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.query.setpropertycalls-1">SetPropertyCalls</a>&lt;TEntity&gt;&gt;&gt;</dt>
     <dd><p>A collection of set property statements specifying properties to update.</p>
 </dd>
-    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd><p>The cancellation token to cancel the request.</p>
 </dd>
   </dl>
@@ -1185,23 +1194,26 @@ from the database.</p>
 
   <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync__0_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(`0)">
-  UpdateAsync(TEntity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L261"><i class="bi bi-code-slash"></i></a>
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync__0_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(`0,System.Threading.CancellationToken)">
+  UpdateAsync(TEntity, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IGenericRepository.cs/#L264"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Updates an <code class="typeparamref">TEntity</code>.</p>
+  <div class="markdown level1 summary"><p>Updates an existing database row for the <code class="typeparamref">TEntity</code> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task UpdateAsync(TEntity entity)</code></pre>
+    <pre><code class="lang-csharp hljs">Task UpdateAsync(TEntity entity, CancellationToken token = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entity</code> <span class="xref">TEntity</span></dt>
     <dd><p>The <code class="typeparamref">TEntity</code> to update.</p>
+</dd>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token to cancel the request.</p>
 </dd>
   </dl>
 

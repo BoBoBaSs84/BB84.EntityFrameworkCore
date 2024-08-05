@@ -896,15 +896,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).Delete
   nameWithType: IGenericRepository<TEntity>.Delete
   nameWithType.vb: IGenericRepository(Of TEntity).Delete
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0})
-  name: DeleteAsync(IEnumerable<TEntity>)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync_System_Collections_Generic_IEnumerable__0__
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0})
-  name.vb: DeleteAsync(IEnumerable(Of TEntity))
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.DeleteAsync(System.Collections.Generic.IEnumerable<TEntity>)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).DeleteAsync(System.Collections.Generic.IEnumerable(Of TEntity))
-  nameWithType: IGenericRepository<TEntity>.DeleteAsync(IEnumerable<TEntity>)
-  nameWithType.vb: IGenericRepository(Of TEntity).DeleteAsync(IEnumerable(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)
+  name: DeleteAsync(IEnumerable<TEntity>, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)
+  name.vb: DeleteAsync(IEnumerable(Of TEntity), CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.DeleteAsync(System.Collections.Generic.IEnumerable<TEntity>, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).DeleteAsync(System.Collections.Generic.IEnumerable(Of TEntity), System.Threading.CancellationToken)
+  nameWithType: IGenericRepository<TEntity>.DeleteAsync(IEnumerable<TEntity>, CancellationToken)
+  nameWithType.vb: IGenericRepository(Of TEntity).DeleteAsync(IEnumerable(Of TEntity), CancellationToken)
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)
   name: DeleteAsync(Expression<Func<TEntity, bool>>?, CancellationToken)
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Threading_CancellationToken_
@@ -914,14 +914,14 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).DeleteAsync(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Threading.CancellationToken)
   nameWithType: IGenericRepository<TEntity>.DeleteAsync(Expression<Func<TEntity, bool>>?, CancellationToken)
   nameWithType.vb: IGenericRepository(Of TEntity).DeleteAsync(Expression(Of Func(Of TEntity, Boolean)), CancellationToken)
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(`0)
-  name: DeleteAsync(TEntity)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync__0_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(`0)
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.DeleteAsync(TEntity)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).DeleteAsync(TEntity)
-  nameWithType: IGenericRepository<TEntity>.DeleteAsync(TEntity)
-  nameWithType.vb: IGenericRepository(Of TEntity).DeleteAsync(TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(`0,System.Threading.CancellationToken)
+  name: DeleteAsync(TEntity, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync__0_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(`0,System.Threading.CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.DeleteAsync(TEntity, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).DeleteAsync(TEntity, System.Threading.CancellationToken)
+  nameWithType: IGenericRepository<TEntity>.DeleteAsync(TEntity, CancellationToken)
+  nameWithType.vb: IGenericRepository(Of TEntity).DeleteAsync(TEntity, CancellationToken)
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync*
   name: DeleteAsync
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync_
@@ -1074,15 +1074,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).Update
   nameWithType: IGenericRepository<TEntity>.Update
   nameWithType.vb: IGenericRepository(Of TEntity).Update
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0})
-  name: UpdateAsync(IEnumerable<TEntity>)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync_System_Collections_Generic_IEnumerable__0__
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0})
-  name.vb: UpdateAsync(IEnumerable(Of TEntity))
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.UpdateAsync(System.Collections.Generic.IEnumerable<TEntity>)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).UpdateAsync(System.Collections.Generic.IEnumerable(Of TEntity))
-  nameWithType: IGenericRepository<TEntity>.UpdateAsync(IEnumerable<TEntity>)
-  nameWithType.vb: IGenericRepository(Of TEntity).UpdateAsync(IEnumerable(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)
+  name: UpdateAsync(IEnumerable<TEntity>, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)
+  name.vb: UpdateAsync(IEnumerable(Of TEntity), CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.UpdateAsync(System.Collections.Generic.IEnumerable<TEntity>, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).UpdateAsync(System.Collections.Generic.IEnumerable(Of TEntity), System.Threading.CancellationToken)
+  nameWithType: IGenericRepository<TEntity>.UpdateAsync(IEnumerable<TEntity>, CancellationToken)
+  nameWithType.vb: IGenericRepository(Of TEntity).UpdateAsync(IEnumerable(Of TEntity), CancellationToken)
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0},Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0}}},System.Threading.CancellationToken)
   name: UpdateAsync(Expression<Func<TEntity, bool>>, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>>, CancellationToken)
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____System_Threading_CancellationToken_
@@ -1092,14 +1092,14 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).UpdateAsync(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Linq.Expressions.Expression(Of System.Func(Of Microsoft.EntityFrameworkCore.Query.SetPropertyCalls(Of TEntity), Microsoft.EntityFrameworkCore.Query.SetPropertyCalls(Of TEntity))), System.Threading.CancellationToken)
   nameWithType: IGenericRepository<TEntity>.UpdateAsync(Expression<Func<TEntity, bool>>, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>>, CancellationToken)
   nameWithType.vb: IGenericRepository(Of TEntity).UpdateAsync(Expression(Of Func(Of TEntity, Boolean)), Expression(Of Func(Of SetPropertyCalls(Of TEntity), SetPropertyCalls(Of TEntity))), CancellationToken)
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(`0)
-  name: UpdateAsync(TEntity)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync__0_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(`0)
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.UpdateAsync(TEntity)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).UpdateAsync(TEntity)
-  nameWithType: IGenericRepository<TEntity>.UpdateAsync(TEntity)
-  nameWithType.vb: IGenericRepository(Of TEntity).UpdateAsync(TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(`0,System.Threading.CancellationToken)
+  name: UpdateAsync(TEntity, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync__0_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync(`0,System.Threading.CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.UpdateAsync(TEntity, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).UpdateAsync(TEntity, System.Threading.CancellationToken)
+  nameWithType: IGenericRepository<TEntity>.UpdateAsync(TEntity, CancellationToken)
+  nameWithType.vb: IGenericRepository(Of TEntity).UpdateAsync(TEntity, CancellationToken)
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.UpdateAsync*
   name: UpdateAsync
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_UpdateAsync_
@@ -1127,76 +1127,58 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey)
   nameWithType: IIdentityRepository<TEntity, TKey>
   nameWithType.vb: IIdentityRepository(Of TEntity, TKey)
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteById(`1)
-  name: DeleteById(TKey)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_DeleteById__1_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteById(`1)
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.DeleteById(TKey)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).DeleteById(TKey)
-  nameWithType: IIdentityRepository<TEntity, TKey>.DeleteById(TKey)
-  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).DeleteById(TKey)
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteById*
-  name: DeleteById
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_DeleteById_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteById
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.Delete(System.Collections.Generic.IEnumerable{`1})
+  name: Delete(IEnumerable<TKey>)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_Delete_System_Collections_Generic_IEnumerable__1__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.Delete(System.Collections.Generic.IEnumerable{`1})
+  name.vb: Delete(IEnumerable(Of TKey))
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.Delete(System.Collections.Generic.IEnumerable<TKey>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).Delete(System.Collections.Generic.IEnumerable(Of TKey))
+  nameWithType: IIdentityRepository<TEntity, TKey>.Delete(IEnumerable<TKey>)
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).Delete(IEnumerable(Of TKey))
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.Delete(`1)
+  name: Delete(TKey)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_Delete__1_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.Delete(`1)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.Delete(TKey)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).Delete(TKey)
+  nameWithType: IIdentityRepository<TEntity, TKey>.Delete(TKey)
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).Delete(TKey)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.Delete*
+  name: Delete
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_Delete_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.Delete
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.DeleteById
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).DeleteById
-  nameWithType: IIdentityRepository<TEntity, TKey>.DeleteById
-  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).DeleteById
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteByIdAsync(`1,System.Threading.CancellationToken)
-  name: DeleteByIdAsync(TKey, CancellationToken)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_DeleteByIdAsync__1_System_Threading_CancellationToken_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteByIdAsync(`1,System.Threading.CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.DeleteByIdAsync(TKey, System.Threading.CancellationToken)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).DeleteByIdAsync(TKey, System.Threading.CancellationToken)
-  nameWithType: IIdentityRepository<TEntity, TKey>.DeleteByIdAsync(TKey, CancellationToken)
-  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).DeleteByIdAsync(TKey, CancellationToken)
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteByIdAsync*
-  name: DeleteByIdAsync
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_DeleteByIdAsync_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteByIdAsync
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.Delete
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).Delete
+  nameWithType: IIdentityRepository<TEntity, TKey>.Delete
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).Delete
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteAsync(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)
+  name: DeleteAsync(IEnumerable<TKey>, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_DeleteAsync_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteAsync(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)
+  name.vb: DeleteAsync(IEnumerable(Of TKey), CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.DeleteAsync(System.Collections.Generic.IEnumerable<TKey>, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).DeleteAsync(System.Collections.Generic.IEnumerable(Of TKey), System.Threading.CancellationToken)
+  nameWithType: IIdentityRepository<TEntity, TKey>.DeleteAsync(IEnumerable<TKey>, CancellationToken)
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).DeleteAsync(IEnumerable(Of TKey), CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteAsync(`1,System.Threading.CancellationToken)
+  name: DeleteAsync(TKey, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_DeleteAsync__1_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteAsync(`1,System.Threading.CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.DeleteAsync(TKey, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).DeleteAsync(TKey, System.Threading.CancellationToken)
+  nameWithType: IIdentityRepository<TEntity, TKey>.DeleteAsync(TKey, CancellationToken)
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).DeleteAsync(TKey, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteAsync*
+  name: DeleteAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_DeleteAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteAsync
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.DeleteByIdAsync
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).DeleteByIdAsync
-  nameWithType: IIdentityRepository<TEntity, TKey>.DeleteByIdAsync
-  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).DeleteByIdAsync
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteByIds(System.Collections.Generic.IEnumerable{`1})
-  name: DeleteByIds(IEnumerable<TKey>)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_DeleteByIds_System_Collections_Generic_IEnumerable__1__
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteByIds(System.Collections.Generic.IEnumerable{`1})
-  name.vb: DeleteByIds(IEnumerable(Of TKey))
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.DeleteByIds(System.Collections.Generic.IEnumerable<TKey>)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).DeleteByIds(System.Collections.Generic.IEnumerable(Of TKey))
-  nameWithType: IIdentityRepository<TEntity, TKey>.DeleteByIds(IEnumerable<TKey>)
-  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).DeleteByIds(IEnumerable(Of TKey))
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteByIds*
-  name: DeleteByIds
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_DeleteByIds_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteByIds
-  isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.DeleteByIds
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).DeleteByIds
-  nameWithType: IIdentityRepository<TEntity, TKey>.DeleteByIds
-  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).DeleteByIds
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)
-  name: DeleteByIdsAsync(IEnumerable<TKey>, CancellationToken)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_DeleteByIdsAsync_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)
-  name.vb: DeleteByIdsAsync(IEnumerable(Of TKey), CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.DeleteByIdsAsync(System.Collections.Generic.IEnumerable<TKey>, System.Threading.CancellationToken)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).DeleteByIdsAsync(System.Collections.Generic.IEnumerable(Of TKey), System.Threading.CancellationToken)
-  nameWithType: IIdentityRepository<TEntity, TKey>.DeleteByIdsAsync(IEnumerable<TKey>, CancellationToken)
-  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).DeleteByIdsAsync(IEnumerable(Of TKey), CancellationToken)
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteByIdsAsync*
-  name: DeleteByIdsAsync
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_DeleteByIdsAsync_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteByIdsAsync
-  isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.DeleteByIdsAsync
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).DeleteByIdsAsync
-  nameWithType: IIdentityRepository<TEntity, TKey>.DeleteByIdsAsync
-  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).DeleteByIdsAsync
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.DeleteAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).DeleteAsync
+  nameWithType: IIdentityRepository<TEntity, TKey>.DeleteAsync
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).DeleteAsync
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetById(`1,System.Boolean,System.Boolean)
   name: GetById(TKey, bool, bool)
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetById__1_System_Boolean_System_Boolean_
@@ -1627,15 +1609,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).Delete
   nameWithType: GenericRepository<TEntity>.Delete
   nameWithType.vb: GenericRepository(Of TEntity).Delete
-- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0})
-  name: DeleteAsync(IEnumerable<TEntity>)
-  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync_System_Collections_Generic_IEnumerable__0__
-  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0})
-  name.vb: DeleteAsync(IEnumerable(Of TEntity))
-  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.DeleteAsync(System.Collections.Generic.IEnumerable<TEntity>)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).DeleteAsync(System.Collections.Generic.IEnumerable(Of TEntity))
-  nameWithType: GenericRepository<TEntity>.DeleteAsync(IEnumerable<TEntity>)
-  nameWithType.vb: GenericRepository(Of TEntity).DeleteAsync(IEnumerable(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)
+  name: DeleteAsync(IEnumerable<TEntity>, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)
+  name.vb: DeleteAsync(IEnumerable(Of TEntity), CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.DeleteAsync(System.Collections.Generic.IEnumerable<TEntity>, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).DeleteAsync(System.Collections.Generic.IEnumerable(Of TEntity), System.Threading.CancellationToken)
+  nameWithType: GenericRepository<TEntity>.DeleteAsync(IEnumerable<TEntity>, CancellationToken)
+  nameWithType.vb: GenericRepository(Of TEntity).DeleteAsync(IEnumerable(Of TEntity), CancellationToken)
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)
   name: DeleteAsync(Expression<Func<TEntity, bool>>?, CancellationToken)
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Threading_CancellationToken_
@@ -1645,14 +1627,14 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).DeleteAsync(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Threading.CancellationToken)
   nameWithType: GenericRepository<TEntity>.DeleteAsync(Expression<Func<TEntity, bool>>?, CancellationToken)
   nameWithType.vb: GenericRepository(Of TEntity).DeleteAsync(Expression(Of Func(Of TEntity, Boolean)), CancellationToken)
-- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(`0)
-  name: DeleteAsync(TEntity)
-  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync__0_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(`0)
-  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.DeleteAsync(TEntity)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).DeleteAsync(TEntity)
-  nameWithType: GenericRepository<TEntity>.DeleteAsync(TEntity)
-  nameWithType.vb: GenericRepository(Of TEntity).DeleteAsync(TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(`0,System.Threading.CancellationToken)
+  name: DeleteAsync(TEntity, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync__0_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(`0,System.Threading.CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.DeleteAsync(TEntity, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).DeleteAsync(TEntity, System.Threading.CancellationToken)
+  nameWithType: GenericRepository<TEntity>.DeleteAsync(TEntity, CancellationToken)
+  nameWithType.vb: GenericRepository(Of TEntity).DeleteAsync(TEntity, CancellationToken)
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync*
   name: DeleteAsync
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync_
@@ -1823,15 +1805,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).Update
   nameWithType: GenericRepository<TEntity>.Update
   nameWithType.vb: GenericRepository(Of TEntity).Update
-- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0})
-  name: UpdateAsync(IEnumerable<TEntity>)
-  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync_System_Collections_Generic_IEnumerable__0__
-  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0})
-  name.vb: UpdateAsync(IEnumerable(Of TEntity))
-  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.UpdateAsync(System.Collections.Generic.IEnumerable<TEntity>)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).UpdateAsync(System.Collections.Generic.IEnumerable(Of TEntity))
-  nameWithType: GenericRepository<TEntity>.UpdateAsync(IEnumerable<TEntity>)
-  nameWithType.vb: GenericRepository(Of TEntity).UpdateAsync(IEnumerable(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)
+  name: UpdateAsync(IEnumerable<TEntity>, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)
+  name.vb: UpdateAsync(IEnumerable(Of TEntity), CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.UpdateAsync(System.Collections.Generic.IEnumerable<TEntity>, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).UpdateAsync(System.Collections.Generic.IEnumerable(Of TEntity), System.Threading.CancellationToken)
+  nameWithType: GenericRepository<TEntity>.UpdateAsync(IEnumerable<TEntity>, CancellationToken)
+  nameWithType.vb: GenericRepository(Of TEntity).UpdateAsync(IEnumerable(Of TEntity), CancellationToken)
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0},Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0}}},System.Threading.CancellationToken)
   name: UpdateAsync(Expression<Func<TEntity, bool>>, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>>, CancellationToken)
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____System_Threading_CancellationToken_
@@ -1841,14 +1823,14 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).UpdateAsync(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Linq.Expressions.Expression(Of System.Func(Of Microsoft.EntityFrameworkCore.Query.SetPropertyCalls(Of TEntity), Microsoft.EntityFrameworkCore.Query.SetPropertyCalls(Of TEntity))), System.Threading.CancellationToken)
   nameWithType: GenericRepository<TEntity>.UpdateAsync(Expression<Func<TEntity, bool>>, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>>, CancellationToken)
   nameWithType.vb: GenericRepository(Of TEntity).UpdateAsync(Expression(Of Func(Of TEntity, Boolean)), Expression(Of Func(Of SetPropertyCalls(Of TEntity), SetPropertyCalls(Of TEntity))), CancellationToken)
-- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(`0)
-  name: UpdateAsync(TEntity)
-  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync__0_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(`0)
-  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.UpdateAsync(TEntity)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).UpdateAsync(TEntity)
-  nameWithType: GenericRepository<TEntity>.UpdateAsync(TEntity)
-  nameWithType.vb: GenericRepository(Of TEntity).UpdateAsync(TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(`0,System.Threading.CancellationToken)
+  name: UpdateAsync(TEntity, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync__0_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(`0,System.Threading.CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.UpdateAsync(TEntity, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).UpdateAsync(TEntity, System.Threading.CancellationToken)
+  nameWithType: GenericRepository<TEntity>.UpdateAsync(TEntity, CancellationToken)
+  nameWithType.vb: GenericRepository(Of TEntity).UpdateAsync(TEntity, CancellationToken)
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync*
   name: UpdateAsync
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync_
@@ -1914,76 +1896,58 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).New
   nameWithType: IdentityRepository<TEntity, TKey>.IdentityRepository
   nameWithType.vb: IdentityRepository(Of TEntity, TKey).New
-- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteById(`1)
-  name: DeleteById(TKey)
-  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteById__1_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteById(`1)
-  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.DeleteById(TKey)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).DeleteById(TKey)
-  nameWithType: IdentityRepository<TEntity, TKey>.DeleteById(TKey)
-  nameWithType.vb: IdentityRepository(Of TEntity, TKey).DeleteById(TKey)
-- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteById*
-  name: DeleteById
-  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteById_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteById
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.Delete(System.Collections.Generic.IEnumerable{`1})
+  name: Delete(IEnumerable<TKey>)
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_Delete_System_Collections_Generic_IEnumerable__1__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.Delete(System.Collections.Generic.IEnumerable{`1})
+  name.vb: Delete(IEnumerable(Of TKey))
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.Delete(System.Collections.Generic.IEnumerable<TKey>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).Delete(System.Collections.Generic.IEnumerable(Of TKey))
+  nameWithType: IdentityRepository<TEntity, TKey>.Delete(IEnumerable<TKey>)
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).Delete(IEnumerable(Of TKey))
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.Delete(`1)
+  name: Delete(TKey)
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_Delete__1_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.Delete(`1)
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.Delete(TKey)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).Delete(TKey)
+  nameWithType: IdentityRepository<TEntity, TKey>.Delete(TKey)
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).Delete(TKey)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.Delete*
+  name: Delete
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_Delete_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.Delete
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.DeleteById
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).DeleteById
-  nameWithType: IdentityRepository<TEntity, TKey>.DeleteById
-  nameWithType.vb: IdentityRepository(Of TEntity, TKey).DeleteById
-- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteByIdAsync(`1,System.Threading.CancellationToken)
-  name: DeleteByIdAsync(TKey, CancellationToken)
-  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteByIdAsync__1_System_Threading_CancellationToken_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteByIdAsync(`1,System.Threading.CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.DeleteByIdAsync(TKey, System.Threading.CancellationToken)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).DeleteByIdAsync(TKey, System.Threading.CancellationToken)
-  nameWithType: IdentityRepository<TEntity, TKey>.DeleteByIdAsync(TKey, CancellationToken)
-  nameWithType.vb: IdentityRepository(Of TEntity, TKey).DeleteByIdAsync(TKey, CancellationToken)
-- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteByIdAsync*
-  name: DeleteByIdAsync
-  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteByIdAsync_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteByIdAsync
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.Delete
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).Delete
+  nameWithType: IdentityRepository<TEntity, TKey>.Delete
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).Delete
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteAsync(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)
+  name: DeleteAsync(IEnumerable<TKey>, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteAsync_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteAsync(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)
+  name.vb: DeleteAsync(IEnumerable(Of TKey), CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.DeleteAsync(System.Collections.Generic.IEnumerable<TKey>, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).DeleteAsync(System.Collections.Generic.IEnumerable(Of TKey), System.Threading.CancellationToken)
+  nameWithType: IdentityRepository<TEntity, TKey>.DeleteAsync(IEnumerable<TKey>, CancellationToken)
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).DeleteAsync(IEnumerable(Of TKey), CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteAsync(`1,System.Threading.CancellationToken)
+  name: DeleteAsync(TKey, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteAsync__1_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteAsync(`1,System.Threading.CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.DeleteAsync(TKey, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).DeleteAsync(TKey, System.Threading.CancellationToken)
+  nameWithType: IdentityRepository<TEntity, TKey>.DeleteAsync(TKey, CancellationToken)
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).DeleteAsync(TKey, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteAsync*
+  name: DeleteAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteAsync
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.DeleteByIdAsync
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).DeleteByIdAsync
-  nameWithType: IdentityRepository<TEntity, TKey>.DeleteByIdAsync
-  nameWithType.vb: IdentityRepository(Of TEntity, TKey).DeleteByIdAsync
-- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteByIds(System.Collections.Generic.IEnumerable{`1})
-  name: DeleteByIds(IEnumerable<TKey>)
-  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteByIds_System_Collections_Generic_IEnumerable__1__
-  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteByIds(System.Collections.Generic.IEnumerable{`1})
-  name.vb: DeleteByIds(IEnumerable(Of TKey))
-  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.DeleteByIds(System.Collections.Generic.IEnumerable<TKey>)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).DeleteByIds(System.Collections.Generic.IEnumerable(Of TKey))
-  nameWithType: IdentityRepository<TEntity, TKey>.DeleteByIds(IEnumerable<TKey>)
-  nameWithType.vb: IdentityRepository(Of TEntity, TKey).DeleteByIds(IEnumerable(Of TKey))
-- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteByIds*
-  name: DeleteByIds
-  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteByIds_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteByIds
-  isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.DeleteByIds
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).DeleteByIds
-  nameWithType: IdentityRepository<TEntity, TKey>.DeleteByIds
-  nameWithType.vb: IdentityRepository(Of TEntity, TKey).DeleteByIds
-- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)
-  name: DeleteByIdsAsync(IEnumerable<TKey>, CancellationToken)
-  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteByIdsAsync_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)
-  name.vb: DeleteByIdsAsync(IEnumerable(Of TKey), CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.DeleteByIdsAsync(System.Collections.Generic.IEnumerable<TKey>, System.Threading.CancellationToken)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).DeleteByIdsAsync(System.Collections.Generic.IEnumerable(Of TKey), System.Threading.CancellationToken)
-  nameWithType: IdentityRepository<TEntity, TKey>.DeleteByIdsAsync(IEnumerable<TKey>, CancellationToken)
-  nameWithType.vb: IdentityRepository(Of TEntity, TKey).DeleteByIdsAsync(IEnumerable(Of TKey), CancellationToken)
-- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteByIdsAsync*
-  name: DeleteByIdsAsync
-  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteByIdsAsync_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteByIdsAsync
-  isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.DeleteByIdsAsync
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).DeleteByIdsAsync
-  nameWithType: IdentityRepository<TEntity, TKey>.DeleteByIdsAsync
-  nameWithType.vb: IdentityRepository(Of TEntity, TKey).DeleteByIdsAsync
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.DeleteAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).DeleteAsync
+  nameWithType: IdentityRepository<TEntity, TKey>.DeleteAsync
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).DeleteAsync
 - uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetById(`1,System.Boolean,System.Boolean)
   name: GetById(TKey, bool, bool)
   href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetById__1_System_Boolean_System_Boolean_
