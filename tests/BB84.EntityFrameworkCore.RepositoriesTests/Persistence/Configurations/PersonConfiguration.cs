@@ -10,8 +10,17 @@ internal sealed class PersonConfiguration : AuditedConfiguration<Person>
 {
 	public override void Configure(EntityTypeBuilder<Person> builder)
 	{
-		base.Configure(builder);
+		builder.ToHistoryTable();
 
-		_ = builder.ToHistoryTable();
+		builder.Property(x => x.Settings)
+			.HasXmlColumnType();
+
+		builder.Property(x=>x.DateOfBirth)
+			.HasDateColumnType();
+
+		builder.Property(x => x.Salary)
+			.HasMoneyColumnType(true);
+
+		base.Configure(builder);
 	}
 }
