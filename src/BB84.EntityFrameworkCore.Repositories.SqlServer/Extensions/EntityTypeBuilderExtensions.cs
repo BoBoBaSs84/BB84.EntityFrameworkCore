@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions;
 
 /// <summary>
-/// The entity type builder extensions class.
+/// The <see cref="EntityTypeBuilder"/> extensions class.
 /// </summary>
 public static class EntityTypeBuilderExtensions
 {
