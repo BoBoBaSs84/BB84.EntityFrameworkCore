@@ -20,26 +20,22 @@ This package contains frequently used base models.
 
 ### BB84.EntityFrameworkCore.Models.Abstractions
 
-This package contains frequently used base model abstractions.
+This package contains the abstractions for the frequently used base models.
 
 ### BB84.EntityFrameworkCore.Repositories
 
-This package contains frequently used base repositories.
+This package contains frequently used base repository implementations.
 
 ### BB84.EntityFrameworkCore.Repositories.Abstractions
 
-This package contains frequently used base repository abstractions.
+This package contains the abstractions for the frequently used base repository implementations.
 
 ### BB84.EntityFrameworkCore
 
-This package contains frequently used sql server configurations and extensions.
+This package contains frequently used sql server configuration base classes and various extension methods.
 
 ## Documentation
 
 ### API
 
-Soon.
-
-### WIKI
-
-Soon.
+You can find the complete api documentation [here](https://bobobass84.github.io/BB84.EntityFrameworkCore/api/index.html).
