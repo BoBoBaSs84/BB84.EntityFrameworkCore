@@ -153,21 +153,22 @@ Class EntityTypeBuilderExtensions  <a class="header-action link-secondary" title
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_EntityTypeBuilderExtensions_ToHistoryTable_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder_System_String_System_String_System_String_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder,System.String,System.String,System.String)">
   ToHistoryTable(EntityTypeBuilder, string?, string?, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/EntityTypeBuilderExtensions.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/EntityTypeBuilderExtensions.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Configures the table that the entity type maps to when targeting a relational database and configures a history table for the entity mapped to a temporal table.</p>
+  <div class="markdown level1 summary"><p>Configures the table that the entity type maps to when targeting a relational database
+and configures a history table for the entity mapped to a temporal table.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static EntityTypeBuilder ToHistoryTable(this EntityTypeBuilder builder, string? tableName = null, string? tableSchema = null, string historySchema = &quot;history&quot;)</code></pre>
+    <pre><code class="lang-csharp hljs">public static EntityTypeBuilder ToHistoryTable(this EntityTypeBuilder builder, string? tableName = null, string? tableSchema = &quot;dbo&quot;, string historySchema = &quot;history&quot;)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.entitytypebuilder">EntityTypeBuilder</a></dt>
-    <dd><p>The entity type builder to work with.</p>
+    <dd><p>The builder for the entity type being configured.</p>
 </dd>
     <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>The schema of the table.</p>
@@ -183,7 +184,8 @@ Class EntityTypeBuilderExtensions  <a class="header-action link-secondary" title
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.entitytypebuilder">EntityTypeBuilder</a></dt>
-    <dd></dd>
+    <dd><p>The same builder instance so that multiple calls can be chained.</p>
+</dd>
   </dl>
 
 

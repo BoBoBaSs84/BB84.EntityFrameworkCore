@@ -2330,80 +2330,125 @@ references:
   commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions
   fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions
   nameWithType: PropertyBuilderExtensions
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasDateColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
-  name: HasDateColumnType(PropertyBuilder)
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_HasDateColumnType_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasDateColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasDateColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
-  nameWithType: PropertyBuilderExtensions.HasDateColumnType(PropertyBuilder)
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasDateColumnType*
-  name: HasDateColumnType
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_HasDateColumnType_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasDateColumnType
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsBinaryColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)
+  name: IsBinaryColumn(PropertyBuilder, int)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsBinaryColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsBinaryColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)
+  name.vb: IsBinaryColumn(PropertyBuilder, Integer)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsBinaryColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, int)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsBinaryColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, Integer)
+  nameWithType: PropertyBuilderExtensions.IsBinaryColumn(PropertyBuilder, int)
+  nameWithType.vb: PropertyBuilderExtensions.IsBinaryColumn(PropertyBuilder, Integer)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsBinaryColumn*
+  name: IsBinaryColumn
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsBinaryColumn_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsBinaryColumn
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasDateColumnType
-  nameWithType: PropertyBuilderExtensions.HasDateColumnType
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasMoneyColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Boolean)
-  name: HasMoneyColumnType(PropertyBuilder, bool)
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_HasMoneyColumnType_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Boolean_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasMoneyColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Boolean)
-  name.vb: HasMoneyColumnType(PropertyBuilder, Boolean)
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasMoneyColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, bool)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasMoneyColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, Boolean)
-  nameWithType: PropertyBuilderExtensions.HasMoneyColumnType(PropertyBuilder, bool)
-  nameWithType.vb: PropertyBuilderExtensions.HasMoneyColumnType(PropertyBuilder, Boolean)
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasMoneyColumnType*
-  name: HasMoneyColumnType
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_HasMoneyColumnType_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasMoneyColumnType
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsBinaryColumn
+  nameWithType: PropertyBuilderExtensions.IsBinaryColumn
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
+  name: IsDateColumn(PropertyBuilder)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
+  nameWithType: PropertyBuilderExtensions.IsDateColumn(PropertyBuilder)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateColumn*
+  name: IsDateColumn
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateColumn_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateColumn
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasMoneyColumnType
-  nameWithType: PropertyBuilderExtensions.HasMoneyColumnType
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasTimeColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)
-  name: HasTimeColumnType(PropertyBuilder, int)
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_HasTimeColumnType_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasTimeColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)
-  name.vb: HasTimeColumnType(PropertyBuilder, Integer)
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasTimeColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, int)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasTimeColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, Integer)
-  nameWithType: PropertyBuilderExtensions.HasTimeColumnType(PropertyBuilder, int)
-  nameWithType.vb: PropertyBuilderExtensions.HasTimeColumnType(PropertyBuilder, Integer)
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasTimeColumnType*
-  name: HasTimeColumnType
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_HasTimeColumnType_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasTimeColumnType
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateColumn
+  nameWithType: PropertyBuilderExtensions.IsDateColumn
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Boolean)
+  name: IsDateTimeColumn(PropertyBuilder, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTimeColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Boolean)
+  name.vb: IsDateTimeColumn(PropertyBuilder, Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, Boolean)
+  nameWithType: PropertyBuilderExtensions.IsDateTimeColumn(PropertyBuilder, bool)
+  nameWithType.vb: PropertyBuilderExtensions.IsDateTimeColumn(PropertyBuilder, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeColumn*
+  name: IsDateTimeColumn
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTimeColumn_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeColumn
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasTimeColumnType
-  nameWithType: PropertyBuilderExtensions.HasTimeColumnType
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasVarbinaryColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)
-  name: HasVarbinaryColumnType(PropertyBuilder, int)
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_HasVarbinaryColumnType_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasVarbinaryColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)
-  name.vb: HasVarbinaryColumnType(PropertyBuilder, Integer)
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasVarbinaryColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, int)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasVarbinaryColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, Integer)
-  nameWithType: PropertyBuilderExtensions.HasVarbinaryColumnType(PropertyBuilder, int)
-  nameWithType.vb: PropertyBuilderExtensions.HasVarbinaryColumnType(PropertyBuilder, Integer)
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasVarbinaryColumnType*
-  name: HasVarbinaryColumnType
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_HasVarbinaryColumnType_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasVarbinaryColumnType
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeColumn
+  nameWithType: PropertyBuilderExtensions.IsDateTimeColumn
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsMoneyColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Boolean)
+  name: IsMoneyColumn(PropertyBuilder, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsMoneyColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsMoneyColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Boolean)
+  name.vb: IsMoneyColumn(PropertyBuilder, Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsMoneyColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsMoneyColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, Boolean)
+  nameWithType: PropertyBuilderExtensions.IsMoneyColumn(PropertyBuilder, bool)
+  nameWithType.vb: PropertyBuilderExtensions.IsMoneyColumn(PropertyBuilder, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsMoneyColumn*
+  name: IsMoneyColumn
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsMoneyColumn_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsMoneyColumn
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasVarbinaryColumnType
-  nameWithType: PropertyBuilderExtensions.HasVarbinaryColumnType
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasXmlColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
-  name: HasXmlColumnType(PropertyBuilder)
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_HasXmlColumnType_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasXmlColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasXmlColumnType(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
-  nameWithType: PropertyBuilderExtensions.HasXmlColumnType(PropertyBuilder)
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasXmlColumnType*
-  name: HasXmlColumnType
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_HasXmlColumnType_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasXmlColumnType
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsMoneyColumn
+  nameWithType: PropertyBuilderExtensions.IsMoneyColumn
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsSysNameColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
+  name: IsSysNameColumn(PropertyBuilder)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsSysNameColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsSysNameColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsSysNameColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
+  nameWithType: PropertyBuilderExtensions.IsSysNameColumn(PropertyBuilder)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsSysNameColumn*
+  name: IsSysNameColumn
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsSysNameColumn_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsSysNameColumn
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.HasXmlColumnType
-  nameWithType: PropertyBuilderExtensions.HasXmlColumnType
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsSysNameColumn
+  nameWithType: PropertyBuilderExtensions.IsSysNameColumn
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsTimeColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)
+  name: IsTimeColumn(PropertyBuilder, int)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsTimeColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsTimeColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)
+  name.vb: IsTimeColumn(PropertyBuilder, Integer)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsTimeColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, int)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsTimeColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, Integer)
+  nameWithType: PropertyBuilderExtensions.IsTimeColumn(PropertyBuilder, int)
+  nameWithType.vb: PropertyBuilderExtensions.IsTimeColumn(PropertyBuilder, Integer)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsTimeColumn*
+  name: IsTimeColumn
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsTimeColumn_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsTimeColumn
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsTimeColumn
+  nameWithType: PropertyBuilderExtensions.IsTimeColumn
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsVarbinaryColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)
+  name: IsVarbinaryColumn(PropertyBuilder, int)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsVarbinaryColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsVarbinaryColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)
+  name.vb: IsVarbinaryColumn(PropertyBuilder, Integer)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsVarbinaryColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, int)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsVarbinaryColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, Integer)
+  nameWithType: PropertyBuilderExtensions.IsVarbinaryColumn(PropertyBuilder, int)
+  nameWithType.vb: PropertyBuilderExtensions.IsVarbinaryColumn(PropertyBuilder, Integer)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsVarbinaryColumn*
+  name: IsVarbinaryColumn
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsVarbinaryColumn_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsVarbinaryColumn
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsVarbinaryColumn
+  nameWithType: PropertyBuilderExtensions.IsVarbinaryColumn
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsXmlColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
+  name: IsXmlColumn(PropertyBuilder)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsXmlColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsXmlColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsXmlColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
+  nameWithType: PropertyBuilderExtensions.IsXmlColumn(PropertyBuilder)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsXmlColumn*
+  name: IsXmlColumn
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsXmlColumn_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsXmlColumn
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsXmlColumn
+  nameWithType: PropertyBuilderExtensions.IsXmlColumn
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors
   name: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.html
