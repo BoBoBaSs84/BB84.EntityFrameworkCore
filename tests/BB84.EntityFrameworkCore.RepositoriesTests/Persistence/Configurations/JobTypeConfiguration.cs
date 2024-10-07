@@ -13,7 +13,7 @@ internal sealed class JobTypeConfiguration : CompositeConfiguration<JobType>
 		builder.HasNoKey();
 
 		builder.Property(x => x.Color)
-			.HasVarbinaryColumnType(3);
+			.IsVarbinaryColumn(3);
 
 		base.Configure(builder);
 	}
