@@ -31,20 +31,22 @@ public abstract class EnumeratorConfiguration<TEntity> : IEntityTypeConfiguratio
 
 		builder.Property(e => e.Name)
 			.HasColumnOrder(3)
-			.HasMaxLength(50)
-			.IsRequired();
+			.HasMaxLength(64)
+			.IsRequired()
+			.IsUnicode(false);
 
 		builder.Property(e => e.Description)
 			.HasColumnOrder(4)
-			.HasMaxLength(250)
-			.IsRequired(false);
+			.HasMaxLength(256)
+			.IsRequired(false)
+			.IsUnicode();
 
 		builder.Property(e => e.IsDeleted)
 			.HasColumnOrder(5)
 			.HasDefaultValue(false);
 
 		builder.HasIndex(e => e.Name)
-			.IsClustered(false)
+			.IsClustered(true)
 			.IsUnique();
 	}
 }
