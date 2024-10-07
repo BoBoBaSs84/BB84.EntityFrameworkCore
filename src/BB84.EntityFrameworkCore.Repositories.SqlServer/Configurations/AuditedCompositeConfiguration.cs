@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
 using BB84.EntityFrameworkCore.Models.Abstractions;
+using BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -45,9 +46,9 @@ public abstract class AuditedCompositeConfiguration<TEntity> : AuditedCompositeC
 		base.Configure(builder);
 
 		builder.Property(e => e.CreatedBy)
-			.HasColumnType("sysname");
+			.IsSysNameColumn();
 
 		builder.Property(e => e.ModifiedBy)
-			.HasColumnType("sysname");
+			.IsSysNameColumn();
 	}
 }
