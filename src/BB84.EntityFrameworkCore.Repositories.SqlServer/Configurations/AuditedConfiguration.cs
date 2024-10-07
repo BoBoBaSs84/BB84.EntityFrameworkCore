@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
 using BB84.EntityFrameworkCore.Models.Abstractions;
+using BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -56,9 +57,9 @@ public abstract class AuditedConfiguration<TEntity> : AuditedConfiguration<TEnti
 			.HasDefaultValueSql("NEWID()");
 
 		builder.Property(e => e.CreatedBy)
-			.HasColumnType("sysname");
+			.IsSysNameColumn();
 
 		builder.Property(e => e.ModifiedBy)
-			.HasColumnType("sysname");
+			.IsSysNameColumn();
 	}
 }

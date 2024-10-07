@@ -13,13 +13,13 @@ internal sealed class PersonConfiguration : AuditedConfiguration<Person>
 		builder.ToHistoryTable();
 
 		builder.Property(x => x.Settings)
-			.HasXmlColumnType();
+			.IsXmlColumn();
 
 		builder.Property(x=>x.DateOfBirth)
-			.HasDateColumnType();
+			.IsDateColumn();
 
 		builder.Property(x => x.Salary)
-			.HasMoneyColumnType(true);
+			.IsMoneyColumn(true);
 
 		base.Configure(builder);
 	}
