@@ -7,6 +7,6 @@ public sealed class PersonJob : AuditedCompositeModel
 	public Guid PersonId { get; set; }
 	public Guid JobId { get; set; }
 
-	public Person Person { get; set; }
-	public Job Job { get; set; }
+	public Person Person { get; set; } = default!;
+	public Job Job { get; set; } = default!;
 }

@@ -45,8 +45,7 @@ public abstract class EnumeratorConfiguration<TEntity> : IEntityTypeConfiguratio
 			.HasColumnOrder(5)
 			.HasDefaultValue(false);
 
-		builder.HasIndex(e => e.Name)
-			.IsClustered(true)
+		builder.HasIndex(e => e.Name)			
 			.IsUnique();
 	}
 }
