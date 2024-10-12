@@ -2,9 +2,9 @@
 
 	<PropertyGroup Label="Versioning">
 		<VersionMajor>2</VersionMajor>
-		<VersionMinor>4</VersionMinor>
+		<VersionMinor>5</VersionMinor>
 		<VersionPatch>$([System.DateTime]::UtcNow.ToString("MMdd"))</VersionPatch>
-		<VersionRevision>$([System.DateTime]::UtcNow.TimeOfDay.TotalMinutes.ToString("0"))</VersionRevision>
+		<VersionRevision>$([System.DateTime]::UtcNow.TimeOfDay.TotalHours.ToString("0"))</VersionRevision>
 		<VersionPrefix>$(VersionMajor).$(VersionMinor).$(VersionPatch).$(VersionRevision)</VersionPrefix>
 		<VersionSuffix Condition="$(Configuration.Equals('Debug'))">Development</VersionSuffix>
 		<FileVersion>$(VersionMajor).$(VersionMinor).$(VersionPatch)</FileVersion>
