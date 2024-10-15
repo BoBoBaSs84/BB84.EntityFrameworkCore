@@ -31,24 +31,26 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 		=> await DeleteAsync(x => ids.Contains(x.Id), token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public TEntity? GetById(TKey id, bool ignoreQueryFilters = false, bool trackChanges = false)
+	public TEntity? GetById(TKey id, bool ignoreQueryFilters = false, bool trackChanges = false, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: x => x.Id.Equals(id),
 			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges
+			trackChanges: trackChanges,
+			includeProperties: includeProperties
 			);
 
 		return query.SingleOrDefault();
 	}
 
 	/// <inheritdoc/>
-	public async Task<TEntity?> GetByIdAsync(TKey id, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default)
+	public async Task<TEntity?> GetByIdAsync(TKey id, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: x => x.Id.Equals(id),
 			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges
+			trackChanges: trackChanges,
+			includeProperties: includeProperties
 			);
 
 		return await query.SingleOrDefaultAsync(token)
@@ -56,24 +58,26 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 	}
 
 	/// <inheritdoc/>
-	public IEnumerable<TEntity> GetByIds(IEnumerable<TKey> ids, bool ignoreQueryFilters = false, bool trackChanges = false)
+	public IEnumerable<TEntity> GetByIds(IEnumerable<TKey> ids, bool ignoreQueryFilters = false, bool trackChanges = false, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: x => ids.Contains(x.Id),
 			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges
+			trackChanges: trackChanges,
+			includeProperties: includeProperties
 			);
 
 		return [.. query];
 	}
 
 	/// <inheritdoc/>
-	public async Task<IEnumerable<TEntity>> GetByIdsAsync(IEnumerable<TKey> ids, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default)
+	public async Task<IEnumerable<TEntity>> GetByIdsAsync(IEnumerable<TKey> ids, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: x => ids.Contains(x.Id),
 			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges
+			trackChanges: trackChanges,
+			includeProperties: includeProperties
 			);
 
 		return await query.ToListAsync(token)
