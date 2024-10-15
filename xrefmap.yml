@@ -1179,15 +1179,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).DeleteAsync
   nameWithType: IIdentityRepository<TEntity, TKey>.DeleteAsync
   nameWithType.vb: IIdentityRepository(Of TEntity, TKey).DeleteAsync
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetById(`1,System.Boolean,System.Boolean)
-  name: GetById(TKey, bool, bool)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetById__1_System_Boolean_System_Boolean_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetById(`1,System.Boolean,System.Boolean)
-  name.vb: GetById(TKey, Boolean, Boolean)
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetById(TKey, bool, bool)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetById(TKey, Boolean, Boolean)
-  nameWithType: IIdentityRepository<TEntity, TKey>.GetById(TKey, bool, bool)
-  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetById(TKey, Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetById(`1,System.Boolean,System.Boolean,System.String[])
+  name: GetById(TKey, bool, bool, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetById__1_System_Boolean_System_Boolean_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetById(`1,System.Boolean,System.Boolean,System.String[])
+  name.vb: GetById(TKey, Boolean, Boolean, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetById(TKey, bool, bool, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetById(TKey, Boolean, Boolean, ParamArray String())
+  nameWithType: IIdentityRepository<TEntity, TKey>.GetById(TKey, bool, bool, params string[])
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetById(TKey, Boolean, Boolean, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetById*
   name: GetById
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetById_
@@ -1197,15 +1197,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetById
   nameWithType: IIdentityRepository<TEntity, TKey>.GetById
   nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetById
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdAsync(`1,System.Boolean,System.Boolean,System.Threading.CancellationToken)
-  name: GetByIdAsync(TKey, bool, bool, CancellationToken)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIdAsync__1_System_Boolean_System_Boolean_System_Threading_CancellationToken_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdAsync(`1,System.Boolean,System.Boolean,System.Threading.CancellationToken)
-  name.vb: GetByIdAsync(TKey, Boolean, Boolean, CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetByIdAsync(TKey, bool, bool, System.Threading.CancellationToken)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetByIdAsync(TKey, Boolean, Boolean, System.Threading.CancellationToken)
-  nameWithType: IIdentityRepository<TEntity, TKey>.GetByIdAsync(TKey, bool, bool, CancellationToken)
-  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetByIdAsync(TKey, Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdAsync(`1,System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name: GetByIdAsync(TKey, bool, bool, CancellationToken, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIdAsync__1_System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdAsync(`1,System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name.vb: GetByIdAsync(TKey, Boolean, Boolean, CancellationToken, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetByIdAsync(TKey, bool, bool, System.Threading.CancellationToken, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetByIdAsync(TKey, Boolean, Boolean, System.Threading.CancellationToken, ParamArray String())
+  nameWithType: IIdentityRepository<TEntity, TKey>.GetByIdAsync(TKey, bool, bool, CancellationToken, params string[])
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetByIdAsync(TKey, Boolean, Boolean, CancellationToken, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdAsync*
   name: GetByIdAsync
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIdAsync_
@@ -1215,15 +1215,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetByIdAsync
   nameWithType: IIdentityRepository<TEntity, TKey>.GetByIdAsync
   nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetByIdAsync
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean)
-  name: GetByIds(IEnumerable<TKey>, bool, bool)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIds_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean)
-  name.vb: GetByIds(IEnumerable(Of TKey), Boolean, Boolean)
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetByIds(System.Collections.Generic.IEnumerable<TKey>, bool, bool)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetByIds(System.Collections.Generic.IEnumerable(Of TKey), Boolean, Boolean)
-  nameWithType: IIdentityRepository<TEntity, TKey>.GetByIds(IEnumerable<TKey>, bool, bool)
-  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetByIds(IEnumerable(Of TKey), Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.String[])
+  name: GetByIds(IEnumerable<TKey>, bool, bool, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIds_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.String[])
+  name.vb: GetByIds(IEnumerable(Of TKey), Boolean, Boolean, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetByIds(System.Collections.Generic.IEnumerable<TKey>, bool, bool, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetByIds(System.Collections.Generic.IEnumerable(Of TKey), Boolean, Boolean, ParamArray String())
+  nameWithType: IIdentityRepository<TEntity, TKey>.GetByIds(IEnumerable<TKey>, bool, bool, params string[])
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetByIds(IEnumerable(Of TKey), Boolean, Boolean, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIds*
   name: GetByIds
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIds_
@@ -1233,15 +1233,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetByIds
   nameWithType: IIdentityRepository<TEntity, TKey>.GetByIds
   nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetByIds
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.Threading.CancellationToken)
-  name: GetByIdsAsync(IEnumerable<TKey>, bool, bool, CancellationToken)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIdsAsync_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_Threading_CancellationToken_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.Threading.CancellationToken)
-  name.vb: GetByIdsAsync(IEnumerable(Of TKey), Boolean, Boolean, CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetByIdsAsync(System.Collections.Generic.IEnumerable<TKey>, bool, bool, System.Threading.CancellationToken)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetByIdsAsync(System.Collections.Generic.IEnumerable(Of TKey), Boolean, Boolean, System.Threading.CancellationToken)
-  nameWithType: IIdentityRepository<TEntity, TKey>.GetByIdsAsync(IEnumerable<TKey>, bool, bool, CancellationToken)
-  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetByIdsAsync(IEnumerable(Of TKey), Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name: GetByIdsAsync(IEnumerable<TKey>, bool, bool, CancellationToken, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIdsAsync_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name.vb: GetByIdsAsync(IEnumerable(Of TKey), Boolean, Boolean, CancellationToken, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>.GetByIdsAsync(System.Collections.Generic.IEnumerable<TKey>, bool, bool, System.Threading.CancellationToken, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository(Of TEntity, TKey).GetByIdsAsync(System.Collections.Generic.IEnumerable(Of TKey), Boolean, Boolean, System.Threading.CancellationToken, ParamArray String())
+  nameWithType: IIdentityRepository<TEntity, TKey>.GetByIdsAsync(IEnumerable<TKey>, bool, bool, CancellationToken, params string[])
+  nameWithType.vb: IIdentityRepository(Of TEntity, TKey).GetByIdsAsync(IEnumerable(Of TKey), Boolean, Boolean, CancellationToken, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdsAsync*
   name: GetByIdsAsync
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIdsAsync_
@@ -1948,15 +1948,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).DeleteAsync
   nameWithType: IdentityRepository<TEntity, TKey>.DeleteAsync
   nameWithType.vb: IdentityRepository(Of TEntity, TKey).DeleteAsync
-- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetById(`1,System.Boolean,System.Boolean)
-  name: GetById(TKey, bool, bool)
-  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetById__1_System_Boolean_System_Boolean_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetById(`1,System.Boolean,System.Boolean)
-  name.vb: GetById(TKey, Boolean, Boolean)
-  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetById(TKey, bool, bool)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetById(TKey, Boolean, Boolean)
-  nameWithType: IdentityRepository<TEntity, TKey>.GetById(TKey, bool, bool)
-  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetById(TKey, Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetById(`1,System.Boolean,System.Boolean,System.String[])
+  name: GetById(TKey, bool, bool, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetById__1_System_Boolean_System_Boolean_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetById(`1,System.Boolean,System.Boolean,System.String[])
+  name.vb: GetById(TKey, Boolean, Boolean, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetById(TKey, bool, bool, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetById(TKey, Boolean, Boolean, ParamArray String())
+  nameWithType: IdentityRepository<TEntity, TKey>.GetById(TKey, bool, bool, params string[])
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetById(TKey, Boolean, Boolean, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetById*
   name: GetById
   href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetById_
@@ -1966,15 +1966,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetById
   nameWithType: IdentityRepository<TEntity, TKey>.GetById
   nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetById
-- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdAsync(`1,System.Boolean,System.Boolean,System.Threading.CancellationToken)
-  name: GetByIdAsync(TKey, bool, bool, CancellationToken)
-  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdAsync__1_System_Boolean_System_Boolean_System_Threading_CancellationToken_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdAsync(`1,System.Boolean,System.Boolean,System.Threading.CancellationToken)
-  name.vb: GetByIdAsync(TKey, Boolean, Boolean, CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetByIdAsync(TKey, bool, bool, System.Threading.CancellationToken)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetByIdAsync(TKey, Boolean, Boolean, System.Threading.CancellationToken)
-  nameWithType: IdentityRepository<TEntity, TKey>.GetByIdAsync(TKey, bool, bool, CancellationToken)
-  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetByIdAsync(TKey, Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdAsync(`1,System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name: GetByIdAsync(TKey, bool, bool, CancellationToken, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdAsync__1_System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdAsync(`1,System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name.vb: GetByIdAsync(TKey, Boolean, Boolean, CancellationToken, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetByIdAsync(TKey, bool, bool, System.Threading.CancellationToken, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetByIdAsync(TKey, Boolean, Boolean, System.Threading.CancellationToken, ParamArray String())
+  nameWithType: IdentityRepository<TEntity, TKey>.GetByIdAsync(TKey, bool, bool, CancellationToken, params string[])
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetByIdAsync(TKey, Boolean, Boolean, CancellationToken, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdAsync*
   name: GetByIdAsync
   href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdAsync_
@@ -1984,15 +1984,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetByIdAsync
   nameWithType: IdentityRepository<TEntity, TKey>.GetByIdAsync
   nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetByIdAsync
-- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean)
-  name: GetByIds(IEnumerable<TKey>, bool, bool)
-  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIds_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean)
-  name.vb: GetByIds(IEnumerable(Of TKey), Boolean, Boolean)
-  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetByIds(System.Collections.Generic.IEnumerable<TKey>, bool, bool)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetByIds(System.Collections.Generic.IEnumerable(Of TKey), Boolean, Boolean)
-  nameWithType: IdentityRepository<TEntity, TKey>.GetByIds(IEnumerable<TKey>, bool, bool)
-  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetByIds(IEnumerable(Of TKey), Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.String[])
+  name: GetByIds(IEnumerable<TKey>, bool, bool, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIds_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.String[])
+  name.vb: GetByIds(IEnumerable(Of TKey), Boolean, Boolean, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetByIds(System.Collections.Generic.IEnumerable<TKey>, bool, bool, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetByIds(System.Collections.Generic.IEnumerable(Of TKey), Boolean, Boolean, ParamArray String())
+  nameWithType: IdentityRepository<TEntity, TKey>.GetByIds(IEnumerable<TKey>, bool, bool, params string[])
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetByIds(IEnumerable(Of TKey), Boolean, Boolean, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIds*
   name: GetByIds
   href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIds_
@@ -2002,15 +2002,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetByIds
   nameWithType: IdentityRepository<TEntity, TKey>.GetByIds
   nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetByIds
-- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.Threading.CancellationToken)
-  name: GetByIdsAsync(IEnumerable<TKey>, bool, bool, CancellationToken)
-  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdsAsync_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_Threading_CancellationToken_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.Threading.CancellationToken)
-  name.vb: GetByIdsAsync(IEnumerable(Of TKey), Boolean, Boolean, CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetByIdsAsync(System.Collections.Generic.IEnumerable<TKey>, bool, bool, System.Threading.CancellationToken)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetByIdsAsync(System.Collections.Generic.IEnumerable(Of TKey), Boolean, Boolean, System.Threading.CancellationToken)
-  nameWithType: IdentityRepository<TEntity, TKey>.GetByIdsAsync(IEnumerable<TKey>, bool, bool, CancellationToken)
-  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetByIdsAsync(IEnumerable(Of TKey), Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name: GetByIdsAsync(IEnumerable<TKey>, bool, bool, CancellationToken, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdsAsync_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name.vb: GetByIdsAsync(IEnumerable(Of TKey), Boolean, Boolean, CancellationToken, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>.GetByIdsAsync(System.Collections.Generic.IEnumerable<TKey>, bool, bool, System.Threading.CancellationToken, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.IdentityRepository(Of TEntity, TKey).GetByIdsAsync(System.Collections.Generic.IEnumerable(Of TKey), Boolean, Boolean, System.Threading.CancellationToken, ParamArray String())
+  nameWithType: IdentityRepository<TEntity, TKey>.GetByIdsAsync(IEnumerable<TKey>, bool, bool, CancellationToken, params string[])
+  nameWithType.vb: IdentityRepository(Of TEntity, TKey).GetByIdsAsync(IEnumerable(Of TKey), Boolean, Boolean, CancellationToken, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdsAsync*
   name: GetByIdsAsync
   href: api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdsAsync_
