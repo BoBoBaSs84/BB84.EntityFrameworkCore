@@ -56,11 +56,13 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
 	/// <param name="trackChanges">Should the fetched entity be tracked?</param>
+	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
 	/// <returns>An <typeparamref name="TEntity"/> or <see langword="null"/>.</returns>
 	TEntity? GetById(
 		TKey id,
 		bool ignoreQueryFilters = false,
-		bool trackChanges = false
+		bool trackChanges = false,
+		params string[] includeProperties
 		);
 
 	/// <summary>
@@ -70,12 +72,14 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
 	/// <param name="trackChanges">Should the fetched entity be tracked?</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
 	/// <returns>The <typeparamref name="TEntity"/> or <see langword="null"/>.</returns>
 	Task<TEntity?> GetByIdAsync(
 		TKey id,
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
-		CancellationToken token = default
+		CancellationToken token = default,
+		params string[] includeProperties
 		);
 
 	/// <summary>
@@ -84,11 +88,13 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// <param name="ids">The primary keys of the <typeparamref name="TEntity"/>.</param>
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
 	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
+	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
 	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
 	IEnumerable<TEntity> GetByIds(
 		IEnumerable<TKey> ids,
 		bool ignoreQueryFilters = false,
-		bool trackChanges = false
+		bool trackChanges = false,
+		params string[] includeProperties
 		);
 
 	/// <summary>
@@ -98,12 +104,14 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
 	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
 	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
 	Task<IEnumerable<TEntity>> GetByIdsAsync(
 		IEnumerable<TKey> ids,
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
-		CancellationToken token = default
+		CancellationToken token = default,
+		params string[] includeProperties
 		);
 
 	/// <summary>
