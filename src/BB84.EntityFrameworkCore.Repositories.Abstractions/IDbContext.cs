@@ -12,6 +12,8 @@ namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 /// <remarks>
 /// Every custom database context should inherit from this interface.
 /// </remarks>
+/// <inheritdoc cref="IAsyncDisposable"/>
+/// <inheritdoc cref="IDisposable"/>
 public interface IDbContext : IAsyncDisposable, IDisposable
 {
 	/// <inheritdoc cref="DbContext.SavingChanges"/>

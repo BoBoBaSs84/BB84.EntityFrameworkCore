@@ -9,17 +9,23 @@ namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 /// <summary>
 /// The identity repository interface.
 /// </summary>
+/// <remarks>
+/// <typeparamref name="TEntity"/> must implement the <see cref="IIdentityModel{TKey}"/> interface.
+/// </remarks>
 /// <inheritdoc cref="IGenericRepository{TEntity}"/>
 /// <inheritdoc cref="IIdentityModel{TKey}"/>
-/// <remarks>
-/// <typeparamref name="TEntity"/> must implement the <see cref="IIdentityModel"/> interface.
-/// </remarks>
 public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity> where TEntity : class, IIdentityModel<TKey> where TKey : IEquatable<TKey>
 {
 	/// <summary>
 	/// Deletes the database row for the <typeparamref name="TEntity"/> instance which matches
 	/// the <paramref name="id"/> from the database.
 	/// </summary>
+	/// <remarks>
+	/// This operation executes immediately against the database, rather than being deferred
+	/// until save changes is called. It also does not interact with the EF change tracker in
+	/// any way: entity instances which happen to be tracked when this operation is invoked
+	/// aren't taken into account, and aren't updated to reflect the changes.
+	/// </remarks>	
 	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
 	int Delete(TKey id);
@@ -28,6 +34,12 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// Deletes all database rows for the <typeparamref name="TEntity"/> instances which matches
 	/// the <paramref name="ids"/> from the database.
 	/// </summary>
+	/// <remarks>
+	/// This operation executes immediately against the database, rather than being deferred
+	/// until save changes is called. It also does not interact with the EF change tracker in
+	/// any way: entity instances which happen to be tracked when this operation is invoked
+	/// aren't taken into account, and aren't updated to reflect the changes.
+	/// </remarks>	
 	/// <param name="ids">The primary keys of the <typeparamref name="TEntity"/>.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
 	int Delete(IEnumerable<TKey> ids);
@@ -36,6 +48,12 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// Deletes the database row for the <typeparamref name="TEntity"/> instance which matches
 	/// the <paramref name="id"/> from the database.
 	/// </summary>
+	/// <remarks>
+	/// This operation executes immediately against the database, rather than being deferred
+	/// until save changes is called. It also does not interact with the EF change tracker in
+	/// any way: entity instances which happen to be tracked when this operation is invoked
+	/// aren't taken into account, and aren't updated to reflect the changes.
+	/// </remarks>
 	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
@@ -45,6 +63,12 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// Deletes all database rows for the <typeparamref name="TEntity"/> instances which matches
 	/// the <paramref name="ids"/> from the database.
 	/// </summary>
+	/// <remarks>
+	/// This operation executes immediately against the database, rather than being deferred
+	/// until save changes is called. It also does not interact with the EF change tracker in
+	/// any way: entity instances which happen to be tracked when this operation is invoked
+	/// aren't taken into account, and aren't updated to reflect the changes.
+	/// </remarks>	
 	/// <param name="ids">The primary keys of the <typeparamref name="TEntity"/>.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>

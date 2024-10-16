@@ -54,6 +54,12 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// Deletes all database rows for the <typeparamref name="TEntity"/> instances which match
 	/// the <paramref name="expression"/> from the database.
 	/// </summary>
+	/// <remarks>
+	/// This operation executes immediately against the database, rather than being deferred
+	/// until save changes is called. It also does not interact with the EF change tracker in
+	/// any way: entity instances which happen to be tracked when this operation is invoked
+	/// aren't taken into account, and aren't updated to reflect the changes.
+	/// </remarks>
 	/// <param name="expression">The condition to fulfill to be deleted.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
 	int Delete(Expression<Func<TEntity, bool>>? expression);
@@ -78,6 +84,12 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// Deletes all database rows for the <typeparamref name="TEntity"/> instances which match
 	/// the <paramref name="expression"/> from the database.
 	/// </summary>
+	/// <remarks>
+	/// This operation executes immediately against the database, rather than being deferred
+	/// until save changes is called. It also does not interact with the EF change tracker in
+	/// any way: entity instances which happen to be tracked when this operation is invoked
+	/// aren't taken into account, and aren't updated to reflect the changes.
+	/// </remarks>	
 	/// <param name="expression">The condition to fulfill to be deleted.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
@@ -247,6 +259,12 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// Updates all database rows for the <typeparamref name="TEntity"/> instances which match
 	/// the <paramref name="expression"/> from the database.
 	/// </summary>
+	/// <remarks>
+	/// This operation executes immediately against the database, rather than being deferred
+	/// until save changes is called. It also does not interact with the EF change tracker in
+	/// any way: entity instances which happen to be tracked when this operation is invoked
+	/// aren't taken into account, and aren't updated to reflect the changes.
+	/// </remarks>	
 	/// <param name="expression">The condition to fulfill to be updated.</param>
 	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
 	/// <returns>The total number of rows updated in the database.</returns>
@@ -275,6 +293,12 @@ public interface IGenericRepository<TEntity> where TEntity : class
 	/// Updates all database rows for the <typeparamref name="TEntity"/> instances which match
 	/// the <paramref name="expression"/> from the database.
 	/// </summary>
+	/// <remarks>
+	/// This operation executes immediately against the database, rather than being deferred
+	/// until save changes is called. It also does not interact with the EF change tracker in
+	/// any way: entity instances which happen to be tracked when this operation is invoked
+	/// aren't taken into account, and aren't updated to reflect the changes.
+	/// </remarks>	
 	/// <param name="expression">The condition to fulfill to be updated.</param>
 	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
