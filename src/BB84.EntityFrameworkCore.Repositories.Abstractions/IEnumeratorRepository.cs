@@ -5,10 +5,10 @@ namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 /// <summary>
 /// The enumerator repository interface.
 /// </summary>
-/// <inheritdoc cref="IIdentityRepository{TEntity}"/>
 /// <remarks>
 /// <typeparamref name="TEntity"/> must implement the <see cref="IEnumeratorModel"/> interface.
 /// </remarks>
+/// <inheritdoc cref="IIdentityRepository{TEntity}"/>
 public interface IEnumeratorRepository<TEntity> : IIdentityRepository<TEntity, int> where TEntity : class, IEnumeratorModel
 {
 	/// <summary>
