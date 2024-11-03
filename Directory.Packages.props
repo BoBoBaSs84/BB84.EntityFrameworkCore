@@ -4,7 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="MSTest.TestAdapter" Version="3.6.2" />
-    <PackageVersion Include="MSTest.TestFramework" Version="3.6.1" />
+    <PackageVersion Include="MSTest.TestFramework" Version="3.6.2" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.10" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
