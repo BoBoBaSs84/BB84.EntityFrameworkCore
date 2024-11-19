@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -203,7 +203,7 @@ Interface IIdentityRepository&lt;TEntity, TKey&gt;  <a class="header-action link
 
 
   <h2 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p><code class="typeparamref">TEntity</code> must implement the <a class="xref" href="BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel.html">IIdentityModel</a> interface.</p>
+  <div class="markdown level0 remarks"><p><code class="typeparamref">TEntity</code> must implement the <a class="xref" href="BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel-1.html">IIdentityModel&lt;TKey&gt;</a> interface.</p>
 </div>
 
 
@@ -215,7 +215,7 @@ Interface IIdentityRepository&lt;TEntity, TKey&gt;  <a class="header-action link
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_Delete_System_Collections_Generic_IEnumerable__1__" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.Delete(System.Collections.Generic.IEnumerable{`1})">
   Delete(IEnumerable&lt;TKey&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes all database rows for the <code class="typeparamref">TEntity</code> instances which matches
@@ -247,6 +247,12 @@ the <code class="paramref">ids</code> from the database.</p>
 
 
 
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_Delete_System_Collections_Generic_IEnumerable__1___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.</p>
+</div>
 
 
 
@@ -255,7 +261,7 @@ the <code class="paramref">ids</code> from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_Delete__1_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.Delete(`1)">
   Delete(TKey)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes the database row for the <code class="typeparamref">TEntity</code> instance which matches
@@ -287,6 +293,12 @@ the <code class="paramref">id</code> from the database.</p>
 
 
 
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_Delete__1__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.</p>
+</div>
 
 
 
@@ -295,7 +307,7 @@ the <code class="paramref">id</code> from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_DeleteAsync_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteAsync(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)">
   DeleteAsync(IEnumerable&lt;TKey&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes all database rows for the <code class="typeparamref">TEntity</code> instances which matches
@@ -330,6 +342,12 @@ the <code class="paramref">ids</code> from the database.</p>
 
 
 
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_DeleteAsync_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.</p>
+</div>
 
 
 
@@ -338,7 +356,7 @@ the <code class="paramref">ids</code> from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_DeleteAsync__1_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.DeleteAsync(`1,System.Threading.CancellationToken)">
   DeleteAsync(TKey, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes the database row for the <code class="typeparamref">TEntity</code> instance which matches
@@ -373,6 +391,12 @@ the <code class="paramref">id</code> from the database.</p>
 
 
 
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_DeleteAsync__1_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.</p>
+</div>
 
 
 
@@ -381,7 +405,7 @@ the <code class="paramref">id</code> from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetById__1_System_Boolean_System_Boolean_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetById(`1,System.Boolean,System.Boolean,System.String[])">
   GetById(TKey, bool, bool, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns an <code class="typeparamref">TEntity</code> by its primary key.</p>
@@ -429,7 +453,7 @@ the <code class="paramref">id</code> from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIdAsync__1_System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdAsync(`1,System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])">
   GetByIdAsync(TKey, bool, bool, CancellationToken, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L101"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns an <code class="typeparamref">TEntity</code> by its primary key.</p>
@@ -480,7 +504,7 @@ the <code class="paramref">id</code> from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIds_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.String[])">
   GetByIds(IEnumerable&lt;TKey&gt;, bool, bool, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L117"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a collection of <code class="typeparamref">TEntity</code> by their primary keys.</p>
@@ -528,7 +552,7 @@ the <code class="paramref">id</code> from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_GetByIdsAsync_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.GetByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])">
   GetByIdsAsync(IEnumerable&lt;TKey&gt;, bool, bool, CancellationToken, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L133"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a collection of <code class="typeparamref">TEntity</code> by their primary keys.</p>
@@ -579,7 +603,7 @@ the <code class="paramref">id</code> from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_Update_System_Collections_Generic_IEnumerable__1__System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.Update(System.Collections.Generic.IEnumerable{`1},System.Linq.Expressions.Expression{System.Func{Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0},Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0}}})">
   Update(IEnumerable&lt;TKey&gt;, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L136"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L160"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates all database rows for the <code class="typeparamref">TEntity</code> instances which matches
@@ -622,7 +646,7 @@ the <code class="paramref">ids</code> from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_Update__1_System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.Update(`1,System.Linq.Expressions.Expression{System.Func{Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0},Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0}}})">
   Update(TKey, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L148"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates the database row for the <code class="typeparamref">TEntity</code> instance which matches
@@ -665,7 +689,7 @@ the <code class="paramref">id</code> from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_UpdateAsync_System_Collections_Generic_IEnumerable__1__System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.UpdateAsync(System.Collections.Generic.IEnumerable{`1},System.Linq.Expressions.Expression{System.Func{Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0},Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0}}},System.Threading.CancellationToken)">
   UpdateAsync(IEnumerable&lt;TKey&gt;, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L163"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L187"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates all database rows for the <code class="typeparamref">TEntity</code> instances which matches
@@ -711,7 +735,7 @@ the <code class="paramref">ids</code> from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IIdentityRepository_2_UpdateAsync__1_System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository`2.UpdateAsync(`1,System.Linq.Expressions.Expression{System.Func{Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0},Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0}}},System.Threading.CancellationToken)">
   UpdateAsync(TKey, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IIdentityRepository.cs/#L173"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates the database row for the <code class="typeparamref">TEntity</code> instance which matches

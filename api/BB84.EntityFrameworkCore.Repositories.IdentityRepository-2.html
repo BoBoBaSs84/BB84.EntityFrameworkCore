@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -252,7 +252,7 @@ Class IdentityRepository&lt;TEntity, TKey&gt;  <a class="header-action link-seco
 
 
   <h2 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p><code class="typeparamref">TEntity</code> must implement the <a class="xref" href="BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel.html">IIdentityModel</a> interface.</p>
+  <div class="markdown level0 remarks"><p><code class="typeparamref">TEntity</code> must implement the <a class="xref" href="BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel-1.html">IIdentityModel&lt;TKey&gt;</a> interface.</p>
 </div>
 
 
@@ -289,7 +289,7 @@ Class IdentityRepository&lt;TEntity, TKey&gt;  <a class="header-action link-seco
 
 
   <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext__remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p><code class="typeparamref">TEntity</code> must implement the <a class="xref" href="BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel.html">IIdentityModel</a> interface.</p>
+  <div class="markdown level1 remarks"><p><code class="typeparamref">TEntity</code> must implement the <a class="xref" href="BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel-1.html">IIdentityModel&lt;TKey&gt;</a> interface.</p>
 </div>
 
 
@@ -335,6 +335,12 @@ the <code class="paramref">ids</code> from the database.</p>
 
 
 
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_Delete_System_Collections_Generic_IEnumerable__1___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.</p>
+</div>
 
 
 
@@ -375,6 +381,12 @@ the <code class="paramref">id</code> from the database.</p>
 
 
 
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_Delete__1__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.</p>
+</div>
 
 
 
@@ -418,6 +430,12 @@ the <code class="paramref">ids</code> from the database.</p>
 
 
 
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteAsync_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.</p>
+</div>
 
 
 
@@ -461,6 +479,12 @@ the <code class="paramref">id</code> from the database.</p>
 
 
 
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteAsync__1_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.</p>
+</div>
 
 
 
