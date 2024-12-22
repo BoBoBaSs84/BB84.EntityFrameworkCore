@@ -9,10 +9,11 @@ using Microsoft.EntityFrameworkCore.Query;
 namespace BB84.EntityFrameworkCore.Repositories;
 
 /// <summary>
-/// The identity repository class.
+/// The repository base implementation for identity based entities.
 /// </summary>
 /// <inheritdoc cref="IIdentityRepository{TEntity, TKey}"/>
-public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : GenericRepository<TEntity>(dbContext), IIdentityRepository<TEntity, TKey> where TEntity : class, IIdentityModel<TKey> where TKey : IEquatable<TKey>
+public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : GenericRepository<TEntity>(dbContext), IIdentityRepository<TEntity, TKey>
+	where TEntity : class, IIdentityModel<TKey> where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
 	public int Delete(TKey id)
@@ -101,6 +102,8 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 		=> await UpdateAsync(x => ids.Contains(x.Id), setPropertyCalls, token).ConfigureAwait(false);
 }
 
-/// <inheritdoc/>
-public abstract class IdentityRepository<TEntity>(IDbContext dbContext) : IdentityRepository<TEntity, Guid>(dbContext), IIdentityRepository<TEntity> where TEntity : class, IIdentityModel
+/// <inheritdoc cref="IdentityRepository{TEntity, TKey}"/>
+/// <inheritdoc cref="IIdentityRepository{TEntity}"/>
+public abstract class IdentityRepository<TEntity>(IDbContext dbContext) : IdentityRepository<TEntity, Guid>(dbContext), IIdentityRepository<TEntity>
+	where TEntity : class, IIdentityModel
 { }

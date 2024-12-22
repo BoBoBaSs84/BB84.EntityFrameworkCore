@@ -8,11 +8,12 @@ using Microsoft.EntityFrameworkCore.Query;
 namespace BB84.EntityFrameworkCore.Repositories;
 
 /// <summary>
-/// The generic repository class.
+/// The generic repository implementation.
 /// </summary>
 /// <inheritdoc cref="IGenericRepository{TEntity}"/>
 /// <param name="dbContext">The database context to work with.</param>	
-public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGenericRepository<TEntity> where TEntity : class
+public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGenericRepository<TEntity>
+	where TEntity : class
 {
 	/// <summary>
 	/// The collection of all <typeparamref name="TEntity"/> within the database context.
