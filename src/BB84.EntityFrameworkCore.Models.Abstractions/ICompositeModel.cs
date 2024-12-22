@@ -3,7 +3,7 @@
 namespace BB84.EntityFrameworkCore.Models.Abstractions;
 
 /// <summary>
-/// The composite model interface.
+/// The interface for the composite models.
 /// </summary>
 public interface ICompositeModel : IConcurrency
 { }

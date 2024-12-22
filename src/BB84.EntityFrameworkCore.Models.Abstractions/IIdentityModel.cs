@@ -3,16 +3,16 @@
 namespace BB84.EntityFrameworkCore.Models.Abstractions;
 
 /// <summary>
-/// The model base interface.
+/// The interface for the identity models.
 /// </summary>
 /// <inheritdoc cref="IIdentity{TKey}"/>
-/// <inheritdoc cref="IAudited{TCreated, TModified}"/>
+/// <inheritdoc cref="IConcurrency"/>
 public interface IIdentityModel<TKey> : IIdentity<TKey>, IConcurrency where TKey : IEquatable<TKey>
 { }
 
-/// <inheritdoc/>
+/// <inheritdoc cref="IIdentityModel{TKey}"/>
 /// <remarks>
-/// The primary key is of type <see cref="Guid"/>.
+/// The identity column is of type <see cref="Guid"/>.
 /// </remarks>
 public interface IIdentityModel : IIdentityModel<Guid>
 { }

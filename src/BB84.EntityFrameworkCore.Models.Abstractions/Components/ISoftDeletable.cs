@@ -1,12 +1,12 @@
 ﻿namespace BB84.EntityFrameworkCore.Models.Abstractions.Components;
 
 /// <summary>
-/// The soft deleteable interface.
+/// The interface for soft deleteable components.
 /// </summary>
 public interface ISoftDeletable
 {
 	/// <summary>
-	/// Is the data row in a soft deleted state?
+	/// Indicates if the data row in a soft deleted state.
 	/// </summary>
 	bool IsDeleted { get; set; }
 }

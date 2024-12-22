@@ -3,13 +3,16 @@
 namespace BB84.EntityFrameworkCore.Models.Abstractions;
 
 /// <summary>
-/// The audited composite model interface.
+/// The interface for the audited composite models.
 /// </summary>
 /// <inheritdoc cref="IConcurrency"/>
-/// <inheritdoc cref="IAudited{TCreated, TModified}"/>
-public interface IAuditedCompositeModel<TCreated, TModified> : IConcurrency, IAudited<TCreated, TModified>
+/// <inheritdoc cref="IUserAudited{TCreator, TEditor}"/>
+public interface IAuditedCompositeModel<TCreator, TEditor> : IConcurrency, IUserAudited<TCreator, TEditor>
 { }
 
-/// <inheritdoc/>
+/// <inheritdoc cref="IAuditedCompositeModel{TCreator, TEditor}"/>
+/// <remarks>
+/// The user auditing columns are of type <see cref="string"/>.
+/// </remarks>
 public interface IAuditedCompositeModel : IAuditedCompositeModel<string, string?>
 { }
