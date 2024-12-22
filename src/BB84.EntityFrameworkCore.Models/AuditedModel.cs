@@ -3,22 +3,29 @@
 namespace BB84.EntityFrameworkCore.Models;
 
 /// <summary>
-/// The audited model class.
+/// The base implementation for the audited models.
 /// </summary>
-/// <inheritdoc cref="IAuditedModel{TKey, TCreated, TModified}"/>
-public abstract class AuditedModel<TKey, TCreated, TModified> : IdentityModel<TKey>, IAuditedModel<TKey, TCreated, TModified> where TKey : IEquatable<TKey>
+/// <inheritdoc cref="IAuditedModel{TKey, TCreator, TEdited}"/>
+public abstract class AuditedModel<TKey, TCreator, TEdited> : IdentityModel<TKey>, IAuditedModel<TKey, TCreator, TEdited> where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
-	public TCreated CreatedBy { get; set; } = default!;
+	public TCreator Creator { get; set; } = default!;
 
 	/// <inheritdoc/>
-	public TModified ModifiedBy { get; set; } = default!;
+	public TEdited Editor { get; set; } = default!;
 }
 
-/// <inheritdoc/>
-public abstract class AuditedModel<TCreated, TModified> : AuditedModel<Guid, TCreated, TModified>, IAuditedModel<TCreated, TModified>
+/// <inheritdoc cref="AuditedModel{TKey, TCreator, TEdited}"/>
+/// <inheritdoc cref="IAuditedModel{TKey}"/>
+public abstract class AuditedModel<TKey> : AuditedModel<TKey, string, string?>, IAuditedModel<TKey> where TKey : IEquatable<TKey>
 { }
 
-/// <inheritdoc/>
+/// <inheritdoc cref="AuditedModel{TKey, TCreator, TEdited}"/>
+/// <inheritdoc cref="IAuditedModel{TCreator, TEdited}"/>
+public abstract class AuditedModel<TCreator, TEdited> : AuditedModel<Guid, TCreator, TEdited>, IAuditedModel<TCreator, TEdited>
+{ }
+
+/// <inheritdoc cref="AuditedModel{TKey, TCreator, TEdited}"/>
+/// <inheritdoc cref="IAuditedModel"/>
 public abstract class AuditedModel : AuditedModel<Guid, string, string?>, IAuditedModel
 { }

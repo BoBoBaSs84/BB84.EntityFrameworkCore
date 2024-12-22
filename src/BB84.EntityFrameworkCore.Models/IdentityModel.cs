@@ -3,7 +3,7 @@
 namespace BB84.EntityFrameworkCore.Models;
 
 /// <summary>
-/// The identity model class.
+/// The base implementation for the identity models.
 /// </summary>
 /// <inheritdoc cref="IIdentityModel{TKey}"/>
 public abstract class IdentityModel<TKey> : IIdentityModel<TKey> where TKey : IEquatable<TKey>
@@ -15,6 +15,7 @@ public abstract class IdentityModel<TKey> : IIdentityModel<TKey> where TKey : IE
 	public byte[] Timestamp { get; } = default!;
 }
 
-/// <inheritdoc/>
+/// <inheritdoc cref="IdentityModel{TKey}"/>
+/// <inheritdoc cref="IIdentityModel"/>
 public abstract class IdentityModel : IdentityModel<Guid>, IIdentityModel
 { }

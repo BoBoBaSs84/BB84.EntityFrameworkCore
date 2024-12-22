@@ -3,21 +3,22 @@
 namespace BB84.EntityFrameworkCore.Models;
 
 /// <summary>
-/// The audited composite model class.
+/// The base implementation for the audited composite models.
 /// </summary>
-/// <inheritdoc cref="IAuditedCompositeModel{TCreated, TModified}"/>
-public abstract class AuditedCompositeModel<TCreated, TModified> : IAuditedCompositeModel<TCreated, TModified>
+/// <inheritdoc cref="IAuditedCompositeModel{TCreator, TEdited}"/>
+public abstract class AuditedCompositeModel<TCreator, TEdited> : IAuditedCompositeModel<TCreator, TEdited>
 {
 	/// <inheritdoc/>
 	public byte[] Timestamp { get; } = default!;
 
 	/// <inheritdoc/>
-	public TCreated CreatedBy { get; set; } = default!;
+	public TCreator Creator { get; set; } = default!;
 
 	/// <inheritdoc/>
-	public TModified ModifiedBy { get; set; } = default!;
+	public TEdited Editor { get; set; } = default!;
 }
 
-/// <inheritdoc/>
+/// <inheritdoc cref="AuditedCompositeModel{TCreator, TEdited}"/>
+/// <inheritdoc cref="IAuditedCompositeModel"/>
 public abstract class AuditedCompositeModel : AuditedCompositeModel<string, string?>, IAuditedCompositeModel
 { }

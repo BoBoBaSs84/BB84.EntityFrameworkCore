@@ -3,7 +3,7 @@
 namespace BB84.EntityFrameworkCore.Models;
 
 /// <summary>
-/// The composite model class.
+/// The base implementation for the composite models.
 /// </summary>
 /// <inheritdoc cref=" ICompositeModel"/>
 public abstract class CompositeModel : ICompositeModel
