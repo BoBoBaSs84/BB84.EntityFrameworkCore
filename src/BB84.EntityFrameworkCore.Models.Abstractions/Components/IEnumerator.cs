@@ -13,5 +13,5 @@ public interface IEnumerator
 	/// <summary>
 	/// The description of the enumerator.
 	/// </summary>
-	string Description { get; set; }
+	string? Description { get; set; }
 }

@@ -18,7 +18,7 @@ public abstract class EnumeratorModel<TKey> : IEnumeratorModel<TKey> where TKey 
 	public required string Name { get; set; }
 
 	/// <inheritdoc/>
-	public required string Description { get; set; }
+	public string? Description { get; set; }
 
 	/// <inheritdoc/>
 	public bool IsDeleted { get; set; }

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Query;
 namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 /// <summary>
-/// The repository interface for identity model base entities.
+/// The repository interface for identity model based entities.
 /// </summary>
 /// <inheritdoc cref="IGenericRepository{TEntity}"/>
 public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity>
