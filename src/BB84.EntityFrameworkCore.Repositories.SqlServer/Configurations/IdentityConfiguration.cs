@@ -8,10 +8,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 
 /// <summary>
-/// The identity base configuration class.
+/// The entity configuration for identity based entities.
 /// </summary>
 /// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
-/// <inheritdoc cref="IIdentityModel{TKey}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class IdentityConfiguration<TEntity, TKey> : IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IIdentityModel<TKey>
@@ -34,10 +33,13 @@ public abstract class IdentityConfiguration<TEntity, TKey> : IEntityTypeConfigur
 	}
 }
 
-/// <inheritdoc/>
+/// <inheritdoc cref="IdentityConfiguration{TEntity, TKey}"/>
+/// <remarks>
+/// The identity column is of type <see cref="Guid"/>.
+/// </remarks>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
-public abstract class IdentityConfiguration<TEntity> : IdentityConfiguration<TEntity, Guid>,
-	IEntityTypeConfiguration<TEntity> where TEntity : class, IIdentityModel
+public abstract class IdentityConfiguration<TEntity> : IdentityConfiguration<TEntity, Guid>, IEntityTypeConfiguration<TEntity>
+	where TEntity : class, IIdentityModel
 {
 	/// <inheritdoc/>
 	public override void Configure(EntityTypeBuilder<TEntity> builder)

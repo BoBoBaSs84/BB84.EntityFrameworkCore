@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors;
 
 /// <summary>
-/// The save changes interceptor for soft deletable entities.
+/// The save changes interceptor for time audited entities.
 /// </summary>
 /// <inheritdoc cref="SaveChangesInterceptor"/>
-public sealed class SoftDeletableInterceptor : SaveChangesInterceptor
+public sealed class TimeAuditedInterceptor : SaveChangesInterceptor
 {
 	/// <inheritdoc/>
 	public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)
@@ -30,14 +30,18 @@ public sealed class SoftDeletableInterceptor : SaveChangesInterceptor
 	{
 		if (dbContext is not null)
 		{
-			IEnumerable<EntityEntry<ISoftDeletable>> entries = dbContext.ChangeTracker.Entries<ISoftDeletable>();
+			IEnumerable<EntityEntry<ITimeAudited>> entries = dbContext.ChangeTracker.Entries<ITimeAudited>();
 
-			foreach (EntityEntry<ISoftDeletable> entry in entries)
+			foreach (EntityEntry<ITimeAudited> entry in entries)
 			{
-				if (entry.State is EntityState.Deleted)
+				switch (entry.State)
 				{
-					entry.Entity.IsDeleted = true;
-					entry.State = EntityState.Modified;
+					case EntityState.Added:
+						entry.Entity.Created = DateTime.UtcNow;
+						continue;
+					case EntityState.Modified:
+						entry.Entity.Edited = DateTime.UtcNow;
+						continue;
 				}
 			}
 		}
