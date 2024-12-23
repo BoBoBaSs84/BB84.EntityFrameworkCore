@@ -13,4 +13,5 @@ public sealed class Person : AuditedModel
 
 	public PersonType Type { get; set; } = default!;
 	public ICollection<PersonJob>? PersonJobs { get; set; }
+	public ICollection<Skill>? Skills { get; set; }
 }
