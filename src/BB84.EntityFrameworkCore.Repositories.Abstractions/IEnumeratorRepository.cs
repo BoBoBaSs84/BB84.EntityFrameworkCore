@@ -3,13 +3,12 @@
 namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 /// <summary>
-/// The enumerator repository interface.
+/// The repository interface for enumerator based entities.
 /// </summary>
-/// <remarks>
-/// <typeparamref name="TEntity"/> must implement the <see cref="IEnumeratorModel"/> interface.
-/// </remarks>
-/// <inheritdoc cref="IIdentityRepository{TEntity}"/>
-public interface IEnumeratorRepository<TEntity> : IIdentityRepository<TEntity, int> where TEntity : class, IEnumeratorModel
+/// <inheritdoc cref="IIdentityRepository{TEntity, TKey}"/>
+public interface IEnumeratorRepository<TEntity, TKey> : IIdentityRepository<TEntity, TKey>
+	where TEntity : class, IEnumeratorModel<TKey>
+	where TKey : IEquatable<TKey>
 {
 	/// <summary>
 	/// Returns an <typeparamref name="TEntity"/> by its name or <see langword="null"/>.
@@ -67,3 +66,11 @@ public interface IEnumeratorRepository<TEntity> : IIdentityRepository<TEntity, i
 		CancellationToken cancellationToken = default
 		);
 }
+
+/// <inheritdoc cref="IEnumeratorRepository{TEntity, TKey}"/>
+/// <remarks>
+/// The identity column is of type <see cref="int"/>.
+/// </remarks>
+public interface IEnumeratorRepository<TEntity> : IEnumeratorRepository<TEntity, int>
+	where TEntity : class, IEnumeratorModel
+{ }

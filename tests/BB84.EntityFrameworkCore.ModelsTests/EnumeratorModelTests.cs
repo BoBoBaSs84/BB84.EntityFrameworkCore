@@ -9,16 +9,26 @@ public sealed class EnumeratorModelTests
 	[TestMethod]
 	public void EnumeratorModelTest()
 	{
-		IEnumeratorModel model;
+		IEnumeratorModel? model;
+		int id = int.MaxValue;
+		string name = "Name";
+		string description = "Description";
+		bool isDeleted = true;
 
-		model = new TestClass();
+		model = new TestClass()
+		{
+			Id = id,
+			Name = name,
+			Description = description,
+			IsDeleted = isDeleted
+		};
 
 		Assert.IsNotNull(model);
-		Assert.AreEqual(0, model.Id);
+		Assert.AreEqual(id, model.Id);
 		Assert.IsNull(model.Timestamp);
-		Assert.IsNull(model.Name);
-		Assert.IsNull(model.Description);
-		Assert.IsFalse(model.IsDeleted);
+		Assert.AreEqual(name, model.Name);
+		Assert.AreEqual(description, model.Description);
+		Assert.AreEqual(isDeleted, model.IsDeleted);
 	}
 
 	private sealed class TestClass : EnumeratorModel

@@ -3,8 +3,17 @@
 namespace BB84.EntityFrameworkCore.Models.Abstractions;
 
 /// <summary>
-/// The enumerator model interface.
+/// The interface for the enumerator models.
 /// </summary>
-/// <inheritdoc/>
-public interface IEnumeratorModel : IIdentityModel<int>, IEnumerator, ISoftDeletable
+/// <inheritdoc cref="IIdentityModel{TKey}"/>
+/// <inheritdoc cref="IEnumerator"/>
+/// <inheritdoc cref="ISoftDeletable"/>
+public interface IEnumeratorModel<TKey> : IIdentityModel<TKey>, IEnumerator, ISoftDeletable where TKey : IEquatable<TKey>
+{ }
+
+/// <inheritdoc cref="IEnumeratorModel{TKey}"/>
+/// <remarks>
+/// The identity column is of type <see cref="int"/>.
+/// </remarks>
+public interface IEnumeratorModel : IEnumeratorModel<int>
 { }

@@ -1,7 +1,7 @@
 ﻿namespace BB84.EntityFrameworkCore.Models.Abstractions.Components;
 
 /// <summary>
-/// The identity interface.
+/// The interface for identity based components.
 /// </summary>
 /// <typeparam name="TKey">The type of the primary key.</typeparam>
 public interface IIdentity<TKey> where TKey : IEquatable<TKey>
@@ -12,7 +12,7 @@ public interface IIdentity<TKey> where TKey : IEquatable<TKey>
 	TKey Id { get; set; }
 }
 
-/// <inheritdoc/>
+/// <inheritdoc cref="IIdentity{TKey}"/>
 /// <remarks>
 /// The primary key is of type <see cref="Guid"/>.
 /// </remarks>

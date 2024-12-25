@@ -4,22 +4,16 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
-namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors;
+namespace BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Interceptors;
 
-/// <summary>
-/// The save changes interceptor for soft deletable entities.
-/// </summary>
-/// <inheritdoc cref="SaveChangesInterceptor"/>
-public sealed class SoftDeletableInterceptor : SaveChangesInterceptor
+public sealed class UserAuditedInterceptor : SaveChangesInterceptor
 {
-	/// <inheritdoc/>
 	public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)
 	{
 		InterceptEntities(eventData.Context);
 		return base.SavingChanges(eventData, result);
 	}
 
-	/// <inheritdoc/>
 	public override ValueTask<InterceptionResult<int>> SavingChangesAsync(DbContextEventData eventData, InterceptionResult<int> result, CancellationToken cancellationToken = default)
 	{
 		InterceptEntities(eventData.Context);
@@ -30,14 +24,19 @@ public sealed class SoftDeletableInterceptor : SaveChangesInterceptor
 	{
 		if (dbContext is not null)
 		{
-			IEnumerable<EntityEntry<ISoftDeletable>> entries = dbContext.ChangeTracker.Entries<ISoftDeletable>();
+			IEnumerable<EntityEntry<IUserAudited>> entries = dbContext.ChangeTracker.Entries<IUserAudited>();
+			string userName = $"{Environment.MachineName}\\{Environment.UserName}";
 
-			foreach (EntityEntry<ISoftDeletable> entry in entries)
+			foreach (EntityEntry<IUserAudited> entry in entries)
 			{
-				if (entry.State is EntityState.Deleted)
+				switch (entry.State)
 				{
-					entry.Entity.IsDeleted = true;
-					entry.State = EntityState.Modified;
+					case EntityState.Added:
+						entry.Entity.Creator = userName;
+						continue;
+					case EntityState.Modified:
+						entry.Entity.Editor = userName;
+						continue;
 				}
 			}
 		}

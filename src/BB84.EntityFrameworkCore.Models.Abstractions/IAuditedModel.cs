@@ -3,20 +3,31 @@
 namespace BB84.EntityFrameworkCore.Models.Abstractions;
 
 /// <summary>
-/// The audited model base interface.
+/// The interface for the audited models.
 /// </summary>
 /// <inheritdoc cref="IIdentity{TKey}"/>
-/// <inheritdoc cref="IAudited{TCreated, TModified}"/>
-public interface IAuditedModel<TKey, TCreated, TModified> : IIdentityModel<TKey>, IAudited<TCreated, TModified> where TKey : IEquatable<TKey>
+/// <inheritdoc cref="IUserAudited{TCreator, TEdited}"/>
+public interface IAuditedModel<TKey, TCreator, TEdited> : IIdentityModel<TKey>, IUserAudited<TCreator, TEdited> where TKey : IEquatable<TKey>
 { }
 
-/// <inheritdoc/>
+/// <inheritdoc cref="IAuditedModel{TKey, TCreator, TEdited}"/>
 /// <remarks>
-/// The primary key is of type <see cref="Guid"/>.
+/// The user auditing columns are of type <see cref="string"/>.
 /// </remarks>
-public interface IAuditedModel<TCreated, TModified> : IAuditedModel<Guid, TCreated, TModified>, IIdentityModel
+public interface IAuditedModel<TKey> : IAuditedModel<TKey, string, string?>, IUserAudited where TKey : IEquatable<TKey>
 { }
 
-/// <inheritdoc/>
-public interface IAuditedModel : IAuditedModel<string, string?>
+/// <inheritdoc cref="IAuditedModel{TKey, TCreator, TEdited}"/>
+/// <remarks>
+/// The identity column is of type <see cref="Guid"/>.
+/// </remarks>
+public interface IAuditedModel<TCreator, TEdited> : IAuditedModel<Guid, TCreator, TEdited>, IIdentityModel
+{ }
+
+/// <inheritdoc cref="IAuditedModel{TKey, TCreator, TEdited}"/>
+/// <remarks>
+/// The identity column is of type <see cref="Guid"/>.
+/// The user auditing columns are of type <see cref="string"/>.
+/// </remarks>
+public interface IAuditedModel : IAuditedModel<Guid, string, string?>, IIdentityModel, IUserAudited
 { }

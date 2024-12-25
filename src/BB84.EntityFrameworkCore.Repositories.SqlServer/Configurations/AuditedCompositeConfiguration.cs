@@ -9,13 +9,12 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 
 /// <summary>
-/// The audited composite configuration class.
+/// The entity configuration for audited composite based entities.
 /// </summary>
 /// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
-/// <inheritdoc cref="IAuditedCompositeModel{TCreated, TModified}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
-public abstract class AuditedCompositeConfiguration<TEntity, TCreated, TModified> : IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IAuditedCompositeModel<TCreated, TModified>
+public abstract class AuditedCompositeConfiguration<TEntity, TCreator, TEdited> : IEntityTypeConfiguration<TEntity>
+	where TEntity : class, IAuditedCompositeModel<TCreator, TEdited>
 {
 	/// <inheritdoc/>
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
@@ -25,17 +24,17 @@ public abstract class AuditedCompositeConfiguration<TEntity, TCreated, TModified
 			.IsConcurrencyToken()
 			.ValueGeneratedOnAddOrUpdate();
 
-		builder.Property(e => e.CreatedBy)
+		builder.Property(e => e.Creator)
 			.HasColumnOrder(4)
 			.IsRequired();
 
-		builder.Property(e => e.ModifiedBy)
+		builder.Property(e => e.Editor)
 			.HasColumnOrder(5)
 			.IsRequired(false);
 	}
 }
 
-/// <inheritdoc/>
+/// <inheritdoc cref="AuditedCompositeConfiguration{TEntity, TCreator, TEdited}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedCompositeConfiguration<TEntity> : AuditedCompositeConfiguration<TEntity, string, string?>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IAuditedCompositeModel
@@ -45,10 +44,10 @@ public abstract class AuditedCompositeConfiguration<TEntity> : AuditedCompositeC
 	{
 		base.Configure(builder);
 
-		builder.Property(e => e.CreatedBy)
+		builder.Property(e => e.Creator)
 			.IsSysNameColumn();
 
-		builder.Property(e => e.ModifiedBy)
+		builder.Property(e => e.Editor)
 			.IsSysNameColumn();
 	}
 }

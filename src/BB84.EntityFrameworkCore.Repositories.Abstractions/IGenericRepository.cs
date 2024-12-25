@@ -8,7 +8,8 @@ namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 /// The generic repository interface.
 /// </summary>
 /// <typeparam name="TEntity">The entity to work with.</typeparam>
-public interface IGenericRepository<TEntity> where TEntity : class
+public interface IGenericRepository<TEntity>
+	where TEntity : class
 {
 	/// <summary>
 	/// Creates a new database row for the <typeparamref name="TEntity"/> instance.

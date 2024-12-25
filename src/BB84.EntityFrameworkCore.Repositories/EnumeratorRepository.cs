@@ -6,11 +6,12 @@ using Microsoft.EntityFrameworkCore;
 namespace BB84.EntityFrameworkCore.Repositories;
 
 /// <summary>
-/// The enumerator repository class.
+/// The repository base implementation for enumerator based entities.
 /// </summary>
-/// <inheritdoc cref="IEnumeratorRepository{TEntity}"/>
-public abstract class EnumeratorRepository<TEntity>(IDbContext dbContext) : IdentityRepository<TEntity, int>(dbContext),
-	IEnumeratorRepository<TEntity> where TEntity : class, IEnumeratorModel
+/// <inheritdoc cref="IEnumeratorRepository{TEntity, TKey}"/>
+public abstract class EnumeratorRepository<TEntity, TKey>(IDbContext dbContext) : IdentityRepository<TEntity, TKey>(dbContext), IEnumeratorRepository<TEntity, TKey>
+	where TEntity : class, IEnumeratorModel<TKey>
+	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
 	public TEntity? GetByName(string name, bool ignoreQueryFilters = false, bool trackChanges = false)
@@ -60,3 +61,9 @@ public abstract class EnumeratorRepository<TEntity>(IDbContext dbContext) : Iden
 		return await query.ToListAsync(cancellationToken);
 	}
 }
+
+/// <inheritdoc cref="EnumeratorRepository{TEntity, TKey}"/>
+/// <inheritdoc cref="IEnumeratorRepository{TEntity}"/>
+public abstract class EnumeratorRepository<TEntity>(IDbContext dbContext) : EnumeratorRepository<TEntity, int>(dbContext), IEnumeratorRepository<TEntity>
+	where TEntity : class, IEnumeratorModel
+{ }

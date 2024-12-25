@@ -1,31 +1,30 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-
-using BB84.EntityFrameworkCore.Models.Abstractions;
+﻿using BB84.EntityFrameworkCore.Models.Abstractions;
 
 namespace BB84.EntityFrameworkCore.Models;
 
 /// <summary>
-/// The enumerator model class.
+/// The base implementation for the enumerator models.
 /// </summary>
-/// <inheritdoc/>
-public abstract class EnumeratorModel : IEnumeratorModel
+/// <inheritdoc cref="IEnumeratorModel{TKey}"/>
+public abstract class EnumeratorModel<TKey> : IEnumeratorModel<TKey> where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
-	public int Id { get; set; } = default!;
+	public TKey Id { get; set; } = default!;
 
 	/// <inheritdoc/>
 	public byte[] Timestamp { get; } = default!;
 
 	/// <inheritdoc/>
-	[MaxLength(50)]
-	public string Name { get; set; } = default!;
+	public required string Name { get; set; }
 
 	/// <inheritdoc/>
-	[MaxLength(250)]
-	public string Description { get; set; } = default!;
+	public string? Description { get; set; }
 
 	/// <inheritdoc/>
-	[DefaultValue(false)]
-	public bool IsDeleted { get; set; } = default!;
+	public bool IsDeleted { get; set; }
 }
+
+/// <inheritdoc cref="EnumeratorModel{TKey}"/>
+/// <inheritdoc cref="IEnumeratorModel"/>
+public abstract class EnumeratorModel : EnumeratorModel<int>, IEnumeratorModel
+{ }

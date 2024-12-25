@@ -9,43 +9,51 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 
 /// <summary>
-/// The entity configuration for audited based entities.
+/// The entity configuration for full audited based entities.
 /// </summary>
 /// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
-public abstract class AuditedConfiguration<TEntity, TKey, TCreator, TEdited> : IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IAuditedModel<TKey, TCreator, TEdited>
+public abstract class FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited> : IEntityTypeConfiguration<TEntity>
+	where TEntity : class, IFullAuditedModel<TKey, TCreator, TEdited>
 	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
 	{
-		builder.HasKey(e => e.Id)
+		builder.HasKey(k => k.Id)
 			.IsClustered(false);
 
-		builder.Property(e => e.Id)
+		builder.Property(p => p.Id)
 			.HasColumnOrder(1)
 			.ValueGeneratedOnAdd();
 
-		builder.Property(e => e.Timestamp)
+		builder.Property(p => p.Timestamp)
 			.HasColumnOrder(2)
 			.IsConcurrencyToken()
 			.ValueGeneratedOnAddOrUpdate();
 
-		builder.Property(e => e.Creator)
+		builder.Property(p => p.Creator)
 			.HasColumnOrder(3)
 			.IsRequired();
 
-		builder.Property(e => e.Editor)
+		builder.Property(p => p.Created)
 			.HasColumnOrder(4)
+			.IsRequired();
+
+		builder.Property(p => p.Editor)
+			.HasColumnOrder(5)
+			.IsRequired(false);
+
+		builder.Property(p => p.Edited)
+			.HasColumnOrder(6)
 			.IsRequired(false);
 	}
 }
 
-/// <inheritdoc cref="AuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
+/// <inheritdoc cref="FullAuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
-public abstract class AuditedConfiguration<TEntity, TKey> : AuditedConfiguration<TEntity, TKey, string, string?>, IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IAuditedModel<TKey>
+public abstract class FullAuditeConfiguration<TEntity, TKey> : FullAuditedConfiguration<TEntity, TKey, string, string?>, IEntityTypeConfiguration<TEntity>
+	where TEntity : class, IFullAuditedModel<TKey>
 	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
@@ -53,18 +61,18 @@ public abstract class AuditedConfiguration<TEntity, TKey> : AuditedConfiguration
 	{
 		base.Configure(builder);
 
-		builder.Property(e => e.Creator)
+		builder.Property(p => p.Creator)
 			.IsSysNameColumn();
 
-		builder.Property(e => e.Editor)
+		builder.Property(p => p.Editor)
 			.IsSysNameColumn();
 	}
 }
 
-/// <inheritdoc cref="AuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
+/// <inheritdoc cref="FullAuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
-public abstract class AuditedConfiguration<TEntity, TCreator, TEdited> : AuditedConfiguration<TEntity, Guid, TCreator, TEdited>, IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IAuditedModel<TCreator, TEdited>
+public abstract class FullAuditeConfiguration<TEntity, TCreator, TEdited> : FullAuditedConfiguration<TEntity, Guid, TCreator, TEdited>, IEntityTypeConfiguration<TEntity>
+	where TEntity : class, IFullAuditedModel<TCreator, TEdited>
 {
 	/// <inheritdoc/>
 	public override void Configure(EntityTypeBuilder<TEntity> builder)
@@ -76,10 +84,10 @@ public abstract class AuditedConfiguration<TEntity, TCreator, TEdited> : Audited
 	}
 }
 
-/// <inheritdoc cref="AuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
+/// <inheritdoc cref="FullAuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
-public abstract class AuditedConfiguration<TEntity> : AuditedConfiguration<TEntity, Guid, string, string?>,
-	IEntityTypeConfiguration<TEntity> where TEntity : class, IAuditedModel
+public abstract class FullAuditeConfiguration<TEntity> : FullAuditedConfiguration<TEntity, Guid, string, string?>, IEntityTypeConfiguration<TEntity>
+	where TEntity : class, IFullAuditedModel
 {
 	/// <inheritdoc/>
 	public override void Configure(EntityTypeBuilder<TEntity> builder)
@@ -89,10 +97,10 @@ public abstract class AuditedConfiguration<TEntity> : AuditedConfiguration<TEnti
 		builder.Property(p => p.Id)
 			.HasDefaultValueSql("NEWID()");
 
-		builder.Property(e => e.Creator)
+		builder.Property(p => p.Creator)
 			.IsSysNameColumn();
 
-		builder.Property(e => e.Editor)
+		builder.Property(p => p.Editor)
 			.IsSysNameColumn();
 	}
 }

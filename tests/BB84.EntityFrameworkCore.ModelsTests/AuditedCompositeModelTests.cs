@@ -15,8 +15,8 @@ public sealed class AuditedCompositeModelTests
 
 		Assert.IsNotNull(model);
 		Assert.IsNull(model.Timestamp);
-		Assert.IsNull(model.CreatedBy);
-		Assert.IsNull(model.ModifiedBy);
+		Assert.IsNull(model.Creator);
+		Assert.IsNull(model.Editor);
 	}
 
 	private sealed class TestClass : AuditedCompositeModel

@@ -1,7 +1,7 @@
 ﻿namespace BB84.EntityFrameworkCore.Models.Abstractions.Components;
 
 /// <summary>
-/// The enumerator interface.
+/// The interface for enumerator based components.
 /// </summary>
 public interface IEnumerator
 {
@@ -13,5 +13,5 @@ public interface IEnumerator
 	/// <summary>
 	/// The description of the enumerator.
 	/// </summary>
-	string Description { get; set; }
+	string? Description { get; set; }
 }

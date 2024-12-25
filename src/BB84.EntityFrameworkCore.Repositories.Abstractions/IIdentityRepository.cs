@@ -7,14 +7,12 @@ using Microsoft.EntityFrameworkCore.Query;
 namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 /// <summary>
-/// The identity repository interface.
+/// The repository interface for identity model based entities.
 /// </summary>
-/// <remarks>
-/// <typeparamref name="TEntity"/> must implement the <see cref="IIdentityModel{TKey}"/> interface.
-/// </remarks>
 /// <inheritdoc cref="IGenericRepository{TEntity}"/>
-/// <inheritdoc cref="IIdentityModel{TKey}"/>
-public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity> where TEntity : class, IIdentityModel<TKey> where TKey : IEquatable<TKey>
+public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity>
+	where TEntity : class, IIdentityModel<TKey>
+	where TKey : IEquatable<TKey>
 {
 	/// <summary>
 	/// Deletes the database row for the <typeparamref name="TEntity"/> instance which matches
@@ -191,6 +189,10 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		);
 }
 
-/// <inheritdoc/>
-public interface IIdentityRepository<TEntity> : IIdentityRepository<TEntity, Guid> where TEntity : class, IIdentityModel
+/// <inheritdoc cref="IIdentityRepository{TEntity, TKey}"/>
+/// <remarks>
+/// The identity column is of type <see cref="Guid"/>.
+/// </remarks>
+public interface IIdentityRepository<TEntity> : IIdentityRepository<TEntity, Guid>
+	where TEntity : class, IIdentityModel
 { }
