@@ -1,7 +1,6 @@
-﻿using BB84.EntityFrameworkCore.Entities;
-using BB84.EntityFrameworkCore.Entities.Abstractions;
+﻿using BB84.EntityFrameworkCore.Entities.Abstractions;
 
-namespace BB84.EntityFrameworkCore.EntitiesTests;
+namespace BB84.EntityFrameworkCore.Entities.Tests;
 
 [TestClass]
 public sealed class EnumeratorEntityTests
@@ -9,13 +8,13 @@ public sealed class EnumeratorEntityTests
 	[TestMethod]
 	public void EnumeratorEntityTest()
 	{
-		IEnumeratorEntity? model;
+		IEnumeratorEntity? entity;
 		int id = int.MaxValue;
 		string name = "Name";
 		string description = "Description";
 		bool isDeleted = true;
 
-		model = new TestClass()
+		entity = new TestClass()
 		{
 			Id = id,
 			Name = name,
@@ -23,12 +22,11 @@ public sealed class EnumeratorEntityTests
 			IsDeleted = isDeleted
 		};
 
-		Assert.IsNotNull(model);
-		Assert.AreEqual(id, model.Id);
-		Assert.IsNull(model.Timestamp);
-		Assert.AreEqual(name, model.Name);
-		Assert.AreEqual(description, model.Description);
-		Assert.AreEqual(isDeleted, model.IsDeleted);
+		Assert.IsNotNull(entity);
+		Assert.AreEqual(id, entity.Id);
+		Assert.AreEqual(name, entity.Name);
+		Assert.AreEqual(description, entity.Description);
+		Assert.AreEqual(isDeleted, entity.IsDeleted);
 	}
 
 	private sealed class TestClass : EnumeratorEntity

@@ -1,8 +1,7 @@
-﻿using BB84.EntityFrameworkCore.Repositories;
-using BB84.EntityFrameworkCore.RepositoriesTests.Abstractions;
-using BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Entities;
+﻿using BB84.EntityFrameworkCore.Repositories.Tests.Abstractions;
+using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 
-namespace BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Repositories;
+namespace BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Repositories;
 
 internal sealed class PersonTypeRepository(ITestDbContext testContext) : EnumeratorRepository<PersonType>(testContext)
 { }

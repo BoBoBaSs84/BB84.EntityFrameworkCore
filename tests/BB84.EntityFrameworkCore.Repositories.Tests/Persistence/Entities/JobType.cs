@@ -1,8 +1,8 @@
 ﻿using BB84.EntityFrameworkCore.Entities;
 
-namespace BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Entities;
+namespace BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 
 public sealed class JobType : CompositeEntity
 {
-	public string? Color {  get; set; }
+	public string? Color { get; set; }
 }

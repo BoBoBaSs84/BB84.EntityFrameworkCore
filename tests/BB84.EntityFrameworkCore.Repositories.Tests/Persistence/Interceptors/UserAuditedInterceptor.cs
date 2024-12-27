@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
-namespace BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Interceptors;
+namespace BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Interceptors;
 
 public sealed class UserAuditedInterceptor : SaveChangesInterceptor
 {

@@ -1,7 +1,7 @@
-﻿using BB84.EntityFrameworkCore.RepositoriesTests.Persistence;
-using BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Repositories;
+﻿using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
+using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Repositories;
 
-namespace BB84.EntityFrameworkCore.RepositoriesTests;
+namespace BB84.EntityFrameworkCore.Repositories.Tests;
 
 [TestClass]
 public sealed class JobTests : UnitTestBase

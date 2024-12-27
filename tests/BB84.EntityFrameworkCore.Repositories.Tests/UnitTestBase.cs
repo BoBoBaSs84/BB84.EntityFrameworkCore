@@ -1,10 +1,10 @@
 ﻿using BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors;
-using BB84.EntityFrameworkCore.RepositoriesTests.Persistence;
-using BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Interceptors;
+using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
+using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Interceptors;
 
 using Microsoft.EntityFrameworkCore;
 
-namespace BB84.EntityFrameworkCore.RepositoriesTests;
+namespace BB84.EntityFrameworkCore.Repositories.Tests;
 
 [TestClass]
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, unit testing.")]

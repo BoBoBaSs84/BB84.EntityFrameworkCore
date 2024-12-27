@@ -1,7 +1,6 @@
-﻿using BB84.EntityFrameworkCore.Entities;
-using BB84.EntityFrameworkCore.Entities.Abstractions;
+﻿using BB84.EntityFrameworkCore.Entities.Abstractions;
 
-namespace BB84.EntityFrameworkCore.EntitiesTests;
+namespace BB84.EntityFrameworkCore.Entities.Tests;
 
 [TestClass]
 public sealed class CompositeEntityTests
@@ -9,12 +8,11 @@ public sealed class CompositeEntityTests
 	[TestMethod]
 	public void CompositeEntityTest()
 	{
-		ICompositeEntity model;
+		ICompositeEntity? entity;
 
-		model = new TestClass();
+		entity = new TestClass();
 
-		Assert.IsNotNull(model);
-		Assert.IsNull(model.Timestamp);
+		Assert.IsNotNull(entity);
 	}
 
 	private sealed class TestClass : CompositeEntity

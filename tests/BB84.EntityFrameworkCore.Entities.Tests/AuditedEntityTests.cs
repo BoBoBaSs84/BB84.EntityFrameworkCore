@@ -1,7 +1,6 @@
-﻿using BB84.EntityFrameworkCore.Entities;
-using BB84.EntityFrameworkCore.Entities.Abstractions;
+﻿using BB84.EntityFrameworkCore.Entities.Abstractions;
 
-namespace BB84.EntityFrameworkCore.EntitiesTests;
+namespace BB84.EntityFrameworkCore.Entities.Tests;
 
 [TestClass]
 public sealed class AuditedEntityTests
@@ -9,15 +8,20 @@ public sealed class AuditedEntityTests
 	[TestMethod]
 	public void AuditedEntityTest()
 	{
-		IAuditedEntity? model;
+		IAuditedEntity? entity;
+		string creator = "UnitTest";
+		string editor = "UnitTest";
 
-		model = new TestClass();
+		entity = new TestClass
+		{
+			Creator = creator,
+			Editor = editor
+		};
 
-		Assert.IsNotNull(model);
-		Assert.AreEqual(Guid.Empty, model.Id);
-		Assert.IsNull(model.Timestamp);
-		Assert.IsNull(model.Creator);
-		Assert.IsNull(model.Editor);
+		Assert.IsNotNull(entity);
+		Assert.AreEqual(Guid.Empty, entity.Id);
+		Assert.AreEqual(creator, entity.Creator);
+		Assert.AreEqual(editor, entity.Editor);
 	}
 
 	private sealed class TestClass : AuditedEntity

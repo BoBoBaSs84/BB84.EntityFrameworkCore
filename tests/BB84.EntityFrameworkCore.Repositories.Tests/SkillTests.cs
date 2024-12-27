@@ -1,7 +1,8 @@
-﻿using BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Entities;
-using BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Repositories;
+﻿using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
+using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
+using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Repositories;
 
-namespace BB84.EntityFrameworkCore.RepositoriesTests;
+namespace BB84.EntityFrameworkCore.Repositories.Tests;
 
 [TestClass]
 public sealed class SkillTests : UnitTestBase
@@ -9,7 +10,7 @@ public sealed class SkillTests : UnitTestBase
 	[TestMethod]
 	public void SkillCreateTest()
 	{
-		using Persistence.TestDbContext context = GetTestContext();
+		using TestDbContext context = GetTestContext();
 		SkillRepository repository = new(context);
 		Skill newSkill = new()
 		{
@@ -25,7 +26,7 @@ public sealed class SkillTests : UnitTestBase
 		Skill? dbSkill = repository.GetByCondition(x => x.Name == newSkill.Name, trackChanges: true);
 		Assert.IsNotNull(dbSkill);
 		Assert.AreNotEqual(DateTime.MinValue, dbSkill.Created);
-		
+
 		dbSkill.IsCritical = false;
 		result = context.SaveChanges();
 		Assert.AreEqual(1, result);

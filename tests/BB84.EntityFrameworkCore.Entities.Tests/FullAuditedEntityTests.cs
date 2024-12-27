@@ -1,7 +1,6 @@
-﻿using BB84.EntityFrameworkCore.Entities;
-using BB84.EntityFrameworkCore.Entities.Abstractions;
+﻿using BB84.EntityFrameworkCore.Entities.Abstractions;
 
-namespace BB84.EntityFrameworkCore.EntitiesTests;
+namespace BB84.EntityFrameworkCore.Entities.Tests;
 
 [TestClass]
 public sealed class FullAuditedEntityTests
@@ -9,9 +8,9 @@ public sealed class FullAuditedEntityTests
 	[TestMethod]
 	public void PropertySetCorrectValuesTest()
 	{
-		IFullAuditedEntity? model;
+		IFullAuditedEntity? entity;
 
-		model = new TestClass()
+		entity = new TestClass()
 		{
 			Id = Guid.NewGuid(),
 			Creator = "UnitTest",
@@ -20,12 +19,12 @@ public sealed class FullAuditedEntityTests
 			Edited = DateTime.UtcNow
 		};
 
-		Assert.IsNotNull(model);
-		Assert.AreNotEqual(Guid.Empty, model.Id);
-		Assert.AreNotEqual("Test", model.Creator);
-		Assert.AreNotEqual(DateTime.UtcNow, model.Created);
-		Assert.AreNotEqual("Test", model.Editor);
-		Assert.AreNotEqual(DateTime.UtcNow, model.Edited);
+		Assert.IsNotNull(entity);
+		Assert.AreNotEqual(Guid.Empty, entity.Id);
+		Assert.AreNotEqual("Test", entity.Creator);
+		Assert.AreNotEqual(DateTime.UtcNow, entity.Created);
+		Assert.AreNotEqual("Test", entity.Editor);
+		Assert.AreNotEqual(DateTime.UtcNow, entity.Edited);
 	}
 
 	private sealed class TestClass : FullAuditedEntity

@@ -1,10 +1,10 @@
 ﻿using BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
-using BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Entities;
+using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace BB84.EntityFrameworkCore.RepositoriesTests.Persistence.Configurations;
+namespace BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Configurations;
 
 internal sealed class PersonJobConfiguration : AuditedCompositeConfiguration<PersonJob>
 {
