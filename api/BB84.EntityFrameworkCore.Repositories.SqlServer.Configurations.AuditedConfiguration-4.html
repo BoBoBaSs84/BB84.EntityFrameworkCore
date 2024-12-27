@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class AuditedConfiguration&lt;TEntity, TKey, TCreated, TModified&gt; </title>
+      <title>Class AuditedConfiguration&lt;TEntity, TKey, TCreator, TEdited&gt; </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class AuditedConfiguration&lt;TEntity, TKey, TCreated, TModified&gt; ">
+      <meta name="title" content="Class AuditedConfiguration&lt;TEntity, TKey, TCreator, TEdited&gt; ">
       
-      <meta name="description" content="The audited base configuration class.">
+      <meta name="description" content="The entity configuration for audited based entities.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_4" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`4" class="text-break">
-Class AuditedConfiguration&lt;TEntity, TKey, TCreated, TModified&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/AuditedConfiguration.cs/#L16"><i class="bi bi-code-slash"></i></a>
+Class AuditedConfiguration&lt;TEntity, TKey, TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/AuditedConfiguration.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,12 +93,12 @@ Class AuditedConfiguration&lt;TEntity, TKey, TCreated, TModified&gt;  <a class="
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.SqlServer.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The audited base configuration class.</p>
+  <div class="markdown summary"><p>The entity configuration for audited based entities.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class AuditedConfiguration&lt;TEntity, TKey, TCreated, TModified&gt; : IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IAuditedModel&lt;TKey, TCreated, TModified&gt; where TKey : IEquatable&lt;TKey&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class AuditedConfiguration&lt;TEntity, TKey, TCreator, TEdited&gt; : IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IAuditedEntity&lt;TKey, TCreator, TEdited&gt; where TKey : IEquatable&lt;TKey&gt;</code></pre>
   </div>
 
 
@@ -109,21 +109,18 @@ Class AuditedConfiguration&lt;TEntity, TKey, TCreated, TModified&gt;  <a class="
     <dd><p>The entity type to be configured.</p>
 </dd>
     <dt><code>TKey</code></dt>
-    <dd><p>The type of the primary key.</p>
-</dd>
-    <dt><code>TCreated</code></dt>
-    <dd><p>The type of the created by column.</p>
-</dd>
-    <dt><code>TModified</code></dt>
-    <dd><p>The type of the modified by column.</p>
-</dd>
+    <dd></dd>
+    <dt><code>TCreator</code></dt>
+    <dd></dd>
+    <dt><code>TEdited</code></dt>
+    <dd></dd>
   </dl>
 
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">AuditedConfiguration&lt;TEntity, TKey, TCreated, TModified&gt;</span></div>
+      <div><span class="xref">AuditedConfiguration&lt;TEntity, TKey, TCreator, TEdited&gt;</span></div>
     </dd>
   </dl>
 
@@ -138,6 +135,8 @@ Class AuditedConfiguration&lt;TEntity, TKey, TCreated, TModified&gt;  <a class="
     <dt>Derived</dt>
     <dd>
       <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-1.html">AuditedConfiguration&lt;TEntity&gt;</a></div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-2.html">AuditedConfiguration&lt;TEntity, TKey&gt;</a></div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-3.html">AuditedConfiguration&lt;TEntity, TCreator, TEdited&gt;</a></div>
     </dd>
   </dl>
 
@@ -184,7 +183,7 @@ examples.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_4_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`4.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
   Configure(EntityTypeBuilder&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/AuditedConfiguration.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/AuditedConfiguration.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configures the entity of type <code class="typeparamref">TEntity</code>.</p>
@@ -217,7 +216,7 @@ examples.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/AuditedConfiguration.cs/#L16" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/AuditedConfiguration.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class IdentityRepository&lt;TEntity, TKey&gt; ">
       
-      <meta name="description" content="The identity repository class.">
+      <meta name="description" content="The repository base implementation for identity based entities.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -93,12 +93,12 @@ Class IdentityRepository&lt;TEntity, TKey&gt;  <a class="header-action link-seco
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The identity repository class.</p>
+  <div class="markdown summary"><p>The repository base implementation for identity based entities.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class IdentityRepository&lt;TEntity, TKey&gt; : GenericRepository&lt;TEntity&gt;, IIdentityRepository&lt;TEntity, TKey&gt;, IGenericRepository&lt;TEntity&gt; where TEntity : class, IIdentityModel&lt;TKey&gt; where TKey : IEquatable&lt;TKey&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class IdentityRepository&lt;TEntity, TKey&gt; : GenericRepository&lt;TEntity&gt;, IIdentityRepository&lt;TEntity, TKey&gt;, IGenericRepository&lt;TEntity&gt; where TEntity : class, IIdentityEntity&lt;TKey&gt; where TKey : IEquatable&lt;TKey&gt;</code></pre>
   </div>
 
 
@@ -109,8 +109,7 @@ Class IdentityRepository&lt;TEntity, TKey&gt;  <a class="header-action link-seco
     <dd><p>The entity to work with.</p>
 </dd>
     <dt><code>TKey</code></dt>
-    <dd><p>The type of the primary key.</p>
-</dd>
+    <dd></dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -133,7 +132,7 @@ Class IdentityRepository&lt;TEntity, TKey&gt;  <a class="header-action link-seco
   <dl class="typelist derived">
     <dt>Derived</dt>
     <dd>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html">EnumeratorRepository&lt;TEntity&gt;</a></div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html">EnumeratorRepository&lt;TEntity, TKey&gt;</a></div>
       <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-1.html">IdentityRepository&lt;TEntity&gt;</a></div>
     </dd>
   </dl>
@@ -251,9 +250,6 @@ Class IdentityRepository&lt;TEntity, TKey&gt;  <a class="header-action link-seco
 
 
 
-  <h2 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p><code class="typeparamref">TEntity</code> must implement the <a class="xref" href="BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel-1.html">IIdentityModel&lt;TKey&gt;</a> interface.</p>
-</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -267,7 +263,7 @@ Class IdentityRepository&lt;TEntity, TKey&gt;  <a class="header-action link-seco
   <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The identity repository class.</p>
+  <div class="markdown level1 summary"><p>The repository base implementation for identity based entities.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -288,9 +284,6 @@ Class IdentityRepository&lt;TEntity, TKey&gt;  <a class="header-action link-seco
 
 
 
-  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext__remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p><code class="typeparamref">TEntity</code> must implement the <a class="xref" href="BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel-1.html">IIdentityModel&lt;TKey&gt;</a> interface.</p>
-</div>
 
 
 
@@ -303,7 +296,7 @@ Class IdentityRepository&lt;TEntity, TKey&gt;  <a class="header-action link-seco
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_Delete_System_Collections_Generic_IEnumerable__1__" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.Delete(System.Collections.Generic.IEnumerable{`1})">
   Delete(IEnumerable&lt;TKey&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes all database rows for the <code class="typeparamref">TEntity</code> instances which matches
@@ -349,7 +342,7 @@ aren't taken into account, and aren't updated to reflect the changes.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_Delete__1_" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.Delete(`1)">
   Delete(TKey)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes the database row for the <code class="typeparamref">TEntity</code> instance which matches
@@ -395,7 +388,7 @@ aren't taken into account, and aren't updated to reflect the changes.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteAsync_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteAsync(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)">
   DeleteAsync(IEnumerable&lt;TKey&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes all database rows for the <code class="typeparamref">TEntity</code> instances which matches
@@ -444,7 +437,7 @@ aren't taken into account, and aren't updated to reflect the changes.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteAsync__1_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.DeleteAsync(`1,System.Threading.CancellationToken)">
   DeleteAsync(TKey, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes the database row for the <code class="typeparamref">TEntity</code> instance which matches
@@ -493,7 +486,7 @@ aren't taken into account, and aren't updated to reflect the changes.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetById__1_System_Boolean_System_Boolean_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetById(`1,System.Boolean,System.Boolean,System.String[])">
   GetById(TKey, bool, bool, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns an <code class="typeparamref">TEntity</code> by its primary key.</p>
@@ -541,7 +534,7 @@ aren't taken into account, and aren't updated to reflect the changes.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdAsync__1_System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdAsync(`1,System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])">
   GetByIdAsync(TKey, bool, bool, CancellationToken, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns an <code class="typeparamref">TEntity</code> by its primary key.</p>
@@ -592,7 +585,7 @@ aren't taken into account, and aren't updated to reflect the changes.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIds_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.String[])">
   GetByIds(IEnumerable&lt;TKey&gt;, bool, bool, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a collection of <code class="typeparamref">TEntity</code> by their primary keys.</p>
@@ -640,7 +633,7 @@ aren't taken into account, and aren't updated to reflect the changes.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdsAsync_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.GetByIdsAsync(System.Collections.Generic.IEnumerable{`1},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])">
   GetByIdsAsync(IEnumerable&lt;TKey&gt;, bool, bool, CancellationToken, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a collection of <code class="typeparamref">TEntity</code> by their primary keys.</p>
@@ -691,7 +684,7 @@ aren't taken into account, and aren't updated to reflect the changes.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_Update_System_Collections_Generic_IEnumerable__1__System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.Update(System.Collections.Generic.IEnumerable{`1},System.Linq.Expressions.Expression{System.Func{Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0},Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0}}})">
   Update(IEnumerable&lt;TKey&gt;, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L93"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates all database rows for the <code class="typeparamref">TEntity</code> instances which matches
@@ -734,7 +727,7 @@ the <code class="paramref">ids</code> from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_Update__1_System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.Update(`1,System.Linq.Expressions.Expression{System.Func{Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0},Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0}}})">
   Update(TKey, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L89"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates the database row for the <code class="typeparamref">TEntity</code> instance which matches
@@ -777,7 +770,7 @@ the <code class="paramref">id</code> from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_UpdateAsync_System_Collections_Generic_IEnumerable__1__System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.UpdateAsync(System.Collections.Generic.IEnumerable{`1},System.Linq.Expressions.Expression{System.Func{Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0},Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0}}},System.Threading.CancellationToken)">
   UpdateAsync(IEnumerable&lt;TKey&gt;, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L101"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates all database rows for the <code class="typeparamref">TEntity</code> instances which matches
@@ -823,7 +816,7 @@ the <code class="paramref">ids</code> from the database.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_UpdateAsync__1_System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`2.UpdateAsync(`1,System.Linq.Expressions.Expression{System.Func{Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0},Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0}}},System.Threading.CancellationToken)">
   UpdateAsync(TKey, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L97"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates the database row for the <code class="typeparamref">TEntity</code> instance which matches

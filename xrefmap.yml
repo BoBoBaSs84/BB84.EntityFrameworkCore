@@ -1,504 +1,726 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
-- uid: BB84.EntityFrameworkCore.Models
-  name: BB84.EntityFrameworkCore.Models
-  href: api/BB84.EntityFrameworkCore.Models.html
-  commentId: N:BB84.EntityFrameworkCore.Models
-  fullName: BB84.EntityFrameworkCore.Models
-  nameWithType: BB84.EntityFrameworkCore.Models
-- uid: BB84.EntityFrameworkCore.Models.Abstractions
-  name: BB84.EntityFrameworkCore.Models.Abstractions
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.html
-  commentId: N:BB84.EntityFrameworkCore.Models.Abstractions
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions
-  nameWithType: BB84.EntityFrameworkCore.Models.Abstractions
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components
-  name: BB84.EntityFrameworkCore.Models.Abstractions.Components
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.html
-  commentId: N:BB84.EntityFrameworkCore.Models.Abstractions.Components
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components
-  nameWithType: BB84.EntityFrameworkCore.Models.Abstractions.Components
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited
-  name: IAudited
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited
-  nameWithType: IAudited
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2
-  name: IAudited<TCreated, TModified>
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited-2.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2
-  name.vb: IAudited(Of TCreated, TModified)
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited<TCreated, TModified>
-  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited(Of TCreated, TModified)
-  nameWithType: IAudited<TCreated, TModified>
-  nameWithType.vb: IAudited(Of TCreated, TModified)
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.CreatedBy
-  name: CreatedBy
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited-2.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IAudited_2_CreatedBy
-  commentId: P:BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.CreatedBy
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited<TCreated, TModified>.CreatedBy
-  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited(Of TCreated, TModified).CreatedBy
-  nameWithType: IAudited<TCreated, TModified>.CreatedBy
-  nameWithType.vb: IAudited(Of TCreated, TModified).CreatedBy
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.CreatedBy*
-  name: CreatedBy
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited-2.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IAudited_2_CreatedBy_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.CreatedBy
-  isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited<TCreated, TModified>.CreatedBy
-  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited(Of TCreated, TModified).CreatedBy
-  nameWithType: IAudited<TCreated, TModified>.CreatedBy
-  nameWithType.vb: IAudited(Of TCreated, TModified).CreatedBy
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.ModifiedBy
-  name: ModifiedBy
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited-2.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IAudited_2_ModifiedBy
-  commentId: P:BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.ModifiedBy
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited<TCreated, TModified>.ModifiedBy
-  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited(Of TCreated, TModified).ModifiedBy
-  nameWithType: IAudited<TCreated, TModified>.ModifiedBy
-  nameWithType.vb: IAudited(Of TCreated, TModified).ModifiedBy
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.ModifiedBy*
-  name: ModifiedBy
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited-2.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IAudited_2_ModifiedBy_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited`2.ModifiedBy
-  isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited<TCreated, TModified>.ModifiedBy
-  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IAudited(Of TCreated, TModified).ModifiedBy
-  nameWithType: IAudited<TCreated, TModified>.ModifiedBy
-  nameWithType.vb: IAudited(Of TCreated, TModified).ModifiedBy
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency
+- uid: BB84.EntityFrameworkCore.Entities
+  name: BB84.EntityFrameworkCore.Entities
+  href: api/BB84.EntityFrameworkCore.Entities.html
+  commentId: N:BB84.EntityFrameworkCore.Entities
+  fullName: BB84.EntityFrameworkCore.Entities
+  nameWithType: BB84.EntityFrameworkCore.Entities
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions
+  name: BB84.EntityFrameworkCore.Entities.Abstractions
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.html
+  commentId: N:BB84.EntityFrameworkCore.Entities.Abstractions
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions
+  nameWithType: BB84.EntityFrameworkCore.Entities.Abstractions
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components
+  name: BB84.EntityFrameworkCore.Entities.Abstractions.Components
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.html
+  commentId: N:BB84.EntityFrameworkCore.Entities.Abstractions.Components
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components
+  nameWithType: BB84.EntityFrameworkCore.Entities.Abstractions.Components
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency
   name: IConcurrency
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency
   nameWithType: IConcurrency
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.Timestamp
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.Timestamp
   name: Timestamp
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IConcurrency_Timestamp
-  commentId: P:BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.Timestamp
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.Timestamp
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency_Timestamp
+  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.Timestamp
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.Timestamp
   nameWithType: IConcurrency.Timestamp
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.Timestamp*
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.Timestamp*
   name: Timestamp
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IConcurrency_Timestamp_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.Timestamp
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency_Timestamp_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.Timestamp
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IConcurrency.Timestamp
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.Timestamp
   nameWithType: IConcurrency.Timestamp
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator
   name: IEnumerator
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator
   nameWithType: IEnumerator
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Description
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.Description
   name: Description
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IEnumerator_Description
-  commentId: P:BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Description
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Description
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IEnumerator_Description
+  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.Description
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.Description
   nameWithType: IEnumerator.Description
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Description*
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.Description*
   name: Description
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IEnumerator_Description_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Description
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IEnumerator_Description_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.Description
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Description
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.Description
   nameWithType: IEnumerator.Description
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Name
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.Name
   name: Name
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IEnumerator_Name
-  commentId: P:BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Name
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Name
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IEnumerator_Name
+  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.Name
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.Name
   nameWithType: IEnumerator.Name
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Name*
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.Name*
   name: Name
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IEnumerator_Name_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Name
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IEnumerator_Name_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.Name
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IEnumerator.Name
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.Name
   nameWithType: IEnumerator.Name
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity
   name: IIdentity
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity
   nameWithType: IIdentity
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity`1
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity`1
   name: IIdentity<TKey>
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity-1.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity`1
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity-1.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity`1
   name.vb: IIdentity(Of TKey)
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity<TKey>
-  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity(Of TKey)
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity<TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity(Of TKey)
   nameWithType: IIdentity<TKey>
   nameWithType.vb: IIdentity(Of TKey)
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity`1.Id
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity`1.Id
   name: Id
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity-1.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IIdentity_1_Id
-  commentId: P:BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity`1.Id
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity<TKey>.Id
-  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity(Of TKey).Id
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity-1.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IIdentity_1_Id
+  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity`1.Id
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity<TKey>.Id
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity(Of TKey).Id
   nameWithType: IIdentity<TKey>.Id
   nameWithType.vb: IIdentity(Of TKey).Id
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity`1.Id*
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity`1.Id*
   name: Id
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity-1.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_IIdentity_1_Id_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity`1.Id
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity-1.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IIdentity_1_Id_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity`1.Id
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity<TKey>.Id
-  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.Components.IIdentity(Of TKey).Id
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity<TKey>.Id
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity(Of TKey).Id
   nameWithType: IIdentity<TKey>.Id
   nameWithType.vb: IIdentity(Of TKey).Id
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable
   name: ISoftDeletable
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable
   nameWithType: ISoftDeletable
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.IsDeleted
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable.IsDeleted
   name: IsDeleted
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_ISoftDeletable_IsDeleted
-  commentId: P:BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.IsDeleted
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.IsDeleted
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ISoftDeletable_IsDeleted
+  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable.IsDeleted
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable.IsDeleted
   nameWithType: ISoftDeletable.IsDeleted
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.IsDeleted*
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable.IsDeleted*
   name: IsDeleted
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.html#BB84_EntityFrameworkCore_Models_Abstractions_Components_ISoftDeletable_IsDeleted_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.IsDeleted
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ISoftDeletable_IsDeleted_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable.IsDeleted
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.Components.ISoftDeletable.IsDeleted
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable.IsDeleted
   nameWithType: ISoftDeletable.IsDeleted
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel
-  name: IAuditedCompositeModel
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel
-  nameWithType: IAuditedCompositeModel
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel`2
-  name: IAuditedCompositeModel<TCreated, TModified>
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel-2.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel`2
-  name.vb: IAuditedCompositeModel(Of TCreated, TModified)
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel<TCreated, TModified>
-  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedCompositeModel(Of TCreated, TModified)
-  nameWithType: IAuditedCompositeModel<TCreated, TModified>
-  nameWithType.vb: IAuditedCompositeModel(Of TCreated, TModified)
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel
-  name: IAuditedModel
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel
-  nameWithType: IAuditedModel
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel`2
-  name: IAuditedModel<TCreated, TModified>
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel-2.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel`2
-  name.vb: IAuditedModel(Of TCreated, TModified)
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel<TCreated, TModified>
-  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel(Of TCreated, TModified)
-  nameWithType: IAuditedModel<TCreated, TModified>
-  nameWithType.vb: IAuditedModel(Of TCreated, TModified)
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel`3
-  name: IAuditedModel<TKey, TCreated, TModified>
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel-3.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel`3
-  name.vb: IAuditedModel(Of TKey, TCreated, TModified)
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel<TKey, TCreated, TModified>
-  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.IAuditedModel(Of TKey, TCreated, TModified)
-  nameWithType: IAuditedModel<TKey, TCreated, TModified>
-  nameWithType.vb: IAuditedModel(Of TKey, TCreated, TModified)
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.ICompositeModel
-  name: ICompositeModel
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.ICompositeModel.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.ICompositeModel
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.ICompositeModel
-  nameWithType: ICompositeModel
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.IEnumeratorModel
-  name: IEnumeratorModel
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IEnumeratorModel.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IEnumeratorModel
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IEnumeratorModel
-  nameWithType: IEnumeratorModel
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel
-  name: IIdentityModel
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel
-  nameWithType: IIdentityModel
-- uid: BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel`1
-  name: IIdentityModel<TKey>
-  href: api/BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel-1.html
-  commentId: T:BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel`1
-  name.vb: IIdentityModel(Of TKey)
-  fullName: BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel<TKey>
-  fullName.vb: BB84.EntityFrameworkCore.Models.Abstractions.IIdentityModel(Of TKey)
-  nameWithType: IIdentityModel<TKey>
-  nameWithType.vb: IIdentityModel(Of TKey)
-- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel
-  name: AuditedCompositeModel
-  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel.html
-  commentId: T:BB84.EntityFrameworkCore.Models.AuditedCompositeModel
-  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel
-  nameWithType: AuditedCompositeModel
-- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2
-  name: AuditedCompositeModel<TCreated, TModified>
-  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.html
-  commentId: T:BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2
-  name.vb: AuditedCompositeModel(Of TCreated, TModified)
-  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel<TCreated, TModified>
-  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedCompositeModel(Of TCreated, TModified)
-  nameWithType: AuditedCompositeModel<TCreated, TModified>
-  nameWithType.vb: AuditedCompositeModel(Of TCreated, TModified)
-- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.CreatedBy
-  name: CreatedBy
-  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.html#BB84_EntityFrameworkCore_Models_AuditedCompositeModel_2_CreatedBy
-  commentId: P:BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.CreatedBy
-  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel<TCreated, TModified>.CreatedBy
-  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedCompositeModel(Of TCreated, TModified).CreatedBy
-  nameWithType: AuditedCompositeModel<TCreated, TModified>.CreatedBy
-  nameWithType.vb: AuditedCompositeModel(Of TCreated, TModified).CreatedBy
-- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.CreatedBy*
-  name: CreatedBy
-  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.html#BB84_EntityFrameworkCore_Models_AuditedCompositeModel_2_CreatedBy_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.CreatedBy
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited
+  name: ITimeAudited
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited
+  nameWithType: ITimeAudited
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Created
+  name: Created
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_Created
+  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Created
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Created
+  nameWithType: ITimeAudited.Created
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Created*
+  name: Created
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_Created_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Created
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel<TCreated, TModified>.CreatedBy
-  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedCompositeModel(Of TCreated, TModified).CreatedBy
-  nameWithType: AuditedCompositeModel<TCreated, TModified>.CreatedBy
-  nameWithType.vb: AuditedCompositeModel(Of TCreated, TModified).CreatedBy
-- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.ModifiedBy
-  name: ModifiedBy
-  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.html#BB84_EntityFrameworkCore_Models_AuditedCompositeModel_2_ModifiedBy
-  commentId: P:BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.ModifiedBy
-  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel<TCreated, TModified>.ModifiedBy
-  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedCompositeModel(Of TCreated, TModified).ModifiedBy
-  nameWithType: AuditedCompositeModel<TCreated, TModified>.ModifiedBy
-  nameWithType.vb: AuditedCompositeModel(Of TCreated, TModified).ModifiedBy
-- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.ModifiedBy*
-  name: ModifiedBy
-  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.html#BB84_EntityFrameworkCore_Models_AuditedCompositeModel_2_ModifiedBy_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.ModifiedBy
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Created
+  nameWithType: ITimeAudited.Created
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Edited
+  name: Edited
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_Edited
+  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Edited
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Edited
+  nameWithType: ITimeAudited.Edited
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Edited*
+  name: Edited
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_Edited_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Edited
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel<TCreated, TModified>.ModifiedBy
-  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedCompositeModel(Of TCreated, TModified).ModifiedBy
-  nameWithType: AuditedCompositeModel<TCreated, TModified>.ModifiedBy
-  nameWithType.vb: AuditedCompositeModel(Of TCreated, TModified).ModifiedBy
-- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.Timestamp
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Edited
+  nameWithType: ITimeAudited.Edited
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited
+  name: IUserAudited
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited
+  nameWithType: IUserAudited
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2
+  name: IUserAudited<TCreator, TEditor>
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2
+  name.vb: IUserAudited(Of TCreator, TEditor)
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited<TCreator, TEditor>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited(Of TCreator, TEditor)
+  nameWithType: IUserAudited<TCreator, TEditor>
+  nameWithType.vb: IUserAudited(Of TCreator, TEditor)
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Creator
+  name: Creator
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Creator
+  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Creator
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited<TCreator, TEditor>.Creator
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited(Of TCreator, TEditor).Creator
+  nameWithType: IUserAudited<TCreator, TEditor>.Creator
+  nameWithType.vb: IUserAudited(Of TCreator, TEditor).Creator
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Creator*
+  name: Creator
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Creator_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Creator
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited<TCreator, TEditor>.Creator
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited(Of TCreator, TEditor).Creator
+  nameWithType: IUserAudited<TCreator, TEditor>.Creator
+  nameWithType.vb: IUserAudited(Of TCreator, TEditor).Creator
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Editor
+  name: Editor
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Editor
+  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Editor
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited<TCreator, TEditor>.Editor
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited(Of TCreator, TEditor).Editor
+  nameWithType: IUserAudited<TCreator, TEditor>.Editor
+  nameWithType.vb: IUserAudited(Of TCreator, TEditor).Editor
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Editor*
+  name: Editor
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Editor_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Editor
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited<TCreator, TEditor>.Editor
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited(Of TCreator, TEditor).Editor
+  nameWithType: IUserAudited<TCreator, TEditor>.Editor
+  nameWithType.vb: IUserAudited(Of TCreator, TEditor).Editor
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity
+  name: IAuditedCompositeEntity
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity
+  nameWithType: IAuditedCompositeEntity
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity`2
+  name: IAuditedCompositeEntity<TCreator, TEditor>
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity-2.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity`2
+  name.vb: IAuditedCompositeEntity(Of TCreator, TEditor)
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity<TCreator, TEditor>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity(Of TCreator, TEditor)
+  nameWithType: IAuditedCompositeEntity<TCreator, TEditor>
+  nameWithType.vb: IAuditedCompositeEntity(Of TCreator, TEditor)
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity
+  name: IAuditedEntity
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity
+  nameWithType: IAuditedEntity
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity`1
+  name: IAuditedEntity<TKey>
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-1.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity`1
+  name.vb: IAuditedEntity(Of TKey)
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity<TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity(Of TKey)
+  nameWithType: IAuditedEntity<TKey>
+  nameWithType.vb: IAuditedEntity(Of TKey)
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity`2
+  name: IAuditedEntity<TCreator, TEdited>
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-2.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity`2
+  name.vb: IAuditedEntity(Of TCreator, TEdited)
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity<TCreator, TEdited>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity(Of TCreator, TEdited)
+  nameWithType: IAuditedEntity<TCreator, TEdited>
+  nameWithType.vb: IAuditedEntity(Of TCreator, TEdited)
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity`3
+  name: IAuditedEntity<TKey, TCreator, TEdited>
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-3.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity`3
+  name.vb: IAuditedEntity(Of TKey, TCreator, TEdited)
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity<TKey, TCreator, TEdited>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity(Of TKey, TCreator, TEdited)
+  nameWithType: IAuditedEntity<TKey, TCreator, TEdited>
+  nameWithType.vb: IAuditedEntity(Of TKey, TCreator, TEdited)
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.ICompositeEntity
+  name: ICompositeEntity
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.ICompositeEntity.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.ICompositeEntity
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.ICompositeEntity
+  nameWithType: ICompositeEntity
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity
+  name: IEnumeratorEntity
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity
+  nameWithType: IEnumeratorEntity
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity`1
+  name: IEnumeratorEntity<TKey>
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity-1.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity`1
+  name.vb: IEnumeratorEntity(Of TKey)
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity<TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity(Of TKey)
+  nameWithType: IEnumeratorEntity<TKey>
+  nameWithType.vb: IEnumeratorEntity(Of TKey)
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity
+  name: IFullAuditedEntity
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity
+  nameWithType: IFullAuditedEntity
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity`1
+  name: IFullAuditedEntity<TKey>
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-1.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity`1
+  name.vb: IFullAuditedEntity(Of TKey)
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity<TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity(Of TKey)
+  nameWithType: IFullAuditedEntity<TKey>
+  nameWithType.vb: IFullAuditedEntity(Of TKey)
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity`2
+  name: IFullAuditedEntity<TCreator, TEdited>
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-2.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity`2
+  name.vb: IFullAuditedEntity(Of TCreator, TEdited)
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity<TCreator, TEdited>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity(Of TCreator, TEdited)
+  nameWithType: IFullAuditedEntity<TCreator, TEdited>
+  nameWithType.vb: IFullAuditedEntity(Of TCreator, TEdited)
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity`3
+  name: IFullAuditedEntity<TKey, TCreator, TEdited>
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-3.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity`3
+  name.vb: IFullAuditedEntity(Of TKey, TCreator, TEdited)
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity<TKey, TCreator, TEdited>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity(Of TKey, TCreator, TEdited)
+  nameWithType: IFullAuditedEntity<TKey, TCreator, TEdited>
+  nameWithType.vb: IFullAuditedEntity(Of TKey, TCreator, TEdited)
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity
+  name: IIdentityEntity
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity
+  nameWithType: IIdentityEntity
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity`1
+  name: IIdentityEntity<TKey>
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity-1.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity`1
+  name.vb: IIdentityEntity(Of TKey)
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity<TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity(Of TKey)
+  nameWithType: IIdentityEntity<TKey>
+  nameWithType.vb: IIdentityEntity(Of TKey)
+- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity
+  name: AuditedCompositeEntity
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity
+  nameWithType: AuditedCompositeEntity
+- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2
+  name: AuditedCompositeEntity<TCreator, TEdited>
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2
+  name.vb: AuditedCompositeEntity(Of TCreator, TEdited)
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited)
+  nameWithType: AuditedCompositeEntity<TCreator, TEdited>
+  nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited)
+- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Creator
+  name: Creator
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Creator
+  commentId: P:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Creator
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>.Creator
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited).Creator
+  nameWithType: AuditedCompositeEntity<TCreator, TEdited>.Creator
+  nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited).Creator
+- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Creator*
+  name: Creator
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Creator_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Creator
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>.Creator
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited).Creator
+  nameWithType: AuditedCompositeEntity<TCreator, TEdited>.Creator
+  nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited).Creator
+- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Editor
+  name: Editor
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Editor
+  commentId: P:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Editor
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>.Editor
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited).Editor
+  nameWithType: AuditedCompositeEntity<TCreator, TEdited>.Editor
+  nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited).Editor
+- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Editor*
+  name: Editor
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Editor_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Editor
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>.Editor
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited).Editor
+  nameWithType: AuditedCompositeEntity<TCreator, TEdited>.Editor
+  nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited).Editor
+- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Timestamp
   name: Timestamp
-  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.html#BB84_EntityFrameworkCore_Models_AuditedCompositeModel_2_Timestamp
-  commentId: P:BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.Timestamp
-  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel<TCreated, TModified>.Timestamp
-  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedCompositeModel(Of TCreated, TModified).Timestamp
-  nameWithType: AuditedCompositeModel<TCreated, TModified>.Timestamp
-  nameWithType.vb: AuditedCompositeModel(Of TCreated, TModified).Timestamp
-- uid: BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.Timestamp*
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Timestamp
+  commentId: P:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Timestamp
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>.Timestamp
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited).Timestamp
+  nameWithType: AuditedCompositeEntity<TCreator, TEdited>.Timestamp
+  nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited).Timestamp
+- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Timestamp*
   name: Timestamp
-  href: api/BB84.EntityFrameworkCore.Models.AuditedCompositeModel-2.html#BB84_EntityFrameworkCore_Models_AuditedCompositeModel_2_Timestamp_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.AuditedCompositeModel`2.Timestamp
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Timestamp_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Timestamp
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.AuditedCompositeModel<TCreated, TModified>.Timestamp
-  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedCompositeModel(Of TCreated, TModified).Timestamp
-  nameWithType: AuditedCompositeModel<TCreated, TModified>.Timestamp
-  nameWithType.vb: AuditedCompositeModel(Of TCreated, TModified).Timestamp
-- uid: BB84.EntityFrameworkCore.Models.AuditedModel
-  name: AuditedModel
-  href: api/BB84.EntityFrameworkCore.Models.AuditedModel.html
-  commentId: T:BB84.EntityFrameworkCore.Models.AuditedModel
-  fullName: BB84.EntityFrameworkCore.Models.AuditedModel
-  nameWithType: AuditedModel
-- uid: BB84.EntityFrameworkCore.Models.AuditedModel`2
-  name: AuditedModel<TCreated, TModified>
-  href: api/BB84.EntityFrameworkCore.Models.AuditedModel-2.html
-  commentId: T:BB84.EntityFrameworkCore.Models.AuditedModel`2
-  name.vb: AuditedModel(Of TCreated, TModified)
-  fullName: BB84.EntityFrameworkCore.Models.AuditedModel<TCreated, TModified>
-  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedModel(Of TCreated, TModified)
-  nameWithType: AuditedModel<TCreated, TModified>
-  nameWithType.vb: AuditedModel(Of TCreated, TModified)
-- uid: BB84.EntityFrameworkCore.Models.AuditedModel`3
-  name: AuditedModel<TKey, TCreated, TModified>
-  href: api/BB84.EntityFrameworkCore.Models.AuditedModel-3.html
-  commentId: T:BB84.EntityFrameworkCore.Models.AuditedModel`3
-  name.vb: AuditedModel(Of TKey, TCreated, TModified)
-  fullName: BB84.EntityFrameworkCore.Models.AuditedModel<TKey, TCreated, TModified>
-  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedModel(Of TKey, TCreated, TModified)
-  nameWithType: AuditedModel<TKey, TCreated, TModified>
-  nameWithType.vb: AuditedModel(Of TKey, TCreated, TModified)
-- uid: BB84.EntityFrameworkCore.Models.AuditedModel`3.CreatedBy
-  name: CreatedBy
-  href: api/BB84.EntityFrameworkCore.Models.AuditedModel-3.html#BB84_EntityFrameworkCore_Models_AuditedModel_3_CreatedBy
-  commentId: P:BB84.EntityFrameworkCore.Models.AuditedModel`3.CreatedBy
-  fullName: BB84.EntityFrameworkCore.Models.AuditedModel<TKey, TCreated, TModified>.CreatedBy
-  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedModel(Of TKey, TCreated, TModified).CreatedBy
-  nameWithType: AuditedModel<TKey, TCreated, TModified>.CreatedBy
-  nameWithType.vb: AuditedModel(Of TKey, TCreated, TModified).CreatedBy
-- uid: BB84.EntityFrameworkCore.Models.AuditedModel`3.CreatedBy*
-  name: CreatedBy
-  href: api/BB84.EntityFrameworkCore.Models.AuditedModel-3.html#BB84_EntityFrameworkCore_Models_AuditedModel_3_CreatedBy_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.AuditedModel`3.CreatedBy
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>.Timestamp
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited).Timestamp
+  nameWithType: AuditedCompositeEntity<TCreator, TEdited>.Timestamp
+  nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited).Timestamp
+- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity
+  name: AuditedEntity
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.AuditedEntity
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity
+  nameWithType: AuditedEntity
+- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity`1
+  name: AuditedEntity<TKey>
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity-1.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.AuditedEntity`1
+  name.vb: AuditedEntity(Of TKey)
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TKey)
+  nameWithType: AuditedEntity<TKey>
+  nameWithType.vb: AuditedEntity(Of TKey)
+- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity`2
+  name: AuditedEntity<TCreator, TEdited>
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity-2.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.AuditedEntity`2
+  name.vb: AuditedEntity(Of TCreator, TEdited)
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity<TCreator, TEdited>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TCreator, TEdited)
+  nameWithType: AuditedEntity<TCreator, TEdited>
+  nameWithType.vb: AuditedEntity(Of TCreator, TEdited)
+- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity`3
+  name: AuditedEntity<TKey, TCreator, TEdited>
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.AuditedEntity`3
+  name.vb: AuditedEntity(Of TKey, TCreator, TEdited)
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey, TCreator, TEdited>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TKey, TCreator, TEdited)
+  nameWithType: AuditedEntity<TKey, TCreator, TEdited>
+  nameWithType.vb: AuditedEntity(Of TKey, TCreator, TEdited)
+- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Creator
+  name: Creator
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_Creator
+  commentId: P:BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Creator
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey, TCreator, TEdited>.Creator
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TKey, TCreator, TEdited).Creator
+  nameWithType: AuditedEntity<TKey, TCreator, TEdited>.Creator
+  nameWithType.vb: AuditedEntity(Of TKey, TCreator, TEdited).Creator
+- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Creator*
+  name: Creator
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_Creator_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Creator
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.AuditedModel<TKey, TCreated, TModified>.CreatedBy
-  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedModel(Of TKey, TCreated, TModified).CreatedBy
-  nameWithType: AuditedModel<TKey, TCreated, TModified>.CreatedBy
-  nameWithType.vb: AuditedModel(Of TKey, TCreated, TModified).CreatedBy
-- uid: BB84.EntityFrameworkCore.Models.AuditedModel`3.ModifiedBy
-  name: ModifiedBy
-  href: api/BB84.EntityFrameworkCore.Models.AuditedModel-3.html#BB84_EntityFrameworkCore_Models_AuditedModel_3_ModifiedBy
-  commentId: P:BB84.EntityFrameworkCore.Models.AuditedModel`3.ModifiedBy
-  fullName: BB84.EntityFrameworkCore.Models.AuditedModel<TKey, TCreated, TModified>.ModifiedBy
-  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedModel(Of TKey, TCreated, TModified).ModifiedBy
-  nameWithType: AuditedModel<TKey, TCreated, TModified>.ModifiedBy
-  nameWithType.vb: AuditedModel(Of TKey, TCreated, TModified).ModifiedBy
-- uid: BB84.EntityFrameworkCore.Models.AuditedModel`3.ModifiedBy*
-  name: ModifiedBy
-  href: api/BB84.EntityFrameworkCore.Models.AuditedModel-3.html#BB84_EntityFrameworkCore_Models_AuditedModel_3_ModifiedBy_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.AuditedModel`3.ModifiedBy
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey, TCreator, TEdited>.Creator
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TKey, TCreator, TEdited).Creator
+  nameWithType: AuditedEntity<TKey, TCreator, TEdited>.Creator
+  nameWithType.vb: AuditedEntity(Of TKey, TCreator, TEdited).Creator
+- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Editor
+  name: Editor
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_Editor
+  commentId: P:BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Editor
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey, TCreator, TEdited>.Editor
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TKey, TCreator, TEdited).Editor
+  nameWithType: AuditedEntity<TKey, TCreator, TEdited>.Editor
+  nameWithType.vb: AuditedEntity(Of TKey, TCreator, TEdited).Editor
+- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Editor*
+  name: Editor
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_Editor_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Editor
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.AuditedModel<TKey, TCreated, TModified>.ModifiedBy
-  fullName.vb: BB84.EntityFrameworkCore.Models.AuditedModel(Of TKey, TCreated, TModified).ModifiedBy
-  nameWithType: AuditedModel<TKey, TCreated, TModified>.ModifiedBy
-  nameWithType.vb: AuditedModel(Of TKey, TCreated, TModified).ModifiedBy
-- uid: BB84.EntityFrameworkCore.Models.CompositeModel
-  name: CompositeModel
-  href: api/BB84.EntityFrameworkCore.Models.CompositeModel.html
-  commentId: T:BB84.EntityFrameworkCore.Models.CompositeModel
-  fullName: BB84.EntityFrameworkCore.Models.CompositeModel
-  nameWithType: CompositeModel
-- uid: BB84.EntityFrameworkCore.Models.CompositeModel.Timestamp
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey, TCreator, TEdited>.Editor
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TKey, TCreator, TEdited).Editor
+  nameWithType: AuditedEntity<TKey, TCreator, TEdited>.Editor
+  nameWithType.vb: AuditedEntity(Of TKey, TCreator, TEdited).Editor
+- uid: BB84.EntityFrameworkCore.Entities.CompositeEntity
+  name: CompositeEntity
+  href: api/BB84.EntityFrameworkCore.Entities.CompositeEntity.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.CompositeEntity
+  fullName: BB84.EntityFrameworkCore.Entities.CompositeEntity
+  nameWithType: CompositeEntity
+- uid: BB84.EntityFrameworkCore.Entities.CompositeEntity.Timestamp
   name: Timestamp
-  href: api/BB84.EntityFrameworkCore.Models.CompositeModel.html#BB84_EntityFrameworkCore_Models_CompositeModel_Timestamp
-  commentId: P:BB84.EntityFrameworkCore.Models.CompositeModel.Timestamp
-  fullName: BB84.EntityFrameworkCore.Models.CompositeModel.Timestamp
-  nameWithType: CompositeModel.Timestamp
-- uid: BB84.EntityFrameworkCore.Models.CompositeModel.Timestamp*
+  href: api/BB84.EntityFrameworkCore.Entities.CompositeEntity.html#BB84_EntityFrameworkCore_Entities_CompositeEntity_Timestamp
+  commentId: P:BB84.EntityFrameworkCore.Entities.CompositeEntity.Timestamp
+  fullName: BB84.EntityFrameworkCore.Entities.CompositeEntity.Timestamp
+  nameWithType: CompositeEntity.Timestamp
+- uid: BB84.EntityFrameworkCore.Entities.CompositeEntity.Timestamp*
   name: Timestamp
-  href: api/BB84.EntityFrameworkCore.Models.CompositeModel.html#BB84_EntityFrameworkCore_Models_CompositeModel_Timestamp_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.CompositeModel.Timestamp
+  href: api/BB84.EntityFrameworkCore.Entities.CompositeEntity.html#BB84_EntityFrameworkCore_Entities_CompositeEntity_Timestamp_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.CompositeEntity.Timestamp
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.CompositeModel.Timestamp
-  nameWithType: CompositeModel.Timestamp
-- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel
-  name: EnumeratorModel
-  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html
-  commentId: T:BB84.EntityFrameworkCore.Models.EnumeratorModel
-  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel
-  nameWithType: EnumeratorModel
-- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Description
+  fullName: BB84.EntityFrameworkCore.Entities.CompositeEntity.Timestamp
+  nameWithType: CompositeEntity.Timestamp
+- uid: BB84.EntityFrameworkCore.Entities.EnumeratorEntity
+  name: EnumeratorEntity
+  href: api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.EnumeratorEntity
+  fullName: BB84.EntityFrameworkCore.Entities.EnumeratorEntity
+  nameWithType: EnumeratorEntity
+- uid: BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1
+  name: EnumeratorEntity<TKey>
+  href: api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity-1.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1
+  name.vb: EnumeratorEntity(Of TKey)
+  fullName: BB84.EntityFrameworkCore.Entities.EnumeratorEntity<TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.EnumeratorEntity(Of TKey)
+  nameWithType: EnumeratorEntity<TKey>
+  nameWithType.vb: EnumeratorEntity(Of TKey)
+- uid: BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Description
   name: Description
-  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Description
-  commentId: P:BB84.EntityFrameworkCore.Models.EnumeratorModel.Description
-  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Description
-  nameWithType: EnumeratorModel.Description
-- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Description*
+  href: api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity-1.html#BB84_EntityFrameworkCore_Entities_EnumeratorEntity_1_Description
+  commentId: P:BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Description
+  fullName: BB84.EntityFrameworkCore.Entities.EnumeratorEntity<TKey>.Description
+  fullName.vb: BB84.EntityFrameworkCore.Entities.EnumeratorEntity(Of TKey).Description
+  nameWithType: EnumeratorEntity<TKey>.Description
+  nameWithType.vb: EnumeratorEntity(Of TKey).Description
+- uid: BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Description*
   name: Description
-  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Description_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.EnumeratorModel.Description
+  href: api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity-1.html#BB84_EntityFrameworkCore_Entities_EnumeratorEntity_1_Description_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Description
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Description
-  nameWithType: EnumeratorModel.Description
-- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Id
+  fullName: BB84.EntityFrameworkCore.Entities.EnumeratorEntity<TKey>.Description
+  fullName.vb: BB84.EntityFrameworkCore.Entities.EnumeratorEntity(Of TKey).Description
+  nameWithType: EnumeratorEntity<TKey>.Description
+  nameWithType.vb: EnumeratorEntity(Of TKey).Description
+- uid: BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Id
   name: Id
-  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Id
-  commentId: P:BB84.EntityFrameworkCore.Models.EnumeratorModel.Id
-  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Id
-  nameWithType: EnumeratorModel.Id
-- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Id*
+  href: api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity-1.html#BB84_EntityFrameworkCore_Entities_EnumeratorEntity_1_Id
+  commentId: P:BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Id
+  fullName: BB84.EntityFrameworkCore.Entities.EnumeratorEntity<TKey>.Id
+  fullName.vb: BB84.EntityFrameworkCore.Entities.EnumeratorEntity(Of TKey).Id
+  nameWithType: EnumeratorEntity<TKey>.Id
+  nameWithType.vb: EnumeratorEntity(Of TKey).Id
+- uid: BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Id*
   name: Id
-  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Id_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.EnumeratorModel.Id
+  href: api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity-1.html#BB84_EntityFrameworkCore_Entities_EnumeratorEntity_1_Id_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Id
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Id
-  nameWithType: EnumeratorModel.Id
-- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.IsDeleted
+  fullName: BB84.EntityFrameworkCore.Entities.EnumeratorEntity<TKey>.Id
+  fullName.vb: BB84.EntityFrameworkCore.Entities.EnumeratorEntity(Of TKey).Id
+  nameWithType: EnumeratorEntity<TKey>.Id
+  nameWithType.vb: EnumeratorEntity(Of TKey).Id
+- uid: BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.IsDeleted
   name: IsDeleted
-  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_IsDeleted
-  commentId: P:BB84.EntityFrameworkCore.Models.EnumeratorModel.IsDeleted
-  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.IsDeleted
-  nameWithType: EnumeratorModel.IsDeleted
-- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.IsDeleted*
+  href: api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity-1.html#BB84_EntityFrameworkCore_Entities_EnumeratorEntity_1_IsDeleted
+  commentId: P:BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.IsDeleted
+  fullName: BB84.EntityFrameworkCore.Entities.EnumeratorEntity<TKey>.IsDeleted
+  fullName.vb: BB84.EntityFrameworkCore.Entities.EnumeratorEntity(Of TKey).IsDeleted
+  nameWithType: EnumeratorEntity<TKey>.IsDeleted
+  nameWithType.vb: EnumeratorEntity(Of TKey).IsDeleted
+- uid: BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.IsDeleted*
   name: IsDeleted
-  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_IsDeleted_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.EnumeratorModel.IsDeleted
+  href: api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity-1.html#BB84_EntityFrameworkCore_Entities_EnumeratorEntity_1_IsDeleted_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.IsDeleted
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.IsDeleted
-  nameWithType: EnumeratorModel.IsDeleted
-- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Name
+  fullName: BB84.EntityFrameworkCore.Entities.EnumeratorEntity<TKey>.IsDeleted
+  fullName.vb: BB84.EntityFrameworkCore.Entities.EnumeratorEntity(Of TKey).IsDeleted
+  nameWithType: EnumeratorEntity<TKey>.IsDeleted
+  nameWithType.vb: EnumeratorEntity(Of TKey).IsDeleted
+- uid: BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Name
   name: Name
-  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Name
-  commentId: P:BB84.EntityFrameworkCore.Models.EnumeratorModel.Name
-  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Name
-  nameWithType: EnumeratorModel.Name
-- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Name*
+  href: api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity-1.html#BB84_EntityFrameworkCore_Entities_EnumeratorEntity_1_Name
+  commentId: P:BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Name
+  fullName: BB84.EntityFrameworkCore.Entities.EnumeratorEntity<TKey>.Name
+  fullName.vb: BB84.EntityFrameworkCore.Entities.EnumeratorEntity(Of TKey).Name
+  nameWithType: EnumeratorEntity<TKey>.Name
+  nameWithType.vb: EnumeratorEntity(Of TKey).Name
+- uid: BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Name*
   name: Name
-  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Name_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.EnumeratorModel.Name
+  href: api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity-1.html#BB84_EntityFrameworkCore_Entities_EnumeratorEntity_1_Name_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Name
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Name
-  nameWithType: EnumeratorModel.Name
-- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Timestamp
+  fullName: BB84.EntityFrameworkCore.Entities.EnumeratorEntity<TKey>.Name
+  fullName.vb: BB84.EntityFrameworkCore.Entities.EnumeratorEntity(Of TKey).Name
+  nameWithType: EnumeratorEntity<TKey>.Name
+  nameWithType.vb: EnumeratorEntity(Of TKey).Name
+- uid: BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Timestamp
   name: Timestamp
-  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Timestamp
-  commentId: P:BB84.EntityFrameworkCore.Models.EnumeratorModel.Timestamp
-  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Timestamp
-  nameWithType: EnumeratorModel.Timestamp
-- uid: BB84.EntityFrameworkCore.Models.EnumeratorModel.Timestamp*
+  href: api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity-1.html#BB84_EntityFrameworkCore_Entities_EnumeratorEntity_1_Timestamp
+  commentId: P:BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Timestamp
+  fullName: BB84.EntityFrameworkCore.Entities.EnumeratorEntity<TKey>.Timestamp
+  fullName.vb: BB84.EntityFrameworkCore.Entities.EnumeratorEntity(Of TKey).Timestamp
+  nameWithType: EnumeratorEntity<TKey>.Timestamp
+  nameWithType.vb: EnumeratorEntity(Of TKey).Timestamp
+- uid: BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Timestamp*
   name: Timestamp
-  href: api/BB84.EntityFrameworkCore.Models.EnumeratorModel.html#BB84_EntityFrameworkCore_Models_EnumeratorModel_Timestamp_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.EnumeratorModel.Timestamp
+  href: api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity-1.html#BB84_EntityFrameworkCore_Entities_EnumeratorEntity_1_Timestamp_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.EnumeratorEntity`1.Timestamp
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.EnumeratorModel.Timestamp
-  nameWithType: EnumeratorModel.Timestamp
-- uid: BB84.EntityFrameworkCore.Models.IdentityModel
-  name: IdentityModel
-  href: api/BB84.EntityFrameworkCore.Models.IdentityModel.html
-  commentId: T:BB84.EntityFrameworkCore.Models.IdentityModel
-  fullName: BB84.EntityFrameworkCore.Models.IdentityModel
-  nameWithType: IdentityModel
-- uid: BB84.EntityFrameworkCore.Models.IdentityModel`1
-  name: IdentityModel<TKey>
-  href: api/BB84.EntityFrameworkCore.Models.IdentityModel-1.html
-  commentId: T:BB84.EntityFrameworkCore.Models.IdentityModel`1
-  name.vb: IdentityModel(Of TKey)
-  fullName: BB84.EntityFrameworkCore.Models.IdentityModel<TKey>
-  fullName.vb: BB84.EntityFrameworkCore.Models.IdentityModel(Of TKey)
-  nameWithType: IdentityModel<TKey>
-  nameWithType.vb: IdentityModel(Of TKey)
-- uid: BB84.EntityFrameworkCore.Models.IdentityModel`1.Id
+  fullName: BB84.EntityFrameworkCore.Entities.EnumeratorEntity<TKey>.Timestamp
+  fullName.vb: BB84.EntityFrameworkCore.Entities.EnumeratorEntity(Of TKey).Timestamp
+  nameWithType: EnumeratorEntity<TKey>.Timestamp
+  nameWithType.vb: EnumeratorEntity(Of TKey).Timestamp
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity
+  name: FullAuditedEntity
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.FullAuditedEntity
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity
+  nameWithType: FullAuditedEntity
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`1
+  name: FullAuditedEntity<TKey>
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-1.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`1
+  name.vb: FullAuditedEntity(Of TKey)
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey)
+  nameWithType: FullAuditedEntity<TKey>
+  nameWithType.vb: FullAuditedEntity(Of TKey)
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`2
+  name: FullAuditedEntity<TCreator, TEdited>
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-2.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`2
+  name.vb: FullAuditedEntity(Of TCreator, TEdited)
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TCreator, TEdited>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TCreator, TEdited)
+  nameWithType: FullAuditedEntity<TCreator, TEdited>
+  nameWithType.vb: FullAuditedEntity(Of TCreator, TEdited)
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3
+  name: FullAuditedEntity<TKey, TCreator, TEdited>
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3
+  name.vb: FullAuditedEntity(Of TKey, TCreator, TEdited)
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited)
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited)
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Created
+  name: Created
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Created
+  commentId: P:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Created
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Created
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Created
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Created
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Created
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Created*
+  name: Created
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Created_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Created
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Created
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Created
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Created
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Created
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Creator
+  name: Creator
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Creator
+  commentId: P:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Creator
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Creator
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Creator
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Creator
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Creator
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Creator*
+  name: Creator
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Creator_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Creator
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Creator
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Creator
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Creator
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Creator
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Edited
+  name: Edited
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Edited
+  commentId: P:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Edited
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Edited
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Edited
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Edited
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Edited
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Edited*
+  name: Edited
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Edited_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Edited
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Edited
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Edited
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Edited
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Edited
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Editor
+  name: Editor
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Editor
+  commentId: P:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Editor
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Editor
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Editor
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Editor
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Editor
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Editor*
+  name: Editor
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Editor_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Editor
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Editor
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Editor
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Editor
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Editor
+- uid: BB84.EntityFrameworkCore.Entities.IdentityEntity
+  name: IdentityEntity
+  href: api/BB84.EntityFrameworkCore.Entities.IdentityEntity.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.IdentityEntity
+  fullName: BB84.EntityFrameworkCore.Entities.IdentityEntity
+  nameWithType: IdentityEntity
+- uid: BB84.EntityFrameworkCore.Entities.IdentityEntity`1
+  name: IdentityEntity<TKey>
+  href: api/BB84.EntityFrameworkCore.Entities.IdentityEntity-1.html
+  commentId: T:BB84.EntityFrameworkCore.Entities.IdentityEntity`1
+  name.vb: IdentityEntity(Of TKey)
+  fullName: BB84.EntityFrameworkCore.Entities.IdentityEntity<TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.IdentityEntity(Of TKey)
+  nameWithType: IdentityEntity<TKey>
+  nameWithType.vb: IdentityEntity(Of TKey)
+- uid: BB84.EntityFrameworkCore.Entities.IdentityEntity`1.Id
   name: Id
-  href: api/BB84.EntityFrameworkCore.Models.IdentityModel-1.html#BB84_EntityFrameworkCore_Models_IdentityModel_1_Id
-  commentId: P:BB84.EntityFrameworkCore.Models.IdentityModel`1.Id
-  fullName: BB84.EntityFrameworkCore.Models.IdentityModel<TKey>.Id
-  fullName.vb: BB84.EntityFrameworkCore.Models.IdentityModel(Of TKey).Id
-  nameWithType: IdentityModel<TKey>.Id
-  nameWithType.vb: IdentityModel(Of TKey).Id
-- uid: BB84.EntityFrameworkCore.Models.IdentityModel`1.Id*
+  href: api/BB84.EntityFrameworkCore.Entities.IdentityEntity-1.html#BB84_EntityFrameworkCore_Entities_IdentityEntity_1_Id
+  commentId: P:BB84.EntityFrameworkCore.Entities.IdentityEntity`1.Id
+  fullName: BB84.EntityFrameworkCore.Entities.IdentityEntity<TKey>.Id
+  fullName.vb: BB84.EntityFrameworkCore.Entities.IdentityEntity(Of TKey).Id
+  nameWithType: IdentityEntity<TKey>.Id
+  nameWithType.vb: IdentityEntity(Of TKey).Id
+- uid: BB84.EntityFrameworkCore.Entities.IdentityEntity`1.Id*
   name: Id
-  href: api/BB84.EntityFrameworkCore.Models.IdentityModel-1.html#BB84_EntityFrameworkCore_Models_IdentityModel_1_Id_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.IdentityModel`1.Id
+  href: api/BB84.EntityFrameworkCore.Entities.IdentityEntity-1.html#BB84_EntityFrameworkCore_Entities_IdentityEntity_1_Id_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.IdentityEntity`1.Id
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.IdentityModel<TKey>.Id
-  fullName.vb: BB84.EntityFrameworkCore.Models.IdentityModel(Of TKey).Id
-  nameWithType: IdentityModel<TKey>.Id
-  nameWithType.vb: IdentityModel(Of TKey).Id
-- uid: BB84.EntityFrameworkCore.Models.IdentityModel`1.Timestamp
+  fullName: BB84.EntityFrameworkCore.Entities.IdentityEntity<TKey>.Id
+  fullName.vb: BB84.EntityFrameworkCore.Entities.IdentityEntity(Of TKey).Id
+  nameWithType: IdentityEntity<TKey>.Id
+  nameWithType.vb: IdentityEntity(Of TKey).Id
+- uid: BB84.EntityFrameworkCore.Entities.IdentityEntity`1.Timestamp
   name: Timestamp
-  href: api/BB84.EntityFrameworkCore.Models.IdentityModel-1.html#BB84_EntityFrameworkCore_Models_IdentityModel_1_Timestamp
-  commentId: P:BB84.EntityFrameworkCore.Models.IdentityModel`1.Timestamp
-  fullName: BB84.EntityFrameworkCore.Models.IdentityModel<TKey>.Timestamp
-  fullName.vb: BB84.EntityFrameworkCore.Models.IdentityModel(Of TKey).Timestamp
-  nameWithType: IdentityModel<TKey>.Timestamp
-  nameWithType.vb: IdentityModel(Of TKey).Timestamp
-- uid: BB84.EntityFrameworkCore.Models.IdentityModel`1.Timestamp*
+  href: api/BB84.EntityFrameworkCore.Entities.IdentityEntity-1.html#BB84_EntityFrameworkCore_Entities_IdentityEntity_1_Timestamp
+  commentId: P:BB84.EntityFrameworkCore.Entities.IdentityEntity`1.Timestamp
+  fullName: BB84.EntityFrameworkCore.Entities.IdentityEntity<TKey>.Timestamp
+  fullName.vb: BB84.EntityFrameworkCore.Entities.IdentityEntity(Of TKey).Timestamp
+  nameWithType: IdentityEntity<TKey>.Timestamp
+  nameWithType.vb: IdentityEntity(Of TKey).Timestamp
+- uid: BB84.EntityFrameworkCore.Entities.IdentityEntity`1.Timestamp*
   name: Timestamp
-  href: api/BB84.EntityFrameworkCore.Models.IdentityModel-1.html#BB84_EntityFrameworkCore_Models_IdentityModel_1_Timestamp_
-  commentId: Overload:BB84.EntityFrameworkCore.Models.IdentityModel`1.Timestamp
+  href: api/BB84.EntityFrameworkCore.Entities.IdentityEntity-1.html#BB84_EntityFrameworkCore_Entities_IdentityEntity_1_Timestamp_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.IdentityEntity`1.Timestamp
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Models.IdentityModel<TKey>.Timestamp
-  fullName.vb: BB84.EntityFrameworkCore.Models.IdentityModel(Of TKey).Timestamp
-  nameWithType: IdentityModel<TKey>.Timestamp
-  nameWithType.vb: IdentityModel(Of TKey).Timestamp
+  fullName: BB84.EntityFrameworkCore.Entities.IdentityEntity<TKey>.Timestamp
+  fullName.vb: BB84.EntityFrameworkCore.Entities.IdentityEntity(Of TKey).Timestamp
+  nameWithType: IdentityEntity<TKey>.Timestamp
+  nameWithType.vb: IdentityEntity(Of TKey).Timestamp
 - uid: BB84.EntityFrameworkCore.Repositories
   name: BB84.EntityFrameworkCore.Repositories
   href: api/BB84.EntityFrameworkCore.Repositories.html
@@ -656,78 +878,87 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity)
   nameWithType: IEnumeratorRepository<TEntity>
   nameWithType.vb: IEnumeratorRepository(Of TEntity)
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByName(System.String,System.Boolean,System.Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2
+  name: IEnumeratorRepository<TEntity, TKey>
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-2.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2
+  name.vb: IEnumeratorRepository(Of TEntity, TKey)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity, TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity, TKey)
+  nameWithType: IEnumeratorRepository<TEntity, TKey>
+  nameWithType.vb: IEnumeratorRepository(Of TEntity, TKey)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByName(System.String,System.Boolean,System.Boolean)
   name: GetByName(string, bool, bool)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByName_System_String_System_Boolean_System_Boolean_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByName(System.String,System.Boolean,System.Boolean)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_2_GetByName_System_String_System_Boolean_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByName(System.String,System.Boolean,System.Boolean)
   name.vb: GetByName(String, Boolean, Boolean)
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByName(string, bool, bool)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByName(String, Boolean, Boolean)
-  nameWithType: IEnumeratorRepository<TEntity>.GetByName(string, bool, bool)
-  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByName(String, Boolean, Boolean)
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByName*
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity, TKey>.GetByName(string, bool, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity, TKey).GetByName(String, Boolean, Boolean)
+  nameWithType: IEnumeratorRepository<TEntity, TKey>.GetByName(string, bool, bool)
+  nameWithType.vb: IEnumeratorRepository(Of TEntity, TKey).GetByName(String, Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByName*
   name: GetByName
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByName_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByName
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_2_GetByName_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByName
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByName
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByName
-  nameWithType: IEnumeratorRepository<TEntity>.GetByName
-  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByName
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNameAsync(System.String,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity, TKey>.GetByName
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity, TKey).GetByName
+  nameWithType: IEnumeratorRepository<TEntity, TKey>.GetByName
+  nameWithType.vb: IEnumeratorRepository(Of TEntity, TKey).GetByName
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByNameAsync(System.String,System.Boolean,System.Boolean,System.Threading.CancellationToken)
   name: GetByNameAsync(string, bool, bool, CancellationToken)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNameAsync_System_String_System_Boolean_System_Boolean_System_Threading_CancellationToken_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNameAsync(System.String,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_2_GetByNameAsync_System_String_System_Boolean_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByNameAsync(System.String,System.Boolean,System.Boolean,System.Threading.CancellationToken)
   name.vb: GetByNameAsync(String, Boolean, Boolean, CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByNameAsync(string, bool, bool, System.Threading.CancellationToken)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByNameAsync(String, Boolean, Boolean, System.Threading.CancellationToken)
-  nameWithType: IEnumeratorRepository<TEntity>.GetByNameAsync(string, bool, bool, CancellationToken)
-  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByNameAsync(String, Boolean, Boolean, CancellationToken)
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNameAsync*
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity, TKey>.GetByNameAsync(string, bool, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity, TKey).GetByNameAsync(String, Boolean, Boolean, System.Threading.CancellationToken)
+  nameWithType: IEnumeratorRepository<TEntity, TKey>.GetByNameAsync(string, bool, bool, CancellationToken)
+  nameWithType.vb: IEnumeratorRepository(Of TEntity, TKey).GetByNameAsync(String, Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByNameAsync*
   name: GetByNameAsync
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNameAsync_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNameAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_2_GetByNameAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByNameAsync
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByNameAsync
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByNameAsync
-  nameWithType: IEnumeratorRepository<TEntity>.GetByNameAsync
-  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByNameAsync
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNames(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity, TKey>.GetByNameAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity, TKey).GetByNameAsync
+  nameWithType: IEnumeratorRepository<TEntity, TKey>.GetByNameAsync
+  nameWithType.vb: IEnumeratorRepository(Of TEntity, TKey).GetByNameAsync
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByNames(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean)
   name: GetByNames(IEnumerable<string>, bool, bool)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNames_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNames(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_2_GetByNames_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByNames(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean)
   name.vb: GetByNames(IEnumerable(Of String), Boolean, Boolean)
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByNames(System.Collections.Generic.IEnumerable<string>, bool, bool)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByNames(System.Collections.Generic.IEnumerable(Of String), Boolean, Boolean)
-  nameWithType: IEnumeratorRepository<TEntity>.GetByNames(IEnumerable<string>, bool, bool)
-  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByNames(IEnumerable(Of String), Boolean, Boolean)
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNames*
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity, TKey>.GetByNames(System.Collections.Generic.IEnumerable<string>, bool, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity, TKey).GetByNames(System.Collections.Generic.IEnumerable(Of String), Boolean, Boolean)
+  nameWithType: IEnumeratorRepository<TEntity, TKey>.GetByNames(IEnumerable<string>, bool, bool)
+  nameWithType.vb: IEnumeratorRepository(Of TEntity, TKey).GetByNames(IEnumerable(Of String), Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByNames*
   name: GetByNames
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNames_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNames
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_2_GetByNames_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByNames
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByNames
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByNames
-  nameWithType: IEnumeratorRepository<TEntity>.GetByNames
-  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByNames
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNamesAsync(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity, TKey>.GetByNames
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity, TKey).GetByNames
+  nameWithType: IEnumeratorRepository<TEntity, TKey>.GetByNames
+  nameWithType.vb: IEnumeratorRepository(Of TEntity, TKey).GetByNames
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByNamesAsync(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean,System.Threading.CancellationToken)
   name: GetByNamesAsync(IEnumerable<string>, bool, bool, CancellationToken)
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNamesAsync_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_System_Threading_CancellationToken_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNamesAsync(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_2_GetByNamesAsync_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByNamesAsync(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean,System.Threading.CancellationToken)
   name.vb: GetByNamesAsync(IEnumerable(Of String), Boolean, Boolean, CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByNamesAsync(System.Collections.Generic.IEnumerable<string>, bool, bool, System.Threading.CancellationToken)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByNamesAsync(System.Collections.Generic.IEnumerable(Of String), Boolean, Boolean, System.Threading.CancellationToken)
-  nameWithType: IEnumeratorRepository<TEntity>.GetByNamesAsync(IEnumerable<string>, bool, bool, CancellationToken)
-  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByNamesAsync(IEnumerable(Of String), Boolean, Boolean, CancellationToken)
-- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNamesAsync*
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity, TKey>.GetByNamesAsync(System.Collections.Generic.IEnumerable<string>, bool, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity, TKey).GetByNamesAsync(System.Collections.Generic.IEnumerable(Of String), Boolean, Boolean, System.Threading.CancellationToken)
+  nameWithType: IEnumeratorRepository<TEntity, TKey>.GetByNamesAsync(IEnumerable<string>, bool, bool, CancellationToken)
+  nameWithType.vb: IEnumeratorRepository(Of TEntity, TKey).GetByNamesAsync(IEnumerable(Of String), Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByNamesAsync*
   name: GetByNamesAsync
-  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_GetByNamesAsync_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1.GetByNamesAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_2_GetByNamesAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`2.GetByNamesAsync
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>.GetByNamesAsync
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity).GetByNamesAsync
-  nameWithType: IEnumeratorRepository<TEntity>.GetByNamesAsync
-  nameWithType.vb: IEnumeratorRepository(Of TEntity).GetByNamesAsync
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity, TKey>.GetByNamesAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository(Of TEntity, TKey).GetByNamesAsync
+  nameWithType: IEnumeratorRepository<TEntity, TKey>.GetByNamesAsync
+  nameWithType.vb: IEnumeratorRepository(Of TEntity, TKey).GetByNamesAsync
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1
   name: IGenericRepository<TEntity>
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html
@@ -1333,78 +1564,106 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).New
   nameWithType: EnumeratorRepository<TEntity>.EnumeratorRepository
   nameWithType.vb: EnumeratorRepository(Of TEntity).New
-- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByName(System.String,System.Boolean,System.Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2
+  name: EnumeratorRepository<TEntity, TKey>
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2
+  name.vb: EnumeratorRepository(Of TEntity, TKey)
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity, TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity, TKey)
+  nameWithType: EnumeratorRepository<TEntity, TKey>
+  nameWithType.vb: EnumeratorRepository(Of TEntity, TKey)
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  name: EnumeratorRepository(IDbContext)
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  name.vb: New(IDbContext)
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity, TKey>.EnumeratorRepository(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity, TKey).New(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)
+  nameWithType: EnumeratorRepository<TEntity, TKey>.EnumeratorRepository(IDbContext)
+  nameWithType.vb: EnumeratorRepository(Of TEntity, TKey).New(IDbContext)
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.#ctor*
+  name: EnumeratorRepository
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2__ctor_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity, TKey>.EnumeratorRepository
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity, TKey).New
+  nameWithType: EnumeratorRepository<TEntity, TKey>.EnumeratorRepository
+  nameWithType.vb: EnumeratorRepository(Of TEntity, TKey).New
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByName(System.String,System.Boolean,System.Boolean)
   name: GetByName(string, bool, bool)
-  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByName_System_String_System_Boolean_System_Boolean_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByName(System.String,System.Boolean,System.Boolean)
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByName_System_String_System_Boolean_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByName(System.String,System.Boolean,System.Boolean)
   name.vb: GetByName(String, Boolean, Boolean)
-  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByName(string, bool, bool)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByName(String, Boolean, Boolean)
-  nameWithType: EnumeratorRepository<TEntity>.GetByName(string, bool, bool)
-  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByName(String, Boolean, Boolean)
-- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByName*
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity, TKey>.GetByName(string, bool, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity, TKey).GetByName(String, Boolean, Boolean)
+  nameWithType: EnumeratorRepository<TEntity, TKey>.GetByName(string, bool, bool)
+  nameWithType.vb: EnumeratorRepository(Of TEntity, TKey).GetByName(String, Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByName*
   name: GetByName
-  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByName_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByName
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByName_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByName
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByName
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByName
-  nameWithType: EnumeratorRepository<TEntity>.GetByName
-  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByName
-- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNameAsync(System.String,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity, TKey>.GetByName
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity, TKey).GetByName
+  nameWithType: EnumeratorRepository<TEntity, TKey>.GetByName
+  nameWithType.vb: EnumeratorRepository(Of TEntity, TKey).GetByName
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByNameAsync(System.String,System.Boolean,System.Boolean,System.Threading.CancellationToken)
   name: GetByNameAsync(string, bool, bool, CancellationToken)
-  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByNameAsync_System_String_System_Boolean_System_Boolean_System_Threading_CancellationToken_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNameAsync(System.String,System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByNameAsync_System_String_System_Boolean_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByNameAsync(System.String,System.Boolean,System.Boolean,System.Threading.CancellationToken)
   name.vb: GetByNameAsync(String, Boolean, Boolean, CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByNameAsync(string, bool, bool, System.Threading.CancellationToken)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByNameAsync(String, Boolean, Boolean, System.Threading.CancellationToken)
-  nameWithType: EnumeratorRepository<TEntity>.GetByNameAsync(string, bool, bool, CancellationToken)
-  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByNameAsync(String, Boolean, Boolean, CancellationToken)
-- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNameAsync*
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity, TKey>.GetByNameAsync(string, bool, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity, TKey).GetByNameAsync(String, Boolean, Boolean, System.Threading.CancellationToken)
+  nameWithType: EnumeratorRepository<TEntity, TKey>.GetByNameAsync(string, bool, bool, CancellationToken)
+  nameWithType.vb: EnumeratorRepository(Of TEntity, TKey).GetByNameAsync(String, Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByNameAsync*
   name: GetByNameAsync
-  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByNameAsync_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNameAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByNameAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByNameAsync
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByNameAsync
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByNameAsync
-  nameWithType: EnumeratorRepository<TEntity>.GetByNameAsync
-  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByNameAsync
-- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNames(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity, TKey>.GetByNameAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity, TKey).GetByNameAsync
+  nameWithType: EnumeratorRepository<TEntity, TKey>.GetByNameAsync
+  nameWithType.vb: EnumeratorRepository(Of TEntity, TKey).GetByNameAsync
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByNames(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean)
   name: GetByNames(IEnumerable<string>, bool, bool)
-  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByNames_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNames(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean)
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByNames_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByNames(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean)
   name.vb: GetByNames(IEnumerable(Of String), Boolean, Boolean)
-  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByNames(System.Collections.Generic.IEnumerable<string>, bool, bool)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByNames(System.Collections.Generic.IEnumerable(Of String), Boolean, Boolean)
-  nameWithType: EnumeratorRepository<TEntity>.GetByNames(IEnumerable<string>, bool, bool)
-  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByNames(IEnumerable(Of String), Boolean, Boolean)
-- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNames*
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity, TKey>.GetByNames(System.Collections.Generic.IEnumerable<string>, bool, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity, TKey).GetByNames(System.Collections.Generic.IEnumerable(Of String), Boolean, Boolean)
+  nameWithType: EnumeratorRepository<TEntity, TKey>.GetByNames(IEnumerable<string>, bool, bool)
+  nameWithType.vb: EnumeratorRepository(Of TEntity, TKey).GetByNames(IEnumerable(Of String), Boolean, Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByNames*
   name: GetByNames
-  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByNames_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNames
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByNames_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByNames
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByNames
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByNames
-  nameWithType: EnumeratorRepository<TEntity>.GetByNames
-  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByNames
-- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNamesAsync(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity, TKey>.GetByNames
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity, TKey).GetByNames
+  nameWithType: EnumeratorRepository<TEntity, TKey>.GetByNames
+  nameWithType.vb: EnumeratorRepository(Of TEntity, TKey).GetByNames
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByNamesAsync(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean,System.Threading.CancellationToken)
   name: GetByNamesAsync(IEnumerable<string>, bool, bool, CancellationToken)
-  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByNamesAsync_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_System_Threading_CancellationToken_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNamesAsync(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean,System.Threading.CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByNamesAsync_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByNamesAsync(System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Boolean,System.Threading.CancellationToken)
   name.vb: GetByNamesAsync(IEnumerable(Of String), Boolean, Boolean, CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByNamesAsync(System.Collections.Generic.IEnumerable<string>, bool, bool, System.Threading.CancellationToken)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByNamesAsync(System.Collections.Generic.IEnumerable(Of String), Boolean, Boolean, System.Threading.CancellationToken)
-  nameWithType: EnumeratorRepository<TEntity>.GetByNamesAsync(IEnumerable<string>, bool, bool, CancellationToken)
-  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByNamesAsync(IEnumerable(Of String), Boolean, Boolean, CancellationToken)
-- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNamesAsync*
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity, TKey>.GetByNamesAsync(System.Collections.Generic.IEnumerable<string>, bool, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity, TKey).GetByNamesAsync(System.Collections.Generic.IEnumerable(Of String), Boolean, Boolean, System.Threading.CancellationToken)
+  nameWithType: EnumeratorRepository<TEntity, TKey>.GetByNamesAsync(IEnumerable<string>, bool, bool, CancellationToken)
+  nameWithType.vb: EnumeratorRepository(Of TEntity, TKey).GetByNamesAsync(IEnumerable(Of String), Boolean, Boolean, CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByNamesAsync*
   name: GetByNamesAsync
-  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1_GetByNamesAsync_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.GetByNamesAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByNamesAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`2.GetByNamesAsync
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>.GetByNamesAsync
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity).GetByNamesAsync
-  nameWithType: EnumeratorRepository<TEntity>.GetByNamesAsync
-  nameWithType.vb: EnumeratorRepository(Of TEntity).GetByNamesAsync
+  fullName: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity, TKey>.GetByNamesAsync
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.EnumeratorRepository(Of TEntity, TKey).GetByNamesAsync
+  nameWithType: EnumeratorRepository<TEntity, TKey>.GetByNamesAsync
+  nameWithType.vb: EnumeratorRepository(Of TEntity, TKey).GetByNamesAsync
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1
   name: GenericRepository<TEntity>
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html
@@ -2108,32 +2367,32 @@ references:
   nameWithType: AuditedCompositeConfiguration<TEntity>.Configure
   nameWithType.vb: AuditedCompositeConfiguration(Of TEntity).Configure
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`3
-  name: AuditedCompositeConfiguration<TEntity, TCreated, TModified>
+  name: AuditedCompositeConfiguration<TEntity, TCreator, TEdited>
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-3.html
   commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`3
-  name.vb: AuditedCompositeConfiguration(Of TEntity, TCreated, TModified)
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration<TEntity, TCreated, TModified>
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration(Of TEntity, TCreated, TModified)
-  nameWithType: AuditedCompositeConfiguration<TEntity, TCreated, TModified>
-  nameWithType.vb: AuditedCompositeConfiguration(Of TEntity, TCreated, TModified)
+  name.vb: AuditedCompositeConfiguration(Of TEntity, TCreator, TEdited)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration<TEntity, TCreator, TEdited>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration(Of TEntity, TCreator, TEdited)
+  nameWithType: AuditedCompositeConfiguration<TEntity, TCreator, TEdited>
+  nameWithType.vb: AuditedCompositeConfiguration(Of TEntity, TCreator, TEdited)
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
   name: Configure(EntityTypeBuilder<TEntity>)
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-3.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedCompositeConfiguration_3_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
   commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
   name.vb: Configure(EntityTypeBuilder(Of TEntity))
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration<TEntity, TCreated, TModified>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration(Of TEntity, TCreated, TModified).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
-  nameWithType: AuditedCompositeConfiguration<TEntity, TCreated, TModified>.Configure(EntityTypeBuilder<TEntity>)
-  nameWithType.vb: AuditedCompositeConfiguration(Of TEntity, TCreated, TModified).Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration<TEntity, TCreator, TEdited>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration(Of TEntity, TCreator, TEdited).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: AuditedCompositeConfiguration<TEntity, TCreator, TEdited>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: AuditedCompositeConfiguration(Of TEntity, TCreator, TEdited).Configure(EntityTypeBuilder(Of TEntity))
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`3.Configure*
   name: Configure
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-3.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedCompositeConfiguration_3_Configure_
   commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`3.Configure
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration<TEntity, TCreated, TModified>.Configure
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration(Of TEntity, TCreated, TModified).Configure
-  nameWithType: AuditedCompositeConfiguration<TEntity, TCreated, TModified>.Configure
-  nameWithType.vb: AuditedCompositeConfiguration(Of TEntity, TCreated, TModified).Configure
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration<TEntity, TCreator, TEdited>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration(Of TEntity, TCreator, TEdited).Configure
+  nameWithType: AuditedCompositeConfiguration<TEntity, TCreator, TEdited>.Configure
+  nameWithType.vb: AuditedCompositeConfiguration(Of TEntity, TCreator, TEdited).Configure
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`1
   name: AuditedConfiguration<TEntity>
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-1.html
@@ -2161,33 +2420,87 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity).Configure
   nameWithType: AuditedConfiguration<TEntity>.Configure
   nameWithType.vb: AuditedConfiguration(Of TEntity).Configure
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`2
+  name: AuditedConfiguration<TEntity, TKey>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-2.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`2
+  name.vb: AuditedConfiguration(Of TEntity, TKey)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity, TKey)
+  nameWithType: AuditedConfiguration<TEntity, TKey>
+  nameWithType.vb: AuditedConfiguration(Of TEntity, TKey)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`2.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name: Configure(EntityTypeBuilder<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-2.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_2_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`2.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name.vb: Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity, TKey).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: AuditedConfiguration<TEntity, TKey>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: AuditedConfiguration(Of TEntity, TKey).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`2.Configure*
+  name: Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-2.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_2_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`2.Configure
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity, TKey).Configure
+  nameWithType: AuditedConfiguration<TEntity, TKey>.Configure
+  nameWithType.vb: AuditedConfiguration(Of TEntity, TKey).Configure
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`3
+  name: AuditedConfiguration<TEntity, TCreator, TEdited>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-3.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`3
+  name.vb: AuditedConfiguration(Of TEntity, TCreator, TEdited)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TCreator, TEdited>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity, TCreator, TEdited)
+  nameWithType: AuditedConfiguration<TEntity, TCreator, TEdited>
+  nameWithType.vb: AuditedConfiguration(Of TEntity, TCreator, TEdited)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name: Configure(EntityTypeBuilder<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-3.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_3_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name.vb: Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TCreator, TEdited>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity, TCreator, TEdited).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: AuditedConfiguration<TEntity, TCreator, TEdited>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: AuditedConfiguration(Of TEntity, TCreator, TEdited).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`3.Configure*
+  name: Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-3.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_3_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`3.Configure
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TCreator, TEdited>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity, TCreator, TEdited).Configure
+  nameWithType: AuditedConfiguration<TEntity, TCreator, TEdited>.Configure
+  nameWithType.vb: AuditedConfiguration(Of TEntity, TCreator, TEdited).Configure
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`4
-  name: AuditedConfiguration<TEntity, TKey, TCreated, TModified>
+  name: AuditedConfiguration<TEntity, TKey, TCreator, TEdited>
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.html
   commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`4
-  name.vb: AuditedConfiguration(Of TEntity, TKey, TCreated, TModified)
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey, TCreated, TModified>
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity, TKey, TCreated, TModified)
-  nameWithType: AuditedConfiguration<TEntity, TKey, TCreated, TModified>
-  nameWithType.vb: AuditedConfiguration(Of TEntity, TKey, TCreated, TModified)
+  name.vb: AuditedConfiguration(Of TEntity, TKey, TCreator, TEdited)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey, TCreator, TEdited>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity, TKey, TCreator, TEdited)
+  nameWithType: AuditedConfiguration<TEntity, TKey, TCreator, TEdited>
+  nameWithType.vb: AuditedConfiguration(Of TEntity, TKey, TCreator, TEdited)
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`4.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
   name: Configure(EntityTypeBuilder<TEntity>)
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_4_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
   commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`4.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
   name.vb: Configure(EntityTypeBuilder(Of TEntity))
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey, TCreated, TModified>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity, TKey, TCreated, TModified).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
-  nameWithType: AuditedConfiguration<TEntity, TKey, TCreated, TModified>.Configure(EntityTypeBuilder<TEntity>)
-  nameWithType.vb: AuditedConfiguration(Of TEntity, TKey, TCreated, TModified).Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey, TCreator, TEdited>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity, TKey, TCreator, TEdited).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: AuditedConfiguration<TEntity, TKey, TCreator, TEdited>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: AuditedConfiguration(Of TEntity, TKey, TCreator, TEdited).Configure(EntityTypeBuilder(Of TEntity))
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`4.Configure*
   name: Configure
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_4_Configure_
   commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`4.Configure
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey, TCreated, TModified>.Configure
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity, TKey, TCreated, TModified).Configure
-  nameWithType: AuditedConfiguration<TEntity, TKey, TCreated, TModified>.Configure
-  nameWithType.vb: AuditedConfiguration(Of TEntity, TKey, TCreated, TModified).Configure
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey, TCreator, TEdited>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration(Of TEntity, TKey, TCreator, TEdited).Configure
+  nameWithType: AuditedConfiguration<TEntity, TKey, TCreator, TEdited>.Configure
+  nameWithType.vb: AuditedConfiguration(Of TEntity, TKey, TCreator, TEdited).Configure
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration`1
   name: CompositeConfiguration<TEntity>
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration-1.html
@@ -2242,6 +2555,141 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration(Of TEntity).Configure
   nameWithType: EnumeratorConfiguration<TEntity>.Configure
   nameWithType.vb: EnumeratorConfiguration(Of TEntity).Configure
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`2
+  name: EnumeratorConfiguration<TEntity, TKey>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration-2.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`2
+  name.vb: EnumeratorConfiguration(Of TEntity, TKey)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration<TEntity, TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration(Of TEntity, TKey)
+  nameWithType: EnumeratorConfiguration<TEntity, TKey>
+  nameWithType.vb: EnumeratorConfiguration(Of TEntity, TKey)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`2.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name: Configure(EntityTypeBuilder<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration-2.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_EnumeratorConfiguration_2_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`2.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name.vb: Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration<TEntity, TKey>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration(Of TEntity, TKey).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: EnumeratorConfiguration<TEntity, TKey>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: EnumeratorConfiguration(Of TEntity, TKey).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`2.Configure*
+  name: Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration-2.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_EnumeratorConfiguration_2_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`2.Configure
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration<TEntity, TKey>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration(Of TEntity, TKey).Configure
+  nameWithType: EnumeratorConfiguration<TEntity, TKey>.Configure
+  nameWithType.vb: EnumeratorConfiguration(Of TEntity, TKey).Configure
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`1
+  name: FullAuditeConfiguration<TEntity>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-1.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`1
+  name.vb: FullAuditeConfiguration(Of TEntity)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity)
+  nameWithType: FullAuditeConfiguration<TEntity>
+  nameWithType.vb: FullAuditeConfiguration(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name: Configure(EntityTypeBuilder<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_1_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name.vb: Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: FullAuditeConfiguration<TEntity>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: FullAuditeConfiguration(Of TEntity).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`1.Configure*
+  name: Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_1_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`1.Configure
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity).Configure
+  nameWithType: FullAuditeConfiguration<TEntity>.Configure
+  nameWithType.vb: FullAuditeConfiguration(Of TEntity).Configure
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`2
+  name: FullAuditeConfiguration<TEntity, TKey>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-2.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`2
+  name.vb: FullAuditeConfiguration(Of TEntity, TKey)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity, TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity, TKey)
+  nameWithType: FullAuditeConfiguration<TEntity, TKey>
+  nameWithType.vb: FullAuditeConfiguration(Of TEntity, TKey)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`2.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name: Configure(EntityTypeBuilder<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-2.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_2_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`2.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name.vb: Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity, TKey>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity, TKey).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: FullAuditeConfiguration<TEntity, TKey>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: FullAuditeConfiguration(Of TEntity, TKey).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`2.Configure*
+  name: Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-2.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_2_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`2.Configure
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity, TKey>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity, TKey).Configure
+  nameWithType: FullAuditeConfiguration<TEntity, TKey>.Configure
+  nameWithType.vb: FullAuditeConfiguration(Of TEntity, TKey).Configure
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3
+  name: FullAuditeConfiguration<TEntity, TCreator, TEdited>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-3.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3
+  name.vb: FullAuditeConfiguration(Of TEntity, TCreator, TEdited)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity, TCreator, TEdited>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity, TCreator, TEdited)
+  nameWithType: FullAuditeConfiguration<TEntity, TCreator, TEdited>
+  nameWithType.vb: FullAuditeConfiguration(Of TEntity, TCreator, TEdited)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name: Configure(EntityTypeBuilder<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-3.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_3_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name.vb: Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity, TCreator, TEdited>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity, TCreator, TEdited).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: FullAuditeConfiguration<TEntity, TCreator, TEdited>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: FullAuditeConfiguration(Of TEntity, TCreator, TEdited).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3.Configure*
+  name: Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-3.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_3_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3.Configure
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity, TCreator, TEdited>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity, TCreator, TEdited).Configure
+  nameWithType: FullAuditeConfiguration<TEntity, TCreator, TEdited>.Configure
+  nameWithType.vb: FullAuditeConfiguration(Of TEntity, TCreator, TEdited).Configure
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`4
+  name: FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-4.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`4
+  name.vb: FullAuditedConfiguration(Of TEntity, TKey, TCreator, TEdited)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration(Of TEntity, TKey, TCreator, TEdited)
+  nameWithType: FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>
+  nameWithType.vb: FullAuditedConfiguration(Of TEntity, TKey, TCreator, TEdited)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`4.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name: Configure(EntityTypeBuilder<TEntity>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-4.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_4_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`4.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  name.vb: Configure(EntityTypeBuilder(Of TEntity))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration(Of TEntity, TKey, TCreator, TEdited).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: FullAuditedConfiguration(Of TEntity, TKey, TCreator, TEdited).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`4.Configure*
+  name: Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-4.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_4_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`4.Configure
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration(Of TEntity, TKey, TCreator, TEdited).Configure
+  nameWithType: FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>.Configure
+  nameWithType.vb: FullAuditedConfiguration(Of TEntity, TKey, TCreator, TEdited).Configure
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration`1
   name: IdentityConfiguration<TEntity>
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-1.html
@@ -2493,3 +2941,41 @@ references:
   isSpec: "True"
   fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChangesAsync
   nameWithType: SoftDeletableInterceptor.SavingChangesAsync
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor
+  name: TimeAuditedInterceptor
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor
+  nameWithType: TimeAuditedInterceptor
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChanges(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32})
+  name: SavingChanges(DbContextEventData, InterceptionResult<int>)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_SavingChanges_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChanges(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32})
+  name.vb: SavingChanges(DbContextEventData, InterceptionResult(Of Integer))
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChanges(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData, Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult<int>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChanges(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData, Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult(Of Integer))
+  nameWithType: TimeAuditedInterceptor.SavingChanges(DbContextEventData, InterceptionResult<int>)
+  nameWithType.vb: TimeAuditedInterceptor.SavingChanges(DbContextEventData, InterceptionResult(Of Integer))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChanges*
+  name: SavingChanges
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_SavingChanges_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChanges
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChanges
+  nameWithType: TimeAuditedInterceptor.SavingChanges
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChangesAsync(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32},System.Threading.CancellationToken)
+  name: SavingChangesAsync(DbContextEventData, InterceptionResult<int>, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_SavingChangesAsync_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChangesAsync(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32},System.Threading.CancellationToken)
+  name.vb: SavingChangesAsync(DbContextEventData, InterceptionResult(Of Integer), CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChangesAsync(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData, Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult<int>, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChangesAsync(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData, Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult(Of Integer), System.Threading.CancellationToken)
+  nameWithType: TimeAuditedInterceptor.SavingChangesAsync(DbContextEventData, InterceptionResult<int>, CancellationToken)
+  nameWithType.vb: TimeAuditedInterceptor.SavingChangesAsync(DbContextEventData, InterceptionResult(Of Integer), CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChangesAsync*
+  name: SavingChangesAsync
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_SavingChangesAsync_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChangesAsync
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChangesAsync
+  nameWithType: TimeAuditedInterceptor.SavingChangesAsync

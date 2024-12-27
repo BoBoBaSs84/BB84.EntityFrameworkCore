@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class TimeAuditedInterceptor </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class TimeAuditedInterceptor ">
+      
+      <meta name="description" content="The save changes interceptor for time audited entities.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/main/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor">
+
+
+
+  <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor" class="text-break">
+Class TimeAuditedInterceptor  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BB84.html">BB84</a>.<a class="xref" href="BB84.EntityFrameworkCore.html">EntityFrameworkCore</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.html">Repositories</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.html">SqlServer</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.html">Interceptors</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.SqlServer.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The save changes interceptor for time audited entities.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class TimeAuditedInterceptor : SaveChangesInterceptor, ISaveChangesInterceptor, IInterceptor</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.savechangesinterceptor">SaveChangesInterceptor</a></div>
+      <div><span class="xref">TimeAuditedInterceptor</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.isavechangesinterceptor">ISaveChangesInterceptor</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.iinterceptor">IInterceptor</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.savechangesinterceptor.savedchanges">SaveChangesInterceptor.SavedChanges(SaveChangesCompletedEventData, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.savechangesinterceptor.savechangesfailed">SaveChangesInterceptor.SaveChangesFailed(DbContextErrorEventData)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.savechangesinterceptor.savedchangesasync">SaveChangesInterceptor.SavedChangesAsync(SaveChangesCompletedEventData, int, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.savechangesinterceptor.savechangesfailedasync">SaveChangesInterceptor.SaveChangesFailedAsync(DbContextErrorEventData, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.savechangesinterceptor.savechangescanceled">SaveChangesInterceptor.SaveChangesCanceled(DbContextEventData)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.savechangesinterceptor.savechangescanceledasync">SaveChangesInterceptor.SaveChangesCanceledAsync(DbContextEventData, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.savechangesinterceptor.throwingconcurrencyexception">SaveChangesInterceptor.ThrowingConcurrencyException(ConcurrencyExceptionEventData, InterceptionResult)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.savechangesinterceptor.throwingconcurrencyexceptionasync">SaveChangesInterceptor.ThrowingConcurrencyExceptionAsync(ConcurrencyExceptionEventData, InterceptionResult, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>See <a href="https://aka.ms/efcore-docs-interceptors">EF Core interceptors</a> for more information and examples.</p>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_SavingChanges_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChanges*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_SavingChanges_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChanges(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32})">
+  SavingChanges(DbContextEventData, InterceptionResult&lt;int&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called at the start of <see cref="O:DbContext.SaveChanges"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override InterceptionResult&lt;int&gt; SavingChanges(DbContextEventData eventData, InterceptionResult&lt;int&gt; result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.dbcontexteventdata">DbContextEventData</a></dt>
+    <dd><p>Contextual information about the <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext">DbContext</a> being used.</p>
+</dd>
+    <dt><code>result</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.interceptionresult-1">InterceptionResult</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>Represents the current result if one exists.
+This value will have <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.interceptionresult-1.hasresult">HasResult</a> set to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if some previous
+interceptor suppressed execution by calling <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.interceptionresult-1.suppresswithresult">SuppressWithResult(TResult)</a>.
+This value is typically used as the return value for the implementation of this method.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.interceptionresult-1">InterceptionResult</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>If <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.interceptionresult-1.hasresult">HasResult</a> is false, the EF will continue as normal.
+If <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.interceptionresult-1.hasresult">HasResult</a> is true, then EF will suppress the operation it
+was about to perform and use <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.interceptionresult-1.result">Result</a> instead.
+An implementation of this method for any interceptor that is not attempting to change the result
+is to return the <code class="paramref">result</code> value passed in.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_SavingChangesAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChangesAsync*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_SavingChangesAsync_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChangesAsync(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32},System.Threading.CancellationToken)">
+  SavingChangesAsync(DbContextEventData, InterceptionResult&lt;int&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called at the start of <see cref="O:DbContext.SaveChangesAsync"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override ValueTask&lt;InterceptionResult&lt;int&gt;&gt; SavingChangesAsync(DbContextEventData eventData, InterceptionResult&lt;int&gt; result, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.dbcontexteventdata">DbContextEventData</a></dt>
+    <dd><p>Contextual information about the <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext">DbContext</a> being used.</p>
+</dd>
+    <dt><code>result</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.interceptionresult-1">InterceptionResult</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>Represents the current result if one exists.
+This value will have <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.interceptionresult-1.hasresult">HasResult</a> set to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if some previous
+interceptor suppressed execution by calling <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.interceptionresult-1.suppresswithresult">SuppressWithResult(TResult)</a>.
+This value is typically used as the return value for the implementation of this method.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> to observe while waiting for the task to complete.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">ValueTask</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.interceptionresult-1">InterceptionResult</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;&gt;</dt>
+    <dd><p>If <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.interceptionresult-1.hasresult">HasResult</a> is false, the EF will continue as normal.
+If <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.interceptionresult-1.hasresult">HasResult</a> is true, then EF will suppress the operation it
+was about to perform and use <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.interceptionresult-1.result">Result</a> instead.
+An implementation of this method for any interceptor that is not attempting to change the result
+is to return the <code class="paramref">result</code> value passed in.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.operationcanceledexception">OperationCanceledException</a></dt>
+    <dd><p>If the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> is canceled.</p>
+</dd>
+  </dl>
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L13" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class EnumeratorConfiguration&lt;TEntity&gt; ">
       
-      <meta name="description" content="The enumerator base configuration class.">
+      <meta name="description" content="The entity configuration for enumerator based entities.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_EnumeratorConfiguration_1" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`1" class="text-break">
-Class EnumeratorConfiguration&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/EnumeratorConfiguration.cs/#L14"><i class="bi bi-code-slash"></i></a>
+Class EnumeratorConfiguration&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/EnumeratorConfiguration.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,12 +93,12 @@ Class EnumeratorConfiguration&lt;TEntity&gt;  <a class="header-action link-secon
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.SqlServer.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The enumerator base configuration class.</p>
+  <div class="markdown summary"><p>The entity configuration for enumerator based entities.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class EnumeratorConfiguration&lt;TEntity&gt; : IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IEnumeratorModel</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class EnumeratorConfiguration&lt;TEntity&gt; : EnumeratorConfiguration&lt;TEntity, int&gt;, IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IEnumeratorEntity</code></pre>
   </div>
 
 
@@ -114,6 +114,7 @@ Class EnumeratorConfiguration&lt;TEntity&gt;  <a class="header-action link-secon
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration-2.html">EnumeratorConfiguration</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</div>
       <div><span class="xref">EnumeratorConfiguration&lt;TEntity&gt;</span></div>
     </dd>
   </dl>
@@ -129,6 +130,9 @@ Class EnumeratorConfiguration&lt;TEntity&gt;  <a class="header-action link-secon
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration-2.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_EnumeratorConfiguration_2_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__">EnumeratorConfiguration&lt;TEntity, int&gt;.Configure(EntityTypeBuilder&lt;TEntity&gt;)</a>
+    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -169,7 +173,7 @@ examples.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_EnumeratorConfiguration_1_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
   Configure(EntityTypeBuilder&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/EnumeratorConfiguration.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/EnumeratorConfiguration.cs/#L64"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configures the entity of type <code class="typeparamref">TEntity</code>.</p>
@@ -177,7 +181,7 @@ examples.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Configure(EntityTypeBuilder&lt;TEntity&gt; builder)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Configure(EntityTypeBuilder&lt;TEntity&gt; builder)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -202,7 +206,7 @@ examples.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/EnumeratorConfiguration.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/EnumeratorConfiguration.cs/#L59" class="edit-link">Edit this page</a>
         </div>
 
 
