@@ -1,3 +1,3 @@
 # BB84.EntityFrameworkCore.Entities
 
-This package contains frequently used model implementations of their respective abstractions.
+This package contains the standard implementation of the entity abstractions.

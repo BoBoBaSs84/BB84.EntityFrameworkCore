@@ -1,3 +1,3 @@
-# BB84.EntityFrameworkCore
+# BB84.EntityFrameworkCore.Repositories.SqlServer
 
-This package contains configurations and extensions for the use of EntityFrameworkCore with SqlServer.
+This package contains frequently used sql server configuration base classes and various extension methods.
