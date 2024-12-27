@@ -2,11 +2,11 @@
 
 namespace BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 
-public sealed class Job : AuditedEntity
+public sealed class JobEntity : AuditedEntity
 {
 	public required string Name { get; set; }
 	public required string Description { get; set; }
 
-	public ICollection<PersonJob>? PersonJobs { get; set; }
-	public ICollection<Skill>? Requirements { get; set; }
+	public ICollection<PersonJobEntity>? PersonJobs { get; set; }
+	public ICollection<SkillEntity>? Requirements { get; set; }
 }

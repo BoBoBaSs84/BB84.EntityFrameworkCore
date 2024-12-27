@@ -6,10 +6,12 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Configurations;
 
-internal sealed class SkillConfiguration : FullAuditeConfiguration<Skill>
+internal sealed class SkillConfiguration : FullAuditeConfiguration<SkillEntity>
 {
-	public override void Configure(EntityTypeBuilder<Skill> builder)
+	public override void Configure(EntityTypeBuilder<SkillEntity> builder)
 	{
+		_ = builder.ToTable("Skill");
+
 		_ = builder.Property(p => p.Name)
 			.HasMaxLength(128)
 			.IsRequired()

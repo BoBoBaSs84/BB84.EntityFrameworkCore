@@ -1,15 +1,18 @@
 ﻿using BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Configurations;
 
-internal sealed class PersonTypeConfiguration : EnumeratorConfiguration<PersonType>
+internal sealed class PersonTypeConfiguration : EnumeratorConfiguration<PersonTypeEntity>
 {
-	public override void Configure(EntityTypeBuilder<PersonType> builder)
+	public override void Configure(EntityTypeBuilder<PersonTypeEntity> builder)
 	{
-		_ = builder.HasData(new List<PersonType>()
+		builder.ToTable("PersonType");
+
+		_ = builder.HasData(new List<PersonTypeEntity>()
 		{
 			new()
 			{

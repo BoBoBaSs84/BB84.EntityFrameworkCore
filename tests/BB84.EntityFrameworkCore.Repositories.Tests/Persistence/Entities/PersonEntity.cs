@@ -2,7 +2,7 @@
 
 namespace BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 
-public sealed class Person : AuditedEntity
+public sealed class PersonEntity : AuditedEntity
 {
 	public required string FirstName { get; set; }
 	public string? MiddleName { get; set; }
@@ -11,7 +11,7 @@ public sealed class Person : AuditedEntity
 	public decimal Salary { get; set; }
 	public string? Settings { get; set; }
 
-	public PersonType Type { get; set; } = default!;
-	public ICollection<PersonJob>? PersonJobs { get; set; }
-	public ICollection<Skill>? Skills { get; set; }
+	public PersonTypeEntity Type { get; set; } = default!;
+	public ICollection<PersonJobEntity>? PersonJobs { get; set; }
+	public ICollection<SkillEntity>? Skills { get; set; }
 }

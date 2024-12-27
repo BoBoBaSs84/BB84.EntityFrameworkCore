@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Configurations;
 
-internal sealed class PersonConfiguration : AuditedConfiguration<Person>
+internal sealed class PersonConfiguration : AuditedConfiguration<PersonEntity>
 {
-	public override void Configure(EntityTypeBuilder<Person> builder)
+	public override void Configure(EntityTypeBuilder<PersonEntity> builder)
 	{
-		_ = builder.ToHistoryTable();
+		_ = builder.ToHistoryTable("Person");
 
 		_ = builder.Property(x => x.Settings)
 			.IsXmlColumn();

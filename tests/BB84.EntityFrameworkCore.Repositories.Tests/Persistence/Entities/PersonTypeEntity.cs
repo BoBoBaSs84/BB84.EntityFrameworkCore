@@ -2,7 +2,5 @@
 
 namespace BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 
-public sealed class JobType : CompositeEntity
-{
-	public string? Color { get; set; }
-}
+public sealed class PersonTypeEntity : EnumeratorEntity
+{ }

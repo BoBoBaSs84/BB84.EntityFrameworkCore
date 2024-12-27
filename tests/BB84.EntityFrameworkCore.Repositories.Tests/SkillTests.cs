@@ -12,7 +12,7 @@ public sealed class SkillTests : UnitTestBase
 	{
 		using TestDbContext context = GetTestContext();
 		SkillRepository repository = new(context);
-		Skill newSkill = new()
+		SkillEntity newSkill = new()
 		{
 			Name = "FancySkill",
 			Description = "This is a fancy skill",
@@ -23,7 +23,7 @@ public sealed class SkillTests : UnitTestBase
 		int result = context.SaveChanges();
 		Assert.AreEqual(1, result);
 
-		Skill? dbSkill = repository.GetByCondition(x => x.Name == newSkill.Name, trackChanges: true);
+		SkillEntity? dbSkill = repository.GetByCondition(x => x.Name == newSkill.Name, trackChanges: true);
 		Assert.IsNotNull(dbSkill);
 		Assert.AreNotEqual(DateTime.MinValue, dbSkill.Created);
 

@@ -13,7 +13,7 @@ public sealed class PersonJobTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
-		PersonJob personJob = new();
+		PersonJobEntity personJob = new();
 
 		repository.Create(personJob);
 	}
@@ -24,7 +24,7 @@ public sealed class PersonJobTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
-		List<PersonJob> personJobs = [new(), new()];
+		List<PersonJobEntity> personJobs = [new(), new()];
 
 		repository.Create(personJobs);
 	}
@@ -35,7 +35,7 @@ public sealed class PersonJobTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
-		PersonJob personJob = new();
+		PersonJobEntity personJob = new();
 
 		await repository.CreateAsync(personJob)
 			.ConfigureAwait(false);
@@ -47,7 +47,7 @@ public sealed class PersonJobTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
-		List<PersonJob> personJobs = [new(), new()];
+		List<PersonJobEntity> personJobs = [new(), new()];
 
 		await repository.CreateAsync(personJobs)
 			.ConfigureAwait(false);
@@ -105,7 +105,7 @@ public sealed class PersonJobTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
-		PersonJob personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
+		PersonJobEntity personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
 
 		repository.Delete(personJob);
 	}
@@ -116,7 +116,7 @@ public sealed class PersonJobTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
-		List<PersonJob> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
+		List<PersonJobEntity> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
 
 		repository.Delete(personJobs);
 	}
@@ -127,7 +127,7 @@ public sealed class PersonJobTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
-		PersonJob personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
+		PersonJobEntity personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
 
 		await repository.DeleteAsync(personJob)
 			.ConfigureAwait(false);
@@ -139,7 +139,7 @@ public sealed class PersonJobTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
-		List<PersonJob> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
+		List<PersonJobEntity> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
 
 		await repository.DeleteAsync(personJobs)
 			.ConfigureAwait(false);
@@ -151,7 +151,7 @@ public sealed class PersonJobTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
-		PersonJob personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
+		PersonJobEntity personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
 
 		repository.Update(personJob);
 	}
@@ -162,7 +162,7 @@ public sealed class PersonJobTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
-		List<PersonJob> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
+		List<PersonJobEntity> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
 
 		repository.Update(personJobs);
 	}
@@ -173,7 +173,7 @@ public sealed class PersonJobTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
-		PersonJob personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
+		PersonJobEntity personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
 
 		await repository.UpdateAsync(personJob)
 			.ConfigureAwait(false);
@@ -185,7 +185,7 @@ public sealed class PersonJobTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonJobRepository repository = new(dbContext);
 
-		List<PersonJob> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
+		List<PersonJobEntity> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
 
 		await repository.UpdateAsync(personJobs)
 			.ConfigureAwait(false);

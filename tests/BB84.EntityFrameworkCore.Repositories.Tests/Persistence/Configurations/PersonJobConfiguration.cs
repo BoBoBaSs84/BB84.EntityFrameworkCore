@@ -6,13 +6,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Configurations;
 
-internal sealed class PersonJobConfiguration : AuditedCompositeConfiguration<PersonJob>
+internal sealed class PersonJobConfiguration : AuditedCompositeConfiguration<PersonJobEntity>
 {
-	public override void Configure(EntityTypeBuilder<PersonJob> builder)
+	public override void Configure(EntityTypeBuilder<PersonJobEntity> builder)
 	{
-		base.Configure(builder);
+		_ = builder.ToTable("PersonJob");
 
 		_ = builder.HasKey(e => new { e.PersonId, e.JobId })
-			.IsClustered();
+			.IsClustered(false);
+
+		base.Configure(builder);
 	}
 }

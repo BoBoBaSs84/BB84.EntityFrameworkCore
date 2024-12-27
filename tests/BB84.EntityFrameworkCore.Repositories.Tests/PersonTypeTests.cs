@@ -13,7 +13,7 @@ public sealed class PersonTypeTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonTypeRepository repository = new(dbContext);
 
-		PersonType? result = repository.GetByName("Male");
+		PersonTypeEntity? result = repository.GetByName("Male");
 
 		Assert.IsNotNull(result);
 	}
@@ -24,7 +24,7 @@ public sealed class PersonTypeTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonTypeRepository repository = new(dbContext);
 
-		IEnumerable<PersonType> result = repository.GetByNames(["Male", "Female"]);
+		IEnumerable<PersonTypeEntity> result = repository.GetByNames(["Male", "Female"]);
 
 		Assert.IsNotNull(result);
 		Assert.AreEqual(2, result.Count());
@@ -36,7 +36,7 @@ public sealed class PersonTypeTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonTypeRepository repository = new(dbContext);
 
-		PersonType? result = await repository.GetByNameAsync("Male")
+		PersonTypeEntity? result = await repository.GetByNameAsync("Male")
 			.ConfigureAwait(false);
 
 		Assert.IsNotNull(result);
@@ -48,7 +48,7 @@ public sealed class PersonTypeTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonTypeRepository repository = new(dbContext);
 
-		IEnumerable<PersonType> result = await repository.GetByNamesAsync(["Male", "Female"])
+		IEnumerable<PersonTypeEntity> result = await repository.GetByNamesAsync(["Male", "Female"])
 			.ConfigureAwait(false);
 
 		Assert.IsNotNull(result);
@@ -61,9 +61,9 @@ public sealed class PersonTypeTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
-		Person? person = repository.GetByCondition(
+		PersonEntity? person = repository.GetByCondition(
 			expression: x => x.Id.Equals(Guid.Empty),
-			includeProperties: [nameof(Person.Type)]
+			includeProperties: [nameof(PersonEntity.Type)]
 			);
 
 		Assert.IsNull(person);
@@ -75,9 +75,9 @@ public sealed class PersonTypeTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
-		Person? person = await repository.GetByConditionAsync(
+		PersonEntity? person = await repository.GetByConditionAsync(
 			expression: x => x.Id.Equals(Guid.Empty),
-			includeProperties: [nameof(Person.Type)]
+			includeProperties: [nameof(PersonEntity.Type)]
 			).ConfigureAwait(false);
 
 		Assert.IsNull(person);
@@ -89,7 +89,7 @@ public sealed class PersonTypeTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonTypeRepository repository = new(dbContext);
 
-		PersonType? result = repository.GetById(1, false, true);
+		PersonTypeEntity? result = repository.GetById(1, false, true);
 		Assert.IsNotNull(result);
 
 		repository.Delete(result);
@@ -103,7 +103,7 @@ public sealed class PersonTypeTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonTypeRepository repository = new(dbContext);
 
-		PersonType? result = await repository.GetByIdAsync(2, false, true);
+		PersonTypeEntity? result = await repository.GetByIdAsync(2, false, true);
 		Assert.IsNotNull(result);
 
 		await repository.DeleteAsync(result);

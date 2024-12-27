@@ -59,7 +59,7 @@ public sealed class PersonTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
-		Person? person = repository.GetById(Guid.Empty);
+		PersonEntity? person = repository.GetById(Guid.Empty);
 
 		Assert.IsNull(person);
 	}
@@ -70,7 +70,7 @@ public sealed class PersonTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
-		IEnumerable<Person> persons = repository.GetByIds([Guid.NewGuid(), Guid.NewGuid()]);
+		IEnumerable<PersonEntity> persons = repository.GetByIds([Guid.NewGuid(), Guid.NewGuid()]);
 
 		Assert.IsFalse(persons.Any());
 	}
@@ -81,7 +81,7 @@ public sealed class PersonTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
-		Person? person = await repository.GetByIdAsync(Guid.Empty)
+		PersonEntity? person = await repository.GetByIdAsync(Guid.Empty)
 			.ConfigureAwait(false);
 
 		Assert.IsNull(person);
@@ -93,7 +93,7 @@ public sealed class PersonTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
-		IEnumerable<Person> persons = await repository.GetByIdsAsync([Guid.NewGuid(), Guid.NewGuid()])
+		IEnumerable<PersonEntity> persons = await repository.GetByIdsAsync([Guid.NewGuid(), Guid.NewGuid()])
 			.ConfigureAwait(false);
 
 		Assert.IsFalse(persons.Any());
@@ -105,7 +105,7 @@ public sealed class PersonTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
-		IEnumerable<Person> persons = repository.GetAll(true, true);
+		IEnumerable<PersonEntity> persons = repository.GetAll(true, true);
 
 		Assert.IsFalse(persons.Any());
 	}
@@ -116,7 +116,7 @@ public sealed class PersonTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
-		IEnumerable<Person> persons = await repository.GetAllAsync(true, true)
+		IEnumerable<PersonEntity> persons = await repository.GetAllAsync(true, true)
 			.ConfigureAwait(false);
 
 		Assert.IsFalse(persons.Any());
@@ -128,7 +128,7 @@ public sealed class PersonTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
-		IEnumerable<Person> persons = repository.GetManyByCondition(
+		IEnumerable<PersonEntity> persons = repository.GetManyByCondition(
 			x => x.Id.Equals(Guid.Empty),
 			x => x.Where(x => x.Id.Equals(Guid.Empty)),
 			false, x => x.OrderBy(x => x.Id), 1, 1, false
@@ -143,7 +143,7 @@ public sealed class PersonTests : UnitTestBase
 		using TestDbContext dbContext = GetTestContext();
 		PersonRepository repository = new(dbContext);
 
-		IEnumerable<Person> persons = await repository.GetManyByConditionAsync(
+		IEnumerable<PersonEntity> persons = await repository.GetManyByConditionAsync(
 			x => x.Id.Equals(Guid.Empty),
 			x => x.Where(x => x.Id.Equals(Guid.Empty)),
 			false, x => x.OrderBy(x => x.Id), 1, 1, false
