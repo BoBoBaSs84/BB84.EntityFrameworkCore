@@ -1,3 +1,3 @@
 # BB84.EntityFrameworkCore.Entities.Abstractions
 
-This package contains frequently used base model abstractions.
+This package only contains the entity abstractions.

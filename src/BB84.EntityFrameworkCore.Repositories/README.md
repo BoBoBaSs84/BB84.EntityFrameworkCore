@@ -1,3 +1,3 @@
 # BB84.EntityFrameworkCore.Repositories
 
-This package contains frequently used repository implementations of their respective abstractions.
+This package contains the standard repository implementations of the corresponding abstractions.

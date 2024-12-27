@@ -1,8 +1,8 @@
 <Project>
 
 	<PropertyGroup Label="Versioning">
-		<VersionMajor>2</VersionMajor>
-		<VersionMinor>7</VersionMinor>
+		<VersionMajor>3</VersionMajor>
+		<VersionMinor>0</VersionMinor>
 		<VersionPatch>$([System.DateTime]::UtcNow.ToString("MMdd"))</VersionPatch>
 		<VersionRevision>$([System.DateTime]::UtcNow.TimeOfDay.TotalHours.ToString("0"))</VersionRevision>
 		<VersionPrefix>$(VersionMajor).$(VersionMinor).$(VersionPatch).$(VersionRevision)</VersionPrefix>
@@ -41,7 +41,7 @@
 		<Authors>$(Author)</Authors>
 		<Company>https://github.com/$(Author)</Company>
 		<Copyright>Copyright © $([System.DateTime]::UtcNow.Year) $(Author)</Copyright>
-		<Description>A reusable repository pattern in ASP.NET Core. Contains frequently used model abstraction, their standard implementations and repository abstractions with their standard implementation.</Description>
+		<Description>A reusable repository pattern in ASP.NET Core. Contains commonly used entity abstractions, their default implementations and repository abstractions with their default implementations.</Description>
 		<Product>BB84.EntityFrameworkCore</Product>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/$(Author)/$(Product)</RepositoryUrl>
