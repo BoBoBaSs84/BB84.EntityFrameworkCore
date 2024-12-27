@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using BB84.EntityFrameworkCore.Models.Abstractions;
+using BB84.EntityFrameworkCore.Entities.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -13,7 +13,7 @@ namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 /// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class CompositeConfiguration<TEntity> : IEntityTypeConfiguration<TEntity>
-	where TEntity : class, ICompositeModel
+	where TEntity : class, ICompositeEntity
 {
 	/// <inheritdoc/>
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)

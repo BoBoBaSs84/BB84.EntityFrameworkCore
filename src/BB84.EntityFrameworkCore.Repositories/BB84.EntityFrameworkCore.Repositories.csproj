@@ -3,7 +3,7 @@
 		<Description>This package contains frequently used repository implementations of their respective abstractions.</Description>
 	</PropertyGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\BB84.EntityFrameworkCore.Models\BB84.EntityFrameworkCore.Models.csproj" />
+		<ProjectReference Include="..\BB84.EntityFrameworkCore.Entities\BB84.EntityFrameworkCore.Entities.csproj" />
 		<ProjectReference Include="..\BB84.EntityFrameworkCore.Repositories.Abstractions\BB84.EntityFrameworkCore.Repositories.Abstractions.csproj" />
 	</ItemGroup>
 </Project>

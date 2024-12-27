@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-using BB84.EntityFrameworkCore.Models.Abstractions;
+using BB84.EntityFrameworkCore.Entities.Abstractions;
 using BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +13,7 @@ namespace BB84.EntityFrameworkCore.Repositories;
 /// </summary>
 /// <inheritdoc cref="IIdentityRepository{TEntity, TKey}"/>
 public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : GenericRepository<TEntity>(dbContext), IIdentityRepository<TEntity, TKey>
-	where TEntity : class, IIdentityModel<TKey> where TKey : IEquatable<TKey>
+	where TEntity : class, IIdentityEntity<TKey> where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
 	public int Delete(TKey id)
@@ -105,5 +105,5 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 /// <inheritdoc cref="IdentityRepository{TEntity, TKey}"/>
 /// <inheritdoc cref="IIdentityRepository{TEntity}"/>
 public abstract class IdentityRepository<TEntity>(IDbContext dbContext) : IdentityRepository<TEntity, Guid>(dbContext), IIdentityRepository<TEntity>
-	where TEntity : class, IIdentityModel
+	where TEntity : class, IIdentityEntity
 { }

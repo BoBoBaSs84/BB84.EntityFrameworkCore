@@ -1,4 +1,4 @@
-﻿using BB84.EntityFrameworkCore.Models.Abstractions;
+﻿using BB84.EntityFrameworkCore.Entities.Abstractions;
 using BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +10,7 @@ namespace BB84.EntityFrameworkCore.Repositories;
 /// </summary>
 /// <inheritdoc cref="IEnumeratorRepository{TEntity, TKey}"/>
 public abstract class EnumeratorRepository<TEntity, TKey>(IDbContext dbContext) : IdentityRepository<TEntity, TKey>(dbContext), IEnumeratorRepository<TEntity, TKey>
-	where TEntity : class, IEnumeratorModel<TKey>
+	where TEntity : class, IEnumeratorEntity<TKey>
 	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
@@ -65,5 +65,5 @@ public abstract class EnumeratorRepository<TEntity, TKey>(IDbContext dbContext) 
 /// <inheritdoc cref="EnumeratorRepository{TEntity, TKey}"/>
 /// <inheritdoc cref="IEnumeratorRepository{TEntity}"/>
 public abstract class EnumeratorRepository<TEntity>(IDbContext dbContext) : EnumeratorRepository<TEntity, int>(dbContext), IEnumeratorRepository<TEntity>
-	where TEntity : class, IEnumeratorModel
+	where TEntity : class, IEnumeratorEntity
 { }

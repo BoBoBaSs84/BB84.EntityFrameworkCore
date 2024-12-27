@@ -1,4 +1,4 @@
-﻿using BB84.EntityFrameworkCore.Models.Abstractions.Components;
+﻿using BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;

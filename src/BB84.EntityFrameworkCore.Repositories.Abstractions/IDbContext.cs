@@ -33,8 +33,8 @@ public interface IDbContext : IAsyncDisposable, IDisposable
 	/// <inheritdoc cref="DbContext.Database"/>
 	DatabaseFacade Database { get; }
 
-	/// <inheritdoc cref="DbContext.Model"/>
-	IModel Model { get; }
+	/// <inheritdoc cref="DbContext.Entity"/>
+	IEntity Entity { get; }
 
 	/// <inheritdoc cref="DbContext.Set{TEntity}()"/>
 	DbSet<TEntity> Set<TEntity>() where TEntity : class;

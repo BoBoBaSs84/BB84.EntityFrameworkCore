@@ -14,11 +14,11 @@ A reusable repository pattern in ASP.NET Core. Contains frequently used model an
 
 ## Packages
 
-### BB84.EntityFrameworkCore.Models
+### BB84.EntityFrameworkCore.Entities
 
 This package contains frequently used base models.
 
-### BB84.EntityFrameworkCore.Models.Abstractions
+### BB84.EntityFrameworkCore.Entities.Abstractions
 
 This package contains the abstractions for the frequently used base models.
 

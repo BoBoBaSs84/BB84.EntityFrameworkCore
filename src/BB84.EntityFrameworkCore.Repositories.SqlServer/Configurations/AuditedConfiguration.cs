@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using BB84.EntityFrameworkCore.Models.Abstractions;
+using BB84.EntityFrameworkCore.Entities.Abstractions;
 using BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions;
 
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +14,7 @@ namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 /// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity, TKey, TCreator, TEdited> : IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IAuditedModel<TKey, TCreator, TEdited>
+	where TEntity : class, IAuditedEntity<TKey, TCreator, TEdited>
 	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
@@ -45,7 +45,7 @@ public abstract class AuditedConfiguration<TEntity, TKey, TCreator, TEdited> : I
 /// <inheritdoc cref="AuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity, TKey> : AuditedConfiguration<TEntity, TKey, string, string?>, IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IAuditedModel<TKey>
+	where TEntity : class, IAuditedEntity<TKey>
 	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
@@ -64,7 +64,7 @@ public abstract class AuditedConfiguration<TEntity, TKey> : AuditedConfiguration
 /// <inheritdoc cref="AuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity, TCreator, TEdited> : AuditedConfiguration<TEntity, Guid, TCreator, TEdited>, IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IAuditedModel<TCreator, TEdited>
+	where TEntity : class, IAuditedEntity<TCreator, TEdited>
 {
 	/// <inheritdoc/>
 	public override void Configure(EntityTypeBuilder<TEntity> builder)
@@ -79,7 +79,7 @@ public abstract class AuditedConfiguration<TEntity, TCreator, TEdited> : Audited
 /// <inheritdoc cref="AuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity> : AuditedConfiguration<TEntity, Guid, string, string?>,
-	IEntityTypeConfiguration<TEntity> where TEntity : class, IAuditedModel
+	IEntityTypeConfiguration<TEntity> where TEntity : class, IAuditedEntity
 {
 	/// <inheritdoc/>
 	public override void Configure(EntityTypeBuilder<TEntity> builder)

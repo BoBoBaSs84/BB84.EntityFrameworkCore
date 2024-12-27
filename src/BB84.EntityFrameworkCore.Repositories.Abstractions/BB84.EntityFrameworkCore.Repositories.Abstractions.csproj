@@ -7,6 +7,6 @@
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\BB84.EntityFrameworkCore.Models.Abstractions\BB84.EntityFrameworkCore.Models.Abstractions.csproj" />
+		<ProjectReference Include="..\BB84.EntityFrameworkCore.Entities.Abstractions\BB84.EntityFrameworkCore.Entities.Abstractions.csproj" />
 	</ItemGroup>
 </Project>

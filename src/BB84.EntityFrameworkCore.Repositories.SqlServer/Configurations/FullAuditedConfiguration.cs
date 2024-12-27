@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using BB84.EntityFrameworkCore.Models.Abstractions;
+using BB84.EntityFrameworkCore.Entities.Abstractions;
 using BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions;
 
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +14,7 @@ namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 /// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited> : IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IFullAuditedModel<TKey, TCreator, TEdited>
+	where TEntity : class, IFullAuditedEntity<TKey, TCreator, TEdited>
 	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
@@ -53,7 +53,7 @@ public abstract class FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>
 /// <inheritdoc cref="FullAuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class FullAuditeConfiguration<TEntity, TKey> : FullAuditedConfiguration<TEntity, TKey, string, string?>, IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IFullAuditedModel<TKey>
+	where TEntity : class, IFullAuditedEntity<TKey>
 	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
@@ -72,7 +72,7 @@ public abstract class FullAuditeConfiguration<TEntity, TKey> : FullAuditedConfig
 /// <inheritdoc cref="FullAuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class FullAuditeConfiguration<TEntity, TCreator, TEdited> : FullAuditedConfiguration<TEntity, Guid, TCreator, TEdited>, IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IFullAuditedModel<TCreator, TEdited>
+	where TEntity : class, IFullAuditedEntity<TCreator, TEdited>
 {
 	/// <inheritdoc/>
 	public override void Configure(EntityTypeBuilder<TEntity> builder)
@@ -87,7 +87,7 @@ public abstract class FullAuditeConfiguration<TEntity, TCreator, TEdited> : Full
 /// <inheritdoc cref="FullAuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class FullAuditeConfiguration<TEntity> : FullAuditedConfiguration<TEntity, Guid, string, string?>, IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IFullAuditedModel
+	where TEntity : class, IFullAuditedEntity
 {
 	/// <inheritdoc/>
 	public override void Configure(EntityTypeBuilder<TEntity> builder)
