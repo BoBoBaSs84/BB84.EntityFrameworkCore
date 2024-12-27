@@ -1,8 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<Description>This package contains frequently used model implementations of their respective abstractions.</Description>
-	</PropertyGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\BB84.EntityFrameworkCore.Models.Abstractions\BB84.EntityFrameworkCore.Models.Abstractions.csproj" />
-	</ItemGroup>
-</Project>

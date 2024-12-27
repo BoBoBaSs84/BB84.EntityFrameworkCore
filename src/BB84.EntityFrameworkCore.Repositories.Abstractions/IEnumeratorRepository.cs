@@ -1,4 +1,4 @@
-﻿using BB84.EntityFrameworkCore.Models.Abstractions;
+﻿using BB84.EntityFrameworkCore.Entities.Abstractions;
 
 namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 
@@ -7,7 +7,7 @@ namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 /// </summary>
 /// <inheritdoc cref="IIdentityRepository{TEntity, TKey}"/>
 public interface IEnumeratorRepository<TEntity, TKey> : IIdentityRepository<TEntity, TKey>
-	where TEntity : class, IEnumeratorModel<TKey>
+	where TEntity : class, IEnumeratorEntity<TKey>
 	where TKey : IEquatable<TKey>
 {
 	/// <summary>
@@ -72,5 +72,5 @@ public interface IEnumeratorRepository<TEntity, TKey> : IIdentityRepository<TEnt
 /// The identity column is of type <see cref="int"/>.
 /// </remarks>
 public interface IEnumeratorRepository<TEntity> : IEnumeratorRepository<TEntity, int>
-	where TEntity : class, IEnumeratorModel
+	where TEntity : class, IEnumeratorEntity
 { }

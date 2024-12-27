@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-using BB84.EntityFrameworkCore.Models.Abstractions;
+using BB84.EntityFrameworkCore.Entities.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -13,7 +13,7 @@ namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 /// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class IdentityConfiguration<TEntity, TKey> : IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IIdentityModel<TKey>
+	where TEntity : class, IIdentityEntity<TKey>
 	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
@@ -39,7 +39,7 @@ public abstract class IdentityConfiguration<TEntity, TKey> : IEntityTypeConfigur
 /// </remarks>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class IdentityConfiguration<TEntity> : IdentityConfiguration<TEntity, Guid>, IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IIdentityModel
+	where TEntity : class, IIdentityEntity
 {
 	/// <inheritdoc/>
 	public override void Configure(EntityTypeBuilder<TEntity> builder)

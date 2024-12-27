@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-using BB84.EntityFrameworkCore.Models.Abstractions;
+using BB84.EntityFrameworkCore.Entities.Abstractions;
 
 using Microsoft.EntityFrameworkCore.Query;
 
@@ -11,7 +11,7 @@ namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 /// </summary>
 /// <inheritdoc cref="IGenericRepository{TEntity}"/>
 public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity>
-	where TEntity : class, IIdentityModel<TKey>
+	where TEntity : class, IIdentityEntity<TKey>
 	where TKey : IEquatable<TKey>
 {
 	/// <summary>
@@ -194,5 +194,5 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 /// The identity column is of type <see cref="Guid"/>.
 /// </remarks>
 public interface IIdentityRepository<TEntity> : IIdentityRepository<TEntity, Guid>
-	where TEntity : class, IIdentityModel
+	where TEntity : class, IIdentityEntity
 { }
