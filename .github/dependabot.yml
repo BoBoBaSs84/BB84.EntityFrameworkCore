@@ -8,9 +8,34 @@ updates:
   - package-ecosystem: "nuget"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+    # Raise all pull requests with reviewers
+    reviewers:
+      - "BoBoBaSs84"
+    # Raise all pull requests with assignees
+    assignees:
+      - "BoBoBaSs84"
+    groups:
+      # This is the name of your group, it will be used in PR titles and branch names
+      test-dependencies:
+        # A pattern can be...
+        patterns:
+          # or a wildcard string that matches multiple dependencies
+          - "MSTest*"
+      # This is the name of your group, it will be used in PR titles and branch names
+      microsoft-dependencies:
+        # A pattern can be...
+        patterns:
+          # or a wildcard string that matches multiple dependencies
+          - "Microsoft*"
       
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+    # Raise all pull requests with reviewers
+    reviewers:
+      - "BoBoBaSs84"
+    # Raise all pull requests with assignees
+    assignees:
+      - "BoBoBaSs84"
