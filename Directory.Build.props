@@ -15,7 +15,6 @@
 		<AnalysisLevel>latest</AnalysisLevel>
 		<AnalysisMode>recommended</AnalysisMode>
 		<AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
-		<AssemblyOriginatorKeyFile>..\..\PublicKey.snk</AssemblyOriginatorKeyFile>
 		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
 		<DebugType>full</DebugType>
 		<Deterministic>true</Deterministic>
@@ -28,7 +27,6 @@
 		<LangVersion>latest</LangVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<Nullable>enable</Nullable>
-		<SignAssembly>true</SignAssembly>
 		<TargetFramework>net8.0</TargetFramework>
 	</PropertyGroup>
 
