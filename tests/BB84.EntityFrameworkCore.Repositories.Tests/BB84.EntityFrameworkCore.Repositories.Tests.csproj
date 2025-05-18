@@ -1,13 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
 		<PackageReference Include="MSTest" />
 	</ItemGroup>
-
 	<ItemGroup>
 		<ProjectReference Include="..\..\src\BB84.EntityFrameworkCore.Repositories.SqlServer\BB84.EntityFrameworkCore.Repositories.SqlServer.csproj" />
 		<ProjectReference Include="..\..\src\BB84.EntityFrameworkCore.Repositories\BB84.EntityFrameworkCore.Repositories.csproj" />
 	</ItemGroup>
-
 </Project>
