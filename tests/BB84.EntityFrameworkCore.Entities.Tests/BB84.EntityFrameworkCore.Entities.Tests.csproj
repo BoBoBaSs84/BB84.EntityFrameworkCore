@@ -1,11 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
 	<ItemGroup>
 	  <PackageReference Include="MSTest" />
 	</ItemGroup>
-
 	<ItemGroup>
 		<ProjectReference Include="..\..\src\BB84.EntityFrameworkCore.Entities\BB84.EntityFrameworkCore.Entities.csproj" />
 	</ItemGroup>
-
 </Project>

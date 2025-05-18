@@ -11,18 +11,16 @@
 	</PropertyGroup>
 
 	<PropertyGroup Label="Technical">
-		<AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+		<AllowUnsafeBlocks>False</AllowUnsafeBlocks>
 		<AnalysisLevel>latest</AnalysisLevel>
-		<AnalysisMode>recommended</AnalysisMode>
-		<AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
-		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+		<AnalysisMode>recommended</AnalysisMode>		
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
 		<DebugType>full</DebugType>
-		<Deterministic>true</Deterministic>
-		<EnableNETAnalyzers>true</EnableNETAnalyzers>
-		<EnablePackageValidation>true</EnablePackageValidation>
-		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-		<GenerateDocumentationFile>true</GenerateDocumentationFile>
-		<GeneratedAssemblyInfoFile>Properties\AssemblyInfo.cs</GeneratedAssemblyInfoFile>
+		<Deterministic>True</Deterministic>
+		<EnableNETAnalyzers>True</EnableNETAnalyzers>
+		<EnablePackageValidation>True</EnablePackageValidation>
+		<GenerateAssemblyInfo>True</GenerateAssemblyInfo>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<LangVersion>latest</LangVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
@@ -59,9 +57,9 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$(MSBuildProjectName.EndsWith('Tests'))">
-		<GenerateDocumentationFile>false</GenerateDocumentationFile>
-		<IsPackable>false</IsPackable>
-		<IsTestProject>true</IsTestProject>
+		<GenerateDocumentationFile>False</GenerateDocumentationFile>
+		<IsPackable>False</IsPackable>
+		<IsTestProject>True</IsTestProject>
 	</PropertyGroup>
 
 	<ItemGroup Condition="!$(MSBuildProjectName.EndsWith('Tests'))">
@@ -75,10 +73,6 @@
 		<Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
 		<Using Include="System.Diagnostics" />
 		<Using Include="System.Diagnostics.CodeAnalysis" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Folder Include="Properties\" />
 	</ItemGroup>
 
 </Project>
