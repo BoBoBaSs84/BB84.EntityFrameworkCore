@@ -6,9 +6,6 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.HierarchyId" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\BB84.EntityFrameworkCore.Entities.Abstractions\BB84.EntityFrameworkCore.Entities.Abstractions.csproj" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Repositories\Abstractions\" />
+	  <ProjectReference Include="..\BB84.EntityFrameworkCore.Repositories\BB84.EntityFrameworkCore.Repositories.csproj" />
 	</ItemGroup>
 </Project>

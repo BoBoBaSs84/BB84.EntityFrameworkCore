@@ -7,16 +7,13 @@ namespace BB84.EntityFrameworkCore.Entities.Abstractions;
 #pragma warning restore IDE0130 // Namespace does not match folder structure
 
 /// <summary>
-/// Represents an entity within a hierarchy, providing access to its unique hierarchical identifier.
+/// Represents an entity contract within a hierarchy, providing access to its unique
+/// hierarchical identifier.
 /// </summary>
-/// <remarks>
-/// This interface is intended to be implemented by types that require hierarchical organization.
-/// The <see cref="Id"/> property uniquely identifies the entity's position within the hierarchy.
-/// </remarks>
 public interface IHierarchyEntity : IConcurrency
 {
 	/// <summary>
-	/// Gets or sets the unique identifier representing the hierarchy level of the current entity.
+	/// Gets or sets the unique identifier for the entity within its hierarchy.
 	/// </summary>
 	HierarchyId Id { get; set; }
 }
