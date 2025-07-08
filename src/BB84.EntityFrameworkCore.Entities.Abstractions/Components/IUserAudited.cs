@@ -6,19 +6,19 @@
 namespace BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 
 /// <summary>
-/// The interface for user audited components.
+/// Defines an interface for tracking audit information about the creator and last editor of a data row.
 /// </summary>
-/// <typeparam name="TCreator">The type of the creator column.</typeparam>
-/// <typeparam name="TEditor">The type of the editor column.</typeparam>
+/// <typeparam name="TCreator">The type representing the creator of the data row.</typeparam>
+/// <typeparam name="TEditor">The type representing the last editor of the data row.</typeparam>
 public interface IUserAudited<TCreator, TEditor>
 {
 	/// <summary>
-	/// The initial creator of the data row.
+	/// Gets or sets the creator of the current data row.
 	/// </summary>
 	TCreator Creator { get; set; }
 
 	/// <summary>
-	/// The last editor of the data row.
+	/// Gets or sets the last editor of the current data row.
 	/// </summary>
 	TEditor Editor { get; set; }
 }

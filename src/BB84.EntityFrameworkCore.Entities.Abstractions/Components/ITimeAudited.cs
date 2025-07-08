@@ -6,17 +6,22 @@
 namespace BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 
 /// <summary>
-/// The interface for time audited components.
+/// Represents an entity that tracks audit information related to creation and modification times.
 /// </summary>
+/// <remarks>
+/// This interface is typically implemented by data models that require auditing of their creation
+/// and last modification timestamps. The <see cref="Created"/> property records the initial
+/// creation time, while the <see cref="Edited"/> property tracks the most recent modification time.
+/// </remarks>
 public interface ITimeAudited
 {
 	/// <summary>
-	/// The initial creation time of the data row.
+	/// Gets or sets the date and time when the entity was created.
 	/// </summary>
 	DateTime Created { get; set; }
 
 	/// <summary>
-	/// The last editing time of the data row.
+	/// Gets or sets the date and time when the entity was last edited.
 	/// </summary>
 	DateTime? Edited { get; set; }
 }
