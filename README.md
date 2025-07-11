@@ -13,25 +13,7 @@
 [![RepoSize](https://img.shields.io/github/repo-size/BoBoBaSs84/BB84.EntityFrameworkCore)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore)
 [![Release](https://img.shields.io/github/v/release/BoBoBaSs84/BB84.EntityFrameworkCore)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/releases/latest)
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Project Structure](#project-structure)
-- [Package Architecture](#package-architecture)
-- [Core Concepts](#core-concepts)
-- [Entity Abstractions](#entity-abstractions)
-- [Repository Pattern](#repository-pattern)
-- [Configuration Classes](#configuration-classes)
-- [Interceptors](#interceptors)
-- [Getting Started](#getting-started)
-- [Usage Examples](#usage-examples)
-- [Testing](#testing)
-- [Build and Deployment](#build-and-deployment)
-- [API Documentation](#api-documentation)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Overview
+## 🧭 Overview
 
 **BB84.EntityFrameworkCore** is a comprehensive .NET 8.0 library that provides a reusable repository pattern implementation for ASP.NET Core applications. The library offers commonly used entity abstractions, their default implementations, and repository abstractions with their corresponding implementations, specifically designed to work seamlessly with Entity Framework Core.
 
@@ -49,7 +31,7 @@
 
 - **.NET 8.0** - Latest LTS version of .NET
 
-## Project Structure
+## 🏗 Project Structure
 
 ```
 BB84.EntityFrameworkCore/
@@ -68,11 +50,11 @@ BB84.EntityFrameworkCore/
 └── BB84.EntityFrameworkCore.sln                            # Solution file
 ```
 
-## Package Architecture
+## 📦 Package Architecture
 
 The project is organized into five distinct NuGet packages, each serving a specific purpose:
 
-### 1. BB84.EntityFrameworkCore.Entities.Abstractions
+### BB84.EntityFrameworkCore.Entities.Abstractions
 
 **Purpose**: Core entity interface definitions
 **Dependencies**: None
@@ -93,7 +75,7 @@ This package contains the fundamental interfaces that define the contract for di
 - `IUserAudited<TCreator, TEdited>` - Tracks user information for auditing
 - `ISoftDeletable` - Provides soft delete functionality
 
-### 2. BB84.EntityFrameworkCore.Entities
+### BB84.EntityFrameworkCore.Entities
 
 **Purpose**: Default implementations of entity abstractions
 **Dependencies**: BB84.EntityFrameworkCore.Entities.Abstractions
@@ -106,7 +88,7 @@ Provides concrete implementations of the entity interfaces:
 - `CompositeEntity` - Base class for composite key entities
 - `EnumeratorEntity<TKey>` - Base class for enumeration entities
 
-### 3. BB84.EntityFrameworkCore.Repositories.Abstractions
+### BB84.EntityFrameworkCore.Repositories.Abstractions
 
 **Purpose**: Repository interface definitions
 **Dependencies**:
@@ -121,7 +103,7 @@ Core repository interfaces:
 - `IIdentityRepository<TEntity, TKey>` - Repository for identity-based entities
 - `IEnumeratorRepository<TEntity, TKey>` - Repository for enumeration entities
 
-### 4. BB84.EntityFrameworkCore.Repositories
+### BB84.EntityFrameworkCore.Repositories
 
 **Purpose**: Default repository implementations
 **Dependencies**:
@@ -135,7 +117,7 @@ Concrete repository implementations:
 - `IdentityRepository<TEntity, TKey>` - Repository for identity entities
 - `EnumeratorRepository<TEntity, TKey>` - Repository for enumerator entities
 
-### 5. BB84.EntityFrameworkCore.Repositories.SqlServer
+### BB84.EntityFrameworkCore.Repositories.SqlServer
 
 **Purpose**: SQL Server specific configurations and extensions
 **Dependencies**: BB84.EntityFrameworkCore.Repositories
@@ -146,7 +128,7 @@ SQL Server specific features:
 - **Extensions**: Extension methods for Entity Framework configurations
 - **Interceptors**: Database interceptors for auditing and soft delete
 
-## Core Concepts
+## 💭 Core Concepts
 
 ### Entity Hierarchy
 
@@ -170,7 +152,7 @@ The repository pattern implementation provides:
 - **Consistency**: Standardized data access patterns
 - **Flexibility**: Support for different entity types and requirements
 
-## Entity Abstractions
+## ✨ Entity Abstractions
 
 ### Identity Entities
 
@@ -272,7 +254,7 @@ public interface IEnumeratorEntity<TKey> : IIdentityEntity<TKey>
 }
 ```
 
-## Repository Pattern
+## ⚡ Repository Pattern
 
 ### Generic Repository
 
@@ -326,7 +308,7 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 }
 ```
 
-## Configuration Classes
+## ⭐ Configuration Classes
 
 The SQL Server package provides base configuration classes for Entity Framework Core entity type configurations.
 
@@ -374,7 +356,7 @@ public abstract class FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>
 }
 ```
 
-## Interceptors
+## 🔮 Interceptors
 
 The library provides Entity Framework Core interceptors for automatic handling of common scenarios.
 
@@ -400,7 +382,7 @@ public class SoftDeletableInterceptor : SaveChangesInterceptor
 }
 ```
 
-## Getting Started
+## 💻 Getting Started
 
 ### Installation
 
@@ -540,7 +522,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-## Usage Examples
+## 🧰 Usage Examples
 
 ### Basic CRUD Operations
 
@@ -613,7 +595,7 @@ public class ProductService
 }
 ```
 
-## Testing
+## 🩺 Testing
 
 The project includes comprehensive unit tests for all components:
 
@@ -669,7 +651,7 @@ dotnet test --collect:"XPlat Code Coverage"
 dotnet test tests/BB84.EntityFrameworkCore.Entities.Tests/
 ```
 
-## Build and Deployment
+## 🛠 Build and Deployment
 
 ### Build Configuration
 
@@ -721,7 +703,7 @@ The project uses GitHub Actions for:
 - **Code Analysis**: CodeQL security scanning
 - **Dependency Updates**: Dependabot automated updates
 
-## API Documentation
+## 📚 API Documentation
 
 Complete API documentation is available [here](https://bobobass84.github.io/BB84.EntityFrameworkCore).
 
@@ -743,7 +725,7 @@ docs/
     └── index.md # API reference index
 ```
 
-## Contributing
+## 🤝 Contributing
 
 ### Development Guidelines
 
@@ -764,7 +746,7 @@ docs/
 
 This project adheres to the Contributor Covenant Code of Conduct. See the [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) file for details.
 
-## License
+## ⚖ License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
