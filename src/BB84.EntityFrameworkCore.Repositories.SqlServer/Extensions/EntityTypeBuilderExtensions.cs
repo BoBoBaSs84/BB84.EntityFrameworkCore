@@ -9,19 +9,30 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions;
 
 /// <summary>
-/// The <see cref="EntityTypeBuilder"/> extensions class.
+/// Provides extension methods for configuring entity types in a relational database context.
 /// </summary>
+/// <remarks>
+/// The <see cref="EntityTypeBuilderExtensions"/> class contains methods to simplify the
+/// configuration of entity types, including support for temporal tables and history table
+/// mappings.
+/// </remarks>
 public static class EntityTypeBuilderExtensions
 {
 	/// <summary>
-	/// Configures the table that the entity type maps to when targeting a relational database
-	/// and configures a history table for the entity mapped to a temporal table.
+	/// Configures the entity to use a temporal table with a history table for tracking changes over time.
 	/// </summary>
-	/// <param name="builder">The builder for the entity type being configured.</param>
-	/// <param name="tableName">The schema of the table.</param>
-	/// <param name="tableSchema">The name of the table.</param>
+	/// <remarks>
+	/// This method configures the entity to use SQL Server temporal tables, which automatically track 
+	/// historical changes to the data. The history table is created in the specified schema and is used
+	/// to store historical versions of the data.
+	/// </remarks>
+	/// <param name="builder">The <see cref="EntityTypeBuilder"/> used to configure the entity type.</param>
+	/// <param name="tableName">The name of the main table.</param>
+	/// <param name="tableSchema">The schema of the main table.</param>
 	/// <param name="historySchema">The schema of the history table.</param>
-	/// <returns>The same builder instance so that multiple calls can be chained.</returns>
+	/// <returns>
+	/// The same <see cref="EntityTypeBuilder"/> instance, so that multiple calls can be chained together.
+	/// </returns>
 	public static EntityTypeBuilder ToHistoryTable(this EntityTypeBuilder builder, string? tableName = null, string? tableSchema = "dbo", string historySchema = "history")
 	{
 		tableName ??= builder.Metadata.ClrType.Name;

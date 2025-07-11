@@ -6,20 +6,17 @@
 namespace BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 
 /// <summary>
-/// The interface for identity based components.
+/// Defines an entity contract with a unique identifier of a specified type.
 /// </summary>
-/// <typeparam name="TKey">The type of the primary key.</typeparam>
+/// <typeparam name="TKey">The type of the unique identifier.</typeparam>
 public interface IIdentity<TKey> where TKey : IEquatable<TKey>
 {
 	/// <summary>
-	/// The primary key of the database table.
+	/// Gets or sets the unique identifier for the entity.
 	/// </summary>
 	TKey Id { get; set; }
 }
 
-/// <inheritdoc cref="IIdentity{TKey}"/>
-/// <remarks>
-/// The primary key is of type <see cref="Guid"/>.
-/// </remarks>
+/// <inheritdoc cref="IIdentityEntity{TKey}"/>
 public interface IIdentity : IIdentity<Guid>
 { }

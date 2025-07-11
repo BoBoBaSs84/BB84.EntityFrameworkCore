@@ -8,10 +8,13 @@ using BB84.EntityFrameworkCore.Entities.Abstractions;
 namespace BB84.EntityFrameworkCore.Entities;
 
 /// <summary>
-/// The base implementation for the enumerator models.
+/// Represents an abstract base class for entities that provides properties for the name
+/// and description, with a unique identifier of type <typeparamref name="TKey"/> and the
+/// support for soft deletion functionality.
 /// </summary>
-/// <inheritdoc cref="IEnumeratorEntity{TKey}"/>
-public abstract class EnumeratorEntity<TKey> : IEnumeratorEntity<TKey> where TKey : IEquatable<TKey>
+/// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
+public abstract class EnumeratorEntity<TKey> : IEnumeratorEntity<TKey>
+	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
 	public TKey Id { get; set; } = default!;
@@ -30,6 +33,8 @@ public abstract class EnumeratorEntity<TKey> : IEnumeratorEntity<TKey> where TKe
 }
 
 /// <inheritdoc cref="EnumeratorEntity{TKey}"/>
-/// <inheritdoc cref="IEnumeratorEntity"/>
+/// <remarks>
+/// The unique identifier type defaults to <see cref="int"/>.
+/// </remarks>
 public abstract class EnumeratorEntity : EnumeratorEntity<int>, IEnumeratorEntity
 { }

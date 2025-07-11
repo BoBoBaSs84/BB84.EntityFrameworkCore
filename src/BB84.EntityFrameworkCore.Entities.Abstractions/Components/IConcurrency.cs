@@ -6,12 +6,17 @@
 namespace BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 
 /// <summary>
-/// The interface for concurrency based components.
+/// Defines a contract for entities that support concurrency control through a timestamp.
 /// </summary>
+/// <remarks>
+/// Implementations of this interface typically use the <see cref="Timestamp"/> property to manage
+/// concurrency by ensuring that updates to an entity are based on the most recent version.
+/// This is commonly used in scenarios such as optimistic concurrency control in databases.
+/// </remarks>
 public interface IConcurrency
 {
 	/// <summary>
-	/// The current timestamp or row version of the data row.
+	/// Gets the timestamp associated with the current entity.
 	/// </summary>
 	byte[] Timestamp { get; }
 }

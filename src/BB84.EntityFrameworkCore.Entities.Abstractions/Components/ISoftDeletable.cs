@@ -6,12 +6,17 @@
 namespace BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 
 /// <summary>
-/// The interface for soft deleteable components.
+/// Defines a contract for entities that support soft deletion functionality.
 /// </summary>
+/// <remarks>
+/// Soft deletion allows an entity to be marked as deleted without being permanently
+/// removed from the data store. This is typically used to enable logical deletion
+/// while preserving the entity for auditing or recovery purposes.
+/// </remarks>
 public interface ISoftDeletable
 {
 	/// <summary>
-	/// Indicates if the data row in a soft deleted state.
+	/// Gets or sets a value indicating whether the entity is marked as deleted.
 	/// </summary>
 	bool IsDeleted { get; set; }
 }

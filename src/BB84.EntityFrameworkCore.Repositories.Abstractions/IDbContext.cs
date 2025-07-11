@@ -11,13 +11,16 @@ using Microsoft.EntityFrameworkCore.Metadata;
 namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 /// <summary>
-/// The interface fo the database context.
+/// Defines the contract for a database context, providing functionality for
+/// querying and saving data.
 /// </summary>
 /// <remarks>
-/// Every custom database context should inherit from this interface.
+/// This interface represents the core abstraction for interacting with a database
+/// in an Entity Framework Core application. It provides access to the change tracker,
+/// database connection, and model metadata, as well as methods for saving changes and
+/// managing entity sets. Implementations of this interface are typically used to
+/// encapsulate database operations and enforce a unit of work pattern.
 /// </remarks>
-/// <inheritdoc cref="IAsyncDisposable"/>
-/// <inheritdoc cref="IDisposable"/>
 public interface IDbContext : IAsyncDisposable, IDisposable
 {
 	/// <inheritdoc cref="DbContext.SavingChanges"/>

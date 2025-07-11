@@ -8,9 +8,9 @@ using BB84.EntityFrameworkCore.Entities.Abstractions;
 namespace BB84.EntityFrameworkCore.Entities;
 
 /// <summary>
-/// The base implementation for the composite models.
+/// This abstract class provides a base implementation for entities entities that are
+/// composed of multiple related components.
 /// </summary>
-/// <inheritdoc cref=" ICompositeEntity"/>
 public abstract class CompositeEntity : ICompositeEntity
 {
 	/// <inheritdoc/>

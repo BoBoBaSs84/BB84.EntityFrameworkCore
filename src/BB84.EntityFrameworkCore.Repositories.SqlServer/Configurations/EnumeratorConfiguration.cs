@@ -13,8 +13,14 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 
 /// <summary>
-/// The entity configuration for enumerator based entities.
+/// Represents an abstract base class for configuring entity types that implement the
+/// <see cref="IEnumeratorEntity{Tkey}"/> interface.
 /// </summary>
+/// <remarks>
+/// This class defines a standard configuration for entities, including primary key setup,
+/// concurrency tokens, property constraints and indexing.</remarks>
+/// <typeparam name="TEntity">The type of the entity being configured.</typeparam>
+/// <typeparam name="TKey">The type of the key for the entity.</typeparam>
 /// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class EnumeratorConfiguration<TEntity, TKey> : IEntityTypeConfiguration<TEntity>

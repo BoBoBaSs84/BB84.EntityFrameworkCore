@@ -8,10 +8,12 @@ using BB84.EntityFrameworkCore.Entities.Abstractions;
 namespace BB84.EntityFrameworkCore.Entities;
 
 /// <summary>
-/// The base implementation for the identity models.
+/// This abstract class provides a base implementation for entities that require a unique
+/// identifier and a timestamp for concurrency control.
 /// </summary>
-/// <inheritdoc cref="IIdentityEntity{TKey}"/>
-public abstract class IdentityEntity<TKey> : IIdentityEntity<TKey> where TKey : IEquatable<TKey>
+/// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
+public abstract class IdentityEntity<TKey> : IIdentityEntity<TKey>
+	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
 	public TKey Id { get; set; } = default!;
@@ -21,6 +23,8 @@ public abstract class IdentityEntity<TKey> : IIdentityEntity<TKey> where TKey : 
 }
 
 /// <inheritdoc cref="IdentityEntity{TKey}"/>
-/// <inheritdoc cref="IIdentityEntity"/>
+/// <remarks>
+/// The unique identifier is of type <see cref="Guid"/>.
+/// </remarks>
 public abstract class IdentityEntity : IdentityEntity<Guid>, IIdentityEntity
 { }

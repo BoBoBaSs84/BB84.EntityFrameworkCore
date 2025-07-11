@@ -10,50 +10,83 @@ using Microsoft.EntityFrameworkCore.Query;
 namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 /// <summary>
-/// The generic repository interface.
+/// Defines a generic repository interface for performing CRUD operations and querying
+/// entities of type <typeparamref name="TEntity"/>.
 /// </summary>
-/// <typeparam name="TEntity">The entity to work with.</typeparam>
+/// <remarks>
+/// This interface provides synchronous and asynchronous methods for creating, reading,
+/// updating, and deleting entities, as well as methods for querying entities based on
+/// conditions. It is designed to abstract data access logic, making it easier to work
+/// with different data sources or implement unit testing.
+/// </remarks>
+/// <typeparam name="TEntity">
+/// The type of the entity for which the repository provides data access functionality.
+/// </typeparam>
 public interface IGenericRepository<TEntity>
 	where TEntity : class
 {
 	/// <summary>
-	/// Creates a new database row for the <typeparamref name="TEntity"/> instance.
+	/// Adds the specified entity to the underlying data store.
 	/// </summary>
-	/// <param name="entity">The <typeparamref name="TEntity"/> to create.</param>
+	/// <remarks>
+	/// This method marks the provided entity as added in the database context, so that
+	/// changes to the entity will be persisted to the database during the next save operation.
+	/// </remarks>
+	/// <param name="entity">The entity to add.</param>
 	void Create(TEntity entity);
 
 	/// <summary>
-	/// Creates multiple new database rows for the <typeparamref name="TEntity"/> instance.
+	/// Adds the specified collection of entities to the underlying data store.
 	/// </summary>
-	/// <param name="entities">The collection of <typeparamref name="TEntity"/> to create.</param>
+	/// <remarks>
+	/// This method marks the provided entities as added in the database context. so that
+	/// changes to the entities will be persisted to the database during the next save operation.
+	/// </remarks>
+	/// <param name="entities">The collection of entities to add.</param>
 	void Create(IEnumerable<TEntity> entities);
 
 	/// <summary>
-	/// Creates a new database row for the <typeparamref name="TEntity"/> instance.
+	/// Adds the specified entity to the underlying data store.
 	/// </summary>
-	/// <param name="entity">The <typeparamref name="TEntity"/> to create.</param>
+	/// <remarks>
+	/// This method marks the provided entity as added in the database context, so that
+	/// changes to the entity will be persisted to the database during the next save operation.
+	/// </remarks>
+	/// <param name="entity">The entity to add.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <returns><see cref="Task"/></returns>
+	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
 	Task CreateAsync(TEntity entity, CancellationToken token = default);
 
 	/// <summary>
-	/// Creates multiple new database rows for the <typeparamref name="TEntity"/> instance.
+	/// Adds the specified collection of entities to the underlying data store.
 	/// </summary>
-	/// <param name="entities">The collection of <typeparamref name="TEntity"/> to create.</param>
+	/// <remarks>
+	/// This method marks the provided entities as added in the database context. so that
+	/// changes to the entities will be persisted to the database during the next save operation.
+	/// </remarks>
+	/// <param name="entities">The collection of entities to add.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <returns><see cref="Task"/></returns>
+	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
 	Task CreateAsync(IEnumerable<TEntity> entities, CancellationToken token = default);
 
 	/// <summary>
-	/// Deletes an existing database row for the <typeparamref name="TEntity"/> instance.
+	/// Deletes the specified entity from the underlying data store.
 	/// </summary>
-	/// <param name="entity">The <typeparamref name="TEntity"/> to delete.</param>
+	/// <remarks>
+	/// This method marks the provided entity as deleted in the database context, so that
+	/// changes to the entity will be persisted to the database during the next save operation.
+	/// </remarks>
+	/// <param name="entity">The entity to delete.</param>
 	void Delete(TEntity entity);
 
 	/// <summary>
-	/// Deletes multiple existing database rows for the <typeparamref name="TEntity"/> instance.
+	/// Deletes the specified collection of entities from the underlying data store.
 	/// </summary>
-	/// <param name="entities">The collection of <typeparamref name="TEntity"/> to delete.</param>
+	/// <remarks>
+	/// This method marks the provided entities as deleted in the database context, so that
+	/// changes to the entity will be persisted to the database during the next save operation.
+	/// </remarks>
+	/// <param name="entities">The collection of entities to delete.</param>
 	void Delete(IEnumerable<TEntity> entities);
 
 	/// <summary>
@@ -71,19 +104,27 @@ public interface IGenericRepository<TEntity>
 	int Delete(Expression<Func<TEntity, bool>>? expression);
 
 	/// <summary>
-	/// Deletes an existing database row for the <typeparamref name="TEntity"/> instance.
+	/// Deletes the specified entity from the underlying data store.
 	/// </summary>
-	/// <param name="entity">The <typeparamref name="TEntity"/> to delete.</param>
+	/// <remarks>
+	/// This method marks the provided entity as deleted in the database context, so that
+	/// changes to the entity will be persisted to the database during the next save operation.
+	/// </remarks>
+	/// <param name="entity">The entity to delete.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <returns><see cref="Task"/></returns>
+	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
 	Task DeleteAsync(TEntity entity, CancellationToken token = default);
 
 	/// <summary>
-	/// Deletes multiple existing database rows for the <typeparamref name="TEntity"/> instance.
+	/// Deletes the specified collection of entities from the underlying data store.
 	/// </summary>
-	/// <param name="entities">The collection of <typeparamref name="TEntity"/> to delete.</param>
+	/// <remarks>
+	/// This method marks the provided entities as deleted in the database context, so that
+	/// changes to the entity will be persisted to the database during the next save operation.
+	/// </remarks>
+	/// <param name="entities">The collection of entities to delete.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <returns><see cref="Task"/></returns>
+	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
 	Task DeleteAsync(IEnumerable<TEntity> entities, CancellationToken token = default);
 
 	/// <summary>
@@ -102,19 +143,34 @@ public interface IGenericRepository<TEntity>
 	Task<int> DeleteAsync(Expression<Func<TEntity, bool>>? expression, CancellationToken token = default);
 
 	/// <summary>
-	/// Returns the total number of <typeparamref name="TEntity"/>.
+	/// Counts the total number of entities in the data source.
 	/// </summary>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <returns>The total number of <typeparamref name="TEntity"/>.</returns>
+	/// <param name="ignoreQueryFilters">
+	/// A value indicating whether to ignore any query filters applied to the entity type.
+	/// <see langword="true"/> to ignore query filters; otherwise, <see langword="false"/>.
+	/// </param>
+	/// <returns>The total number of entities in the data source.</returns>
 	int CountAll(bool ignoreQueryFilters = false);
 
 	/// <summary>
-	/// Returns the number of <typeparamref name="TEntity"/> based on the specified <paramref name="expression"/>.
+	/// Counts the number of entities in the data source that satisfy the specified conditions.
 	/// </summary>
-	/// <param name="expression">The condition to fulfill to be counted.</param>
-	/// <param name="queryFilter">The function used to filter the entities.</param>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <returns>The number of <typeparamref name="TEntity"/>.</returns>
+	/// <remarks>
+	/// This method allows for flexible filtering and customization of the query through the
+	/// <paramref name="expression"/> and <paramref name="queryFilter"/> parameters.
+	/// Use <paramref name="ignoreQueryFilters"/> to bypass global filters  such as soft delete
+	/// or multi-tenancy filters.
+	/// </remarks>
+	/// <param name="expression">
+	/// An optional LINQ expression used to filter the entities to be counted.
+	/// </param>
+	/// <param name="queryFilter">
+	/// An optional function to apply additional transformations or filters to the query.
+	/// </param>
+	/// <param name="ignoreQueryFilters">
+	/// A value indicating whether to ignore any global query filters applied to the entity type.
+	/// </param>
+	/// <returns>The total number of entities that match the specified conditions.</returns>
 	int Count(
 		Expression<Func<TEntity, bool>>? expression = null,
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
@@ -122,21 +178,36 @@ public interface IGenericRepository<TEntity>
 		);
 
 	/// <summary>
-	/// Returns the total number of <typeparamref name="TEntity"/>.
+	/// Counts the total number of entities in the data source.
 	/// </summary>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
+	/// <param name="ignoreQueryFilters">
+	/// A value indicating whether to ignore any query filters applied to the entity type.
+	/// <see langword="true"/> to ignore query filters; otherwise, <see langword="false"/>.
+	/// </param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <returns>The total number of <typeparamref name="TEntity"/>.</returns>
+	/// <returns>The total number of entities in the data source.</returns>
 	Task<int> CountAllAsync(bool ignoreQueryFilters = false, CancellationToken token = default);
 
 	/// <summary>
-	/// Returns the number of <typeparamref name="TEntity"/> based on the specified <paramref name="expression"/>.
+	/// Counts the number of entities in the data source that satisfy the specified conditions.
 	/// </summary>
-	/// <param name="expression">The condition to fulfill to be counted.</param>
-	/// <param name="queryFilter">The function used to filter the entities.</param>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
+	/// <remarks>
+	/// This method allows for flexible filtering and customization of the query through the
+	/// <paramref name="expression"/> and <paramref name="queryFilter"/> parameters.
+	/// Use <paramref name="ignoreQueryFilters"/> to bypass global filters  such as soft delete
+	/// or multi-tenancy filters.
+	/// </remarks>
+	/// <param name="expression">
+	/// An optional LINQ expression used to filter the entities to be counted.
+	/// </param>
+	/// <param name="queryFilter">
+	/// An optional function to apply additional transformations or filters to the query.
+	/// </param>
+	/// <param name="ignoreQueryFilters">
+	/// A value indicating whether to ignore any global query filters applied to the entity type.
+	/// </param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <returns>The number of <typeparamref name="TEntity"/>.</returns>
+	/// <returns>The total number of entities that match the specified conditions.</returns>
 	Task<int> CountAsync(
 		Expression<Func<TEntity, bool>>? expression = null,
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
@@ -145,20 +216,46 @@ public interface IGenericRepository<TEntity>
 		);
 
 	/// <summary>
-	/// Returns a collection of all <typeparamref name="TEntity"/>.
+	/// Retrieves all entities of type <typeparamref name="TEntity"/> from the data source.
 	/// </summary>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
-	/// <returns>A colection of <typeparamref name="TEntity"/>.</returns>
+	/// <remarks>
+	/// Use the <paramref name="ignoreQueryFilters"/> parameter to bypass global query filters,
+	/// such as soft delete filters, when retrieving entities. The <paramref name="trackChanges"/>
+	/// parameter determines whether the returned entities are tracked by the context, which can
+	/// impact performance and memory usage.
+	/// </remarks>
+	/// <param name="ignoreQueryFilters">
+	/// A value indicating whether to ignore any query filters applied to the entity type.
+	/// </param>
+	/// <param name="trackChanges">
+	/// A value indicating whether the retrieved entities should be tracked by the context.
+	/// </param>
+	/// <returns>
+	/// An <see cref="IEnumerable{T}"/> containing all entities of type <typeparamref name="TEntity"/>
+	/// that match the query criteria.
+	/// </returns>
 	IEnumerable<TEntity> GetAll(bool ignoreQueryFilters = false, bool trackChanges = false);
 
 	/// <summary>
-	/// Returns a collection of all <typeparamref name="TEntity"/>.
+	/// Retrieves all entities of type <typeparamref name="TEntity"/> from the data source.
 	/// </summary>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
+	/// <remarks>
+	/// Use the <paramref name="ignoreQueryFilters"/> parameter to bypass global query filters,
+	/// such as soft delete filters, when retrieving entities. The <paramref name="trackChanges"/>
+	/// parameter determines whether the returned entities are tracked by the context, which can
+	/// impact performance and memory usage.
+	/// </remarks>
+	/// <param name="ignoreQueryFilters">
+	/// A value indicating whether to ignore any query filters applied to the entity type.
+	/// </param>
+	/// <param name="trackChanges">
+	/// A value indicating whether the retrieved entities should be tracked by the context.
+	/// </param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <returns>A colection of <typeparamref name="TEntity"/>.</returns>
+	/// <returns>
+	/// An <see cref="IEnumerable{T}"/> containing all entities of type <typeparamref name="TEntity"/>
+	/// that match the query criteria.
+	/// </returns>
 	Task<IEnumerable<TEntity>> GetAllAsync(
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
@@ -250,15 +347,23 @@ public interface IGenericRepository<TEntity>
 		);
 
 	/// <summary>
-	/// Updates an existing database row for the <typeparamref name="TEntity"/> instance.
+	/// Updates the specified entity in the underlying data store.
 	/// </summary>
-	/// <param name="entity">The <typeparamref name="TEntity"/> to update.</param>
+	/// <remarks>
+	/// This method marks the provided entity as modified in the database context, so that
+	/// changes to the entity will be persisted to the database during the next save operation.
+	/// </remarks>
+	/// <param name="entity">The entity to update.</param>
 	void Update(TEntity entity);
 
 	/// <summary>
-	/// Updates multiple existing database rows for the <typeparamref name="TEntity"/> instance.
+	/// Updates the specified collection of entities in the underlying data store.
 	/// </summary>
-	/// <param name="entities">The collection of <typeparamref name="TEntity"/> to update.</param>
+	/// <remarks>
+	/// This method marks the provided entities as modified in the database context. so that
+	/// changes to the entities will be persisted to the database during the next save operation.
+	/// </remarks>
+	/// <param name="entities">The collection of entities to update.</param>
 	void Update(IEnumerable<TEntity> entities);
 
 	/// <summary>
@@ -280,19 +385,27 @@ public interface IGenericRepository<TEntity>
 		);
 
 	/// <summary>
-	/// Updates an existing database row for the <typeparamref name="TEntity"/> instance.
+	/// Updates the specified entity in the underlying data store.
 	/// </summary>
-	/// <param name="entity">The <typeparamref name="TEntity"/> to update.</param>
+	/// <remarks>
+	/// This method marks the provided entity as modified in the database context, so that
+	/// changes to the entity will be persisted to the database during the next save operation.
+	/// </remarks>
+	/// <param name="entity">The entity to update.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <returns><see cref="Task"/></returns>
+	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
 	Task UpdateAsync(TEntity entity, CancellationToken token = default);
 
 	/// <summary>
-	/// Updates multiple existing database rows for the <typeparamref name="TEntity"/> instance.
+	/// Updates the specified collection of entities in the underlying data store.
 	/// </summary>
-	/// <param name="entities">The collection of <typeparamref name="TEntity"/> to update.</param>
+	/// <remarks>
+	/// This method marks the provided entities as modified in the database context. so that
+	/// changes to the entities will be persisted to the database during the next save operation.
+	/// </remarks>
+	/// <param name="entities">The collection of entities to update.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <returns><see cref="Task"/></returns>
+	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
 	Task UpdateAsync(IEnumerable<TEntity> entities, CancellationToken token = default);
 
 	/// <summary>

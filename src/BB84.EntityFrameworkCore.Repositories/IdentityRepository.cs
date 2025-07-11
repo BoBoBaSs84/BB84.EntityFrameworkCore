@@ -14,9 +14,16 @@ using Microsoft.EntityFrameworkCore.Query;
 namespace BB84.EntityFrameworkCore.Repositories;
 
 /// <summary>
-/// The repository base implementation for identity based entities.
+/// Provides an abstract base class for managing identity-based entities in a data store.
 /// </summary>
-/// <inheritdoc cref="IIdentityRepository{TEntity, TKey}"/>
+/// <remarks>
+/// This interface extends <see cref="GenericRepository{TEntity}"/> and provides additional
+/// methods for CRUD operations specifically tailored to entities with identity-based primary
+/// keys.
+/// </remarks>
+/// <typeparam name="TEntity">The type of the entity managed by the repository.</typeparam>
+/// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
+/// <param name="dbContext">The database context to work with.</param>
 public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : GenericRepository<TEntity>(dbContext), IIdentityRepository<TEntity, TKey>
 	where TEntity : class, IIdentityEntity<TKey> where TKey : IEquatable<TKey>
 {
@@ -108,7 +115,6 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 }
 
 /// <inheritdoc cref="IdentityRepository{TEntity, TKey}"/>
-/// <inheritdoc cref="IIdentityRepository{TEntity}"/>
 public abstract class IdentityRepository<TEntity>(IDbContext dbContext) : IdentityRepository<TEntity, Guid>(dbContext), IIdentityRepository<TEntity>
 	where TEntity : class, IIdentityEntity
 { }

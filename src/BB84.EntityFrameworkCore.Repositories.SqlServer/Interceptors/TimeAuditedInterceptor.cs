@@ -12,8 +12,14 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors;
 
 /// <summary>
-/// The save changes interceptor for time audited entities.
+/// A save changes interceptor that automatically updates audit timestamps for entities
+/// implementing the <see cref="ITimeAudited"/> interface.
 /// </summary>
+/// <remarks>
+/// This interceptor updates the <see cref="ITimeAudited.Created"/> property to the current
+/// UTC time when an entity is added and the <see cref="ITimeAudited.Edited"/> property to
+/// the current UTC time when an entity is modified.
+/// </remarks>
 /// <inheritdoc cref="SaveChangesInterceptor"/>
 public sealed class TimeAuditedInterceptor : SaveChangesInterceptor
 {
@@ -31,22 +37,34 @@ public sealed class TimeAuditedInterceptor : SaveChangesInterceptor
 		return base.SavingChangesAsync(eventData, result, cancellationToken);
 	}
 
+	/// <summary>
+	/// Intercepts and processes entities implementing <see cref="ITimeAudited"/> in the
+	/// specified <see cref="DbContext"/>.
+	/// </summary>
+	/// <param name="dbContext">
+	/// The <see cref="DbContext"/> instance whose tracked entities are to be intercepted.
+	/// </param>
 	private static void InterceptEntities(DbContext? dbContext)
 	{
 		if (dbContext is not null)
 		{
-			IEnumerable<EntityEntry<ITimeAudited>> entries = dbContext.ChangeTracker.Entries<ITimeAudited>();
+			IEnumerable<EntityEntry<ITimeAudited>> entityEntries = dbContext.ChangeTracker.Entries<ITimeAudited>();
 
-			foreach (EntityEntry<ITimeAudited> entry in entries)
+			foreach (EntityEntry<ITimeAudited> entityEntry in entityEntries)
 			{
-				switch (entry.State)
+				switch (entityEntry.State)
 				{
 					case EntityState.Added:
-						entry.Entity.Created = DateTime.UtcNow;
+						entityEntry.Entity.Created = DateTime.UtcNow;
 						continue;
 					case EntityState.Modified:
-						entry.Entity.Edited = DateTime.UtcNow;
+						entityEntry.Entity.Edited = DateTime.UtcNow;
 						continue;
+					case EntityState.Detached:
+					case EntityState.Unchanged:
+					case EntityState.Deleted:
+					default:
+						break;
 				}
 			}
 		}

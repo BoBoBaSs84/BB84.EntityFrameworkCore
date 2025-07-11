@@ -11,9 +11,16 @@ using Microsoft.EntityFrameworkCore;
 namespace BB84.EntityFrameworkCore.Repositories;
 
 /// <summary>
-/// The repository base implementation for enumerator based entities.
+/// Provides an abstract base class for managing enumeration-based entities in a data store.
 /// </summary>
-/// <inheritdoc cref="IEnumeratorRepository{TEntity, TKey}"/>
+/// <remarks>
+/// This interface extends <see cref="IdentityRepository{TEntity, TKey}"/> and provides
+/// additional methods for CRUD operations specifically tailored to entities with
+/// identity-based primary keys.
+/// </remarks>
+/// <typeparam name="TEntity">The type of the entity managed by the repository.</typeparam>
+/// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
+/// <param name="dbContext">The database context to work with.</param>
 public abstract class EnumeratorRepository<TEntity, TKey>(IDbContext dbContext) : IdentityRepository<TEntity, TKey>(dbContext), IEnumeratorRepository<TEntity, TKey>
 	where TEntity : class, IEnumeratorEntity<TKey>
 	where TKey : IEquatable<TKey>
@@ -68,7 +75,6 @@ public abstract class EnumeratorRepository<TEntity, TKey>(IDbContext dbContext) 
 }
 
 /// <inheritdoc cref="EnumeratorRepository{TEntity, TKey}"/>
-/// <inheritdoc cref="IEnumeratorRepository{TEntity}"/>
 public abstract class EnumeratorRepository<TEntity>(IDbContext dbContext) : EnumeratorRepository<TEntity, int>(dbContext), IEnumeratorRepository<TEntity>
 	where TEntity : class, IEnumeratorEntity
 { }

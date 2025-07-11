@@ -8,17 +8,15 @@ using BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 namespace BB84.EntityFrameworkCore.Entities.Abstractions;
 
 /// <summary>
-/// The interface for the enumerator models.
+/// Represents an entity contract that provides properties for the name and description,
+/// with a unique identifier of type <typeparamref name="TKey"/> and the support for
+/// soft deletion functionality.
 /// </summary>
-/// <inheritdoc cref="IIdentityEntity{TKey}"/>
-/// <inheritdoc cref="IEnumerator"/>
-/// <inheritdoc cref="ISoftDeletable"/>
-public interface IEnumeratorEntity<TKey> : IIdentityEntity<TKey>, IEnumerator, ISoftDeletable where TKey : IEquatable<TKey>
+/// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
+public interface IEnumeratorEntity<TKey> : IIdentityEntity<TKey>, IEnumerator, ISoftDeletable
+	where TKey : IEquatable<TKey>
 { }
 
 /// <inheritdoc cref="IEnumeratorEntity{TKey}"/>
-/// <remarks>
-/// The identity column is of type <see cref="int"/>.
-/// </remarks>
 public interface IEnumeratorEntity : IEnumeratorEntity<int>
 { }

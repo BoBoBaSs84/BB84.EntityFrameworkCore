@@ -12,9 +12,16 @@ using Microsoft.EntityFrameworkCore.Query;
 namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 /// <summary>
-/// The repository interface for identity model based entities.
+/// Defines a repository interface for managing entities of type <see cref="IIdentityEntity{TKey}"/>
+/// with a primary key of type <typeparamref name="TKey"/>.
 /// </summary>
-/// <inheritdoc cref="IGenericRepository{TEntity}"/>
+/// <remarks>
+/// This interface extends <see cref="IGenericRepository{TEntity}"/> and provides additional
+/// methods for CRUD operations specifically tailored to entities with identity-based primary
+/// keys.
+/// </remarks>
+/// <typeparam name="TEntity">The type of the entity managed by the repository.</typeparam>
+/// <typeparam name="TKey">The type of the primary key for the entity.</typeparam>
 public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity>
 	where TEntity : class, IIdentityEntity<TKey>
 	where TKey : IEquatable<TKey>
@@ -78,13 +85,21 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	Task<int> DeleteAsync(IEnumerable<TKey> ids, CancellationToken token = default);
 
 	/// <summary>
-	/// Returns an <typeparamref name="TEntity"/> by its primary key.
+	/// Retrieves an entity by its unique identifier.
 	/// </summary>
-	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <param name="trackChanges">Should the fetched entity be tracked?</param>
-	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
-	/// <returns>An <typeparamref name="TEntity"/> or <see langword="null"/>.</returns>
+	/// <param name="id">The unique identifier of the entity to retrieve.</param>
+	/// <param name="ignoreQueryFilters">
+	/// A value indicating whether to ignore query filters, such as global filters or soft delete filters.
+	/// </param>
+	/// <param name="trackChanges">
+	/// A value indicating whether the retrieved entity should be tracked by the context.
+	/// </param>
+	/// <param name="includeProperties">
+	/// An array of related entity property names to include in the query.
+	/// </param>
+	/// <returns>
+	/// The entity that matches the specified identifier, or <see langword="null"/> if no such entity exists.
+	/// </returns>
 	TEntity? GetById(
 		TKey id,
 		bool ignoreQueryFilters = false,
@@ -93,14 +108,23 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		);
 
 	/// <summary>
-	/// Returns an <typeparamref name="TEntity"/> by its primary key.
+	/// Retrieves an entity by its unique identifier.
 	/// </summary>
-	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <param name="trackChanges">Should the fetched entity be tracked?</param>
+	/// <param name="id">The unique identifier of the entity to retrieve.</param>
+	/// <param name="ignoreQueryFilters">
+	/// A value indicating whether to ignore query filters, such as global filters or soft delete filters.
+	/// </param>
+	/// <param name="trackChanges">
+	/// A value indicating whether the retrieved entity should be tracked by the context.
+	/// </param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
-	/// <returns>The <typeparamref name="TEntity"/> or <see langword="null"/>.</returns>
+	/// <param name="includeProperties">
+	/// An array of related entity property names to include in the query.
+	/// </param>
+	/// <returns>
+	/// The entity of type <typeparamref name="TEntity"/> that matches the specified identifier,
+	/// or <see langword="null"/> if no such entity exists.
+	/// </returns>
 	Task<TEntity?> GetByIdAsync(
 		TKey id,
 		bool ignoreQueryFilters = false,
@@ -110,13 +134,22 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		);
 
 	/// <summary>
-	/// Returns a collection of <typeparamref name="TEntity"/> by their primary keys.
+	/// Retrieves a collection of entities that match the specified identifiers.
 	/// </summary>
-	/// <param name="ids">The primary keys of the <typeparamref name="TEntity"/>.</param>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
-	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
-	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
+	/// <param name="ids">A collection of identifiers used to filter the entities.</param>
+	/// <param name="ignoreQueryFilters">
+	/// A value indicating whether to ignore any query filters applied to the entity type.
+	/// </param>
+	/// <param name="trackChanges">
+	/// A value indicating whether the returned entities should be tracked by the context.
+	/// </param>
+	/// <param name="includeProperties">
+	/// An array of related entity property names to include in the query results.
+	/// </param>
+	/// <returns>
+	/// A collection of entities of type <typeparamref name="TEntity"/> that match the specified identifiers.
+	/// If no entities match, an empty collection is returned.
+	/// </returns>
 	IEnumerable<TEntity> GetByIds(
 		IEnumerable<TKey> ids,
 		bool ignoreQueryFilters = false,
@@ -125,14 +158,23 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		);
 
 	/// <summary>
-	/// Returns a collection of <typeparamref name="TEntity"/> by their primary keys.
+	/// Retrieves a collection of entities that match the specified identifiers.
 	/// </summary>
-	/// <param name="ids">The primary key of the <typeparamref name="TEntity"/>.</param>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
+	/// <param name="ids">A collection of identifiers used to filter the entities.</param>
+	/// <param name="ignoreQueryFilters">
+	/// A value indicating whether to ignore any query filters applied to the entity type.
+	/// </param>
+	/// <param name="trackChanges">
+	/// A value indicating whether the returned entities should be tracked by the context.
+	/// </param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
-	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
+	/// <param name="includeProperties">
+	/// An array of related entity property names to include in the query results.
+	/// </param>
+	/// <returns>
+	/// A collection of entities of type <typeparamref name="TEntity"/> that match the specified identifiers.
+	/// If no entities match, an empty collection is returned.
+	/// </returns>
 	Task<IEnumerable<TEntity>> GetByIdsAsync(
 		IEnumerable<TKey> ids,
 		bool ignoreQueryFilters = false,
@@ -142,37 +184,61 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		);
 
 	/// <summary>
-	/// Updates the database row for the <typeparamref name="TEntity"/> instance which matches
-	/// the <paramref name="id"/> from the database.
+	/// Updates the entity identified by the specified identifier with the provided property changes.
 	/// </summary>
-	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
-	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
-	/// <returns>The total number of rows updated in the database.</returns>
+	/// <remarks>
+	/// This operation executes immediately against the database, rather than being deferred
+	/// until save changes is called. It also does not interact with the EF change tracker in
+	/// any way: entity instances which happen to be tracked when this operation is invoked
+	/// aren't taken into account, and aren't updated to reflect the changes.
+	/// </remarks>	
+	/// <param name="id">The unique identifier of the entity to update.</param>
+	/// <param name="setPropertyCalls">A lambda expression specifying the properties to update and their new values.</param>
+	/// <returns>
+	/// The number of entities updated. Typically, this will be 1 if the update is successful,
+	/// or 0 if no entity matches the specified <paramref name="id"/>.
+	/// </returns>
 	int Update(
 		TKey id,
 		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls
 		);
 
 	/// <summary>
-	/// Updates all database rows for the <typeparamref name="TEntity"/> instances which matches
-	/// the <paramref name="ids"/> from the database.
+	/// Updates the entities identified by the specified identifiers with the provided property changes.
 	/// </summary>
-	/// <param name="ids">The primary key of the <typeparamref name="TEntity"/>.</param>
-	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
-	/// <returns>The total number of rows updated in the database.</returns>
+	/// <remarks>
+	/// This operation executes immediately against the database, rather than being deferred
+	/// until save changes is called. It also does not interact with the EF change tracker in
+	/// any way: entity instances which happen to be tracked when this operation is invoked
+	/// aren't taken into account, and aren't updated to reflect the changes.
+	/// </remarks>	
+	/// <param name="ids">The unique identifiers of the entities to update.</param>
+	/// <param name="setPropertyCalls">A lambda expression specifying the properties to update and their new values.</param>
+	/// <returns>
+	/// The number of entities updated. Typically, this will be 1 if the update is successful,
+	/// or 0 if no entity matches the specified <paramref name="ids"/>.
+	/// </returns>
 	int Update(
 		IEnumerable<TKey> ids,
 		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls
 		);
 
 	/// <summary>
-	/// Updates the database row for the <typeparamref name="TEntity"/> instance which matches
-	/// the <paramref name="id"/> from the database.
+	/// Updates the entity identified by the specified identifier with the provided property changes.
 	/// </summary>
-	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
-	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
+	/// <remarks>
+	/// This operation executes immediately against the database, rather than being deferred
+	/// until save changes is called. It also does not interact with the EF change tracker in
+	/// any way: entity instances which happen to be tracked when this operation is invoked
+	/// aren't taken into account, and aren't updated to reflect the changes.
+	/// </remarks>	
+	/// <param name="id">The unique identifier of the entity to update.</param>
+	/// <param name="setPropertyCalls">A lambda expression specifying the properties to update and their new values.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <returns>The total number of rows updated in the database.</returns>
+	/// <returns>
+	/// The number of entities updated. Typically, this will be 1 if the update is successful, or 0 if no entity matches
+	/// the specified <paramref name="id"/>.
+	/// </returns>
 	Task<int> UpdateAsync(
 		TKey id,
 		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
@@ -180,13 +246,21 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		);
 
 	/// <summary>
-	/// Updates all database rows for the <typeparamref name="TEntity"/> instances which matches
-	/// the <paramref name="ids"/> from the database.
+	/// Updates the entities identified by the specified identifiers with the provided property changes.
 	/// </summary>
-	/// <param name="ids">The primary key of the <typeparamref name="TEntity"/>.</param>
-	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
+	/// <remarks>
+	/// This operation executes immediately against the database, rather than being deferred
+	/// until save changes is called. It also does not interact with the EF change tracker in
+	/// any way: entity instances which happen to be tracked when this operation is invoked
+	/// aren't taken into account, and aren't updated to reflect the changes.
+	/// </remarks>	
+	/// <param name="ids">The unique identifiers of the entities to update.</param>
+	/// <param name="setPropertyCalls">A lambda expression specifying the properties to update and their new values.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <returns>The total number of rows updated in the database.</returns>
+	/// <returns>
+	/// The number of entities updated. Typically, this will be 1 if the update is successful,
+	/// or 0 if no entity matches the specified <paramref name="ids"/>.
+	/// </returns>
 	Task<int> UpdateAsync(
 		IEnumerable<TKey> ids,
 		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
@@ -195,9 +269,6 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 }
 
 /// <inheritdoc cref="IIdentityRepository{TEntity, TKey}"/>
-/// <remarks>
-/// The identity column is of type <see cref="Guid"/>.
-/// </remarks>
 public interface IIdentityRepository<TEntity> : IIdentityRepository<TEntity, Guid>
 	where TEntity : class, IIdentityEntity
 { }

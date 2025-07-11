@@ -8,16 +8,15 @@ using BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 namespace BB84.EntityFrameworkCore.Entities.Abstractions;
 
 /// <summary>
-/// The interface for the identity models.
+/// Represents an entity contract with a unique identifier and concurrency control.
 /// </summary>
-/// <inheritdoc cref="IIdentity{TKey}"/>
-/// <inheritdoc cref="IConcurrency"/>
+/// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
 public interface IIdentityEntity<TKey> : IIdentity<TKey>, IConcurrency where TKey : IEquatable<TKey>
 { }
 
 /// <inheritdoc cref="IIdentityEntity{TKey}"/>
 /// <remarks>
-/// The identity column is of type <see cref="Guid"/>.
+/// The unique identifier is of type <see cref="Guid"/>.
 /// </remarks>
 public interface IIdentityEntity : IIdentityEntity<Guid>
 { }
