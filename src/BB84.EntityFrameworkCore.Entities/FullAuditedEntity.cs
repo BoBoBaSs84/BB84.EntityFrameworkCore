@@ -8,10 +8,15 @@ using BB84.EntityFrameworkCore.Entities.Abstractions;
 namespace BB84.EntityFrameworkCore.Entities;
 
 /// <summary>
-/// The base implementation for the full audited models.
+/// This abstract class provides a base implementation for entities that provides properties
+/// to track the creator, creation time, editor, and last modification time of the entity.
 /// </summary>
-/// <inheritdoc cref="IFullAuditedEntity{TKey, TCreator, TEdited}"/>
-public abstract class FullAuditedEntity<TKey, TCreator, TEdited> : IdentityEntity<TKey>, IFullAuditedEntity<TKey, TCreator, TEdited> where TKey : IEquatable<TKey>
+/// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
+/// <typeparam name="TCreator">The type representing the creator of the entity.</typeparam>
+/// <typeparam name="TEdited">The type representing the editor of the entity.</typeparam>
+public abstract class FullAuditedEntity<TKey, TCreator, TEdited> : IdentityEntity<TKey>, IFullAuditedEntity<TKey, TCreator, TEdited>
+	where TKey : IEquatable<TKey>
+	where TCreator : notnull
 {
 	/// <inheritdoc/>
 	public TCreator Creator { get; set; } = default!;
@@ -24,17 +29,22 @@ public abstract class FullAuditedEntity<TKey, TCreator, TEdited> : IdentityEntit
 }
 
 /// <inheritdoc cref="FullAuditedEntity{TKey, TCreator, TEdited}"/>
-/// <inheritdoc cref="IFullAuditedEntity{TKey}"/>
-public abstract class FullAuditedEntity<TKey> : FullAuditedEntity<TKey, string, string?>, IFullAuditedEntity<TKey> where TKey : IEquatable<TKey>
+/// <remarks>
+/// The creator and editor columns are of type <see cref="string"/>.
+/// </remarks>
+public abstract class FullAuditedEntity<TKey> : FullAuditedEntity<TKey, string, string?>, IFullAuditedEntity<TKey>
+	where TKey : IEquatable<TKey>
 { }
 
 
 /// <inheritdoc cref="FullAuditedEntity{TKey, TCreator, TEdited}"/>
-/// <inheritdoc cref="IFullAuditedEntity{TCreator, TEdited}"/>
+/// <remarks>
+/// The identity column is of type <see cref="Guid"/>.
+/// </remarks>
 public abstract class FullAuditedEntity<TCreator, TEdited> : FullAuditedEntity<Guid, TCreator, TEdited>, IFullAuditedEntity<TCreator, TEdited>
+	where TCreator : notnull
 { }
 
 /// <inheritdoc cref="FullAuditedEntity{TKey, TCreator, TEdited}"/>
-/// <inheritdoc cref="IFullAuditedEntity"/>
 public abstract class FullAuditedEntity : FullAuditedEntity<Guid, string, string?>, IFullAuditedEntity
 { }

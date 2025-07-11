@@ -8,10 +8,14 @@ using BB84.EntityFrameworkCore.Entities.Abstractions;
 namespace BB84.EntityFrameworkCore.Entities;
 
 /// <summary>
-/// The base implementation for the audited composite models.
+/// This abstract class provides a base implementation for entities that are composed
+/// of multiple related components and require auditing information, including the creator,
+/// editor, and a concurrency timestamp.
 /// </summary>
-/// <inheritdoc cref="IAuditedCompositeEntity{TCreator, TEdited}"/>
+/// <typeparam name="TCreator">The type of the entity or user responsible for creating the entity.</typeparam>
+/// <typeparam name="TEdited">The type of the entity or user responsible for editing the entity.</typeparam>
 public abstract class AuditedCompositeEntity<TCreator, TEdited> : IAuditedCompositeEntity<TCreator, TEdited>
+	where TCreator : notnull
 {
 	/// <inheritdoc/>
 	public byte[] Timestamp { get; } = default!;
@@ -24,6 +28,8 @@ public abstract class AuditedCompositeEntity<TCreator, TEdited> : IAuditedCompos
 }
 
 /// <inheritdoc cref="AuditedCompositeEntity{TCreator, TEdited}"/>
-/// <inheritdoc cref="IAuditedCompositeEntity"/>
+/// <remarks>
+/// The creator and editor types default to <see cref="string"/>.
+/// </remarks>
 public abstract class AuditedCompositeEntity : AuditedCompositeEntity<string, string?>, IAuditedCompositeEntity
 { }

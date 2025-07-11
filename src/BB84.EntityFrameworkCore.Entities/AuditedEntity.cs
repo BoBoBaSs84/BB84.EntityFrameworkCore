@@ -8,10 +8,16 @@ using BB84.EntityFrameworkCore.Entities.Abstractions;
 namespace BB84.EntityFrameworkCore.Entities;
 
 /// <summary>
-/// The base implementation for the audited models.
+/// This abstract class provides a base implementation for entities that track auditing information,
+/// including the creator and the last editor, a unique identifier and a timestamp for concurrency
+/// control.
 /// </summary>
-/// <inheritdoc cref="IAuditedEntity{TKey, TCreator, TEdited}"/>
-public abstract class AuditedEntity<TKey, TCreator, TEdited> : IdentityEntity<TKey>, IAuditedEntity<TKey, TCreator, TEdited> where TKey : IEquatable<TKey>
+/// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
+/// <typeparam name="TCreator">The type representing the creator of the entity.</typeparam>
+/// <typeparam name="TEdited">The type representing the last editor of the entity.</typeparam>
+public abstract class AuditedEntity<TKey, TCreator, TEdited> : IdentityEntity<TKey>, IAuditedEntity<TKey, TCreator, TEdited>
+	where TKey : IEquatable<TKey>
+	where TCreator : notnull
 {
 	/// <inheritdoc/>
 	public TCreator Creator { get; set; } = default!;
@@ -21,16 +27,25 @@ public abstract class AuditedEntity<TKey, TCreator, TEdited> : IdentityEntity<TK
 }
 
 /// <inheritdoc cref="AuditedEntity{TKey, TCreator, TEdited}"/>
-/// <inheritdoc cref="IAuditedEntity{TKey}"/>
-public abstract class AuditedEntity<TKey> : AuditedEntity<TKey, string, string?>, IAuditedEntity<TKey> where TKey : IEquatable<TKey>
+/// <remarks>
+/// The creator and editor types default to <see cref="string"/>.
+/// </remarks>
+public abstract class AuditedEntity<TKey> : AuditedEntity<TKey, string, string?>, IAuditedEntity<TKey>
+	where TKey : IEquatable<TKey>
 { }
 
 /// <inheritdoc cref="AuditedEntity{TKey, TCreator, TEdited}"/>
-/// <inheritdoc cref="IAuditedEntity{TCreator, TEdited}"/>
+/// <remarks>
+/// The unique identifier is of type <see cref="Guid"/>.
+/// </remarks>
 public abstract class AuditedEntity<TCreator, TEdited> : AuditedEntity<Guid, TCreator, TEdited>, IAuditedEntity<TCreator, TEdited>
+	where TCreator : notnull
 { }
 
 /// <inheritdoc cref="AuditedEntity{TKey, TCreator, TEdited}"/>
-/// <inheritdoc cref="IAuditedEntity"/>
+/// <remarks>
+/// The unique identifier type defaults to <see cref="Guid"/> and the creator and editor
+/// types default to <see cref="string"/>.
+/// </remarks>
 public abstract class AuditedEntity : AuditedEntity<Guid, string, string?>, IAuditedEntity
 { }
