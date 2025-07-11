@@ -8,20 +8,27 @@ using BB84.EntityFrameworkCore.Entities.Abstractions;
 namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 /// <summary>
-/// The repository interface for enumerator based entities.
+/// Defines a repository interface for managing entities of type <see cref="IEnumeratorEntity{TKey}"/>
+/// with a primary key of type <typeparamref name="TKey"/>.
 /// </summary>
-/// <inheritdoc cref="IIdentityRepository{TEntity, TKey}"/>
+/// <remarks>
+/// This interface extends the <see cref="IIdentityRepository{TEntity, TKey}"/> and adds functionality
+/// specific to retrieving entities by their names. It supports both synchronous and asynchronous
+/// operations, with options to ignore query filters and enable or disable change tracking.
+/// </remarks>
+/// <typeparam name="TEntity">The type of the entity managed by the repository.</typeparam>
+/// <typeparam name="TKey">The type of the primary key for the entity.</typeparam>
 public interface IEnumeratorRepository<TEntity, TKey> : IIdentityRepository<TEntity, TKey>
 	where TEntity : class, IEnumeratorEntity<TKey>
 	where TKey : IEquatable<TKey>
 {
 	/// <summary>
-	/// Returns an <typeparamref name="TEntity"/> by its name or <see langword="null"/>.
+	/// Retrieves an entity by its name.
 	/// </summary>
-	/// <param name="name">The name of the <typeparamref name="TEntity"/>.</param>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <param name="trackChanges">Should the fetched entity be tracked?</param>
-	/// <returns>The <typeparamref name="TEntity"/> or <see langword="null"/>.</returns>
+	/// <param name="name">The name of the entity to retrieve.</param>
+	/// <param name="ignoreQueryFilters">A value indicating whether to ignore any query filters applied to the entity.</param>
+	/// <param name="trackChanges">A value indicating whether the retrieved entity should be tracked by the context.</param>
+	/// <returns>The entity that matches the specified name, or <see langword="null"/> if no such entity is found.</returns>
 	TEntity? GetByName(
 		string name,
 		bool ignoreQueryFilters = false,
@@ -29,13 +36,13 @@ public interface IEnumeratorRepository<TEntity, TKey> : IIdentityRepository<TEnt
 		);
 
 	/// <summary>
-	/// Returns an <typeparamref name="TEntity"/> by its name or <see langword="null"/>.
+	/// Retrieves an entity by its name.
 	/// </summary>
-	/// <param name="name">The name of the <typeparamref name="TEntity"/>.</param>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <param name="trackChanges">Should the fetched entity be tracked?</param>
+	/// <param name="name">The name of the entity to retrieve.</param>
+	/// <param name="ignoreQueryFilters">A value indicating whether to ignore any query filters applied to the entity.</param>
+	/// <param name="trackChanges">A value indicating whether the retrieved entity should be tracked by the context.</param>
 	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
-	/// <returns>The <typeparamref name="TEntity"/> or <see langword="null"/>.</returns>
+	/// <returns>The entity that matches the specified name, or <see langword="null"/> if no such entity is found.</returns>
 	Task<TEntity?> GetByNameAsync(
 		string name,
 		bool ignoreQueryFilters = false,
@@ -44,12 +51,15 @@ public interface IEnumeratorRepository<TEntity, TKey> : IIdentityRepository<TEnt
 		);
 
 	/// <summary>
-	/// Returns a collection of <typeparamref name="TEntity"/> by their names or an empty result.
+	/// Retrieves a collection of entities that match the specified names.
 	/// </summary>
-	/// <param name="names">The names of the <typeparamref name="TEntity"/>.</param>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
-	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
+	/// <param name="names">A collection of names to filter the entities by.</param>
+	/// <param name="ignoreQueryFilters">A value indicating whether to ignore any query filters applied to the entity type.</param>
+	/// <param name="trackChanges">A value indicating whether the returned entities should be tracked by the context.</param>
+	/// <returns>
+	/// An <see cref="IEnumerable{TEntity}"/> containing the entities that match the specified names.
+	/// If no entities match, an empty collection is returned.
+	/// </returns>
 	IEnumerable<TEntity> GetByNames(
 		IEnumerable<string> names,
 		bool ignoreQueryFilters = false,
@@ -57,13 +67,16 @@ public interface IEnumeratorRepository<TEntity, TKey> : IIdentityRepository<TEnt
 		);
 
 	/// <summary>
-	/// Returns a collection of <typeparamref name="TEntity"/> by their names or an empty result.
+	/// Retrieves a collection of entities that match the specified names.
 	/// </summary>
-	/// <param name="names">The names of the <typeparamref name="TEntity"/>.</param>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
+	/// <param name="names">A collection of names to filter the entities by.</param>
+	/// <param name="ignoreQueryFilters">A value indicating whether to ignore any query filters applied to the entity type.</param>
+	/// <param name="trackChanges">A value indicating whether the returned entities should be tracked by the context.</param>
 	/// <param name="cancellationToken">The cancellation token.</param>
-	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
+	/// <returns>
+	/// An <see cref="IEnumerable{TEntity}"/> containing the entities that match the specified names.
+	/// If no entities match, an empty collection is returned.
+	/// </returns>
 	Task<IEnumerable<TEntity>> GetByNamesAsync(
 		IEnumerable<string> names,
 		bool ignoreQueryFilters = false,
@@ -73,9 +86,6 @@ public interface IEnumeratorRepository<TEntity, TKey> : IIdentityRepository<TEnt
 }
 
 /// <inheritdoc cref="IEnumeratorRepository{TEntity, TKey}"/>
-/// <remarks>
-/// The identity column is of type <see cref="int"/>.
-/// </remarks>
 public interface IEnumeratorRepository<TEntity> : IEnumeratorRepository<TEntity, int>
 	where TEntity : class, IEnumeratorEntity
 { }

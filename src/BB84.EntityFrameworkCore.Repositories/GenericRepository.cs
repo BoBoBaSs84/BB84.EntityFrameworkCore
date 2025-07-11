@@ -16,7 +16,7 @@ namespace BB84.EntityFrameworkCore.Repositories;
 /// The generic repository implementation.
 /// </summary>
 /// <inheritdoc cref="IGenericRepository{TEntity}"/>
-/// <param name="dbContext">The database context to work with.</param>	
+/// <param name="dbContext">The database context to work with.</param>
 public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGenericRepository<TEntity>
 	where TEntity : class
 {
