@@ -13,9 +13,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 
 /// <summary>
-/// The entity configuration for composite based entities.
+/// Represents an abstract base class for configuring entity types that implement the
+/// <see cref="ICompositeEntity"/> interface.
 /// </summary>
-/// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
+/// <remarks>
+/// This class is intended to be used as a base for defining entity type configurations in
+/// Entity Framework Core. It provides a default implementation for configuring common properties,
+/// such as the <c>Timestamp</c> property.
+/// </remarks>
+/// <typeparam name="TEntity">The type of the entity being configured.</typeparam>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class CompositeConfiguration<TEntity> : IEntityTypeConfiguration<TEntity>
 	where TEntity : class, ICompositeEntity

@@ -14,13 +14,25 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 
 /// <summary>
-/// The entity configuration for audited based entities.
+/// Represents an abstract base class for configuring the entities of type
+/// <see cref="IAuditedEntity{TKey, TCreator, TEdited}"/> for dentity-related and time audited
+/// entities in the Entity Framework Core model.
 /// </summary>
+/// <remarks>
+/// This class provides a default configuration for audited entities, including primary key setup,
+/// concurrency token configuration, and required properties for creator and editor fields.
+/// Derived classes can override the <see cref="Configure"/> method to customize the configuration.
+/// </remarks>
+/// <typeparam name="TEntity">The type of the entity being configured.</typeparam>
+/// <typeparam name="TKey">The type of the primary key for the entity.</typeparam>
+/// <typeparam name="TCreator">The type representing the creator of the entity.</typeparam>
+/// <typeparam name="TEdited">The type representing the editor of the entity.</typeparam>
 /// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity, TKey, TCreator, TEdited> : IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IAuditedEntity<TKey, TCreator, TEdited>
 	where TKey : IEquatable<TKey>
+	where TCreator : notnull
 {
 	/// <inheritdoc/>
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
@@ -70,6 +82,7 @@ public abstract class AuditedConfiguration<TEntity, TKey> : AuditedConfiguration
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity, TCreator, TEdited> : AuditedConfiguration<TEntity, Guid, TCreator, TEdited>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IAuditedEntity<TCreator, TEdited>
+	where TCreator : notnull
 {
 	/// <inheritdoc/>
 	public override void Configure(EntityTypeBuilder<TEntity> builder)

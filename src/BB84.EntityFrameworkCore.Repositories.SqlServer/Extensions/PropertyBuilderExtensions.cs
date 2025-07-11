@@ -9,8 +9,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions;
 
 /// <summary>
-/// The <see cref="PropertyBuilder"/> extension class.
+/// Provides extension methods for configuring property data types in a relational
+/// database using the <see cref="PropertyBuilder"/> class.
 /// </summary>
+/// <remarks>
+/// The <see cref="PropertyBuilderExtensions"/> class provides extension methods that allow
+/// developers to specify the SQL data type for a property when using Entity Framework Core
+/// to map their domain models to a relational database. Each method configures the column
+/// type for the property being built, enabling precise control over the database schema.
+/// </remarks>
 public static class PropertyBuilderExtensions
 {
 	/// <summary>

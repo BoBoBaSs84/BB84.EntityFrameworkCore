@@ -12,8 +12,15 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors;
 
 /// <summary>
-/// The save changes interceptor for soft deletable entities.
+/// Intercepts save operations in a <see cref="DbContext"/> to enforce soft delete behavior for
+/// entities implementing the <see cref="ISoftDeletable"/> interface.
 /// </summary>
+/// <remarks>
+/// This interceptor modifies the behavior of entities marked for deletion by setting their
+/// <see cref="ISoftDeletable.IsDeleted"/> property to <see langword="true"/> and changing their
+/// state to <see cref="EntityState.Modified"/>. This ensures that soft-deleted entities are not
+/// physically removed from the database.
+/// </remarks>
 /// <inheritdoc cref="SaveChangesInterceptor"/>
 public sealed class SoftDeletableInterceptor : SaveChangesInterceptor
 {
@@ -31,18 +38,33 @@ public sealed class SoftDeletableInterceptor : SaveChangesInterceptor
 		return base.SavingChangesAsync(eventData, result, cancellationToken);
 	}
 
+	/// <summary>
+	/// Intercepts and processes entities implementing <see cref="ISoftDeletable"/> in the
+	/// specified <see cref="DbContext"/>.
+	/// </summary>
+	/// <param name="dbContext">
+	/// The <see cref="DbContext"/> instance whose tracked entities are to be intercepted.
+	/// </param>
 	private static void InterceptEntities(DbContext? dbContext)
 	{
 		if (dbContext is not null)
 		{
-			IEnumerable<EntityEntry<ISoftDeletable>> entries = dbContext.ChangeTracker.Entries<ISoftDeletable>();
+			IEnumerable<EntityEntry<ISoftDeletable>> entityEntries = dbContext.ChangeTracker.Entries<ISoftDeletable>();
 
-			foreach (EntityEntry<ISoftDeletable> entry in entries)
+			foreach (EntityEntry<ISoftDeletable> entityEntry in entityEntries)
 			{
-				if (entry.State is EntityState.Deleted)
+				switch (entityEntry.State)
 				{
-					entry.Entity.IsDeleted = true;
-					entry.State = EntityState.Modified;
+					case EntityState.Deleted:
+						entityEntry.Entity.IsDeleted = true;
+						entityEntry.State = EntityState.Modified;
+						break;
+					case EntityState.Detached:
+					case EntityState.Unchanged:
+					case EntityState.Modified:
+					case EntityState.Added:
+					default:
+						break;
 				}
 			}
 		}

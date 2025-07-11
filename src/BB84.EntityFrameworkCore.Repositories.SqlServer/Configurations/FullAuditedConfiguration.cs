@@ -14,13 +14,23 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 
 /// <summary>
-/// The entity configuration for full audited based entities.
+/// Provides a base configuration for entities that implement the
+/// <see cref="IFullAuditedEntity{TKey, TCreator, TEdited}"/> interface.
 /// </summary>
-/// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
+/// <remarks>
+/// This configuration defines common properties for audited entities, including primary key,
+/// timestamps and audit fields such as creator and editor. It is intended to be used as a
+/// base class for configuring entities that require full auditing support.
+/// </remarks>
+/// <typeparam name="TEntity">The type of the entity being configured.</typeparam>
+/// <typeparam name="TKey">The type of the primary key for the entity.</typeparam>
+/// <typeparam name="TCreator">The type representing the creator of the entity.</typeparam>
+/// <typeparam name="TEdited">The type representing the editor of the entity.</typeparam>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited> : IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IFullAuditedEntity<TKey, TCreator, TEdited>
 	where TKey : IEquatable<TKey>
+	where TCreator : notnull
 {
 	/// <inheritdoc/>
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
@@ -78,6 +88,7 @@ public abstract class FullAuditeConfiguration<TEntity, TKey> : FullAuditedConfig
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class FullAuditeConfiguration<TEntity, TCreator, TEdited> : FullAuditedConfiguration<TEntity, Guid, TCreator, TEdited>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IFullAuditedEntity<TCreator, TEdited>
+	where TCreator : notnull
 {
 	/// <inheritdoc/>
 	public override void Configure(EntityTypeBuilder<TEntity> builder)
