@@ -8,19 +8,23 @@ using BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 namespace BB84.EntityFrameworkCore.Entities.Abstractions;
 
 /// <summary>
-/// The interface for full audited entities.
+/// Defines an entity contract that is fully audited, including information about its
+/// creator, creation, last editor, last modification date and unique identity.
 /// </summary>
-/// <inheritdoc cref="IIdentity{TKey}"/>
-/// <inheritdoc cref="IUserAudited{TCreator, TEdited}"/>
-/// <inheritdoc cref="ITimeAudited"/>
-public interface IFullAuditedEntity<TKey, TCreator, TEdited> : IIdentityEntity<TKey>, IUserAudited<TCreator, TEdited>, ITimeAudited where TKey : IEquatable<TKey>
+/// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
+/// <typeparam name="TCreator">The type representing the creator of the entity.</typeparam>
+/// <typeparam name="TEditor">The type representing the last editor of the entity.</typeparam>
+public interface IFullAuditedEntity<TKey, TCreator, TEditor> : IIdentityEntity<TKey>, IUserAudited<TCreator, TEditor>, ITimeAudited
+	where TKey : IEquatable<TKey>
+	where TCreator : notnull
 { }
 
 /// <inheritdoc cref="IFullAuditedEntity{TKey, TCreator, TEdited}"/>
 /// <remarks>
-/// The user auditing columns are of type <see cref="string"/>.
+/// The creator and editor columns are of type <see cref="string"/>.
 /// </remarks>
-public interface IFullAuditedEntity<TKey> : IFullAuditedEntity<TKey, string, string?>, IUserAudited where TKey : IEquatable<TKey>
+public interface IFullAuditedEntity<TKey> : IFullAuditedEntity<TKey, string, string?>, IUserAudited
+	where TKey : IEquatable<TKey>
 { }
 
 /// <inheritdoc cref="IFullAuditedEntity{TKey, TCreator, TEdited}"/>
@@ -28,12 +32,13 @@ public interface IFullAuditedEntity<TKey> : IFullAuditedEntity<TKey, string, str
 /// The identity column is of type <see cref="Guid"/>.
 /// </remarks>
 public interface IFullAuditedEntity<TCreator, TEdited> : IFullAuditedEntity<Guid, TCreator, TEdited>, IIdentityEntity
+	where TCreator : notnull
 { }
 
 /// <inheritdoc cref="IFullAuditedEntity{TKey, TCreator, TEdited}"/>
 /// <remarks>
-/// The identity column is of type <see cref="Guid"/>.
-/// The user auditing columns are of type <see cref="string"/>.
+/// The identity column is of type <see cref="Guid"/> and the creator and editor columns are
+/// of type <see cref="string"/>.
 /// </remarks>
 public interface IFullAuditedEntity : IFullAuditedEntity<Guid, string, string?>, IIdentityEntity, IUserAudited
 { }

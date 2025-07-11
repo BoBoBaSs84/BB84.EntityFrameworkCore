@@ -6,7 +6,7 @@
 namespace BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 
 /// <summary>
-/// Represents an entity with a unique identifier.
+/// Defines an entity contract with a unique identifier of a specified type.
 /// </summary>
 /// <typeparam name="TKey">The type of the unique identifier.</typeparam>
 public interface IIdentity<TKey> where TKey : IEquatable<TKey>
@@ -17,9 +17,6 @@ public interface IIdentity<TKey> where TKey : IEquatable<TKey>
 	TKey Id { get; set; }
 }
 
-/// <summary>
-/// Gets or sets the unique identifier for the entity.
-/// The identifier is of type <see cref="Guid"/>.
-/// </summary>
+/// <inheritdoc cref="IIdentityEntity{TKey}"/>
 public interface IIdentity : IIdentity<Guid>
 { }

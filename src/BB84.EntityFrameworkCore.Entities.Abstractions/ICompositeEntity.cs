@@ -8,7 +8,12 @@ using BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 namespace BB84.EntityFrameworkCore.Entities.Abstractions;
 
 /// <summary>
-/// The interface for the composite models.
+/// Represents an entity contract that is composed of multiple related components or sub-entities.
 /// </summary>
+/// <remarks>
+/// This interface is typically implemented by entities that aggregate other entities or components
+/// into a single cohesive unit. It extends the <see cref="IConcurrency"/> interface, indicating that
+/// implementations may also support concurrency-related operations.
+/// </remarks>
 public interface ICompositeEntity : IConcurrency
 { }

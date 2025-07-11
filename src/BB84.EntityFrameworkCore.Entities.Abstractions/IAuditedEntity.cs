@@ -8,31 +8,37 @@ using BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 namespace BB84.EntityFrameworkCore.Entities.Abstractions;
 
 /// <summary>
-/// The interface for the audited models.
+/// Represents an entity contract that is audited with information about its creation
+/// and last modification.
 /// </summary>
-/// <inheritdoc cref="IIdentity{TKey}"/>
-/// <inheritdoc cref="IUserAudited{TCreator, TEdited}"/>
-public interface IAuditedEntity<TKey, TCreator, TEdited> : IIdentityEntity<TKey>, IUserAudited<TCreator, TEdited> where TKey : IEquatable<TKey>
+/// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
+/// <typeparam name="TCreator">The type representing the user or entity that created this entity.</typeparam>
+/// <typeparam name="TEdited">The type representing the user or entity that last modified this entity.</typeparam>
+public interface IAuditedEntity<TKey, TCreator, TEdited> : IIdentityEntity<TKey>, IUserAudited<TCreator, TEdited>
+	where TKey : IEquatable<TKey>
+	where TCreator : notnull
 { }
 
 /// <inheritdoc cref="IAuditedEntity{TKey, TCreator, TEdited}"/>
 /// <remarks>
-/// The user auditing columns are of type <see cref="string"/>.
+/// The creator and editor types default to <see cref="string"/>.
 /// </remarks>
-public interface IAuditedEntity<TKey> : IAuditedEntity<TKey, string, string?>, IUserAudited where TKey : IEquatable<TKey>
+public interface IAuditedEntity<TKey> : IAuditedEntity<TKey, string, string?>, IUserAudited
+	where TKey : IEquatable<TKey>
 { }
 
 /// <inheritdoc cref="IAuditedEntity{TKey, TCreator, TEdited}"/>
 /// <remarks>
-/// The identity column is of type <see cref="Guid"/>.
+/// The unique identifier type defaults to <see cref="Guid"/>.
 /// </remarks>
 public interface IAuditedEntity<TCreator, TEdited> : IAuditedEntity<Guid, TCreator, TEdited>, IIdentityEntity
+	where TCreator : notnull
 { }
 
 /// <inheritdoc cref="IAuditedEntity{TKey, TCreator, TEdited}"/>
 /// <remarks>
-/// The identity column is of type <see cref="Guid"/>.
-/// The user auditing columns are of type <see cref="string"/>.
+/// The unique identifier type defaults to <see cref="Guid"/> and the creator and editor
+/// types default to <see cref="string"/>.
 /// </remarks>
 public interface IAuditedEntity : IAuditedEntity<Guid, string, string?>, IIdentityEntity, IUserAudited
 { }
