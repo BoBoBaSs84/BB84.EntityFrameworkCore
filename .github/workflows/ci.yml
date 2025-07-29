@@ -22,7 +22,7 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Setup MSSQL
-      uses: potatoqualitee/mssqlsuite@v1.8
+      uses: potatoqualitee/mssqlsuite@v1.10
       with:
         install: localdb
 
