@@ -17,12 +17,12 @@ public interface IUserAudited<TCreator, TEditor>
 	/// <summary>
 	/// Gets or sets the creator of the entity.
 	/// </summary>
-	TCreator Creator { get; set; }
+	TCreator CreatedBy { get; set; }
 
 	/// <summary>
 	/// Gets or sets the last editor of the entity.
 	/// </summary>
-	TEditor Editor { get; set; }
+	TEditor EditedBy { get; set; }
 }
 
 /// <inheritdoc cref="IUserAudited{TCreator, TEditor}"/>

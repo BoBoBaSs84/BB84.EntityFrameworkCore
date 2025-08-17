@@ -20,10 +20,10 @@ public abstract class AuditedEntity<TKey, TCreator, TEdited> : IdentityEntity<TK
 	where TCreator : notnull
 {
 	/// <inheritdoc/>
-	public TCreator Creator { get; set; } = default!;
+	public TCreator CreatedBy { get; set; } = default!;
 
 	/// <inheritdoc/>
-	public TEdited Editor { get; set; } = default!;
+	public TEdited EditedBy { get; set; } = default!;
 }
 
 /// <inheritdoc cref="AuditedEntity{TKey, TCreator, TEdited}"/>

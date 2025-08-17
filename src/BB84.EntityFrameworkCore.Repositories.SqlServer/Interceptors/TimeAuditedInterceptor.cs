@@ -16,8 +16,8 @@ namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors;
 /// implementing the <see cref="ITimeAudited"/> interface.
 /// </summary>
 /// <remarks>
-/// This interceptor updates the <see cref="ITimeAudited.Created"/> property to the current
-/// UTC time when an entity is added and the <see cref="ITimeAudited.Edited"/> property to
+/// This interceptor updates the <see cref="ITimeAudited.CreatedAt"/> property to the current
+/// UTC time when an entity is added and the <see cref="ITimeAudited.EditedAt"/> property to
 /// the current UTC time when an entity is modified.
 /// </remarks>
 /// <inheritdoc cref="SaveChangesInterceptor"/>
@@ -55,10 +55,10 @@ public sealed class TimeAuditedInterceptor : SaveChangesInterceptor
 				switch (entityEntry.State)
 				{
 					case EntityState.Added:
-						entityEntry.Entity.Created = DateTime.UtcNow;
+						entityEntry.Entity.CreatedAt = DateTime.UtcNow;
 						continue;
 					case EntityState.Modified:
-						entityEntry.Entity.Edited = DateTime.UtcNow;
+						entityEntry.Entity.EditedAt = DateTime.UtcNow;
 						continue;
 					case EntityState.Detached:
 					case EntityState.Unchanged:

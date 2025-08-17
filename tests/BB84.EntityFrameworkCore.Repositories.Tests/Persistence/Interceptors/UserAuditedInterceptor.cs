@@ -37,10 +37,10 @@ public sealed class UserAuditedInterceptor : SaveChangesInterceptor
 				switch (entry.State)
 				{
 					case EntityState.Added:
-						entry.Entity.Creator = userName;
+						entry.Entity.CreatedBy = userName;
 						continue;
 					case EntityState.Modified:
-						entry.Entity.Editor = userName;
+						entry.Entity.EditedBy = userName;
 						continue;
 				}
 			}

@@ -41,11 +41,11 @@ public abstract class AuditedCompositeConfiguration<TEntity, TCreator, TEdited> 
 			.IsConcurrencyToken()
 			.ValueGeneratedOnAddOrUpdate();
 
-		builder.Property(e => e.Creator)
+		builder.Property(e => e.CreatedBy)
 			.HasColumnOrder(4)
 			.IsRequired();
 
-		builder.Property(e => e.Editor)
+		builder.Property(e => e.EditedBy)
 			.HasColumnOrder(5)
 			.IsRequired(false);
 	}
@@ -61,10 +61,10 @@ public abstract class AuditedCompositeConfiguration<TEntity> : AuditedCompositeC
 	{
 		base.Configure(builder);
 
-		builder.Property(e => e.Creator)
+		builder.Property(e => e.CreatedBy)
 			.IsSysNameColumn();
 
-		builder.Property(e => e.Editor)
+		builder.Property(e => e.EditedBy)
 			.IsSysNameColumn();
 	}
 }

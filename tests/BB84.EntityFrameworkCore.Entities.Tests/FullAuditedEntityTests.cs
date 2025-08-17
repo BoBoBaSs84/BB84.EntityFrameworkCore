@@ -18,18 +18,18 @@ public sealed class FullAuditedEntityTests
 		entity = new TestClass()
 		{
 			Id = Guid.NewGuid(),
-			Creator = "UnitTest",
-			Created = DateTime.UtcNow,
-			Editor = "UnitTest",
-			Edited = DateTime.UtcNow
+			CreatedBy = "UnitTest",
+			CreatedAt = DateTime.UtcNow,
+			EditedBy = "UnitTest",
+			EditedAt = DateTime.UtcNow
 		};
 
 		Assert.IsNotNull(entity);
 		Assert.AreNotEqual(Guid.Empty, entity.Id);
-		Assert.AreNotEqual("Test", entity.Creator);
-		Assert.AreNotEqual(DateTime.UtcNow, entity.Created);
-		Assert.AreNotEqual("Test", entity.Editor);
-		Assert.AreNotEqual(DateTime.UtcNow, entity.Edited);
+		Assert.AreNotEqual("Test", entity.CreatedBy);
+		Assert.AreNotEqual(DateTime.UtcNow, entity.CreatedAt);
+		Assert.AreNotEqual("Test", entity.EditedBy);
+		Assert.AreNotEqual(DateTime.UtcNow, entity.EditedAt);
 	}
 
 	private sealed class TestClass : FullAuditedEntity
