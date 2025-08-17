@@ -127,32 +127,32 @@ references:
   commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited
   fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited
   nameWithType: ITimeAudited
-- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Created
-  name: Created
-  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_Created
-  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Created
-  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Created
-  nameWithType: ITimeAudited.Created
-- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Created*
-  name: Created
-  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_Created_
-  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Created
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.CreatedAt
+  name: CreatedAt
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_CreatedAt
+  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.CreatedAt
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.CreatedAt
+  nameWithType: ITimeAudited.CreatedAt
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.CreatedAt*
+  name: CreatedAt
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_CreatedAt_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.CreatedAt
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Created
-  nameWithType: ITimeAudited.Created
-- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Edited
-  name: Edited
-  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_Edited
-  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Edited
-  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Edited
-  nameWithType: ITimeAudited.Edited
-- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Edited*
-  name: Edited
-  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_Edited_
-  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Edited
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.CreatedAt
+  nameWithType: ITimeAudited.CreatedAt
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.EditedAt
+  name: EditedAt
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_EditedAt
+  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.EditedAt
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.EditedAt
+  nameWithType: ITimeAudited.EditedAt
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.EditedAt*
+  name: EditedAt
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_EditedAt_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.EditedAt
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Edited
-  nameWithType: ITimeAudited.Edited
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.EditedAt
+  nameWithType: ITimeAudited.EditedAt
 - uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited
   name: IUserAudited
   href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited.html
@@ -168,40 +168,40 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited(Of TCreator, TEditor)
   nameWithType: IUserAudited<TCreator, TEditor>
   nameWithType.vb: IUserAudited(Of TCreator, TEditor)
-- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Creator
-  name: Creator
-  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Creator
-  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Creator
-  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited<TCreator, TEditor>.Creator
-  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited(Of TCreator, TEditor).Creator
-  nameWithType: IUserAudited<TCreator, TEditor>.Creator
-  nameWithType.vb: IUserAudited(Of TCreator, TEditor).Creator
-- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Creator*
-  name: Creator
-  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Creator_
-  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Creator
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.CreatedBy
+  name: CreatedBy
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_CreatedBy
+  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.CreatedBy
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited<TCreator, TEditor>.CreatedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited(Of TCreator, TEditor).CreatedBy
+  nameWithType: IUserAudited<TCreator, TEditor>.CreatedBy
+  nameWithType.vb: IUserAudited(Of TCreator, TEditor).CreatedBy
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.CreatedBy*
+  name: CreatedBy
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_CreatedBy_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.CreatedBy
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited<TCreator, TEditor>.Creator
-  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited(Of TCreator, TEditor).Creator
-  nameWithType: IUserAudited<TCreator, TEditor>.Creator
-  nameWithType.vb: IUserAudited(Of TCreator, TEditor).Creator
-- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Editor
-  name: Editor
-  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Editor
-  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Editor
-  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited<TCreator, TEditor>.Editor
-  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited(Of TCreator, TEditor).Editor
-  nameWithType: IUserAudited<TCreator, TEditor>.Editor
-  nameWithType.vb: IUserAudited(Of TCreator, TEditor).Editor
-- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Editor*
-  name: Editor
-  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Editor_
-  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Editor
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited<TCreator, TEditor>.CreatedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited(Of TCreator, TEditor).CreatedBy
+  nameWithType: IUserAudited<TCreator, TEditor>.CreatedBy
+  nameWithType.vb: IUserAudited(Of TCreator, TEditor).CreatedBy
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.EditedBy
+  name: EditedBy
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_EditedBy
+  commentId: P:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.EditedBy
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited<TCreator, TEditor>.EditedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited(Of TCreator, TEditor).EditedBy
+  nameWithType: IUserAudited<TCreator, TEditor>.EditedBy
+  nameWithType.vb: IUserAudited(Of TCreator, TEditor).EditedBy
+- uid: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.EditedBy*
+  name: EditedBy
+  href: api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_EditedBy_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.EditedBy
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited<TCreator, TEditor>.Editor
-  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited(Of TCreator, TEditor).Editor
-  nameWithType: IUserAudited<TCreator, TEditor>.Editor
-  nameWithType.vb: IUserAudited(Of TCreator, TEditor).Editor
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited<TCreator, TEditor>.EditedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited(Of TCreator, TEditor).EditedBy
+  nameWithType: IUserAudited<TCreator, TEditor>.EditedBy
+  nameWithType.vb: IUserAudited(Of TCreator, TEditor).EditedBy
 - uid: BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity
   name: IAuditedCompositeEntity
   href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity.html
@@ -296,14 +296,14 @@ references:
   nameWithType: IFullAuditedEntity<TCreator, TEdited>
   nameWithType.vb: IFullAuditedEntity(Of TCreator, TEdited)
 - uid: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity`3
-  name: IFullAuditedEntity<TKey, TCreator, TEdited>
+  name: IFullAuditedEntity<TKey, TCreator, TEditor>
   href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-3.html
   commentId: T:BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity`3
-  name.vb: IFullAuditedEntity(Of TKey, TCreator, TEdited)
-  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity<TKey, TCreator, TEdited>
-  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity(Of TKey, TCreator, TEdited)
-  nameWithType: IFullAuditedEntity<TKey, TCreator, TEdited>
-  nameWithType.vb: IFullAuditedEntity(Of TKey, TCreator, TEdited)
+  name.vb: IFullAuditedEntity(Of TKey, TCreator, TEditor)
+  fullName: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity<TKey, TCreator, TEditor>
+  fullName.vb: BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity(Of TKey, TCreator, TEditor)
+  nameWithType: IFullAuditedEntity<TKey, TCreator, TEditor>
+  nameWithType.vb: IFullAuditedEntity(Of TKey, TCreator, TEditor)
 - uid: BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity
   name: IIdentityEntity
   href: api/BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity.html
@@ -334,40 +334,40 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited)
   nameWithType: AuditedCompositeEntity<TCreator, TEdited>
   nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited)
-- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Creator
-  name: Creator
-  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Creator
-  commentId: P:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Creator
-  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>.Creator
-  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited).Creator
-  nameWithType: AuditedCompositeEntity<TCreator, TEdited>.Creator
-  nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited).Creator
-- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Creator*
-  name: Creator
-  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Creator_
-  commentId: Overload:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Creator
+- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.CreatedBy
+  name: CreatedBy
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_CreatedBy
+  commentId: P:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.CreatedBy
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>.CreatedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited).CreatedBy
+  nameWithType: AuditedCompositeEntity<TCreator, TEdited>.CreatedBy
+  nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited).CreatedBy
+- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.CreatedBy*
+  name: CreatedBy
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_CreatedBy_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.CreatedBy
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>.Creator
-  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited).Creator
-  nameWithType: AuditedCompositeEntity<TCreator, TEdited>.Creator
-  nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited).Creator
-- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Editor
-  name: Editor
-  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Editor
-  commentId: P:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Editor
-  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>.Editor
-  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited).Editor
-  nameWithType: AuditedCompositeEntity<TCreator, TEdited>.Editor
-  nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited).Editor
-- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Editor*
-  name: Editor
-  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Editor_
-  commentId: Overload:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Editor
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>.CreatedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited).CreatedBy
+  nameWithType: AuditedCompositeEntity<TCreator, TEdited>.CreatedBy
+  nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited).CreatedBy
+- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.EditedBy
+  name: EditedBy
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_EditedBy
+  commentId: P:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.EditedBy
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>.EditedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited).EditedBy
+  nameWithType: AuditedCompositeEntity<TCreator, TEdited>.EditedBy
+  nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited).EditedBy
+- uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.EditedBy*
+  name: EditedBy
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_EditedBy_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.EditedBy
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>.Editor
-  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited).Editor
-  nameWithType: AuditedCompositeEntity<TCreator, TEdited>.Editor
-  nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited).Editor
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>.EditedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity(Of TCreator, TEdited).EditedBy
+  nameWithType: AuditedCompositeEntity<TCreator, TEdited>.EditedBy
+  nameWithType.vb: AuditedCompositeEntity(Of TCreator, TEdited).EditedBy
 - uid: BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Timestamp
   name: Timestamp
   href: api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Timestamp
@@ -418,40 +418,40 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TKey, TCreator, TEdited)
   nameWithType: AuditedEntity<TKey, TCreator, TEdited>
   nameWithType.vb: AuditedEntity(Of TKey, TCreator, TEdited)
-- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Creator
-  name: Creator
-  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_Creator
-  commentId: P:BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Creator
-  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey, TCreator, TEdited>.Creator
-  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TKey, TCreator, TEdited).Creator
-  nameWithType: AuditedEntity<TKey, TCreator, TEdited>.Creator
-  nameWithType.vb: AuditedEntity(Of TKey, TCreator, TEdited).Creator
-- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Creator*
-  name: Creator
-  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_Creator_
-  commentId: Overload:BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Creator
+- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity`3.CreatedBy
+  name: CreatedBy
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_CreatedBy
+  commentId: P:BB84.EntityFrameworkCore.Entities.AuditedEntity`3.CreatedBy
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey, TCreator, TEdited>.CreatedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TKey, TCreator, TEdited).CreatedBy
+  nameWithType: AuditedEntity<TKey, TCreator, TEdited>.CreatedBy
+  nameWithType.vb: AuditedEntity(Of TKey, TCreator, TEdited).CreatedBy
+- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity`3.CreatedBy*
+  name: CreatedBy
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_CreatedBy_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.AuditedEntity`3.CreatedBy
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey, TCreator, TEdited>.Creator
-  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TKey, TCreator, TEdited).Creator
-  nameWithType: AuditedEntity<TKey, TCreator, TEdited>.Creator
-  nameWithType.vb: AuditedEntity(Of TKey, TCreator, TEdited).Creator
-- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Editor
-  name: Editor
-  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_Editor
-  commentId: P:BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Editor
-  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey, TCreator, TEdited>.Editor
-  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TKey, TCreator, TEdited).Editor
-  nameWithType: AuditedEntity<TKey, TCreator, TEdited>.Editor
-  nameWithType.vb: AuditedEntity(Of TKey, TCreator, TEdited).Editor
-- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Editor*
-  name: Editor
-  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_Editor_
-  commentId: Overload:BB84.EntityFrameworkCore.Entities.AuditedEntity`3.Editor
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey, TCreator, TEdited>.CreatedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TKey, TCreator, TEdited).CreatedBy
+  nameWithType: AuditedEntity<TKey, TCreator, TEdited>.CreatedBy
+  nameWithType.vb: AuditedEntity(Of TKey, TCreator, TEdited).CreatedBy
+- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity`3.EditedBy
+  name: EditedBy
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_EditedBy
+  commentId: P:BB84.EntityFrameworkCore.Entities.AuditedEntity`3.EditedBy
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey, TCreator, TEdited>.EditedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TKey, TCreator, TEdited).EditedBy
+  nameWithType: AuditedEntity<TKey, TCreator, TEdited>.EditedBy
+  nameWithType.vb: AuditedEntity(Of TKey, TCreator, TEdited).EditedBy
+- uid: BB84.EntityFrameworkCore.Entities.AuditedEntity`3.EditedBy*
+  name: EditedBy
+  href: api/BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_EditedBy_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.AuditedEntity`3.EditedBy
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey, TCreator, TEdited>.Editor
-  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TKey, TCreator, TEdited).Editor
-  nameWithType: AuditedEntity<TKey, TCreator, TEdited>.Editor
-  nameWithType.vb: AuditedEntity(Of TKey, TCreator, TEdited).Editor
+  fullName: BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey, TCreator, TEdited>.EditedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.AuditedEntity(Of TKey, TCreator, TEdited).EditedBy
+  nameWithType: AuditedEntity<TKey, TCreator, TEdited>.EditedBy
+  nameWithType.vb: AuditedEntity(Of TKey, TCreator, TEdited).EditedBy
 - uid: BB84.EntityFrameworkCore.Entities.CompositeEntity
   name: CompositeEntity
   href: api/BB84.EntityFrameworkCore.Entities.CompositeEntity.html
@@ -604,74 +604,74 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited)
   nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>
   nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited)
-- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Created
-  name: Created
-  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Created
-  commentId: P:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Created
-  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Created
-  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Created
-  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Created
-  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Created
-- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Created*
-  name: Created
-  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Created_
-  commentId: Overload:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Created
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.CreatedAt
+  name: CreatedAt
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_CreatedAt
+  commentId: P:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.CreatedAt
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.CreatedAt
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).CreatedAt
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.CreatedAt
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).CreatedAt
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.CreatedAt*
+  name: CreatedAt
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_CreatedAt_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.CreatedAt
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Created
-  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Created
-  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Created
-  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Created
-- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Creator
-  name: Creator
-  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Creator
-  commentId: P:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Creator
-  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Creator
-  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Creator
-  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Creator
-  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Creator
-- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Creator*
-  name: Creator
-  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Creator_
-  commentId: Overload:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Creator
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.CreatedAt
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).CreatedAt
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.CreatedAt
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).CreatedAt
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.CreatedBy
+  name: CreatedBy
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_CreatedBy
+  commentId: P:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.CreatedBy
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.CreatedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).CreatedBy
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.CreatedBy
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).CreatedBy
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.CreatedBy*
+  name: CreatedBy
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_CreatedBy_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.CreatedBy
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Creator
-  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Creator
-  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Creator
-  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Creator
-- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Edited
-  name: Edited
-  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Edited
-  commentId: P:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Edited
-  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Edited
-  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Edited
-  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Edited
-  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Edited
-- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Edited*
-  name: Edited
-  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Edited_
-  commentId: Overload:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Edited
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.CreatedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).CreatedBy
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.CreatedBy
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).CreatedBy
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.EditedAt
+  name: EditedAt
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_EditedAt
+  commentId: P:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.EditedAt
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.EditedAt
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).EditedAt
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.EditedAt
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).EditedAt
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.EditedAt*
+  name: EditedAt
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_EditedAt_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.EditedAt
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Edited
-  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Edited
-  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Edited
-  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Edited
-- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Editor
-  name: Editor
-  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Editor
-  commentId: P:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Editor
-  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Editor
-  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Editor
-  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Editor
-  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Editor
-- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Editor*
-  name: Editor
-  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Editor_
-  commentId: Overload:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Editor
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.EditedAt
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).EditedAt
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.EditedAt
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).EditedAt
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.EditedBy
+  name: EditedBy
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_EditedBy
+  commentId: P:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.EditedBy
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.EditedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).EditedBy
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.EditedBy
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).EditedBy
+- uid: BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.EditedBy*
+  name: EditedBy
+  href: api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_EditedBy_
+  commentId: Overload:BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.EditedBy
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.Editor
-  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).Editor
-  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.Editor
-  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).Editor
+  fullName: BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>.EditedBy
+  fullName.vb: BB84.EntityFrameworkCore.Entities.FullAuditedEntity(Of TKey, TCreator, TEdited).EditedBy
+  nameWithType: FullAuditedEntity<TKey, TCreator, TEdited>.EditedBy
+  nameWithType.vb: FullAuditedEntity(Of TKey, TCreator, TEdited).EditedBy
 - uid: BB84.EntityFrameworkCore.Entities.IdentityEntity
   name: IdentityEntity
   href: api/BB84.EntityFrameworkCore.Entities.IdentityEntity.html
@@ -2582,87 +2582,87 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration(Of TEntity, TKey).Configure
   nameWithType: EnumeratorConfiguration<TEntity, TKey>.Configure
   nameWithType.vb: EnumeratorConfiguration(Of TEntity, TKey).Configure
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`1
-  name: FullAuditeConfiguration<TEntity>
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-1.html
-  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`1
-  name.vb: FullAuditeConfiguration(Of TEntity)
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity>
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity)
-  nameWithType: FullAuditeConfiguration<TEntity>
-  nameWithType.vb: FullAuditeConfiguration(Of TEntity)
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`1
+  name: FullAuditedConfiguration<TEntity>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-1.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`1
+  name.vb: FullAuditedConfiguration(Of TEntity)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration(Of TEntity)
+  nameWithType: FullAuditedConfiguration<TEntity>
+  nameWithType.vb: FullAuditedConfiguration(Of TEntity)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
   name: Configure(EntityTypeBuilder<TEntity>)
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_1_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
-  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_1_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
   name.vb: Configure(EntityTypeBuilder(Of TEntity))
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
-  nameWithType: FullAuditeConfiguration<TEntity>.Configure(EntityTypeBuilder<TEntity>)
-  nameWithType.vb: FullAuditeConfiguration(Of TEntity).Configure(EntityTypeBuilder(Of TEntity))
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`1.Configure*
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration(Of TEntity).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: FullAuditedConfiguration<TEntity>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: FullAuditedConfiguration(Of TEntity).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`1.Configure*
   name: Configure
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_1_Configure_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`1.Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-1.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_1_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`1.Configure
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity>.Configure
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity).Configure
-  nameWithType: FullAuditeConfiguration<TEntity>.Configure
-  nameWithType.vb: FullAuditeConfiguration(Of TEntity).Configure
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`2
-  name: FullAuditeConfiguration<TEntity, TKey>
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-2.html
-  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`2
-  name.vb: FullAuditeConfiguration(Of TEntity, TKey)
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity, TKey>
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity, TKey)
-  nameWithType: FullAuditeConfiguration<TEntity, TKey>
-  nameWithType.vb: FullAuditeConfiguration(Of TEntity, TKey)
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`2.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration(Of TEntity).Configure
+  nameWithType: FullAuditedConfiguration<TEntity>.Configure
+  nameWithType.vb: FullAuditedConfiguration(Of TEntity).Configure
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`2
+  name: FullAuditedConfiguration<TEntity, TKey>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-2.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`2
+  name.vb: FullAuditedConfiguration(Of TEntity, TKey)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity, TKey>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration(Of TEntity, TKey)
+  nameWithType: FullAuditedConfiguration<TEntity, TKey>
+  nameWithType.vb: FullAuditedConfiguration(Of TEntity, TKey)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`2.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
   name: Configure(EntityTypeBuilder<TEntity>)
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-2.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_2_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
-  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`2.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-2.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_2_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`2.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
   name.vb: Configure(EntityTypeBuilder(Of TEntity))
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity, TKey>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity, TKey).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
-  nameWithType: FullAuditeConfiguration<TEntity, TKey>.Configure(EntityTypeBuilder<TEntity>)
-  nameWithType.vb: FullAuditeConfiguration(Of TEntity, TKey).Configure(EntityTypeBuilder(Of TEntity))
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`2.Configure*
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity, TKey>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration(Of TEntity, TKey).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: FullAuditedConfiguration<TEntity, TKey>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: FullAuditedConfiguration(Of TEntity, TKey).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`2.Configure*
   name: Configure
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-2.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_2_Configure_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`2.Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-2.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_2_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`2.Configure
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity, TKey>.Configure
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity, TKey).Configure
-  nameWithType: FullAuditeConfiguration<TEntity, TKey>.Configure
-  nameWithType.vb: FullAuditeConfiguration(Of TEntity, TKey).Configure
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3
-  name: FullAuditeConfiguration<TEntity, TCreator, TEdited>
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-3.html
-  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3
-  name.vb: FullAuditeConfiguration(Of TEntity, TCreator, TEdited)
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity, TCreator, TEdited>
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity, TCreator, TEdited)
-  nameWithType: FullAuditeConfiguration<TEntity, TCreator, TEdited>
-  nameWithType.vb: FullAuditeConfiguration(Of TEntity, TCreator, TEdited)
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity, TKey>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration(Of TEntity, TKey).Configure
+  nameWithType: FullAuditedConfiguration<TEntity, TKey>.Configure
+  nameWithType.vb: FullAuditedConfiguration(Of TEntity, TKey).Configure
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`3
+  name: FullAuditedConfiguration<TEntity, TCreator, TEdited>
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-3.html
+  commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`3
+  name.vb: FullAuditedConfiguration(Of TEntity, TCreator, TEdited)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity, TCreator, TEdited>
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration(Of TEntity, TCreator, TEdited)
+  nameWithType: FullAuditedConfiguration<TEntity, TCreator, TEdited>
+  nameWithType.vb: FullAuditedConfiguration(Of TEntity, TCreator, TEdited)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
   name: Configure(EntityTypeBuilder<TEntity>)
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-3.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_3_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
-  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-3.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_3_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})
   name.vb: Configure(EntityTypeBuilder(Of TEntity))
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity, TCreator, TEdited>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity, TCreator, TEdited).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
-  nameWithType: FullAuditeConfiguration<TEntity, TCreator, TEdited>.Configure(EntityTypeBuilder<TEntity>)
-  nameWithType.vb: FullAuditeConfiguration(Of TEntity, TCreator, TEdited).Configure(EntityTypeBuilder(Of TEntity))
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3.Configure*
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity, TCreator, TEdited>.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration(Of TEntity, TCreator, TEdited).Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity))
+  nameWithType: FullAuditedConfiguration<TEntity, TCreator, TEdited>.Configure(EntityTypeBuilder<TEntity>)
+  nameWithType.vb: FullAuditedConfiguration(Of TEntity, TCreator, TEdited).Configure(EntityTypeBuilder(Of TEntity))
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`3.Configure*
   name: Configure
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-3.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_3_Configure_
-  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3.Configure
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-3.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_3_Configure_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`3.Configure
   isSpec: "True"
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity, TCreator, TEdited>.Configure
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration(Of TEntity, TCreator, TEdited).Configure
-  nameWithType: FullAuditeConfiguration<TEntity, TCreator, TEdited>.Configure
-  nameWithType.vb: FullAuditeConfiguration(Of TEntity, TCreator, TEdited).Configure
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity, TCreator, TEdited>.Configure
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration(Of TEntity, TCreator, TEdited).Configure
+  nameWithType: FullAuditedConfiguration<TEntity, TCreator, TEdited>.Configure
+  nameWithType.vb: FullAuditedConfiguration(Of TEntity, TCreator, TEdited).Configure
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`4
   name: FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-4.html

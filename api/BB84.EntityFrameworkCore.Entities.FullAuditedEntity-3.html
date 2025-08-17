@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class FullAuditedEntity&lt;TKey, TCreator, TEdited&gt; ">
       
-      <meta name="description" content="The base implementation for the full audited models.">
+      <meta name="description" content="This abstract class provides a base implementation for entities that provides properties to track the creator, creation time, editor, and last modification time of the entity.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3" class="text-break">
-Class FullAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L14"><i class="bi bi-code-slash"></i></a>
+Class FullAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,12 +93,13 @@ Class FullAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action 
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The base implementation for the full audited models.</p>
+  <div class="markdown summary"><p>This abstract class provides a base implementation for entities that provides properties
+to track the creator, creation time, editor, and last modification time of the entity.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class FullAuditedEntity&lt;TKey, TCreator, TEdited&gt; : IdentityEntity&lt;TKey&gt;, IFullAuditedEntity&lt;TKey, TCreator, TEdited&gt;, IIdentityEntity&lt;TKey&gt;, IIdentity&lt;TKey&gt;, IConcurrency, IUserAudited&lt;TCreator, TEdited&gt;, ITimeAudited where TKey : IEquatable&lt;TKey&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class FullAuditedEntity&lt;TKey, TCreator, TEdited&gt; : IdentityEntity&lt;TKey&gt;, IFullAuditedEntity&lt;TKey, TCreator, TEdited&gt;, IIdentityEntity&lt;TKey&gt;, IIdentity&lt;TKey&gt;, IConcurrency, IUserAudited&lt;TCreator, TEdited&gt;, ITimeAudited where TKey : IEquatable&lt;TKey&gt; where TCreator : notnull</code></pre>
   </div>
 
 
@@ -106,13 +107,14 @@ Class FullAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TKey</code></dt>
-    <dd><p>The type of the primary key.</p>
+    <dd><p>The type of the unique identifier for the entity.</p>
 </dd>
     <dt><code>TCreator</code></dt>
-    <dd><p>The type of the creator column.</p>
+    <dd><p>The type representing the creator of the entity.</p>
 </dd>
     <dt><code>TEdited</code></dt>
-    <dd></dd>
+    <dd><p>The type representing the editor of the entity.</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -186,19 +188,19 @@ Class FullAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action 
 </h2>
 
 
-  <a id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Created_" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Created*"></a>
+  <a id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_CreatedAt_" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.CreatedAt*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Created" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Created">
-  Created
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <h3 id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_CreatedAt" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.CreatedAt">
+  CreatedAt
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The initial creation time of the data row.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the date and time when the entity was created.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DateTime Created { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public DateTimeOffset CreatedAt { get; set; }</code></pre>
   </div>
 
 
@@ -207,7 +209,7 @@ Class FullAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action 
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
     <dd></dd>
   </dl>
 
@@ -218,19 +220,19 @@ Class FullAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action 
 
 
 
-  <a id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Creator_" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Creator*"></a>
+  <a id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_CreatedBy_" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.CreatedBy*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Creator" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Creator">
-  Creator
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <h3 id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_CreatedBy" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.CreatedBy">
+  CreatedBy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The initial creator of the data row.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the creator of the entity.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TCreator Creator { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public TCreator CreatedBy { get; set; }</code></pre>
   </div>
 
 
@@ -250,19 +252,19 @@ Class FullAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action 
 
 
 
-  <a id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Edited_" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Edited*"></a>
+  <a id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_EditedAt_" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.EditedAt*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Edited" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Edited">
-  Edited
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <h3 id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_EditedAt" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.EditedAt">
+  EditedAt
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The last editing time of the data row.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the date and time when the item was last edited.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DateTime? Edited { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public DateTimeOffset? EditedAt { get; set; }</code></pre>
   </div>
 
 
@@ -271,7 +273,7 @@ Class FullAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action 
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>?</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>?</dt>
     <dd></dd>
   </dl>
 
@@ -282,19 +284,19 @@ Class FullAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action 
 
 
 
-  <a id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Editor_" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Editor*"></a>
+  <a id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_EditedBy_" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.EditedBy*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Editor" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.Editor">
-  Editor
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <h3 id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_EditedBy" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`3.EditedBy">
+  EditedBy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The last editor of the data row.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the last editor of the entity.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TEdited Editor { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public TEdited EditedBy { get; set; }</code></pre>
   </div>
 
 
@@ -318,7 +320,7 @@ Class FullAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L17" class="edit-link">Edit this page</a>
         </div>
 
 

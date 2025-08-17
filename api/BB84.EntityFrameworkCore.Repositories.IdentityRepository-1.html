@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class IdentityRepository&lt;TEntity&gt; ">
       
-      <meta name="description" content="The repository base implementation for identity based entities.">
+      <meta name="description" content="Provides an abstract base class for managing identity-based entities in a data store.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_1" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`1" class="text-break">
-Class IdentityRepository&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L112"><i class="bi bi-code-slash"></i></a>
+Class IdentityRepository&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L118"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,7 +93,7 @@ Class IdentityRepository&lt;TEntity&gt;  <a class="header-action link-secondary"
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The repository base implementation for identity based entities.</p>
+  <div class="markdown summary"><p>Provides an abstract base class for managing identity-based entities in a data store.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -106,7 +106,7 @@ Class IdentityRepository&lt;TEntity&gt;  <a class="header-action link-secondary"
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd><p>The entity to work with.</p>
+    <dd><p>The type of the entity managed by the repository.</p>
 </dd>
   </dl>
 
@@ -280,7 +280,9 @@ Class IdentityRepository&lt;TEntity&gt;  <a class="header-action link-secondary"
 
 
   <h2 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_1_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>The identity column is of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>.</p>
+  <div class="markdown level0 remarks"><p>This interface extends <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html">GenericRepository&lt;TEntity&gt;</a> and provides additional
+methods for CRUD operations specifically tailored to entities with identity-based primary
+keys.</p>
 </div>
 
 
@@ -292,10 +294,10 @@ Class IdentityRepository&lt;TEntity&gt;  <a class="header-action link-secondary"
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_1__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_" data-uid="BB84.EntityFrameworkCore.Repositories.IdentityRepository`1.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)">
   IdentityRepository(IDbContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L118"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The repository base implementation for identity based entities.</p>
+  <div class="markdown level1 summary"><p>Provides an abstract base class for managing identity-based entities in a data store.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -306,7 +308,8 @@ Class IdentityRepository&lt;TEntity&gt;  <a class="header-action link-secondary"
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>dbContext</code> <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.html">IDbContext</a></dt>
-    <dd></dd>
+    <dd><p>The database context to work with.</p>
+</dd>
   </dl>
 
 
@@ -317,7 +320,9 @@ Class IdentityRepository&lt;TEntity&gt;  <a class="header-action link-secondary"
 
 
   <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_IdentityRepository_1__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext__remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p>The identity column is of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>.</p>
+  <div class="markdown level1 remarks"><p>This interface extends <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html">GenericRepository&lt;TEntity&gt;</a> and provides additional
+methods for CRUD operations specifically tailored to entities with identity-based primary
+keys.</p>
 </div>
 
 
@@ -327,7 +332,7 @@ Class IdentityRepository&lt;TEntity&gt;  <a class="header-action link-secondary"
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L112" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/IdentityRepository.cs/#L118" class="edit-link">Edit this page</a>
         </div>
 
 

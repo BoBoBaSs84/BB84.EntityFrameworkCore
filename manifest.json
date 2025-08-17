@@ -14,7 +14,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.yml\" sourcestartlinenumber=\"1\">The interface for concurrency based components.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.yml\" sourcestartlinenumber=\"1\">Defines a contract for entities that support concurrency control through a timestamp.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -28,7 +28,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.yml\" sourcestartlinenumber=\"1\">The interface for enumerator based components.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IEnumerator.yml\" sourcestartlinenumber=\"1\">Defines a contract for entities that support enumerator functionality.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -42,7 +42,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity<TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity-1.yml\" sourcestartlinenumber=\"1\">The interface for identity based components.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity-1.yml\" sourcestartlinenumber=\"1\">Defines an entity contract with a unique identifier of a specified type.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -56,7 +56,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity.yml\" sourcestartlinenumber=\"1\">The interface for identity based components.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity.yml\" sourcestartlinenumber=\"1\">Represents an entity contract with a unique identifier and concurrency control.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -70,7 +70,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable.yml\" sourcestartlinenumber=\"1\">The interface for soft deleteable components.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable.yml\" sourcestartlinenumber=\"1\">Defines a contract for entities that support soft deletion functionality.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -84,7 +84,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.yml\" sourcestartlinenumber=\"1\">The interface for time audited components.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.yml\" sourcestartlinenumber=\"1\">Defines a contract for entities that track creation and modification timestamps.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -98,7 +98,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited<TCreator, TEditor>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.yml\" sourcestartlinenumber=\"1\">The interface for user audited components.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.yml\" sourcestartlinenumber=\"1\">Defines a contract for entities that track auditing information, including\nthe creator and last editor of the entity.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -112,7 +112,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited.yml\" sourcestartlinenumber=\"1\">The interface for user audited components.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited.yml\" sourcestartlinenumber=\"1\">Defines a contract for entities that track auditing information, including\nthe creator and last editor of the entity.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -140,7 +140,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity<TCreator, TEditor>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity-2.yml\" sourcestartlinenumber=\"1\">The interface for the audited composite models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity-2.yml\" sourcestartlinenumber=\"1\">Represents an entity contract that supports auditing for creation and modification,\nwith additional concurrency control mechanisms.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -154,7 +154,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity.yml\" sourcestartlinenumber=\"1\">The interface for the audited composite models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity.yml\" sourcestartlinenumber=\"1\">Represents an entity contract that supports auditing for creation and modification,\nwith additional concurrency control mechanisms.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -168,7 +168,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity<TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-1.yml\" sourcestartlinenumber=\"1\">The interface for the audited models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-1.yml\" sourcestartlinenumber=\"1\">Represents an entity contract that is audited with information about its creation\nand last modification.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -182,7 +182,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity<TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-2.yml\" sourcestartlinenumber=\"1\">The interface for the audited models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-2.yml\" sourcestartlinenumber=\"1\">Represents an entity contract that is audited with information about its creation\nand last modification.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -196,7 +196,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity<TKey, TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-3.yml\" sourcestartlinenumber=\"1\">The interface for the audited models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-3.yml\" sourcestartlinenumber=\"1\">Represents an entity contract that is audited with information about its creation\nand last modification.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -210,7 +210,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity.yml\" sourcestartlinenumber=\"1\">The interface for the audited models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity.yml\" sourcestartlinenumber=\"1\">Represents an entity contract that is audited with information about its creation\nand last modification.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -224,7 +224,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.ICompositeEntity",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.ICompositeEntity.yml\" sourcestartlinenumber=\"1\">The interface for the composite models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.ICompositeEntity.yml\" sourcestartlinenumber=\"1\">Represents an entity contract that is composed of multiple related components or sub-entities.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -238,7 +238,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity<TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity-1.yml\" sourcestartlinenumber=\"1\">The interface for the enumerator models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity-1.yml\" sourcestartlinenumber=\"1\">Represents an entity contract that provides properties for the name and description,\nwith a unique identifier of type <code class=\"typeparamref\">TKey</code> and the support for\nsoft deletion functionality.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -252,7 +252,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity.yml\" sourcestartlinenumber=\"1\">The interface for the enumerator models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity.yml\" sourcestartlinenumber=\"1\">Represents an entity contract that provides properties for the name and description,\nwith a unique identifier of type <code class=\"typeparamref\">TKey</code> and the support for\nsoft deletion functionality.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -266,7 +266,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity<TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-1.yml\" sourcestartlinenumber=\"1\">The interface for full audited entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-1.yml\" sourcestartlinenumber=\"1\">Defines an entity contract that is fully audited, including information about its\ncreator, creation, last editor, last modification date and unique identity.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -280,7 +280,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity<TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-2.yml\" sourcestartlinenumber=\"1\">The interface for full audited entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-2.yml\" sourcestartlinenumber=\"1\">Defines an entity contract that is fully audited, including information about its\ncreator, creation, last editor, last modification date and unique identity.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -293,8 +293,8 @@
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity<TKey, TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-3.yml\" sourcestartlinenumber=\"1\">The interface for full audited entities.</p>\n"
+      "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity<TKey, TCreator, TEditor>",
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-3.yml\" sourcestartlinenumber=\"1\">Defines an entity contract that is fully audited, including information about its\ncreator, creation, last editor, last modification date and unique identity.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -308,7 +308,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity.yml\" sourcestartlinenumber=\"1\">The interface for full audited entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity.yml\" sourcestartlinenumber=\"1\">Defines an entity contract that is fully audited, including information about its\ncreator, creation, last editor, last modification date and unique identity.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -322,7 +322,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity<TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity-1.yml\" sourcestartlinenumber=\"1\">The interface for the identity models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity-1.yml\" sourcestartlinenumber=\"1\">Represents an entity contract with a unique identifier and concurrency control.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -336,7 +336,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity.yml\" sourcestartlinenumber=\"1\">The interface for the identity models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity.yml\" sourcestartlinenumber=\"1\">Represents an entity contract with a unique identifier and concurrency control.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -364,7 +364,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity<TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.yml\" sourcestartlinenumber=\"1\">The base implementation for the audited composite models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.yml\" sourcestartlinenumber=\"1\">This abstract class provides a base implementation for entities that are composed\nof multiple related components and require auditing information, including the creator,\neditor, and a concurrency timestamp.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -378,7 +378,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity.yml\" sourcestartlinenumber=\"1\">The base implementation for the audited composite models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity.yml\" sourcestartlinenumber=\"1\">This abstract class provides a base implementation for entities that are composed\nof multiple related components and require auditing information, including the creator,\neditor, and a concurrency timestamp.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -392,7 +392,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.AuditedEntity-1.yml\" sourcestartlinenumber=\"1\">The base implementation for the audited models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.AuditedEntity-1.yml\" sourcestartlinenumber=\"1\">This abstract class provides a base implementation for entities that track auditing information,\nincluding the creator and the last editor, a unique identifier and a timestamp for concurrency\ncontrol.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -406,7 +406,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.AuditedEntity<TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.AuditedEntity-2.yml\" sourcestartlinenumber=\"1\">The base implementation for the audited models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.AuditedEntity-2.yml\" sourcestartlinenumber=\"1\">This abstract class provides a base implementation for entities that track auditing information,\nincluding the creator and the last editor, a unique identifier and a timestamp for concurrency\ncontrol.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -420,7 +420,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.AuditedEntity<TKey, TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.AuditedEntity-3.yml\" sourcestartlinenumber=\"1\">The base implementation for the audited models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.AuditedEntity-3.yml\" sourcestartlinenumber=\"1\">This abstract class provides a base implementation for entities that track auditing information,\nincluding the creator and the last editor, a unique identifier and a timestamp for concurrency\ncontrol.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -434,7 +434,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.AuditedEntity",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.AuditedEntity.yml\" sourcestartlinenumber=\"1\">The base implementation for the audited models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.AuditedEntity.yml\" sourcestartlinenumber=\"1\">This abstract class provides a base implementation for entities that track auditing information,\nincluding the creator and the last editor, a unique identifier and a timestamp for concurrency\ncontrol.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -448,7 +448,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.CompositeEntity",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.CompositeEntity.yml\" sourcestartlinenumber=\"1\">The base implementation for the composite models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.CompositeEntity.yml\" sourcestartlinenumber=\"1\">This abstract class provides a base implementation for entities entities that are\ncomposed of multiple related components.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -462,7 +462,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.EnumeratorEntity<TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity-1.yml\" sourcestartlinenumber=\"1\">The base implementation for the enumerator models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity-1.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for entities that provides properties for the name\nand description, with a unique identifier of type <code class=\"typeparamref\">TKey</code> and the\nsupport for soft deletion functionality.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -476,7 +476,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.EnumeratorEntity",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity.yml\" sourcestartlinenumber=\"1\">The base implementation for the enumerator models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.EnumeratorEntity.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for entities that provides properties for the name\nand description, with a unique identifier of type <code class=\"typeparamref\">TKey</code> and the\nsupport for soft deletion functionality.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -490,7 +490,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-1.yml\" sourcestartlinenumber=\"1\">The base implementation for the full audited models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-1.yml\" sourcestartlinenumber=\"1\">This abstract class provides a base implementation for entities that provides properties\nto track the creator, creation time, editor, and last modification time of the entity.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -504,7 +504,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-2.yml\" sourcestartlinenumber=\"1\">The base implementation for the full audited models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-2.yml\" sourcestartlinenumber=\"1\">This abstract class provides a base implementation for entities that provides properties\nto track the creator, creation time, editor, and last modification time of the entity.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -518,7 +518,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.FullAuditedEntity<TKey, TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.yml\" sourcestartlinenumber=\"1\">The base implementation for the full audited models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.yml\" sourcestartlinenumber=\"1\">This abstract class provides a base implementation for entities that provides properties\nto track the creator, creation time, editor, and last modification time of the entity.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -532,7 +532,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.FullAuditedEntity",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity.yml\" sourcestartlinenumber=\"1\">The base implementation for the full audited models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.FullAuditedEntity.yml\" sourcestartlinenumber=\"1\">This abstract class provides a base implementation for entities that provides properties\nto track the creator, creation time, editor, and last modification time of the entity.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -546,7 +546,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.IdentityEntity<TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.IdentityEntity-1.yml\" sourcestartlinenumber=\"1\">The base implementation for the identity models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.IdentityEntity-1.yml\" sourcestartlinenumber=\"1\">This abstract class provides a base implementation for entities that require a unique\nidentifier and a timestamp for concurrency control.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -560,7 +560,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.IdentityEntity",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.IdentityEntity.yml\" sourcestartlinenumber=\"1\">The base implementation for the identity models.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.IdentityEntity.yml\" sourcestartlinenumber=\"1\">This abstract class provides a base implementation for entities that require a unique\nidentifier and a timestamp for concurrency control.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -588,7 +588,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.yml\" sourcestartlinenumber=\"1\">The interface fo the database context.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext.yml\" sourcestartlinenumber=\"1\">Defines the contract for a database context, providing functionality for\nquerying and saving data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -602,7 +602,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.yml\" sourcestartlinenumber=\"1\">The repository interface for enumerator based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-1.yml\" sourcestartlinenumber=\"1\">Defines a repository interface for managing entities of type <xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity%601\" data-throw-if-not-resolved=\"false\"></xref>\nwith a primary key of type <code class=\"typeparamref\">TKey</code>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -616,7 +616,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository<TEntity, TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-2.yml\" sourcestartlinenumber=\"1\">The repository interface for enumerator based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-2.yml\" sourcestartlinenumber=\"1\">Defines a repository interface for managing entities of type <xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity%601\" data-throw-if-not-resolved=\"false\"></xref>\nwith a primary key of type <code class=\"typeparamref\">TKey</code>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -630,7 +630,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.yml\" sourcestartlinenumber=\"1\">The generic repository interface.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.yml\" sourcestartlinenumber=\"1\">Defines a generic repository interface for performing CRUD operations and querying\nentities of type <code class=\"typeparamref\">TEntity</code>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -644,7 +644,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-1.yml\" sourcestartlinenumber=\"1\">The repository interface for identity model based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-1.yml\" sourcestartlinenumber=\"1\">Defines a repository interface for managing entities of type <xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity%601\" data-throw-if-not-resolved=\"false\"></xref>\nwith a primary key of type <code class=\"typeparamref\">TKey</code>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -658,7 +658,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository<TEntity, TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.yml\" sourcestartlinenumber=\"1\">The repository interface for identity model based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.yml\" sourcestartlinenumber=\"1\">Defines a repository interface for managing entities of type <xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity%601\" data-throw-if-not-resolved=\"false\"></xref>\nwith a primary key of type <code class=\"typeparamref\">TKey</code>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -686,7 +686,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.yml\" sourcestartlinenumber=\"1\">The repository base implementation for enumerator based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-1.yml\" sourcestartlinenumber=\"1\">Provides an abstract base class for managing enumeration-based entities in a data store.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -700,7 +700,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.EnumeratorRepository<TEntity, TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.yml\" sourcestartlinenumber=\"1\">The repository base implementation for enumerator based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.yml\" sourcestartlinenumber=\"1\">Provides an abstract base class for managing enumeration-based entities in a data store.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -728,7 +728,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-1.yml\" sourcestartlinenumber=\"1\">The repository base implementation for identity based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-1.yml\" sourcestartlinenumber=\"1\">Provides an abstract base class for managing identity-based entities in a data store.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -742,7 +742,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.IdentityRepository<TEntity, TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.yml\" sourcestartlinenumber=\"1\">The repository base implementation for identity based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.yml\" sourcestartlinenumber=\"1\">Provides an abstract base class for managing identity-based entities in a data store.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -756,7 +756,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration<TEntity>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-1.yml\" sourcestartlinenumber=\"1\">The entity configuration for audited composite based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-1.yml\" sourcestartlinenumber=\"1\">Provides a base configuration for entities that implement the\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity%602\" data-throw-if-not-resolved=\"false\"></xref> interface.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -770,7 +770,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration<TEntity, TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-3.yml\" sourcestartlinenumber=\"1\">The entity configuration for audited composite based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration-3.yml\" sourcestartlinenumber=\"1\">Provides a base configuration for entities that implement the\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity%602\" data-throw-if-not-resolved=\"false\"></xref> interface.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -784,7 +784,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-1.yml\" sourcestartlinenumber=\"1\">The entity configuration for audited based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-1.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring the entities of type\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> for dentity-related and time audited\nentities in the Entity Framework Core model.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -798,7 +798,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-2.yml\" sourcestartlinenumber=\"1\">The entity configuration for audited based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-2.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring the entities of type\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> for dentity-related and time audited\nentities in the Entity Framework Core model.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -812,7 +812,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-3.yml\" sourcestartlinenumber=\"1\">The entity configuration for audited based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-3.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring the entities of type\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> for dentity-related and time audited\nentities in the Entity Framework Core model.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -826,7 +826,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey, TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.yml\" sourcestartlinenumber=\"1\">The entity configuration for audited based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring the entities of type\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> for dentity-related and time audited\nentities in the Entity Framework Core model.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -840,7 +840,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration<TEntity>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration-1.yml\" sourcestartlinenumber=\"1\">The entity configuration for composite based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration-1.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring entity types that implement the\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.ICompositeEntity\" data-throw-if-not-resolved=\"false\"></xref> interface.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -854,7 +854,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration<TEntity>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration-1.yml\" sourcestartlinenumber=\"1\">The entity configuration for enumerator based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration-1.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring entity types that implement the\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity%601\" data-throw-if-not-resolved=\"false\"></xref> interface.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -868,49 +868,49 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration<TEntity, TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration-2.yml\" sourcestartlinenumber=\"1\">The entity configuration for enumerator based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration-2.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring entity types that implement the\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity%601\" data-throw-if-not-resolved=\"false\"></xref> interface.</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-1.yml",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-1.html"
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-1.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-1.yml\" sourcestartlinenumber=\"1\">The entity configuration for full audited based entities.</p>\n"
+      "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity>",
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-1.yml\" sourcestartlinenumber=\"1\">Provides a base configuration for entities that implement the\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> interface.</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-2.yml",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-2.html"
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-2.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity, TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-2.yml\" sourcestartlinenumber=\"1\">The entity configuration for full audited based entities.</p>\n"
+      "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity, TKey>",
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-2.yml\" sourcestartlinenumber=\"1\">Provides a base configuration for entities that implement the\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> interface.</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-3.yml",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-3.yml",
       "output": {
         ".html": {
-          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-3.html"
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-3.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration<TEntity, TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration-3.yml\" sourcestartlinenumber=\"1\">The entity configuration for full audited based entities.</p>\n"
+      "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity, TCreator, TEdited>",
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-3.yml\" sourcestartlinenumber=\"1\">Provides a base configuration for entities that implement the\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> interface.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -924,7 +924,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-4.yml\" sourcestartlinenumber=\"1\">The entity configuration for full audited based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-4.yml\" sourcestartlinenumber=\"1\">Provides a base configuration for entities that implement the\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> interface.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -938,7 +938,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration<TEntity>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-1.yml\" sourcestartlinenumber=\"1\">The entity configuration for identity based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-1.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring entity types that implement the\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity%601\" data-throw-if-not-resolved=\"false\"></xref> interface.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -952,7 +952,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration<TEntity, TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-2.yml\" sourcestartlinenumber=\"1\">The entity configuration for identity based entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.IdentityConfiguration-2.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring entity types that implement the\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity%601\" data-throw-if-not-resolved=\"false\"></xref> interface.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -980,7 +980,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.yml\" sourcestartlinenumber=\"1\">The <xref href=\"Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder\" data-throw-if-not-resolved=\"false\"></xref> extensions class.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for configuring entity types in a relational database context.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -994,7 +994,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.yml\" sourcestartlinenumber=\"1\">The <xref href=\"Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder\" data-throw-if-not-resolved=\"false\"></xref> extension class.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for configuring property data types in a relational\ndatabase using the <xref href=\"Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder\" data-throw-if-not-resolved=\"false\"></xref> class.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1022,7 +1022,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.yml\" sourcestartlinenumber=\"1\">The save changes interceptor for soft deletable entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.yml\" sourcestartlinenumber=\"1\">Intercepts save operations in a <xref href=\"Microsoft.EntityFrameworkCore.DbContext\" data-throw-if-not-resolved=\"false\"></xref> to enforce soft delete behavior for\nentities implementing the <xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable\" data-throw-if-not-resolved=\"false\"></xref> interface.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1036,7 +1036,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.yml\" sourcestartlinenumber=\"1\">The save changes interceptor for time audited entities.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.yml\" sourcestartlinenumber=\"1\">A save changes interceptor that automatically updates audit timestamps for entities\nimplementing the <xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited\" data-throw-if-not-resolved=\"false\"></xref> interface.</p>\n"
     },
     {
       "type": "ManagedReference",

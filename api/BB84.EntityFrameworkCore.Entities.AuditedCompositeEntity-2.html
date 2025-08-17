@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class AuditedCompositeEntity&lt;TCreator, TEdited&gt; ">
       
-      <meta name="description" content="The base implementation for the audited composite models.">
+      <meta name="description" content="This abstract class provides a base implementation for entities that are composed of multiple related components and require auditing information, including the creator, editor, and a concurrency timestamp.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2" data-uid="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2" class="text-break">
-Class AuditedCompositeEntity&lt;TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedCompositeEntity.cs/#L14"><i class="bi bi-code-slash"></i></a>
+Class AuditedCompositeEntity&lt;TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedCompositeEntity.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,12 +93,14 @@ Class AuditedCompositeEntity&lt;TCreator, TEdited&gt;  <a class="header-action l
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The base implementation for the audited composite models.</p>
+  <div class="markdown summary"><p>This abstract class provides a base implementation for entities that are composed
+of multiple related components and require auditing information, including the creator,
+editor, and a concurrency timestamp.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class AuditedCompositeEntity&lt;TCreator, TEdited&gt; : IAuditedCompositeEntity&lt;TCreator, TEdited&gt;, IConcurrency, IUserAudited&lt;TCreator, TEdited&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class AuditedCompositeEntity&lt;TCreator, TEdited&gt; : IAuditedCompositeEntity&lt;TCreator, TEdited&gt;, IConcurrency, IUserAudited&lt;TCreator, TEdited&gt; where TCreator : notnull</code></pre>
   </div>
 
 
@@ -106,10 +108,11 @@ Class AuditedCompositeEntity&lt;TCreator, TEdited&gt;  <a class="header-action l
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TCreator</code></dt>
-    <dd><p>The type of the creator column.</p>
+    <dd><p>The type of the entity or user responsible for creating the entity.</p>
 </dd>
     <dt><code>TEdited</code></dt>
-    <dd></dd>
+    <dd><p>The type of the entity or user responsible for editing the entity.</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -171,19 +174,19 @@ Class AuditedCompositeEntity&lt;TCreator, TEdited&gt;  <a class="header-action l
 </h2>
 
 
-  <a id="BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Creator_" data-uid="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Creator*"></a>
+  <a id="BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_CreatedBy_" data-uid="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.CreatedBy*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Creator" data-uid="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Creator">
-  Creator
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedCompositeEntity.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <h3 id="BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_CreatedBy" data-uid="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.CreatedBy">
+  CreatedBy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedCompositeEntity.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The initial creator of the data row.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the creator of the entity.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TCreator Creator { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public TCreator CreatedBy { get; set; }</code></pre>
   </div>
 
 
@@ -203,19 +206,19 @@ Class AuditedCompositeEntity&lt;TCreator, TEdited&gt;  <a class="header-action l
 
 
 
-  <a id="BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Editor_" data-uid="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Editor*"></a>
+  <a id="BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_EditedBy_" data-uid="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.EditedBy*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Editor" data-uid="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Editor">
-  Editor
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedCompositeEntity.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <h3 id="BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_EditedBy" data-uid="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.EditedBy">
+  EditedBy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedCompositeEntity.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The last editor of the data row.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the last editor of the entity.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TEdited Editor { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public TEdited EditedBy { get; set; }</code></pre>
   </div>
 
 
@@ -239,10 +242,10 @@ Class AuditedCompositeEntity&lt;TCreator, TEdited&gt;  <a class="header-action l
 
   <h3 id="BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Timestamp" data-uid="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity`2.Timestamp">
   Timestamp
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedCompositeEntity.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedCompositeEntity.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The current timestamp or row version of the data row.</p>
+  <div class="markdown level1 summary"><p>Gets the timestamp associated with the current entity.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -271,7 +274,7 @@ Class AuditedCompositeEntity&lt;TCreator, TEdited&gt;  <a class="header-action l
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedCompositeEntity.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedCompositeEntity.cs/#L17" class="edit-link">Edit this page</a>
         </div>
 
 

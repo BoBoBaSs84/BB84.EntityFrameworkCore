@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class EntityTypeBuilderExtensions ">
       
-      <meta name="description" content="The  extensions class.">
+      <meta name="description" content="Provides extension methods for configuring entity types in a relational database context.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_EntityTypeBuilderExtensions" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions" class="text-break">
-Class EntityTypeBuilderExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/EntityTypeBuilderExtensions.cs/#L14"><i class="bi bi-code-slash"></i></a>
+Class EntityTypeBuilderExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/EntityTypeBuilderExtensions.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,7 +93,7 @@ Class EntityTypeBuilderExtensions  <a class="header-action link-secondary" title
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.SqlServer.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.entitytypebuilder">EntityTypeBuilder</a> extensions class.</p>
+  <div class="markdown summary"><p>Provides extension methods for configuring entity types in a relational database context.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -143,6 +143,11 @@ Class EntityTypeBuilderExtensions  <a class="header-action link-secondary" title
 
 
 
+  <h2 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_EntityTypeBuilderExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>The <a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.html">EntityTypeBuilderExtensions</a> class contains methods to simplify the
+configuration of entity types, including support for temporal tables and history table
+mappings.</p>
+</div>
 
 
   <h2 class="section" id="methods">Methods
@@ -153,11 +158,10 @@ Class EntityTypeBuilderExtensions  <a class="header-action link-secondary" title
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_EntityTypeBuilderExtensions_ToHistoryTable_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder_System_String_System_String_System_String_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder,System.String,System.String,System.String)">
   ToHistoryTable(EntityTypeBuilder, string?, string?, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/EntityTypeBuilderExtensions.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/EntityTypeBuilderExtensions.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Configures the table that the entity type maps to when targeting a relational database
-and configures a history table for the entity mapped to a temporal table.</p>
+  <div class="markdown level1 summary"><p>Configures the entity to use a temporal table with a history table for tracking changes over time.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -168,13 +172,13 @@ and configures a history table for the entity mapped to a temporal table.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.entitytypebuilder">EntityTypeBuilder</a></dt>
-    <dd><p>The builder for the entity type being configured.</p>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.entitytypebuilder">EntityTypeBuilder</a> used to configure the entity type.</p>
 </dd>
     <dt><code>tableName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The schema of the table.</p>
+    <dd><p>The name of the main table.</p>
 </dd>
     <dt><code>tableSchema</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The name of the table.</p>
+    <dd><p>The schema of the main table.</p>
 </dd>
     <dt><code>historySchema</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd><p>The schema of the history table.</p>
@@ -184,7 +188,7 @@ and configures a history table for the entity mapped to a temporal table.</p>
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.entitytypebuilder">EntityTypeBuilder</a></dt>
-    <dd><p>The same builder instance so that multiple calls can be chained.</p>
+    <dd><p>The same <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.entitytypebuilder">EntityTypeBuilder</a> instance, so that multiple calls can be chained together.</p>
 </dd>
   </dl>
 
@@ -194,6 +198,11 @@ and configures a history table for the entity mapped to a temporal table.</p>
 
 
 
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_EntityTypeBuilderExtensions_ToHistoryTable_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder_System_String_System_String_System_String__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method configures the entity to use SQL Server temporal tables, which automatically track
+historical changes to the data. The history table is created in the specified schema and is used
+to store historical versions of the data.</p>
+</div>
 
 
 
@@ -202,7 +211,7 @@ and configures a history table for the entity mapped to a temporal table.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/EntityTypeBuilderExtensions.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/EntityTypeBuilderExtensions.cs/#L19" class="edit-link">Edit this page</a>
         </div>
 
 

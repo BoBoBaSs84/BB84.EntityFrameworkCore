@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class TimeAuditedInterceptor ">
       
-      <meta name="description" content="The save changes interceptor for time audited entities.">
+      <meta name="description" content="A save changes interceptor that automatically updates audit timestamps for entities implementing the  interface.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor" class="text-break">
-Class TimeAuditedInterceptor  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L18"><i class="bi bi-code-slash"></i></a>
+Class TimeAuditedInterceptor  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,7 +93,8 @@ Class TimeAuditedInterceptor  <a class="header-action link-secondary" title="Vie
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.SqlServer.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The save changes interceptor for time audited entities.</p>
+  <div class="markdown summary"><p>A save changes interceptor that automatically updates audit timestamps for entities
+implementing the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html">ITimeAudited</a> interface.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -173,7 +174,9 @@ Class TimeAuditedInterceptor  <a class="header-action link-secondary" title="Vie
 
 
   <h2 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>See <a href="https://aka.ms/efcore-docs-interceptors">EF Core interceptors</a> for more information and examples.</p>
+  <div class="markdown level0 remarks"><p>This interceptor updates the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_CreatedAt">CreatedAt</a> property to the current
+UTC time when an entity is added and the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_EditedAt">EditedAt</a> property to
+the current UTC time when an entity is modified.</p>
 </div>
 
 
@@ -185,7 +188,7 @@ Class TimeAuditedInterceptor  <a class="header-action link-secondary" title="Vie
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_SavingChanges_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChanges(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32})">
   SavingChanges(DbContextEventData, InterceptionResult&lt;int&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Called at the start of <see cref="O:DbContext.SaveChanges"></see>.</p>
@@ -234,7 +237,7 @@ is to return the <code class="paramref">result</code> value passed in.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_SavingChangesAsync_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChangesAsync(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32},System.Threading.CancellationToken)">
   SavingChangesAsync(DbContextEventData, InterceptionResult&lt;int&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Called at the start of <see cref="O:DbContext.SaveChangesAsync"></see>.</p>
@@ -292,7 +295,7 @@ is to return the <code class="paramref">result</code> value passed in.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L18" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L24" class="edit-link">Edit this page</a>
         </div>
 
 

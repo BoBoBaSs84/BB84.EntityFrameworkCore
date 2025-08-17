@@ -92,12 +92,14 @@ Classes
 </h3>
     <dl class="jumplist">
       <dt><a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.html">SoftDeletableInterceptor</a></dt>
-      <dd><p>The save changes interceptor for soft deletable entities.</p>
+      <dd><p>Intercepts save operations in a <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext">DbContext</a> to enforce soft delete behavior for
+entities implementing the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable.html">ISoftDeletable</a> interface.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.html">TimeAuditedInterceptor</a></dt>
-      <dd><p>The save changes interceptor for time audited entities.</p>
+      <dd><p>A save changes interceptor that automatically updates audit timestamps for entities
+implementing the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html">ITimeAudited</a> interface.</p>
 </dd>
     </dl>
 

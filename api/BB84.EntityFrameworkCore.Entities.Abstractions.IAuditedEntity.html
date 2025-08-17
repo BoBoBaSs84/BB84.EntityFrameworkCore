@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IAuditedEntity ">
       
-      <meta name="description" content="The interface for the audited models.">
+      <meta name="description" content="Represents an entity contract that is audited with information about its creation and last modification.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_Abstractions_IAuditedEntity" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity" class="text-break">
-Interface IAuditedEntity  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedEntity.cs/#L37"><i class="bi bi-code-slash"></i></a>
+Interface IAuditedEntity  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedEntity.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,7 +93,8 @@ Interface IAuditedEntity  <a class="header-action link-secondary" title="View so
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.Abstractions.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The interface for the audited models.</p>
+  <div class="markdown summary"><p>Represents an entity contract that is audited with information about its creation
+and last modification.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -117,10 +118,10 @@ Interface IAuditedEntity  <a class="header-action link-secondary" title="View so
       <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency_Timestamp">IConcurrency.Timestamp</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Creator">IUserAudited&lt;string, string&gt;.Creator</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_CreatedBy">IUserAudited&lt;string, string&gt;.CreatedBy</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Editor">IUserAudited&lt;string, string&gt;.Editor</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_EditedBy">IUserAudited&lt;string, string&gt;.EditedBy</a>
     </div>
   </dd></dl>
 
@@ -128,8 +129,8 @@ Interface IAuditedEntity  <a class="header-action link-secondary" title="View so
 
 
   <h2 id="BB84_EntityFrameworkCore_Entities_Abstractions_IAuditedEntity_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>The identity column is of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>.
-The user auditing columns are of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>.</p>
+  <div class="markdown level0 remarks"><p>The unique identifier type defaults to <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a> and the creator and editor
+types default to <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>.</p>
 </div>
 
 
@@ -137,7 +138,7 @@ The user auditing columns are of type <a class="xref" href="https://learn.micros
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedEntity.cs/#L37" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedEntity.cs/#L43" class="edit-link">Edit this page</a>
         </div>
 
 

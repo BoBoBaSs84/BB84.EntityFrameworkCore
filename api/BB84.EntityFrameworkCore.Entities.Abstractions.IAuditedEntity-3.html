@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IAuditedEntity&lt;TKey, TCreator, TEdited&gt; ">
       
-      <meta name="description" content="The interface for the audited models.">
+      <meta name="description" content="Represents an entity contract that is audited with information about its creation and last modification.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_Abstractions_IAuditedEntity_3" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity`3" class="text-break">
-Interface IAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedEntity.cs/#L15"><i class="bi bi-code-slash"></i></a>
+Interface IAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedEntity.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,12 +93,13 @@ Interface IAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.Abstractions.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The interface for the audited models.</p>
+  <div class="markdown summary"><p>Represents an entity contract that is audited with information about its creation
+and last modification.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IAuditedEntity&lt;TKey, TCreator, TEdited&gt; : IIdentityEntity&lt;TKey&gt;, IIdentity&lt;TKey&gt;, IConcurrency, IUserAudited&lt;TCreator, TEdited&gt; where TKey : IEquatable&lt;TKey&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IAuditedEntity&lt;TKey, TCreator, TEdited&gt; : IIdentityEntity&lt;TKey&gt;, IIdentity&lt;TKey&gt;, IConcurrency, IUserAudited&lt;TCreator, TEdited&gt; where TKey : IEquatable&lt;TKey&gt; where TCreator : notnull</code></pre>
   </div>
 
 
@@ -106,13 +107,14 @@ Interface IAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TKey</code></dt>
-    <dd><p>The type of the primary key.</p>
+    <dd><p>The type of the unique identifier for the entity.</p>
 </dd>
     <dt><code>TCreator</code></dt>
-    <dd><p>The type of the creator column.</p>
+    <dd><p>The type representing the user or entity that created this entity.</p>
 </dd>
     <dt><code>TEdited</code></dt>
-    <dd></dd>
+    <dd><p>The type representing the user or entity that last modified this entity.</p>
+</dd>
   </dl>
 
 
@@ -128,10 +130,10 @@ Interface IAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action
       <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency_Timestamp">IConcurrency.Timestamp</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Creator">IUserAudited&lt;TCreator, TEdited&gt;.Creator</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_CreatedBy">IUserAudited&lt;TCreator, TEdited&gt;.CreatedBy</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Editor">IUserAudited&lt;TCreator, TEdited&gt;.Editor</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_EditedBy">IUserAudited&lt;TCreator, TEdited&gt;.EditedBy</a>
     </div>
   </dd></dl>
 
@@ -144,7 +146,7 @@ Interface IAuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedEntity.cs/#L15" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedEntity.cs/#L17" class="edit-link">Edit this page</a>
         </div>
 
 

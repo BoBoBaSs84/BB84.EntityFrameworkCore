@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IEnumeratorRepository&lt;TEntity&gt; ">
       
-      <meta name="description" content="The repository interface for enumerator based entities.">
+      <meta name="description" content="Defines a repository interface for managing entities of type  with a primary key of type TKey.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository`1" class="text-break">
-Interface IEnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IEnumeratorRepository.cs/#L79"><i class="bi bi-code-slash"></i></a>
+Interface IEnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IEnumeratorRepository.cs/#L89"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,7 +93,8 @@ Interface IEnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-sec
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.Abstractions.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The repository interface for enumerator based entities.</p>
+  <div class="markdown summary"><p>Defines a repository interface for managing entities of type <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity-1.html">IEnumeratorEntity&lt;TKey&gt;</a>
+with a primary key of type <code class="typeparamref">TKey</code>.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -106,7 +107,7 @@ Interface IEnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-sec
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd><p>The entity to work with.</p>
+    <dd><p>The type of the entity managed by the repository.</p>
 </dd>
   </dl>
 
@@ -248,7 +249,9 @@ Interface IEnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-sec
 
 
   <h2 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IEnumeratorRepository_1_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>The identity column is of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>.</p>
+  <div class="markdown level0 remarks"><p>This interface extends the <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html">IIdentityRepository&lt;TEntity, TKey&gt;</a> and adds functionality
+specific to retrieving entities by their names. It supports both synchronous and asynchronous
+operations, with options to ignore query filters and enable or disable change tracking.</p>
 </div>
 
 
@@ -256,7 +259,7 @@ Interface IEnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-sec
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IEnumeratorRepository.cs/#L79" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IEnumeratorRepository.cs/#L89" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface ISoftDeletable ">
       
-      <meta name="description" content="The interface for soft deleteable components.">
+      <meta name="description" content="Defines a contract for entities that support soft deletion functionality.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_ISoftDeletable" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable" class="text-break">
-Interface ISoftDeletable  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/ISoftDeletable.cs/#L11"><i class="bi bi-code-slash"></i></a>
+Interface ISoftDeletable  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/ISoftDeletable.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,7 +93,7 @@ Interface ISoftDeletable  <a class="header-action link-secondary" title="View so
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.Abstractions.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The interface for soft deleteable components.</p>
+  <div class="markdown summary"><p>Defines a contract for entities that support soft deletion functionality.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -111,6 +111,11 @@ Interface ISoftDeletable  <a class="header-action link-secondary" title="View so
 
 
 
+  <h2 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_ISoftDeletable_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>Soft deletion allows an entity to be marked as deleted without being permanently
+removed from the data store. This is typically used to enable logical deletion
+while preserving the entity for auditing or recovery purposes.</p>
+</div>
 
 
   <h2 class="section" id="properties">Properties
@@ -121,10 +126,10 @@ Interface ISoftDeletable  <a class="header-action link-secondary" title="View so
 
   <h3 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_ISoftDeletable_IsDeleted" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable.IsDeleted">
   IsDeleted
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/ISoftDeletable.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/ISoftDeletable.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Indicates if the data row in a soft deleted state.</p>
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether the entity is marked as deleted.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -153,7 +158,7 @@ Interface ISoftDeletable  <a class="header-action link-secondary" title="View so
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/ISoftDeletable.cs/#L11" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/ISoftDeletable.cs/#L16" class="edit-link">Edit this page</a>
         </div>
 
 

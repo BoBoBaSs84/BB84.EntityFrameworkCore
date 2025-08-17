@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface ICompositeEntity ">
       
-      <meta name="description" content="The interface for the composite models.">
+      <meta name="description" content="Represents an entity contract that is composed of multiple related components or sub-entities.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_Abstractions_ICompositeEntity" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.ICompositeEntity" class="text-break">
-Interface ICompositeEntity  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/ICompositeEntity.cs/#L13"><i class="bi bi-code-slash"></i></a>
+Interface ICompositeEntity  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/ICompositeEntity.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,7 +93,7 @@ Interface ICompositeEntity  <a class="header-action link-secondary" title="View 
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.Abstractions.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The interface for the composite models.</p>
+  <div class="markdown summary"><p>Represents an entity contract that is composed of multiple related components or sub-entities.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -118,13 +118,18 @@ Interface ICompositeEntity  <a class="header-action link-secondary" title="View 
 
 
 
+  <h2 id="BB84_EntityFrameworkCore_Entities_Abstractions_ICompositeEntity_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This interface is typically implemented by entities that aggregate other entities or components
+into a single cohesive unit. It extends the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.html">IConcurrency</a> interface, indicating that
+implementations may also support concurrency-related operations.</p>
+</div>
 
 
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/ICompositeEntity.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/ICompositeEntity.cs/#L18" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class AuditedCompositeEntity ">
       
-      <meta name="description" content="The base implementation for the audited composite models.">
+      <meta name="description" content="This abstract class provides a base implementation for entities that are composed of multiple related components and require auditing information, including the creator, editor, and a concurrency timestamp.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity" data-uid="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity" class="text-break">
-Class AuditedCompositeEntity  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedCompositeEntity.cs/#L28"><i class="bi bi-code-slash"></i></a>
+Class AuditedCompositeEntity  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedCompositeEntity.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,7 +93,9 @@ Class AuditedCompositeEntity  <a class="header-action link-secondary" title="Vie
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The base implementation for the audited composite models.</p>
+  <div class="markdown summary"><p>This abstract class provides a base implementation for entities that are composed
+of multiple related components and require auditing information, including the creator,
+editor, and a concurrency timestamp.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -131,10 +133,10 @@ Class AuditedCompositeEntity  <a class="header-action link-secondary" title="Vie
       <a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Timestamp">AuditedCompositeEntity&lt;string, string&gt;.Timestamp</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Creator">AuditedCompositeEntity&lt;string, string&gt;.Creator</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_CreatedBy">AuditedCompositeEntity&lt;string, string&gt;.CreatedBy</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_Editor">AuditedCompositeEntity&lt;string, string&gt;.Editor</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html#BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_2_EditedBy">AuditedCompositeEntity&lt;string, string&gt;.EditedBy</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -163,7 +165,7 @@ Class AuditedCompositeEntity  <a class="header-action link-secondary" title="Vie
 
 
   <h2 id="BB84_EntityFrameworkCore_Entities_AuditedCompositeEntity_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>The user auditing columns are of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>.</p>
+  <div class="markdown level0 remarks"><p>The creator and editor types default to <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>.</p>
 </div>
 
 
@@ -171,7 +173,7 @@ Class AuditedCompositeEntity  <a class="header-action link-secondary" title="Vie
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedCompositeEntity.cs/#L28" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedCompositeEntity.cs/#L34" class="edit-link">Edit this page</a>
         </div>
 
 

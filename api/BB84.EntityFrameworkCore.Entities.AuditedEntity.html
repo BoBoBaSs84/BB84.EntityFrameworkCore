@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class AuditedEntity ">
       
-      <meta name="description" content="The base implementation for the audited models.">
+      <meta name="description" content="This abstract class provides a base implementation for entities that track auditing information, including the creator and the last editor, a unique identifier and a timestamp for concurrency control.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_AuditedEntity" data-uid="BB84.EntityFrameworkCore.Entities.AuditedEntity" class="text-break">
-Class AuditedEntity  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedEntity.cs/#L35"><i class="bi bi-code-slash"></i></a>
+Class AuditedEntity  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedEntity.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,7 +93,9 @@ Class AuditedEntity  <a class="header-action link-secondary" title="View source"
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The base implementation for the audited models.</p>
+  <div class="markdown summary"><p>This abstract class provides a base implementation for entities that track auditing information,
+including the creator and the last editor, a unique identifier and a timestamp for concurrency
+control.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -133,10 +135,10 @@ Class AuditedEntity  <a class="header-action link-secondary" title="View source"
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_Creator">AuditedEntity&lt;Guid, string, string&gt;.Creator</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_CreatedBy">AuditedEntity&lt;Guid, string, string&gt;.CreatedBy</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_Editor">AuditedEntity&lt;Guid, string, string&gt;.Editor</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_EditedBy">AuditedEntity&lt;Guid, string, string&gt;.EditedBy</a>
     </div>
     <div>
       <a class="xref" href="BB84.EntityFrameworkCore.Entities.IdentityEntity-1.html#BB84_EntityFrameworkCore_Entities_IdentityEntity_1_Id">IdentityEntity&lt;Guid&gt;.Id</a>
@@ -171,8 +173,8 @@ Class AuditedEntity  <a class="header-action link-secondary" title="View source"
 
 
   <h2 id="BB84_EntityFrameworkCore_Entities_AuditedEntity_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>The identity column is of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>.
-The user auditing columns are of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>.</p>
+  <div class="markdown level0 remarks"><p>The unique identifier type defaults to <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a> and the creator and editor
+types default to <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>.</p>
 </div>
 
 
@@ -180,7 +182,7 @@ The user auditing columns are of type <a class="xref" href="https://learn.micros
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedEntity.cs/#L35" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/AuditedEntity.cs/#L50" class="edit-link">Edit this page</a>
         </div>
 
 

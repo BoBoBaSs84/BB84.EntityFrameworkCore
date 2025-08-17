@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IFullAuditedEntity ">
       
-      <meta name="description" content="The interface for full audited entities.">
+      <meta name="description" content="Defines an entity contract that is fully audited, including information about its creator, creation, last editor, last modification date and unique identity.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_Abstractions_IFullAuditedEntity" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity" class="text-break">
-Interface IFullAuditedEntity  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IFullAuditedEntity.cs/#L38"><i class="bi bi-code-slash"></i></a>
+Interface IFullAuditedEntity  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IFullAuditedEntity.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,7 +93,8 @@ Interface IFullAuditedEntity  <a class="header-action link-secondary" title="Vie
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.Abstractions.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The interface for full audited entities.</p>
+  <div class="markdown summary"><p>Defines an entity contract that is fully audited, including information about its
+creator, creation, last editor, last modification date and unique identity.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -111,10 +112,10 @@ Interface IFullAuditedEntity  <a class="header-action link-secondary" title="Vie
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_Created">ITimeAudited.Created</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_CreatedAt">ITimeAudited.CreatedAt</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_Edited">ITimeAudited.Edited</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_EditedAt">ITimeAudited.EditedAt</a>
     </div>
     <div>
       <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity-1.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IIdentity_1_Id">IIdentity&lt;Guid&gt;.Id</a>
@@ -123,10 +124,10 @@ Interface IFullAuditedEntity  <a class="header-action link-secondary" title="Vie
       <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency_Timestamp">IConcurrency.Timestamp</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Creator">IUserAudited&lt;string, string&gt;.Creator</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_CreatedBy">IUserAudited&lt;string, string&gt;.CreatedBy</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Editor">IUserAudited&lt;string, string&gt;.Editor</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_EditedBy">IUserAudited&lt;string, string&gt;.EditedBy</a>
     </div>
   </dd></dl>
 
@@ -134,8 +135,8 @@ Interface IFullAuditedEntity  <a class="header-action link-secondary" title="Vie
 
 
   <h2 id="BB84_EntityFrameworkCore_Entities_Abstractions_IFullAuditedEntity_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>The identity column is of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>.
-The user auditing columns are of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>.</p>
+  <div class="markdown level0 remarks"><p>The identity column is of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a> and the creator and editor columns are
+of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>.</p>
 </div>
 
 
@@ -143,7 +144,7 @@ The user auditing columns are of type <a class="xref" href="https://learn.micros
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IFullAuditedEntity.cs/#L38" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IFullAuditedEntity.cs/#L43" class="edit-link">Edit this page</a>
         </div>
 
 

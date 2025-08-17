@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IAuditedCompositeEntity&lt;TCreator, TEditor&gt; ">
       
-      <meta name="description" content="The interface for the audited composite models.">
+      <meta name="description" content="Represents an entity contract that supports auditing for creation and modification, with additional concurrency control mechanisms.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_Abstractions_IAuditedCompositeEntity_2" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity`2" class="text-break">
-Interface IAuditedCompositeEntity&lt;TCreator, TEditor&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedCompositeEntity.cs/#L15"><i class="bi bi-code-slash"></i></a>
+Interface IAuditedCompositeEntity&lt;TCreator, TEditor&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedCompositeEntity.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,12 +93,13 @@ Interface IAuditedCompositeEntity&lt;TCreator, TEditor&gt;  <a class="header-act
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.Abstractions.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The interface for the audited composite models.</p>
+  <div class="markdown summary"><p>Represents an entity contract that supports auditing for creation and modification,
+with additional concurrency control mechanisms.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IAuditedCompositeEntity&lt;TCreator, TEditor&gt; : IConcurrency, IUserAudited&lt;TCreator, TEditor&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IAuditedCompositeEntity&lt;TCreator, TEditor&gt; : IConcurrency, IUserAudited&lt;TCreator, TEditor&gt; where TCreator : notnull</code></pre>
   </div>
 
 
@@ -106,10 +107,10 @@ Interface IAuditedCompositeEntity&lt;TCreator, TEditor&gt;  <a class="header-act
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TCreator</code></dt>
-    <dd><p>The type of the creator column.</p>
+    <dd><p>The type of the user or entity responsible for creating the entity.</p>
 </dd>
     <dt><code>TEditor</code></dt>
-    <dd><p>The type of the editor column.</p>
+    <dd><p>The type of the user or entity responsible for editing or modifying the entity.</p>
 </dd>
   </dl>
 
@@ -123,10 +124,10 @@ Interface IAuditedCompositeEntity&lt;TCreator, TEditor&gt;  <a class="header-act
       <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency_Timestamp">IConcurrency.Timestamp</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Creator">IUserAudited&lt;TCreator, TEditor&gt;.Creator</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_CreatedBy">IUserAudited&lt;TCreator, TEditor&gt;.CreatedBy</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Editor">IUserAudited&lt;TCreator, TEditor&gt;.Editor</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_EditedBy">IUserAudited&lt;TCreator, TEditor&gt;.EditedBy</a>
     </div>
   </dd></dl>
 
@@ -139,7 +140,7 @@ Interface IAuditedCompositeEntity&lt;TCreator, TEditor&gt;  <a class="header-act
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedCompositeEntity.cs/#L15" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedCompositeEntity.cs/#L16" class="edit-link">Edit this page</a>
         </div>
 
 

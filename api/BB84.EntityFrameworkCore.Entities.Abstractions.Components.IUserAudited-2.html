@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IUserAudited&lt;TCreator, TEditor&gt; ">
       
-      <meta name="description" content="The interface for user audited components.">
+      <meta name="description" content="Defines a contract for entities that track auditing information, including the creator and last editor of the entity.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2" class="text-break">
-Interface IUserAudited&lt;TCreator, TEditor&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/IUserAudited.cs/#L13"><i class="bi bi-code-slash"></i></a>
+Interface IUserAudited&lt;TCreator, TEditor&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/IUserAudited.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,12 +93,13 @@ Interface IUserAudited&lt;TCreator, TEditor&gt;  <a class="header-action link-se
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.Abstractions.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The interface for user audited components.</p>
+  <div class="markdown summary"><p>Defines a contract for entities that track auditing information, including
+the creator and last editor of the entity.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IUserAudited&lt;TCreator, TEditor&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IUserAudited&lt;TCreator, TEditor&gt; where TCreator : notnull</code></pre>
   </div>
 
 
@@ -106,10 +107,10 @@ Interface IUserAudited&lt;TCreator, TEditor&gt;  <a class="header-action link-se
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TCreator</code></dt>
-    <dd><p>The type of the creator column.</p>
+    <dd><p>The type representing the creator of the entity.</p>
 </dd>
     <dt><code>TEditor</code></dt>
-    <dd><p>The type of the editor column.</p>
+    <dd><p>The type representing the last editor of the entity.</p>
 </dd>
   </dl>
 
@@ -126,19 +127,19 @@ Interface IUserAudited&lt;TCreator, TEditor&gt;  <a class="header-action link-se
 </h2>
 
 
-  <a id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Creator_" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Creator*"></a>
+  <a id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_CreatedBy_" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.CreatedBy*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Creator" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Creator">
-  Creator
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/IUserAudited.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <h3 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_CreatedBy" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.CreatedBy">
+  CreatedBy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/IUserAudited.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The initial creator of the data row.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the creator of the entity.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">TCreator Creator { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">TCreator CreatedBy { get; set; }</code></pre>
   </div>
 
 
@@ -158,19 +159,19 @@ Interface IUserAudited&lt;TCreator, TEditor&gt;  <a class="header-action link-se
 
 
 
-  <a id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Editor_" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Editor*"></a>
+  <a id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_EditedBy_" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.EditedBy*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_Editor" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.Editor">
-  Editor
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/IUserAudited.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <h3 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_EditedBy" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited`2.EditedBy">
+  EditedBy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/IUserAudited.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The last editor of the data row.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the last editor of the entity.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">TEditor Editor { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">TEditor EditedBy { get; set; }</code></pre>
   </div>
 
 
@@ -194,7 +195,7 @@ Interface IUserAudited&lt;TCreator, TEditor&gt;  <a class="header-action link-se
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/IUserAudited.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/IUserAudited.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

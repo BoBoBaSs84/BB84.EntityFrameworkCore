@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface ITimeAudited ">
       
-      <meta name="description" content="The interface for time audited components.">
+      <meta name="description" content="Defines a contract for entities that track creation and modification timestamps.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited" class="text-break">
-Interface ITimeAudited  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/ITimeAudited.cs/#L11"><i class="bi bi-code-slash"></i></a>
+Interface ITimeAudited  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/ITimeAudited.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,7 +93,7 @@ Interface ITimeAudited  <a class="header-action link-secondary" title="View sour
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.Abstractions.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The interface for time audited components.</p>
+  <div class="markdown summary"><p>Defines a contract for entities that track creation and modification timestamps.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -111,25 +111,31 @@ Interface ITimeAudited  <a class="header-action link-secondary" title="View sour
 
 
 
+  <h2 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This interface is typically implemented by data models that require auditing of
+their creation and last modification times. The <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_CreatedAt">CreatedAt</a> property
+records the initial creation timestamp, while the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_EditedAt">EditedAt</a> property
+tracks the most recent modification timestamp, if applicable.</p>
+</div>
 
 
   <h2 class="section" id="properties">Properties
 </h2>
 
 
-  <a id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_Created_" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Created*"></a>
+  <a id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_CreatedAt_" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.CreatedAt*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_Created" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Created">
-  Created
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/ITimeAudited.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <h3 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_CreatedAt" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.CreatedAt">
+  CreatedAt
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/ITimeAudited.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The initial creation time of the data row.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the date and time when the entity was created.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">DateTime Created { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">DateTimeOffset CreatedAt { get; set; }</code></pre>
   </div>
 
 
@@ -138,7 +144,7 @@ Interface ITimeAudited  <a class="header-action link-secondary" title="View sour
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
     <dd></dd>
   </dl>
 
@@ -149,19 +155,19 @@ Interface ITimeAudited  <a class="header-action link-secondary" title="View sour
 
 
 
-  <a id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_Edited_" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Edited*"></a>
+  <a id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_EditedAt_" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.EditedAt*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_Edited" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.Edited">
-  Edited
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/ITimeAudited.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <h3 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_EditedAt" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.EditedAt">
+  EditedAt
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/ITimeAudited.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The last editing time of the data row.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the date and time when the item was last edited.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">DateTime? Edited { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">DateTimeOffset? EditedAt { get; set; }</code></pre>
   </div>
 
 
@@ -170,7 +176,7 @@ Interface ITimeAudited  <a class="header-action link-secondary" title="View sour
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>?</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a>?</dt>
     <dd></dd>
   </dl>
 
@@ -185,7 +191,7 @@ Interface ITimeAudited  <a class="header-action link-secondary" title="View sour
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/ITimeAudited.cs/#L11" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/ITimeAudited.cs/#L17" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class AuditedCompositeConfiguration&lt;TEntity, TCreator, TEdited&gt; ">
       
-      <meta name="description" content="The entity configuration for audited composite based entities.">
+      <meta name="description" content="Provides a base configuration for entities that implement the  interface.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedCompositeConfiguration_3" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`3" class="text-break">
-Class AuditedCompositeConfiguration&lt;TEntity, TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/AuditedCompositeConfiguration.cs/#L20"><i class="bi bi-code-slash"></i></a>
+Class AuditedCompositeConfiguration&lt;TEntity, TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/AuditedCompositeConfiguration.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,12 +93,13 @@ Class AuditedCompositeConfiguration&lt;TEntity, TCreator, TEdited&gt;  <a class=
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.SqlServer.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The entity configuration for audited composite based entities.</p>
+  <div class="markdown summary"><p>Provides a base configuration for entities that implement the
+<a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity-2.html">IAuditedCompositeEntity&lt;TCreator, TEditor&gt;</a> interface.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class AuditedCompositeConfiguration&lt;TEntity, TCreator, TEdited&gt; : IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IAuditedCompositeEntity&lt;TCreator, TEdited&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class AuditedCompositeConfiguration&lt;TEntity, TCreator, TEdited&gt; : IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IAuditedCompositeEntity&lt;TCreator, TEdited&gt; where TCreator : notnull</code></pre>
   </div>
 
 
@@ -106,12 +107,14 @@ Class AuditedCompositeConfiguration&lt;TEntity, TCreator, TEdited&gt;  <a class=
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd><p>The entity type to be configured.</p>
+    <dd><p>The type of the entity being configured.</p>
 </dd>
     <dt><code>TCreator</code></dt>
-    <dd></dd>
+    <dd><p>The type representing the creator of the entity.</p>
+</dd>
     <dt><code>TEdited</code></dt>
-    <dd></dd>
+    <dd><p>The type representing the editor of the entity.</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -166,8 +169,11 @@ Class AuditedCompositeConfiguration&lt;TEntity, TCreator, TEdited&gt;  <a class=
 
 
   <h2 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedCompositeConfiguration_3_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>See <a href="https://aka.ms/efcore-docs-modeling">Modeling entity types and relationships in EF Core</a> for more information and
-examples.</p>
+  <div class="markdown level0 remarks"><p>This abstract class provides a reusable configuration for audited composite entities,
+ensuring that the <code>Timestamp</code>, <code>Creator</code>, and <code>Editor</code> properties are consistently
+configured across all derived entity types. The <code>Timestamp</code> property is marked as a concurrency
+token and is automatically updated on add or update operations. The <code>Creator</code> property is required,
+while the <code>Editor</code> property is optional.</p>
 </div>
 
 
@@ -179,7 +185,7 @@ examples.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedCompositeConfiguration_3_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedCompositeConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
   Configure(EntityTypeBuilder&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/AuditedCompositeConfiguration.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/AuditedCompositeConfiguration.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configures the entity of type <code class="typeparamref">TEntity</code>.</p>
@@ -212,7 +218,7 @@ examples.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/AuditedCompositeConfiguration.cs/#L20" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/AuditedCompositeConfiguration.cs/#L31" class="edit-link">Edit this page</a>
         </div>
 
 

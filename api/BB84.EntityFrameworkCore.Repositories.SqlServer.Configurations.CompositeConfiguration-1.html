@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class CompositeConfiguration&lt;TEntity&gt; ">
       
-      <meta name="description" content="The entity configuration for composite based entities.">
+      <meta name="description" content="Represents an abstract base class for configuring entity types that implement the  interface.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_CompositeConfiguration_1" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration`1" class="text-break">
-Class CompositeConfiguration&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/CompositeConfiguration.cs/#L19"><i class="bi bi-code-slash"></i></a>
+Class CompositeConfiguration&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/CompositeConfiguration.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,7 +93,8 @@ Class CompositeConfiguration&lt;TEntity&gt;  <a class="header-action link-second
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.SqlServer.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The entity configuration for composite based entities.</p>
+  <div class="markdown summary"><p>Represents an abstract base class for configuring entity types that implement the
+<a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.ICompositeEntity.html">ICompositeEntity</a> interface.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -106,7 +107,7 @@ Class CompositeConfiguration&lt;TEntity&gt;  <a class="header-action link-second
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd><p>The entity type to be configured.</p>
+    <dd><p>The type of the entity being configured.</p>
 </dd>
   </dl>
 
@@ -156,8 +157,9 @@ Class CompositeConfiguration&lt;TEntity&gt;  <a class="header-action link-second
 
 
   <h2 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_CompositeConfiguration_1_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>See <a href="https://aka.ms/efcore-docs-modeling">Modeling entity types and relationships in EF Core</a> for more information and
-examples.</p>
+  <div class="markdown level0 remarks"><p>This class is intended to be used as a base for defining entity type configurations in
+Entity Framework Core. It provides a default implementation for configuring common properties,
+such as the <code>Timestamp</code> property.</p>
 </div>
 
 
@@ -169,7 +171,7 @@ examples.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_CompositeConfiguration_1_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.CompositeConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
   Configure(EntityTypeBuilder&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/CompositeConfiguration.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/CompositeConfiguration.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configures the entity of type <code class="typeparamref">TEntity</code>.</p>
@@ -202,7 +204,7 @@ examples.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/CompositeConfiguration.cs/#L19" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/CompositeConfiguration.cs/#L25" class="edit-link">Edit this page</a>
         </div>
 
 

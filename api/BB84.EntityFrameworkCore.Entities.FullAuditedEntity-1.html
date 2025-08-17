@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class FullAuditedEntity&lt;TKey&gt; ">
       
-      <meta name="description" content="The base implementation for the full audited models.">
+      <meta name="description" content="This abstract class provides a base implementation for entities that provides properties to track the creator, creation time, editor, and last modification time of the entity.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_1" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`1" class="text-break">
-Class FullAuditedEntity&lt;TKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L28"><i class="bi bi-code-slash"></i></a>
+Class FullAuditedEntity&lt;TKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,7 +93,8 @@ Class FullAuditedEntity&lt;TKey&gt;  <a class="header-action link-secondary" tit
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The base implementation for the full audited models.</p>
+  <div class="markdown summary"><p>This abstract class provides a base implementation for entities that provides properties
+to track the creator, creation time, editor, and last modification time of the entity.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -106,7 +107,7 @@ Class FullAuditedEntity&lt;TKey&gt;  <a class="header-action link-secondary" tit
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TKey</code></dt>
-    <dd><p>The type of the primary key.</p>
+    <dd><p>The type of the unique identifier for the entity.</p>
 </dd>
   </dl>
 
@@ -139,16 +140,16 @@ Class FullAuditedEntity&lt;TKey&gt;  <a class="header-action link-secondary" tit
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Creator">FullAuditedEntity&lt;TKey, string, string&gt;.Creator</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_CreatedBy">FullAuditedEntity&lt;TKey, string, string&gt;.CreatedBy</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Created">FullAuditedEntity&lt;TKey, string, string&gt;.Created</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_CreatedAt">FullAuditedEntity&lt;TKey, string, string&gt;.CreatedAt</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Editor">FullAuditedEntity&lt;TKey, string, string&gt;.Editor</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_EditedBy">FullAuditedEntity&lt;TKey, string, string&gt;.EditedBy</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Edited">FullAuditedEntity&lt;TKey, string, string&gt;.Edited</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_EditedAt">FullAuditedEntity&lt;TKey, string, string&gt;.EditedAt</a>
     </div>
     <div>
       <a class="xref" href="BB84.EntityFrameworkCore.Entities.IdentityEntity-1.html#BB84_EntityFrameworkCore_Entities_IdentityEntity_1_Id">IdentityEntity&lt;TKey&gt;.Id</a>
@@ -183,7 +184,7 @@ Class FullAuditedEntity&lt;TKey&gt;  <a class="header-action link-secondary" tit
 
 
   <h2 id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_1_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>The user auditing columns are of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>.</p>
+  <div class="markdown level0 remarks"><p>The creator and editor columns are of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>.</p>
 </div>
 
 
@@ -191,7 +192,7 @@ Class FullAuditedEntity&lt;TKey&gt;  <a class="header-action link-secondary" tit
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L28" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L35" class="edit-link">Edit this page</a>
         </div>
 
 

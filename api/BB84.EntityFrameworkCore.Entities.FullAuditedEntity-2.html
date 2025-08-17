@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class FullAuditedEntity&lt;TCreator, TEdited&gt; ">
       
-      <meta name="description" content="The base implementation for the full audited models.">
+      <meta name="description" content="This abstract class provides a base implementation for entities that provides properties to track the creator, creation time, editor, and last modification time of the entity.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_FullAuditedEntity_2" data-uid="BB84.EntityFrameworkCore.Entities.FullAuditedEntity`2" class="text-break">
-Class FullAuditedEntity&lt;TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L34"><i class="bi bi-code-slash"></i></a>
+Class FullAuditedEntity&lt;TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,12 +93,13 @@ Class FullAuditedEntity&lt;TCreator, TEdited&gt;  <a class="header-action link-s
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The base implementation for the full audited models.</p>
+  <div class="markdown summary"><p>This abstract class provides a base implementation for entities that provides properties
+to track the creator, creation time, editor, and last modification time of the entity.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class FullAuditedEntity&lt;TCreator, TEdited&gt; : FullAuditedEntity&lt;Guid, TCreator, TEdited&gt;, IFullAuditedEntity&lt;TCreator, TEdited&gt;, IFullAuditedEntity&lt;Guid, TCreator, TEdited&gt;, IUserAudited&lt;TCreator, TEdited&gt;, ITimeAudited, IIdentityEntity, IIdentityEntity&lt;Guid&gt;, IIdentity&lt;Guid&gt;, IConcurrency</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class FullAuditedEntity&lt;TCreator, TEdited&gt; : FullAuditedEntity&lt;Guid, TCreator, TEdited&gt;, IFullAuditedEntity&lt;TCreator, TEdited&gt;, IFullAuditedEntity&lt;Guid, TCreator, TEdited&gt;, IUserAudited&lt;TCreator, TEdited&gt;, ITimeAudited, IIdentityEntity, IIdentityEntity&lt;Guid&gt;, IIdentity&lt;Guid&gt;, IConcurrency where TCreator : notnull</code></pre>
   </div>
 
 
@@ -106,10 +107,11 @@ Class FullAuditedEntity&lt;TCreator, TEdited&gt;  <a class="header-action link-s
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TCreator</code></dt>
-    <dd><p>The type of the creator column.</p>
+    <dd><p>The type representing the creator of the entity.</p>
 </dd>
     <dt><code>TEdited</code></dt>
-    <dd></dd>
+    <dd><p>The type representing the editor of the entity.</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -141,16 +143,16 @@ Class FullAuditedEntity&lt;TCreator, TEdited&gt;  <a class="header-action link-s
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Creator">FullAuditedEntity&lt;Guid, TCreator, TEdited&gt;.Creator</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_CreatedBy">FullAuditedEntity&lt;Guid, TCreator, TEdited&gt;.CreatedBy</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Created">FullAuditedEntity&lt;Guid, TCreator, TEdited&gt;.Created</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_CreatedAt">FullAuditedEntity&lt;Guid, TCreator, TEdited&gt;.CreatedAt</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Editor">FullAuditedEntity&lt;Guid, TCreator, TEdited&gt;.Editor</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_EditedBy">FullAuditedEntity&lt;Guid, TCreator, TEdited&gt;.EditedBy</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_Edited">FullAuditedEntity&lt;Guid, TCreator, TEdited&gt;.Edited</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_FullAuditedEntity_3_EditedAt">FullAuditedEntity&lt;Guid, TCreator, TEdited&gt;.EditedAt</a>
     </div>
     <div>
       <a class="xref" href="BB84.EntityFrameworkCore.Entities.IdentityEntity-1.html#BB84_EntityFrameworkCore_Entities_IdentityEntity_1_Id">IdentityEntity&lt;Guid&gt;.Id</a>
@@ -193,7 +195,7 @@ Class FullAuditedEntity&lt;TCreator, TEdited&gt;  <a class="header-action link-s
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L34" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Entities/FullAuditedEntity.cs/#L44" class="edit-link">Edit this page</a>
         </div>
 
 

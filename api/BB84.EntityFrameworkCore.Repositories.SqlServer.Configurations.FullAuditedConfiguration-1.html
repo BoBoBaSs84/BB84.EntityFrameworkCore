@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class FullAuditeConfiguration&lt;TEntity, TCreator, TEdited&gt; </title>
+      <title>Class FullAuditedConfiguration&lt;TEntity&gt; </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class FullAuditeConfiguration&lt;TEntity, TCreator, TEdited&gt; ">
+      <meta name="title" content="Class FullAuditedConfiguration&lt;TEntity&gt; ">
       
-      <meta name="description" content="The entity configuration for full audited based entities.">
+      <meta name="description" content="Provides a base configuration for entities that implement the  interface.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/main/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_3.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration%603%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/main/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_1.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -80,12 +80,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3">
+        <article data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`1">
 
 
 
-  <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_3" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3" class="text-break">
-Class FullAuditeConfiguration&lt;TEntity, TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/FullAuditedConfiguration.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_1" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`1" class="text-break">
+Class FullAuditedConfiguration&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/FullAuditedConfiguration.cs/#L104"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,12 +93,13 @@ Class FullAuditeConfiguration&lt;TEntity, TCreator, TEdited&gt;  <a class="heade
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.SqlServer.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>The entity configuration for full audited based entities.</p>
+  <div class="markdown summary"><p>Provides a base configuration for entities that implement the
+<a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-3.html">IFullAuditedEntity&lt;TKey, TCreator, TEditor&gt;</a> interface.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class FullAuditeConfiguration&lt;TEntity, TCreator, TEdited&gt; : FullAuditedConfiguration&lt;TEntity, Guid, TCreator, TEdited&gt;, IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IFullAuditedEntity&lt;TCreator, TEdited&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class FullAuditedConfiguration&lt;TEntity&gt; : FullAuditedConfiguration&lt;TEntity, Guid, string, string?&gt;, IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IFullAuditedEntity</code></pre>
   </div>
 
 
@@ -106,20 +107,16 @@ Class FullAuditeConfiguration&lt;TEntity, TCreator, TEdited&gt;  <a class="heade
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd><p>The entity type to be configured.</p>
+    <dd><p>The type of the entity being configured.</p>
 </dd>
-    <dt><code>TCreator</code></dt>
-    <dd></dd>
-    <dt><code>TEdited</code></dt>
-    <dd></dd>
   </dl>
 
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-4.html">FullAuditedConfiguration</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>, TCreator, TEdited&gt;</div>
-      <div><span class="xref">FullAuditeConfiguration&lt;TEntity, TCreator, TEdited&gt;</span></div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-4.html">FullAuditedConfiguration</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</div>
+      <div><span class="xref">FullAuditedConfiguration&lt;TEntity&gt;</span></div>
     </dd>
   </dl>
 
@@ -135,7 +132,7 @@ Class FullAuditeConfiguration&lt;TEntity, TCreator, TEdited&gt;  <a class="heade
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-4.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_4_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__">FullAuditedConfiguration&lt;TEntity, Guid, TCreator, TEdited&gt;.Configure(EntityTypeBuilder&lt;TEntity&gt;)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-4.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_4_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__">FullAuditedConfiguration&lt;TEntity, Guid, string, string&gt;.Configure(EntityTypeBuilder&lt;TEntity&gt;)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -163,9 +160,10 @@ Class FullAuditeConfiguration&lt;TEntity, TCreator, TEdited&gt;  <a class="heade
 
 
 
-  <h2 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_3_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>See <a href="https://aka.ms/efcore-docs-modeling">Modeling entity types and relationships in EF Core</a> for more information and
-examples.</p>
+  <h2 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_1_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This configuration defines common properties for audited entities, including primary key,
+timestamps and audit fields such as creator and editor. It is intended to be used as a
+base class for configuring entities that require full auditing support.</p>
 </div>
 
 
@@ -173,11 +171,11 @@ examples.</p>
 </h2>
 
 
-  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_3_Configure_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3.Configure*"></a>
+  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_1_Configure_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`1.Configure*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditeConfiguration_3_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditeConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
+  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_1_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
   Configure(EntityTypeBuilder&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/FullAuditedConfiguration.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/FullAuditedConfiguration.cs/#L109"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configures the entity of type <code class="typeparamref">TEntity</code>.</p>
@@ -210,7 +208,7 @@ examples.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/FullAuditedConfiguration.cs/#L78" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/FullAuditedConfiguration.cs/#L104" class="edit-link">Edit this page</a>
         </div>
 
 
