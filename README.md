@@ -194,8 +194,8 @@ public interface IAuditedEntity<TKey, TCreator, TEdited> :
     // Inherits from IUserAudited<TCreator, TEdited>:
     // TCreator CreatedBy { get; set; }
     // TEdited? EditedBy { get; set; }
-    // DateTime CreatedAt { get; set; }
-    // DateTime? EditedAt { get; set; }
+    // DateTimeOffset CreatedAt { get; set; }
+    // DateTimeOffset? EditedAt { get; set; }
 }
 ```
 
@@ -221,7 +221,6 @@ public interface IFullAuditedEntity<TKey, TCreator, TEdited> :
 {
     // Inherits all from IAuditedEntity plus:
     // bool IsDeleted { get; set; }      // From ISoftDeletable
-    // DateTime? DeletedAt { get; set; } // From ISoftDeletable
 }
 ```
 

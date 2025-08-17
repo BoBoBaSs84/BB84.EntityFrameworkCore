@@ -21,11 +21,11 @@ public abstract class FullAuditedEntity<TKey, TCreator, TEdited> : IdentityEntit
 	/// <inheritdoc/>
 	public TCreator CreatedBy { get; set; } = default!;
 	/// <inheritdoc/>
-	public DateTime CreatedAt { get; set; } = default!;
+	public DateTimeOffset CreatedAt { get; set; } = default!;
 	/// <inheritdoc/>
 	public TEdited EditedBy { get; set; } = default!;
 	/// <inheritdoc/>
-	public DateTime? EditedAt { get; set; } = default!;
+	public DateTimeOffset? EditedAt { get; set; } = default!;
 }
 
 /// <inheritdoc cref="FullAuditedEntity{TKey, TCreator, TEdited}"/>

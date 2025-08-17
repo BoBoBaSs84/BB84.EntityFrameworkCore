@@ -19,10 +19,10 @@ public interface ITimeAudited
 	/// <summary>
 	/// Gets or sets the date and time when the entity was created.
 	/// </summary>
-	DateTime CreatedAt { get; set; }
+	DateTimeOffset CreatedAt { get; set; }
 
 	/// <summary>
 	/// Gets or sets the date and time when the item was last edited.
 	/// </summary>
-	DateTime? EditedAt { get; set; }
+	DateTimeOffset? EditedAt { get; set; }
 }
