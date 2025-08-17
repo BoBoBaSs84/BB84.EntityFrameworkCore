@@ -49,11 +49,11 @@ public abstract class AuditedConfiguration<TEntity, TKey, TCreator, TEdited> : I
 			.IsConcurrencyToken()
 			.ValueGeneratedOnAddOrUpdate();
 
-		builder.Property(e => e.Creator)
+		builder.Property(e => e.CreatedBy)
 			.HasColumnOrder(3)
 			.IsRequired();
 
-		builder.Property(e => e.Editor)
+		builder.Property(e => e.EditedBy)
 			.HasColumnOrder(4)
 			.IsRequired(false);
 	}
@@ -70,10 +70,10 @@ public abstract class AuditedConfiguration<TEntity, TKey> : AuditedConfiguration
 	{
 		base.Configure(builder);
 
-		builder.Property(e => e.Creator)
+		builder.Property(e => e.CreatedBy)
 			.IsSysNameColumn();
 
-		builder.Property(e => e.Editor)
+		builder.Property(e => e.EditedBy)
 			.IsSysNameColumn();
 	}
 }
@@ -107,10 +107,10 @@ public abstract class AuditedConfiguration<TEntity> : AuditedConfiguration<TEnti
 		builder.Property(p => p.Id)
 			.HasDefaultValueSql("NEWID()");
 
-		builder.Property(e => e.Creator)
+		builder.Property(e => e.CreatedBy)
 			.IsSysNameColumn();
 
-		builder.Property(e => e.Editor)
+		builder.Property(e => e.EditedBy)
 			.IsSysNameColumn();
 	}
 }

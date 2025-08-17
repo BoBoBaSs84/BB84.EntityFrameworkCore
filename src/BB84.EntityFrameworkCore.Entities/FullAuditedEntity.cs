@@ -19,13 +19,13 @@ public abstract class FullAuditedEntity<TKey, TCreator, TEdited> : IdentityEntit
 	where TCreator : notnull
 {
 	/// <inheritdoc/>
-	public TCreator Creator { get; set; } = default!;
+	public TCreator CreatedBy { get; set; } = default!;
 	/// <inheritdoc/>
-	public DateTime Created { get; set; } = default!;
+	public DateTime CreatedAt { get; set; } = default!;
 	/// <inheritdoc/>
-	public TEdited Editor { get; set; } = default!;
+	public TEdited EditedBy { get; set; } = default!;
 	/// <inheritdoc/>
-	public DateTime? Edited { get; set; } = default!;
+	public DateTime? EditedAt { get; set; } = default!;
 }
 
 /// <inheritdoc cref="FullAuditedEntity{TKey, TCreator, TEdited}"/>

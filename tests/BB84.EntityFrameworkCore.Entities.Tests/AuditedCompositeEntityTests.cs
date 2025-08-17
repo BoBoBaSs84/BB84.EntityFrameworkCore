@@ -19,13 +19,13 @@ public sealed class AuditedCompositeEntityTests
 
 		entity = new TestClass()
 		{
-			Creator = creator,
-			Editor = editor,
+			CreatedBy = creator,
+			EditedBy = editor,
 		};
 
 		Assert.IsNotNull(entity);
-		Assert.AreEqual(creator, entity.Creator);
-		Assert.AreEqual(editor, entity.Editor);
+		Assert.AreEqual(creator, entity.CreatedBy);
+		Assert.AreEqual(editor, entity.EditedBy);
 	}
 
 	private sealed class TestClass : AuditedCompositeEntity

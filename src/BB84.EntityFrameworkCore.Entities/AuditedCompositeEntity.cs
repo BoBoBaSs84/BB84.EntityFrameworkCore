@@ -21,10 +21,10 @@ public abstract class AuditedCompositeEntity<TCreator, TEdited> : IAuditedCompos
 	public byte[] Timestamp { get; } = default!;
 
 	/// <inheritdoc/>
-	public TCreator Creator { get; set; } = default!;
+	public TCreator CreatedBy { get; set; } = default!;
 
 	/// <inheritdoc/>
-	public TEdited Editor { get; set; } = default!;
+	public TEdited EditedBy { get; set; } = default!;
 }
 
 /// <inheritdoc cref="AuditedCompositeEntity{TCreator, TEdited}"/>
