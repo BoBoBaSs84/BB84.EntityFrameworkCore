@@ -30,7 +30,7 @@ public sealed class SkillTests : UnitTestBase
 
 		SkillEntity? dbSkill = repository.GetByCondition(x => x.Name == newSkill.Name, trackChanges: true);
 		Assert.IsNotNull(dbSkill);
-		Assert.AreNotEqual(DateTime.MinValue, dbSkill.CreatedAt);
+		Assert.AreNotEqual(DateTimeOffset.MinValue, dbSkill.CreatedAt);
 
 		dbSkill.IsCritical = false;
 		result = context.SaveChanges();
@@ -38,6 +38,6 @@ public sealed class SkillTests : UnitTestBase
 
 		dbSkill = repository.GetByCondition(x => x.Name == newSkill.Name, trackChanges: true);
 		Assert.IsNotNull(dbSkill);
-		Assert.AreNotEqual(DateTime.MinValue, dbSkill.EditedAt);
+		Assert.AreNotEqual(DateTimeOffset.MinValue, dbSkill.EditedAt);
 	}
 }
