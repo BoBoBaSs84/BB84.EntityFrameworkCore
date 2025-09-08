@@ -18,7 +18,7 @@ jobs:
         fetch-depth: 0
 
     - name: Setup .Net
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: '8.0.x'
 
@@ -40,7 +40,7 @@ jobs:
         fetch-depth: 0
 
     - name: Setup .Net
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
 
     - name: Setup DocFx
       run: dotnet tool update -g docfx
