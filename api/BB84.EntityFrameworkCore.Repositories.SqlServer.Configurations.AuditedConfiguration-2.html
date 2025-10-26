@@ -100,7 +100,8 @@ entities in the Entity Framework Core model.</p>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class AuditedConfiguration&lt;TEntity, TKey&gt; : AuditedConfiguration&lt;TEntity, TKey, string, string?&gt;, IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IAuditedEntity&lt;TKey&gt; where TKey : IEquatable&lt;TKey&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">[SuppressMessage(&quot;Style&quot;, &quot;IDE0058&quot;, Justification = &quot;Not relevant here, entity type configuration.&quot;)]
+public abstract class AuditedConfiguration&lt;TEntity, TKey&gt; : AuditedConfiguration&lt;TEntity, TKey, string, string?&gt;, IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IAuditedEntity&lt;TKey&gt; where TKey : IEquatable&lt;TKey&gt;</code></pre>
   </div>
 
 

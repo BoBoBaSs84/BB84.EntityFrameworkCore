@@ -99,7 +99,8 @@ Class CompositeConfiguration&lt;TEntity&gt;  <a class="header-action link-second
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class CompositeConfiguration&lt;TEntity&gt; : IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, ICompositeEntity</code></pre>
+    <pre><code class="lang-csharp hljs">[SuppressMessage(&quot;Style&quot;, &quot;IDE0058&quot;, Justification = &quot;Not relevant here, entity type configuration.&quot;)]
+public abstract class CompositeConfiguration&lt;TEntity&gt; : IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, ICompositeEntity</code></pre>
   </div>
 
 

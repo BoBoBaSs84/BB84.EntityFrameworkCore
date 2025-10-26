@@ -99,7 +99,8 @@ Class FullAuditedConfiguration&lt;TEntity, TCreator, TEdited&gt;  <a class="head
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class FullAuditedConfiguration&lt;TEntity, TCreator, TEdited&gt; : FullAuditedConfiguration&lt;TEntity, Guid, TCreator, TEdited&gt;, IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IFullAuditedEntity&lt;TCreator, TEdited&gt; where TCreator : notnull</code></pre>
+    <pre><code class="lang-csharp hljs">[SuppressMessage(&quot;Style&quot;, &quot;IDE0058&quot;, Justification = &quot;Not relevant here, entity type configuration.&quot;)]
+public abstract class FullAuditedConfiguration&lt;TEntity, TCreator, TEdited&gt; : FullAuditedConfiguration&lt;TEntity, Guid, TCreator, TEdited&gt;, IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IFullAuditedEntity&lt;TCreator, TEdited&gt; where TCreator : notnull</code></pre>
   </div>
 
 
