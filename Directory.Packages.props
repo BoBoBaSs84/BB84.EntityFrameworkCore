@@ -4,7 +4,7 @@
 		<CentralPackageTransitivePinningEnabled>True</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="MSTest" Version="4.0.2" />
+    <PackageVersion Include="MSTest" Version="4.1.0" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.12" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.12" />
   </ItemGroup>
