@@ -200,7 +200,11 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// </returns>
 	int Update(
 		TKey id,
+#if NET8_0
 		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls
+#else
+		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls
+#endif
 		);
 
 	/// <summary>
@@ -220,7 +224,11 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// </returns>
 	int Update(
 		IEnumerable<TKey> ids,
+#if NET8_0
 		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls
+#else
+		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls
+#endif
 		);
 
 	/// <summary>
@@ -241,7 +249,11 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// </returns>
 	Task<int> UpdateAsync(
 		TKey id,
+#if NET8_0
 		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
+#else
+		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
+#endif
 		CancellationToken token = default
 		);
 
@@ -263,7 +275,11 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// </returns>
 	Task<int> UpdateAsync(
 		IEnumerable<TKey> ids,
+#if NET8_0
 		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
+#else
+		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
+#endif
 		CancellationToken token = default
 		);
 }

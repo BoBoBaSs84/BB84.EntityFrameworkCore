@@ -11,8 +11,6 @@ updates:
       interval: "weekly"
       day: "monday"
       time: "03:00"
-    assignees:
-      - "BoBoBaSs84"
     groups:
       test-dependencies:
         patterns:
@@ -27,5 +25,3 @@ updates:
       interval: "weekly"
       day: "monday"
       time: "03:00"
-    assignees:
-      - "BoBoBaSs84"

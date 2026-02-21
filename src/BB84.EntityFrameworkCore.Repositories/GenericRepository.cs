@@ -208,7 +208,13 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		=> DbSet.UpdateRange(entities);
 
 	/// <inheritdoc/>
-	public int Update(Expression<Func<TEntity, bool>> expression, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls)
+	public int Update(
+		Expression<Func<TEntity, bool>> expression,
+#if NET8_0
+		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls)
+#else
+		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls)
+#endif
 		=> PrepareQuery(expression).ExecuteUpdate(setPropertyCalls);
 
 	/// <inheritdoc/>
@@ -220,7 +226,14 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		=> await Task.Run(() => DbSet.UpdateRange(entities), token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public async Task<int> UpdateAsync(Expression<Func<TEntity, bool>> expression, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls, CancellationToken token = default)
+	public async Task<int> UpdateAsync(
+		Expression<Func<TEntity, bool>> expression,
+#if NET8_0
+		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
+#else
+		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
+#endif
+		CancellationToken token = default)
 		=> await PrepareQuery(expression).ExecuteUpdateAsync(setPropertyCalls, token).ConfigureAwait(false);
 
 	/// <summary>
