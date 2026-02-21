@@ -5,7 +5,9 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="MSTest" Version="4.1.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.13" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.13" />
+    <PackageVersion Condition="$(TargetFramework) == 'net8.0'" Include="Microsoft.EntityFrameworkCore.Relational" Version="[9.0.13, 10.0.0)" />
+    <PackageVersion Condition="$(TargetFramework) == 'net8.0'" Include="Microsoft.EntityFrameworkCore.SqlServer" Version="[9.0.13, 10.0.0)" />
+    <PackageVersion Condition="$(TargetFramework) == 'net10.0'" Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.3" />
+    <PackageVersion Condition="$(TargetFramework) == 'net10.0'" Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.3" />
   </ItemGroup>
 </Project>

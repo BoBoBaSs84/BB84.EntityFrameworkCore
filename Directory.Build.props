@@ -14,6 +14,7 @@
 		<AllowUnsafeBlocks>False</AllowUnsafeBlocks>
 		<AnalysisLevel>latest</AnalysisLevel>
 		<AnalysisMode>recommended</AnalysisMode>		
+		<AppendTargetFrameworkToOutputPath>True</AppendTargetFrameworkToOutputPath>
 		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
 		<DebugType>full</DebugType>
 		<Deterministic>True</Deterministic>
@@ -25,7 +26,7 @@
 		<LangVersion>latest</LangVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<Nullable>enable</Nullable>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFrameworks>net8.0;net10.0</TargetFrameworks>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">
@@ -58,8 +59,6 @@
 
 	<PropertyGroup Condition="$(MSBuildProjectName.EndsWith('Tests'))">
 		<GenerateDocumentationFile>False</GenerateDocumentationFile>
-		<IsPackable>False</IsPackable>
-		<IsTestProject>True</IsTestProject>
 	</PropertyGroup>
 
 	<ItemGroup Condition="!$(MSBuildProjectName.EndsWith('Tests'))">
