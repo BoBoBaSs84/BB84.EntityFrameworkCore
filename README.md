@@ -6,6 +6,7 @@
 [![Dependabot](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/actions/workflows/dependabot/dependabot-updates/badge.svg?branch=main)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/actions/workflows/dependabot/dependabot-updates)
 
 [![.NET](https://img.shields.io/badge/net8.0-5C2D91?logo=.NET&labelColor=gray)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore)
+[![.NET](https://img.shields.io/badge/net10.0-5C2D91?logo=.NET&labelColor=gray)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore)
 [![C#](https://img.shields.io/badge/C%23-13.0-239120)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore)
 [![Issues](https://img.shields.io/github/issues/BoBoBaSs84/BB84.EntityFrameworkCore)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/issues)
 [![Commit](https://img.shields.io/github/last-commit/BoBoBaSs84/BB84.EntityFrameworkCore)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/commit/main)
@@ -15,7 +16,7 @@
 
 ## 🧭 Overview
 
-**BB84.EntityFrameworkCore** is a comprehensive .NET 8.0 library that provides a reusable repository pattern implementation for ASP.NET Core applications. The library offers commonly used entity abstractions, their default implementations, and repository abstractions with their corresponding implementations, specifically designed to work seamlessly with Entity Framework Core.
+**BB84.EntityFrameworkCore** is a comprehensive .NET 8.0 & .NET 10.0 library that provides a reusable repository pattern implementation for ASP.NET Core applications. The library offers commonly used entity abstractions, their default implementations, and repository abstractions with their corresponding implementations, specifically designed to work seamlessly with Entity Framework Core.
 
 ### Key Features
 
@@ -29,7 +30,8 @@
 
 ### Target Framework
 
-- **.NET 8.0** - Latest LTS version of .NET
+- **.NET 8.0** - LTS support until November 2026
+- **.NET 10.0** - Latest LTS version of .NET
 
 ## 🏗 Project Structure
 
@@ -656,7 +658,7 @@ dotnet test tests/BB84.EntityFrameworkCore.Entities.Tests/
 
 The project uses MSBuild properties defined in `Directory.Build.props`:
 
-- **Target Framework**: .NET 8.0
+- **Target Framework**: .NET 8.0 & .NET 10.0
 - **Language Version**: Latest C#
 - **Nullable**: Enabled
 - **Implicit Usings**: Enabled
@@ -666,8 +668,8 @@ The project uses MSBuild properties defined in `Directory.Build.props`:
 
 Versions are automatically generated based on:
 
-- Major: 3
-- Minor: 1
+- Major: 4
+- Minor: 2
 - Patch: Current date (MMDD format)
 - Revision: Current hour
 
