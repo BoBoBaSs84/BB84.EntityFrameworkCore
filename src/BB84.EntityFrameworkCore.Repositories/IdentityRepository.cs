@@ -98,19 +98,45 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 	}
 
 	/// <inheritdoc/>
-	public int Update(TKey id, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls)
+	public int Update(
+		TKey id,
+#if NET8_0
+		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls)
+#else
+		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls)
+#endif
 		=> Update(x => x.Id.Equals(id), setPropertyCalls);
 
 	/// <inheritdoc/>
-	public int Update(IEnumerable<TKey> ids, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls)
+	public int Update(
+		IEnumerable<TKey> ids,
+#if NET8_0
+		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls)
+#else
+		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls)
+#endif
 		=> Update(x => ids.Equals(x.Id), setPropertyCalls);
 
 	/// <inheritdoc/>
-	public async Task<int> UpdateAsync(TKey id, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls, CancellationToken token = default)
+	public async Task<int> UpdateAsync(
+		TKey id,
+#if NET8_0
+		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
+#else
+		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
+#endif
+		CancellationToken token = default)
 		=> await UpdateAsync(x => x.Id.Equals(id), setPropertyCalls, token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public async Task<int> UpdateAsync(IEnumerable<TKey> ids, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls, CancellationToken token = default)
+	public async Task<int> UpdateAsync(
+		IEnumerable<TKey> ids,
+#if NET8_0
+		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
+#else
+		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
+#endif
+		CancellationToken token = default)
 		=> await UpdateAsync(x => ids.Contains(x.Id), setPropertyCalls, token).ConfigureAwait(false);
 }
 

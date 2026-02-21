@@ -381,7 +381,11 @@ public interface IGenericRepository<TEntity>
 	/// <returns>The total number of rows updated in the database.</returns>
 	int Update(
 		Expression<Func<TEntity, bool>> expression,
+#if NET8_0
 		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls
+#else
+		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls
+#endif
 		);
 
 	/// <summary>
@@ -424,7 +428,11 @@ public interface IGenericRepository<TEntity>
 	/// <returns>The total number of rows updated in the database.</returns>
 	Task<int> UpdateAsync(
 		Expression<Func<TEntity, bool>> expression,
+#if NET8_0
 		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
+#else
+		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
+#endif
 		CancellationToken token = default
 		);
 }
