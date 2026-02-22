@@ -13,7 +13,9 @@
 	<PropertyGroup Label="Technical">
 		<AllowUnsafeBlocks>False</AllowUnsafeBlocks>
 		<AnalysisLevel>latest</AnalysisLevel>
-		<AnalysisMode>recommended</AnalysisMode>		
+		<AnalysisMode>recommended</AnalysisMode>
+		<!-- Due to breaking changes between .NET8.0 and .NET10.0 -->
+		<ApiCompatGenerateSuppressionFile>True</ApiCompatGenerateSuppressionFile>
 		<AppendTargetFrameworkToOutputPath>True</AppendTargetFrameworkToOutputPath>
 		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
 		<DebugType>full</DebugType>
