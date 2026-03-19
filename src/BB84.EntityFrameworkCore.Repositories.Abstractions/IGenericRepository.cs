@@ -55,7 +55,9 @@ public interface IGenericRepository<TEntity>
 	/// <param name="entity">The entity to add.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
-	Task CreateAsync(TEntity entity, CancellationToken token = default);
+	Task CreateAsync(
+		TEntity entity,
+		CancellationToken token = default);
 
 	/// <summary>
 	/// Adds the specified collection of entities to the underlying data store.
@@ -67,7 +69,9 @@ public interface IGenericRepository<TEntity>
 	/// <param name="entities">The collection of entities to add.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
-	Task CreateAsync(IEnumerable<TEntity> entities, CancellationToken token = default);
+	Task CreateAsync(
+		IEnumerable<TEntity> entities,
+		CancellationToken token = default);
 
 	/// <summary>
 	/// Deletes the specified entity from the underlying data store.
@@ -113,19 +117,23 @@ public interface IGenericRepository<TEntity>
 	/// <param name="entity">The entity to delete.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
-	Task DeleteAsync(TEntity entity, CancellationToken token = default);
+	Task DeleteAsync(
+		TEntity entity,
+		CancellationToken token = default);
 
 	/// <summary>
 	/// Deletes the specified collection of entities from the underlying data store.
 	/// </summary>
 	/// <remarks>
 	/// This method marks the provided entities as deleted in the database context, so that
-	/// changes to the entity will be persisted to the database during the next save operation.
+	/// changes to the entities will be persisted to the database during the next save operation.
 	/// </remarks>
 	/// <param name="entities">The collection of entities to delete.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
-	Task DeleteAsync(IEnumerable<TEntity> entities, CancellationToken token = default);
+	Task DeleteAsync(
+		IEnumerable<TEntity> entities,
+		CancellationToken token = default);
 
 	/// <summary>
 	/// Deletes all database rows for the <typeparamref name="TEntity"/> instances which match
@@ -140,7 +148,9 @@ public interface IGenericRepository<TEntity>
 	/// <param name="expression">The condition to fulfill to be deleted.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
-	Task<int> DeleteAsync(Expression<Func<TEntity, bool>>? expression, CancellationToken token = default);
+	Task<int> DeleteAsync(
+		Expression<Func<TEntity, bool>>? expression,
+		CancellationToken token = default);
 
 	/// <summary>
 	/// Counts the total number of entities in the data source.
@@ -185,7 +195,9 @@ public interface IGenericRepository<TEntity>
 	/// </param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of entities in the data source.</returns>
-	Task<int> CountAllAsync(bool ignoreQueryFilters = false, CancellationToken token = default);
+	Task<int> CountAllAsync(
+		bool ignoreQueryFilters = false,
+		CancellationToken token = default);
 
 	/// <summary>
 	/// Counts the number of entities in the data source that satisfy the specified conditions.
@@ -229,10 +241,12 @@ public interface IGenericRepository<TEntity>
 	/// A value indicating whether the retrieved entities should be tracked by the context.
 	/// </param>
 	/// <returns>
-	/// An <see cref="IEnumerable{T}"/> containing all entities of type <typeparamref name="TEntity"/>
+	/// An <see cref="IReadOnlyList{T}"/> containing all entities of type <typeparamref name="TEntity"/>
 	/// that match the query criteria.
 	/// </returns>
-	IEnumerable<TEntity> GetAll(bool ignoreQueryFilters = false, bool trackChanges = false);
+	IReadOnlyList<TEntity> GetAll(
+		bool ignoreQueryFilters = false,
+		bool trackChanges = false);
 
 	/// <summary>
 	/// Retrieves all entities of type <typeparamref name="TEntity"/> from the data source and projects them
@@ -252,7 +266,7 @@ public interface IGenericRepository<TEntity>
 	/// <returns>
 	/// A collection of <typeparamref name="TResult"/> containing the projected entities based on the specified selector and field selector.
 	/// </returns>
-	IEnumerable<TResult> GetAll<TResult>(
+	IReadOnlyList<TResult> GetAll<TResult>(
 		Expression<Func<TEntity, TResult>> selector,
 		Expression<Func<TResult, TResult>>? fieldSelector = null,
 		bool ignoreQueryFilters = false);
@@ -274,10 +288,10 @@ public interface IGenericRepository<TEntity>
 	/// </param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>
-	/// An <see cref="IEnumerable{T}"/> containing all entities of type <typeparamref name="TEntity"/>
+	/// An <see cref="IReadOnlyList{T}"/> containing all entities of type <typeparamref name="TEntity"/>
 	/// that match the query criteria.
 	/// </returns>
-	Task<IEnumerable<TEntity>> GetAllAsync(
+	Task<IReadOnlyList<TEntity>> GetAllAsync(
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
 		CancellationToken token = default);
@@ -301,7 +315,7 @@ public interface IGenericRepository<TEntity>
 	/// <returns>
 	/// A collection of <typeparamref name="TResult"/> containing the projected entities based on the specified selector and field selector.
 	/// </returns>
-	Task<IEnumerable<TResult>> GetAllAsync<TResult>(
+	Task<IReadOnlyList<TResult>> GetAllAsync<TResult>(
 		Expression<Func<TEntity, TResult>> selector,
 		Expression<Func<TResult, TResult>>? fieldSelector = null,
 		bool ignoreQueryFilters = false,
@@ -410,7 +424,7 @@ public interface IGenericRepository<TEntity>
 	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
 	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
 	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
-	IEnumerable<TEntity> GetManyByCondition(
+	IReadOnlyList<TEntity> GetManyByCondition(
 		Expression<Func<TEntity, bool>> expression,
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
 		bool ignoreQueryFilters = false,
@@ -441,7 +455,7 @@ public interface IGenericRepository<TEntity>
 	/// An enumerable collection of projected results that match the specified condition and query options.
 	/// The collection may be empty if no entities satisfy the condition.
 	/// </returns>
-	IEnumerable<TResult> GetManyByCondition<TResult>(
+	IReadOnlyList<TResult> GetManyByCondition<TResult>(
 		Expression<Func<TEntity, bool>> expression,
 		Expression<Func<TEntity, TResult>> selector,
 		Expression<Func<TResult, TResult>>? fieldSelector = null,
@@ -464,7 +478,7 @@ public interface IGenericRepository<TEntity>
 	/// <param name="token">The cancellation token.</param>
 	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
 	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
-	Task<IEnumerable<TEntity>> GetManyByConditionAsync(
+	Task<IReadOnlyList<TEntity>> GetManyByConditionAsync(
 		Expression<Func<TEntity, bool>> expression,
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
 		bool ignoreQueryFilters = false,
@@ -499,7 +513,7 @@ public interface IGenericRepository<TEntity>
 	/// A task that represents the asynchronous operation. The task result contains an enumerable collection of
 	/// projected results that match the specified condition. The collection is empty if no entities match.
 	/// </returns>
-	Task<IEnumerable<TResult>> GetManyByConditionAsync<TResult>(
+	Task<IReadOnlyList<TResult>> GetManyByConditionAsync<TResult>(
 		Expression<Func<TEntity, bool>> expression,
 		Expression<Func<TEntity, TResult>> selector,
 		Expression<Func<TResult, TResult>>? fieldSelector = null,
@@ -546,11 +560,10 @@ public interface IGenericRepository<TEntity>
 	int Update(
 		Expression<Func<TEntity, bool>> expression,
 #if NET8_0
-		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls
+		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls);
 #else
-		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls
+		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls);
 #endif
-		);
 
 	/// <summary>
 	/// Updates the specified entity in the underlying data store.
@@ -562,7 +575,9 @@ public interface IGenericRepository<TEntity>
 	/// <param name="entity">The entity to update.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
-	Task UpdateAsync(TEntity entity, CancellationToken token = default);
+	Task UpdateAsync(
+		TEntity entity,
+		CancellationToken token = default);
 
 	/// <summary>
 	/// Updates the specified collection of entities in the underlying data store.
@@ -574,7 +589,9 @@ public interface IGenericRepository<TEntity>
 	/// <param name="entities">The collection of entities to update.</param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
-	Task UpdateAsync(IEnumerable<TEntity> entities, CancellationToken token = default);
+	Task UpdateAsync(
+		IEnumerable<TEntity> entities,
+		CancellationToken token = default);
 
 	/// <summary>
 	/// Updates all database rows for the <typeparamref name="TEntity"/> instances which match
@@ -597,6 +614,5 @@ public interface IGenericRepository<TEntity>
 #else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
 #endif
-		CancellationToken token = default
-		);
+		CancellationToken token = default);
 }

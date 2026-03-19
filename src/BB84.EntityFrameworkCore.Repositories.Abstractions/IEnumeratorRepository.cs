@@ -32,8 +32,7 @@ public interface IEnumeratorRepository<TEntity, TKey> : IIdentityRepository<TEnt
 	TEntity? GetByName(
 		string name,
 		bool ignoreQueryFilters = false,
-		bool trackChanges = false
-		);
+		bool trackChanges = false);
 
 	/// <summary>
 	/// Retrieves an entity by its name.
@@ -47,8 +46,7 @@ public interface IEnumeratorRepository<TEntity, TKey> : IIdentityRepository<TEnt
 		string name,
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
-		CancellationToken cancellationToken = default
-		);
+		CancellationToken cancellationToken = default);
 
 	/// <summary>
 	/// Retrieves a collection of entities that match the specified names.
@@ -57,14 +55,13 @@ public interface IEnumeratorRepository<TEntity, TKey> : IIdentityRepository<TEnt
 	/// <param name="ignoreQueryFilters">A value indicating whether to ignore any query filters applied to the entity type.</param>
 	/// <param name="trackChanges">A value indicating whether the returned entities should be tracked by the context.</param>
 	/// <returns>
-	/// An <see cref="IEnumerable{TEntity}"/> containing the entities that match the specified names.
+	/// An <see cref="IReadOnlyList{TEntity}"/> containing the entities that match the specified names.
 	/// If no entities match, an empty collection is returned.
 	/// </returns>
-	IEnumerable<TEntity> GetByNames(
+	IReadOnlyList<TEntity> GetByNames(
 		IEnumerable<string> names,
 		bool ignoreQueryFilters = false,
-		bool trackChanges = false
-		);
+		bool trackChanges = false);
 
 	/// <summary>
 	/// Retrieves a collection of entities that match the specified names.
@@ -74,15 +71,14 @@ public interface IEnumeratorRepository<TEntity, TKey> : IIdentityRepository<TEnt
 	/// <param name="trackChanges">A value indicating whether the returned entities should be tracked by the context.</param>
 	/// <param name="cancellationToken">The cancellation token.</param>
 	/// <returns>
-	/// An <see cref="IEnumerable{TEntity}"/> containing the entities that match the specified names.
+	/// An <see cref="IReadOnlyList{TEntity}"/> containing the entities that match the specified names.
 	/// If no entities match, an empty collection is returned.
 	/// </returns>
-	Task<IEnumerable<TEntity>> GetByNamesAsync(
+	Task<IReadOnlyList<TEntity>> GetByNamesAsync(
 		IEnumerable<string> names,
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
-		CancellationToken cancellationToken = default
-		);
+		CancellationToken cancellationToken = default);
 }
 
 /// <inheritdoc cref="IEnumeratorRepository{TEntity, TKey}"/>
