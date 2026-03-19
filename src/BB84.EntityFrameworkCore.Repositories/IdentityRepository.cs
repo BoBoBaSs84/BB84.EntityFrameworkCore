@@ -25,7 +25,8 @@ namespace BB84.EntityFrameworkCore.Repositories;
 /// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
 /// <param name="dbContext">The database context to work with.</param>
 public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : GenericRepository<TEntity>(dbContext), IIdentityRepository<TEntity, TKey>
-	where TEntity : class, IIdentityEntity<TKey> where TKey : IEquatable<TKey>
+	where TEntity : class, IIdentityEntity<TKey>
+	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
 	public int Delete(TKey id)
@@ -57,6 +58,18 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 	}
 
 	/// <inheritdoc/>
+	public TResult? GetById<TResult>(TKey id, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, bool ignoreQueryFilters = false)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: x => x.Id.Equals(id),
+			ignoreQueryFilters: ignoreQueryFilters
+			);
+
+		return ApplyProjection(query, selector, fieldSelector)
+			.SingleOrDefault();
+	}
+
+	/// <inheritdoc/>
 	public async Task<TEntity?> GetByIdAsync(TKey id, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
@@ -67,6 +80,19 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 			);
 
 		return await query.SingleOrDefaultAsync(token)
+			.ConfigureAwait(false);
+	}
+
+	/// <inheritdoc/>
+	public async Task<TResult?> GetByIdAsync<TResult>(TKey id, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, bool ignoreQueryFilters = false, CancellationToken token = default)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: x => x.Id.Equals(id),
+			ignoreQueryFilters: ignoreQueryFilters
+			);
+
+		return await ApplyProjection(query, selector, fieldSelector)
+			.SingleOrDefaultAsync(token)
 			.ConfigureAwait(false);
 	}
 
@@ -84,6 +110,17 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 	}
 
 	/// <inheritdoc/>
+	public IEnumerable<TResult> GetByIds<TResult>(IEnumerable<TKey> ids, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, bool ignoreQueryFilters = false)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: x => ids.Contains(x.Id),
+			ignoreQueryFilters: ignoreQueryFilters
+			);
+
+		return [.. ApplyProjection(query, selector, fieldSelector)];
+	}
+
+	/// <inheritdoc/>
 	public async Task<IEnumerable<TEntity>> GetByIdsAsync(IEnumerable<TKey> ids, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
@@ -94,6 +131,19 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 			);
 
 		return await query.ToListAsync(token)
+			.ConfigureAwait(false);
+	}
+
+	/// <inheritdoc/>
+	public async Task<IReadOnlyList<TResult>> GetByIdsAsync<TResult>(IEnumerable<TKey> ids, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, bool ignoreQueryFilters = false, CancellationToken token = default)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: x => ids.Contains(x.Id),
+			ignoreQueryFilters: ignoreQueryFilters
+			);
+
+		return await ApplyProjection(query, selector, fieldSelector)
+			.ToListAsync(token)
 			.ConfigureAwait(false);
 	}
 

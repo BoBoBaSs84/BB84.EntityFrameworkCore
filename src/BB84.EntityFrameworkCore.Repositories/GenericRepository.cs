@@ -53,18 +53,6 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
-	public int Count(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression,
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters
-			);
-
-		return query.Count();
-	}
-
-	/// <inheritdoc/>
 	public async Task<int> CountAllAsync(bool ignoreQueryFilters = false, CancellationToken token = default)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
@@ -76,7 +64,19 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
-	public async Task<int> CountAsync(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, CancellationToken token = default)
+	public int CountByCondition(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters
+			);
+
+		return query.Count();
+	}
+
+	/// <inheritdoc/>
+	public async Task<int> CountByConditionAsync(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, CancellationToken token = default)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: expression,
@@ -124,6 +124,16 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
+	public IEnumerable<TResult> GetAll<TResult>(Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, bool ignoreQueryFilters = false)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			ignoreQueryFilters: ignoreQueryFilters
+			);
+
+		return [.. ApplyProjection(query, selector, fieldSelector)];
+	}
+
+	/// <inheritdoc/>
 	public async Task<IEnumerable<TEntity>> GetAllAsync(bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
@@ -136,7 +146,75 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
-	public IEnumerable<TEntity> GetManyByCondition(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, params string[] includeProperties)
+	public async Task<IEnumerable<TResult>> GetAllAsync<TResult>(Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, bool ignoreQueryFilters = false, CancellationToken token = default)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			ignoreQueryFilters: ignoreQueryFilters
+			);
+
+		return await ApplyProjection(query, selector, fieldSelector)
+			.ToListAsync(token)
+			.ConfigureAwait(false);
+	}
+
+	/// <inheritdoc/>
+	public TEntity? GetByCondition(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, bool trackChanges = false, params string[] includeProperties)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters,
+			trackChanges: trackChanges,
+			includeProperties: includeProperties
+			);
+
+		return query.SingleOrDefault();
+	}
+
+	/// <inheritdoc/>
+	public TResult? GetByCondition<TResult>(Expression<Func<TEntity, bool>> expression, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters
+			);
+
+		return ApplyProjection(query, selector, fieldSelector)
+			.SingleOrDefault();
+	}
+
+	/// <inheritdoc/>
+	public async Task<TEntity?> GetByConditionAsync(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters,
+			trackChanges: trackChanges,
+			includeProperties: includeProperties
+			);
+
+		return await query.FirstOrDefaultAsync(token)
+			.ConfigureAwait(false);
+	}
+
+	/// <inheritdoc/>
+	public async Task<TResult?> GetByConditionAsync<TResult>(Expression<Func<TEntity, bool>> expression, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, CancellationToken token = default)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters
+			);
+
+		return await ApplyProjection(query, selector, fieldSelector)
+			.SingleOrDefaultAsync(token)
+			.ConfigureAwait(false);
+	}
+
+	/// <inheritdoc/>
+	public IEnumerable<TEntity> GetManyByCondition(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: expression,
@@ -153,7 +231,22 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
-	public async Task<IEnumerable<TEntity>> GetManyByConditionAsync(Expression<Func<TEntity, bool>>? expression = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
+	public IEnumerable<TResult> GetManyByCondition<TResult>(Expression<Func<TEntity, bool>> expression, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters,
+			orderBy: orderBy,
+			skip: skip,
+			take: take
+			);
+
+		return [.. ApplyProjection(query, selector, fieldSelector)];
+	}
+
+	/// <inheritdoc/>
+	public async Task<IEnumerable<TEntity>> GetManyByConditionAsync(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: expression,
@@ -171,31 +264,19 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
-	public TEntity? GetByCondition(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, bool trackChanges = false, params string[] includeProperties)
+	public async Task<IEnumerable<TResult>> GetManyByConditionAsync<TResult>(Expression<Func<TEntity, bool>> expression, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, CancellationToken token = default)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: expression,
 			queryFilter: queryFilter,
 			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges,
-			includeProperties: includeProperties
+			orderBy: orderBy,
+			skip: skip,
+			take: take
 			);
 
-		return query.FirstOrDefault();
-	}
-
-	/// <inheritdoc/>
-	public async Task<TEntity?> GetByConditionAsync(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression,
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges,
-			includeProperties: includeProperties
-			);
-
-		return await query.FirstOrDefaultAsync(token)
+		return await ApplyProjection(query, selector, fieldSelector)
+			.ToListAsync(token)
 			.ConfigureAwait(false);
 	}
 
@@ -274,5 +355,39 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 			query = query.Take(take.Value);
 
 		return query;
+	}
+
+	/// <summary>
+	/// Projects the elements of the source query to a new form using the specified selector, and optionally
+	/// applies a secondary projection to the result.
+	/// </summary>
+	/// <remarks>
+	/// Use this method to perform flexible projections on a query, allowing for both an initial and an optional
+	/// secondary transformation. This can be useful when you need to shape the result set dynamically based on
+	/// additional criteria.
+	/// </remarks>
+	/// <typeparam name="TResult">The type of the result elements after projection.</typeparam>
+	/// <param name="query">The source query containing the elements to project.</param>
+	/// <param name="selector">
+	/// An expression that defines the initial projection from the source entity to the result type.
+	/// </param>
+	/// <param name="fieldSelector">
+	/// An optional expression that further projects the result type. If provided, it is applied to each element
+	/// after the initial projection.
+	/// </param>
+	/// <returns>
+	/// An IQueryable containing the projected elements, optionally further transformed by the secondary selector.
+	/// </returns>
+	protected static IQueryable<TResult> ApplyProjection<TResult>(
+		IQueryable<TEntity> query,
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector)
+	{
+		IQueryable<TResult> projected = query.Select(selector);
+
+		if (fieldSelector is not null)
+			projected = projected.Select(fieldSelector);
+
+		return projected;
 	}
 }
