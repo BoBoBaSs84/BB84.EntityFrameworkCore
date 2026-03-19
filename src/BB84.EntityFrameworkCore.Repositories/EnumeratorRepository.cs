@@ -50,7 +50,7 @@ public abstract class EnumeratorRepository<TEntity, TKey>(IDbContext dbContext) 
 	}
 
 	/// <inheritdoc/>
-	public IEnumerable<TEntity> GetByNames(IEnumerable<string> names, bool ignoreQueryFilters = false, bool trackChanges = false)
+	public IReadOnlyList<TEntity> GetByNames(IEnumerable<string> names, bool ignoreQueryFilters = false, bool trackChanges = false)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: x => names.Contains(x.Name),
@@ -62,7 +62,7 @@ public abstract class EnumeratorRepository<TEntity, TKey>(IDbContext dbContext) 
 	}
 
 	/// <inheritdoc/>
-	public async Task<IEnumerable<TEntity>> GetByNamesAsync(IEnumerable<string> names, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)
+	public async Task<IReadOnlyList<TEntity>> GetByNamesAsync(IEnumerable<string> names, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: x => names.Contains(x.Name),

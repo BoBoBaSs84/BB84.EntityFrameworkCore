@@ -201,10 +201,10 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// An array of related entity property names to include in the query results.
 	/// </param>
 	/// <returns>
-	/// A collection of entities of type <typeparamref name="TEntity"/> that match the specified identifiers.
-	/// If no entities match, an empty collection is returned.
+	/// A read only collection of entities of type <typeparamref name="TEntity"/> that match the
+	/// specified identifiers. If no entities match, an empty collection is returned.
 	/// </returns>
-	IEnumerable<TEntity> GetByIds(
+	IReadOnlyList<TEntity> GetByIds(
 		IEnumerable<TKey> ids,
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
@@ -226,10 +226,10 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// </param>
 	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
 	/// <returns>
-	/// An enumerable collection of projected results corresponding to the specified identifiers. The collection may be empty
-	/// if no entities are found.
+	/// An read only collection of projected results of <typeparamref name="TResult"/> corresponding to the specified identifiers.
+	/// The collection may be empty if no entities are found.
 	/// </returns>
-	IEnumerable<TResult> GetByIds<TResult>(
+	IReadOnlyList<TResult> GetByIds<TResult>(
 		IEnumerable<TKey> ids,
 		Expression<Func<TEntity, TResult>> selector,
 		Expression<Func<TResult, TResult>>? fieldSelector = null,
@@ -250,10 +250,10 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// An array of related entity property names to include in the query results.
 	/// </param>
 	/// <returns>
-	/// A collection of entities of type <typeparamref name="TEntity"/> that match the specified identifiers.
-	/// If no entities match, an empty collection is returned.
+	/// A read only collection of entities of type <typeparamref name="TEntity"/> that match the
+	/// specified identifiers. If no entities match, an empty collection is returned.
 	/// </returns>
-	Task<IEnumerable<TEntity>> GetByIdsAsync(
+	Task<IReadOnlyList<TEntity>> GetByIdsAsync(
 		IEnumerable<TKey> ids,
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,

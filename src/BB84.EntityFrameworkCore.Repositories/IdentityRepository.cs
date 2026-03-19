@@ -97,7 +97,7 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 	}
 
 	/// <inheritdoc/>
-	public IEnumerable<TEntity> GetByIds(IEnumerable<TKey> ids, bool ignoreQueryFilters = false, bool trackChanges = false, params string[] includeProperties)
+	public IReadOnlyList<TEntity> GetByIds(IEnumerable<TKey> ids, bool ignoreQueryFilters = false, bool trackChanges = false, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: x => ids.Contains(x.Id),
@@ -110,7 +110,7 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 	}
 
 	/// <inheritdoc/>
-	public IEnumerable<TResult> GetByIds<TResult>(IEnumerable<TKey> ids, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, bool ignoreQueryFilters = false)
+	public IReadOnlyList<TResult> GetByIds<TResult>(IEnumerable<TKey> ids, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, bool ignoreQueryFilters = false)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: x => ids.Contains(x.Id),
@@ -121,7 +121,7 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 	}
 
 	/// <inheritdoc/>
-	public async Task<IEnumerable<TEntity>> GetByIdsAsync(IEnumerable<TKey> ids, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
+	public async Task<IReadOnlyList<TEntity>> GetByIdsAsync(IEnumerable<TKey> ids, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
 			expression: x => ids.Contains(x.Id),
