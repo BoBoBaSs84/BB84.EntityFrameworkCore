@@ -171,11 +171,10 @@ public interface IGenericRepository<TEntity>
 	/// A value indicating whether to ignore any global query filters applied to the entity type.
 	/// </param>
 	/// <returns>The total number of entities that match the specified conditions.</returns>
-	int Count(
-		Expression<Func<TEntity, bool>>? expression = null,
+	int CountByCondition(
+		Expression<Func<TEntity, bool>> expression,
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
-		bool ignoreQueryFilters = false
-		);
+		bool ignoreQueryFilters = false);
 
 	/// <summary>
 	/// Counts the total number of entities in the data source.
@@ -208,12 +207,11 @@ public interface IGenericRepository<TEntity>
 	/// </param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of entities that match the specified conditions.</returns>
-	Task<int> CountAsync(
-		Expression<Func<TEntity, bool>>? expression = null,
+	Task<int> CountByConditionAsync(
+		Expression<Func<TEntity, bool>> expression,
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
 		bool ignoreQueryFilters = false,
-		CancellationToken token = default
-		);
+		CancellationToken token = default);
 
 	/// <summary>
 	/// Retrieves all entities of type <typeparamref name="TEntity"/> from the data source.
@@ -235,6 +233,29 @@ public interface IGenericRepository<TEntity>
 	/// that match the query criteria.
 	/// </returns>
 	IEnumerable<TEntity> GetAll(bool ignoreQueryFilters = false, bool trackChanges = false);
+
+	/// <summary>
+	/// Retrieves all entities of type <typeparamref name="TEntity"/> from the data source and projects them
+	/// into a different form using the specified <paramref name="selector"/>. The optional <paramref name="fieldSelector"/>
+	/// is used to specify which fields to include in the projection, and the <paramref name="ignoreQueryFilters"/> parameter
+	/// allows bypassing global query filters when retrieving entities.
+	/// </summary>
+	/// <typeparam name="TResult">
+	/// The type to which the entities should be projected. This can be a DTO, an anonymous type, or any other type that can
+	/// be constructed from the properties of <typeparamref name="TEntity"/>.
+	/// </typeparam>
+	/// <param name="selector">The expression used to project the entities into the desired form.</param>
+	/// <param name="fieldSelector">The optional expression used to specify which fields to include in the projection.</param>
+	/// <param name="ignoreQueryFilters">
+	/// A value indicating whether to ignore any query filters applied to the entity type when retrieving entities for projection.
+	/// </param>
+	/// <returns>
+	/// A collection of <typeparamref name="TResult"/> containing the projected entities based on the specified selector and field selector.
+	/// </returns>
+	IEnumerable<TResult> GetAll<TResult>(
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		bool ignoreQueryFilters = false);
 
 	/// <summary>
 	/// Retrieves all entities of type <typeparamref name="TEntity"/> from the data source.
@@ -259,56 +280,32 @@ public interface IGenericRepository<TEntity>
 	Task<IEnumerable<TEntity>> GetAllAsync(
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
-		CancellationToken token = default
-		);
+		CancellationToken token = default);
 
 	/// <summary>
-	/// Returns a collection of <typeparamref name="TEntity"/> based on the specified <paramref name="expression"/>.
+	/// Retrieves all entities of type <typeparamref name="TEntity"/> from the data source and projects them
+	/// into a different form using the specified <paramref name="selector"/>. The optional <paramref name="fieldSelector"/>
+	/// is used to specify which fields to include in the projection, and the <paramref name="ignoreQueryFilters"/> parameter
+	/// allows bypassing global query filters when retrieving entities.
 	/// </summary>
-	/// <param name="expression">The condition to fulfill to be returned.</param>
-	/// <param name="queryFilter">The function used to filter the entities.</param>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <param name="orderBy">The function used to order the entities.</param>
-	/// <param name="skip">The number of records to skip.</param>
-	/// <param name="take">The number of records to limit the results to.</param>
-	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
-	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
-	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
-	IEnumerable<TEntity> GetManyByCondition(
-		Expression<Func<TEntity, bool>>? expression = null,
-		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+	/// <typeparam name="TResult">
+	/// The type to which the entities should be projected. This can be a DTO, an anonymous type, or any other type that can
+	/// be constructed from the properties of <typeparamref name="TEntity"/>.
+	/// </typeparam>
+	/// <param name="selector">The expression used to project the entities into the desired form.</param>
+	/// <param name="fieldSelector">The optional expression used to specify which fields to include in the projection.</param>
+	/// <param name="ignoreQueryFilters">
+	/// A value indicating whether to ignore any query filters applied to the entity type when retrieving entities for projection.
+	/// </param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <returns>
+	/// A collection of <typeparamref name="TResult"/> containing the projected entities based on the specified selector and field selector.
+	/// </returns>
+	Task<IEnumerable<TResult>> GetAllAsync<TResult>(
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
 		bool ignoreQueryFilters = false,
-		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
-		int? skip = null,
-		int? take = null,
-		bool trackChanges = false,
-		params string[] includeProperties
-		);
-
-	/// <summary>
-	/// Returns a collection of <typeparamref name="TEntity"/> based on the specified <paramref name="expression"/>.
-	/// </summary>
-	/// <param name="expression">The condition to fulfill to be returned.</param>
-	/// <param name="queryFilter">The function used to filter the entities.</param>
-	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
-	/// <param name="orderBy">The function used to order the entities.</param>
-	/// <param name="skip">The number of records to skip.</param>
-	/// <param name="take">The number of records to limit the results to.</param>
-	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
-	/// <param name="token">The cancellation token.</param>
-	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
-	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
-	Task<IEnumerable<TEntity>> GetManyByConditionAsync(
-		Expression<Func<TEntity, bool>>? expression = null,
-		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
-		bool ignoreQueryFilters = false,
-		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
-		int? skip = null,
-		int? take = null,
-		bool trackChanges = false,
-		CancellationToken token = default,
-		params string[] includeProperties
-		);
+		CancellationToken token = default);
 
 	/// <summary>
 	/// Returns a <typeparamref name="TEntity"/> by a certain <paramref name="expression"/>.
@@ -324,8 +321,34 @@ public interface IGenericRepository<TEntity>
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
-		params string[] includeProperties
-		);
+		params string[] includeProperties);
+
+	/// <summary>
+	/// Retrieves a single result of type <typeparamref name="TResult"/> from entities that satisfy the
+	/// specified condition.
+	/// </summary>
+	/// <remarks>
+	/// If multiple entities match the specified condition, only the first result is returned. This method
+	/// can be used to efficiently retrieve a single value or projection from a filtered set of entities.
+	/// The behavior of global query filters can be controlled using the <paramref name="ignoreQueryFilters"/>
+	/// parameter.
+	/// </remarks>
+	/// <typeparam name="TResult">The type of the result to project from the entity.</typeparam>
+	/// <param name="expression">An expression that defines the condition to filter entities of type <typeparamref name="TEntity"/>.</param>
+	/// <param name="selector">An expression that specifies how to project the filtered entity to a result of type <typeparamref name="TResult"/>.</param>
+	/// <param name="fieldSelector">An optional expression to further select or transform fields from the projected result.</param>
+	/// <param name="queryFilter">An optional function to apply additional query operations, such as sorting or including related entities, to the
+	/// filtered set.</param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
+	/// <returns>
+	/// The projected result of type <typeparamref name="TResult"/> if an entity matching the condition is found; otherwise, null.
+	/// </returns>
+	TResult? GetByCondition<TResult>(
+		Expression<Func<TEntity, bool>> expression,
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false);
 
 	/// <summary>
 	/// Returns a <typeparamref name="TEntity"/> by a certain <paramref name="expression"/>.
@@ -343,8 +366,149 @@ public interface IGenericRepository<TEntity>
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
 		CancellationToken token = default,
-		params string[] includeProperties
-		);
+		params string[] includeProperties);
+
+	/// <summary>
+	/// Asynchronously retrieves a single result projected from entities that satisfy the specified condition.
+	/// </summary>
+	/// <remarks>
+	/// If multiple entities match the specified condition, only the first matching result is returned.
+	/// This method is typically used to retrieve a single value or object based on a filter and projection.
+	/// </remarks>
+	/// <typeparam name="TResult">The type of the result to project and return.</typeparam>
+	/// <param name="expression">An expression that defines the condition to filter entities of type TEntity.</param>
+	/// <param name="selector">An expression that specifies how to project the filtered entity to the result type TResult.</param>
+	/// <param name="fieldSelector">
+	/// An optional expression to further select or shape the projected result. If null, the entire projected result is returned.
+	/// </param>
+	/// <param name="queryFilter">
+	/// An optional function to apply additional query transformations, such as sorting or including related data, before executing the query.
+	/// </param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
+	/// <param name="token">A CancellationToken that can be used to cancel the asynchronous operation.</param>
+	/// <returns>
+	/// A task that represents the asynchronous operation. The task result contains the projected result if a matching entity is found;
+	/// otherwise, null.
+	/// </returns>
+	Task<TResult?> GetByConditionAsync<TResult>(
+		Expression<Func<TEntity, bool>> expression,
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		CancellationToken token = default);
+
+	/// <summary>
+	/// Returns a collection of <typeparamref name="TEntity"/> based on the specified <paramref name="expression"/>.
+	/// </summary>
+	/// <param name="expression">The condition to fulfill to be returned.</param>
+	/// <param name="queryFilter">The function used to filter the entities.</param>
+	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
+	/// <param name="orderBy">The function used to order the entities.</param>
+	/// <param name="skip">The number of records to skip.</param>
+	/// <param name="take">The number of records to limit the results to.</param>
+	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
+	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
+	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
+	IEnumerable<TEntity> GetManyByCondition(
+		Expression<Func<TEntity, bool>> expression,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+		int? skip = null,
+		int? take = null,
+		bool trackChanges = false,
+		params string[] includeProperties);
+
+	/// <summary>
+	/// Retrieves a collection of entities that satisfy the specified condition, projects them to the specified result
+	/// type, and applies optional filtering, ordering, and pagination.
+	/// </summary>
+	/// <remarks>
+	/// Use this method to retrieve and project multiple entities based on complex query scenarios, including custom
+	/// filtering, ordering, and pagination. This method is typically used in repository patterns to abstract data access logic.
+	/// </remarks>
+	/// <typeparam name="TResult">The type of the result returned by the selector expression.</typeparam>
+	/// <param name="expression">An expression that defines the condition entities must satisfy to be included in the result.</param>
+	/// <param name="selector">An expression that specifies how to project each matching entity to the result type.</param>
+	/// <param name="fieldSelector">An optional expression that selects specific fields from the projected result.</param>
+	/// <param name="queryFilter">An optional function to apply additional filtering or transformation to the query before execution.</param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
+	/// <param name="orderBy">An optional function to specify the ordering of the results.</param>
+	/// <param name="skip">The number of results to skip before returning results. If null, no results are skipped.</param>
+	/// <param name="take">The maximum number of results to return. If null, all matching results are returned.</param>
+	/// <returns>
+	/// An enumerable collection of projected results that match the specified condition and query options.
+	/// The collection may be empty if no entities satisfy the condition.
+	/// </returns>
+	IEnumerable<TResult> GetManyByCondition<TResult>(
+		Expression<Func<TEntity, bool>> expression,
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+		int? skip = null,
+		int? take = null);
+
+	/// <summary>
+	/// Returns a collection of <typeparamref name="TEntity"/> based on the specified <paramref name="expression"/>.
+	/// </summary>
+	/// <param name="expression">The condition to fulfill to be returned.</param>
+	/// <param name="queryFilter">The function used to filter the entities.</param>
+	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
+	/// <param name="orderBy">The function used to order the entities.</param>
+	/// <param name="skip">The number of records to skip.</param>
+	/// <param name="take">The number of records to limit the results to.</param>
+	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
+	/// <param name="token">The cancellation token.</param>
+	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
+	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
+	Task<IEnumerable<TEntity>> GetManyByConditionAsync(
+		Expression<Func<TEntity, bool>> expression,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+		int? skip = null,
+		int? take = null,
+		bool trackChanges = false,
+		CancellationToken token = default,
+		params string[] includeProperties);
+
+	/// <summary>
+	/// Asynchronously retrieves a collection of entities that satisfy the specified condition, projects them to the
+	/// specified result type, and applies optional filtering, ordering, and pagination.
+	/// </summary>
+	/// <remarks>
+	/// This method supports advanced querying scenarios, including projection, filtering, ordering, and pagination.
+	/// Use the optional parameters to customize the query as needed. When trackChanges is set to true, the returned
+	/// entities are tracked by the underlying context, which may impact performance and memory usage.
+	/// </remarks>
+	/// <typeparam name="TResult">The type to which the entities are projected in the result set.</typeparam>
+	/// <param name="expression">An expression that defines the condition used to filter entities. Only entities matching this condition are
+	/// included in the result.</param>
+	/// <param name="selector">An expression that specifies how to project each entity into the result type.</param>
+	/// <param name="fieldSelector">An optional expression that selects specific fields from the projected result.</param>
+	/// <param name="queryFilter">An optional function that applies additional filtering or transformation to the query before execution.</param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
+	/// <param name="orderBy">An optional function that defines the ordering of the result set. If null, the default ordering is used.</param>
+	/// <param name="skip">The number of results to skip before returning results. If null, no results are skipped.</param>
+	/// <param name="take">The maximum number of results to return. If null, all matching results are returned.</param>
+	/// <param name="token">A cancellation token that can be used to cancel the asynchronous operation.</param>
+	/// <returns>
+	/// A task that represents the asynchronous operation. The task result contains an enumerable collection of
+	/// projected results that match the specified condition. The collection is empty if no entities match.
+	/// </returns>
+	Task<IEnumerable<TResult>> GetManyByConditionAsync<TResult>(
+		Expression<Func<TEntity, bool>> expression,
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+		int? skip = null,
+		int? take = null,
+		CancellationToken token = default);
 
 	/// <summary>
 	/// Updates the specified entity in the underlying data store.

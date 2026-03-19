@@ -104,8 +104,34 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		TKey id,
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
-		params string[] includeProperties
-		);
+		params string[] includeProperties);
+
+	/// <summary>
+	/// Retrieves a projection of an entity identified by the specified key.
+	/// </summary>
+	/// <remarks>
+	/// Use <paramref name="ignoreQueryFilters"/> with caution, as ignoring query filters may expose entities that
+	/// are normally excluded (such as soft-deleted records or tenant-specific data). The <paramref name="fieldSelector"/>
+	/// parameter allows for additional shaping of the result after the initial projection.
+	/// </remarks>
+	/// <typeparam name="TResult">The type of the result returned by the selector expression.</typeparam>
+	/// <param name="id">The unique identifier of the entity to retrieve.</param>
+	/// <param name="selector">
+	/// An expression that defines the projection to apply to the entity. This determines which fields are included in the result.
+	/// </param>
+	/// <param name="fieldSelector">
+	/// An optional expression to further select or transform the projected result. If null, the entire projection defined by
+	/// <paramref name="selector"/> is returned.
+	/// </param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
+	/// <returns>
+	/// The projected result of type <typeparamref name="TResult"/> if an entity with the specified identifier exists; otherwise, null.
+	/// </returns>
+	TResult? GetById<TResult>(
+		TKey id,
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		bool ignoreQueryFilters = false);
 
 	/// <summary>
 	/// Retrieves an entity by its unique identifier.
@@ -130,8 +156,36 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
 		CancellationToken token = default,
-		params string[] includeProperties
-		);
+		params string[] includeProperties);
+
+	/// <summary>
+	/// Asynchronously retrieves an entity by its identifier and projects it to a specified result type.
+	/// </summary>
+	/// <remarks>
+	/// Use this method to efficiently retrieve and project a single entity by its key, minimizing data transfer by
+	/// selecting only required fields. If the entity is not found, the result is null. When ignoreQueryFilters is
+	/// set to true, any global query filters (such as soft-delete or multi-tenancy filters) are bypassed for this query.
+	/// </remarks>
+	/// <typeparam name="TResult">The type of the result returned by the selector expression.</typeparam>
+	/// <param name="id">The unique identifier of the entity to retrieve.</param>
+	/// <param name="selector">
+	/// An expression that defines the projection to apply to the entity. This determines which fields are included in the result.
+	/// </param>
+	/// <param name="fieldSelector">
+	/// An optional expression to further select or transform the projected result. If null, the entire projection defined by
+	/// <paramref name="selector"/> is returned.
+	/// </param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
+	/// <param name="token">A cancellation token that can be used to cancel the asynchronous operation.</param>
+	/// <returns>
+	/// A task that represents the asynchronous operation. The task result contains the projected entity if found; otherwise, null.
+	/// </returns>
+	Task<TResult?> GetByIdAsync<TResult>(
+		TKey id,
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		bool ignoreQueryFilters = false,
+		CancellationToken token = default);
 
 	/// <summary>
 	/// Retrieves a collection of entities that match the specified identifiers.
@@ -154,8 +208,32 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		IEnumerable<TKey> ids,
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
-		params string[] includeProperties
-		);
+		params string[] includeProperties);
+
+	/// <summary>
+	/// Retrieves entities by their identifiers and projects them into the specified result type.
+	/// </summary>
+	/// <remarks>
+	/// The order of the returned results is not guaranteed to match the order of the provided identifiers.
+	/// If an identifier does not correspond to an existing entity, it is omitted from the results. This
+	/// method is typically used to efficiently fetch and project multiple entities in a single query.
+	/// </remarks>
+	/// <typeparam name="TResult">The type of the result returned for each entity.</typeparam>
+	/// <param name="ids">A collection of entity identifiers to retrieve.</param>
+	/// <param name="selector">An expression that defines the projection from the entity to the result type.</param>
+	/// <param name="fieldSelector">
+	/// An optional expression to further select or shape the projected result. If null, the full result from the selector is returned.
+	/// </param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
+	/// <returns>
+	/// An enumerable collection of projected results corresponding to the specified identifiers. The collection may be empty
+	/// if no entities are found.
+	/// </returns>
+	IEnumerable<TResult> GetByIds<TResult>(
+		IEnumerable<TKey> ids,
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		bool ignoreQueryFilters = false);
 
 	/// <summary>
 	/// Retrieves a collection of entities that match the specified identifiers.
@@ -180,8 +258,31 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false,
 		CancellationToken token = default,
-		params string[] includeProperties
-		);
+		params string[] includeProperties);
+
+	/// <summary>
+	/// Asynchronously retrieves entities by their identifiers and projects them into the specified result type.
+	/// </summary>
+	/// <remarks>
+	/// The order of the returned results is not guaranteed to match the order of the provided identifiers.
+	/// If an identifier does not correspond to an existing entity, it is omitted from the result.
+	/// </remarks>
+	/// <typeparam name="TResult">The type to which each entity is projected.</typeparam>
+	/// <param name="ids">A collection of entity identifiers to retrieve.</param>
+	/// <param name="selector">An expression that defines the projection from the entity to the result type.</param>
+	/// <param name="fieldSelector">An optional expression to further select or shape the projected result.</param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
+	/// <param name="token">A cancellation token that can be used to cancel the asynchronous operation.</param>
+	/// <returns>
+	/// A task that represents the asynchronous operation. The task result contains a read-only list of projected results
+	/// corresponding to the provided identifiers. The list may be empty if no entities are found.
+	/// </returns>
+	Task<IReadOnlyList<TResult>> GetByIdsAsync<TResult>(
+		IEnumerable<TKey> ids,
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		bool ignoreQueryFilters = false,
+		CancellationToken token = default);
 
 	/// <summary>
 	/// Updates the entity identified by the specified identifier with the provided property changes.
@@ -201,11 +302,10 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	int Update(
 		TKey id,
 #if NET8_0
-		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls
+		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls);
 #else
-		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls
+		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls);
 #endif
-		);
 
 	/// <summary>
 	/// Updates the entities identified by the specified identifiers with the provided property changes.
@@ -225,11 +325,10 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	int Update(
 		IEnumerable<TKey> ids,
 #if NET8_0
-		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls
+		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls);
 #else
-		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls
+		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls);
 #endif
-		);
 
 	/// <summary>
 	/// Updates the entity identified by the specified identifier with the provided property changes.
@@ -254,8 +353,7 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 #else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
 #endif
-		CancellationToken token = default
-		);
+		CancellationToken token = default);
 
 	/// <summary>
 	/// Updates the entities identified by the specified identifiers with the provided property changes.
@@ -280,8 +378,7 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 #else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
 #endif
-		CancellationToken token = default
-		);
+		CancellationToken token = default);
 }
 
 /// <inheritdoc cref="IIdentityRepository{TEntity, TKey}"/>
