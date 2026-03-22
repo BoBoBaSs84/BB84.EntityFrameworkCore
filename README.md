@@ -271,8 +271,8 @@ public interface IGenericRepository<TEntity> where TEntity : class
     Task CreateAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default);
 
     // Read operations
-    IEnumerable<TEntity> GetAll(bool ignoreQueryFilters = false, bool trackChanges = false);
-    Task<IEnumerable<TEntity>> GetAllAsync(bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default);
+    IReadOnlyList<TEntity> GetAll(bool ignoreQueryFilters = false, bool trackChanges = false);
+    Task<IReadOnlyList<TEntity>> GetAllAsync(bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default);
 
     // Update operations
     void Update(TEntity entity);
@@ -436,7 +436,7 @@ public interface IUserRepository : IIdentityRepository<User>
 
 public interface IProductRepository : IIdentityRepository<Product>
 {
-    Task<IEnumerable<Product>> GetActiveProductsAsync(CancellationToken cancellationToken = default);
+    Task<IReadOnlyList<Product>> GetActiveProductsAsync(CancellationToken cancellationToken = default);
 }
 ```
 
@@ -457,7 +457,7 @@ public class ProductRepository : IdentityRepository<Product>, IProductRepository
 {
     public ProductRepository(IDbContext dbContext) : base(dbContext) { }
 
-    public async Task<IEnumerable<Product>> GetActiveProductsAsync(CancellationToken cancellationToken = default)
+    public async Task<IReadOnlyList<Product>> GetActiveProductsAsync(CancellationToken cancellationToken = default)
     {
         return await GetManyByConditionAsync(p => !p.IsDeleted, token: cancellationToken);
     }
@@ -586,7 +586,7 @@ public class ProductService
         _productRepository = productRepository;
     }
 
-    public async Task<IEnumerable<Product>> SearchProductsAsync(string searchTerm, decimal? minPrice = null)
+    public async Task<IReadOnlyList<Product>> SearchProductsAsync(string searchTerm, decimal? minPrice = null)
     {
         return await _productRepository.GetManyByConditionAsync(p =>
             !p.IsDeleted &&
