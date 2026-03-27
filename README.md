@@ -669,7 +669,7 @@ The project uses MSBuild properties defined in `Directory.Build.props`:
 Versions are automatically generated based on:
 
 - Major: 4
-- Minor: 2
+- Minor: 3
 - Patch: Current date (MMDD format)
 - Revision: Current hour
 
