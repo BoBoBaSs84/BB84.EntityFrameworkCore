@@ -1,4 +1,6 @@
-﻿// Copyright: 2024 Robert Peter Meyer
+﻿#pragma warning disable CA1866 // Use char overload
+#pragma warning disable CA1847 // Use char literal for a single character lookup
+// Copyright: 2024 Robert Peter Meyer
 // License: MIT
 //
 // This source code is licensed under the MIT license found in the
@@ -34,7 +36,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 
 		IReadOnlyList<PersonTypeEntity> many = repository
 			.GetManyByCondition(
-				queryFilter: query => query.Where(x => x.Name.Contains('e')),
+				queryFilter: query => query.Where(x => x.Name.Contains("e")),
 				ignoreQueryFilters: true,
 				orderBy: query => query.OrderBy(x => x.Name),
 				skip: 1,
@@ -55,11 +57,10 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 
 		int count = await repository
 			.CountByConditionAsync(
-				queryFilter: query => query.Where(x => x.Name.StartsWith('D')),
+				queryFilter: query => query.Where(x => x.Name.StartsWith("D")),
 				ignoreQueryFilters: true,
 				token: _cancellationToken)
 			.ConfigureAwait(false);
-
 		PersonTypeEntity? single = await repository
 			.GetByConditionAsync(
 				queryFilter: query => query.Where(x => x.Name == "Female"),
@@ -69,7 +70,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 
 		IReadOnlyList<PersonTypeEntity> many = await repository
 			.GetManyByConditionAsync(
-				queryFilter: query => query.Where(x => x.Name.Contains('e')),
+				queryFilter: query => query.Where(x => x.Name.Contains("e")),
 				ignoreQueryFilters: true,
 				orderBy: query => query.OrderByDescending(x => x.Name),
 				skip: 1,
