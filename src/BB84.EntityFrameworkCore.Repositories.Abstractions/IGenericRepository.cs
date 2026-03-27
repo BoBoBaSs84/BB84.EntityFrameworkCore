@@ -163,6 +163,21 @@ public interface IGenericRepository<TEntity>
 	int CountAll(bool ignoreQueryFilters = false);
 
 	/// <summary>
+	/// Counts the number of entities that satisfy the specified query filter.
+	/// </summary>
+	/// <remarks>
+	/// Use this method to count entities based on custom conditions. If ignoreQueryFilters is
+	/// set to true, any global query filters (such as soft-delete or multi-tenancy filters) will
+	/// be bypassed when counting.
+	/// </remarks>
+	/// <param name="queryFilter">A function that applies additional filtering to the entity set.</param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity set.</param>
+	/// <returns>The number of entities that match the specified filter.</returns>
+	int CountByCondition(
+		Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter,
+		bool ignoreQueryFilters = false);
+
+	/// <summary>
 	/// Counts the number of entities in the data source that satisfy the specified conditions.
 	/// </summary>
 	/// <remarks>
@@ -196,6 +211,23 @@ public interface IGenericRepository<TEntity>
 	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of entities in the data source.</returns>
 	Task<int> CountAllAsync(
+		bool ignoreQueryFilters = false,
+		CancellationToken token = default);
+
+	/// <summary>
+	/// Counts the number of entities that satisfy the specified query filter.
+	/// </summary>
+	/// <remarks>
+	/// Use this method to count entities based on custom conditions. If ignoreQueryFilters is
+	/// set to true, any global query filters (such as soft-delete or multi-tenancy filters) will
+	/// be bypassed when counting.
+	/// </remarks>
+	/// <param name="queryFilter">A function that applies additional filtering to the entity set.</param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity set.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <returns>The number of entities that match the specified filter.</returns>
+	Task<int> CountByConditionAsync(
+		Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter,
 		bool ignoreQueryFilters = false,
 		CancellationToken token = default);
 
@@ -287,6 +319,7 @@ public interface IGenericRepository<TEntity>
 	/// A value indicating whether the retrieved entities should be tracked by the context.
 	/// </param>
 	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// 
 	/// <returns>
 	/// An <see cref="IReadOnlyList{T}"/> containing all entities of type <typeparamref name="TEntity"/>
 	/// that match the query criteria.
@@ -320,6 +353,26 @@ public interface IGenericRepository<TEntity>
 		Expression<Func<TResult, TResult>>? fieldSelector = null,
 		bool ignoreQueryFilters = false,
 		CancellationToken token = default);
+
+	/// <summary>
+	/// Retrieves a single entity that matches the specified query filter, with optional control over query filters,
+	/// change tracking, and related data inclusion.
+	/// </summary>
+	/// <remarks>
+	/// If multiple entities match the specified condition, only the first one is returned. This method allows
+	/// customization of the query pipeline, including the ability to bypass global query filters and control entity
+	/// tracking behavior. Use the includeProperties parameter to load related data as part of the query.
+	/// </remarks>
+	/// <param name="queryFilter">A function that applies additional filtering or transformation to the entity set.</param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
+	/// <param name="trackChanges">true to enable change tracking for the returned entity; otherwise, false.</param>
+	/// <param name="includeProperties">An array of related entity property names to include in the query results.</param>
+	/// <returns>The entity that matches the specified condition, or null if no such entity is found.</returns>
+	TEntity? GetByCondition(
+		Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter,
+		bool ignoreQueryFilters = false,
+		bool trackChanges = false,
+		params string[] includeProperties);
 
 	/// <summary>
 	/// Returns a <typeparamref name="TEntity"/> by a certain <paramref name="expression"/>.
@@ -363,6 +416,28 @@ public interface IGenericRepository<TEntity>
 		Expression<Func<TResult, TResult>>? fieldSelector = null,
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
 		bool ignoreQueryFilters = false);
+
+	/// <summary>
+	/// Retrieves a single entity that matches the specified query filter, with optional control over query filters,
+	/// change tracking, and related data inclusion.
+	/// </summary>
+	/// <remarks>
+	/// If multiple entities match the specified condition, only the first one is returned. This method allows
+	/// customization of the query pipeline, including the ability to bypass global query filters and control entity
+	/// tracking behavior. Use the includeProperties parameter to load related data as part of the query.
+	/// </remarks>
+	/// <param name="queryFilter">A function that applies additional filtering or transformation to the entity set.</param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
+	/// <param name="trackChanges">true to enable change tracking for the returned entity; otherwise, false.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <param name="includeProperties">An array of related entity property names to include in the query results.</param>
+	/// <returns>The entity that matches the specified condition, or null if no such entity is found.</returns>
+	Task<TEntity?> GetByConditionAsync(
+		Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter,
+		bool ignoreQueryFilters = false,
+		bool trackChanges = false,
+		CancellationToken token = default,
+		params string[] includeProperties);
 
 	/// <summary>
 	/// Returns a <typeparamref name="TEntity"/> by a certain <paramref name="expression"/>.
@@ -411,6 +486,34 @@ public interface IGenericRepository<TEntity>
 		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
 		bool ignoreQueryFilters = false,
 		CancellationToken token = default);
+
+	/// <summary>
+	/// Retrieves a collection of entities that satisfy the specified query conditions, with optional ordering,
+	/// paging, and related data inclusion.
+	/// </summary>
+	/// <remarks>
+	/// Use this method to retrieve multiple entities with flexible filtering, sorting, paging, and eager
+	/// loading options. When trackChanges is set to false, the returned entities are not tracked by the
+	/// context, which can improve performance for read-only operations.
+	/// </remarks>
+	/// <param name="queryFilter">A function that applies additional filtering to the entity query.</param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
+	/// <param name="orderBy">An optional function to specify the ordering of the resulting entities.</param>
+	/// <param name="skip">The number of entities to skip before starting to return results.</param>
+	/// <param name="take">The maximum number of entities to return.</param>
+	/// <param name="trackChanges">true to enable change tracking for the returned entities; otherwise, false to retrieve entities without tracking.</param>
+	/// <param name="includeProperties">An array of related entity property names to include in the query results for eager loading.</param>
+	/// <returns>
+	/// A read-only list of entities that match the specified conditions. The list is empty if no entities satisfy the query.
+	/// </returns>
+	IReadOnlyList<TEntity> GetManyByCondition(
+		Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter,
+		bool ignoreQueryFilters = false,
+		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+		int? skip = null,
+		int? take = null,
+		bool trackChanges = false,
+		params string[] includeProperties);
 
 	/// <summary>
 	/// Returns a collection of <typeparamref name="TEntity"/> based on the specified <paramref name="expression"/>.
@@ -466,6 +569,36 @@ public interface IGenericRepository<TEntity>
 		int? take = null);
 
 	/// <summary>
+	/// Retrieves a collection of entities that satisfy the specified query conditions, with optional ordering,
+	/// paging, and related data inclusion.
+	/// </summary>
+	/// <remarks>
+	/// Use this method to retrieve multiple entities with flexible filtering, sorting, paging, and eager
+	/// loading options. When trackChanges is set to false, the returned entities are not tracked by the
+	/// context, which can improve performance for read-only operations.
+	/// </remarks>
+	/// <param name="queryFilter">A function that applies additional filtering to the entity query.</param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
+	/// <param name="orderBy">An optional function to specify the ordering of the resulting entities.</param>
+	/// <param name="skip">The number of entities to skip before starting to return results.</param>
+	/// <param name="take">The maximum number of entities to return.</param>
+	/// <param name="trackChanges">true to enable change tracking for the returned entities; otherwise, false to retrieve entities without tracking.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <param name="includeProperties">An array of related entity property names to include in the query results for eager loading.</param>
+	/// <returns>
+	/// A read-only list of entities that match the specified conditions. The list is empty if no entities satisfy the query.
+	/// </returns>
+	Task<IReadOnlyList<TEntity>> GetManyByConditionAsync(
+		Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter,
+		bool ignoreQueryFilters = false,
+		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+		int? skip = null,
+		int? take = null,
+		bool trackChanges = false,
+		CancellationToken token = default,
+		params string[] includeProperties);
+
+	/// <summary>
 	/// Returns a collection of <typeparamref name="TEntity"/> based on the specified <paramref name="expression"/>.
 	/// </summary>
 	/// <param name="expression">The condition to fulfill to be returned.</param>
@@ -475,7 +608,7 @@ public interface IGenericRepository<TEntity>
 	/// <param name="skip">The number of records to skip.</param>
 	/// <param name="take">The number of records to limit the results to.</param>
 	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
-	/// <param name="token">The cancellation token.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
 	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
 	Task<IReadOnlyList<TEntity>> GetManyByConditionAsync(
