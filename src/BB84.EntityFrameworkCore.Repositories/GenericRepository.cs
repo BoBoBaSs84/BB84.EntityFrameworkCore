@@ -9,6 +9,7 @@ using BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace BB84.EntityFrameworkCore.Repositories;
 
@@ -64,6 +65,17 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
+	public int CountByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter, bool ignoreQueryFilters = false)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters
+			);
+
+		return query.Count();
+	}
+
+	/// <inheritdoc/>
 	public int CountByCondition(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
@@ -73,6 +85,18 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 			);
 
 		return query.Count();
+	}
+
+	/// <inheritdoc/>
+	public async Task<int> CountByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter, bool ignoreQueryFilters = false, CancellationToken token = default)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters
+			);
+
+		return await query.CountAsync(token)
+			.ConfigureAwait(false);
 	}
 
 	/// <inheritdoc/>
@@ -97,7 +121,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		=> DbSet.RemoveRange(entities);
 
 	/// <inheritdoc/>
-	public int Delete(Expression<Func<TEntity, bool>>? expression)
+	public int Delete(Expression<Func<TEntity, bool>> expression)
 		=> PrepareQuery(expression).ExecuteDelete();
 
 	/// <inheritdoc/>
@@ -109,7 +133,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		=> await Task.Run(() => DbSet.RemoveRange(entities), token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public async Task<int> DeleteAsync(Expression<Func<TEntity, bool>>? expression, CancellationToken token = default)
+	public async Task<int> DeleteAsync(Expression<Func<TEntity, bool>> expression, CancellationToken token = default)
 		=> await PrepareQuery(expression).ExecuteDeleteAsync(token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
@@ -158,6 +182,19 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
+	public TEntity? GetByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter, bool ignoreQueryFilters = false, bool trackChanges = false, params string[] includeProperties)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters,
+			trackChanges: trackChanges,
+			includeProperties: includeProperties
+			);
+
+		return query.SingleOrDefault();
+	}
+
+	/// <inheritdoc/>
 	public TEntity? GetByCondition(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, bool trackChanges = false, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
@@ -182,6 +219,20 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 
 		return ApplyProjection(query, selector, fieldSelector)
 			.SingleOrDefault();
+	}
+
+	/// <inheritdoc/>
+	public async Task<TEntity?> GetByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters,
+			trackChanges: trackChanges,
+			includeProperties: includeProperties
+			);
+
+		return await query.FirstOrDefaultAsync(token)
+			.ConfigureAwait(false);
 	}
 
 	/// <inheritdoc/>
@@ -214,6 +265,22 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
+	public IReadOnlyList<TEntity> GetManyByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, params string[] includeProperties)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters,
+			orderBy: orderBy,
+			skip: skip,
+			take: take,
+			trackChanges: trackChanges,
+			includeProperties: includeProperties
+			);
+
+		return [.. query];
+	}
+
+	/// <inheritdoc/>
 	public IReadOnlyList<TEntity> GetManyByCondition(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, params string[] includeProperties)
 	{
 		IQueryable<TEntity> query = PrepareQuery(
@@ -243,6 +310,23 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 			);
 
 		return [.. ApplyProjection(query, selector, fieldSelector)];
+	}
+
+	/// <inheritdoc/>
+	public async Task<IReadOnlyList<TEntity>> GetManyByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters,
+			orderBy: orderBy,
+			skip: skip,
+			take: take,
+			trackChanges: trackChanges,
+			includeProperties: includeProperties
+			);
+
+		return await query.ToListAsync(token)
+			.ConfigureAwait(false);
 	}
 
 	/// <inheritdoc/>
