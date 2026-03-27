@@ -105,7 +105,7 @@ public interface IGenericRepository<TEntity>
 	/// </remarks>
 	/// <param name="expression">The condition to fulfill to be deleted.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
-	int Delete(Expression<Func<TEntity, bool>>? expression);
+	int Delete(Expression<Func<TEntity, bool>> expression);
 
 	/// <summary>
 	/// Deletes the specified entity from the underlying data store.
@@ -149,7 +149,7 @@ public interface IGenericRepository<TEntity>
 	/// <param name="token">The cancellation token to cancel the request.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
 	Task<int> DeleteAsync(
-		Expression<Func<TEntity, bool>>? expression,
+		Expression<Func<TEntity, bool>> expression,
 		CancellationToken token = default);
 
 	/// <summary>

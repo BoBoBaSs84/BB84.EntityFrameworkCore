@@ -165,7 +165,7 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 #else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls)
 #endif
-		=> Update(x => ids.Equals(x.Id), setPropertyCalls);
+		=> Update(x => ids.Contains(x.Id), setPropertyCalls);
 
 	/// <inheritdoc/>
 	public async Task<int> UpdateAsync(

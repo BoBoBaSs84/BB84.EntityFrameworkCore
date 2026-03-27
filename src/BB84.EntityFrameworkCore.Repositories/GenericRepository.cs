@@ -121,7 +121,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		=> DbSet.RemoveRange(entities);
 
 	/// <inheritdoc/>
-	public int Delete(Expression<Func<TEntity, bool>>? expression)
+	public int Delete(Expression<Func<TEntity, bool>> expression)
 		=> PrepareQuery(expression).ExecuteDelete();
 
 	/// <inheritdoc/>
@@ -133,7 +133,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		=> await Task.Run(() => DbSet.RemoveRange(entities), token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public async Task<int> DeleteAsync(Expression<Func<TEntity, bool>>? expression, CancellationToken token = default)
+	public async Task<int> DeleteAsync(Expression<Func<TEntity, bool>> expression, CancellationToken token = default)
 		=> await PrepareQuery(expression).ExecuteDeleteAsync(token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
