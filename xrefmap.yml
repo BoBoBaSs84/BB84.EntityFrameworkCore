@@ -1004,6 +1004,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).CountAllAsync
   nameWithType: IGenericRepository<TEntity>.CountAllAsync
   nameWithType.vb: IGenericRepository(Of TEntity).CountAllAsync
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountByCondition(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean)
+  name: CountByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountByCondition(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean)
+  name.vb: CountByCondition(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.CountByCondition(System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).CountByCondition(System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean)
+  nameWithType: IGenericRepository<TEntity>.CountByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool)
+  nameWithType.vb: IGenericRepository(Of TEntity).CountByCondition(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean)
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean)
   name: CountByCondition(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool)
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_
@@ -1022,6 +1031,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).CountByCondition
   nameWithType: IGenericRepository<TEntity>.CountByCondition
   nameWithType.vb: IGenericRepository(Of TEntity).CountByCondition
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountByConditionAsync(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Threading.CancellationToken)
+  name: CountByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountByConditionAsync_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountByConditionAsync(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Threading.CancellationToken)
+  name.vb: CountByConditionAsync(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.CountByConditionAsync(System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).CountByConditionAsync(System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, System.Threading.CancellationToken)
+  nameWithType: IGenericRepository<TEntity>.CountByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, CancellationToken)
+  nameWithType.vb: IGenericRepository(Of TEntity).CountByConditionAsync(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, CancellationToken)
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.CountByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Threading.CancellationToken)
   name: CountByConditionAsync(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, CancellationToken)
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_CountByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_
@@ -1102,13 +1120,13 @@ references:
   nameWithType: IGenericRepository<TEntity>.Delete(IEnumerable<TEntity>)
   nameWithType.vb: IGenericRepository(Of TEntity).Delete(IEnumerable(Of TEntity))
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Delete(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
-  name: Delete(Expression<Func<TEntity, bool>>?)
+  name: Delete(Expression<Func<TEntity, bool>>)
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_Delete_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___
   commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Delete(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
   name.vb: Delete(Expression(Of Func(Of TEntity, Boolean)))
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.Delete(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.Delete(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>)
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).Delete(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)))
-  nameWithType: IGenericRepository<TEntity>.Delete(Expression<Func<TEntity, bool>>?)
+  nameWithType: IGenericRepository<TEntity>.Delete(Expression<Func<TEntity, bool>>)
   nameWithType.vb: IGenericRepository(Of TEntity).Delete(Expression(Of Func(Of TEntity, Boolean)))
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.Delete(`0)
   name: Delete(TEntity)
@@ -1137,13 +1155,13 @@ references:
   nameWithType: IGenericRepository<TEntity>.DeleteAsync(IEnumerable<TEntity>, CancellationToken)
   nameWithType.vb: IGenericRepository(Of TEntity).DeleteAsync(IEnumerable(Of TEntity), CancellationToken)
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)
-  name: DeleteAsync(Expression<Func<TEntity, bool>>?, CancellationToken)
+  name: DeleteAsync(Expression<Func<TEntity, bool>>, CancellationToken)
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_DeleteAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Threading_CancellationToken_
   commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)
   name.vb: DeleteAsync(Expression(Of Func(Of TEntity, Boolean)), CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.DeleteAsync(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Threading.CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.DeleteAsync(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>, System.Threading.CancellationToken)
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).DeleteAsync(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Threading.CancellationToken)
-  nameWithType: IGenericRepository<TEntity>.DeleteAsync(Expression<Func<TEntity, bool>>?, CancellationToken)
+  nameWithType: IGenericRepository<TEntity>.DeleteAsync(Expression<Func<TEntity, bool>>, CancellationToken)
   nameWithType.vb: IGenericRepository(Of TEntity).DeleteAsync(Expression(Of Func(Of TEntity, Boolean)), CancellationToken)
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.DeleteAsync(`0,System.Threading.CancellationToken)
   name: DeleteAsync(TEntity, CancellationToken)
@@ -1216,6 +1234,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetAll(Of TResult)(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, TResult)), System.Linq.Expressions.Expression(Of System.Func(Of TResult, TResult)), Boolean)
   nameWithType: IGenericRepository<TEntity>.GetAll<TResult>(Expression<Func<TEntity, TResult>>, Expression<Func<TResult, TResult>>?, bool)
   nameWithType.vb: IGenericRepository(Of TEntity).GetAll(Of TResult)(Expression(Of Func(Of TEntity, TResult)), Expression(Of Func(Of TResult, TResult)), Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByCondition(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.String[])
+  name: GetByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, bool, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByCondition(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.String[])
+  name.vb: GetByCondition(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetByCondition(System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>, bool, bool, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetByCondition(System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, Boolean, ParamArray String())
+  nameWithType: IGenericRepository<TEntity>.GetByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, bool, params string[])
+  nameWithType.vb: IGenericRepository(Of TEntity).GetByCondition(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.String[])
   name: GetByCondition(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, bool, params string[])
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_String___
@@ -1234,6 +1261,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetByCondition
   nameWithType: IGenericRepository<TEntity>.GetByCondition
   nameWithType.vb: IGenericRepository(Of TEntity).GetByCondition
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByConditionAsync(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name: GetByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, bool, CancellationToken, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetByConditionAsync_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByConditionAsync(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name.vb: GetByConditionAsync(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, CancellationToken, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetByConditionAsync(System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>, bool, bool, System.Threading.CancellationToken, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetByConditionAsync(System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, Boolean, System.Threading.CancellationToken, ParamArray String())
+  nameWithType: IGenericRepository<TEntity>.GetByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, bool, CancellationToken, params string[])
+  nameWithType.vb: IGenericRepository(Of TEntity).GetByConditionAsync(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, CancellationToken, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
   name: GetByConditionAsync(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, bool, CancellationToken, params string[])
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___
@@ -1270,6 +1306,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetByCondition(Of TResult)(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Linq.Expressions.Expression(Of System.Func(Of TEntity, TResult)), System.Linq.Expressions.Expression(Of System.Func(Of TResult, TResult)), System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean)
   nameWithType: IGenericRepository<TEntity>.GetByCondition<TResult>(Expression<Func<TEntity, bool>>, Expression<Func<TEntity, TResult>>, Expression<Func<TResult, TResult>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool)
   nameWithType.vb: IGenericRepository(Of TEntity).GetByCondition(Of TResult)(Expression(Of Func(Of TEntity, Boolean)), Expression(Of Func(Of TEntity, TResult)), Expression(Of Func(Of TResult, TResult)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByCondition(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])
+  name: GetManyByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetManyByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByCondition(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])
+  name.vb: GetManyByCondition(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetManyByCondition(System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>, bool, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetManyByCondition(System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, ParamArray String())
+  nameWithType: IGenericRepository<TEntity>.GetManyByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
+  nameWithType.vb: IGenericRepository(Of TEntity).GetManyByCondition(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])
   name: GetManyByCondition(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetManyByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___
@@ -1288,6 +1333,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetManyByCondition
   nameWithType: IGenericRepository<TEntity>.GetManyByCondition
   nameWithType.vb: IGenericRepository(Of TEntity).GetManyByCondition
+- uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByConditionAsync(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken,System.String[])
+  name: GetManyByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, CancellationToken, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetManyByConditionAsync_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByConditionAsync(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken,System.String[])
+  name.vb: GetManyByConditionAsync(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, CancellationToken, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository<TEntity>.GetManyByConditionAsync(System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>, bool, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IOrderedQueryable<TEntity>>?, int?, int?, bool, System.Threading.CancellationToken, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository(Of TEntity).GetManyByConditionAsync(System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, System.Threading.CancellationToken, ParamArray String())
+  nameWithType: IGenericRepository<TEntity>.GetManyByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, CancellationToken, params string[])
+  nameWithType.vb: IGenericRepository(Of TEntity).GetManyByConditionAsync(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, CancellationToken, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository`1.GetManyByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken,System.String[])
   name: GetManyByConditionAsync(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, CancellationToken, params string[])
   href: api/BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IGenericRepository_1_GetManyByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___
@@ -1836,6 +1890,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).CountAllAsync
   nameWithType: GenericRepository<TEntity>.CountAllAsync
   nameWithType.vb: GenericRepository(Of TEntity).CountAllAsync
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountByCondition(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean)
+  name: CountByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountByCondition(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean)
+  name.vb: CountByCondition(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.CountByCondition(System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>, bool)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).CountByCondition(System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean)
+  nameWithType: GenericRepository<TEntity>.CountByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool)
+  nameWithType.vb: GenericRepository(Of TEntity).CountByCondition(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean)
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean)
   name: CountByCondition(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool)
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_
@@ -1854,6 +1917,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).CountByCondition
   nameWithType: GenericRepository<TEntity>.CountByCondition
   nameWithType.vb: GenericRepository(Of TEntity).CountByCondition
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountByConditionAsync(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Threading.CancellationToken)
+  name: CountByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByConditionAsync_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountByConditionAsync(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Threading.CancellationToken)
+  name.vb: CountByConditionAsync(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.CountByConditionAsync(System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>, bool, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).CountByConditionAsync(System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, System.Threading.CancellationToken)
+  nameWithType: GenericRepository<TEntity>.CountByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, CancellationToken)
+  nameWithType.vb: GenericRepository(Of TEntity).CountByConditionAsync(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, CancellationToken)
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Threading.CancellationToken)
   name: CountByConditionAsync(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, CancellationToken)
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_
@@ -1951,13 +2023,13 @@ references:
   nameWithType: GenericRepository<TEntity>.Delete(IEnumerable<TEntity>)
   nameWithType.vb: GenericRepository(Of TEntity).Delete(IEnumerable(Of TEntity))
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Delete(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
-  name: Delete(Expression<Func<TEntity, bool>>?)
+  name: Delete(Expression<Func<TEntity, bool>>)
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Delete_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___
   commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Delete(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})
   name.vb: Delete(Expression(Of Func(Of TEntity, Boolean)))
-  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.Delete(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.Delete(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>)
   fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).Delete(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)))
-  nameWithType: GenericRepository<TEntity>.Delete(Expression<Func<TEntity, bool>>?)
+  nameWithType: GenericRepository<TEntity>.Delete(Expression<Func<TEntity, bool>>)
   nameWithType.vb: GenericRepository(Of TEntity).Delete(Expression(Of Func(Of TEntity, Boolean)))
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Delete(`0)
   name: Delete(TEntity)
@@ -1986,13 +2058,13 @@ references:
   nameWithType: GenericRepository<TEntity>.DeleteAsync(IEnumerable<TEntity>, CancellationToken)
   nameWithType.vb: GenericRepository(Of TEntity).DeleteAsync(IEnumerable(Of TEntity), CancellationToken)
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)
-  name: DeleteAsync(Expression<Func<TEntity, bool>>?, CancellationToken)
+  name: DeleteAsync(Expression<Func<TEntity, bool>>, CancellationToken)
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Threading_CancellationToken_
   commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)
   name.vb: DeleteAsync(Expression(Of Func(Of TEntity, Boolean)), CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.DeleteAsync(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Threading.CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.DeleteAsync(System.Linq.Expressions.Expression<System.Func<TEntity, bool>>, System.Threading.CancellationToken)
   fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).DeleteAsync(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Threading.CancellationToken)
-  nameWithType: GenericRepository<TEntity>.DeleteAsync(Expression<Func<TEntity, bool>>?, CancellationToken)
+  nameWithType: GenericRepository<TEntity>.DeleteAsync(Expression<Func<TEntity, bool>>, CancellationToken)
   nameWithType.vb: GenericRepository(Of TEntity).DeleteAsync(Expression(Of Func(Of TEntity, Boolean)), CancellationToken)
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(`0,System.Threading.CancellationToken)
   name: DeleteAsync(TEntity, CancellationToken)
@@ -2065,6 +2137,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetAll(Of TResult)(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, TResult)), System.Linq.Expressions.Expression(Of System.Func(Of TResult, TResult)), Boolean)
   nameWithType: GenericRepository<TEntity>.GetAll<TResult>(Expression<Func<TEntity, TResult>>, Expression<Func<TResult, TResult>>?, bool)
   nameWithType.vb: GenericRepository(Of TEntity).GetAll(Of TResult)(Expression(Of Func(Of TEntity, TResult)), Expression(Of Func(Of TResult, TResult)), Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByCondition(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.String[])
+  name: GetByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, bool, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByCondition(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.String[])
+  name.vb: GetByCondition(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetByCondition(System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>, bool, bool, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetByCondition(System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, Boolean, ParamArray String())
+  nameWithType: GenericRepository<TEntity>.GetByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, bool, params string[])
+  nameWithType.vb: GenericRepository(Of TEntity).GetByCondition(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.String[])
   name: GetByCondition(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, bool, params string[])
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_String___
@@ -2083,6 +2164,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetByCondition
   nameWithType: GenericRepository<TEntity>.GetByCondition
   nameWithType.vb: GenericRepository(Of TEntity).GetByCondition
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByConditionAsync(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name: GetByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, bool, CancellationToken, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByConditionAsync_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByConditionAsync(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
+  name.vb: GetByConditionAsync(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, CancellationToken, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetByConditionAsync(System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>, bool, bool, System.Threading.CancellationToken, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetByConditionAsync(System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, Boolean, System.Threading.CancellationToken, ParamArray String())
+  nameWithType: GenericRepository<TEntity>.GetByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, bool, CancellationToken, params string[])
+  nameWithType.vb: GenericRepository(Of TEntity).GetByConditionAsync(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Boolean, CancellationToken, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])
   name: GetByConditionAsync(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, bool, CancellationToken, params string[])
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___
@@ -2119,6 +2209,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetByCondition(Of TResult)(System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Linq.Expressions.Expression(Of System.Func(Of TEntity, TResult)), System.Linq.Expressions.Expression(Of System.Func(Of TResult, TResult)), System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean)
   nameWithType: GenericRepository<TEntity>.GetByCondition<TResult>(Expression<Func<TEntity, bool>>, Expression<Func<TEntity, TResult>>, Expression<Func<TResult, TResult>>?, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool)
   nameWithType.vb: GenericRepository(Of TEntity).GetByCondition(Of TResult)(Expression(Of Func(Of TEntity, Boolean)), Expression(Of Func(Of TEntity, TResult)), Expression(Of Func(Of TResult, TResult)), Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean)
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByCondition(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])
+  name: GetManyByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByCondition(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])
+  name.vb: GetManyByCondition(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetManyByCondition(System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>, bool, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetManyByCondition(System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, ParamArray String())
+  nameWithType: GenericRepository<TEntity>.GetManyByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
+  nameWithType.vb: GenericRepository(Of TEntity).GetManyByCondition(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])
   name: GetManyByCondition(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, params string[])
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___
@@ -2137,6 +2236,15 @@ references:
   fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetManyByCondition
   nameWithType: GenericRepository<TEntity>.GetManyByCondition
   nameWithType.vb: GenericRepository(Of TEntity).GetManyByCondition
+- uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByConditionAsync(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken,System.String[])
+  name: GetManyByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, CancellationToken, params string[])
+  href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByConditionAsync_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___
+  commentId: M:BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByConditionAsync(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken,System.String[])
+  name.vb: GetManyByConditionAsync(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, CancellationToken, ParamArray String())
+  fullName: BB84.EntityFrameworkCore.Repositories.GenericRepository<TEntity>.GetManyByConditionAsync(System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IQueryable<TEntity>>, bool, System.Func<System.Linq.IQueryable<TEntity>, System.Linq.IOrderedQueryable<TEntity>>?, int?, int?, bool, System.Threading.CancellationToken, params string[])
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.GenericRepository(Of TEntity).GetManyByConditionAsync(System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IQueryable(Of TEntity)), Boolean, System.Func(Of System.Linq.IQueryable(Of TEntity), System.Linq.IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, System.Threading.CancellationToken, ParamArray String())
+  nameWithType: GenericRepository<TEntity>.GetManyByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>>, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, CancellationToken, params string[])
+  nameWithType.vb: GenericRepository(Of TEntity).GetManyByConditionAsync(Func(Of IQueryable(Of TEntity), IQueryable(Of TEntity)), Boolean, Func(Of IQueryable(Of TEntity), IOrderedQueryable(Of TEntity)), Integer?, Integer?, Boolean, CancellationToken, ParamArray String())
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken,System.String[])
   name: GetManyByConditionAsync(Expression<Func<TEntity, bool>>, Func<IQueryable<TEntity>, IQueryable<TEntity>>?, bool, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?, int?, int?, bool, CancellationToken, params string[])
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___

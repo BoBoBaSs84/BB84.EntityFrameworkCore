@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1" class="text-break">
-Class GenericRepository&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L20"><i class="bi bi-code-slash"></i></a>
+Class GenericRepository&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -177,7 +177,7 @@ with different data sources or implement unit testing.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)">
   GenericRepository(IDbContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The generic repository implementation.</p>
@@ -220,7 +220,7 @@ with different data sources or implement unit testing.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DbSet" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DbSet">
   DbSet
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The collection of all <code class="typeparamref">TEntity</code> within the database context.</p>
@@ -256,7 +256,7 @@ with different data sources or implement unit testing.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_ApplyProjection__1_System_Linq_IQueryable__0__System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.ApplyProjection``1(System.Linq.IQueryable{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{``0,``0}})">
   ApplyProjection&lt;TResult&gt;(IQueryable&lt;TEntity&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L381"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L465"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Projects the elements of the source query to a new form using the specified selector, and optionally
@@ -314,7 +314,7 @@ additional criteria.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountAll_System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountAll(System.Boolean)">
   CountAll(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Counts the total number of entities in the data source.</p>
@@ -354,7 +354,7 @@ additional criteria.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountAllAsync_System_Boolean_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountAllAsync(System.Boolean,System.Threading.CancellationToken)">
   CountAllAsync(bool, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L57"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Counts the total number of entities in the data source.</p>
@@ -395,9 +395,56 @@ additional criteria.</p>
 
   <a id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByCondition_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountByCondition*"></a>
 
+  <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountByCondition(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean)">
+  CountByCondition(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Counts the number of entities that satisfy the specified query filter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CountByCondition(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt; queryFilter, bool ignoreQueryFilters = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>queryFilter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TEntity&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TEntity&gt;&gt;</dt>
+    <dd><p>A function that applies additional filtering to the entity set.</p>
+</dd>
+    <dt><code>ignoreQueryFilters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true to ignore any global query filters applied to the entity set.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of entities that match the specified filter.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Use this method to count entities based on custom conditions. If ignoreQueryFilters is
+set to true, any global query filters (such as soft-delete or multi-tenancy filters) will
+be bypassed when counting.</p>
+</div>
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByCondition_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountByCondition*"></a>
+
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean)">
   CountByCondition(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L79"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Counts the number of entities in the data source that satisfy the specified conditions.</p>
@@ -446,9 +493,59 @@ or multi-tenancy filters.</p>
 
   <a id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByConditionAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountByConditionAsync*"></a>
 
+  <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByConditionAsync_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountByConditionAsync(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Threading.CancellationToken)">
+  CountByConditionAsync(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Counts the number of entities that satisfy the specified query filter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;int&gt; CountByConditionAsync(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt; queryFilter, bool ignoreQueryFilters = false, CancellationToken token = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>queryFilter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TEntity&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TEntity&gt;&gt;</dt>
+    <dd><p>A function that applies additional filtering to the entity set.</p>
+</dd>
+    <dt><code>ignoreQueryFilters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true to ignore any global query filters applied to the entity set.</p>
+</dd>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token to cancel the request.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>The number of entities that match the specified filter.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByConditionAsync_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Use this method to count entities based on custom conditions. If ignoreQueryFilters is
+set to true, any global query filters (such as soft-delete or multi-tenancy filters) will
+be bypassed when counting.</p>
+</div>
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByConditionAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountByConditionAsync*"></a>
+
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Threading.CancellationToken)">
   CountByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L103"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Counts the number of entities in the data source that satisfy the specified conditions.</p>
@@ -502,7 +599,7 @@ or multi-tenancy filters.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Create_System_Collections_Generic_IEnumerable__0__" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Create(System.Collections.Generic.IEnumerable{`0})">
   Create(IEnumerable&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds the specified collection of entities to the underlying data store.</p>
@@ -539,7 +636,7 @@ changes to the entities will be persisted to the database during the next save o
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Create__0_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Create(`0)">
   Create(TEntity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds the specified entity to the underlying data store.</p>
@@ -576,7 +673,7 @@ changes to the entity will be persisted to the database during the next save ope
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CreateAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CreateAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)">
   CreateAsync(IEnumerable&lt;TEntity&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds the specified collection of entities to the underlying data store.</p>
@@ -622,7 +719,7 @@ changes to the entities will be persisted to the database during the next save o
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CreateAsync__0_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CreateAsync(`0,System.Threading.CancellationToken)">
   CreateAsync(TEntity, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds the specified entity to the underlying data store.</p>
@@ -668,7 +765,7 @@ changes to the entity will be persisted to the database during the next save ope
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Delete_System_Collections_Generic_IEnumerable__0__" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Delete(System.Collections.Generic.IEnumerable{`0})">
   Delete(IEnumerable&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L120"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes the specified collection of entities from the underlying data store.</p>
@@ -704,8 +801,8 @@ changes to the entity will be persisted to the database during the next save ope
   <a id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Delete_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Delete*"></a>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Delete_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Delete(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
-  Delete(Expression&lt;Func&lt;TEntity, bool&gt;&gt;?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  Delete(Expression&lt;Func&lt;TEntity, bool&gt;&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L124"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes all database rows for the <code class="typeparamref">TEntity</code> instances which match
@@ -714,7 +811,7 @@ the <code class="paramref">expression</code> from the database.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Delete(Expression&lt;Func&lt;TEntity, bool&gt;&gt;? expression)</code></pre>
+    <pre><code class="lang-csharp hljs">public int Delete(Expression&lt;Func&lt;TEntity, bool&gt;&gt; expression)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -751,7 +848,7 @@ aren't taken into account, and aren't updated to reflect the changes.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Delete__0_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Delete(`0)">
   Delete(TEntity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L116"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes the specified entity from the underlying data store.</p>
@@ -788,7 +885,7 @@ changes to the entity will be persisted to the database during the next save ope
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)">
   DeleteAsync(IEnumerable&lt;TEntity&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L132"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes the specified collection of entities from the underlying data store.</p>
@@ -833,8 +930,8 @@ changes to the entities will be persisted to the database during the next save o
   <a id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync*"></a>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)">
-  DeleteAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  DeleteAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L136"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes all database rows for the <code class="typeparamref">TEntity</code> instances which match
@@ -843,7 +940,7 @@ the <code class="paramref">expression</code> from the database.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;int&gt; DeleteAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;? expression, CancellationToken token = default)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;int&gt; DeleteAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt; expression, CancellationToken token = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -883,7 +980,7 @@ aren't taken into account, and aren't updated to reflect the changes.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync__0_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.DeleteAsync(`0,System.Threading.CancellationToken)">
   DeleteAsync(TEntity, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L128"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes the specified entity from the underlying data store.</p>
@@ -929,7 +1026,7 @@ changes to the entity will be persisted to the database during the next save ope
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetAll_System_Boolean_System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetAll(System.Boolean,System.Boolean)">
   GetAll(bool, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L140"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Retrieves all entities of type <code class="typeparamref">TEntity</code> from the data source.</p>
@@ -978,7 +1075,7 @@ impact performance and memory usage.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetAllAsync_System_Boolean_System_Boolean_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetAllAsync(System.Boolean,System.Boolean,System.Threading.CancellationToken)">
   GetAllAsync(bool, bool, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L161"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Retrieves all entities of type <code class="typeparamref">TEntity</code> from the data source.</p>
@@ -1030,7 +1127,7 @@ impact performance and memory usage.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetAllAsync__1_System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Boolean_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetAllAsync``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{``0,``0}},System.Boolean,System.Threading.CancellationToken)">
   GetAllAsync&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;?, bool, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L173"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Retrieves all entities of type <code class="typeparamref">TEntity</code> from the data source and projects them
@@ -1088,7 +1185,7 @@ be constructed from the properties of <code class="typeparamref">TEntity</code>.
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetAll__1_System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetAll``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{``0,``0}},System.Boolean)">
   GetAll&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;?, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L151"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Retrieves all entities of type <code class="typeparamref">TEntity</code> from the data source and projects them
@@ -1141,9 +1238,63 @@ be constructed from the properties of <code class="typeparamref">TEntity</code>.
 
   <a id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByCondition_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByCondition*"></a>
 
+  <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByCondition(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.String[])">
+  GetByCondition(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, bool, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L185"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves a single entity that matches the specified query filter, with optional control over query filters,
+change tracking, and related data inclusion.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TEntity? GetByCondition(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt; queryFilter, bool ignoreQueryFilters = false, bool trackChanges = false, params string[] includeProperties)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>queryFilter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TEntity&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TEntity&gt;&gt;</dt>
+    <dd><p>A function that applies additional filtering or transformation to the entity set.</p>
+</dd>
+    <dt><code>ignoreQueryFilters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true to ignore any global query filters applied to the entity type; otherwise, false.</p>
+</dd>
+    <dt><code>trackChanges</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true to enable change tracking for the returned entity; otherwise, false.</p>
+</dd>
+    <dt><code>includeProperties</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd><p>An array of related entity property names to include in the query results.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TEntity</span></dt>
+    <dd><p>The entity that matches the specified condition, or null if no such entity is found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_String____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>If multiple entities match the specified condition, only the first one is returned. This method allows
+customization of the query pipeline, including the ability to bypass global query filters and control entity
+tracking behavior. Use the includeProperties parameter to load related data as part of the query.</p>
+</div>
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByCondition_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByCondition*"></a>
+
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.String[])">
   GetByCondition(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool, bool, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L198"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a <code class="typeparamref">TEntity</code> by a certain <code class="paramref">expression</code>.</p>
@@ -1192,9 +1343,66 @@ be constructed from the properties of <code class="typeparamref">TEntity</code>.
 
   <a id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByConditionAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByConditionAsync*"></a>
 
+  <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByConditionAsync_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByConditionAsync(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])">
+  GetByConditionAsync(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, bool, CancellationToken, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L225"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves a single entity that matches the specified query filter, with optional control over query filters,
+change tracking, and related data inclusion.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TEntity?&gt; GetByConditionAsync(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt; queryFilter, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>queryFilter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TEntity&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TEntity&gt;&gt;</dt>
+    <dd><p>A function that applies additional filtering or transformation to the entity set.</p>
+</dd>
+    <dt><code>ignoreQueryFilters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true to ignore any global query filters applied to the entity type; otherwise, false.</p>
+</dd>
+    <dt><code>trackChanges</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true to enable change tracking for the returned entity; otherwise, false.</p>
+</dd>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token to cancel the request.</p>
+</dd>
+    <dt><code>includeProperties</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd><p>An array of related entity property names to include in the query results.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TEntity&gt;</dt>
+    <dd><p>The entity that matches the specified condition, or null if no such entity is found.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByConditionAsync_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>If multiple entities match the specified condition, only the first one is returned. This method allows
+customization of the query pipeline, including the ability to bypass global query filters and control entity
+tracking behavior. Use the includeProperties parameter to load related data as part of the query.</p>
+</div>
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByConditionAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByConditionAsync*"></a>
+
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Boolean,System.Threading.CancellationToken,System.String[])">
   GetByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool, bool, CancellationToken, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L239"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a <code class="typeparamref">TEntity</code> by a certain <code class="paramref">expression</code>.</p>
@@ -1248,7 +1456,7 @@ be constructed from the properties of <code class="typeparamref">TEntity</code>.
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByConditionAsync__1_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByConditionAsync``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{``0,``0}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Threading.CancellationToken)">
   GetByConditionAsync&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;?, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L203"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L254"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Asynchronously retrieves a single result projected from entities that satisfy the specified condition.</p>
@@ -1313,7 +1521,7 @@ This method is typically used to retrieve a single value or object based on a fi
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByCondition__1_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetByCondition``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{``0,``0}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean)">
   GetByCondition&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;?, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L175"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L212"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Retrieves a single result of type <code class="typeparamref">TResult</code> from entities that satisfy the
@@ -1376,9 +1584,72 @@ parameter.</p>
 
   <a id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByCondition_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByCondition*"></a>
 
+  <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByCondition(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])">
+  GetManyByCondition(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;?, int?, int?, bool, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L268"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves a collection of entities that satisfy the specified query conditions, with optional ordering,
+paging, and related data inclusion.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;TEntity&gt; GetManyByCondition(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt; queryFilter, bool ignoreQueryFilters = false, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, params string[] includeProperties)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>queryFilter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TEntity&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TEntity&gt;&gt;</dt>
+    <dd><p>A function that applies additional filtering to the entity query.</p>
+</dd>
+    <dt><code>ignoreQueryFilters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true to ignore any global query filters applied to the entity type; otherwise, false.</p>
+</dd>
+    <dt><code>orderBy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TEntity&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iorderedqueryable-1">IOrderedQueryable</a>&lt;TEntity&gt;&gt;</dt>
+    <dd><p>An optional function to specify the ordering of the resulting entities.</p>
+</dd>
+    <dt><code>skip</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>The number of entities to skip before starting to return results.</p>
+</dd>
+    <dt><code>take</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>The maximum number of entities to return.</p>
+</dd>
+    <dt><code>trackChanges</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true to enable change tracking for the returned entities; otherwise, false to retrieve entities without tracking.</p>
+</dd>
+    <dt><code>includeProperties</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd><p>An array of related entity property names to include in the query results for eager loading.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;TEntity&gt;</dt>
+    <dd><p>A read-only list of entities that match the specified conditions. The list is empty if no entities satisfy the query.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Use this method to retrieve multiple entities with flexible filtering, sorting, paging, and eager
+loading options. When trackChanges is set to false, the returned entities are not tracked by the
+context, which can improve performance for read-only operations.</p>
+</div>
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByCondition_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByCondition*"></a>
+
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByCondition(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])">
   GetManyByCondition(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;?, int?, int?, bool, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L217"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L284"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a collection of <code class="typeparamref">TEntity</code> based on the specified <code class="paramref">expression</code>.</p>
@@ -1436,9 +1707,75 @@ parameter.</p>
 
   <a id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByConditionAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByConditionAsync*"></a>
 
+  <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByConditionAsync_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByConditionAsync(System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken,System.String[])">
+  GetManyByConditionAsync(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;?, int?, int?, bool, CancellationToken, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L316"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves a collection of entities that satisfy the specified query conditions, with optional ordering,
+paging, and related data inclusion.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IReadOnlyList&lt;TEntity&gt;&gt; GetManyByConditionAsync(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt; queryFilter, bool ignoreQueryFilters = false, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>queryFilter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TEntity&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TEntity&gt;&gt;</dt>
+    <dd><p>A function that applies additional filtering to the entity query.</p>
+</dd>
+    <dt><code>ignoreQueryFilters</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true to ignore any global query filters applied to the entity type; otherwise, false.</p>
+</dd>
+    <dt><code>orderBy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TEntity&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iorderedqueryable-1">IOrderedQueryable</a>&lt;TEntity&gt;&gt;</dt>
+    <dd><p>An optional function to specify the ordering of the resulting entities.</p>
+</dd>
+    <dt><code>skip</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>The number of entities to skip before starting to return results.</p>
+</dd>
+    <dt><code>take</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>The maximum number of entities to return.</p>
+</dd>
+    <dt><code>trackChanges</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true to enable change tracking for the returned entities; otherwise, false to retrieve entities without tracking.</p>
+</dd>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token to cancel the request.</p>
+</dd>
+    <dt><code>includeProperties</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd><p>An array of related entity property names to include in the query results for eager loading.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;TEntity&gt;&gt;</dt>
+    <dd><p>A read-only list of entities that match the specified conditions. The list is empty if no entities satisfy the query.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByConditionAsync_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Use this method to retrieve multiple entities with flexible filtering, sorting, paging, and eager
+loading options. When trackChanges is set to false, the returned entities are not tracked by the
+context, which can improve performance for read-only operations.</p>
+</div>
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByConditionAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByConditionAsync*"></a>
+
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByConditionAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.Threading.CancellationToken,System.String[])">
   GetManyByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;?, int?, int?, bool, CancellationToken, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L333"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns a collection of <code class="typeparamref">TEntity</code> based on the specified <code class="paramref">expression</code>.</p>
@@ -1473,7 +1810,7 @@ parameter.</p>
     <dd><p>Should the fetched entities be tracked?</p>
 </dd>
     <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd><p>The cancellation token.</p>
+    <dd><p>The cancellation token to cancel the request.</p>
 </dd>
     <dt><code>includeProperties</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
     <dd><p>Any other navigation properties to include when returning the collection.</p>
@@ -1501,7 +1838,7 @@ parameter.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByConditionAsync__1_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByConditionAsync``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{``0,``0}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Threading.CancellationToken)">
   GetManyByConditionAsync&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;?, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;?, int?, int?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L267"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L351"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Asynchronously retrieves a collection of entities that satisfy the specified condition, projects them to the
@@ -1578,7 +1915,7 @@ entities are tracked by the underlying context, which may impact performance and
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByCondition__1_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetManyByCondition``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{``0,``0}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32})">
   GetManyByCondition&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;?, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;?, int?, int?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L234"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L301"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Retrieves a collection of entities that satisfy the specified condition, projects them to the specified result
@@ -1650,7 +1987,7 @@ filtering, ordering, and pagination. This method is typically used in repository
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_PrepareQuery_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.PrepareQuery(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IQueryable{`0}},System.Boolean,System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String[])">
   PrepareQuery(Expression&lt;Func&lt;TEntity, bool&gt;&gt;?, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;?, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;?, int?, int?, bool, params string[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L332"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L416"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Prepares the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable">IQueryable</a> of type <code class="typeparamref">TEntity</code> before it gets executed.</p>
@@ -1710,7 +2047,7 @@ filtering, ordering, and pagination. This method is typically used in repository
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Update_System_Collections_Generic_IEnumerable__0__" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Update(System.Collections.Generic.IEnumerable{`0})">
   Update(IEnumerable&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L288"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L372"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates the specified collection of entities in the underlying data store.</p>
@@ -1747,7 +2084,7 @@ changes to the entities will be persisted to the database during the next save o
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Update_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Update(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0},Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0}}})">
   Update(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L292"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L376"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates all database rows for the <code class="typeparamref">TEntity</code> instances which match
@@ -1796,7 +2133,7 @@ aren't taken into account, and aren't updated to reflect the changes.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Update__0_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Update(`0)">
   Update(TEntity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L284"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L368"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates the specified entity in the underlying data store.</p>
@@ -1833,7 +2170,7 @@ changes to the entity will be persisted to the database during the next save ope
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)">
   UpdateAsync(IEnumerable&lt;TEntity&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L306"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L390"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates the specified collection of entities in the underlying data store.</p>
@@ -1879,7 +2216,7 @@ changes to the entities will be persisted to the database during the next save o
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0},Microsoft.EntityFrameworkCore.Query.SetPropertyCalls{`0}}},System.Threading.CancellationToken)">
   UpdateAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L310"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L394"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates all database rows for the <code class="typeparamref">TEntity</code> instances which match
@@ -1931,7 +2268,7 @@ aren't taken into account, and aren't updated to reflect the changes.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync__0_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.UpdateAsync(`0,System.Threading.CancellationToken)">
   UpdateAsync(TEntity, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L302"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L386"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates the specified entity in the underlying data store.</p>
@@ -1977,7 +2314,7 @@ changes to the entity will be persisted to the database during the next save ope
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L20" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L21" class="edit-link">Edit this page</a>
         </div>
 
 
