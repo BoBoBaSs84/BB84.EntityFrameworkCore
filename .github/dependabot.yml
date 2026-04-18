@@ -10,7 +10,9 @@ updates:
     schedule:
       interval: "weekly"
       day: "monday"
-      time: "03:00"
+      time: "06:00"
+    assignees:
+      - "BoBoBaSs84"
     groups:
       test-dependencies:
         patterns:
@@ -24,4 +26,6 @@ updates:
     schedule:
       interval: "weekly"
       day: "monday"
-      time: "03:00"
+      time: "06:00"
+    assignees:
+      - "BoBoBaSs84"
