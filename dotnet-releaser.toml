@@ -2,7 +2,7 @@
 # Disable default packs - It will only publish NuGet and the Changelog
 profile = "custom"
 [msbuild]
-project = "BB84.EntityFrameworkCore.sln"
+project = "BB84.EntityFrameworkCore.slnx"
 [github]
 user = "BoBoBaSs84"
 repo = "BB84.EntityFrameworkCore"
