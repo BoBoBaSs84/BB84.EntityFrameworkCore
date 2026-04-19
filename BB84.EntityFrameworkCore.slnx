@@ -1,0 +1,26 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="BB84.EntityFrameworkCore.sln.licenseheader" />
+    <File Path="CODE_OF_CONDUCT.md" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="dotnet-releaser.toml" />
+    <File Path="icon.png" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/BB84.EntityFrameworkCore.Entities.Abstractions/BB84.EntityFrameworkCore.Entities.Abstractions.csproj" />
+    <Project Path="src/BB84.EntityFrameworkCore.Entities/BB84.EntityFrameworkCore.Entities.csproj" />
+    <Project Path="src/BB84.EntityFrameworkCore.Repositories.Abstractions/BB84.EntityFrameworkCore.Repositories.Abstractions.csproj" />
+    <Project Path="src/BB84.EntityFrameworkCore.Repositories.SqlServer/BB84.EntityFrameworkCore.Repositories.SqlServer.csproj" />
+    <Project Path="src/BB84.EntityFrameworkCore.Repositories/BB84.EntityFrameworkCore.Repositories.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/BB84.EntityFrameworkCore.Entities.Tests/BB84.EntityFrameworkCore.Entities.Tests.csproj" />
+    <Project Path="tests/BB84.EntityFrameworkCore.Repositories.Tests/BB84.EntityFrameworkCore.Repositories.Tests.csproj" />
+  </Folder>
+</Solution>
