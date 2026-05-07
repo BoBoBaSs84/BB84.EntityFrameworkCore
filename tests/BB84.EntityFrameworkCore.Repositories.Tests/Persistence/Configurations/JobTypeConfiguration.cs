@@ -16,7 +16,7 @@ internal sealed class JobTypeConfiguration : CompositeConfiguration<JobTypeEntit
 {
 	public override void Configure(EntityTypeBuilder<JobTypeEntity> builder)
 	{
-		_ = builder.ToTable("JobType")
+		builder.ToTable("JobTypes")
 			.HasNoKey()
 			.Property(x => x.Color)
 			.IsVarbinaryColumn(3);

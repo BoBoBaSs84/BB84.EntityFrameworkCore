@@ -14,11 +14,13 @@ namespace BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, unit testing.")]
 public sealed class TestDbContext(DbContextOptions<TestDbContext> options, SoftDeletableInterceptor softDeletableInterceptor, TimeAuditedInterceptor timeAuditedInterceptor, UserAuditedInterceptor userAuditedInterceptor) : DbContext(options), ITestDbContext
 {
+	public const string DefaultSchema = "testing";
+
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
 		base.OnModelCreating(modelBuilder);
 
-		modelBuilder.HasDefaultSchema("testing");
+		modelBuilder.HasDefaultSchema(DefaultSchema);
 		modelBuilder.ApplyConfigurationsFromAssembly(typeof(UnitTestBase).Assembly);
 	}
 

@@ -15,15 +15,15 @@ internal sealed class PersonConfiguration : AuditedConfiguration<PersonEntity>
 {
 	public override void Configure(EntityTypeBuilder<PersonEntity> builder)
 	{
-		_ = builder.ToHistoryTable("Person");
+		builder.ToHistoryTable("Persons", TestDbContext.DefaultSchema);
 
-		_ = builder.Property(x => x.Settings)
+		builder.Property(x => x.Settings)
 			.IsXmlColumn();
 
-		_ = builder.Property(x => x.DateOfBirth)
+		builder.Property(x => x.DateOfBirth)
 			.IsDateColumn();
 
-		_ = builder.Property(x => x.Salary)
+		builder.Property(x => x.Salary)
 			.IsMoneyColumn(true);
 
 		base.Configure(builder);

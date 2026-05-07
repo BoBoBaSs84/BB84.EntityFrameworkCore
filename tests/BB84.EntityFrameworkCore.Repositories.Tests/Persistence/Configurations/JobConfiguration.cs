@@ -15,7 +15,7 @@ internal sealed class JobConfiguration : IdentityConfiguration<JobEntity>
 {
 	public override void Configure(EntityTypeBuilder<JobEntity> builder)
 	{
-		_ = builder.ToTable("Job");
+		builder.ToTable("Jobs");
 
 		base.Configure(builder);
 	}

@@ -15,22 +15,22 @@ internal sealed class SkillConfiguration : FullAuditedConfiguration<SkillEntity>
 {
 	public override void Configure(EntityTypeBuilder<SkillEntity> builder)
 	{
-		_ = builder.ToTable("Skill");
+		builder.ToTable("Skills");
 
-		_ = builder.Property(p => p.Name)
+		builder.Property(p => p.Name)
 			.HasMaxLength(128)
 			.IsRequired()
 			.IsUnicode(false);
 
-		_ = builder.HasIndex(p => p.Name)
+		builder.HasIndex(p => p.Name)
 			.IsUnique();
 
-		_ = builder.Property(p => p.Description)
+		builder.Property(p => p.Description)
 			.HasMaxLength(512)
 			.IsRequired()
 			.IsUnicode();
 
-		_ = builder.Property(p => p.IsCritical)
+		builder.Property(p => p.IsCritical)
 			.HasDefaultValue(false);
 
 		base.Configure(builder);

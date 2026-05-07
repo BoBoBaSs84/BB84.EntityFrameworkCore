@@ -15,9 +15,9 @@ internal sealed class PersonTypeConfiguration : EnumeratorConfiguration<PersonTy
 {
 	public override void Configure(EntityTypeBuilder<PersonTypeEntity> builder)
 	{
-		builder.ToTable("PersonType");
+		builder.ToTable("PersonTypes");
 
-		_ = builder.HasData(new List<PersonTypeEntity>()
+		builder.HasData(new List<PersonTypeEntity>()
 		{
 			new()
 			{
