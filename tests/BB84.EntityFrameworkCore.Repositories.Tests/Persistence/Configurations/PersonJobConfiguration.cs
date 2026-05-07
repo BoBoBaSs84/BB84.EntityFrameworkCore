@@ -15,9 +15,9 @@ internal sealed class PersonJobConfiguration : AuditedCompositeConfiguration<Per
 {
 	public override void Configure(EntityTypeBuilder<PersonJobEntity> builder)
 	{
-		_ = builder.ToTable("PersonJob");
+		builder.ToTable("PersonJobs");
 
-		_ = builder.HasKey(e => new { e.PersonId, e.JobId })
+		builder.HasKey(e => new { e.PersonId, e.JobId })
 			.IsClustered(false);
 
 		base.Configure(builder);
