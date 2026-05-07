@@ -1,10 +1,10 @@
-﻿#pragma warning disable CA1866 // Use char overload
-#pragma warning disable CA1847 // Use char literal for a single character lookup
-// Copyright: 2024 Robert Peter Meyer
+﻿// Copyright: 2024 Robert Peter Meyer
 // License: MIT
 //
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
+#pragma warning disable CA1866 // Use char overload
+#pragma warning disable CA1847 // Use char literal for a single character lookup
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Repositories;
