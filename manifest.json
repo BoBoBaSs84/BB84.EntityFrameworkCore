@@ -704,6 +704,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions",
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.yml\" sourcestartlinenumber=\"1\">Represents extension methods for the <xref href=\"Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade\" data-throw-if-not-resolved=\"false\"></xref> class to execute stored\nprocedures, table-valued functions and scalar functions with parameters.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BB84.EntityFrameworkCore.Repositories.Extensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BB84.EntityFrameworkCore.Repositories.Extensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.yml",
       "output": {
         ".html": {
