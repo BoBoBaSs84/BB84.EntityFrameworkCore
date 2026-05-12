@@ -21,19 +21,16 @@ public static partial class DatabaseFacadeExtensions
 	/// <param name="schema">The schema of the stored procedure.</param>
 	/// <param name="name">The name of the stored procedure.</param>
 	/// <param name="parameters">The parameters to pass to the stored procedure.</param>
-	/// <param name="outputParameter">An optional output parameter to capture the value returned by the stored procedure.</param>
 	/// <returns>A list of results returned by the stored procedure.</returns>
 	public static IReadOnlyList<T> ExecuteProcedure<T>(
 		this DatabaseFacade databaseFacade,
 		string schema,
 		string name,
-		DbParameter[] parameters,
-		DbParameter? outputParameter = null
-		)
+		IEnumerable<DbParameter> parameters)
 	{
 		ArgumentNullException.ThrowIfNull(databaseFacade);
 
-		(string sql, object[] sqlParameters) = CreateProcedureCommand(schema, name, parameters, outputParameter);
+		(string sql, object[] sqlParameters) = CreateProcedureCommand(schema, name, parameters);
 
 		return [.. databaseFacade.SqlQueryRaw<T>(sql, sqlParameters)];
 	}
@@ -46,20 +43,18 @@ public static partial class DatabaseFacadeExtensions
 	/// <param name="schema">The schema of the stored procedure.</param>
 	/// <param name="name">The name of the stored procedure.</param>
 	/// <param name="parameters">The parameters to pass to the stored procedure.</param>
-	/// <param name="outputParameter">An optional output parameter to capture the value returned by the stored procedure.</param>
 	/// <param name="cancellationToken">A token to monitor for cancellation requests.</param>
 	/// <returns>A list of results returned by the stored procedure.</returns>
 	public static async Task<IReadOnlyList<T>> ExecuteProcedureAsync<T>(
 		this DatabaseFacade databaseFacade,
 		string schema,
 		string name,
-		DbParameter[] parameters,
-		DbParameter? outputParameter = null,
+		IEnumerable<DbParameter> parameters,
 		CancellationToken cancellationToken = default)
 	{
 		ArgumentNullException.ThrowIfNull(databaseFacade);
 
-		(string sql, object[] sqlParameters) = CreateProcedureCommand(schema, name, parameters, outputParameter);
+		(string sql, object[] sqlParameters) = CreateProcedureCommand(schema, name, parameters);
 
 		return await databaseFacade
 			.SqlQueryRaw<T>(sql, sqlParameters)
@@ -79,7 +74,7 @@ public static partial class DatabaseFacadeExtensions
 		this DatabaseFacade databaseFacade,
 		string schema,
 		string name,
-		DbParameter[] parameters)
+		IEnumerable<DbParameter> parameters)
 	{
 		ArgumentNullException.ThrowIfNull(databaseFacade);
 
@@ -101,8 +96,8 @@ public static partial class DatabaseFacadeExtensions
 		this DatabaseFacade databaseFacade,
 		string schema,
 		string name,
-		DbParameter[] parameters,
-		CancellationToken cancellationToken)
+		IEnumerable<DbParameter> parameters,
+		CancellationToken cancellationToken = default)
 	{
 		ArgumentNullException.ThrowIfNull(databaseFacade);
 
@@ -116,22 +111,13 @@ public static partial class DatabaseFacadeExtensions
 	private static (string Sql, object[] Parameters) CreateProcedureCommand(
 		string schema,
 		string name,
-		DbParameter[] parameters,
-		DbParameter? outputParameter = null)
+		IEnumerable<DbParameter> parameters)
 	{
 		ArgumentNullException.ThrowIfNull(parameters);
 
-		List<DbParameter> commandParameters = [.. parameters];
-
-		if (outputParameter is not null && commandParameters.Any(p => string.Equals(p.ParameterName, outputParameter.ParameterName, StringComparison.OrdinalIgnoreCase)))
-			throw new ArgumentException("The output parameter is already included in the parameters array.", nameof(outputParameter));
-
-		if (outputParameter is not null)
-			commandParameters.Add(outputParameter);
-
 		List<string> assignments = [];
 
-		foreach (DbParameter parameter in commandParameters)
+		foreach (DbParameter parameter in parameters)
 		{
 			string token = GetParameterToken(parameter);
 			bool isOutput = parameter.Direction is ParameterDirection.Output or ParameterDirection.InputOutput;
@@ -146,6 +132,6 @@ public static partial class DatabaseFacadeExtensions
 		if (assignments.Count > 0)
 			sql = $"{sql} {string.Join(", ", assignments)}";
 
-		return (sql, [.. commandParameters]);
+		return (sql, [.. parameters]);
 	}
 }
