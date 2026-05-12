@@ -25,13 +25,13 @@ public static partial class DatabaseFacadeExtensions
 		this DatabaseFacade databaseFacade,
 		string schema,
 		string name,
-		params DbParameter[] parameters)
+		IEnumerable<DbParameter> parameters)
 	{
 		ArgumentNullException.ThrowIfNull(databaseFacade);
 
 		string sql = CreateTableFunctionCommand(schema, name, parameters);
 
-		return [.. databaseFacade.SqlQueryRaw<T>(sql, parameters)];
+		return [.. databaseFacade.SqlQueryRaw<T>(sql, [.. parameters])];
 	}
 
 	/// <summary>
@@ -41,22 +41,22 @@ public static partial class DatabaseFacadeExtensions
 	/// <param name="databaseFacade">The database facade to execute the table-valued function on.</param>
 	/// <param name="schema">The schema of the table-valued function.</param>
 	/// <param name="name">The name of the table-valued function.</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the operation if needed.</param>
 	/// <param name="parameters">The parameters to pass to the table-valued function.</param>
-	/// <returns></returns>
+	/// <param name="cancellationToken">The cancellation token to cancel the operation if needed.</param>
+	/// <returns>The result of the table-valued function.</returns>
 	public static async Task<IReadOnlyList<T>> ExecuteTableFunctionAsync<T>(
 		this DatabaseFacade databaseFacade,
 		string schema,
 		string name,
-		CancellationToken cancellationToken = default,
-		params DbParameter[] parameters)
+		IEnumerable<DbParameter> parameters,
+		CancellationToken cancellationToken = default)
 	{
 		ArgumentNullException.ThrowIfNull(databaseFacade);
 
 		string sql = CreateTableFunctionCommand(schema, name, parameters);
 
 		return await databaseFacade
-			.SqlQueryRaw<T>(sql, parameters)
+			.SqlQueryRaw<T>(sql, [.. parameters])
 			.ToListAsync(cancellationToken)
 			.ConfigureAwait(false);
 	}
@@ -74,14 +74,14 @@ public static partial class DatabaseFacadeExtensions
 		this DatabaseFacade databaseFacade,
 		string schema,
 		string name,
-		params DbParameter[] parameters)
+		IEnumerable<DbParameter> parameters)
 	{
 		ArgumentNullException.ThrowIfNull(databaseFacade);
 
 		string sql = CreateScalarFunctionCommand(schema, name, parameters);
 
 		return databaseFacade
-			.SqlQueryRaw<T>(sql, parameters)
+			.SqlQueryRaw<T>(sql, [.. parameters])
 			.SingleOrDefault();
 	}
 
@@ -92,27 +92,27 @@ public static partial class DatabaseFacadeExtensions
 	/// <param name="databaseFacade">The database facade to execute the scalar-valued function on.</param>
 	/// <param name="schema">The schema of the scalar-valued function.</param>
 	/// <param name="name">The name of the scalar-valued function.</param>
-	/// <param name="cancellationToken">The cancellation token to cancel the operation if needed.</param>
 	/// <param name="parameters">The parameters to pass to the scalar-valued function.</param>
+	/// <param name="cancellationToken">The cancellation token to cancel the operation if needed.</param>
 	/// <returns>The scalar result of the function.</returns>
 	public static async Task<T?> ExecuteScalarFunctionAsync<T>(
 		this DatabaseFacade databaseFacade,
 		string schema,
 		string name,
-		CancellationToken cancellationToken = default,
-		params DbParameter[] parameters)
+		IEnumerable<DbParameter> parameters,
+		CancellationToken cancellationToken = default)
 	{
 		ArgumentNullException.ThrowIfNull(databaseFacade);
 
 		string sql = CreateScalarFunctionCommand(schema, name, parameters);
 
 		return await databaseFacade
-			.SqlQueryRaw<T>(sql, parameters)
+			.SqlQueryRaw<T>(sql, [.. parameters])
 			.SingleOrDefaultAsync(cancellationToken)
 			.ConfigureAwait(false);
 	}
 
-	private static string CreateScalarFunctionCommand(string schema, string name, DbParameter[] parameters)
+	private static string CreateScalarFunctionCommand(string schema, string name, IEnumerable<DbParameter> parameters)
 	{
 		ArgumentNullException.ThrowIfNull(parameters);
 
@@ -121,7 +121,7 @@ public static partial class DatabaseFacadeExtensions
 		return $"SELECT [Value] = {GetObjectToken(schema, name)}({parameterPlaceholders})";
 	}
 
-	private static string CreateTableFunctionCommand(string schema, string name, DbParameter[] parameters)
+	private static string CreateTableFunctionCommand(string schema, string name, IEnumerable<DbParameter> parameters)
 	{
 		ArgumentNullException.ThrowIfNull(parameters);
 

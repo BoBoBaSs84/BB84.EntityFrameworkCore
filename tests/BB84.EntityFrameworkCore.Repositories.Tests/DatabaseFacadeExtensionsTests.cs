@@ -84,9 +84,10 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
 	{
 		using TestDbContext dbContext = GetTestContext();
 
-		SqlParameter input = new("@Input", SqlDbType.Int) { Value = 5 };
+		IEnumerable<SqlParameter> sqlParameters = [new("@Input", SqlDbType.Int) { Value = 5 }];
 
-		int? result = dbContext.Database.ExecuteScalarFunction<int>(Schema, GetScalarValueFunctionName, input);
+		int result = dbContext.Database
+			.ExecuteScalarFunction<int>(Schema, GetScalarValueFunctionName, sqlParameters);
 
 		Assert.AreEqual(10, result);
 	}
@@ -96,10 +97,10 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
 	{
 		using TestDbContext dbContext = GetTestContext();
 
-		SqlParameter input = new("@Input", SqlDbType.Int) { Value = 7 };
+		IEnumerable<SqlParameter> sqlParameters = [new("@Input", SqlDbType.Int) { Value = 7 }];
 
-		int? result = await dbContext.Database
-			.ExecuteScalarFunctionAsync<int>(Schema, GetScalarValueFunctionName, _testToken, input)
+		int result = await dbContext.Database
+			.ExecuteScalarFunctionAsync<int>(Schema, GetScalarValueFunctionName, sqlParameters, _testToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(14, result);
@@ -110,9 +111,10 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
 	{
 		using TestDbContext dbContext = GetTestContext();
 
-		SqlParameter count = new("@Count", SqlDbType.Int) { Value = 3 };
+		IEnumerable<SqlParameter> sqlParameters = [new("@Count", SqlDbType.Int) { Value = 3 }];
 
-		IReadOnlyList<int> result = dbContext.Database.ExecuteTableFunction<int>(Schema, GetTableValuesFunctionName, count);
+		IReadOnlyList<int> result = dbContext.Database
+			.ExecuteTableFunction<int>(Schema, GetTableValuesFunctionName, sqlParameters);
 
 		Assert.HasCount(3, result);
 	}
@@ -122,10 +124,10 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
 	{
 		using TestDbContext dbContext = GetTestContext();
 
-		SqlParameter count = new("@Count", SqlDbType.Int) { Value = 2 };
+		IEnumerable<SqlParameter> sqlParameters = [new("@Count", SqlDbType.Int) { Value = 2 }];
 
 		IReadOnlyList<int> result = await dbContext.Database
-			.ExecuteTableFunctionAsync<int>(Schema, GetTableValuesFunctionName, _testToken, count)
+			.ExecuteTableFunctionAsync<int>(Schema, GetTableValuesFunctionName, sqlParameters, _testToken)
 			.ConfigureAwait(false);
 
 		Assert.HasCount(2, result);
@@ -138,7 +140,8 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
 
 		SqlParameter input = new("@Input", SqlDbType.Int) { Value = 42 };
 
-		IReadOnlyList<int> result = dbContext.Database.ExecuteProcedure<int>(Schema, GetValuesProcedureName, [input]);
+		IReadOnlyList<int> result = dbContext.Database
+			.ExecuteProcedure<int>(Schema, GetValuesProcedureName, [input]);
 
 		Assert.HasCount(1, result);
 		Assert.AreEqual(42, result[0]);
@@ -167,7 +170,8 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
 		SqlParameter input = new("@Input", SqlDbType.Int) { Value = 4 };
 		SqlParameter output = new("@Output", SqlDbType.Int) { Direction = ParameterDirection.Output };
 
-		IReadOnlyList<int> result = dbContext.Database.ExecuteProcedure<int>(Schema, SetValueProcedureName, [input], output);
+		IReadOnlyList<int> result = dbContext.Database
+			.ExecuteProcedure<int>(Schema, SetValueProcedureName, [input, output]);
 
 		Assert.AreEqual(12, output.Value);
 	}
@@ -181,7 +185,7 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
 		SqlParameter output = new("@Output", SqlDbType.Int) { Direction = ParameterDirection.Output };
 
 		IReadOnlyList<int> result = await dbContext.Database
-			.ExecuteProcedureAsync<int>(Schema, SetValueProcedureName, [input], output, _testToken)
+			.ExecuteProcedureAsync<int>(Schema, SetValueProcedureName, [input, output], _testToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(15, output.Value);
@@ -194,7 +198,8 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
 
 		SqlParameter input = new("@Input", SqlDbType.Int) { Value = 1 };
 
-		int rowsAffected = dbContext.Database.ExecuteProcedure(Schema, GetValuesProcedureName, [input]);
+		int rowsAffected = dbContext.Database
+			.ExecuteProcedure(Schema, GetValuesProcedureName, [input]);
 
 		Assert.AreEqual(-1, rowsAffected);
 	}
@@ -207,7 +212,7 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
 		SqlParameter input = new("@Input", SqlDbType.Int) { Value = 1 };
 
 		int rowsAffected = await dbContext.Database
-			.ExecuteProcedureAsync(Schema, GetValuesProcedureName, [input], default)
+			.ExecuteProcedureAsync(Schema, GetValuesProcedureName, [input], _testToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(-1, rowsAffected);
