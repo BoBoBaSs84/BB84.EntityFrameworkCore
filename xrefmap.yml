@@ -1820,15 +1820,15 @@ references:
   commentId: T:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions
   fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions
   nameWithType: DatabaseFacadeExtensions
-- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Data.Common.DbParameter[])
-  name: ExecuteProcedure(DatabaseFacade, string, string, DbParameter[])
-  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteProcedure_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Data_Common_DbParameter___
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Data.Common.DbParameter[])
-  name.vb: ExecuteProcedure(DatabaseFacade, String, String, DbParameter())
-  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, System.Data.Common.DbParameter[])
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, System.Data.Common.DbParameter())
-  nameWithType: DatabaseFacadeExtensions.ExecuteProcedure(DatabaseFacade, string, string, DbParameter[])
-  nameWithType.vb: DatabaseFacadeExtensions.ExecuteProcedure(DatabaseFacade, String, String, DbParameter())
+- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
+  name: ExecuteProcedure(DatabaseFacade, string, string, IEnumerable<DbParameter>)
+  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteProcedure_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Collections_Generic_IEnumerable_System_Data_Common_DbParameter__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
+  name.vb: ExecuteProcedure(DatabaseFacade, String, String, IEnumerable(Of DbParameter))
+  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, System.Collections.Generic.IEnumerable<System.Data.Common.DbParameter>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseFacadeExtensions.ExecuteProcedure(DatabaseFacade, string, string, IEnumerable<DbParameter>)
+  nameWithType.vb: DatabaseFacadeExtensions.ExecuteProcedure(DatabaseFacade, String, String, IEnumerable(Of DbParameter))
 - uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure*
   name: ExecuteProcedure
   href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteProcedure_
@@ -1836,15 +1836,15 @@ references:
   isSpec: "True"
   fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure
   nameWithType: DatabaseFacadeExtensions.ExecuteProcedure
-- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Data.Common.DbParameter[],System.Threading.CancellationToken)
-  name: ExecuteProcedureAsync(DatabaseFacade, string, string, DbParameter[], CancellationToken)
-  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteProcedureAsync_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Data_Common_DbParameter___System_Threading_CancellationToken_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Data.Common.DbParameter[],System.Threading.CancellationToken)
-  name.vb: ExecuteProcedureAsync(DatabaseFacade, String, String, DbParameter(), CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, System.Data.Common.DbParameter[], System.Threading.CancellationToken)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, System.Data.Common.DbParameter(), System.Threading.CancellationToken)
-  nameWithType: DatabaseFacadeExtensions.ExecuteProcedureAsync(DatabaseFacade, string, string, DbParameter[], CancellationToken)
-  nameWithType.vb: DatabaseFacadeExtensions.ExecuteProcedureAsync(DatabaseFacade, String, String, DbParameter(), CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Threading.CancellationToken)
+  name: ExecuteProcedureAsync(DatabaseFacade, string, string, IEnumerable<DbParameter>, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteProcedureAsync_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Collections_Generic_IEnumerable_System_Data_Common_DbParameter__System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Threading.CancellationToken)
+  name.vb: ExecuteProcedureAsync(DatabaseFacade, String, String, IEnumerable(Of DbParameter), CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, System.Collections.Generic.IEnumerable<System.Data.Common.DbParameter>, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter), System.Threading.CancellationToken)
+  nameWithType: DatabaseFacadeExtensions.ExecuteProcedureAsync(DatabaseFacade, string, string, IEnumerable<DbParameter>, CancellationToken)
+  nameWithType.vb: DatabaseFacadeExtensions.ExecuteProcedureAsync(DatabaseFacade, String, String, IEnumerable(Of DbParameter), CancellationToken)
 - uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync*
   name: ExecuteProcedureAsync
   href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteProcedureAsync_
@@ -1852,24 +1852,24 @@ references:
   isSpec: "True"
   fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync
   nameWithType: DatabaseFacadeExtensions.ExecuteProcedureAsync
-- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Data.Common.DbParameter[],System.Data.Common.DbParameter,System.Threading.CancellationToken)
-  name: ExecuteProcedureAsync<T>(DatabaseFacade, string, string, DbParameter[], DbParameter?, CancellationToken)
-  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteProcedureAsync__1_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Data_Common_DbParameter___System_Data_Common_DbParameter_System_Threading_CancellationToken_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Data.Common.DbParameter[],System.Data.Common.DbParameter,System.Threading.CancellationToken)
-  name.vb: ExecuteProcedureAsync(Of T)(DatabaseFacade, String, String, DbParameter(), DbParameter, CancellationToken)
-  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync<T>(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, System.Data.Common.DbParameter[], System.Data.Common.DbParameter?, System.Threading.CancellationToken)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync(Of T)(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, System.Data.Common.DbParameter(), System.Data.Common.DbParameter, System.Threading.CancellationToken)
-  nameWithType: DatabaseFacadeExtensions.ExecuteProcedureAsync<T>(DatabaseFacade, string, string, DbParameter[], DbParameter?, CancellationToken)
-  nameWithType.vb: DatabaseFacadeExtensions.ExecuteProcedureAsync(Of T)(DatabaseFacade, String, String, DbParameter(), DbParameter, CancellationToken)
-- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Data.Common.DbParameter[],System.Data.Common.DbParameter)
-  name: ExecuteProcedure<T>(DatabaseFacade, string, string, DbParameter[], DbParameter?)
-  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteProcedure__1_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Data_Common_DbParameter___System_Data_Common_DbParameter_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Data.Common.DbParameter[],System.Data.Common.DbParameter)
-  name.vb: ExecuteProcedure(Of T)(DatabaseFacade, String, String, DbParameter(), DbParameter)
-  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure<T>(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, System.Data.Common.DbParameter[], System.Data.Common.DbParameter?)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure(Of T)(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, System.Data.Common.DbParameter(), System.Data.Common.DbParameter)
-  nameWithType: DatabaseFacadeExtensions.ExecuteProcedure<T>(DatabaseFacade, string, string, DbParameter[], DbParameter?)
-  nameWithType.vb: DatabaseFacadeExtensions.ExecuteProcedure(Of T)(DatabaseFacade, String, String, DbParameter(), DbParameter)
+- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Threading.CancellationToken)
+  name: ExecuteProcedureAsync<T>(DatabaseFacade, string, string, IEnumerable<DbParameter>, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteProcedureAsync__1_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Collections_Generic_IEnumerable_System_Data_Common_DbParameter__System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Threading.CancellationToken)
+  name.vb: ExecuteProcedureAsync(Of T)(DatabaseFacade, String, String, IEnumerable(Of DbParameter), CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync<T>(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, System.Collections.Generic.IEnumerable<System.Data.Common.DbParameter>, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedureAsync(Of T)(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter), System.Threading.CancellationToken)
+  nameWithType: DatabaseFacadeExtensions.ExecuteProcedureAsync<T>(DatabaseFacade, string, string, IEnumerable<DbParameter>, CancellationToken)
+  nameWithType.vb: DatabaseFacadeExtensions.ExecuteProcedureAsync(Of T)(DatabaseFacade, String, String, IEnumerable(Of DbParameter), CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
+  name: ExecuteProcedure<T>(DatabaseFacade, string, string, IEnumerable<DbParameter>)
+  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteProcedure__1_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Collections_Generic_IEnumerable_System_Data_Common_DbParameter__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
+  name.vb: ExecuteProcedure(Of T)(DatabaseFacade, String, String, IEnumerable(Of DbParameter))
+  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure<T>(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, System.Collections.Generic.IEnumerable<System.Data.Common.DbParameter>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteProcedure(Of T)(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseFacadeExtensions.ExecuteProcedure<T>(DatabaseFacade, string, string, IEnumerable<DbParameter>)
+  nameWithType.vb: DatabaseFacadeExtensions.ExecuteProcedure(Of T)(DatabaseFacade, String, String, IEnumerable(Of DbParameter))
 - uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunction*
   name: ExecuteScalarFunction
   href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteScalarFunction_
@@ -1884,24 +1884,24 @@ references:
   isSpec: "True"
   fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunctionAsync
   nameWithType: DatabaseFacadeExtensions.ExecuteScalarFunctionAsync
-- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunctionAsync``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Threading.CancellationToken,System.Data.Common.DbParameter[])
-  name: ExecuteScalarFunctionAsync<T>(DatabaseFacade, string, string, CancellationToken, params DbParameter[])
-  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteScalarFunctionAsync__1_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Threading_CancellationToken_System_Data_Common_DbParameter___
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunctionAsync``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Threading.CancellationToken,System.Data.Common.DbParameter[])
-  name.vb: ExecuteScalarFunctionAsync(Of T)(DatabaseFacade, String, String, CancellationToken, ParamArray DbParameter())
-  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunctionAsync<T>(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, System.Threading.CancellationToken, params System.Data.Common.DbParameter[])
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunctionAsync(Of T)(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, System.Threading.CancellationToken, ParamArray System.Data.Common.DbParameter())
-  nameWithType: DatabaseFacadeExtensions.ExecuteScalarFunctionAsync<T>(DatabaseFacade, string, string, CancellationToken, params DbParameter[])
-  nameWithType.vb: DatabaseFacadeExtensions.ExecuteScalarFunctionAsync(Of T)(DatabaseFacade, String, String, CancellationToken, ParamArray DbParameter())
-- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunction``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Data.Common.DbParameter[])
-  name: ExecuteScalarFunction<T>(DatabaseFacade, string, string, params DbParameter[])
-  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteScalarFunction__1_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Data_Common_DbParameter___
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunction``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Data.Common.DbParameter[])
-  name.vb: ExecuteScalarFunction(Of T)(DatabaseFacade, String, String, ParamArray DbParameter())
-  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunction<T>(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, params System.Data.Common.DbParameter[])
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunction(Of T)(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, ParamArray System.Data.Common.DbParameter())
-  nameWithType: DatabaseFacadeExtensions.ExecuteScalarFunction<T>(DatabaseFacade, string, string, params DbParameter[])
-  nameWithType.vb: DatabaseFacadeExtensions.ExecuteScalarFunction(Of T)(DatabaseFacade, String, String, ParamArray DbParameter())
+- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunctionAsync``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Threading.CancellationToken)
+  name: ExecuteScalarFunctionAsync<T>(DatabaseFacade, string, string, IEnumerable<DbParameter>, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteScalarFunctionAsync__1_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Collections_Generic_IEnumerable_System_Data_Common_DbParameter__System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunctionAsync``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Threading.CancellationToken)
+  name.vb: ExecuteScalarFunctionAsync(Of T)(DatabaseFacade, String, String, IEnumerable(Of DbParameter), CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunctionAsync<T>(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, System.Collections.Generic.IEnumerable<System.Data.Common.DbParameter>, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunctionAsync(Of T)(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter), System.Threading.CancellationToken)
+  nameWithType: DatabaseFacadeExtensions.ExecuteScalarFunctionAsync<T>(DatabaseFacade, string, string, IEnumerable<DbParameter>, CancellationToken)
+  nameWithType.vb: DatabaseFacadeExtensions.ExecuteScalarFunctionAsync(Of T)(DatabaseFacade, String, String, IEnumerable(Of DbParameter), CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunction``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
+  name: ExecuteScalarFunction<T>(DatabaseFacade, string, string, IEnumerable<DbParameter>)
+  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteScalarFunction__1_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Collections_Generic_IEnumerable_System_Data_Common_DbParameter__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunction``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
+  name.vb: ExecuteScalarFunction(Of T)(DatabaseFacade, String, String, IEnumerable(Of DbParameter))
+  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunction<T>(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, System.Collections.Generic.IEnumerable<System.Data.Common.DbParameter>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteScalarFunction(Of T)(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseFacadeExtensions.ExecuteScalarFunction<T>(DatabaseFacade, string, string, IEnumerable<DbParameter>)
+  nameWithType.vb: DatabaseFacadeExtensions.ExecuteScalarFunction(Of T)(DatabaseFacade, String, String, IEnumerable(Of DbParameter))
 - uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunction*
   name: ExecuteTableFunction
   href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteTableFunction_
@@ -1916,24 +1916,24 @@ references:
   isSpec: "True"
   fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunctionAsync
   nameWithType: DatabaseFacadeExtensions.ExecuteTableFunctionAsync
-- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunctionAsync``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Threading.CancellationToken,System.Data.Common.DbParameter[])
-  name: ExecuteTableFunctionAsync<T>(DatabaseFacade, string, string, CancellationToken, params DbParameter[])
-  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteTableFunctionAsync__1_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Threading_CancellationToken_System_Data_Common_DbParameter___
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunctionAsync``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Threading.CancellationToken,System.Data.Common.DbParameter[])
-  name.vb: ExecuteTableFunctionAsync(Of T)(DatabaseFacade, String, String, CancellationToken, ParamArray DbParameter())
-  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunctionAsync<T>(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, System.Threading.CancellationToken, params System.Data.Common.DbParameter[])
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunctionAsync(Of T)(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, System.Threading.CancellationToken, ParamArray System.Data.Common.DbParameter())
-  nameWithType: DatabaseFacadeExtensions.ExecuteTableFunctionAsync<T>(DatabaseFacade, string, string, CancellationToken, params DbParameter[])
-  nameWithType.vb: DatabaseFacadeExtensions.ExecuteTableFunctionAsync(Of T)(DatabaseFacade, String, String, CancellationToken, ParamArray DbParameter())
-- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunction``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Data.Common.DbParameter[])
-  name: ExecuteTableFunction<T>(DatabaseFacade, string, string, params DbParameter[])
-  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteTableFunction__1_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Data_Common_DbParameter___
-  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunction``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Data.Common.DbParameter[])
-  name.vb: ExecuteTableFunction(Of T)(DatabaseFacade, String, String, ParamArray DbParameter())
-  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunction<T>(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, params System.Data.Common.DbParameter[])
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunction(Of T)(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, ParamArray System.Data.Common.DbParameter())
-  nameWithType: DatabaseFacadeExtensions.ExecuteTableFunction<T>(DatabaseFacade, string, string, params DbParameter[])
-  nameWithType.vb: DatabaseFacadeExtensions.ExecuteTableFunction(Of T)(DatabaseFacade, String, String, ParamArray DbParameter())
+- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunctionAsync``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Threading.CancellationToken)
+  name: ExecuteTableFunctionAsync<T>(DatabaseFacade, string, string, IEnumerable<DbParameter>, CancellationToken)
+  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteTableFunctionAsync__1_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Collections_Generic_IEnumerable_System_Data_Common_DbParameter__System_Threading_CancellationToken_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunctionAsync``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter},System.Threading.CancellationToken)
+  name.vb: ExecuteTableFunctionAsync(Of T)(DatabaseFacade, String, String, IEnumerable(Of DbParameter), CancellationToken)
+  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunctionAsync<T>(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, System.Collections.Generic.IEnumerable<System.Data.Common.DbParameter>, System.Threading.CancellationToken)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunctionAsync(Of T)(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter), System.Threading.CancellationToken)
+  nameWithType: DatabaseFacadeExtensions.ExecuteTableFunctionAsync<T>(DatabaseFacade, string, string, IEnumerable<DbParameter>, CancellationToken)
+  nameWithType.vb: DatabaseFacadeExtensions.ExecuteTableFunctionAsync(Of T)(DatabaseFacade, String, String, IEnumerable(Of DbParameter), CancellationToken)
+- uid: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunction``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
+  name: ExecuteTableFunction<T>(DatabaseFacade, string, string, IEnumerable<DbParameter>)
+  href: api/BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.html#BB84_EntityFrameworkCore_Repositories_Extensions_DatabaseFacadeExtensions_ExecuteTableFunction__1_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_System_String_System_String_System_Collections_Generic_IEnumerable_System_Data_Common_DbParameter__
+  commentId: M:BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunction``1(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade,System.String,System.String,System.Collections.Generic.IEnumerable{System.Data.Common.DbParameter})
+  name.vb: ExecuteTableFunction(Of T)(DatabaseFacade, String, String, IEnumerable(Of DbParameter))
+  fullName: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunction<T>(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, string, string, System.Collections.Generic.IEnumerable<System.Data.Common.DbParameter>)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.Extensions.DatabaseFacadeExtensions.ExecuteTableFunction(Of T)(Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade, String, String, System.Collections.Generic.IEnumerable(Of System.Data.Common.DbParameter))
+  nameWithType: DatabaseFacadeExtensions.ExecuteTableFunction<T>(DatabaseFacade, string, string, IEnumerable<DbParameter>)
+  nameWithType.vb: DatabaseFacadeExtensions.ExecuteTableFunction(Of T)(DatabaseFacade, String, String, IEnumerable(Of DbParameter))
 - uid: BB84.EntityFrameworkCore.Repositories.GenericRepository`1
   name: GenericRepository<TEntity>
   href: api/BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html
