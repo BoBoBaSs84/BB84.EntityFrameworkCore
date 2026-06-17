@@ -15,7 +15,7 @@ namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 
 /// <summary>
 /// Represents an abstract base class for configuring the entities of type
-/// <see cref="IAuditedEntity{TKey, TCreator, TEdited}"/> for dentity-related and time audited
+/// <see cref="IAuditedEntity{TKey, TCreator, TEdited}"/> for identity-related and time audited
 /// entities in the Entity Framework Core model.
 /// </summary>
 /// <remarks>

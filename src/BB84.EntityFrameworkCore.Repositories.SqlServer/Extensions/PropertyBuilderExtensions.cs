@@ -44,7 +44,7 @@ public static class PropertyBuilderExtensions
 	/// Configures the data type of the column to <b>date time</b> when targeting a relational database.
 	/// </summary>
 	/// <param name="builder">The builder for the property being configured.</param>
-	/// <param name="small">Inidactes if <b>small date time</b> should be used.</param>
+	/// <param name="small">Indicates if <b>small date time</b> should be used.</param>
 	/// <returns>The same builder instance so that multiple calls can be chained.</returns>
 	public static PropertyBuilder IsDateTimeColumn(this PropertyBuilder builder, bool small = false)
 		=> builder.HasColumnType(small ? "smalldatetime" : "datetime");
@@ -53,7 +53,7 @@ public static class PropertyBuilderExtensions
 	/// Configures the data type of the column to <b>money</b> when targeting a relational database.
 	/// </summary>
 	/// <param name="builder">The builder for the property being configured.</param>
-	/// <param name="small">Inidactes if <b>small money</b> should be used.</param>
+	/// <param name="small">Indicates if <b>small money</b> should be used.</param>
 	/// <returns>The same builder instance so that multiple calls can be chained.</returns>
 	public static PropertyBuilder IsMoneyColumn(this PropertyBuilder builder, bool small = false)
 		=> builder.HasColumnType(small ? "smallmoney" : "money");
