@@ -33,8 +33,16 @@ public static class EntityTypeBuilderExtensions
 	/// <returns>
 	/// The same <see cref="EntityTypeBuilder"/> instance, so that multiple calls can be chained together.
 	/// </returns>
-	public static EntityTypeBuilder ToHistoryTable(this EntityTypeBuilder builder, string? tableName = null, string? tableSchema = "dbo", string historySchema = "history")
+	/// <exception cref="ArgumentNullException">Thrown if the <paramref name="builder"/> is null.</exception>
+	/// <exception cref="ArgumentException">
+	/// Thrown if the <paramref name="tableSchema"/> or <paramref name="historySchema"/> is null, empty, or whitespace.
+	/// </exception>
+	public static EntityTypeBuilder ToHistoryTable(this EntityTypeBuilder builder, string? tableName = null, string tableSchema = "dbo", string historySchema = "history")
 	{
+		ArgumentNullException.ThrowIfNull(builder);
+		ArgumentException.ThrowIfNullOrWhiteSpace(tableSchema);
+		ArgumentException.ThrowIfNullOrWhiteSpace(historySchema);
+
 		tableName ??= builder.Metadata.ClrType.Name;
 
 		return builder.ToTable(tableName, tableSchema, tb
