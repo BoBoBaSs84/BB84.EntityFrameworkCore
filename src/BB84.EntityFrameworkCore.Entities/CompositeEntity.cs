@@ -8,7 +8,7 @@ using BB84.EntityFrameworkCore.Entities.Abstractions;
 namespace BB84.EntityFrameworkCore.Entities;
 
 /// <summary>
-/// This abstract class provides a base implementation for entities entities that are
+/// This abstract class provides a base implementation for entities that are
 /// composed of multiple related components.
 /// </summary>
 public abstract class CompositeEntity : ICompositeEntity
