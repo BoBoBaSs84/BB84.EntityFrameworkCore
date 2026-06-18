@@ -29,7 +29,7 @@ public static class PropertyBuilderExtensions
 	/// <returns>The same builder instance so that multiple calls can be chained.</returns>
 	public static PropertyBuilder IsBinaryColumn(this PropertyBuilder builder, int precision = 8000)
 		=> precision is < 1 or > 8000
-			? throw new ArgumentOutOfRangeException(nameof(precision), "Must be between 1 to 8000.")
+			? throw new ArgumentOutOfRangeException(nameof(precision), "Must be between 1 and 8000.")
 			: builder.HasColumnType($"binary({precision})");
 
 	/// <summary>
@@ -75,7 +75,7 @@ public static class PropertyBuilderExtensions
 	/// <returns>The same builder instance so that multiple calls can be chained.</returns>
 	public static PropertyBuilder IsTimeColumn(this PropertyBuilder builder, int precision = 7)
 		=> precision is < 0 or > 7
-			? throw new ArgumentOutOfRangeException(nameof(precision), "Must be between 0 to 7.")
+			? throw new ArgumentOutOfRangeException(nameof(precision), "Must be between 0 and 7.")
 			: builder.HasColumnType($"time({precision})");
 
 	/// <summary>
@@ -87,7 +87,7 @@ public static class PropertyBuilderExtensions
 	/// <returns>The same builder instance so that multiple calls can be chained.</returns>
 	public static PropertyBuilder IsVarbinaryColumn(this PropertyBuilder builder, int precision = 0)
 		=> precision is < 0 or > 8000
-			? throw new ArgumentOutOfRangeException(nameof(precision), "Must be between 0 to 8000.")
+			? throw new ArgumentOutOfRangeException(nameof(precision), "Must be between 0 and 8000.")
 			: builder.HasColumnType(precision == 0 ? $"varbinary(max)" : $"varbinary({precision})");
 
 	/// <summary>
