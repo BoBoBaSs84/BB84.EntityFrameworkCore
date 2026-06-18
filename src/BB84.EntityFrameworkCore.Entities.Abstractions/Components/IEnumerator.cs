@@ -10,7 +10,7 @@ namespace BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 /// </summary>
 /// <remarks>
 /// The <see cref="IEnumerator"/> interface is designed to provide a standardized way to
-/// efine enumerators within entities. It includes properties for the name and description
+/// define enumerators within entities. It includes properties for the name and description
 /// so that each enumerator can be clearly identified and documented.
 /// </remarks>
 public interface IEnumerator
