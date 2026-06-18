@@ -17,6 +17,6 @@ public interface IIdentity<TKey> where TKey : IEquatable<TKey>
 	TKey Id { get; set; }
 }
 
-/// <inheritdoc cref="IIdentityEntity{TKey}"/>
+/// <inheritdoc cref="IIdentity{TKey}"/>
 public interface IIdentity : IIdentity<Guid>
 { }
