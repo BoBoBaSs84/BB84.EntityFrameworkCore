@@ -55,10 +55,10 @@ public sealed class TimeAuditedInterceptor : SaveChangesInterceptor
 				switch (entityEntry.State)
 				{
 					case EntityState.Added:
-						entityEntry.Entity.CreatedAt = DateTime.UtcNow;
+						entityEntry.Entity.CreatedAt = DateTimeOffset.UtcNow;
 						continue;
 					case EntityState.Modified:
-						entityEntry.Entity.EditedAt = DateTime.UtcNow;
+						entityEntry.Entity.EditedAt = DateTimeOffset.UtcNow;
 						continue;
 					case EntityState.Detached:
 					case EntityState.Unchanged:
