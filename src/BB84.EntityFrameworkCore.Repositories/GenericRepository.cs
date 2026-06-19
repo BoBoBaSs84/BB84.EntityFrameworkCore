@@ -9,7 +9,6 @@ using BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace BB84.EntityFrameworkCore.Repositories;
 
