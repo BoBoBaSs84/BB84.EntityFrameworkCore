@@ -30,25 +30,71 @@ public static class EntityTypeBuilderExtensions
 	/// <param name="tableName">The name of the database table.</param>
 	/// <param name="tableSchema">The schema of the database table.</param>
 	/// <param name="historyTableName">The name of the database history table.</param>
-	/// <param name="historySchema">The schema of the database history table.</param>
+	/// <param name="historyTableSchema">The schema of the database history table.</param>
 	/// <returns>
 	/// The same <see cref="EntityTypeBuilder"/> instance, so that multiple calls can be chained together.
 	/// </returns>
 	/// <exception cref="ArgumentNullException">Thrown if the <paramref name="builder"/> is null.</exception>
 	/// <exception cref="ArgumentException">
-	/// Thrown if the <paramref name="tableSchema"/> or <paramref name="historySchema"/> is null, empty, or whitespace.
+	/// Thrown if the <paramref name="tableSchema"/> or <paramref name="historyTableSchema"/> is null, empty, or whitespace.
 	/// </exception>
-	public static EntityTypeBuilder ToHistoryTable(this EntityTypeBuilder builder, string? tableName = null, string tableSchema = "dbo", string? historyTableName = null, string historySchema = "history")
+	public static EntityTypeBuilder ToHistoryTable(
+		this EntityTypeBuilder builder,
+		string? tableName = null,
+		string tableSchema = "dbo",
+		string? historyTableName = null,
+		string historyTableSchema = "history")
 	{
 		ArgumentNullException.ThrowIfNull(builder);
 		ArgumentException.ThrowIfNullOrWhiteSpace(tableSchema);
-		ArgumentException.ThrowIfNullOrWhiteSpace(historySchema);
+		ArgumentException.ThrowIfNullOrWhiteSpace(historyTableSchema);
 
 		tableName ??= builder.Metadata.ClrType.Name;
 		historyTableName ??= tableName;
 
-		return builder.ToTable(tableName, tableSchema, tb
-			=> tb.IsTemporal(ttb
-				=> ttb.UseHistoryTable(historyTableName, historySchema)));
+		return builder.ToTable(tableName, tableSchema, tableBuilder
+			=> tableBuilder.IsTemporal(temporalTableBuilder
+				=> temporalTableBuilder.UseHistoryTable(historyTableName, historyTableSchema)));
+	}
+
+	/// <summary>
+	/// Configures the entity to use a temporal table with a history table for tracking changes over time.
+	/// </summary>
+	/// <remarks>
+	/// This method configures the entity to use SQL Server temporal tables, which automatically track 
+	/// historical changes to the data. The history table is created in the specified schema and is used
+	/// to store historical versions of the data.
+	/// </remarks>
+	/// <typeparam name="TEntity"></typeparam>
+	/// <param name="builder">The <see cref="EntityTypeBuilder{TEntity}"/> used to configure the entity type.</param>
+	/// <param name="tableName">The name of the database table.</param>
+	/// <param name="tableSchema">The schema of the database table.</param>
+	/// <param name="historyTableName">The name of the database history table.</param>
+	/// <param name="historyTableSchema">The schema of the database history table.</param>
+	/// <returns>
+	/// The same <see cref="EntityTypeBuilder{TEntity}"/> instance, so that multiple calls can be chained together.
+	/// </returns>
+	/// <exception cref="ArgumentNullException">Thrown if the <paramref name="builder"/> is null.</exception>
+	/// <exception cref="ArgumentException">
+	/// Thrown if the <paramref name="tableSchema"/> or <paramref name="historyTableSchema"/> is null, empty, or whitespace.
+	/// </exception>
+	public static EntityTypeBuilder<TEntity> ToHistoryTable<TEntity>(
+		this EntityTypeBuilder<TEntity> builder,
+		string? tableName = null,
+		string tableSchema = "dbo",
+		string? historyTableName = null,
+		string historyTableSchema = "history")
+		where TEntity : class
+	{
+		ArgumentNullException.ThrowIfNull(builder);
+		ArgumentException.ThrowIfNullOrWhiteSpace(tableSchema);
+		ArgumentException.ThrowIfNullOrWhiteSpace(historyTableSchema);
+
+		tableName ??= builder.Metadata.ClrType.Name;
+		historyTableName ??= tableName;
+
+		return builder.ToTable(tableName, tableSchema, tableBuilder
+			=> tableBuilder.IsTemporal(temporalTableBuilder
+				=> temporalTableBuilder.UseHistoryTable(historyTableName, historyTableSchema)));
 	}
 }
