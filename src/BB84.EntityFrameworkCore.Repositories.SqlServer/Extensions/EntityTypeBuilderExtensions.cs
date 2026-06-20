@@ -27,9 +27,10 @@ public static class EntityTypeBuilderExtensions
 	/// to store historical versions of the data.
 	/// </remarks>
 	/// <param name="builder">The <see cref="EntityTypeBuilder"/> used to configure the entity type.</param>
-	/// <param name="tableName">The name of the main table.</param>
-	/// <param name="tableSchema">The schema of the main table.</param>
-	/// <param name="historySchema">The schema of the history table.</param>
+	/// <param name="tableName">The name of the database table.</param>
+	/// <param name="tableSchema">The schema of the database table.</param>
+	/// <param name="historyTableName">The name of the database history table.</param>
+	/// <param name="historySchema">The schema of the database history table.</param>
 	/// <returns>
 	/// The same <see cref="EntityTypeBuilder"/> instance, so that multiple calls can be chained together.
 	/// </returns>
@@ -37,16 +38,17 @@ public static class EntityTypeBuilderExtensions
 	/// <exception cref="ArgumentException">
 	/// Thrown if the <paramref name="tableSchema"/> or <paramref name="historySchema"/> is null, empty, or whitespace.
 	/// </exception>
-	public static EntityTypeBuilder ToHistoryTable(this EntityTypeBuilder builder, string? tableName = null, string tableSchema = "dbo", string historySchema = "history")
+	public static EntityTypeBuilder ToHistoryTable(this EntityTypeBuilder builder, string? tableName = null, string tableSchema = "dbo", string? historyTableName = null, string historySchema = "history")
 	{
 		ArgumentNullException.ThrowIfNull(builder);
 		ArgumentException.ThrowIfNullOrWhiteSpace(tableSchema);
 		ArgumentException.ThrowIfNullOrWhiteSpace(historySchema);
 
 		tableName ??= builder.Metadata.ClrType.Name;
+		historyTableName ??= tableName;
 
 		return builder.ToTable(tableName, tableSchema, tb
 			=> tb.IsTemporal(ttb
-				=> ttb.UseHistoryTable(tableName, historySchema)));
+				=> ttb.UseHistoryTable(historyTableName, historySchema)));
 	}
 }
