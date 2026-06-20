@@ -88,7 +88,7 @@ public static class PropertyBuilderExtensions
 	public static PropertyBuilder IsVarbinaryColumn(this PropertyBuilder builder, int precision = 0)
 		=> precision is < 0 or > 8000
 			? throw new ArgumentOutOfRangeException(nameof(precision), "Must be between 0 and 8000.")
-			: builder.HasColumnType(precision == 0 ? $"varbinary(max)" : $"varbinary({precision})");
+			: builder.HasColumnType(precision == 0 ? "varbinary(max)" : $"varbinary({precision})");
 
 	/// <summary>
 	/// Configures the data type of the column to <b>xml</b> when targeting a relational database.
