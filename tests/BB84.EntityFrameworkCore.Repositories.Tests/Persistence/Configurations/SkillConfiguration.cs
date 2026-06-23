@@ -4,6 +4,7 @@
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
 using BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
+using BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 
 using Microsoft.EntityFrameworkCore;
@@ -32,6 +33,9 @@ internal sealed class SkillConfiguration : FullAuditedConfiguration<SkillEntity>
 
 		builder.Property(p => p.IsCritical)
 			.HasDefaultValue(false);
+
+		builder.Property(p => p.Reference)
+			.IsUniqueIdentifierColumn();
 
 		base.Configure(builder);
 	}
