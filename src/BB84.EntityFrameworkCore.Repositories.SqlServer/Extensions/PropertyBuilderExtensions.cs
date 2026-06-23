@@ -79,6 +79,14 @@ public static class PropertyBuilderExtensions
 			: builder.HasColumnType($"time({precision})");
 
 	/// <summary>
+	/// Configures the data type of the column to <c>uniqueidentifier</c> when targeting a relational database.
+	/// </summary>
+	/// <param name="builder">The builder for the property being configured.</param>
+	/// <returns>The same builder instance so that multiple calls can be chained.</returns>
+	public static PropertyBuilder IsUniqueIdentifierColumn(this PropertyBuilder builder)
+		=> builder.HasColumnType("uniqueidentifier");
+
+	/// <summary>
 	/// Configures the data type of the column to <b>varbinary</b> when targeting a relational database.
 	/// </summary>
 	/// <param name="builder">The builder for the property being configured.</param>
