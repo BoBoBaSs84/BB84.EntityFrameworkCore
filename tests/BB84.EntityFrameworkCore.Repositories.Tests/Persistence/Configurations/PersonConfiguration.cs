@@ -23,6 +23,9 @@ internal sealed class PersonConfiguration : AuditedConfiguration<PersonEntity>
 		builder.Property(x => x.DateOfBirth)
 			.IsDateColumn();
 
+		builder.Property(p=>p.StartDate)
+			.IsDateTimeOffsetColumn();
+
 		builder.Property(x => x.Salary)
 			.IsMoneyColumn(true);
 

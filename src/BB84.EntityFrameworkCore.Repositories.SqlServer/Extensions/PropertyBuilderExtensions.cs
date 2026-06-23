@@ -50,6 +50,19 @@ public static class PropertyBuilderExtensions
 		=> builder.HasColumnType(small ? "smalldatetime" : "datetime");
 
 	/// <summary>
+	/// Configures the data type of the column to <c>datetimeoffset</c> when targeting a relational database.
+	/// </summary>
+	/// <param name="builder">The builder for the property being configured.</param>
+	/// <param name="precision">The optional type parameter fractional seconds precision specifies the number
+	/// of digits for the fractional part of the seconds.</param>
+	/// <returns>The same builder instance so that multiple calls can be chained.</returns>
+	/// <exception cref="ArgumentOutOfRangeException"></exception>
+	public static PropertyBuilder IsDateTimeOffsetColumn(this PropertyBuilder builder, int precision = 7)
+		=> precision is < 0 or > 7
+			? throw new ArgumentOutOfRangeException(nameof(precision), "Must be between 0 and 7.")
+			: builder.HasColumnType($"datetimeoffset({precision})");
+
+	/// <summary>
 	/// Configures the data type of the column to <b>money</b> when targeting a relational database.
 	/// </summary>
 	/// <param name="builder">The builder for the property being configured.</param>
