@@ -21,7 +21,7 @@ namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions;
 public static class PropertyBuilderExtensions
 {
 	/// <summary>
-	/// Configures the data type of the column to <b>binary</b> when targeting a relational database.
+	/// Configures the data type of the column to <c>binary</c> when targeting a relational database.
 	/// </summary>
 	/// <param name="builder">The builder for the property being configured.</param>
 	/// <param name="precision">This can be an integer from 1 to 8000.
@@ -41,13 +41,26 @@ public static class PropertyBuilderExtensions
 		=> builder.HasColumnType("date");
 
 	/// <summary>
-	/// Configures the data type of the column to <b>date time</b> when targeting a relational database.
+	/// Configures the data type of the column to <c>datetime</c> or <c>smalldatetime</c> when targeting a
+	/// relational database.
 	/// </summary>
 	/// <param name="builder">The builder for the property being configured.</param>
 	/// <param name="small">Indicates if <b>small date time</b> should be used.</param>
 	/// <returns>The same builder instance so that multiple calls can be chained.</returns>
 	public static PropertyBuilder IsDateTimeColumn(this PropertyBuilder builder, bool small = false)
 		=> builder.HasColumnType(small ? "smalldatetime" : "datetime");
+
+	/// <summary>
+	/// Configures the data type of the column to <c>datetime2</c> when targeting a relational database.
+	/// </summary>
+	/// <param name="builder">The builder for the property being configured.</param>
+	/// <param name="precision">The optional type parameter fractional seconds precision specifies the number
+	/// of digits for the fractional part of the seconds.</param>
+	/// <returns>The same builder instance so that multiple calls can be chained.</returns>
+	public static PropertyBuilder IsDateTime2Column(this PropertyBuilder builder, int precision = 7)
+		=> precision is < 0 or > 7
+			? throw new ArgumentOutOfRangeException(nameof(precision), "Must be between 0 and 7.")
+			: builder.HasColumnType($"datetime2({precision})");
 
 	/// <summary>
 	/// Configures the data type of the column to <c>datetimeoffset</c> when targeting a relational database.
