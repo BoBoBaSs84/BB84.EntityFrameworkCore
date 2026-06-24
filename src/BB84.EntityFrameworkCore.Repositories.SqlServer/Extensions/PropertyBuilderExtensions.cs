@@ -24,13 +24,13 @@ public static class PropertyBuilderExtensions
 	/// Configures the data type of the column to <c>binary</c> when targeting a relational database.
 	/// </summary>
 	/// <param name="builder">The builder for the property being configured.</param>
-	/// <param name="precision">This can be an integer from 1 to 8000.
-	/// The default fractional scale is 8000.</param>
+	/// <param name="length">This can be a value from 1 through 8,000. max indicates that the maximum
+	/// storage size is <c>2^31-1</c> bytes.</param>
 	/// <returns>The same builder instance so that multiple calls can be chained.</returns>
-	public static PropertyBuilder IsBinaryColumn(this PropertyBuilder builder, int precision = 8000)
-		=> precision is < 1 or > 8000
-			? throw new ArgumentOutOfRangeException(nameof(precision), "Must be between 1 and 8000.")
-			: builder.HasColumnType($"binary({precision})");
+	public static PropertyBuilder IsBinaryColumn(this PropertyBuilder builder, int length = 8000)
+		=> length is < 1 or > 8000
+			? throw new ArgumentOutOfRangeException(nameof(length), "Must be between 1 and 8000.")
+			: builder.HasColumnType($"binary({length})");
 
 	/// <summary>
 	/// Configures the data type of the column to <b>date</b> when targeting a relational database.
@@ -131,13 +131,12 @@ public static class PropertyBuilderExtensions
 	/// Configures the data type of the column to <b>varbinary</b> when targeting a relational database.
 	/// </summary>
 	/// <param name="builder">The builder for the property being configured.</param>
-	/// <param name="precision">This can be an integer from 0 to 8000.
-	/// The default fractional scale is 0 (max).</param>
+	/// <param name="length">This can be a value from 0 through 8,000. The default value is 0 (max).</param>
 	/// <returns>The same builder instance so that multiple calls can be chained.</returns>
-	public static PropertyBuilder IsVarbinaryColumn(this PropertyBuilder builder, int precision = 0)
-		=> precision is < 0 or > 8000
-			? throw new ArgumentOutOfRangeException(nameof(precision), "Must be between 0 and 8000.")
-			: builder.HasColumnType(precision == 0 ? "varbinary(max)" : $"varbinary({precision})");
+	public static PropertyBuilder IsVarbinaryColumn(this PropertyBuilder builder, int length = 0)
+		=> length is < 0 or > 8000
+			? throw new ArgumentOutOfRangeException(nameof(length), "Must be between 0 and 8000.")
+			: builder.HasColumnType(length == 0 ? "varbinary(max)" : $"varbinary({length})");
 
 	/// <summary>
 	/// Configures the data type of the column to <b>xml</b> when targeting a relational database.
