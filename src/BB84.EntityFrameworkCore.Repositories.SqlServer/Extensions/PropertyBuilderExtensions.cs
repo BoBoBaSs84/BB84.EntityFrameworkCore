@@ -63,6 +63,21 @@ public static class PropertyBuilderExtensions
 			: builder.HasColumnType($"datetimeoffset({precision})");
 
 	/// <summary>
+	/// Configures the data type of the column to <c>decimal</c> when targeting a relational database.
+	/// </summary>
+	/// <param name="builder">The builder for the property being configured.</param>
+	/// <param name="precision">The maximum total number of decimal digits to be stored.</param>
+	/// <param name="scale">The number of decimal digits that are stored to the right of the decimal point.</param>
+	/// <returns>The same builder instance so that multiple calls can be chained.</returns>
+	/// <exception cref="ArgumentOutOfRangeException"></exception>
+	public static PropertyBuilder IsDecimalColumn(this PropertyBuilder builder, int precision = 18, int scale = 2)
+		=> precision is < 1 or > 38
+			? throw new ArgumentOutOfRangeException(nameof(precision), "Must be between 1 and 38.")
+			: scale < 0 || scale > precision
+				? throw new ArgumentOutOfRangeException(nameof(scale), "Must be between 0 and precision.")
+				: builder.HasColumnType($"decimal({precision},{scale})");
+
+	/// <summary>
 	/// Configures the data type of the column to <b>money</b> when targeting a relational database.
 	/// </summary>
 	/// <param name="builder">The builder for the property being configured.</param>

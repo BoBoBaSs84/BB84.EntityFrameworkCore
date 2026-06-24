@@ -17,6 +17,9 @@ internal sealed class JobConfiguration : IdentityConfiguration<JobEntity>
 	{
 		builder.ToHistoryTable("Jobs", "tab", "OldJobs", "hist");
 
+		builder.Property(p => p.Salary)
+			.IsDecimalColumn(10, 2);
+
 		base.Configure(builder);
 	}
 }
