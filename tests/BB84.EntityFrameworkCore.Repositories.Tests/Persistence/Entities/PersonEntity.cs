@@ -16,6 +16,7 @@ public sealed class PersonEntity : AuditedEntity
 	public decimal Salary { get; set; }
 	public string? Settings { get; set; }
 	public DateTimeOffset StartDate { get; set; }
+	public DateTime? Evaluation { get; set; }
 
 	public PersonTypeEntity Type { get; set; } = default!;
 	public ICollection<PersonJobEntity>? PersonJobs { get; set; }
