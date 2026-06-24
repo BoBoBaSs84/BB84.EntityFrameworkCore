@@ -1,53 +1,57 @@
 name: Continuous Deployment
 
 on:
-  workflow_dispatch:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+.[0-9]+"
+
+permissions:
+  contents: write
+  packages: write
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
 
 jobs:
-  publish:
-    permissions:
-      contents: write
-      packages: write
+  deploy:
+    name: Build, Test & Publish
     runs-on: windows-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v7
-      with:
-        fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
-    - name: Setup .Net
-      uses: actions/setup-dotnet@v5
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
 
-    - name: Publish NuGet
-      shell: bash
-      run: |
-        dotnet tool install --global dotnet-releaser
-        dotnet-releaser run --nuget-token "${{secrets.NUGET_TOKEN}}" --github-token "${{secrets.GITHUB_TOKEN}}" dotnet-releaser.toml
+      - name: Publish NuGet
+        shell: bash
+        run: |
+          dotnet tool install --global dotnet-releaser
+          dotnet-releaser run --nuget-token "${{ secrets.NUGET_TOKEN }}" --github-token "${{ secrets.GITHUB_TOKEN }}" dotnet-releaser.toml
 
-  docs:
-    permissions:
-      contents: write
-      pages: write
-    runs-on: ubuntu-latest
+  pages:
+    name: Publish & Deploy Pages
+    runs-on: windows-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v7
-      with:
-        fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@v7
 
-    - name: Setup .Net
-      uses: actions/setup-dotnet@v5
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
 
-    - name: Setup DocFx
-      run: dotnet tool update -g docfx
+      - name: Setup DocFx
+        run: dotnet tool update -g docfx
 
-    - name: Run DocFx
-      run: docfx docs/docfx.json
+      - name: Run DocFx
+        run: docfx docs/docfx.json
 
-    - name: Deploy Docs
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs/_site
+      - name: Deploy Docs
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/_site

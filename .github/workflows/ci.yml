@@ -1,37 +1,44 @@
 name: Continuous Integration
 
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
 permissions:
   contents: read
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  SOLUTION: BB84.EntityFrameworkCore.slnx
+  CONFIGURATION: Release
 
 jobs:
-  build:
+  build-and-test:
+    name: Build & Test
     runs-on: windows-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v7
-      with:
-        fetch-depth: 0
+      - name: Checkout repository
+        uses: actions/checkout@v7
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v5
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
 
-    - name: Setup MSSQL
-      uses: potatoqualitee/mssqlsuite@v1.12
-      with:
-        install: localdb
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.SOLUTION }}
 
-    - name: Restore
-      run: dotnet restore
-    
-    - name: Build
-      run: dotnet build --no-restore --configuration release --verbosity minimal
-    
-    - name: Test
-      run: dotnet test --no-build --configuration release --verbosity minimal
+      - name: Build solution
+        run: dotnet build ${{ env.SOLUTION }} --configuration ${{ env.CONFIGURATION }} --no-restore
+
+      - name: Run tests
+        run: dotnet test ${{ env.SOLUTION }} --configuration ${{ env.CONFIGURATION }} --no-build --verbosity normal --logger "trx"
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-results
+          path: "**/TestResults/*.trx"
