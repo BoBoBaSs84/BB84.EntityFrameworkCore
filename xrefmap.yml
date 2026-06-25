@@ -3188,15 +3188,15 @@ references:
   commentId: T:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions
   fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions
   nameWithType: EntityTypeBuilderExtensions
-- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder,System.String,System.String,System.String)
-  name: ToHistoryTable(EntityTypeBuilder, string?, string?, string)
-  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_EntityTypeBuilderExtensions_ToHistoryTable_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder_System_String_System_String_System_String_
-  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder,System.String,System.String,System.String)
-  name.vb: ToHistoryTable(EntityTypeBuilder, String, String, String)
-  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder, string?, string?, string)
-  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder, String, String, String)
-  nameWithType: EntityTypeBuilderExtensions.ToHistoryTable(EntityTypeBuilder, string?, string?, string)
-  nameWithType.vb: EntityTypeBuilderExtensions.ToHistoryTable(EntityTypeBuilder, String, String, String)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder,System.String,System.String,System.String,System.String)
+  name: ToHistoryTable(EntityTypeBuilder, string?, string, string?, string)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_EntityTypeBuilderExtensions_ToHistoryTable_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder_System_String_System_String_System_String_System_String_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder,System.String,System.String,System.String,System.String)
+  name.vb: ToHistoryTable(EntityTypeBuilder, String, String, String, String)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder, string?, string, string?, string)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder, String, String, String, String)
+  nameWithType: EntityTypeBuilderExtensions.ToHistoryTable(EntityTypeBuilder, string?, string, string?, string)
+  nameWithType.vb: EntityTypeBuilderExtensions.ToHistoryTable(EntityTypeBuilder, String, String, String, String)
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable*
   name: ToHistoryTable
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_EntityTypeBuilderExtensions_ToHistoryTable_
@@ -3204,6 +3204,15 @@ references:
   isSpec: "True"
   fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable
   nameWithType: EntityTypeBuilderExtensions.ToHistoryTable
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable``1(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{``0},System.String,System.String,System.String,System.String)
+  name: ToHistoryTable<TEntity>(EntityTypeBuilder<TEntity>, string?, string, string?, string)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_EntityTypeBuilderExtensions_ToHistoryTable__1_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder___0__System_String_System_String_System_String_System_String_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable``1(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{``0},System.String,System.String,System.String,System.String)
+  name.vb: ToHistoryTable(Of TEntity)(EntityTypeBuilder(Of TEntity), String, String, String, String)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable<TEntity>(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<TEntity>, string?, string, string?, string)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.EntityTypeBuilderExtensions.ToHistoryTable(Of TEntity)(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder(Of TEntity), String, String, String, String)
+  nameWithType: EntityTypeBuilderExtensions.ToHistoryTable<TEntity>(EntityTypeBuilder<TEntity>, string?, string, string?, string)
+  nameWithType.vb: EntityTypeBuilderExtensions.ToHistoryTable(Of TEntity)(EntityTypeBuilder(Of TEntity), String, String, String, String)
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions
   name: PropertyBuilderExtensions
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html
@@ -3239,6 +3248,22 @@ references:
   isSpec: "True"
   fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateColumn
   nameWithType: PropertyBuilderExtensions.IsDateColumn
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTime2Column(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)
+  name: IsDateTime2Column(PropertyBuilder, int)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTime2Column_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTime2Column(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)
+  name.vb: IsDateTime2Column(PropertyBuilder, Integer)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTime2Column(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, int)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTime2Column(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, Integer)
+  nameWithType: PropertyBuilderExtensions.IsDateTime2Column(PropertyBuilder, int)
+  nameWithType.vb: PropertyBuilderExtensions.IsDateTime2Column(PropertyBuilder, Integer)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTime2Column*
+  name: IsDateTime2Column
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTime2Column_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTime2Column
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTime2Column
+  nameWithType: PropertyBuilderExtensions.IsDateTime2Column
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Boolean)
   name: IsDateTimeColumn(PropertyBuilder, bool)
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTimeColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Boolean_
@@ -3255,6 +3280,38 @@ references:
   isSpec: "True"
   fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeColumn
   nameWithType: PropertyBuilderExtensions.IsDateTimeColumn
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeOffsetColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)
+  name: IsDateTimeOffsetColumn(PropertyBuilder, int)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTimeOffsetColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeOffsetColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)
+  name.vb: IsDateTimeOffsetColumn(PropertyBuilder, Integer)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeOffsetColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, int)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeOffsetColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, Integer)
+  nameWithType: PropertyBuilderExtensions.IsDateTimeOffsetColumn(PropertyBuilder, int)
+  nameWithType.vb: PropertyBuilderExtensions.IsDateTimeOffsetColumn(PropertyBuilder, Integer)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeOffsetColumn*
+  name: IsDateTimeOffsetColumn
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTimeOffsetColumn_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeOffsetColumn
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeOffsetColumn
+  nameWithType: PropertyBuilderExtensions.IsDateTimeOffsetColumn
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDecimalColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32,System.Int32)
+  name: IsDecimalColumn(PropertyBuilder, int, int)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDecimalColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_System_Int32_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDecimalColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32,System.Int32)
+  name.vb: IsDecimalColumn(PropertyBuilder, Integer, Integer)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDecimalColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, int, int)
+  fullName.vb: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDecimalColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder, Integer, Integer)
+  nameWithType: PropertyBuilderExtensions.IsDecimalColumn(PropertyBuilder, int, int)
+  nameWithType.vb: PropertyBuilderExtensions.IsDecimalColumn(PropertyBuilder, Integer, Integer)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDecimalColumn*
+  name: IsDecimalColumn
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDecimalColumn_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDecimalColumn
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDecimalColumn
+  nameWithType: PropertyBuilderExtensions.IsDecimalColumn
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsMoneyColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Boolean)
   name: IsMoneyColumn(PropertyBuilder, bool)
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsMoneyColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Boolean_
@@ -3300,6 +3357,19 @@ references:
   isSpec: "True"
   fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsTimeColumn
   nameWithType: PropertyBuilderExtensions.IsTimeColumn
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsUniqueIdentifierColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
+  name: IsUniqueIdentifierColumn(PropertyBuilder)
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsUniqueIdentifierColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_
+  commentId: M:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsUniqueIdentifierColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsUniqueIdentifierColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)
+  nameWithType: PropertyBuilderExtensions.IsUniqueIdentifierColumn(PropertyBuilder)
+- uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsUniqueIdentifierColumn*
+  name: IsUniqueIdentifierColumn
+  href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsUniqueIdentifierColumn_
+  commentId: Overload:BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsUniqueIdentifierColumn
+  isSpec: "True"
+  fullName: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsUniqueIdentifierColumn
+  nameWithType: PropertyBuilderExtensions.IsUniqueIdentifierColumn
 - uid: BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsVarbinaryColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)
   name: IsVarbinaryColumn(PropertyBuilder, int)
   href: api/BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsVarbinaryColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_

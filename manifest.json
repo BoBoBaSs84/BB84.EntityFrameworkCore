@@ -1,5 +1,5 @@
 {
-  "source_base_path": "/home/runner/work/BB84.EntityFrameworkCore/BB84.EntityFrameworkCore/docs",
+  "source_base_path": "D:/a/BB84.EntityFrameworkCore/BB84.EntityFrameworkCore/docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -56,7 +56,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity.yml\" sourcestartlinenumber=\"1\">Represents an entity contract with a unique identifier and concurrency control.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity.yml\" sourcestartlinenumber=\"1\">Defines an entity contract with a unique identifier of a specified type.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -448,7 +448,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Entities.CompositeEntity",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.CompositeEntity.yml\" sourcestartlinenumber=\"1\">This abstract class provides a base implementation for entities entities that are\ncomposed of multiple related components.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Entities.CompositeEntity.yml\" sourcestartlinenumber=\"1\">This abstract class provides a base implementation for entities that are\ncomposed of multiple related components.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -812,7 +812,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-1.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring the entities of type\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> for dentity-related and time audited\nentities in the Entity Framework Core model.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-1.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring the entities of type\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> for identity-related and time audited\nentities in the Entity Framework Core model.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -826,7 +826,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-2.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring the entities of type\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> for dentity-related and time audited\nentities in the Entity Framework Core model.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-2.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring the entities of type\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> for identity-related and time audited\nentities in the Entity Framework Core model.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -840,7 +840,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-3.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring the entities of type\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> for dentity-related and time audited\nentities in the Entity Framework Core model.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-3.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring the entities of type\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> for identity-related and time audited\nentities in the Entity Framework Core model.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -854,7 +854,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration<TEntity, TKey, TCreator, TEdited>",
-      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring the entities of type\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> for dentity-related and time audited\nentities in the Entity Framework Core model.</p>\n"
+      "Summary": "<p sourcefile=\"api/BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.yml\" sourcestartlinenumber=\"1\">Represents an abstract base class for configuring the entities of type\n<xref href=\"BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity%603\" data-throw-if-not-resolved=\"false\"></xref> for identity-related and time audited\nentities in the Entity Framework Core model.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1108,11 +1108,11 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "api/toc.json"
-        },
         ".html": {
           "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
         }
       },
       "version": ""
@@ -1131,11 +1131,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "toc.json"
-        },
         ".html": {
           "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
       "version": ""
