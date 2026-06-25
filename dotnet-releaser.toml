@@ -7,6 +7,8 @@ project = "BB84.EntityFrameworkCore.slnx"
 user = "BoBoBaSs84"
 repo = "BB84.EntityFrameworkCore"
 version_prefix = "v"
+[test]
+enable = false
 [nuget]
 publish = true
 source = "https://api.nuget.org/v3/index.json"
