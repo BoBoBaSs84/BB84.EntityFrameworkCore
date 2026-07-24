@@ -34,14 +34,8 @@ public interface IEnumeratorRepository<TEntity, TKey> : IIdentityRepository<TEnt
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false);
 
-	/// <summary>
-	/// Retrieves an entity by its name.
-	/// </summary>
-	/// <param name="name">The name of the entity to retrieve.</param>
-	/// <param name="ignoreQueryFilters">A value indicating whether to ignore any query filters applied to the entity.</param>
-	/// <param name="trackChanges">A value indicating whether the retrieved entity should be tracked by the context.</param>
+	/// <inheritdoc cref="GetByName(string, bool, bool)"/>
 	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
-	/// <returns>The entity that matches the specified name, or <see langword="null"/> if no such entity is found.</returns>
 	Task<TEntity?> GetByNameAsync(
 		string name,
 		bool ignoreQueryFilters = false,
@@ -63,17 +57,8 @@ public interface IEnumeratorRepository<TEntity, TKey> : IIdentityRepository<TEnt
 		bool ignoreQueryFilters = false,
 		bool trackChanges = false);
 
-	/// <summary>
-	/// Retrieves a collection of entities that match the specified names.
-	/// </summary>
-	/// <param name="names">A collection of names to filter the entities by.</param>
-	/// <param name="ignoreQueryFilters">A value indicating whether to ignore any query filters applied to the entity type.</param>
-	/// <param name="trackChanges">A value indicating whether the returned entities should be tracked by the context.</param>
-	/// <param name="cancellationToken">The cancellation token.</param>
-	/// <returns>
-	/// An <see cref="IReadOnlyList{TEntity}"/> containing the entities that match the specified names.
-	/// If no entities match, an empty collection is returned.
-	/// </returns>
+	/// <inheritdoc cref="GetByNames(IEnumerable{string}, bool, bool)"/>
+	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
 	Task<IReadOnlyList<TEntity>> GetByNamesAsync(
 		IEnumerable<string> names,
 		bool ignoreQueryFilters = false,

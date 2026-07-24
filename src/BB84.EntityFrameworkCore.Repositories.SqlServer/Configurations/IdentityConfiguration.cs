@@ -32,17 +32,8 @@ public abstract class IdentityConfiguration<TEntity, TKey> : IEntityTypeConfigur
 	/// <inheritdoc/>
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
 	{
-		builder.HasKey(e => e.Id)
-			.IsClustered(false);
-
-		builder.Property(e => e.Id)
-			.HasColumnOrder(1)
-			.ValueGeneratedOnAdd();
-
-		builder.Property(e => e.Timestamp)
-			.IsConcurrencyToken()
-			.HasColumnOrder(2)
-			.ValueGeneratedOnAddOrUpdate();
+		EntityTypeBuilderDefaults.ApplyIdentityKey<TEntity, TKey>(builder);
+		EntityTypeBuilderDefaults.ApplyConcurrencyToken(builder, columnOrder: 2);
 	}
 }
 
@@ -56,7 +47,6 @@ public abstract class IdentityConfiguration<TEntity> : IdentityConfiguration<TEn
 	{
 		base.Configure(builder);
 
-		builder.Property(p => p.Id)
-			.HasDefaultValueSql("NEWID()");
+		EntityTypeBuilderDefaults.ApplyGuidIdDefault(builder);
 	}
 }

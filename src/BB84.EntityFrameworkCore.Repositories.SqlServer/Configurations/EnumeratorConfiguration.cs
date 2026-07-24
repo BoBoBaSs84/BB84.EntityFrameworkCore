@@ -37,10 +37,7 @@ public abstract class EnumeratorConfiguration<TEntity, TKey> : IEntityTypeConfig
 			.HasColumnOrder(1)
 			.IsRequired();
 
-		builder.Property(e => e.Timestamp)
-			.HasColumnOrder(2)
-			.IsConcurrencyToken()
-			.ValueGeneratedOnAddOrUpdate();
+		EntityTypeBuilderDefaults.ApplyConcurrencyToken(builder, columnOrder: 2);
 
 		builder.Property(e => e.Name)
 			.HasColumnOrder(3)

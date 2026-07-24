@@ -54,34 +54,12 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// <returns>The total number of rows deleted in the database.</returns>
 	int Delete(IEnumerable<TKey> ids);
 
-	/// <summary>
-	/// Deletes the database row for the <typeparamref name="TEntity"/> instance which matches
-	/// the <paramref name="id"/> from the database.
-	/// </summary>
-	/// <remarks>
-	/// This operation executes immediately against the database, rather than being deferred
-	/// until save changes is called. It also does not interact with the EF change tracker in
-	/// any way: entity instances which happen to be tracked when this operation is invoked
-	/// aren't taken into account, and aren't updated to reflect the changes.
-	/// </remarks>
-	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
+	/// <inheritdoc cref="Delete(TKey)"/>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <returns>The total number of rows deleted in the database.</returns>
 	Task<int> DeleteAsync(TKey id, CancellationToken token = default);
 
-	/// <summary>
-	/// Deletes all database rows for the <typeparamref name="TEntity"/> instances which matches
-	/// the <paramref name="ids"/> from the database.
-	/// </summary>
-	/// <remarks>
-	/// This operation executes immediately against the database, rather than being deferred
-	/// until save changes is called. It also does not interact with the EF change tracker in
-	/// any way: entity instances which happen to be tracked when this operation is invoked
-	/// aren't taken into account, and aren't updated to reflect the changes.
-	/// </remarks>	
-	/// <param name="ids">The primary keys of the <typeparamref name="TEntity"/>.</param>
+	/// <inheritdoc cref="Delete(IEnumerable{TKey})"/>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <returns>The total number of rows deleted in the database.</returns>
 	Task<int> DeleteAsync(IEnumerable<TKey> ids, CancellationToken token = default);
 
 	/// <summary>
@@ -133,24 +111,8 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		Expression<Func<TResult, TResult>>? fieldSelector = null,
 		bool ignoreQueryFilters = false);
 
-	/// <summary>
-	/// Retrieves an entity by its unique identifier.
-	/// </summary>
-	/// <param name="id">The unique identifier of the entity to retrieve.</param>
-	/// <param name="ignoreQueryFilters">
-	/// A value indicating whether to ignore query filters, such as global filters or soft delete filters.
-	/// </param>
-	/// <param name="trackChanges">
-	/// A value indicating whether the retrieved entity should be tracked by the context.
-	/// </param>
+	/// <inheritdoc cref="GetById(TKey, bool, bool, string[])"/>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <param name="includeProperties">
-	/// An array of related entity property names to include in the query.
-	/// </param>
-	/// <returns>
-	/// The entity of type <typeparamref name="TEntity"/> that matches the specified identifier,
-	/// or <see langword="null"/> if no such entity exists.
-	/// </returns>
 	Task<TEntity?> GetByIdAsync(
 		TKey id,
 		bool ignoreQueryFilters = false,
@@ -158,28 +120,8 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		CancellationToken token = default,
 		params string[] includeProperties);
 
-	/// <summary>
-	/// Asynchronously retrieves an entity by its identifier and projects it to a specified result type.
-	/// </summary>
-	/// <remarks>
-	/// Use this method to efficiently retrieve and project a single entity by its key, minimizing data transfer by
-	/// selecting only required fields. If the entity is not found, the result is null. When ignoreQueryFilters is
-	/// set to true, any global query filters (such as soft-delete or multi-tenancy filters) are bypassed for this query.
-	/// </remarks>
-	/// <typeparam name="TResult">The type of the result returned by the selector expression.</typeparam>
-	/// <param name="id">The unique identifier of the entity to retrieve.</param>
-	/// <param name="selector">
-	/// An expression that defines the projection to apply to the entity. This determines which fields are included in the result.
-	/// </param>
-	/// <param name="fieldSelector">
-	/// An optional expression to further select or transform the projected result. If null, the entire projection defined by
-	/// <paramref name="selector"/> is returned.
-	/// </param>
-	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
-	/// <param name="token">A cancellation token that can be used to cancel the asynchronous operation.</param>
-	/// <returns>
-	/// A task that represents the asynchronous operation. The task result contains the projected entity if found; otherwise, null.
-	/// </returns>
+	/// <inheritdoc cref="GetById{TResult}(TKey, Expression{Func{TEntity, TResult}}, Expression{Func{TResult, TResult}}, bool)"/>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	Task<TResult?> GetByIdAsync<TResult>(
 		TKey id,
 		Expression<Func<TEntity, TResult>> selector,
@@ -235,24 +177,8 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		Expression<Func<TResult, TResult>>? fieldSelector = null,
 		bool ignoreQueryFilters = false);
 
-	/// <summary>
-	/// Retrieves a collection of entities that match the specified identifiers.
-	/// </summary>
-	/// <param name="ids">A collection of identifiers used to filter the entities.</param>
-	/// <param name="ignoreQueryFilters">
-	/// A value indicating whether to ignore any query filters applied to the entity type.
-	/// </param>
-	/// <param name="trackChanges">
-	/// A value indicating whether the returned entities should be tracked by the context.
-	/// </param>
+	/// <inheritdoc cref="GetByIds(IEnumerable{TKey}, bool, bool, string[])"/>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <param name="includeProperties">
-	/// An array of related entity property names to include in the query results.
-	/// </param>
-	/// <returns>
-	/// A read only collection of entities of type <typeparamref name="TEntity"/> that match the
-	/// specified identifiers. If no entities match, an empty collection is returned.
-	/// </returns>
 	Task<IReadOnlyList<TEntity>> GetByIdsAsync(
 		IEnumerable<TKey> ids,
 		bool ignoreQueryFilters = false,
@@ -260,23 +186,8 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		CancellationToken token = default,
 		params string[] includeProperties);
 
-	/// <summary>
-	/// Asynchronously retrieves entities by their identifiers and projects them into the specified result type.
-	/// </summary>
-	/// <remarks>
-	/// The order of the returned results is not guaranteed to match the order of the provided identifiers.
-	/// If an identifier does not correspond to an existing entity, it is omitted from the result.
-	/// </remarks>
-	/// <typeparam name="TResult">The type to which each entity is projected.</typeparam>
-	/// <param name="ids">A collection of entity identifiers to retrieve.</param>
-	/// <param name="selector">An expression that defines the projection from the entity to the result type.</param>
-	/// <param name="fieldSelector">An optional expression to further select or shape the projected result.</param>
-	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
-	/// <param name="token">A cancellation token that can be used to cancel the asynchronous operation.</param>
-	/// <returns>
-	/// A task that represents the asynchronous operation. The task result contains a read-only list of projected results
-	/// corresponding to the provided identifiers. The list may be empty if no entities are found.
-	/// </returns>
+	/// <inheritdoc cref="GetByIds{TResult}(IEnumerable{TKey}, Expression{Func{TEntity, TResult}}, Expression{Func{TResult, TResult}}, bool)"/>
+	/// <param name="token">The cancellation token to cancel the request.</param>
 	Task<IReadOnlyList<TResult>> GetByIdsAsync<TResult>(
 		IEnumerable<TKey> ids,
 		Expression<Func<TEntity, TResult>> selector,
@@ -330,22 +241,13 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls);
 #endif
 
-	/// <summary>
-	/// Updates the entity identified by the specified identifier with the provided property changes.
-	/// </summary>
-	/// <remarks>
-	/// This operation executes immediately against the database, rather than being deferred
-	/// until save changes is called. It also does not interact with the EF change tracker in
-	/// any way: entity instances which happen to be tracked when this operation is invoked
-	/// aren't taken into account, and aren't updated to reflect the changes.
-	/// </remarks>	
-	/// <param name="id">The unique identifier of the entity to update.</param>
-	/// <param name="setPropertyCalls">A lambda expression specifying the properties to update and their new values.</param>
+#if NET8_0
+	/// <inheritdoc cref="Update(TKey, Expression{Func{SetPropertyCalls{TEntity}, SetPropertyCalls{TEntity}}})"/>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <returns>
-	/// The number of entities updated. Typically, this will be 1 if the update is successful, or 0 if no entity matches
-	/// the specified <paramref name="id"/>.
-	/// </returns>
+#else
+	/// <inheritdoc cref="Update(TKey, Action{UpdateSettersBuilder{TEntity}})"/>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+#endif
 	Task<int> UpdateAsync(
 		TKey id,
 #if NET8_0
@@ -355,22 +257,13 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 #endif
 		CancellationToken token = default);
 
-	/// <summary>
-	/// Updates the entities identified by the specified identifiers with the provided property changes.
-	/// </summary>
-	/// <remarks>
-	/// This operation executes immediately against the database, rather than being deferred
-	/// until save changes is called. It also does not interact with the EF change tracker in
-	/// any way: entity instances which happen to be tracked when this operation is invoked
-	/// aren't taken into account, and aren't updated to reflect the changes.
-	/// </remarks>	
-	/// <param name="ids">The unique identifiers of the entities to update.</param>
-	/// <param name="setPropertyCalls">A lambda expression specifying the properties to update and their new values.</param>
+#if NET8_0
+	/// <inheritdoc cref="Update(IEnumerable{TKey}, Expression{Func{SetPropertyCalls{TEntity}, SetPropertyCalls{TEntity}}})"/>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-	/// <returns>
-	/// The number of entities updated. Typically, this will be 1 if the update is successful,
-	/// or 0 if no entity matches the specified <paramref name="ids"/>.
-	/// </returns>
+#else
+	/// <inheritdoc cref="Update(IEnumerable{TKey}, Action{UpdateSettersBuilder{TEntity}})"/>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+#endif
 	Task<int> UpdateAsync(
 		IEnumerable<TKey> ids,
 #if NET8_0

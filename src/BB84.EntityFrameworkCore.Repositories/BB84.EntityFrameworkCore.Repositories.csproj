@@ -1,6 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<Description>This package contains frequently used repository implementations of their respective abstractions.</Description>
+		<!-- CS1573: the asynchronous query cores inherit their parameter documentation from the
+		     synchronous ones and only document the additional cancellation token themselves. -->
+		<NoWarn>$(NoWarn);CS1573</NoWarn>
 	</PropertyGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\BB84.EntityFrameworkCore.Entities\BB84.EntityFrameworkCore.Entities.csproj" />

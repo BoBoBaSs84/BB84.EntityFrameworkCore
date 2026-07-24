@@ -35,29 +35,13 @@ public abstract class FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>
 	/// <inheritdoc/>
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
 	{
-		builder.HasKey(k => k.Id)
-			.IsClustered(false);
-
-		builder.Property(p => p.Id)
-			.HasColumnOrder(1)
-			.ValueGeneratedOnAdd();
-
-		builder.Property(p => p.Timestamp)
-			.HasColumnOrder(2)
-			.IsConcurrencyToken()
-			.ValueGeneratedOnAddOrUpdate();
-
-		builder.Property(p => p.CreatedBy)
-			.HasColumnOrder(3)
-			.IsRequired();
+		EntityTypeBuilderDefaults.ApplyIdentityKey<TEntity, TKey>(builder);
+		EntityTypeBuilderDefaults.ApplyConcurrencyToken(builder, columnOrder: 2);
+		EntityTypeBuilderDefaults.ApplyUserAuditColumns<TEntity, TCreator, TEdited>(builder, createdByOrder: 3, editedByOrder: 5);
 
 		builder.Property(p => p.CreatedAt)
 			.HasColumnOrder(4)
 			.IsRequired();
-
-		builder.Property(p => p.EditedBy)
-			.HasColumnOrder(5)
-			.IsRequired(false);
 
 		builder.Property(p => p.EditedAt)
 			.HasColumnOrder(6)
@@ -76,11 +60,7 @@ public abstract class FullAuditedConfiguration<TEntity, TKey> : FullAuditedConfi
 	{
 		base.Configure(builder);
 
-		builder.Property(p => p.CreatedBy)
-			.IsSysNameColumn();
-
-		builder.Property(p => p.EditedBy)
-			.IsSysNameColumn();
+		EntityTypeBuilderDefaults.ApplySysNameAuditColumns(builder);
 	}
 }
 
@@ -95,8 +75,7 @@ public abstract class FullAuditedConfiguration<TEntity, TCreator, TEdited> : Ful
 	{
 		base.Configure(builder);
 
-		builder.Property(p => p.Id)
-			.HasDefaultValueSql("NEWID()");
+		EntityTypeBuilderDefaults.ApplyGuidIdDefault(builder);
 	}
 }
 
@@ -110,13 +89,7 @@ public abstract class FullAuditedConfiguration<TEntity> : FullAuditedConfigurati
 	{
 		base.Configure(builder);
 
-		builder.Property(p => p.Id)
-			.HasDefaultValueSql("NEWID()");
-
-		builder.Property(p => p.CreatedBy)
-			.IsSysNameColumn();
-
-		builder.Property(p => p.EditedBy)
-			.IsSysNameColumn();
+		EntityTypeBuilderDefaults.ApplyGuidIdDefault(builder);
+		EntityTypeBuilderDefaults.ApplySysNameAuditColumns(builder);
 	}
 }
