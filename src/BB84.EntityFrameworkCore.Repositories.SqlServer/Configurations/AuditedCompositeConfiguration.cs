@@ -36,18 +36,8 @@ public abstract class AuditedCompositeConfiguration<TEntity, TCreator, TEdited> 
 	/// <inheritdoc/>
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
 	{
-		builder.Property(e => e.Timestamp)
-			.HasColumnOrder(3)
-			.IsConcurrencyToken()
-			.ValueGeneratedOnAddOrUpdate();
-
-		builder.Property(e => e.CreatedBy)
-			.HasColumnOrder(4)
-			.IsRequired();
-
-		builder.Property(e => e.EditedBy)
-			.HasColumnOrder(5)
-			.IsRequired(false);
+		EntityTypeBuilderDefaults.ApplyConcurrencyToken(builder, columnOrder: 3);
+		EntityTypeBuilderDefaults.ApplyUserAuditColumns<TEntity, TCreator, TEdited>(builder, createdByOrder: 4, editedByOrder: 5);
 	}
 }
 
@@ -61,10 +51,6 @@ public abstract class AuditedCompositeConfiguration<TEntity> : AuditedCompositeC
 	{
 		base.Configure(builder);
 
-		builder.Property(e => e.CreatedBy)
-			.IsSysNameColumn();
-
-		builder.Property(e => e.EditedBy)
-			.IsSysNameColumn();
+		EntityTypeBuilderDefaults.ApplySysNameAuditColumns(builder);
 	}
 }

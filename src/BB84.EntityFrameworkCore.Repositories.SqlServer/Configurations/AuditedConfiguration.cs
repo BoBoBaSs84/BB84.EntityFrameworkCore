@@ -37,25 +37,9 @@ public abstract class AuditedConfiguration<TEntity, TKey, TCreator, TEdited> : I
 	/// <inheritdoc/>
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
 	{
-		builder.HasKey(e => e.Id)
-			.IsClustered(false);
-
-		builder.Property(e => e.Id)
-			.HasColumnOrder(1)
-			.ValueGeneratedOnAdd();
-
-		builder.Property(e => e.Timestamp)
-			.HasColumnOrder(2)
-			.IsConcurrencyToken()
-			.ValueGeneratedOnAddOrUpdate();
-
-		builder.Property(e => e.CreatedBy)
-			.HasColumnOrder(3)
-			.IsRequired();
-
-		builder.Property(e => e.EditedBy)
-			.HasColumnOrder(4)
-			.IsRequired(false);
+		EntityTypeBuilderDefaults.ApplyIdentityKey<TEntity, TKey>(builder);
+		EntityTypeBuilderDefaults.ApplyConcurrencyToken(builder, columnOrder: 2);
+		EntityTypeBuilderDefaults.ApplyUserAuditColumns<TEntity, TCreator, TEdited>(builder, createdByOrder: 3, editedByOrder: 4);
 	}
 }
 
@@ -70,11 +54,7 @@ public abstract class AuditedConfiguration<TEntity, TKey> : AuditedConfiguration
 	{
 		base.Configure(builder);
 
-		builder.Property(e => e.CreatedBy)
-			.IsSysNameColumn();
-
-		builder.Property(e => e.EditedBy)
-			.IsSysNameColumn();
+		EntityTypeBuilderDefaults.ApplySysNameAuditColumns(builder);
 	}
 }
 
@@ -89,8 +69,7 @@ public abstract class AuditedConfiguration<TEntity, TCreator, TEdited> : Audited
 	{
 		base.Configure(builder);
 
-		builder.Property(p => p.Id)
-			.HasDefaultValueSql("NEWID()");
+		EntityTypeBuilderDefaults.ApplyGuidIdDefault(builder);
 	}
 }
 
@@ -104,13 +83,7 @@ public abstract class AuditedConfiguration<TEntity> : AuditedConfiguration<TEnti
 	{
 		base.Configure(builder);
 
-		builder.Property(p => p.Id)
-			.HasDefaultValueSql("NEWID()");
-
-		builder.Property(e => e.CreatedBy)
-			.IsSysNameColumn();
-
-		builder.Property(e => e.EditedBy)
-			.IsSysNameColumn();
+		EntityTypeBuilderDefaults.ApplyGuidIdDefault(builder);
+		EntityTypeBuilderDefaults.ApplySysNameAuditColumns(builder);
 	}
 }

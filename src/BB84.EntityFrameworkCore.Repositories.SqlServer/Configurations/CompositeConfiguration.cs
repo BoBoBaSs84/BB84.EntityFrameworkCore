@@ -28,10 +28,5 @@ public abstract class CompositeConfiguration<TEntity> : IEntityTypeConfiguration
 {
 	/// <inheritdoc/>
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
-	{
-		builder.Property(e => e.Timestamp)
-			.HasColumnOrder(3)
-			.IsConcurrencyToken()
-			.ValueGeneratedOnAddOrUpdate();
-	}
+		=> EntityTypeBuilderDefaults.ApplyConcurrencyToken(builder, columnOrder: 3);
 }
