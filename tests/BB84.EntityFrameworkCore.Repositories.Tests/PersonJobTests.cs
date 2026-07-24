@@ -7,6 +7,8 @@ using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Repositories;
 
+using Microsoft.EntityFrameworkCore;
+
 namespace BB84.EntityFrameworkCore.Repositories.Tests;
 
 [TestClass]
@@ -136,6 +138,8 @@ public sealed class PersonJobTests : UnitTestBase
 
 		await repository.DeleteAsync(personJob)
 			.ConfigureAwait(false);
+
+		Assert.AreEqual(EntityState.Deleted, dbContext.Entry(personJob).State);
 	}
 
 	[TestMethod]
@@ -148,6 +152,8 @@ public sealed class PersonJobTests : UnitTestBase
 
 		await repository.DeleteAsync(personJobs)
 			.ConfigureAwait(false);
+
+		Assert.AreEqual(EntityState.Deleted, dbContext.Entry(personJobs[0]).State);
 	}
 
 	[TestMethod]
@@ -182,6 +188,8 @@ public sealed class PersonJobTests : UnitTestBase
 
 		await repository.UpdateAsync(personJob)
 			.ConfigureAwait(false);
+
+		Assert.AreEqual(EntityState.Modified, dbContext.Entry(personJob).State);
 	}
 
 	[TestMethod]
@@ -194,5 +202,22 @@ public sealed class PersonJobTests : UnitTestBase
 
 		await repository.UpdateAsync(personJobs)
 			.ConfigureAwait(false);
+
+		Assert.AreEqual(EntityState.Modified, dbContext.Entry(personJobs[0]).State);
+	}
+
+	[TestMethod]
+	public async Task DeleteAsyncCancelledTest()
+	{
+		using TestDbContext dbContext = GetTestContext();
+		PersonJobRepository repository = new(dbContext);
+
+		PersonJobEntity personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
+
+		_ = await Assert.ThrowsExactlyAsync<TaskCanceledException>(
+			() => repository.DeleteAsync(personJob, new CancellationToken(true)))
+			.ConfigureAwait(false);
+
+		Assert.AreEqual(EntityState.Detached, dbContext.Entry(personJob).State);
 	}
 }
