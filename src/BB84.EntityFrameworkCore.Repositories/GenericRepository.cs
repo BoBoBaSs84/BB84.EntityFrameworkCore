@@ -1,4 +1,4 @@
-﻿// Copyright: 2024 Robert Peter Meyer
+// Copyright: 2024 Robert Peter Meyer
 // License: MIT
 //
 // This source code is licensed under the MIT license found in the
@@ -44,72 +44,27 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 
 	/// <inheritdoc/>
 	public int CountAll(bool ignoreQueryFilters = false)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			ignoreQueryFilters: ignoreQueryFilters
-			);
-
-		return query.Count();
-	}
+		=> QueryCount(ignoreQueryFilters: ignoreQueryFilters);
 
 	/// <inheritdoc/>
 	public async Task<int> CountAllAsync(bool ignoreQueryFilters = false, CancellationToken token = default)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			ignoreQueryFilters: ignoreQueryFilters
-			);
-
-		return await query.CountAsync(token)
-			.ConfigureAwait(false);
-	}
+		=> await QueryCountAsync(ignoreQueryFilters: ignoreQueryFilters, token: token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public int CountByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter, bool ignoreQueryFilters = false)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters
-			);
-
-		return query.Count();
-	}
+		=> QueryCount(queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters);
 
 	/// <inheritdoc/>
 	public int CountByCondition(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression,
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters
-			);
-
-		return query.Count();
-	}
+		=> QueryCount(expression: expression, queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters);
 
 	/// <inheritdoc/>
 	public async Task<int> CountByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter, bool ignoreQueryFilters = false, CancellationToken token = default)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters
-			);
-
-		return await query.CountAsync(token)
-			.ConfigureAwait(false);
-	}
+		=> await QueryCountAsync(queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, token: token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public async Task<int> CountByConditionAsync(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, CancellationToken token = default)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression,
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters
-			);
-
-		return await query.CountAsync(token)
-			.ConfigureAwait(false);
-	}
+		=> await QueryCountAsync(expression: expression, queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, token: token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public void Delete(TEntity entity)
@@ -137,231 +92,67 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 
 	/// <inheritdoc/>
 	public IReadOnlyList<TEntity> GetAll(bool ignoreQueryFilters = false, bool trackChanges = false)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges
-			);
-
-		return [.. query];
-	}
+		=> QueryMany(ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges);
 
 	/// <inheritdoc/>
 	public IReadOnlyList<TResult> GetAll<TResult>(Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, bool ignoreQueryFilters = false)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			ignoreQueryFilters: ignoreQueryFilters
-			);
-
-		return [.. ApplyProjection(query, selector, fieldSelector)];
-	}
+		=> QueryMany(selector: selector, fieldSelector: fieldSelector, ignoreQueryFilters: ignoreQueryFilters);
 
 	/// <inheritdoc/>
 	public async Task<IReadOnlyList<TEntity>> GetAllAsync(bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges
-			);
-
-		return await query.ToListAsync(token)
-			.ConfigureAwait(false);
-	}
+		=> await QueryManyAsync(ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges, token: token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public async Task<IReadOnlyList<TResult>> GetAllAsync<TResult>(Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, bool ignoreQueryFilters = false, CancellationToken token = default)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			ignoreQueryFilters: ignoreQueryFilters
-			);
-
-		return await ApplyProjection(query, selector, fieldSelector)
-			.ToListAsync(token)
-			.ConfigureAwait(false);
-	}
+		=> await QueryManyAsync(selector: selector, fieldSelector: fieldSelector, ignoreQueryFilters: ignoreQueryFilters, token: token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public TEntity? GetByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter, bool ignoreQueryFilters = false, bool trackChanges = false, params string[] includeProperties)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges,
-			includeProperties: includeProperties
-			);
-
-		return query.SingleOrDefault();
-	}
+		=> QuerySingle(queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges, includeProperties: includeProperties);
 
 	/// <inheritdoc/>
 	public TEntity? GetByCondition(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, bool trackChanges = false, params string[] includeProperties)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression,
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges,
-			includeProperties: includeProperties
-			);
-
-		return query.SingleOrDefault();
-	}
+		=> QuerySingle(expression: expression, queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges, includeProperties: includeProperties);
 
 	/// <inheritdoc/>
 	public TResult? GetByCondition<TResult>(Expression<Func<TEntity, bool>> expression, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression,
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters
-			);
-
-		return ApplyProjection(query, selector, fieldSelector)
-			.SingleOrDefault();
-	}
+		=> QuerySingle(selector: selector, fieldSelector: fieldSelector, expression: expression, queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters);
 
 	/// <inheritdoc/>
 	public async Task<TEntity?> GetByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges,
-			includeProperties: includeProperties
-			);
-
-		return await query.FirstOrDefaultAsync(token)
-			.ConfigureAwait(false);
-	}
+		=> await QuerySingleAsync(queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges, token: token, includeProperties: includeProperties).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public async Task<TEntity?> GetByConditionAsync(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression,
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges,
-			includeProperties: includeProperties
-			);
-
-		return await query.FirstOrDefaultAsync(token)
-			.ConfigureAwait(false);
-	}
+		=> await QuerySingleAsync(expression: expression, queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges, token: token, includeProperties: includeProperties).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public async Task<TResult?> GetByConditionAsync<TResult>(Expression<Func<TEntity, bool>> expression, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, CancellationToken token = default)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression,
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters
-			);
-
-		return await ApplyProjection(query, selector, fieldSelector)
-			.SingleOrDefaultAsync(token)
-			.ConfigureAwait(false);
-	}
+		=> await QuerySingleAsync(selector: selector, fieldSelector: fieldSelector, expression: expression, queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, token: token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public IReadOnlyList<TEntity> GetManyByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, params string[] includeProperties)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters,
-			orderBy: orderBy,
-			skip: skip,
-			take: take,
-			trackChanges: trackChanges,
-			includeProperties: includeProperties
-			);
-
-		return [.. query];
-	}
+		=> QueryMany(queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, orderBy: orderBy, skip: skip, take: take, trackChanges: trackChanges, includeProperties: includeProperties);
 
 	/// <inheritdoc/>
 	public IReadOnlyList<TEntity> GetManyByCondition(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, params string[] includeProperties)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression,
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters,
-			orderBy: orderBy,
-			skip: skip,
-			take: take,
-			trackChanges: trackChanges,
-			includeProperties: includeProperties
-			);
-
-		return [.. query];
-	}
+		=> QueryMany(expression: expression, queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, orderBy: orderBy, skip: skip, take: take, trackChanges: trackChanges, includeProperties: includeProperties);
 
 	/// <inheritdoc/>
 	public IReadOnlyList<TResult> GetManyByCondition<TResult>(Expression<Func<TEntity, bool>> expression, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression,
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters,
-			orderBy: orderBy,
-			skip: skip,
-			take: take
-			);
-
-		return [.. ApplyProjection(query, selector, fieldSelector)];
-	}
+		=> QueryMany(selector: selector, fieldSelector: fieldSelector, expression: expression, queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, orderBy: orderBy, skip: skip, take: take);
 
 	/// <inheritdoc/>
 	public async Task<IReadOnlyList<TEntity>> GetManyByConditionAsync(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters,
-			orderBy: orderBy,
-			skip: skip,
-			take: take,
-			trackChanges: trackChanges,
-			includeProperties: includeProperties
-			);
-
-		return await query.ToListAsync(token)
-			.ConfigureAwait(false);
-	}
+		=> await QueryManyAsync(queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, orderBy: orderBy, skip: skip, take: take, trackChanges: trackChanges, token: token, includeProperties: includeProperties).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public async Task<IReadOnlyList<TEntity>> GetManyByConditionAsync(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression,
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters,
-			orderBy: orderBy,
-			skip: skip,
-			take: take,
-			trackChanges: trackChanges,
-			includeProperties: includeProperties
-			);
-
-		return await query.ToListAsync(token)
-			.ConfigureAwait(false);
-	}
+		=> await QueryManyAsync(expression: expression, queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, orderBy: orderBy, skip: skip, take: take, trackChanges: trackChanges, token: token, includeProperties: includeProperties).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public async Task<IReadOnlyList<TResult>> GetManyByConditionAsync<TResult>(Expression<Func<TEntity, bool>> expression, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, CancellationToken token = default)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: expression,
-			queryFilter: queryFilter,
-			ignoreQueryFilters: ignoreQueryFilters,
-			orderBy: orderBy,
-			skip: skip,
-			take: take
-			);
-
-		return await ApplyProjection(query, selector, fieldSelector)
-			.ToListAsync(token)
-			.ConfigureAwait(false);
-	}
+		=> await QueryManyAsync(selector: selector, fieldSelector: fieldSelector, expression: expression, queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, orderBy: orderBy, skip: skip, take: take, token: token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public void Update(TEntity entity)
@@ -399,6 +190,268 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 #endif
 		CancellationToken token = default)
 		=> await PrepareQuery(expression).ExecuteUpdateAsync(setPropertyCalls, token).ConfigureAwait(false);
+
+	/// <summary>
+	/// Counts the <typeparamref name="TEntity"/> instances that match the provided criteria.
+	/// </summary>
+	/// <param name="expression">The condition to fulfill to be counted.</param>
+	/// <param name="queryFilter">The function used to filter the entities.</param>
+	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
+	/// <returns>The total number of matching <typeparamref name="TEntity"/> instances.</returns>
+	protected int QueryCount(
+		Expression<Func<TEntity, bool>>? expression = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters
+			);
+
+		return query.Count();
+	}
+
+	/// <inheritdoc cref="QueryCount"/>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	protected async Task<int> QueryCountAsync(
+		Expression<Func<TEntity, bool>>? expression = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		CancellationToken token = default)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters
+			);
+
+		return await query.CountAsync(token)
+			.ConfigureAwait(false);
+	}
+
+	/// <summary>
+	/// Returns the single <typeparamref name="TEntity"/> that matches the provided criteria.
+	/// </summary>
+	/// <param name="expression">The condition to fulfill to be returned.</param>
+	/// <param name="queryFilter">The function used to filter the entities.</param>
+	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
+	/// <param name="trackChanges">Should the fetched entity be tracked?</param>
+	/// <param name="includeProperties">Any other navigation properties to include when returning the entity.</param>
+	/// <returns>The found <typeparamref name="TEntity"/> or <see langword="null"/>.</returns>
+	protected TEntity? QuerySingle(
+		Expression<Func<TEntity, bool>>? expression = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		bool trackChanges = false,
+		params string[] includeProperties)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters,
+			trackChanges: trackChanges,
+			includeProperties: includeProperties
+			);
+
+		return query.SingleOrDefault();
+	}
+
+	/// <inheritdoc cref="QuerySingle(Expression{Func{TEntity, bool}}, Func{IQueryable{TEntity}, IQueryable{TEntity}}, bool, bool, string[])"/>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	protected async Task<TEntity?> QuerySingleAsync(
+		Expression<Func<TEntity, bool>>? expression = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		bool trackChanges = false,
+		CancellationToken token = default,
+		params string[] includeProperties)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters,
+			trackChanges: trackChanges,
+			includeProperties: includeProperties
+			);
+
+		return await query.SingleOrDefaultAsync(token)
+			.ConfigureAwait(false);
+	}
+
+	/// <summary>
+	/// Returns the single projection of type <typeparamref name="TResult"/> that matches the provided criteria.
+	/// </summary>
+	/// <typeparam name="TResult">The type of the result elements after projection.</typeparam>
+	/// <param name="selector">The expression that defines the projection from the entity to the result type.</param>
+	/// <param name="fieldSelector">The optional expression that further projects the result type.</param>
+	/// <param name="expression">The condition to fulfill to be returned.</param>
+	/// <param name="queryFilter">The function used to filter the entities.</param>
+	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
+	/// <returns>The projected <typeparamref name="TResult"/> or <see langword="null"/>.</returns>
+	protected TResult? QuerySingle<TResult>(
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		Expression<Func<TEntity, bool>>? expression = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters
+			);
+
+		return ApplyProjection(query, selector, fieldSelector)
+			.SingleOrDefault();
+	}
+
+	/// <inheritdoc cref="QuerySingle{TResult}(Expression{Func{TEntity, TResult}}, Expression{Func{TResult, TResult}}, Expression{Func{TEntity, bool}}, Func{IQueryable{TEntity}, IQueryable{TEntity}}, bool)"/>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	protected async Task<TResult?> QuerySingleAsync<TResult>(
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		Expression<Func<TEntity, bool>>? expression = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		CancellationToken token = default)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters
+			);
+
+		return await ApplyProjection(query, selector, fieldSelector)
+			.SingleOrDefaultAsync(token)
+			.ConfigureAwait(false);
+	}
+
+	/// <summary>
+	/// Returns the collection of <typeparamref name="TEntity"/> that matches the provided criteria.
+	/// </summary>
+	/// <param name="expression">The condition to fulfill to be returned.</param>
+	/// <param name="queryFilter">The function used to filter the entities.</param>
+	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
+	/// <param name="orderBy">The function used to order the entities.</param>
+	/// <param name="skip">The number of records to skip.</param>
+	/// <param name="take">The number of records to limit the results to.</param>
+	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
+	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
+	/// <returns>A collection of <typeparamref name="TEntity"/>.</returns>
+	protected IReadOnlyList<TEntity> QueryMany(
+		Expression<Func<TEntity, bool>>? expression = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+		int? skip = null,
+		int? take = null,
+		bool trackChanges = false,
+		params string[] includeProperties)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters,
+			orderBy: orderBy,
+			skip: skip,
+			take: take,
+			trackChanges: trackChanges,
+			includeProperties: includeProperties
+			);
+
+		return [.. query];
+	}
+
+	/// <inheritdoc cref="QueryMany(Expression{Func{TEntity, bool}}, Func{IQueryable{TEntity}, IQueryable{TEntity}}, bool, Func{IQueryable{TEntity}, IOrderedQueryable{TEntity}}, int?, int?, bool, string[])"/>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	protected async Task<IReadOnlyList<TEntity>> QueryManyAsync(
+		Expression<Func<TEntity, bool>>? expression = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+		int? skip = null,
+		int? take = null,
+		bool trackChanges = false,
+		CancellationToken token = default,
+		params string[] includeProperties)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters,
+			orderBy: orderBy,
+			skip: skip,
+			take: take,
+			trackChanges: trackChanges,
+			includeProperties: includeProperties
+			);
+
+		return await query.ToListAsync(token)
+			.ConfigureAwait(false);
+	}
+
+	/// <summary>
+	/// Returns the collection of <typeparamref name="TResult"/> projections that match the provided criteria.
+	/// </summary>
+	/// <typeparam name="TResult">The type of the result elements after projection.</typeparam>
+	/// <param name="selector">The expression that defines the projection from the entity to the result type.</param>
+	/// <param name="fieldSelector">The optional expression that further projects the result type.</param>
+	/// <param name="expression">The condition to fulfill to be returned.</param>
+	/// <param name="queryFilter">The function used to filter the entities.</param>
+	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
+	/// <param name="orderBy">The function used to order the entities.</param>
+	/// <param name="skip">The number of records to skip.</param>
+	/// <param name="take">The number of records to limit the results to.</param>
+	/// <returns>A collection of <typeparamref name="TResult"/>.</returns>
+	protected IReadOnlyList<TResult> QueryMany<TResult>(
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		Expression<Func<TEntity, bool>>? expression = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+		int? skip = null,
+		int? take = null)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters,
+			orderBy: orderBy,
+			skip: skip,
+			take: take
+			);
+
+		return [.. ApplyProjection(query, selector, fieldSelector)];
+	}
+
+	/// <inheritdoc cref="QueryMany{TResult}(Expression{Func{TEntity, TResult}}, Expression{Func{TResult, TResult}}, Expression{Func{TEntity, bool}}, Func{IQueryable{TEntity}, IQueryable{TEntity}}, bool, Func{IQueryable{TEntity}, IOrderedQueryable{TEntity}}, int?, int?)"/>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	protected async Task<IReadOnlyList<TResult>> QueryManyAsync<TResult>(
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		Expression<Func<TEntity, bool>>? expression = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+		int? skip = null,
+		int? take = null,
+		CancellationToken token = default)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters,
+			orderBy: orderBy,
+			skip: skip,
+			take: take
+			);
+
+		return await ApplyProjection(query, selector, fieldSelector)
+			.ToListAsync(token)
+			.ConfigureAwait(false);
+	}
 
 	/// <summary>
 	/// Prepares the <see cref="IQueryable"/> of type <typeparamref name="TEntity"/> before it gets executed.

@@ -1,12 +1,12 @@
-﻿// Copyright: 2024 Robert Peter Meyer
+// Copyright: 2024 Robert Peter Meyer
 // License: MIT
 //
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
+using System.Linq.Expressions;
+
 using BB84.EntityFrameworkCore.Entities.Abstractions;
 using BB84.EntityFrameworkCore.Repositories.Abstractions;
-
-using Microsoft.EntityFrameworkCore;
 
 namespace BB84.EntityFrameworkCore.Repositories;
 
@@ -27,51 +27,35 @@ public abstract class EnumeratorRepository<TEntity, TKey>(IDbContext dbContext) 
 {
 	/// <inheritdoc/>
 	public TEntity? GetByName(string name, bool ignoreQueryFilters = false, bool trackChanges = false)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: x => x.Name == name,
-			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges
-			);
-
-		return query.SingleOrDefault();
-	}
+		=> QuerySingle(expression: ByName(name), ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges);
 
 	/// <inheritdoc/>
 	public async Task<TEntity?> GetByNameAsync(string name, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: x => x.Name == name,
-			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges
-			);
-
-		return await query.SingleOrDefaultAsync(cancellationToken);
-	}
+		=> await QuerySingleAsync(expression: ByName(name), ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges, token: cancellationToken).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public IReadOnlyList<TEntity> GetByNames(IEnumerable<string> names, bool ignoreQueryFilters = false, bool trackChanges = false)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: x => names.Contains(x.Name),
-			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges
-			);
-
-		return [.. query];
-	}
+		=> QueryMany(expression: ByNames(names), ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges);
 
 	/// <inheritdoc/>
 	public async Task<IReadOnlyList<TEntity>> GetByNamesAsync(IEnumerable<string> names, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: x => names.Contains(x.Name),
-			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges
-			);
+		=> await QueryManyAsync(expression: ByNames(names), ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges, token: cancellationToken).ConfigureAwait(false);
 
-		return await query.ToListAsync(cancellationToken);
-	}
+	/// <summary>
+	/// Returns the condition that matches the <typeparamref name="TEntity"/> with the provided <paramref name="name"/>.
+	/// </summary>
+	/// <param name="name">The name of the <typeparamref name="TEntity"/>.</param>
+	/// <returns>The condition to fulfill to be selected.</returns>
+	protected static Expression<Func<TEntity, bool>> ByName(string name)
+		=> x => x.Name == name;
+
+	/// <summary>
+	/// Returns the condition that matches the <typeparamref name="TEntity"/> instances with the provided <paramref name="names"/>.
+	/// </summary>
+	/// <param name="names">The names of the <typeparamref name="TEntity"/>.</param>
+	/// <returns>The condition to fulfill to be selected.</returns>
+	protected static Expression<Func<TEntity, bool>> ByNames(IEnumerable<string> names)
+		=> x => names.Contains(x.Name);
 }
 
 /// <inheritdoc cref="EnumeratorRepository{TEntity, TKey}"/>

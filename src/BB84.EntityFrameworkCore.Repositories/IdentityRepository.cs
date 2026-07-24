@@ -1,4 +1,4 @@
-﻿// Copyright: 2024 Robert Peter Meyer
+// Copyright: 2024 Robert Peter Meyer
 // License: MIT
 //
 // This source code is licensed under the MIT license found in the
@@ -8,7 +8,6 @@ using System.Linq.Expressions;
 using BB84.EntityFrameworkCore.Entities.Abstractions;
 using BB84.EntityFrameworkCore.Repositories.Abstractions;
 
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 
 namespace BB84.EntityFrameworkCore.Repositories;
@@ -30,122 +29,51 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 {
 	/// <inheritdoc/>
 	public int Delete(TKey id)
-		=> Delete(x => x.Id.Equals(id));
+		=> Delete(ById(id));
 
 	/// <inheritdoc/>
 	public int Delete(IEnumerable<TKey> ids)
-		=> Delete(x => ids.Contains(x.Id));
+		=> Delete(ByIds(ids));
 
 	/// <inheritdoc/>
 	public async Task<int> DeleteAsync(TKey id, CancellationToken token = default)
-		=> await DeleteAsync(x => x.Id.Equals(id), token).ConfigureAwait(false);
+		=> await DeleteAsync(ById(id), token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public async Task<int> DeleteAsync(IEnumerable<TKey> ids, CancellationToken token = default)
-		=> await DeleteAsync(x => ids.Contains(x.Id), token).ConfigureAwait(false);
+		=> await DeleteAsync(ByIds(ids), token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public TEntity? GetById(TKey id, bool ignoreQueryFilters = false, bool trackChanges = false, params string[] includeProperties)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: x => x.Id.Equals(id),
-			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges,
-			includeProperties: includeProperties
-			);
-
-		return query.SingleOrDefault();
-	}
+		=> QuerySingle(expression: ById(id), ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges, includeProperties: includeProperties);
 
 	/// <inheritdoc/>
 	public TResult? GetById<TResult>(TKey id, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, bool ignoreQueryFilters = false)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: x => x.Id.Equals(id),
-			ignoreQueryFilters: ignoreQueryFilters
-			);
-
-		return ApplyProjection(query, selector, fieldSelector)
-			.SingleOrDefault();
-	}
+		=> QuerySingle(selector: selector, fieldSelector: fieldSelector, expression: ById(id), ignoreQueryFilters: ignoreQueryFilters);
 
 	/// <inheritdoc/>
 	public async Task<TEntity?> GetByIdAsync(TKey id, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: x => x.Id.Equals(id),
-			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges,
-			includeProperties: includeProperties
-			);
-
-		return await query.SingleOrDefaultAsync(token)
-			.ConfigureAwait(false);
-	}
+		=> await QuerySingleAsync(expression: ById(id), ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges, token: token, includeProperties: includeProperties).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public async Task<TResult?> GetByIdAsync<TResult>(TKey id, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, bool ignoreQueryFilters = false, CancellationToken token = default)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: x => x.Id.Equals(id),
-			ignoreQueryFilters: ignoreQueryFilters
-			);
-
-		return await ApplyProjection(query, selector, fieldSelector)
-			.SingleOrDefaultAsync(token)
-			.ConfigureAwait(false);
-	}
+		=> await QuerySingleAsync(selector: selector, fieldSelector: fieldSelector, expression: ById(id), ignoreQueryFilters: ignoreQueryFilters, token: token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public IReadOnlyList<TEntity> GetByIds(IEnumerable<TKey> ids, bool ignoreQueryFilters = false, bool trackChanges = false, params string[] includeProperties)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: x => ids.Contains(x.Id),
-			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges,
-			includeProperties: includeProperties
-			);
-
-		return [.. query];
-	}
+		=> QueryMany(expression: ByIds(ids), ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges, includeProperties: includeProperties);
 
 	/// <inheritdoc/>
 	public IReadOnlyList<TResult> GetByIds<TResult>(IEnumerable<TKey> ids, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, bool ignoreQueryFilters = false)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: x => ids.Contains(x.Id),
-			ignoreQueryFilters: ignoreQueryFilters
-			);
-
-		return [.. ApplyProjection(query, selector, fieldSelector)];
-	}
+		=> QueryMany(selector: selector, fieldSelector: fieldSelector, expression: ByIds(ids), ignoreQueryFilters: ignoreQueryFilters);
 
 	/// <inheritdoc/>
 	public async Task<IReadOnlyList<TEntity>> GetByIdsAsync(IEnumerable<TKey> ids, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: x => ids.Contains(x.Id),
-			ignoreQueryFilters: ignoreQueryFilters,
-			trackChanges: trackChanges,
-			includeProperties: includeProperties
-			);
-
-		return await query.ToListAsync(token)
-			.ConfigureAwait(false);
-	}
+		=> await QueryManyAsync(expression: ByIds(ids), ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges, token: token, includeProperties: includeProperties).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public async Task<IReadOnlyList<TResult>> GetByIdsAsync<TResult>(IEnumerable<TKey> ids, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, bool ignoreQueryFilters = false, CancellationToken token = default)
-	{
-		IQueryable<TEntity> query = PrepareQuery(
-			expression: x => ids.Contains(x.Id),
-			ignoreQueryFilters: ignoreQueryFilters
-			);
-
-		return await ApplyProjection(query, selector, fieldSelector)
-			.ToListAsync(token)
-			.ConfigureAwait(false);
-	}
+		=> await QueryManyAsync(selector: selector, fieldSelector: fieldSelector, expression: ByIds(ids), ignoreQueryFilters: ignoreQueryFilters, token: token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public int Update(
@@ -155,7 +83,7 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 #else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls)
 #endif
-		=> Update(x => x.Id.Equals(id), setPropertyCalls);
+		=> Update(ById(id), setPropertyCalls);
 
 	/// <inheritdoc/>
 	public int Update(
@@ -165,7 +93,7 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 #else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls)
 #endif
-		=> Update(x => ids.Contains(x.Id), setPropertyCalls);
+		=> Update(ByIds(ids), setPropertyCalls);
 
 	/// <inheritdoc/>
 	public async Task<int> UpdateAsync(
@@ -176,7 +104,7 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
 #endif
 		CancellationToken token = default)
-		=> await UpdateAsync(x => x.Id.Equals(id), setPropertyCalls, token).ConfigureAwait(false);
+		=> await UpdateAsync(ById(id), setPropertyCalls, token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public async Task<int> UpdateAsync(
@@ -187,7 +115,23 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
 #endif
 		CancellationToken token = default)
-		=> await UpdateAsync(x => ids.Contains(x.Id), setPropertyCalls, token).ConfigureAwait(false);
+		=> await UpdateAsync(ByIds(ids), setPropertyCalls, token).ConfigureAwait(false);
+
+	/// <summary>
+	/// Returns the condition that matches the <typeparamref name="TEntity"/> with the provided <paramref name="id"/>.
+	/// </summary>
+	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
+	/// <returns>The condition to fulfill to be selected.</returns>
+	protected static Expression<Func<TEntity, bool>> ById(TKey id)
+		=> x => x.Id.Equals(id);
+
+	/// <summary>
+	/// Returns the condition that matches the <typeparamref name="TEntity"/> instances with the provided <paramref name="ids"/>.
+	/// </summary>
+	/// <param name="ids">The primary keys of the <typeparamref name="TEntity"/>.</param>
+	/// <returns>The condition to fulfill to be selected.</returns>
+	protected static Expression<Func<TEntity, bool>> ByIds(IEnumerable<TKey> ids)
+		=> x => ids.Contains(x.Id);
 }
 
 /// <inheritdoc cref="IdentityRepository{TEntity, TKey}"/>
