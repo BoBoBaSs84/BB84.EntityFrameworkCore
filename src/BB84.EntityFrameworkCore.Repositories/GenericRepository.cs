@@ -4,6 +4,7 @@
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
 using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 
 using BB84.EntityFrameworkCore.Repositories.Abstractions;
 
@@ -167,6 +168,26 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	/// <inheritdoc/>
 	public async Task<IReadOnlyList<TResult>> GetManyByConditionAsync<TResult>(Expression<Func<TEntity, bool>> expression, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, CancellationToken token = default)
 		=> await QueryManyAsync(selector: selector, fieldSelector: fieldSelector, expression: expression, queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, orderBy: orderBy, skip: skip, take: take, token: token).ConfigureAwait(false);
+
+	/// <inheritdoc/>
+	public IAsyncEnumerable<TEntity> StreamAll(bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken token = default)
+		=> QueryManyStream(ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges, token: token);
+
+	/// <inheritdoc/>
+	public IAsyncEnumerable<TResult> StreamAll<TResult>(Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, bool ignoreQueryFilters = false, CancellationToken token = default)
+		=> QueryManyStream(selector: selector, fieldSelector: fieldSelector, ignoreQueryFilters: ignoreQueryFilters, token: token);
+
+	/// <inheritdoc/>
+	public IAsyncEnumerable<TEntity> StreamByCondition(Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
+		=> QueryManyStream(queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, orderBy: orderBy, skip: skip, take: take, trackChanges: trackChanges, token: token, includeProperties: includeProperties);
+
+	/// <inheritdoc/>
+	public IAsyncEnumerable<TEntity> StreamByCondition(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, bool trackChanges = false, CancellationToken token = default, params string[] includeProperties)
+		=> QueryManyStream(expression: expression, queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, orderBy: orderBy, skip: skip, take: take, trackChanges: trackChanges, token: token, includeProperties: includeProperties);
+
+	/// <inheritdoc/>
+	public IAsyncEnumerable<TResult> StreamByCondition<TResult>(Expression<Func<TEntity, bool>> expression, Expression<Func<TEntity, TResult>> selector, Expression<Func<TResult, TResult>>? fieldSelector = null, Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null, bool ignoreQueryFilters = false, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, int? skip = null, int? take = null, CancellationToken token = default)
+		=> QueryManyStream(selector: selector, fieldSelector: fieldSelector, expression: expression, queryFilter: queryFilter, ignoreQueryFilters: ignoreQueryFilters, orderBy: orderBy, skip: skip, take: take, token: token);
 
 	/// <inheritdoc/>
 	public void Update(TEntity entity)
@@ -479,6 +500,93 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		return await ApplyProjection(query, selector, fieldSelector)
 			.ToListAsync(token)
 			.ConfigureAwait(false);
+	}
+
+	/// <summary>
+	/// Streams the collection of <typeparamref name="TEntity"/> that matches the provided criteria.
+	/// </summary>
+	/// <remarks>
+	/// The result set is not buffered, the entities are yielded as they are read from the database.
+	/// The returned sequence is lazy and must be enumerated within the lifetime of the underlying
+	/// database context.
+	/// </remarks>
+	/// <param name="expression">The condition to fulfill to be returned.</param>
+	/// <param name="queryFilter">The function used to filter the entities.</param>
+	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
+	/// <param name="orderBy">The function used to order the entities.</param>
+	/// <param name="skip">The number of records to skip.</param>
+	/// <param name="take">The number of records to limit the results to.</param>
+	/// <param name="trackChanges">Should the fetched entities be tracked?</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <param name="includeProperties">Any other navigation properties to include when returning the collection.</param>
+	/// <returns>An asynchronous sequence of <typeparamref name="TEntity"/>.</returns>
+	protected async IAsyncEnumerable<TEntity> QueryManyStream(
+		Expression<Func<TEntity, bool>>? expression = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+		int? skip = null,
+		int? take = null,
+		bool trackChanges = false,
+		[EnumeratorCancellation] CancellationToken token = default,
+		params string[] includeProperties)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters,
+			orderBy: orderBy,
+			skip: skip,
+			take: take,
+			trackChanges: trackChanges,
+			includeProperties: includeProperties
+			);
+
+		await foreach (TEntity entity in query.AsAsyncEnumerable().WithCancellation(token).ConfigureAwait(false))
+			yield return entity;
+	}
+
+	/// <summary>
+	/// Streams the collection of <typeparamref name="TResult"/> projections that match the provided criteria.
+	/// </summary>
+	/// <remarks>
+	/// The result set is not buffered, the projections are yielded as they are read from the database.
+	/// The returned sequence is lazy and must be enumerated within the lifetime of the underlying
+	/// database context.
+	/// </remarks>
+	/// <typeparam name="TResult">The type of the result elements after projection.</typeparam>
+	/// <param name="selector">The expression that defines the projection from the entity to the result type.</param>
+	/// <param name="fieldSelector">The optional expression that further projects the result type.</param>
+	/// <param name="expression">The condition to fulfill to be returned.</param>
+	/// <param name="queryFilter">The function used to filter the entities.</param>
+	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
+	/// <param name="orderBy">The function used to order the entities.</param>
+	/// <param name="skip">The number of records to skip.</param>
+	/// <param name="take">The number of records to limit the results to.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <returns>An asynchronous sequence of <typeparamref name="TResult"/>.</returns>
+	protected async IAsyncEnumerable<TResult> QueryManyStream<TResult>(
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		Expression<Func<TEntity, bool>>? expression = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+		int? skip = null,
+		int? take = null,
+		[EnumeratorCancellation] CancellationToken token = default)
+	{
+		IQueryable<TEntity> query = PrepareQuery(
+			expression: expression,
+			queryFilter: queryFilter,
+			ignoreQueryFilters: ignoreQueryFilters,
+			orderBy: orderBy,
+			skip: skip,
+			take: take
+			);
+
+		await foreach (TResult result in ApplyProjection(query, selector, fieldSelector).AsAsyncEnumerable().WithCancellation(token).ConfigureAwait(false))
+			yield return result;
 	}
 
 	/// <summary>

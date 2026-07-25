@@ -392,6 +392,121 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 		}
 	}
 
+	[TestMethod]
+	public async Task StreamOverloadsAsyncTest()
+	{
+		PersonTypeRepository repository = new(DbContext);
+
+		List<PersonTypeEntity> all = [];
+		await foreach (PersonTypeEntity entity in repository
+			.StreamAll(ignoreQueryFilters: true, token: _cancellationToken)
+			.ConfigureAwait(false))
+		{
+			all.Add(entity);
+		}
+
+		List<PersonTypeEntity> byQueryFilter = [];
+		await foreach (PersonTypeEntity entity in repository
+			.StreamByCondition(
+				queryFilter: query => query.Where(x => x.Name.Contains("e")),
+				ignoreQueryFilters: true,
+				orderBy: query => query.OrderBy(x => x.Name),
+				skip: 1,
+				take: 1,
+				token: _cancellationToken)
+			.ConfigureAwait(false))
+		{
+			byQueryFilter.Add(entity);
+		}
+
+		List<PersonTypeEntity> byExpression = [];
+		await foreach (PersonTypeEntity entity in repository
+			.StreamByCondition(
+				expression: x => x.Id > 1,
+				ignoreQueryFilters: true,
+				orderBy: query => query.OrderBy(x => x.Id),
+				token: _cancellationToken)
+			.ConfigureAwait(false))
+		{
+			byExpression.Add(entity);
+		}
+
+		List<PersonTypeProjection> projected = [];
+		await foreach (PersonTypeProjection projection in repository
+			.StreamByCondition(
+				expression: x => x.Id > 1,
+				selector: x => new PersonTypeProjection
+				{
+					Id = x.Id,
+					Name = x.Name,
+					Description = x.Description
+				},
+				fieldSelector: x => new PersonTypeProjection
+				{
+					Id = x.Id,
+					Name = x.Name.ToUpperInvariant(),
+					Description = null
+				},
+				ignoreQueryFilters: true,
+				orderBy: query => query.OrderBy(x => x.Id),
+				token: _cancellationToken)
+			.ConfigureAwait(false))
+		{
+			projected.Add(projection);
+		}
+
+		Assert.HasCount(3, all);
+
+		Assert.HasCount(1, byQueryFilter);
+		Assert.AreEqual("Female", byQueryFilter.Single().Name);
+
+		Assert.HasCount(2, byExpression);
+		Assert.AreEqual(2, byExpression[0].Id);
+		Assert.AreEqual(3, byExpression[1].Id);
+
+		Assert.HasCount(2, projected);
+		Assert.IsTrue(projected.All(x => x.Description is null));
+		Assert.AreEqual("MALE", projected[0].Name);
+	}
+
+	[TestMethod]
+	public async Task StreamHonorsCancellationTest()
+	{
+		PersonTypeRepository repository = new(DbContext);
+		using CancellationTokenSource tokenSource = new();
+		await tokenSource.CancelAsync().ConfigureAwait(false);
+
+		await Assert.ThrowsAsync<OperationCanceledException>(async () =>
+		{
+			await foreach (PersonTypeEntity entity in repository
+				.StreamAll(ignoreQueryFilters: true, token: tokenSource.Token)
+				.ConfigureAwait(false))
+			{
+				Assert.IsNotNull(entity);
+			}
+		}).ConfigureAwait(false);
+	}
+
+	[TestMethod]
+	public async Task StreamYieldsEntitiesIncrementallyTest()
+	{
+		PersonTypeRepository repository = new(DbContext);
+		List<int> trackedAfterEachEntity = [];
+
+		await foreach (PersonTypeEntity entity in repository
+			.StreamAll(ignoreQueryFilters: true, trackChanges: true, token: _cancellationToken)
+			.ConfigureAwait(false))
+		{
+			Assert.IsNotNull(entity);
+			trackedAfterEachEntity.Add(DbContext.ChangeTracker.Entries<PersonTypeEntity>().Count());
+		}
+
+		List<int> expectedTrackedCounts = [1, 2, 3];
+
+		Assert.HasCount(3, trackedAfterEachEntity);
+		CollectionAssert.AreEqual(expectedTrackedCounts, trackedAfterEachEntity);
+	}
+
 	private sealed class PersonTypeProjection
 	{
 		public int Id { get; init; }

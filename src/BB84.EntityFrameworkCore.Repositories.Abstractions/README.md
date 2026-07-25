@@ -47,6 +47,15 @@ The base repository interface. All methods have synchronous and asynchronous var
 - `GetManyByCondition<TResult>(...)` — projected paged/filtered list
 - `CountAll(ignoreQueryFilters)` / `CountByCondition(expression, ...)` — count queries
 
+**Stream** (asynchronous only, returns `IAsyncEnumerable<T>`)
+
+- `StreamAll(ignoreQueryFilters, trackChanges, token)` — streams all entities
+- `StreamAll<TResult>(selector, fieldSelector, ignoreQueryFilters, token)` — streams projected DTOs
+- `StreamByCondition(expression, queryFilter, ignoreQueryFilters, orderBy, skip, take, trackChanges, token, includeProperties)`
+- `StreamByCondition<TResult>(...)` — streams projected results
+
+The parameters mirror the corresponding `GetAllAsync` / `GetManyByConditionAsync` methods; only the return type differs. Unlike those, the result set is **not buffered** — entities are yielded as they are read from the database. The returned sequence is lazy, so it must be enumerated within the lifetime of the `IDbContext` and only one stream may be live per context at a time.
+
 **Update**
 
 - `Update(entity)` / `Update(entities)` — marks entity/entities as `Modified`

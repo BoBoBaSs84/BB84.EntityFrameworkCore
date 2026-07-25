@@ -456,6 +456,156 @@ public interface IGenericRepository<TEntity>
 		CancellationToken token = default);
 
 	/// <summary>
+	/// Streams all entities of type <typeparamref name="TEntity"/> from the data source.
+	/// </summary>
+	/// <remarks>
+	/// In contrast to <see cref="GetAllAsync(bool, bool, CancellationToken)"/> the result set is not
+	/// buffered, the entities are yielded as they are read from the database. The returned sequence is
+	/// lazy and must be enumerated within the lifetime of the underlying database context. Enumerating
+	/// with change tracking enabled makes the change tracker grow with every yielded entity.
+	/// </remarks>
+	/// <param name="ignoreQueryFilters">
+	/// A value indicating whether to ignore any query filters applied to the entity type.
+	/// </param>
+	/// <param name="trackChanges">
+	/// A value indicating whether the streamed entities should be tracked by the context.
+	/// </param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <returns>
+	/// An <see cref="IAsyncEnumerable{T}"/> that yields all entities of type <typeparamref name="TEntity"/>.
+	/// </returns>
+	IAsyncEnumerable<TEntity> StreamAll(
+		bool ignoreQueryFilters = false,
+		bool trackChanges = false,
+		CancellationToken token = default);
+
+	/// <summary>
+	/// Streams all entities of type <typeparamref name="TEntity"/> from the data source and projects
+	/// them into a different form using the specified <paramref name="selector"/>.
+	/// </summary>
+	/// <remarks>
+	/// In contrast to <see cref="GetAllAsync{TResult}(Expression{Func{TEntity, TResult}}, Expression{Func{TResult, TResult}}, bool, CancellationToken)"/>
+	/// the result set is not buffered, the projections are yielded as they are read from the database.
+	/// The returned sequence is lazy and must be enumerated within the lifetime of the underlying
+	/// database context.
+	/// </remarks>
+	/// <typeparam name="TResult">The type of the result elements after projection.</typeparam>
+	/// <param name="selector">The expression used to project the entities into the desired form.</param>
+	/// <param name="fieldSelector">The optional expression used to specify which fields to include in the projection.</param>
+	/// <param name="ignoreQueryFilters">
+	/// A value indicating whether to ignore any query filters applied to the entity type.
+	/// </param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <returns>
+	/// An <see cref="IAsyncEnumerable{T}"/> that yields the projected <typeparamref name="TResult"/> instances.
+	/// </returns>
+	IAsyncEnumerable<TResult> StreamAll<TResult>(
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		bool ignoreQueryFilters = false,
+		CancellationToken token = default);
+
+	/// <summary>
+	/// Streams the entities that satisfy the specified query filter, with optional ordering, paging and
+	/// related data inclusion.
+	/// </summary>
+	/// <remarks>
+	/// In contrast to <see cref="GetManyByConditionAsync(Func{IQueryable{TEntity}, IQueryable{TEntity}}, bool, Func{IQueryable{TEntity}, IOrderedQueryable{TEntity}}, int?, int?, bool, CancellationToken, string[])"/>
+	/// the result set is not buffered, the entities are yielded as they are read from the database. The
+	/// returned sequence is lazy and must be enumerated within the lifetime of the underlying database
+	/// context. Enumerating with change tracking enabled makes the change tracker grow with every yielded
+	/// entity.
+	/// </remarks>
+	/// <param name="queryFilter">A function that applies additional filtering to the entity query.</param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
+	/// <param name="orderBy">An optional function to specify the ordering of the streamed entities.</param>
+	/// <param name="skip">The number of entities to skip before starting to yield results.</param>
+	/// <param name="take">The maximum number of entities to yield.</param>
+	/// <param name="trackChanges">true to enable change tracking for the streamed entities; otherwise, false.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <param name="includeProperties">An array of related entity property names to include in the query results for eager loading.</param>
+	/// <returns>
+	/// An <see cref="IAsyncEnumerable{T}"/> that yields the entities matching the specified conditions.
+	/// </returns>
+	IAsyncEnumerable<TEntity> StreamByCondition(
+		Func<IQueryable<TEntity>, IQueryable<TEntity>> queryFilter,
+		bool ignoreQueryFilters = false,
+		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+		int? skip = null,
+		int? take = null,
+		bool trackChanges = false,
+		CancellationToken token = default,
+		params string[] includeProperties);
+
+	/// <summary>
+	/// Streams the entities that satisfy the specified <paramref name="expression"/>, with optional
+	/// ordering, paging and related data inclusion.
+	/// </summary>
+	/// <remarks>
+	/// In contrast to <see cref="GetManyByConditionAsync(Expression{Func{TEntity, bool}}, Func{IQueryable{TEntity}, IQueryable{TEntity}}, bool, Func{IQueryable{TEntity}, IOrderedQueryable{TEntity}}, int?, int?, bool, CancellationToken, string[])"/>
+	/// the result set is not buffered, the entities are yielded as they are read from the database. The
+	/// returned sequence is lazy and must be enumerated within the lifetime of the underlying database
+	/// context. Enumerating with change tracking enabled makes the change tracker grow with every yielded
+	/// entity.
+	/// </remarks>
+	/// <param name="expression">The condition to fulfill to be streamed.</param>
+	/// <param name="queryFilter">The function used to filter the entities.</param>
+	/// <param name="ignoreQueryFilters">Should model-level entity query filters be applied?</param>
+	/// <param name="orderBy">The function used to order the entities.</param>
+	/// <param name="skip">The number of records to skip.</param>
+	/// <param name="take">The number of records to limit the results to.</param>
+	/// <param name="trackChanges">Should the streamed entities be tracked?</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <param name="includeProperties">Any other navigation properties to include when streaming the entities.</param>
+	/// <returns>
+	/// An <see cref="IAsyncEnumerable{T}"/> that yields the entities matching the specified conditions.
+	/// </returns>
+	IAsyncEnumerable<TEntity> StreamByCondition(
+		Expression<Func<TEntity, bool>> expression,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+		int? skip = null,
+		int? take = null,
+		bool trackChanges = false,
+		CancellationToken token = default,
+		params string[] includeProperties);
+
+	/// <summary>
+	/// Streams the entities that satisfy the specified <paramref name="expression"/> and projects them
+	/// into the specified result type, with optional ordering and paging.
+	/// </summary>
+	/// <remarks>
+	/// In contrast to <see cref="GetManyByConditionAsync{TResult}(Expression{Func{TEntity, bool}}, Expression{Func{TEntity, TResult}}, Expression{Func{TResult, TResult}}, Func{IQueryable{TEntity}, IQueryable{TEntity}}, bool, Func{IQueryable{TEntity}, IOrderedQueryable{TEntity}}, int?, int?, CancellationToken)"/>
+	/// the result set is not buffered, the projections are yielded as they are read from the database.
+	/// The returned sequence is lazy and must be enumerated within the lifetime of the underlying
+	/// database context.
+	/// </remarks>
+	/// <typeparam name="TResult">The type of the result returned by the selector expression.</typeparam>
+	/// <param name="expression">An expression that defines the condition entities must satisfy to be streamed.</param>
+	/// <param name="selector">An expression that specifies how to project each matching entity to the result type.</param>
+	/// <param name="fieldSelector">An optional expression that selects specific fields from the projected result.</param>
+	/// <param name="queryFilter">An optional function to apply additional filtering or transformation to the query before execution.</param>
+	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
+	/// <param name="orderBy">An optional function to specify the ordering of the results.</param>
+	/// <param name="skip">The number of results to skip before yielding results. If null, no results are skipped.</param>
+	/// <param name="take">The maximum number of results to yield. If null, all matching results are yielded.</param>
+	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <returns>
+	/// An <see cref="IAsyncEnumerable{T}"/> that yields the projected <typeparamref name="TResult"/> instances.
+	/// </returns>
+	IAsyncEnumerable<TResult> StreamByCondition<TResult>(
+		Expression<Func<TEntity, bool>> expression,
+		Expression<Func<TEntity, TResult>> selector,
+		Expression<Func<TResult, TResult>>? fieldSelector = null,
+		Func<IQueryable<TEntity>, IQueryable<TEntity>>? queryFilter = null,
+		bool ignoreQueryFilters = false,
+		Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+		int? skip = null,
+		int? take = null,
+		CancellationToken token = default);
+
+	/// <summary>
 	/// Updates the specified entity in the underlying data store.
 	/// </summary>
 	/// <remarks>

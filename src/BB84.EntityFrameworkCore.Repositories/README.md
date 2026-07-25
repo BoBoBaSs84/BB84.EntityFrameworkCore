@@ -18,6 +18,27 @@ dotnet add package BB84.EntityFrameworkCore.Repositories
 
 Abstract base for all repositories. Accepts `IDbContext` as a constructor parameter. All query methods delegate to `PrepareQuery(...)`, which composes `Where`, `IgnoreQueryFilters`, `Include`, `OrderBy`, `Skip`, `Take`, and `AsNoTracking` into a single `IQueryable<TEntity>`. Projection overloads use the protected `ApplyProjection(query, selector, fieldSelector)` helper.
 
+#### Streaming reads
+
+`StreamAll` and `StreamByCondition` return `IAsyncEnumerable<T>` instead of `IReadOnlyList<T>`. They take the same parameters as their `GetAllAsync` / `GetManyByConditionAsync` counterparts and go through the same `PrepareQuery(...)` composition, but the result set is not buffered — rows are yielded as they arrive. Use them for exports, batch jobs and other unbounded reads:
+
+```csharp
+await foreach (Product product in repository.StreamByCondition(
+    p => p.IsActive,
+    orderBy: q => q.OrderBy(p => p.Name),
+    token: token))
+{
+    await writer.WriteAsync(product, token);
+}
+```
+
+Two things to keep in mind:
+
+- The sequence is lazy. It must be enumerated within the lifetime of the `IDbContext`, and EF Core allows only one active stream per context at a time.
+- `trackChanges` defaults to `false` and should stay that way for large reads — with tracking enabled the change tracker grows with every yielded entity, which defeats the purpose of streaming.
+
+Subclasses can build their own streaming methods on the `protected QueryManyStream(...)` helpers, which mirror `QueryMany` / `QueryManyAsync` in both the entity and the projection flavour.
+
 ### `IdentityRepository<TEntity, TKey>` / `IdentityRepository<TEntity>`
 
 Extends `GenericRepository<TEntity>` with key-based `GetById`, `GetByIds`, and bulk `Delete`/`Update` by ID. The non-generic overload defaults `TKey` to `Guid`.
