@@ -79,12 +79,26 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		=> PrepareQuery(expression).ExecuteDelete();
 
 	/// <inheritdoc/>
-	public async Task DeleteAsync(TEntity entity, CancellationToken token = default)
-		=> await Task.Run(() => DbSet.Remove(entity), token).ConfigureAwait(false);
+	public Task DeleteAsync(TEntity entity, CancellationToken token = default)
+	{
+		if (token.IsCancellationRequested)
+			return Task.FromCanceled(token);
+
+		DbSet.Remove(entity);
+
+		return Task.CompletedTask;
+	}
 
 	/// <inheritdoc/>
-	public async Task DeleteAsync(IEnumerable<TEntity> entities, CancellationToken token = default)
-		=> await Task.Run(() => DbSet.RemoveRange(entities), token).ConfigureAwait(false);
+	public Task DeleteAsync(IEnumerable<TEntity> entities, CancellationToken token = default)
+	{
+		if (token.IsCancellationRequested)
+			return Task.FromCanceled(token);
+
+		DbSet.RemoveRange(entities);
+
+		return Task.CompletedTask;
+	}
 
 	/// <inheritdoc/>
 	public async Task<int> DeleteAsync(Expression<Func<TEntity, bool>> expression, CancellationToken token = default)
@@ -173,12 +187,26 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		=> PrepareQuery(expression).ExecuteUpdate(setPropertyCalls);
 
 	/// <inheritdoc/>
-	public async Task UpdateAsync(TEntity entity, CancellationToken token = default)
-		=> await Task.Run(() => DbSet.Update(entity), token).ConfigureAwait(false);
+	public Task UpdateAsync(TEntity entity, CancellationToken token = default)
+	{
+		if (token.IsCancellationRequested)
+			return Task.FromCanceled(token);
+
+		DbSet.Update(entity);
+
+		return Task.CompletedTask;
+	}
 
 	/// <inheritdoc/>
-	public async Task UpdateAsync(IEnumerable<TEntity> entities, CancellationToken token = default)
-		=> await Task.Run(() => DbSet.UpdateRange(entities), token).ConfigureAwait(false);
+	public Task UpdateAsync(IEnumerable<TEntity> entities, CancellationToken token = default)
+	{
+		if (token.IsCancellationRequested)
+			return Task.FromCanceled(token);
+
+		DbSet.UpdateRange(entities);
+
+		return Task.CompletedTask;
+	}
 
 	/// <inheritdoc/>
 	public async Task<int> UpdateAsync(
