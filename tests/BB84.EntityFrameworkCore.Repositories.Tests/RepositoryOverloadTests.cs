@@ -21,8 +21,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 	[TestMethod]
 	public void QueryFilterOverloadsSyncTest()
 	{
-		using TestDbContext dbContext = GetTestContext();
-		PersonTypeRepository repository = new(dbContext);
+		PersonTypeRepository repository = new(DbContext);
 
 		int count = repository
 			.CountByCondition(
@@ -52,8 +51,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 	[TestMethod]
 	public async Task QueryFilterOverloadsAsyncTest()
 	{
-		using TestDbContext dbContext = GetTestContext();
-		PersonTypeRepository repository = new(dbContext);
+		PersonTypeRepository repository = new(DbContext);
 
 		int count = await repository
 			.CountByConditionAsync(
@@ -88,8 +86,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 	[TestMethod]
 	public void ProjectionOverloadsSyncTest()
 	{
-		using TestDbContext dbContext = GetTestContext();
-		PersonTypeRepository repository = new(dbContext);
+		PersonTypeRepository repository = new(DbContext);
 
 		IReadOnlyList<PersonTypeProjection> all = repository
 			.GetAll(
@@ -197,8 +194,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 	[TestMethod]
 	public async Task ProjectionOverloadsAsyncTest()
 	{
-		using TestDbContext dbContext = GetTestContext();
-		PersonTypeRepository repository = new(dbContext);
+		PersonTypeRepository repository = new(DbContext);
 
 		IReadOnlyList<PersonTypeProjection> all = await repository
 			.GetAllAsync(
@@ -309,8 +305,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 	[TestMethod]
 	public void DeleteByConditionRemovesMatchingEntitiesTest()
 	{
-		using TestDbContext dbContext = GetTestContext();
-		SkillRepository repository = new(dbContext);
+		SkillRepository repository = new(DbContext);
 		string uniqueName = $"Skill-{Guid.NewGuid():N}";
 
 		SkillEntity entity = new()
@@ -322,7 +317,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 		};
 
 		repository.Create(entity);
-		_ = dbContext.SaveChanges();
+		_ = DbContext.SaveChanges();
 
 		try
 		{
@@ -337,7 +332,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 		}
 		finally
 		{
-			_ = dbContext.Set<SkillEntity>()
+			_ = DbContext.Set<SkillEntity>()
 				.Where(x => x.Name == uniqueName)
 				.ExecuteDelete();
 		}
@@ -346,8 +341,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 	[TestMethod]
 	public void UpdateByConditionAndIdsModifyMatchingEntitiesTest()
 	{
-		using TestDbContext dbContext = GetTestContext();
-		JobRepository repository = new(dbContext);
+		JobRepository repository = new(DbContext);
 		string uniquePrefix = $"Job-{Guid.NewGuid():N}";
 
 		JobEntity first = new()
@@ -365,7 +359,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 		};
 
 		repository.Create([first, second]);
-		_ = dbContext.SaveChanges();
+		_ = DbContext.SaveChanges();
 
 		try
 		{
@@ -392,7 +386,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 		}
 		finally
 		{
-			_ = dbContext.Set<JobEntity>()
+			_ = DbContext.Set<JobEntity>()
 				.Where(x => x.Id == first.Id || x.Id == second.Id)
 				.ExecuteDelete();
 		}

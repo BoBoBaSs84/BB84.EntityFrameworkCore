@@ -23,7 +23,6 @@ namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 /// </remarks>
 /// <typeparam name="TEntity">The type of the entity being configured.</typeparam>
 /// <typeparam name="TKey">The type of the primary key for the entity.</typeparam>
-/// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class IdentityConfiguration<TEntity, TKey> : IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IIdentityEntity<TKey>

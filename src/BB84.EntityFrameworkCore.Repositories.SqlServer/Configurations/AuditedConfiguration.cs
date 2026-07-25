@@ -27,7 +27,6 @@ namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 /// <typeparam name="TKey">The type of the primary key for the entity.</typeparam>
 /// <typeparam name="TCreator">The type representing the creator of the entity.</typeparam>
 /// <typeparam name="TEdited">The type representing the editor of the entity.</typeparam>
-/// <inheritdoc cref="IEntityTypeConfiguration{TEntity}"/>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity, TKey, TCreator, TEdited> : IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IAuditedEntity<TKey, TCreator, TEdited>
