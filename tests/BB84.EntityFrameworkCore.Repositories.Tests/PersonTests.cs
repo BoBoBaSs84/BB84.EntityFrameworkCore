@@ -144,4 +144,34 @@ public sealed class PersonTests : UnitTestBase
 
 		Assert.IsFalse(persons.Any());
 	}
+
+	[TestMethod]
+	public async Task StreamAllTest()
+	{
+		PersonRepository repository = new(DbContext);
+		int count = 0;
+
+		await foreach (PersonEntity person in repository.StreamAll(true, true).ConfigureAwait(false))
+			count++;
+
+		Assert.AreEqual(0, count);
+	}
+
+	[TestMethod]
+	public async Task StreamByConditionTest()
+	{
+		PersonRepository repository = new(DbContext);
+		int count = 0;
+
+		IAsyncEnumerable<PersonEntity> persons = repository.StreamByCondition(
+			x => x.Id.Equals(Guid.Empty),
+			x => x.Where(x => x.Id.Equals(Guid.Empty)),
+			false, x => x.OrderBy(x => x.Id), 1, 1, false
+			);
+
+		await foreach (PersonEntity person in persons.ConfigureAwait(false))
+			count++;
+
+		Assert.AreEqual(0, count);
+	}
 }
