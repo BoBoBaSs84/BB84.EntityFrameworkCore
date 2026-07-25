@@ -15,8 +15,7 @@ public sealed class SkillTests : UnitTestBase
 	[TestMethod]
 	public void SkillCreateTest()
 	{
-		using TestDbContext context = GetTestContext();
-		SkillRepository repository = new(context);
+		SkillRepository repository = new(DbContext);
 		SkillEntity newSkill = new()
 		{
 			Name = "FancySkill",
@@ -25,7 +24,7 @@ public sealed class SkillTests : UnitTestBase
 		};
 
 		repository.Create(newSkill);
-		int result = context.SaveChanges();
+		int result = DbContext.SaveChanges();
 		Assert.AreEqual(1, result);
 
 		SkillEntity? dbSkill = repository.GetByCondition(x => x.Name == newSkill.Name, trackChanges: true);
@@ -33,7 +32,7 @@ public sealed class SkillTests : UnitTestBase
 		Assert.AreNotEqual(DateTimeOffset.MinValue, dbSkill.CreatedAt);
 
 		dbSkill.IsCritical = false;
-		result = context.SaveChanges();
+		result = DbContext.SaveChanges();
 		Assert.AreEqual(1, result);
 
 		dbSkill = repository.GetByCondition(x => x.Name == newSkill.Name, trackChanges: true);

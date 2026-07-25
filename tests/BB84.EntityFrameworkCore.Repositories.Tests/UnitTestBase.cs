@@ -33,11 +33,28 @@ public abstract class UnitTestBase
 		dbContext.Database.EnsureDeleted();
 	}
 
+	/// <summary>
+	/// The database context for the currently running test.
+	/// </summary>
+	/// <remarks>
+	/// A fresh context is created before each test and disposed afterwards. Static members
+	/// such as <c>[ClassInitialize]</c> run outside of that lifetime and must keep calling
+	/// <see cref="GetTestContext"/> themselves.
+	/// </remarks>
+	protected TestDbContext DbContext { get; private set; } = default!;
+
+	[TestInitialize]
+	public void TestInitialize()
+		=> DbContext = GetTestContext();
+
+	[TestCleanup]
+	public void TestCleanup()
+		=> DbContext.Dispose();
+
 	[TestMethod]
 	public void GenerateCreateScriptTest()
 	{
-		using TestDbContext dbContext = GetTestContext();
-		string sqlScript = dbContext.Database.GenerateCreateScript();
+		string sqlScript = DbContext.Database.GenerateCreateScript();
 		File.WriteAllText("CreateScript.sql", sqlScript);
 	}
 

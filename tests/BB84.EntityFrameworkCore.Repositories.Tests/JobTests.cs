@@ -14,8 +14,7 @@ public sealed class JobTests : UnitTestBase
 	[TestMethod]
 	public void UpdateByIdTest()
 	{
-		using TestDbContext dbContext = GetTestContext();
-		JobRepository repository = new(dbContext);
+		JobRepository repository = new(DbContext);
 
 		int updated = repository.Update(Guid.NewGuid(), s => s.SetProperty(p => p.Name, "Tester"));
 
@@ -25,8 +24,7 @@ public sealed class JobTests : UnitTestBase
 	[TestMethod]
 	public void UpdateByIdsTest()
 	{
-		using TestDbContext dbContext = GetTestContext();
-		JobRepository repository = new(dbContext);
+		JobRepository repository = new(DbContext);
 
 		int updated = repository.Update([Guid.NewGuid(), Guid.NewGuid()], s => s.SetProperty(p => p.Name, "Tester"));
 
@@ -36,8 +34,7 @@ public sealed class JobTests : UnitTestBase
 	[TestMethod]
 	public async Task UpdateByIdAsyncTest()
 	{
-		using TestDbContext dbContext = GetTestContext();
-		JobRepository repository = new(dbContext);
+		JobRepository repository = new(DbContext);
 
 		int updated = await repository.UpdateAsync(Guid.NewGuid(), s => s.SetProperty(p => p.Name, "Tester"))
 			.ConfigureAwait(false);
@@ -48,8 +45,7 @@ public sealed class JobTests : UnitTestBase
 	[TestMethod]
 	public async Task UpdateByIdsAsyncTest()
 	{
-		using TestDbContext dbContext = GetTestContext();
-		JobRepository repository = new(dbContext);
+		JobRepository repository = new(DbContext);
 
 		int updated = await repository.UpdateAsync([Guid.NewGuid(), Guid.NewGuid()], s => s.SetProperty(p => p.Name, "Tester"))
 			.ConfigureAwait(false);
