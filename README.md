@@ -5,9 +5,8 @@
 [![CodeQL](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/actions/workflows/github-code-scanning/codeql)
 [![Dependabot](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/actions/workflows/dependabot/dependabot-updates/badge.svg?branch=main)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/actions/workflows/dependabot/dependabot-updates)
 
-[![.NET](https://img.shields.io/badge/net8.0-5C2D91?logo=.NET&labelColor=gray)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore)
 [![.NET](https://img.shields.io/badge/net10.0-5C2D91?logo=.NET&labelColor=gray)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore)
-[![C#](https://img.shields.io/badge/C%23-13.0-239120)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore)
+[![C#](https://img.shields.io/badge/C%23-14.0-239120)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore)
 [![Issues](https://img.shields.io/github/issues/BoBoBaSs84/BB84.EntityFrameworkCore)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/issues)
 [![Commit](https://img.shields.io/github/last-commit/BoBoBaSs84/BB84.EntityFrameworkCore)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/commit/main)
 [![License](https://img.shields.io/github/license/BoBoBaSs84/BB84.EntityFrameworkCore)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/LICENSE)
@@ -16,7 +15,7 @@
 
 ## 🔎 Overview
 
-**BB84.EntityFrameworkCore** is a .NET 8.0 & .NET 10.0 library collection that provides a reusable repository pattern implementation for Entity Framework Core applications. It ships as five focused NuGet packages that can be adopted incrementally.
+**BB84.EntityFrameworkCore** is a .NET 10.0 library collection that provides a reusable repository pattern implementation for Entity Framework Core applications. It ships as five focused NuGet packages that can be adopted incrementally.
 
 ## 📦 Packages
 
@@ -73,7 +72,7 @@ BB84.EntityFrameworkCore/
 2. Follow the existing code style (see `.editorconfig`).
 3. Add XML documentation for all public APIs.
 4. Add unit tests for every new method.
-5. Ensure all tests pass across all target frameworks.
+5. Ensure all tests pass.
 6. Open a pull request describing your changes.
 
 ## 📖 API Documentation

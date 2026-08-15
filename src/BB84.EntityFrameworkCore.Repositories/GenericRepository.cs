@@ -200,11 +200,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	/// <inheritdoc/>
 	public int Update(
 		Expression<Func<TEntity, bool>> expression,
-#if NET8_0
-		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls)
-#else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls)
-#endif
 		=> PrepareQuery(expression).ExecuteUpdate(setPropertyCalls);
 
 	/// <inheritdoc/>
@@ -232,11 +228,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	/// <inheritdoc/>
 	public async Task<int> UpdateAsync(
 		Expression<Func<TEntity, bool>> expression,
-#if NET8_0
-		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
-#else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
-#endif
 		CancellationToken token = default)
 		=> await PrepareQuery(expression).ExecuteUpdateAsync(setPropertyCalls, token).ConfigureAwait(false);
 
