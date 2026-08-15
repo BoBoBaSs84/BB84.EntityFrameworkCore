@@ -45,10 +45,12 @@ dotnet build
 
 # Run all tests
 dotnet test
-
-# Run tests
-dotnet test
 ```
+
+The repository tests start a SQL Server container through
+[Testcontainers](https://testcontainers.com/), so a running Docker daemon is required for
+`dotnet test`. The entity tests have no such dependency. On Apple silicon the SQL Server image
+runs under emulation, which works but is noticeably slower.
 
 ## 🏗️ Project structure
 
@@ -62,7 +64,7 @@ BB84.EntityFrameworkCore/
 │   └── BB84.EntityFrameworkCore.Repositories.SqlServer/  # SQL Server configurations and extensions
 ├── tests/
 │   ├── BB84.EntityFrameworkCore.Entities.Tests/          # Entity unit tests
-│   └── BB84.EntityFrameworkCore.Repositories.Tests/      # Repository integration tests (requires LocalDB)
+│   └── BB84.EntityFrameworkCore.Repositories.Tests/      # Repository integration tests (requires Docker)
 └── docs/                                                 # DocFX documentation source
 ```
 

@@ -7,7 +7,10 @@ using BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Interceptors;
 
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+
+using Testcontainers.MsSql;
 
 namespace BB84.EntityFrameworkCore.Repositories.Tests;
 
@@ -15,22 +18,41 @@ namespace BB84.EntityFrameworkCore.Repositories.Tests;
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, unit testing.")]
 public abstract class UnitTestBase
 {
+	private const string DatabaseName = "TestDb";
+	private const string ContainerImage = "mcr.microsoft.com/mssql/server:2022-latest";
+
 	private static readonly SoftDeletableInterceptor SoftDeletableInterceptor = new();
 	private static readonly TimeAuditedInterceptor TimeAuditedInterceptor = new();
 	private static readonly UserAuditedInterceptor UserAuditedInterceptor = new();
+	private static readonly MsSqlContainer Container = new MsSqlBuilder(ContainerImage).Build();
+
+	private static string? connectionString;
 
 	[AssemblyInitialize]
-	public static void AssemblyInitialize(TestContext context)
+	public static async Task AssemblyInitialize(TestContext context)
 	{
+		await Container.StartAsync()
+			.ConfigureAwait(false);
+
+		// The container hands out a connection string pointing at "master";
+		// the test database itself is created by "EnsureCreated" below.
+		connectionString = new SqlConnectionStringBuilder(Container.GetConnectionString())
+		{
+			InitialCatalog = DatabaseName
+		}.ConnectionString;
+
 		using TestDbContext dbContext = GetTestContext();
 		dbContext.Database.EnsureCreated();
 	}
 
 	[AssemblyCleanup]
-	public static void AssemblyCleanup()
+	public static async Task AssemblyCleanup()
 	{
-		using TestDbContext dbContext = GetTestContext();
-		dbContext.Database.EnsureDeleted();
+		using (TestDbContext dbContext = GetTestContext())
+			dbContext.Database.EnsureDeleted();
+
+		await Container.DisposeAsync()
+			.ConfigureAwait(false);
 	}
 
 	/// <summary>
@@ -51,22 +73,16 @@ public abstract class UnitTestBase
 	public void TestCleanup()
 		=> DbContext.Dispose();
 
-	[TestMethod]
-	public void GenerateCreateScriptTest()
-	{
-		string sqlScript = DbContext.Database.GenerateCreateScript();
-		File.WriteAllText("CreateScript.sql", sqlScript);
-	}
-
 	public static TestDbContext GetTestContext()
 		=> new(GetContextOptions(), SoftDeletableInterceptor, TimeAuditedInterceptor, UserAuditedInterceptor);
 
 	private static DbContextOptions<TestDbContext> GetContextOptions()
 	{
-		const string dbName = "TestDb";
+		if (connectionString is null)
+			throw new InvalidOperationException($"The database container has not been started, '{nameof(AssemblyInitialize)}' must run first.");
 
 		return new DbContextOptionsBuilder<TestDbContext>()
-			.UseSqlServer($"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog={dbName};Integrated Security=True")
+			.UseSqlServer(connectionString)
 			.Options;
 	}
 }
