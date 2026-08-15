@@ -1,0 +1,123 @@
+name: Bug report
+description: Report incorrect behaviour in one of the packages
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a report. The environment fields below are what make a
+        report actionable, please fill them in even if the problem looks obvious.
+
+  - type: dropdown
+    id: package
+    attributes:
+      label: Package
+      description: Which package does the problem occur in?
+      options:
+        - BB84.EntityFrameworkCore.Entities.Abstractions
+        - BB84.EntityFrameworkCore.Entities
+        - BB84.EntityFrameworkCore.Repositories.Abstractions
+        - BB84.EntityFrameworkCore.Repositories
+        - BB84.EntityFrameworkCore.Repositories.SqlServer
+        - Not sure
+      multiple: true
+    validations:
+      required: true
+
+  - type: input
+    id: package-version
+    attributes:
+      label: Package version
+      description: The version of the package named above.
+      placeholder: "4.5.1234.5"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: target-framework
+    attributes:
+      label: Target framework
+      description: The target framework of the project consuming the package.
+      options:
+        - net8.0
+        - net10.0
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: efcore-version
+    attributes:
+      label: Entity Framework Core version
+      description: The version of `Microsoft.EntityFrameworkCore` resolved in your project.
+      placeholder: "10.0.10"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: provider
+    attributes:
+      label: Database provider
+      description: The Entity Framework Core provider in use.
+      options:
+        - Microsoft.EntityFrameworkCore.SqlServer
+        - Npgsql.EntityFrameworkCore.PostgreSQL
+        - Microsoft.EntityFrameworkCore.Sqlite
+        - Microsoft.EntityFrameworkCore.InMemory
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what goes wrong.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: |
+        The smallest piece of code that shows the problem, entity, configuration and the repository
+        call. This will be rendered as C#, no backticks needed.
+      render: csharp
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What you expected to happen instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: exception
+    attributes:
+      label: Exception and stack trace
+      description: The full exception message and stack trace, if one is thrown.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: sql
+    attributes:
+      label: Generated SQL
+      description: The SQL produced by Entity Framework Core, if relevant to the problem.
+      render: sql
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Anything else that helps explain the problem.
+    validations:
+      required: false

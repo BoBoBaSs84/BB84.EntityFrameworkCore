@@ -1,0 +1,8 @@
+# Blank issues stay enabled as the escape hatch for anything the two forms do not cover.
+# Once GitHub Discussions is enabled for this repository, add a contact link for usage
+# questions here and set this to false.
+blank_issues_enabled: true
+contact_links:
+  - name: API documentation
+    url: https://bobobass84.github.io/BB84.EntityFrameworkCore
+    about: The complete API reference. Please check here before opening a usage question.
