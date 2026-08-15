@@ -63,12 +63,8 @@ public abstract class UnitTestBase
 
 	private static DbContextOptions<TestDbContext> GetContextOptions()
 	{
-		string dbName = "TestDb";
-#if NET8_0
-		dbName += "80";
-#else
-		dbName += "100";
-#endif
+		const string dbName = "TestDb";
+
 		return new DbContextOptionsBuilder<TestDbContext>()
 			.UseSqlServer($"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog={dbName};Integrated Security=True")
 			.Options;

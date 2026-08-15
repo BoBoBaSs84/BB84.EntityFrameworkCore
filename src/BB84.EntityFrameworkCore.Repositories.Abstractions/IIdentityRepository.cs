@@ -212,11 +212,7 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// </returns>
 	int Update(
 		TKey id,
-#if NET8_0
-		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls);
-#else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls);
-#endif
 
 	/// <summary>
 	/// Updates the entities identified by the specified identifiers with the provided property changes.
@@ -235,42 +231,20 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// </returns>
 	int Update(
 		IEnumerable<TKey> ids,
-#if NET8_0
-		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls);
-#else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls);
-#endif
 
-#if NET8_0
-	/// <inheritdoc cref="Update(TKey, Expression{Func{SetPropertyCalls{TEntity}, SetPropertyCalls{TEntity}}})"/>
-	/// <param name="token">The cancellation token to cancel the request.</param>
-#else
 	/// <inheritdoc cref="Update(TKey, Action{UpdateSettersBuilder{TEntity}})"/>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-#endif
 	Task<int> UpdateAsync(
 		TKey id,
-#if NET8_0
-		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
-#else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
-#endif
 		CancellationToken token = default);
 
-#if NET8_0
-	/// <inheritdoc cref="Update(IEnumerable{TKey}, Expression{Func{SetPropertyCalls{TEntity}, SetPropertyCalls{TEntity}}})"/>
-	/// <param name="token">The cancellation token to cancel the request.</param>
-#else
 	/// <inheritdoc cref="Update(IEnumerable{TKey}, Action{UpdateSettersBuilder{TEntity}})"/>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-#endif
 	Task<int> UpdateAsync(
 		IEnumerable<TKey> ids,
-#if NET8_0
-		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
-#else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
-#endif
 		CancellationToken token = default);
 }
 

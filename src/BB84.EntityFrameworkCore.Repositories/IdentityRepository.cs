@@ -78,42 +78,26 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 	/// <inheritdoc/>
 	public int Update(
 		TKey id,
-#if NET8_0
-		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls)
-#else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls)
-#endif
 		=> Update(ById(id), setPropertyCalls);
 
 	/// <inheritdoc/>
 	public int Update(
 		IEnumerable<TKey> ids,
-#if NET8_0
-		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls)
-#else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls)
-#endif
 		=> Update(ByIds(ids), setPropertyCalls);
 
 	/// <inheritdoc/>
 	public async Task<int> UpdateAsync(
 		TKey id,
-#if NET8_0
-		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
-#else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
-#endif
 		CancellationToken token = default)
 		=> await UpdateAsync(ById(id), setPropertyCalls, token).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public async Task<int> UpdateAsync(
 		IEnumerable<TKey> ids,
-#if NET8_0
-		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
-#else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
-#endif
 		CancellationToken token = default)
 		=> await UpdateAsync(ByIds(ids), setPropertyCalls, token).ConfigureAwait(false);
 

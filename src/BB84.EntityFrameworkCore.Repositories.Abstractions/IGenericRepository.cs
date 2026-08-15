@@ -640,11 +640,7 @@ public interface IGenericRepository<TEntity>
 	/// <returns>The total number of rows updated in the database.</returns>
 	int Update(
 		Expression<Func<TEntity, bool>> expression,
-#if NET8_0
-		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls);
-#else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls);
-#endif
 
 	/// <inheritdoc cref="Update(TEntity)"/>
 	/// <param name="token">The cancellation token to cancel the request.</param>
@@ -660,19 +656,10 @@ public interface IGenericRepository<TEntity>
 		IEnumerable<TEntity> entities,
 		CancellationToken token = default);
 
-#if NET8_0
-	/// <inheritdoc cref="Update(Expression{Func{TEntity, bool}}, Expression{Func{SetPropertyCalls{TEntity}, SetPropertyCalls{TEntity}}})"/>
-	/// <param name="token">The cancellation token to cancel the request.</param>
-#else
 	/// <inheritdoc cref="Update(Expression{Func{TEntity, bool}}, Action{UpdateSettersBuilder{TEntity}})"/>
 	/// <param name="token">The cancellation token to cancel the request.</param>
-#endif
 	Task<int> UpdateAsync(
 		Expression<Func<TEntity, bool>> expression,
-#if NET8_0
-		Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,
-#else
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
-#endif
 		CancellationToken token = default);
 }
