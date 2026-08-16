@@ -1,8 +1,8 @@
 <Project>
 
 	<PropertyGroup Label="Versioning">
-		<VersionMajor>4</VersionMajor>
-		<VersionMinor>5</VersionMinor>
+		<VersionMajor>5</VersionMajor>
+		<VersionMinor>0</VersionMinor>
 		<VersionPatch>$([System.DateTime]::UtcNow.ToString("MMdd"))</VersionPatch>
 		<VersionRevision>$([System.DateTime]::UtcNow.TimeOfDay.TotalHours.ToString("0"))</VersionRevision>
 		<VersionPrefix>$(VersionMajor).$(VersionMinor).$(VersionPatch).$(VersionRevision)</VersionPrefix>
@@ -14,14 +14,13 @@
 		<AllowUnsafeBlocks>False</AllowUnsafeBlocks>
 		<AnalysisLevel>latest</AnalysisLevel>
 		<AnalysisMode>recommended</AnalysisMode>
-		<!-- Due to breaking changes between .NET8.0 and .NET10.0 -->
-		<ApiCompatGenerateSuppressionFile>True</ApiCompatGenerateSuppressionFile>
 		<AppendTargetFrameworkToOutputPath>True</AppendTargetFrameworkToOutputPath>
 		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
 		<DebugType>full</DebugType>
 		<Deterministic>True</Deterministic>
 		<EnableNETAnalyzers>True</EnableNETAnalyzers>
 		<EnablePackageValidation>True</EnablePackageValidation>
+		<!-- <PackageValidationBaselineVersion>5.0.0</PackageValidationBaselineVersion> -->
 		<GenerateAssemblyInfo>True</GenerateAssemblyInfo>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<ImplicitUsings>enable</ImplicitUsings>

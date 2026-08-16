@@ -16,7 +16,7 @@ env:
 jobs:
   deploy:
     name: Build, Test & Publish
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -35,7 +35,7 @@ jobs:
 
   pages:
     name: Publish & Deploy Pages
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
