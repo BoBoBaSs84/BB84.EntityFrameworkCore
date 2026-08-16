@@ -8,7 +8,7 @@ using System.Data.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace BB84.EntityFrameworkCore.Repositories.Extensions;
+namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions;
 
 public static partial class DatabaseFacadeExtensions
 {
@@ -28,10 +28,12 @@ public static partial class DatabaseFacadeExtensions
 		IEnumerable<DbParameter> parameters)
 	{
 		ArgumentNullException.ThrowIfNull(databaseFacade);
+		ArgumentNullException.ThrowIfNull(parameters);
 
-		string sql = CreateTableFunctionCommand(schema, name, parameters);
+		DbParameter[] materialized = [.. parameters];
+		string sql = CreateTableFunctionCommand(schema, name, materialized);
 
-		return [.. databaseFacade.SqlQueryRaw<T>(sql, [.. parameters])];
+		return [.. databaseFacade.SqlQueryRaw<T>(sql, materialized)];
 	}
 
 	/// <summary>
@@ -52,11 +54,13 @@ public static partial class DatabaseFacadeExtensions
 		CancellationToken cancellationToken = default)
 	{
 		ArgumentNullException.ThrowIfNull(databaseFacade);
+		ArgumentNullException.ThrowIfNull(parameters);
 
-		string sql = CreateTableFunctionCommand(schema, name, parameters);
+		DbParameter[] materialized = [.. parameters];
+		string sql = CreateTableFunctionCommand(schema, name, materialized);
 
 		return await databaseFacade
-			.SqlQueryRaw<T>(sql, [.. parameters])
+			.SqlQueryRaw<T>(sql, materialized)
 			.ToListAsync(cancellationToken)
 			.ConfigureAwait(false);
 	}
@@ -77,11 +81,13 @@ public static partial class DatabaseFacadeExtensions
 		IEnumerable<DbParameter> parameters)
 	{
 		ArgumentNullException.ThrowIfNull(databaseFacade);
+		ArgumentNullException.ThrowIfNull(parameters);
 
-		string sql = CreateScalarFunctionCommand(schema, name, parameters);
+		DbParameter[] materialized = [.. parameters];
+		string sql = CreateScalarFunctionCommand(schema, name, materialized);
 
 		return databaseFacade
-			.SqlQueryRaw<T>(sql, [.. parameters])
+			.SqlQueryRaw<T>(sql, materialized)
 			.SingleOrDefault();
 	}
 
@@ -103,28 +109,26 @@ public static partial class DatabaseFacadeExtensions
 		CancellationToken cancellationToken = default)
 	{
 		ArgumentNullException.ThrowIfNull(databaseFacade);
+		ArgumentNullException.ThrowIfNull(parameters);
 
-		string sql = CreateScalarFunctionCommand(schema, name, parameters);
+		DbParameter[] materialized = [.. parameters];
+		string sql = CreateScalarFunctionCommand(schema, name, materialized);
 
 		return await databaseFacade
-			.SqlQueryRaw<T>(sql, [.. parameters])
+			.SqlQueryRaw<T>(sql, materialized)
 			.SingleOrDefaultAsync(cancellationToken)
 			.ConfigureAwait(false);
 	}
 
-	private static string CreateScalarFunctionCommand(string schema, string name, IEnumerable<DbParameter> parameters)
+	private static string CreateScalarFunctionCommand(string schema, string name, IReadOnlyCollection<DbParameter> parameters)
 	{
-		ArgumentNullException.ThrowIfNull(parameters);
-
 		string parameterPlaceholders = string.Join(", ", parameters.Select(GetParameterToken));
 
 		return $"SELECT [Value] = {GetObjectToken(schema, name)}({parameterPlaceholders})";
 	}
 
-	private static string CreateTableFunctionCommand(string schema, string name, IEnumerable<DbParameter> parameters)
+	private static string CreateTableFunctionCommand(string schema, string name, IReadOnlyCollection<DbParameter> parameters)
 	{
-		ArgumentNullException.ThrowIfNull(parameters);
-
 		string parameterPlaceholders = string.Join(", ", parameters.Select(GetParameterToken));
 
 		return $"SELECT * FROM {GetObjectToken(schema, name)}({parameterPlaceholders})";
