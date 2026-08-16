@@ -79,7 +79,6 @@ public abstract class EnumeratorConfiguration<TEntity, TKey> : IEntityTypeConfig
 /// <remarks>
 /// The identity column is of type <see cref="int"/>.
 /// </remarks>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class EnumeratorConfiguration<TEntity> : EnumeratorConfiguration<TEntity, int>
 	where TEntity : class, IEnumeratorEntity
 { }

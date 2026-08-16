@@ -3,8 +3,6 @@
 //
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
-using System.Diagnostics.CodeAnalysis;
-
 using BB84.EntityFrameworkCore.Entities.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +18,6 @@ namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 /// <see cref="Base.AuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/> and tunes it for
 /// SQL Server by declaring the primary key as non clustered.
 /// </remarks>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity, TKey, TCreator, TEdited> : Base.AuditedConfiguration<TEntity, TKey, TCreator, TEdited>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IAuditedEntity<TKey, TCreator, TEdited>
 	where TKey : IEquatable<TKey>
@@ -39,7 +36,6 @@ public abstract class AuditedConfiguration<TEntity, TKey, TCreator, TEdited> : B
 /// <remarks>
 /// The creator and editor columns are mapped as <b>sysname</b>.
 /// </remarks>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity, TKey> : AuditedConfiguration<TEntity, TKey, string, string?>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IAuditedEntity<TKey>
 	where TKey : IEquatable<TKey>
@@ -57,7 +53,6 @@ public abstract class AuditedConfiguration<TEntity, TKey> : AuditedConfiguration
 /// <remarks>
 /// The identifier column defaults to <c>NEWID()</c>.
 /// </remarks>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity, TCreator, TEdited> : AuditedConfiguration<TEntity, Guid, TCreator, TEdited>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IAuditedEntity<TCreator, TEdited>
 	where TCreator : notnull
@@ -76,7 +71,6 @@ public abstract class AuditedConfiguration<TEntity, TCreator, TEdited> : Audited
 /// The identifier column defaults to <c>NEWID()</c> and the creator and editor columns are
 /// mapped as <b>sysname</b>.
 /// </remarks>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity> : AuditedConfiguration<TEntity, Guid, string, string?>,
 	IEntityTypeConfiguration<TEntity> where TEntity : class, IAuditedEntity
 {

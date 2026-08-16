@@ -3,7 +3,6 @@
 //
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Repositories;
 
@@ -40,7 +39,7 @@ public sealed class PersonTypeTests : UnitTestBase
 	{
 		PersonTypeRepository repository = new(DbContext);
 
-		PersonTypeEntity? result = await repository.GetByNameAsync("Male")
+		PersonTypeEntity? result = await repository.GetByNameAsync("Male", cancellationToken: TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.IsNotNull(result);
@@ -51,7 +50,7 @@ public sealed class PersonTypeTests : UnitTestBase
 	{
 		PersonTypeRepository repository = new(DbContext);
 
-		IEnumerable<PersonTypeEntity> result = await repository.GetByNamesAsync(["Male", "Female"])
+		IEnumerable<PersonTypeEntity> result = await repository.GetByNamesAsync(["Male", "Female"], cancellationToken: TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.IsNotNull(result);
@@ -81,7 +80,7 @@ public sealed class PersonTypeTests : UnitTestBase
 		{
 			Where = x => x.Id.Equals(Guid.Empty),
 			Include = [x => x.Type]
-		}).ConfigureAwait(false);
+		}, TestContext.CancellationToken).ConfigureAwait(false);
 
 		Assert.IsNull(person);
 	}
@@ -111,15 +110,15 @@ public sealed class PersonTypeTests : UnitTestBase
 		PersonTypeRepository repository = new(DbContext);
 		PersonTypeEntity entity = new() { Name = "SoftDeleteAsyncTest", Description = "To be soft deleted." };
 
-		await repository.CreateAsync(entity);
-		_ = await DbContext.SaveChangesAsync();
+		await repository.CreateAsync(entity, TestContext.CancellationToken);
+		_ = await DbContext.SaveChangesAsync(TestContext.CancellationToken);
 
-		await repository.DeleteAsync(entity);
-		_ = await DbContext.SaveChangesAsync();
+		await repository.DeleteAsync(entity, TestContext.CancellationToken);
+		_ = await DbContext.SaveChangesAsync(TestContext.CancellationToken);
 
 		Assert.IsTrue(entity.IsDeleted);
-		Assert.IsNull(await repository.GetByIdAsync(entity.Id));
-		Assert.IsNotNull(await repository.GetByIdAsync(entity.Id, new() { IgnoreQueryFilters = true }));
+		Assert.IsNull(await repository.GetByIdAsync(entity.Id, cancellationToken: TestContext.CancellationToken));
+		Assert.IsNotNull(await repository.GetByIdAsync(entity.Id, new() { IgnoreQueryFilters = true }, TestContext.CancellationToken));
 
 		Purge(entity);
 	}
@@ -139,4 +138,6 @@ public sealed class PersonTypeTests : UnitTestBase
 			.IgnoreQueryFilters()
 			.Where(x => x.Id == entity.Id)
 			.ExecuteDelete();
+
+	public TestContext TestContext { get; set; }
 }

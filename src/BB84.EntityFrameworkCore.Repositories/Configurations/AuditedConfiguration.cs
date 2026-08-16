@@ -3,8 +3,6 @@
 //
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
-using System.Diagnostics.CodeAnalysis;
-
 using BB84.EntityFrameworkCore.Entities.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
@@ -26,7 +24,6 @@ namespace BB84.EntityFrameworkCore.Repositories.Configurations;
 /// <typeparam name="TKey">The type of the primary key for the entity.</typeparam>
 /// <typeparam name="TCreator">The type representing the creator of the entity.</typeparam>
 /// <typeparam name="TEdited">The type representing the editor of the entity.</typeparam>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity, TKey, TCreator, TEdited> : IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IAuditedEntity<TKey, TCreator, TEdited>
 	where TKey : IEquatable<TKey>
@@ -42,21 +39,18 @@ public abstract class AuditedConfiguration<TEntity, TKey, TCreator, TEdited> : I
 }
 
 /// <inheritdoc cref="AuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity, TKey> : AuditedConfiguration<TEntity, TKey, string, string?>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IAuditedEntity<TKey>
 	where TKey : IEquatable<TKey>
 { }
 
 /// <inheritdoc cref="AuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity, TCreator, TEdited> : AuditedConfiguration<TEntity, Guid, TCreator, TEdited>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IAuditedEntity<TCreator, TEdited>
 	where TCreator : notnull
 { }
 
 /// <inheritdoc cref="AuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class AuditedConfiguration<TEntity> : AuditedConfiguration<TEntity, Guid, string, string?>,
 	IEntityTypeConfiguration<TEntity> where TEntity : class, IAuditedEntity
 { }

@@ -18,7 +18,6 @@ namespace BB84.EntityFrameworkCore.Repositories.Tests;
 /// every run would write the same file.
 /// </remarks>
 [TestClass]
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, unit testing.")]
 public sealed class CreateScriptTests
 {
 	public TestContext TestContext { get; set; } = default!;
@@ -31,8 +30,9 @@ public sealed class CreateScriptTests
 		string sqlScript = dbContext.Database.GenerateCreateScript();
 
 		Assert.IsFalse(string.IsNullOrWhiteSpace(sqlScript));
+
 		foreach (string tableName in new[] { "Jobs", "JobTypes", "Persons", "PersonJobs", "PersonTypes", "Skills" })
-			StringAssert.Contains(sqlScript, tableName);
+			Assert.Contains(tableName, sqlScript);
 
 		string filePath = Path.Combine(TestContext.TestRunResultsDirectory ?? AppContext.BaseDirectory, "CreateScript.sql");
 		File.WriteAllText(filePath, sqlScript);

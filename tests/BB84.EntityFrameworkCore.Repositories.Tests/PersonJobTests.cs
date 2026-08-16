@@ -3,7 +3,6 @@
 //
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Repositories;
 
@@ -41,7 +40,7 @@ public sealed class PersonJobTests : UnitTestBase
 
 		PersonJobEntity personJob = new();
 
-		await repository.CreateAsync(personJob)
+		await repository.CreateAsync(personJob, TestContext.CancellationToken)
 			.ConfigureAwait(false);
 	}
 
@@ -52,7 +51,7 @@ public sealed class PersonJobTests : UnitTestBase
 
 		List<PersonJobEntity> personJobs = [new(), new()];
 
-		await repository.CreateAsync(personJobs)
+		await repository.CreateAsync(personJobs, TestContext.CancellationToken)
 			.ConfigureAwait(false);
 	}
 
@@ -81,7 +80,7 @@ public sealed class PersonJobTests : UnitTestBase
 	{
 		PersonJobRepository repository = new(DbContext);
 
-		int count = await repository.CountAsync()
+		int count = await repository.CountAsync(cancellationToken: TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(0, count);
@@ -92,7 +91,7 @@ public sealed class PersonJobTests : UnitTestBase
 	{
 		PersonJobRepository repository = new(DbContext);
 
-		int count = await repository.CountAsync(new() { Where = x => x.PersonId.Equals(Guid.Empty) })
+		int count = await repository.CountAsync(new() { Where = x => x.PersonId.Equals(Guid.Empty) }, TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(0, count);
@@ -125,7 +124,7 @@ public sealed class PersonJobTests : UnitTestBase
 
 		PersonJobEntity personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
 
-		await repository.DeleteAsync(personJob)
+		await repository.DeleteAsync(personJob, TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(EntityState.Deleted, DbContext.Entry(personJob).State);
@@ -138,7 +137,7 @@ public sealed class PersonJobTests : UnitTestBase
 
 		List<PersonJobEntity> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
 
-		await repository.DeleteAsync(personJobs)
+		await repository.DeleteAsync(personJobs, TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(EntityState.Deleted, DbContext.Entry(personJobs[0]).State);
@@ -171,7 +170,7 @@ public sealed class PersonJobTests : UnitTestBase
 
 		PersonJobEntity personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
 
-		await repository.UpdateAsync(personJob)
+		await repository.UpdateAsync(personJob, TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(EntityState.Modified, DbContext.Entry(personJob).State);
@@ -184,7 +183,7 @@ public sealed class PersonJobTests : UnitTestBase
 
 		List<PersonJobEntity> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
 
-		await repository.UpdateAsync(personJobs)
+		await repository.UpdateAsync(personJobs, TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(EntityState.Modified, DbContext.Entry(personJobs[0]).State);
@@ -203,4 +202,6 @@ public sealed class PersonJobTests : UnitTestBase
 
 		Assert.AreEqual(EntityState.Detached, DbContext.Entry(personJob).State);
 	}
+
+	public TestContext TestContext { get; set; }
 }

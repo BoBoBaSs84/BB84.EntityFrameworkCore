@@ -3,8 +3,6 @@
 //
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
-using System.Diagnostics.CodeAnalysis;
-
 using BB84.EntityFrameworkCore.Entities.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
@@ -23,7 +21,6 @@ namespace BB84.EntityFrameworkCore.Repositories.Configurations;
 /// </remarks>
 /// <typeparam name="TEntity">The type of the entity being configured.</typeparam>
 /// <typeparam name="TKey">The type of the primary key for the entity.</typeparam>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class IdentityConfiguration<TEntity, TKey> : IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IIdentityEntity<TKey>
 	where TKey : IEquatable<TKey>
@@ -37,7 +34,6 @@ public abstract class IdentityConfiguration<TEntity, TKey> : IEntityTypeConfigur
 }
 
 /// <inheritdoc cref="IdentityConfiguration{TEntity, TKey}"/>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class IdentityConfiguration<TEntity> : IdentityConfiguration<TEntity, Guid>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IIdentityEntity
 { }

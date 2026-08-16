@@ -3,7 +3,6 @@
 //
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Repositories;
 
 namespace BB84.EntityFrameworkCore.Repositories.Tests;
@@ -36,7 +35,7 @@ public sealed class JobTests : UnitTestBase
 	{
 		JobRepository repository = new(DbContext);
 
-		int updated = await repository.UpdateAsync(Guid.NewGuid(), s => s.SetProperty(p => p.Name, "Tester"))
+		int updated = await repository.UpdateAsync(Guid.NewGuid(), s => s.SetProperty(p => p.Name, "Tester"), TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(0, updated);
@@ -47,9 +46,11 @@ public sealed class JobTests : UnitTestBase
 	{
 		JobRepository repository = new(DbContext);
 
-		int updated = await repository.UpdateAsync([Guid.NewGuid(), Guid.NewGuid()], s => s.SetProperty(p => p.Name, "Tester"))
+		int updated = await repository.UpdateAsync([Guid.NewGuid(), Guid.NewGuid()], s => s.SetProperty(p => p.Name, "Tester"), TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(0, updated);
 	}
+
+	public TestContext TestContext { get; set; }
 }

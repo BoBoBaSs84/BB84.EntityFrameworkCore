@@ -3,7 +3,6 @@
 //
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Repositories;
 
@@ -37,7 +36,7 @@ public sealed class PersonTests : UnitTestBase
 	{
 		PersonRepository repository = new(DbContext);
 
-		int deleted = await repository.DeleteAsync(Guid.NewGuid())
+		int deleted = await repository.DeleteAsync(Guid.NewGuid(), TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(0, deleted);
@@ -48,7 +47,7 @@ public sealed class PersonTests : UnitTestBase
 	{
 		PersonRepository repository = new(DbContext);
 
-		int deleted = await repository.DeleteAsync([Guid.NewGuid(), Guid.NewGuid()])
+		int deleted = await repository.DeleteAsync([Guid.NewGuid(), Guid.NewGuid()], TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(0, deleted);
@@ -79,7 +78,7 @@ public sealed class PersonTests : UnitTestBase
 	{
 		PersonRepository repository = new(DbContext);
 
-		PersonEntity? person = await repository.GetByIdAsync(Guid.Empty)
+		PersonEntity? person = await repository.GetByIdAsync(Guid.Empty, cancellationToken: TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.IsNull(person);
@@ -90,7 +89,7 @@ public sealed class PersonTests : UnitTestBase
 	{
 		PersonRepository repository = new(DbContext);
 
-		IEnumerable<PersonEntity> persons = await repository.GetByIdsAsync([Guid.NewGuid(), Guid.NewGuid()])
+		IEnumerable<PersonEntity> persons = await repository.GetByIdsAsync([Guid.NewGuid(), Guid.NewGuid()], cancellationToken: TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.IsFalse(persons.Any());
@@ -111,7 +110,7 @@ public sealed class PersonTests : UnitTestBase
 	{
 		PersonRepository repository = new(DbContext);
 
-		IEnumerable<PersonEntity> persons = await repository.GetListAsync(new() { IgnoreQueryFilters = true, TrackChanges = true })
+		IEnumerable<PersonEntity> persons = await repository.GetListAsync(new() { IgnoreQueryFilters = true, TrackChanges = true }, TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.IsFalse(persons.Any());
@@ -146,7 +145,7 @@ public sealed class PersonTests : UnitTestBase
 			OrderBy = x => x.OrderBy(x => x.Id),
 			Skip = 1,
 			Take = 1
-		}).ConfigureAwait(false);
+		}, TestContext.CancellationToken).ConfigureAwait(false);
 
 		Assert.IsFalse(persons.Any());
 	}
@@ -157,7 +156,7 @@ public sealed class PersonTests : UnitTestBase
 		PersonRepository repository = new(DbContext);
 		int count = 0;
 
-		await foreach (PersonEntity person in repository.Stream(new() { IgnoreQueryFilters = true, TrackChanges = true }).ConfigureAwait(false))
+		await foreach (PersonEntity person in repository.Stream(new() { IgnoreQueryFilters = true, TrackChanges = true }, TestContext.CancellationToken).ConfigureAwait(false))
 			count++;
 
 		Assert.AreEqual(0, count);
@@ -176,11 +175,13 @@ public sealed class PersonTests : UnitTestBase
 			OrderBy = x => x.OrderBy(x => x.Id),
 			Skip = 1,
 			Take = 1
-		});
+		}, TestContext.CancellationToken);
 
 		await foreach (PersonEntity person in persons.ConfigureAwait(false))
 			count++;
 
 		Assert.AreEqual(0, count);
 	}
+
+	public TestContext TestContext { get; set; }
 }

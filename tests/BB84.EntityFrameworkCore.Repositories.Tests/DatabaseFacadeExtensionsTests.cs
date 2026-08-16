@@ -28,7 +28,7 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
 	{
 		using TestDbContext dbContext = GetTestContext();
 
-		dbContext.Database.ExecuteSqlRaw($"""
+		_ = dbContext.Database.ExecuteSqlRaw($"""
       CREATE FUNCTION [{Schema}].[{GetScalarValueFunctionName}](@Input INT)
       RETURNS INT
       AS
@@ -37,7 +37,7 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
       END
       """);
 
-		dbContext.Database.ExecuteSqlRaw($"""
+		_ = dbContext.Database.ExecuteSqlRaw($"""
       CREATE FUNCTION [{Schema}].[{GetTableValuesFunctionName}](@Count INT)
       RETURNS TABLE
       AS
@@ -48,7 +48,7 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
       )
       """);
 
-		dbContext.Database.ExecuteSqlRaw($"""
+		_ = dbContext.Database.ExecuteSqlRaw($"""
       CREATE PROCEDURE [{Schema}].[{GetValuesProcedureName}]
         @Input INT
       AS
@@ -57,7 +57,7 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
       END
       """);
 
-		dbContext.Database.ExecuteSqlRaw($"""
+		_ = dbContext.Database.ExecuteSqlRaw($"""
       CREATE PROCEDURE [{Schema}].[{SetValueProcedureName}]
         @Input INT,
         @Output INT OUTPUT
@@ -73,10 +73,10 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
 	{
 		using TestDbContext dbContext = GetTestContext();
 
-		dbContext.Database.ExecuteSqlRaw($"DROP FUNCTION IF EXISTS [{Schema}].[{GetScalarValueFunctionName}]");
-		dbContext.Database.ExecuteSqlRaw($"DROP FUNCTION IF EXISTS [{Schema}].[{GetTableValuesFunctionName}]");
-		dbContext.Database.ExecuteSqlRaw($"DROP PROCEDURE IF EXISTS [{Schema}].[{GetValuesProcedureName}]");
-		dbContext.Database.ExecuteSqlRaw($"DROP PROCEDURE IF EXISTS [{Schema}].[{SetValueProcedureName}]");
+		_ = dbContext.Database.ExecuteSqlRaw($"DROP FUNCTION IF EXISTS [{Schema}].[{GetScalarValueFunctionName}]");
+		_ = dbContext.Database.ExecuteSqlRaw($"DROP FUNCTION IF EXISTS [{Schema}].[{GetTableValuesFunctionName}]");
+		_ = dbContext.Database.ExecuteSqlRaw($"DROP PROCEDURE IF EXISTS [{Schema}].[{GetValuesProcedureName}]");
+		_ = dbContext.Database.ExecuteSqlRaw($"DROP PROCEDURE IF EXISTS [{Schema}].[{SetValueProcedureName}]");
 	}
 
 	[TestMethod]
@@ -155,8 +155,7 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
 	{
 		SqlParameter input = new("@Input", SqlDbType.Int) { Value = 4 };
 		SqlParameter output = new("@Output", SqlDbType.Int) { Direction = ParameterDirection.Output };
-
-		IReadOnlyList<int> result = DbContext.Database
+		_ = DbContext.Database
 			.ExecuteProcedure<int>(Schema, SetValueProcedureName, [input, output]);
 
 		Assert.AreEqual(12, output.Value);
@@ -167,8 +166,7 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
 	{
 		SqlParameter input = new("@Input", SqlDbType.Int) { Value = 5 };
 		SqlParameter output = new("@Output", SqlDbType.Int) { Direction = ParameterDirection.Output };
-
-		IReadOnlyList<int> result = await DbContext.Database
+		_ = await DbContext.Database
 			.ExecuteProcedureAsync<int>(Schema, SetValueProcedureName, [input, output], _testToken)
 			.ConfigureAwait(false);
 

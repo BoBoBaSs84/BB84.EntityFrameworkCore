@@ -49,21 +49,18 @@ public abstract class FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>
 }
 
 /// <inheritdoc cref="FullAuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class FullAuditedConfiguration<TEntity, TKey> : FullAuditedConfiguration<TEntity, TKey, string, string?>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IFullAuditedEntity<TKey>
 	where TKey : IEquatable<TKey>
 { }
 
 /// <inheritdoc cref="FullAuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class FullAuditedConfiguration<TEntity, TCreator, TEdited> : FullAuditedConfiguration<TEntity, Guid, TCreator, TEdited>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IFullAuditedEntity<TCreator, TEdited>
 	where TCreator : notnull
 { }
 
 /// <inheritdoc cref="FullAuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class FullAuditedConfiguration<TEntity> : FullAuditedConfiguration<TEntity, Guid, string, string?>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IFullAuditedEntity
 { }

@@ -3,8 +3,6 @@
 //
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
-using System.Diagnostics.CodeAnalysis;
-
 using BB84.EntityFrameworkCore.Entities.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +18,6 @@ namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 /// <see cref="Base.EnumeratorConfiguration{TEntity, TKey}"/> and tunes it for SQL Server by
 /// declaring the primary key as non clustered.
 /// </remarks>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class EnumeratorConfiguration<TEntity, TKey> : Base.EnumeratorConfiguration<TEntity, TKey>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IEnumeratorEntity<TKey>
 	where TKey : IEquatable<TKey>
@@ -39,7 +36,6 @@ public abstract class EnumeratorConfiguration<TEntity, TKey> : Base.EnumeratorCo
 /// The identity column is of type <see cref="int"/> and the primary key is clustered, which
 /// suits the narrow, densely packed lookup tables this rung is meant for.
 /// </remarks>
-[SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
 public abstract class EnumeratorConfiguration<TEntity> : EnumeratorConfiguration<TEntity, int>
 	where TEntity : class, IEnumeratorEntity
 {

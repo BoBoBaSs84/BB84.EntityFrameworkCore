@@ -6,7 +6,6 @@
 #pragma warning disable CA1866 // Use char overload
 #pragma warning disable CA1847 // Use char literal for a single character lookup
 using BB84.EntityFrameworkCore.Repositories.Abstractions;
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Repositories;
 
@@ -463,7 +462,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 		using CancellationTokenSource tokenSource = new();
 		await tokenSource.CancelAsync().ConfigureAwait(false);
 
-		await Assert.ThrowsAsync<OperationCanceledException>(async () =>
+		_ = await Assert.ThrowsAsync<OperationCanceledException>(async () =>
 		{
 			await foreach (PersonTypeEntity entity in repository
 				.Stream(new() { IgnoreQueryFilters = true }, tokenSource.Token)
