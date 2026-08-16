@@ -66,16 +66,41 @@ IReadOnlyList<Person> firstPage = repository.GetList(active with { Take = 25 });
 
 `Include` names navigations as expressions, so a rename is a compile error rather than a runtime one. Use `QueryFilter` for anything the properties cannot express — a nested `ThenInclude`, a join, a grouping.
 
+## Read / write split
+
+Each repository abstraction exists as two halves plus a composed alias:
+
+| Read                                       | Write                                       | Composed                                |
+| ------------------------------------------- | -------------------------------------------- | ---------------------------------------- |
+| `IReadRepository<TEntity>`                 | `IWriteRepository<TEntity>`                 | `IGenericRepository<TEntity>`           |
+| `IReadIdentityRepository<TEntity, TKey>`   | `IWriteIdentityRepository<TEntity, TKey>`   | `IIdentityRepository<TEntity, TKey>`    |
+| `IReadEnumeratorRepository<TEntity, TKey>` | —                                           | `IEnumeratorRepository<TEntity, TKey>`  |
+
+Depend on a half wherever a component only reads or only writes — a query handler, a reporting service, an importer, either side of a CQRS split. The dependency then states in its type what it is allowed to do, and a hand written test double only has to implement the half it needs.
+
+```csharp
+public sealed class PriceReport(IReadRepository<Product> products)
+{
+    // Cannot delete anything. Not by convention — there is no such member.
+    public Task<IReadOnlyList<Product>> GetActiveAsync(CancellationToken cancellationToken)
+        => products.GetListAsync(new() { Where = p => p.IsActive }, cancellationToken);
+}
+```
+
+The composed interfaces add no members of their own, so nothing is reachable only through them. `GenericRepository<TEntity>` and its derivatives still implement the composed interfaces, and existing `IGenericRepository<TEntity>` consumers are unaffected.
+
+There is no `IWriteEnumeratorRepository`: an enumerator repository adds only name based *reads* on top of the identity repository, so its write half is exactly the inherited one.
+
 ## `IGenericRepository<TEntity>`
 
-The base repository interface. All methods have synchronous and asynchronous variants, and every `Async` variant takes `CancellationToken cancellationToken` last.
+The base repository interface, composing `IReadRepository<TEntity>` and `IWriteRepository<TEntity>`. All methods have synchronous and asynchronous variants, and every `Async` variant takes `CancellationToken cancellationToken` last.
 
-**Create**
+**Create** — declared on `IWriteRepository<TEntity>`
 
 - `Create(entity)` / `Create(entities)` — marks entity/entities as `Added`
 - `CreateAsync(entity)` / `CreateAsync(entities)`
 
-**Read**
+**Read** — declared on `IReadRepository<TEntity>`
 
 - `Count(query)` — number of matching rows
 - `GetSingle(query)` — one entity or `null`; throws when more than one matches
@@ -91,12 +116,12 @@ There is no separate "all" method: an absent `Where` already means everything, s
 
 Streaming yields rows as they arrive. The sequence is lazy, so it has to be enumerated within the lifetime of the `IDbContext`, only one stream may be live per context at a time, and `TrackChanges` should stay off or the change tracker grows with every entity yielded.
 
-**Update**
+**Update** — declared on `IWriteRepository<TEntity>`
 
 - `Update(entity)` / `Update(entities)` — marks entity/entities as `Modified`
 - `Update(expression, setPropertyCalls)` — bulk `ExecuteUpdate` (bypasses change tracker)
 
-**Delete**
+**Delete** — declared on `IWriteRepository<TEntity>`
 
 - `Delete(entity)` / `Delete(entities)` — marks entity/entities as `Deleted`
 - `Delete(expression)` — bulk `ExecuteDelete` (bypasses change tracker)
@@ -105,7 +130,7 @@ Streaming yields rows as they arrive. The sequence is lazy, so it has to be enum
 
 Extends `IGenericRepository<TEntity>` with ID-based operations. The non-generic overload defaults `TKey` to `Guid`.
 
-**Additional read methods**
+**Additional read methods** — declared on `IReadIdentityRepository<TEntity, TKey>`
 
 - `GetById(id, query)` / `GetById<TResult>(id, selector, query)`
 - `GetByIds(ids, query)` / `GetByIds<TResult>(ids, selector, query)`
@@ -113,17 +138,17 @@ Extends `IGenericRepository<TEntity>` with ID-based operations. The non-generic 
 
 The key condition is **added** to the query rather than replacing it, so a `Where` in the query keeps applying alongside it.
 
-**Additional delete methods**
+**Additional delete methods** — declared on `IWriteIdentityRepository<TEntity, TKey>`
 
 - `Delete(id)` / `Delete(ids)` — bulk `ExecuteDelete` by key(s)
 
-**Additional update methods**
+**Additional update methods** — declared on `IWriteIdentityRepository<TEntity, TKey>`
 
 - `Update(id, setPropertyCalls)` / `Update(ids, setPropertyCalls)` — bulk `ExecuteUpdate` by key(s)
 
 ## `IEnumeratorRepository<TEntity, TKey>` / `IEnumeratorRepository<TEntity>`
 
-Extends `IIdentityRepository` with name-based lookups. The non-generic overload defaults `TKey` to `int`.
+Extends `IIdentityRepository` with name-based lookups, declared on `IReadEnumeratorRepository<TEntity, TKey>`. The non-generic overload defaults `TKey` to `int`.
 
 - `GetByName(name, query)` / `GetByNames(names, query)`
 - Async variants of both
