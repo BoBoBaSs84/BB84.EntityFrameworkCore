@@ -1,4 +1,4 @@
-// Copyright: 2024 Robert Peter Meyer
+﻿// Copyright: 2024 Robert Peter Meyer
 // License: MIT
 //
 // This source code is licensed under the MIT license found in the
@@ -26,20 +26,20 @@ public abstract class EnumeratorRepository<TEntity, TKey>(IDbContext dbContext) 
 	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
-	public TEntity? GetByName(string name, bool ignoreQueryFilters = false, bool trackChanges = false)
-		=> QuerySingle(expression: ByName(name), ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges);
+	public TEntity? GetByName(string name, Query<TEntity>? query = null)
+		=> GetSingle(WithCondition(query, ByName(name)));
 
 	/// <inheritdoc/>
-	public async Task<TEntity?> GetByNameAsync(string name, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)
-		=> await QuerySingleAsync(expression: ByName(name), ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges, token: cancellationToken).ConfigureAwait(false);
+	public async Task<TEntity?> GetByNameAsync(string name, Query<TEntity>? query = null, CancellationToken cancellationToken = default)
+		=> await GetSingleAsync(WithCondition(query, ByName(name)), cancellationToken).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public IReadOnlyList<TEntity> GetByNames(IEnumerable<string> names, bool ignoreQueryFilters = false, bool trackChanges = false)
-		=> QueryMany(expression: ByNames(names), ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges);
+	public IReadOnlyList<TEntity> GetByNames(IEnumerable<string> names, Query<TEntity>? query = null)
+		=> GetList(WithCondition(query, ByNames(names)));
 
 	/// <inheritdoc/>
-	public async Task<IReadOnlyList<TEntity>> GetByNamesAsync(IEnumerable<string> names, bool ignoreQueryFilters = false, bool trackChanges = false, CancellationToken cancellationToken = default)
-		=> await QueryManyAsync(expression: ByNames(names), ignoreQueryFilters: ignoreQueryFilters, trackChanges: trackChanges, token: cancellationToken).ConfigureAwait(false);
+	public async Task<IReadOnlyList<TEntity>> GetByNamesAsync(IEnumerable<string> names, Query<TEntity>? query = null, CancellationToken cancellationToken = default)
+		=> await GetListAsync(WithCondition(query, ByNames(names)), cancellationToken).ConfigureAwait(false);
 
 	/// <summary>
 	/// Returns the condition that matches the <typeparamref name="TEntity"/> with the provided <paramref name="name"/>.

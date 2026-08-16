@@ -101,7 +101,7 @@ public sealed class PersonTests : UnitTestBase
 	{
 		PersonRepository repository = new(DbContext);
 
-		IEnumerable<PersonEntity> persons = repository.GetAll(true, true);
+		IEnumerable<PersonEntity> persons = repository.GetList(new() { IgnoreQueryFilters = true, TrackChanges = true });
 
 		Assert.IsFalse(persons.Any());
 	}
@@ -111,7 +111,7 @@ public sealed class PersonTests : UnitTestBase
 	{
 		PersonRepository repository = new(DbContext);
 
-		IEnumerable<PersonEntity> persons = await repository.GetAllAsync(true, true)
+		IEnumerable<PersonEntity> persons = await repository.GetListAsync(new() { IgnoreQueryFilters = true, TrackChanges = true })
 			.ConfigureAwait(false);
 
 		Assert.IsFalse(persons.Any());
@@ -122,11 +122,14 @@ public sealed class PersonTests : UnitTestBase
 	{
 		PersonRepository repository = new(DbContext);
 
-		IEnumerable<PersonEntity> persons = repository.GetManyByCondition(
-			x => x.Id.Equals(Guid.Empty),
-			x => x.Where(x => x.Id.Equals(Guid.Empty)),
-			false, x => x.OrderBy(x => x.Id), 1, 1, false
-			);
+		IEnumerable<PersonEntity> persons = repository.GetList(new()
+		{
+			Where = x => x.Id.Equals(Guid.Empty),
+			QueryFilter = x => x.Where(x => x.Id.Equals(Guid.Empty)),
+			OrderBy = x => x.OrderBy(x => x.Id),
+			Skip = 1,
+			Take = 1
+		});
 
 		Assert.IsFalse(persons.Any());
 	}
@@ -136,11 +139,14 @@ public sealed class PersonTests : UnitTestBase
 	{
 		PersonRepository repository = new(DbContext);
 
-		IEnumerable<PersonEntity> persons = await repository.GetManyByConditionAsync(
-			x => x.Id.Equals(Guid.Empty),
-			x => x.Where(x => x.Id.Equals(Guid.Empty)),
-			false, x => x.OrderBy(x => x.Id), 1, 1, false
-			).ConfigureAwait(false);
+		IEnumerable<PersonEntity> persons = await repository.GetListAsync(new()
+		{
+			Where = x => x.Id.Equals(Guid.Empty),
+			QueryFilter = x => x.Where(x => x.Id.Equals(Guid.Empty)),
+			OrderBy = x => x.OrderBy(x => x.Id),
+			Skip = 1,
+			Take = 1
+		}).ConfigureAwait(false);
 
 		Assert.IsFalse(persons.Any());
 	}
@@ -151,7 +157,7 @@ public sealed class PersonTests : UnitTestBase
 		PersonRepository repository = new(DbContext);
 		int count = 0;
 
-		await foreach (PersonEntity person in repository.StreamAll(true, true).ConfigureAwait(false))
+		await foreach (PersonEntity person in repository.Stream(new() { IgnoreQueryFilters = true, TrackChanges = true }).ConfigureAwait(false))
 			count++;
 
 		Assert.AreEqual(0, count);
@@ -163,11 +169,14 @@ public sealed class PersonTests : UnitTestBase
 		PersonRepository repository = new(DbContext);
 		int count = 0;
 
-		IAsyncEnumerable<PersonEntity> persons = repository.StreamByCondition(
-			x => x.Id.Equals(Guid.Empty),
-			x => x.Where(x => x.Id.Equals(Guid.Empty)),
-			false, x => x.OrderBy(x => x.Id), 1, 1, false
-			);
+		IAsyncEnumerable<PersonEntity> persons = repository.Stream(new()
+		{
+			Where = x => x.Id.Equals(Guid.Empty),
+			QueryFilter = x => x.Where(x => x.Id.Equals(Guid.Empty)),
+			OrderBy = x => x.OrderBy(x => x.Id),
+			Skip = 1,
+			Take = 1
+		});
 
 		await foreach (PersonEntity person in persons.ConfigureAwait(false))
 			count++;

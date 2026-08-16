@@ -19,12 +19,12 @@
 
 ## 📦 Packages
 
-| Package                                                                                                                | Description                                                       |
-| ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| [BB84.EntityFrameworkCore.Entities.Abstractions](src/BB84.EntityFrameworkCore.Entities.Abstractions/README.md)         | Core entity interface definitions — no dependencies               |
-| [BB84.EntityFrameworkCore.Entities](src/BB84.EntityFrameworkCore.Entities/README.md)                                   | Default implementations of the entity abstractions                |
-| [BB84.EntityFrameworkCore.Repositories.Abstractions](src/BB84.EntityFrameworkCore.Repositories.Abstractions/README.md) | Repository interface definitions                                  |
-| [BB84.EntityFrameworkCore.Repositories](src/BB84.EntityFrameworkCore.Repositories/README.md)                           | Repository implementations, provider-agnostic configurations and interceptors |
+| Package                                                                                                                | Description                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [BB84.EntityFrameworkCore.Entities.Abstractions](src/BB84.EntityFrameworkCore.Entities.Abstractions/README.md)         | Core entity interface definitions — no dependencies                                    |
+| [BB84.EntityFrameworkCore.Entities](src/BB84.EntityFrameworkCore.Entities/README.md)                                   | Default implementations of the entity abstractions                                     |
+| [BB84.EntityFrameworkCore.Repositories.Abstractions](src/BB84.EntityFrameworkCore.Repositories.Abstractions/README.md) | Repository interface definitions                                                       |
+| [BB84.EntityFrameworkCore.Repositories](src/BB84.EntityFrameworkCore.Repositories/README.md)                           | Repository implementations, provider-agnostic configurations and interceptors          |
 | [BB84.EntityFrameworkCore.Repositories.SqlServer](src/BB84.EntityFrameworkCore.Repositories.SqlServer/README.md)       | SQL Server configuration tuning, column type extensions and `DatabaseFacadeExtensions` |
 
 ## 💾 Installation

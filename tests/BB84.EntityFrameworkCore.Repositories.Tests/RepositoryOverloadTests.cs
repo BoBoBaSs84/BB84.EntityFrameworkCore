@@ -5,6 +5,7 @@
 // LICENSE file in the root directory of this source tree.
 #pragma warning disable CA1866 // Use char overload
 #pragma warning disable CA1847 // Use char literal for a single character lookup
+using BB84.EntityFrameworkCore.Repositories.Abstractions;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Repositories;
@@ -24,22 +25,28 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 		PersonTypeRepository repository = new(DbContext);
 
 		int count = repository
-			.CountByCondition(
-				queryFilter: query => query.Where(x => x.Name.Contains("ale")),
-				ignoreQueryFilters: true);
+			.Count(new()
+			{
+				QueryFilter = query => query.Where(x => x.Name.Contains("ale")),
+				IgnoreQueryFilters = true
+			});
 
 		PersonTypeEntity? single = repository
-			.GetByCondition(
-				queryFilter: query => query.Where(x => x.Name == "Male"),
-				ignoreQueryFilters: true);
+			.GetSingle(new()
+			{
+				QueryFilter = query => query.Where(x => x.Name == "Male"),
+				IgnoreQueryFilters = true
+			});
 
 		IReadOnlyList<PersonTypeEntity> many = repository
-			.GetManyByCondition(
-				queryFilter: query => query.Where(x => x.Name.Contains("e")),
-				ignoreQueryFilters: true,
-				orderBy: query => query.OrderBy(x => x.Name),
-				skip: 1,
-				take: 1);
+			.GetList(new()
+			{
+				QueryFilter = query => query.Where(x => x.Name.Contains("e")),
+				IgnoreQueryFilters = true,
+				OrderBy = query => query.OrderBy(x => x.Name),
+				Skip = 1,
+				Take = 1
+			});
 
 		Assert.AreEqual(2, count);
 		Assert.IsNotNull(single);
@@ -54,26 +61,36 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 		PersonTypeRepository repository = new(DbContext);
 
 		int count = await repository
-			.CountByConditionAsync(
-				queryFilter: query => query.Where(x => x.Name.StartsWith("D")),
-				ignoreQueryFilters: true,
-				token: _cancellationToken)
+			.CountAsync(
+				new()
+				{
+					QueryFilter = query => query.Where(x => x.Name.StartsWith("D")),
+					IgnoreQueryFilters = true
+				},
+				_cancellationToken)
 			.ConfigureAwait(false);
+
 		PersonTypeEntity? single = await repository
-			.GetByConditionAsync(
-				queryFilter: query => query.Where(x => x.Name == "Female"),
-				ignoreQueryFilters: true,
-				token: _cancellationToken)
+			.GetSingleAsync(
+				new()
+				{
+					QueryFilter = query => query.Where(x => x.Name == "Female"),
+					IgnoreQueryFilters = true
+				},
+				_cancellationToken)
 			.ConfigureAwait(false);
 
 		IReadOnlyList<PersonTypeEntity> many = await repository
-			.GetManyByConditionAsync(
-				queryFilter: query => query.Where(x => x.Name.Contains("e")),
-				ignoreQueryFilters: true,
-				orderBy: query => query.OrderByDescending(x => x.Name),
-				skip: 1,
-				take: 1,
-				token: _cancellationToken)
+			.GetListAsync(
+				new()
+				{
+					QueryFilter = query => query.Where(x => x.Name.Contains("e")),
+					IgnoreQueryFilters = true,
+					OrderBy = query => query.OrderByDescending(x => x.Name),
+					Skip = 1,
+					Take = 1
+				},
+				_cancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(1, count);
@@ -87,22 +104,17 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 	public void ProjectionOverloadsSyncTest()
 	{
 		PersonTypeRepository repository = new(DbContext);
+		Query<PersonTypeEntity> unfiltered = new() { IgnoreQueryFilters = true };
 
 		IReadOnlyList<PersonTypeProjection> all = repository
-			.GetAll(
+			.GetList(
 				selector: x => new PersonTypeProjection
-				{
-					Id = x.Id,
-					Name = x.Name,
-					Description = x.Description
-				},
-				fieldSelector: x => new PersonTypeProjection
 				{
 					Id = x.Id,
 					Name = x.Name.ToUpperInvariant(),
 					Description = null
 				},
-				ignoreQueryFilters: true);
+				query: unfiltered);
 
 		PersonTypeProjection? byId = repository
 			.GetById(
@@ -110,16 +122,10 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 				selector: x => new PersonTypeProjection
 				{
 					Id = x.Id,
-					Name = x.Name,
-					Description = x.Description
-				},
-				fieldSelector: x => new PersonTypeProjection
-				{
-					Id = x.Id,
 					Name = x.Name.ToLowerInvariant(),
 					Description = x.Description
 				},
-				ignoreQueryFilters: true);
+				query: unfiltered);
 
 		IReadOnlyList<PersonTypeProjection> byIds = repository
 			.GetByIds(
@@ -128,50 +134,33 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 				{
 					Id = x.Id,
 					Name = x.Name,
-					Description = x.Description
-				},
-				fieldSelector: x => new PersonTypeProjection
-				{
-					Id = x.Id,
-					Name = x.Name,
 					Description = null
 				},
-				ignoreQueryFilters: true);
+				query: unfiltered);
 
 		PersonTypeProjection? byCondition = repository
-				.GetByCondition(
-				expression: x => x.Id == 1,
+			.GetSingle(
 				selector: x => new PersonTypeProjection
-				{
-					Id = x.Id,
-					Name = x.Name,
-					Description = x.Description
-				},
-				fieldSelector: x => new PersonTypeProjection
 				{
 					Id = x.Id,
 					Name = $"Type:{x.Name}",
 					Description = null
 				},
-				ignoreQueryFilters: true);
+				query: unfiltered with { Where = x => x.Id == 1 });
 
 		IReadOnlyList<PersonTypeProjection> manyByCondition = repository
-			.GetManyByCondition(
-				expression: x => x.Id > 1,
+			.GetList(
 				selector: x => new PersonTypeProjection
-				{
-					Id = x.Id,
-					Name = x.Name,
-					Description = x.Description
-				},
-				fieldSelector: x => new PersonTypeProjection
 				{
 					Id = x.Id,
 					Name = x.Name,
 					Description = null
 				},
-				ignoreQueryFilters: true,
-				orderBy: query => query.OrderBy(x => x.Id));
+				query: unfiltered with
+				{
+					Where = x => x.Id > 1,
+					OrderBy = query => query.OrderBy(x => x.Id)
+				});
 
 		Assert.HasCount(3, all);
 		Assert.IsTrue(all.All(x => x.Description is null));
@@ -195,23 +184,18 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 	public async Task ProjectionOverloadsAsyncTest()
 	{
 		PersonTypeRepository repository = new(DbContext);
+		Query<PersonTypeEntity> unfiltered = new() { IgnoreQueryFilters = true };
 
 		IReadOnlyList<PersonTypeProjection> all = await repository
-			.GetAllAsync(
+			.GetListAsync(
 				selector: x => new PersonTypeProjection
-				{
-					Id = x.Id,
-					Name = x.Name,
-					Description = x.Description
-				},
-				fieldSelector: x => new PersonTypeProjection
 				{
 					Id = x.Id,
 					Name = x.Name.ToUpperInvariant(),
 					Description = null
 				},
-				ignoreQueryFilters: true,
-				token: _cancellationToken)
+				query: unfiltered,
+				cancellationToken: _cancellationToken)
 			.ConfigureAwait(false);
 
 		PersonTypeProjection? byId = await repository
@@ -220,17 +204,11 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 				selector: x => new PersonTypeProjection
 				{
 					Id = x.Id,
-					Name = x.Name,
-					Description = x.Description
-				},
-				fieldSelector: x => new PersonTypeProjection
-				{
-					Id = x.Id,
 					Name = x.Name.ToLowerInvariant(),
 					Description = x.Description
 				},
-				ignoreQueryFilters: true,
-				token: _cancellationToken)
+				query: unfiltered,
+				cancellationToken: _cancellationToken)
 			.ConfigureAwait(false);
 
 		IReadOnlyList<PersonTypeProjection> byIds = await repository
@@ -240,56 +218,38 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 				{
 					Id = x.Id,
 					Name = x.Name,
-					Description = x.Description
-				},
-				fieldSelector: x => new PersonTypeProjection
-				{
-					Id = x.Id,
-					Name = x.Name,
 					Description = null
 				},
-				ignoreQueryFilters: true,
-				token: _cancellationToken)
+				query: unfiltered,
+				cancellationToken: _cancellationToken)
 			.ConfigureAwait(false);
 
 		PersonTypeProjection? byCondition = await repository
-			.GetByConditionAsync(
-				expression: x => x.Id == 1,
+			.GetSingleAsync(
 				selector: x => new PersonTypeProjection
-				{
-					Id = x.Id,
-					Name = x.Name,
-					Description = x.Description
-				},
-				fieldSelector: x => new PersonTypeProjection
 				{
 					Id = x.Id,
 					Name = $"Type:{x.Name}",
 					Description = null
 				},
-				ignoreQueryFilters: true,
-				token: _cancellationToken)
+				query: unfiltered with { Where = x => x.Id == 1 },
+				cancellationToken: _cancellationToken)
 			.ConfigureAwait(false);
 
 		IReadOnlyList<PersonTypeProjection> manyByCondition = await repository
-			.GetManyByConditionAsync(
-				expression: x => x.Id > 1,
+			.GetListAsync(
 				selector: x => new PersonTypeProjection
-				{
-					Id = x.Id,
-					Name = x.Name,
-					Description = x.Description
-				},
-				fieldSelector: x => new PersonTypeProjection
 				{
 					Id = x.Id,
 					Name = x.Name,
 					Description = null
 				},
-				ignoreQueryFilters: true,
-				orderBy: query => query.OrderBy(x => x.Id),
-				token: _cancellationToken
-				)
+				query: unfiltered with
+				{
+					Where = x => x.Id > 1,
+					OrderBy = query => query.OrderBy(x => x.Id)
+				},
+				cancellationToken: _cancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.HasCount(3, all);
@@ -300,6 +260,37 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 		Assert.IsNotNull(byCondition);
 		Assert.AreEqual("Type:Female", byCondition.Name);
 		Assert.HasCount(2, manyByCondition);
+	}
+
+	[TestMethod]
+	public void QueryConditionsCombineRatherThanReplaceTest()
+	{
+		PersonTypeRepository repository = new(DbContext);
+
+		// The identifier and the caller supplied condition both have to hold, so a mismatched
+		// pair matches nothing rather than the identifier silently winning.
+		PersonTypeEntity? matching = repository.GetById(2, new() { Where = x => x.Name == "Male" });
+		PersonTypeEntity? conflicting = repository.GetById(2, new() { Where = x => x.Name == "Female" });
+
+		Assert.IsNotNull(matching);
+		Assert.IsNull(conflicting);
+	}
+
+	[TestMethod]
+	public void CountIgnoresOrderingAndPagingTest()
+	{
+		PersonTypeRepository repository = new(DbContext);
+
+		// Ordering and paging cannot change how many rows match, so a count has to ignore them.
+		int count = repository.Count(new()
+		{
+			IgnoreQueryFilters = true,
+			OrderBy = query => query.OrderBy(x => x.Name),
+			Skip = 1,
+			Take = 1
+		});
+
+		Assert.AreEqual(3, count);
 	}
 
 	[TestMethod]
@@ -323,9 +314,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 		{
 			int deleted = repository.Delete(x => x.Name == uniqueName);
 
-			SkillEntity? result = repository.GetByCondition(
-				expression: x => x.Name == uniqueName,
-				trackChanges: false);
+			SkillEntity? result = repository.GetSingle(new() { Where = x => x.Name == uniqueName });
 
 			Assert.AreEqual(1, deleted);
 			Assert.IsNull(result);
@@ -373,10 +362,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 				setPropertyCalls: s => s.SetProperty(p => p.Name, "Updated")
 				);
 
-			IReadOnlyList<JobEntity> jobs = repository.GetByIds(
-				ids: [first.Id, second.Id],
-				trackChanges: false
-				);
+			IReadOnlyList<JobEntity> jobs = repository.GetByIds([first.Id, second.Id]);
 
 			Assert.AreEqual(2, updatedByCondition);
 			Assert.AreEqual(2, updatedByIds);
@@ -396,10 +382,11 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 	public async Task StreamOverloadsAsyncTest()
 	{
 		PersonTypeRepository repository = new(DbContext);
+		Query<PersonTypeEntity> unfiltered = new() { IgnoreQueryFilters = true };
 
 		List<PersonTypeEntity> all = [];
 		await foreach (PersonTypeEntity entity in repository
-			.StreamAll(ignoreQueryFilters: true, token: _cancellationToken)
+			.Stream(unfiltered, _cancellationToken)
 			.ConfigureAwait(false))
 		{
 			all.Add(entity);
@@ -407,13 +394,15 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 
 		List<PersonTypeEntity> byQueryFilter = [];
 		await foreach (PersonTypeEntity entity in repository
-			.StreamByCondition(
-				queryFilter: query => query.Where(x => x.Name.Contains("e")),
-				ignoreQueryFilters: true,
-				orderBy: query => query.OrderBy(x => x.Name),
-				skip: 1,
-				take: 1,
-				token: _cancellationToken)
+			.Stream(
+				unfiltered with
+				{
+					QueryFilter = query => query.Where(x => x.Name.Contains("e")),
+					OrderBy = query => query.OrderBy(x => x.Name),
+					Skip = 1,
+					Take = 1
+				},
+				_cancellationToken)
 			.ConfigureAwait(false))
 		{
 			byQueryFilter.Add(entity);
@@ -421,11 +410,13 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 
 		List<PersonTypeEntity> byExpression = [];
 		await foreach (PersonTypeEntity entity in repository
-			.StreamByCondition(
-				expression: x => x.Id > 1,
-				ignoreQueryFilters: true,
-				orderBy: query => query.OrderBy(x => x.Id),
-				token: _cancellationToken)
+			.Stream(
+				unfiltered with
+				{
+					Where = x => x.Id > 1,
+					OrderBy = query => query.OrderBy(x => x.Id)
+				},
+				_cancellationToken)
 			.ConfigureAwait(false))
 		{
 			byExpression.Add(entity);
@@ -433,23 +424,19 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 
 		List<PersonTypeProjection> projected = [];
 		await foreach (PersonTypeProjection projection in repository
-			.StreamByCondition(
-				expression: x => x.Id > 1,
+			.Stream(
 				selector: x => new PersonTypeProjection
-				{
-					Id = x.Id,
-					Name = x.Name,
-					Description = x.Description
-				},
-				fieldSelector: x => new PersonTypeProjection
 				{
 					Id = x.Id,
 					Name = x.Name.ToUpperInvariant(),
 					Description = null
 				},
-				ignoreQueryFilters: true,
-				orderBy: query => query.OrderBy(x => x.Id),
-				token: _cancellationToken)
+				query: unfiltered with
+				{
+					Where = x => x.Id > 1,
+					OrderBy = query => query.OrderBy(x => x.Id)
+				},
+				cancellationToken: _cancellationToken)
 			.ConfigureAwait(false))
 		{
 			projected.Add(projection);
@@ -479,7 +466,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 		await Assert.ThrowsAsync<OperationCanceledException>(async () =>
 		{
 			await foreach (PersonTypeEntity entity in repository
-				.StreamAll(ignoreQueryFilters: true, token: tokenSource.Token)
+				.Stream(new() { IgnoreQueryFilters = true }, tokenSource.Token)
 				.ConfigureAwait(false))
 			{
 				Assert.IsNotNull(entity);
@@ -494,7 +481,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 		List<int> trackedAfterEachEntity = [];
 
 		await foreach (PersonTypeEntity entity in repository
-			.StreamAll(ignoreQueryFilters: true, trackChanges: true, token: _cancellationToken)
+			.Stream(new() { IgnoreQueryFilters = true, TrackChanges = true }, _cancellationToken)
 			.ConfigureAwait(false))
 		{
 			Assert.IsNotNull(entity);

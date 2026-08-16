@@ -63,10 +63,11 @@ public sealed class PersonTypeTests : UnitTestBase
 	{
 		PersonRepository repository = new(DbContext);
 
-		PersonEntity? person = repository.GetByCondition(
-			expression: x => x.Id.Equals(Guid.Empty),
-			includeProperties: [nameof(PersonEntity.Type)]
-			);
+		PersonEntity? person = repository.GetSingle(new()
+		{
+			Where = x => x.Id.Equals(Guid.Empty),
+			Include = [x => x.Type]
+		});
 
 		Assert.IsNull(person);
 	}
@@ -76,10 +77,11 @@ public sealed class PersonTypeTests : UnitTestBase
 	{
 		PersonRepository repository = new(DbContext);
 
-		PersonEntity? person = await repository.GetByConditionAsync(
-			expression: x => x.Id.Equals(Guid.Empty),
-			includeProperties: [nameof(PersonEntity.Type)]
-			).ConfigureAwait(false);
+		PersonEntity? person = await repository.GetSingleAsync(new()
+		{
+			Where = x => x.Id.Equals(Guid.Empty),
+			Include = [x => x.Type]
+		}).ConfigureAwait(false);
 
 		Assert.IsNull(person);
 	}
@@ -98,7 +100,7 @@ public sealed class PersonTypeTests : UnitTestBase
 
 		Assert.IsTrue(entity.IsDeleted);
 		Assert.IsNull(repository.GetById(entity.Id));
-		Assert.IsNotNull(repository.GetById(entity.Id, ignoreQueryFilters: true));
+		Assert.IsNotNull(repository.GetById(entity.Id, new() { IgnoreQueryFilters = true }));
 
 		Purge(entity);
 	}
@@ -117,7 +119,7 @@ public sealed class PersonTypeTests : UnitTestBase
 
 		Assert.IsTrue(entity.IsDeleted);
 		Assert.IsNull(await repository.GetByIdAsync(entity.Id));
-		Assert.IsNotNull(await repository.GetByIdAsync(entity.Id, ignoreQueryFilters: true));
+		Assert.IsNotNull(await repository.GetByIdAsync(entity.Id, new() { IgnoreQueryFilters = true }));
 
 		Purge(entity);
 	}

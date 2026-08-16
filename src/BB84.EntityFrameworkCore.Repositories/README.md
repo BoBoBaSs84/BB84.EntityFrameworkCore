@@ -1,4 +1,4 @@
-[![net100](https://img.shields.io/badge/net10.0-5C2D91?logo=.NET&labelColor=gray)](https://github.com/BoBoBaSs84/BB84.Extensions)
+﻿[![net100](https://img.shields.io/badge/net10.0-5C2D91?logo=.NET&labelColor=gray)](https://github.com/BoBoBaSs84/BB84.Extensions)
 [![NuGet](https://img.shields.io/nuget/v/BB84.EntityFrameworkCore.Repositories.svg?logo=nuget&logoColor=white)](https://www.nuget.org/packages/BB84.EntityFrameworkCore.Repositories)
 
 # BB84.EntityFrameworkCore.Repositories
@@ -19,28 +19,34 @@ dotnet add package BB84.EntityFrameworkCore.Repositories
 
 ### `GenericRepository<TEntity>`
 
-Abstract base for all repositories. Accepts `IDbContext` as a constructor parameter. All query methods delegate to `PrepareQuery(...)`, which composes `Where`, `IgnoreQueryFilters`, `Include`, `OrderBy`, `Skip`, `Take`, and `AsNoTracking` into a single `IQueryable<TEntity>`. Projection overloads use the protected `ApplyProjection(query, selector, fieldSelector)` helper.
+Abstract base for all repositories. Accepts `IDbContext` as a constructor parameter. Every read method takes a single `Query<TEntity>` and delegates to the protected `PrepareQuery(query, forCount)`, which composes `Where`, `QueryFilter`, `IgnoreQueryFilters`, `Include`, `OrderBy`, `Skip`, `Take` and `AsNoTracking` into one `IQueryable<TEntity>`. Projections go through the protected `ApplyProjection(query, selector)`.
+
+Two protected helpers are worth knowing when writing a repository method the interface does not cover:
+
+- `PrepareQuery(query, forCount)` — the single place a `Query<TEntity>` becomes a query. Pass `forCount: true` to skip the options that cannot change how many rows match.
+- `WithCondition(query, condition)` — appends a condition to a query without discarding what the caller already set. This is how `GetById` and `GetByName` add their key or name filter.
 
 #### Streaming reads
 
-`StreamAll` and `StreamByCondition` return `IAsyncEnumerable<T>` instead of `IReadOnlyList<T>`. They take the same parameters as their `GetAllAsync` / `GetManyByConditionAsync` counterparts and go through the same `PrepareQuery(...)` composition, but the result set is not buffered — rows are yielded as they arrive. Use them for exports, batch jobs and other unbounded reads:
+`Stream` returns `IAsyncEnumerable<T>` instead of `IReadOnlyList<T>`. It takes the same `Query<TEntity>` as `GetListAsync` and goes through the same composition, but the result set is not buffered — rows are yielded as they arrive. Use it for exports, batch jobs and other unbounded reads:
 
 ```csharp
-await foreach (Product product in repository.StreamByCondition(
-    p => p.IsActive,
-    orderBy: q => q.OrderBy(p => p.Name),
-    token: token))
+await foreach (Product product in repository.Stream(
+    new()
+    {
+        Where = p => p.IsActive,
+        OrderBy = q => q.OrderBy(p => p.Name),
+    },
+    cancellationToken))
 {
-    await writer.WriteAsync(product, token);
+    await writer.WriteAsync(product, cancellationToken);
 }
 ```
 
 Two things to keep in mind:
 
 - The sequence is lazy. It must be enumerated within the lifetime of the `IDbContext`, and EF Core allows only one active stream per context at a time.
-- `trackChanges` defaults to `false` and should stay that way for large reads — with tracking enabled the change tracker grows with every yielded entity, which defeats the purpose of streaming.
-
-Subclasses can build their own streaming methods on the `protected QueryManyStream(...)` helpers, which mirror `QueryMany` / `QueryManyAsync` in both the entity and the projection flavour.
+- `TrackChanges` defaults to `false` and should stay that way for large reads — with tracking enabled the change tracker grows with every yielded entity, which defeats the purpose of streaming.
 
 ### `IdentityRepository<TEntity, TKey>` / `IdentityRepository<TEntity>`
 
@@ -60,11 +66,14 @@ public class ProductRepository : IdentityRepository<Product>, IProductRepository
     public ProductRepository(IDbContext dbContext) : base(dbContext) { }
 
     public async Task<IReadOnlyList<Product>> GetByCategoryAsync(
-        int categoryId, CancellationToken token = default)
-        => await GetManyByConditionAsync(
-            p => p.CategoryId == categoryId,
-            orderBy: q => q.OrderBy(p => p.Name),
-            token: token);
+        int categoryId, CancellationToken cancellationToken = default)
+        => await GetListAsync(
+            new()
+            {
+                Where = p => p.CategoryId == categoryId,
+                OrderBy = q => q.OrderBy(p => p.Name),
+            },
+            cancellationToken);
 }
 
 public class CategoryRepository : EnumeratorRepository<ProductCategory>, ICategoryRepository
@@ -85,7 +94,7 @@ Calling save changes is the responsibility of the caller (unit-of-work pattern):
 
 ```csharp
 repository.Create(entity);
-await dbContext.SaveChangesAsync(token);
+await dbContext.SaveChangesAsync(cancellationToken);
 ```
 
 ## Configuration base classes

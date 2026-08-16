@@ -61,7 +61,7 @@ public sealed class PersonJobTests : UnitTestBase
 	{
 		PersonJobRepository repository = new(DbContext);
 
-		int count = repository.CountAll(false);
+		int count = repository.Count();
 
 		Assert.AreEqual(0, count);
 	}
@@ -71,7 +71,7 @@ public sealed class PersonJobTests : UnitTestBase
 	{
 		PersonJobRepository repository = new(DbContext);
 
-		int count = repository.CountByCondition(x => x.PersonId.Equals(Guid.Empty));
+		int count = repository.Count(new() { Where = x => x.PersonId.Equals(Guid.Empty) });
 
 		Assert.AreEqual(0, count);
 	}
@@ -81,7 +81,7 @@ public sealed class PersonJobTests : UnitTestBase
 	{
 		PersonJobRepository repository = new(DbContext);
 
-		int count = await repository.CountAllAsync(false)
+		int count = await repository.CountAsync()
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(0, count);
@@ -92,7 +92,7 @@ public sealed class PersonJobTests : UnitTestBase
 	{
 		PersonJobRepository repository = new(DbContext);
 
-		int count = await repository.CountByConditionAsync(expression: x => x.PersonId.Equals(Guid.Empty))
+		int count = await repository.CountAsync(new() { Where = x => x.PersonId.Equals(Guid.Empty) })
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(0, count);

@@ -27,7 +27,7 @@ public sealed class SkillTests : UnitTestBase
 		int result = DbContext.SaveChanges();
 		Assert.AreEqual(1, result);
 
-		SkillEntity? dbSkill = repository.GetByCondition(x => x.Name == newSkill.Name, trackChanges: true);
+		SkillEntity? dbSkill = repository.GetSingle(new() { Where = x => x.Name == newSkill.Name, TrackChanges = true });
 		Assert.IsNotNull(dbSkill);
 		Assert.AreNotEqual(DateTimeOffset.MinValue, dbSkill.CreatedAt);
 
@@ -35,7 +35,7 @@ public sealed class SkillTests : UnitTestBase
 		result = DbContext.SaveChanges();
 		Assert.AreEqual(1, result);
 
-		dbSkill = repository.GetByCondition(x => x.Name == newSkill.Name, trackChanges: true);
+		dbSkill = repository.GetSingle(new() { Where = x => x.Name == newSkill.Name, TrackChanges = true });
 		Assert.IsNotNull(dbSkill);
 		Assert.AreNotEqual(DateTimeOffset.MinValue, dbSkill.EditedAt);
 	}
