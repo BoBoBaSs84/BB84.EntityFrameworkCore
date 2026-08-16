@@ -7,6 +7,8 @@ using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Repositories;
 
+using Microsoft.EntityFrameworkCore;
+
 namespace BB84.EntityFrameworkCore.Repositories.Tests;
 
 [TestClass]
@@ -86,25 +88,53 @@ public sealed class PersonTypeTests : UnitTestBase
 	public void SoftDeleteTest()
 	{
 		PersonTypeRepository repository = new(DbContext);
+		PersonTypeEntity entity = new() { Name = "SoftDeleteTest", Description = "To be soft deleted." };
 
-		PersonTypeEntity? result = repository.GetById(1, false, true);
-		Assert.IsNotNull(result);
-
-		repository.Delete(result);
+		repository.Create(entity);
 		_ = DbContext.SaveChanges();
-		Assert.IsTrue(result.IsDeleted);
+
+		repository.Delete(entity);
+		_ = DbContext.SaveChanges();
+
+		Assert.IsTrue(entity.IsDeleted);
+		Assert.IsNull(repository.GetById(entity.Id));
+		Assert.IsNotNull(repository.GetById(entity.Id, ignoreQueryFilters: true));
+
+		Purge(entity);
 	}
 
 	[TestMethod]
 	public async Task SoftDeleteAsyncTest()
 	{
 		PersonTypeRepository repository = new(DbContext);
+		PersonTypeEntity entity = new() { Name = "SoftDeleteAsyncTest", Description = "To be soft deleted." };
 
-		PersonTypeEntity? result = await repository.GetByIdAsync(2, false, true);
-		Assert.IsNotNull(result);
-
-		await repository.DeleteAsync(result);
+		await repository.CreateAsync(entity);
 		_ = await DbContext.SaveChangesAsync();
-		Assert.IsTrue(result.IsDeleted);
+
+		await repository.DeleteAsync(entity);
+		_ = await DbContext.SaveChangesAsync();
+
+		Assert.IsTrue(entity.IsDeleted);
+		Assert.IsNull(await repository.GetByIdAsync(entity.Id));
+		Assert.IsNotNull(await repository.GetByIdAsync(entity.Id, ignoreQueryFilters: true));
+
+		Purge(entity);
 	}
+
+	/// <summary>
+	/// Removes a soft deleted row for good, so that the shared test database is left as the
+	/// seed data defines it.
+	/// </summary>
+	/// <remarks>
+	/// This deliberately bypasses the repository. The expression based delete applies the
+	/// global query filter, so it cannot reach a row that is already soft deleted.
+	/// </remarks>
+	/// <param name="entity">The soft deleted entity to remove.</param>
+	private void Purge(PersonTypeEntity entity)
+		=> _ = DbContext.Set<PersonTypeEntity>()
+			.AsQueryable()
+			.IgnoreQueryFilters()
+			.Where(x => x.Id == entity.Id)
+			.ExecuteDelete();
 }
