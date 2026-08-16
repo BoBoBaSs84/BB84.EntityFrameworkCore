@@ -31,11 +31,18 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// the <paramref name="id"/> from the database.
 	/// </summary>
 	/// <remarks>
+	/// <para>
 	/// This operation executes immediately against the database, rather than being deferred
 	/// until save changes is called. It also does not interact with the EF change tracker in
 	/// any way: entity instances which happen to be tracked when this operation is invoked
 	/// aren't taken into account, and aren't updated to reflect the changes.
-	/// </remarks>	
+	/// </para>
+	/// <para>
+	/// <b>This deletes permanently, even for soft deletable entity types.</b> Because no save
+	/// operation takes place, save changes interceptors never run, and the soft deletable
+	/// interceptor therefore cannot turn the deletion into a flag update. The rows are gone.
+	/// </para>
+	/// </remarks>
 	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
 	int Delete(TKey id);
@@ -45,11 +52,18 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	/// the <paramref name="ids"/> from the database.
 	/// </summary>
 	/// <remarks>
+	/// <para>
 	/// This operation executes immediately against the database, rather than being deferred
 	/// until save changes is called. It also does not interact with the EF change tracker in
 	/// any way: entity instances which happen to be tracked when this operation is invoked
 	/// aren't taken into account, and aren't updated to reflect the changes.
-	/// </remarks>	
+	/// </para>
+	/// <para>
+	/// <b>This deletes permanently, even for soft deletable entity types.</b> Because no save
+	/// operation takes place, save changes interceptors never run, and the soft deletable
+	/// interceptor therefore cannot turn the deletion into a flag update. The rows are gone.
+	/// </para>
+	/// </remarks>
 	/// <param name="ids">The primary keys of the <typeparamref name="TEntity"/>.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
 	int Delete(IEnumerable<TKey> ids);

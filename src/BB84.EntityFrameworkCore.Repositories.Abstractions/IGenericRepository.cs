@@ -84,10 +84,18 @@ public interface IGenericRepository<TEntity>
 	/// the <paramref name="expression"/> from the database.
 	/// </summary>
 	/// <remarks>
+	/// <para>
 	/// This operation executes immediately against the database, rather than being deferred
 	/// until save changes is called. It also does not interact with the EF change tracker in
 	/// any way: entity instances which happen to be tracked when this operation is invoked
 	/// aren't taken into account, and aren't updated to reflect the changes.
+	/// </para>
+	/// <para>
+	/// <b>This deletes permanently, even for soft deletable entity types.</b> Because no save
+	/// operation takes place, save changes interceptors never run, and the soft deletable
+	/// interceptor therefore cannot turn the deletion into a flag update. The rows are gone.
+	/// Use <see cref="Delete(TEntity)"/> together with a save operation to soft delete.
+	/// </para>
 	/// </remarks>
 	/// <param name="expression">The condition to fulfill to be deleted.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
@@ -630,11 +638,19 @@ public interface IGenericRepository<TEntity>
 	/// the <paramref name="expression"/> from the database.
 	/// </summary>
 	/// <remarks>
+	/// <para>
 	/// This operation executes immediately against the database, rather than being deferred
 	/// until save changes is called. It also does not interact with the EF change tracker in
 	/// any way: entity instances which happen to be tracked when this operation is invoked
 	/// aren't taken into account, and aren't updated to reflect the changes.
-	/// </remarks>	
+	/// </para>
+	/// <para>
+	/// <b>Auditing does not happen for this operation.</b> Because no save operation takes
+	/// place, save changes interceptors never run, so the audit columns are left untouched
+	/// unless <paramref name="setPropertyCalls"/> sets them explicitly. Use
+	/// <see cref="Update(TEntity)"/> together with a save operation to have them maintained.
+	/// </para>
+	/// </remarks>
 	/// <param name="expression">The condition to fulfill to be updated.</param>
 	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
 	/// <returns>The total number of rows updated in the database.</returns>

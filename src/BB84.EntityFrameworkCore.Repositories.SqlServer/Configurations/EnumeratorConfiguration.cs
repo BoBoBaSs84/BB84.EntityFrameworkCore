@@ -17,8 +17,23 @@ namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 /// <see cref="IEnumeratorEntity{Tkey}"/> interface.
 /// </summary>
 /// <remarks>
+/// <para>
 /// This class defines a standard configuration for entities, including primary key setup,
-/// concurrency tokens, property constraints and indexing.</remarks>
+/// concurrency tokens, property constraints and indexing.
+/// </para>
+/// <para>
+/// A global query filter excluding soft deleted rows is applied, so that entities marked as
+/// deleted by the soft deletable interceptor are no longer returned by queries. Pass
+/// <see langword="true"/> for the <c>ignoreQueryFilters</c> parameter of the repository read
+/// methods to include them again.
+/// </para>
+/// <para>
+/// Be aware that a <b>required</b> navigation pointing at a soft deletable entity type
+/// interacts badly with this filter: filtering out the principal row also removes the
+/// dependents that require it. Model such navigations as optional, or apply a matching filter
+/// to both ends of the relationship.
+/// </para>
+/// </remarks>
 /// <typeparam name="TEntity">The type of the entity being configured.</typeparam>
 /// <typeparam name="TKey">The type of the key for the entity.</typeparam>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
@@ -53,6 +68,8 @@ public abstract class EnumeratorConfiguration<TEntity, TKey> : IEntityTypeConfig
 		builder.Property(e => e.IsDeleted)
 			.HasColumnOrder(5)
 			.HasDefaultValue(false);
+
+		builder.HasQueryFilter(e => !e.IsDeleted);
 
 		builder.HasIndex(e => e.Name)
 			.IsUnique();
