@@ -110,8 +110,12 @@ On SQL Server, use the same type names from `BB84.EntityFrameworkCore.Repositori
 Register on the `DbContextOptionsBuilder`:
 
 ```csharp
+services.AddSingleton<ICurrentUserProvider, EnvironmentUserProvider>();
+services.AddSingleton(TimeProvider.System);
+
 services.AddSingleton<SoftDeletableInterceptor>();
 services.AddSingleton<TimeAuditedInterceptor>();
+services.AddSingleton<UserAuditedInterceptor>();
 
 services.AddDbContext<AppDbContext>((sp, options) =>
 {
@@ -119,7 +123,8 @@ services.AddDbContext<AppDbContext>((sp, options) =>
         .UseSqlServer(connectionString) // any provider
         .AddInterceptors(
             sp.GetRequiredService<SoftDeletableInterceptor>(),
-            sp.GetRequiredService<TimeAuditedInterceptor>());
+            sp.GetRequiredService<TimeAuditedInterceptor>(),
+            sp.GetRequiredService<UserAuditedInterceptor>());
 });
 ```
 
@@ -133,9 +138,33 @@ Pair it with a configuration deriving from `EnumeratorConfiguration<TEntity, TKe
 
 Fires on `SavingChanges`/`SavingChangesAsync`. For every entity implementing `ITimeAudited`:
 
-- `EntityState.Added` → sets `CreatedAt = DateTimeOffset.UtcNow`
-- `EntityState.Modified` → sets `EditedAt = DateTimeOffset.UtcNow`
+- `EntityState.Added` → sets `CreatedAt`
+- `EntityState.Modified` → sets `EditedAt`
 
-`CreatedBy` / `EditedBy` are **not** set automatically by this interceptor — implement a custom `SaveChangesInterceptor` for user auditing and register it alongside the built-in ones.
+The clock comes from an optional `TimeProvider` constructor parameter, defaulting to `TimeProvider.System`. It is read **once per save**, so every entity in one save shares a timestamp. Supply a fake provider to freeze time:
 
-Both interceptors run on save. The expression-based `Delete` / `Update` repository overloads execute immediately and bypass the change tracker, so neither interceptor fires for them.
+```csharp
+FakeTimeProvider timeProvider = new(new DateTimeOffset(2026, 1, 1, 0, 0, 0, TimeSpan.Zero));
+TimeAuditedInterceptor interceptor = new(timeProvider);
+```
+
+### `UserAuditedInterceptor`
+
+Fires on `SavingChanges`/`SavingChangesAsync`. For every entity implementing `IUserAudited`:
+
+- `EntityState.Added` → sets `CreatedBy`
+- `EntityState.Modified` → sets `EditedBy`
+
+The identity comes from `ICurrentUserProvider` (in `BB84.EntityFrameworkCore.Repositories.Abstractions`), asked once per save. `EnvironmentUserProvider` ships as the default and reports `MachineName\UserName`, which suits desktop applications and services. A web application implements the interface over the current request instead:
+
+```csharp
+public sealed class HttpCurrentUserProvider(IHttpContextAccessor accessor) : ICurrentUserProvider
+{
+    public string GetCurrentUser()
+        => accessor.HttpContext?.User.Identity?.Name ?? "anonymous";
+}
+```
+
+For audit columns that are not `string`, use the generic `UserAuditedInterceptor<TUser>` with a matching `ICurrentUserProvider<TUser>`.
+
+All three interceptors run on save. The expression-based `Delete` / `Update` repository overloads execute immediately and bypass the change tracker, so none of them fire for those.
