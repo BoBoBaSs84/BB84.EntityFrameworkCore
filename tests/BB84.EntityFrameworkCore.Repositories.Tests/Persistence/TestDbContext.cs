@@ -5,7 +5,6 @@
 // LICENSE file in the root directory of this source tree.
 using BB84.EntityFrameworkCore.Repositories.Interceptors;
 using BB84.EntityFrameworkCore.Repositories.Tests.Abstractions;
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Interceptors;
 
 using Microsoft.EntityFrameworkCore;
 

@@ -93,6 +93,14 @@ Extends `IIdentityRepository` with name-based lookups. The non-generic overload 
 - `GetByNames(names, ignoreQueryFilters, trackChanges)`
 - Async variants of both
 
+## `ICurrentUserProvider<TUser>` / `ICurrentUserProvider`
+
+Supplies the identity that `UserAuditedInterceptor` records in the `CreatedBy` / `EditedBy` columns. One member:
+
+- `GetCurrentUser()`
+
+The identity source is application specific, so the library asks for it rather than deciding it. `EnvironmentUserProvider` in `BB84.EntityFrameworkCore.Repositories` covers the process-user case; implement the interface yourself to resolve the identity from an HTTP request, a job context, or anywhere else. The non-generic alias fixes `TUser` to `string`, matching the default audit columns.
+
 ## Usage
 
 Define custom repository interfaces against these abstractions:

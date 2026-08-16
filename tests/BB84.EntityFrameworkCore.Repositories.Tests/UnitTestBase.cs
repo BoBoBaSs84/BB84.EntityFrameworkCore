@@ -5,7 +5,6 @@
 // LICENSE file in the root directory of this source tree.
 using BB84.EntityFrameworkCore.Repositories.Interceptors;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Interceptors;
 
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -23,20 +22,20 @@ public abstract class UnitTestBase
 
 	private static readonly SoftDeletableInterceptor SoftDeletableInterceptor = new();
 	private static readonly TimeAuditedInterceptor TimeAuditedInterceptor = new();
-	private static readonly UserAuditedInterceptor UserAuditedInterceptor = new();
+	private static readonly UserAuditedInterceptor UserAuditedInterceptor = new(new EnvironmentUserProvider());
 	private static readonly MsSqlContainer Container = new MsSqlBuilder(ContainerImage).Build();
 
-	private static string? connectionString;
+	private static string? s_connectionString;
 
 	[AssemblyInitialize]
 	public static async Task AssemblyInitialize(TestContext context)
 	{
-		await Container.StartAsync()
+		await Container.StartAsync(context.CancellationToken)
 			.ConfigureAwait(false);
 
 		// The container hands out a connection string pointing at "master";
 		// the test database itself is created by "EnsureCreated" below.
-		connectionString = new SqlConnectionStringBuilder(Container.GetConnectionString())
+		s_connectionString = new SqlConnectionStringBuilder(Container.GetConnectionString())
 		{
 			InitialCatalog = DatabaseName
 		}.ConnectionString;
@@ -76,13 +75,19 @@ public abstract class UnitTestBase
 	public static TestDbContext GetTestContext()
 		=> new(GetContextOptions(), SoftDeletableInterceptor, TimeAuditedInterceptor, UserAuditedInterceptor);
 
-	private static DbContextOptions<TestDbContext> GetContextOptions()
+	/// <summary>
+	/// The options pointing at the shared test database.
+	/// </summary>
+	/// <remarks>
+	/// Public so that a test needing its own interceptors can build a context itself instead
+	/// of going through <see cref="GetTestContext"/>, which uses the shared ones.
+	/// </remarks>
+	public static DbContextOptions<TestDbContext> GetContextOptions()
 	{
-		if (connectionString is null)
-			throw new InvalidOperationException($"The database container has not been started, '{nameof(AssemblyInitialize)}' must run first.");
-
-		return new DbContextOptionsBuilder<TestDbContext>()
-			.UseSqlServer(connectionString)
-			.Options;
+		return s_connectionString is null
+			? throw new InvalidOperationException($"The database container has not been started, '{nameof(AssemblyInitialize)}' must run first.")
+			: new DbContextOptionsBuilder<TestDbContext>()
+				.UseSqlServer(s_connectionString)
+				.Options;
 	}
 }
