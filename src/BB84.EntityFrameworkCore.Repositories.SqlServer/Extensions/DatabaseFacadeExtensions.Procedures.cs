@@ -9,7 +9,7 @@ using System.Data.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace BB84.EntityFrameworkCore.Repositories.Extensions;
+namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions;
 
 public static partial class DatabaseFacadeExtensions
 {
@@ -115,9 +115,13 @@ public static partial class DatabaseFacadeExtensions
 	{
 		ArgumentNullException.ThrowIfNull(parameters);
 
+		// Materialize once: the sequence is enumerated to build the assignments and again to
+		// hand the parameters to the command, and a lazy sequence would not survive that.
+		DbParameter[] materialized = [.. parameters];
+
 		List<string> assignments = [];
 
-		foreach (DbParameter parameter in parameters)
+		foreach (DbParameter parameter in materialized)
 		{
 			string token = GetParameterToken(parameter);
 			bool isOutput = parameter.Direction is ParameterDirection.Output or ParameterDirection.InputOutput;
@@ -132,6 +136,6 @@ public static partial class DatabaseFacadeExtensions
 		if (assignments.Count > 0)
 			sql = $"{sql} {string.Join(", ", assignments)}";
 
-		return (sql, [.. parameters]);
+		return (sql, materialized);
 	}
 }

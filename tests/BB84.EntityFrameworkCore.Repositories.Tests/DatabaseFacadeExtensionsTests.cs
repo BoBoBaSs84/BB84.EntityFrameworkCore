@@ -5,7 +5,7 @@
 // LICENSE file in the root directory of this source tree.
 using System.Data;
 
-using BB84.EntityFrameworkCore.Repositories.Extensions;
+using BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions;
 using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
 
 using Microsoft.Data.SqlClient;

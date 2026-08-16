@@ -3,7 +3,11 @@
 
 # BB84.EntityFrameworkCore.Repositories
 
-This package provides the default repository implementations and `DatabaseFacadeExtensions` for calling stored procedures and SQL functions.
+This package provides the default repository implementations, the provider-agnostic entity type configuration base classes, and the save changes interceptors for auditing and soft delete.
+
+> **Moved in 5.0.** The configuration base classes and the interceptors came here from
+> `BB84.EntityFrameworkCore.Repositories.SqlServer`, where almost nothing about them was SQL Server specific.
+> `DatabaseFacadeExtensions` went the other way, into that package, because it emits T-SQL.
 
 ## Installation
 
@@ -84,52 +88,54 @@ repository.Create(entity);
 await dbContext.SaveChangesAsync(token);
 ```
 
-## `DatabaseFacadeExtensions`
+## Configuration base classes
 
-Extension methods on `DatabaseFacade` (`context.Database`) for calling SQL Server stored procedures and functions safely with parameterized SQL.
+Provider-agnostic `IEntityTypeConfiguration<TEntity>` base classes in `BB84.EntityFrameworkCore.Repositories.Configurations`. They apply key declaration, column ordering, the concurrency token, audit columns and — for enumerator entities — the name/description constraints, unique index and soft delete query filter. Everything they do is EF Core or EF Core Relational, so they work on PostgreSQL, SQLite, MySQL and Oracle.
 
-### Stored procedures
+| Configuration class                                          | For entity type                               |
+| ------------------------------------------------------------ | --------------------------------------------- |
+| `IdentityConfiguration<TEntity, TKey>`                       | `IIdentityEntity<TKey>`                       |
+| `AuditedConfiguration<TEntity, TKey, TCreator, TEdited>`     | `IAuditedEntity<TKey, TCreator, TEdited>`     |
+| `FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>` | `IFullAuditedEntity<TKey, TCreator, TEdited>` |
+| `CompositeConfiguration<TEntity>`                            | `ICompositeEntity`                            |
+| `AuditedCompositeConfiguration<TEntity, TCreator, TEdited>`  | `IAuditedCompositeEntity<TCreator, TEdited>`  |
+| `EnumeratorConfiguration<TEntity, TKey>`                     | `IEnumeratorEntity<TKey>`                     |
 
-```csharp
-// Returns rows as IReadOnlyList<T>
-IReadOnlyList<ReportRow> rows = context.Database.ExecuteProcedure<ReportRow>(
-    schema: "dbo",
-    name: "usp_GetReport",
-    parameters: [new SqlParameter("@FromDate", fromDate)]);
+Each ladder has narrower generic aliases that default the key to `Guid` (`int` for the enumerator) and the creator/editor to `string`.
 
-// Non-generic overload returns rows-affected count
-int affected = context.Database.ExecuteProcedure(
-    schema: "dbo",
-    name: "usp_ArchiveOrders",
-    parameters: [new SqlParameter("@CutoffDate", cutoff)]);
+On SQL Server, use the same type names from `BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations` instead — those derive from these and add clustering, `NEWID()` defaults and `sysname` audit columns.
 
-// Async variants
-await context.Database.ExecuteProcedureAsync<ReportRow>(..., cancellationToken);
-await context.Database.ExecuteProcedureAsync(..., cancellationToken);
-```
+## Interceptors
 
-Output parameters are supported — parameters with `Direction = ParameterDirection.Output` are emitted as `@param = @param OUTPUT` in the generated SQL.
-
-### Table-valued functions
+Register on the `DbContextOptionsBuilder`:
 
 ```csharp
-IReadOnlyList<ProductDto> results = context.Database.ExecuteTableFunction<ProductDto>(
-    schema: "dbo",
-    name: "fn_GetActiveProducts",
-    parameters: [new SqlParameter("@CategoryId", categoryId)]);
+services.AddSingleton<SoftDeletableInterceptor>();
+services.AddSingleton<TimeAuditedInterceptor>();
 
-await context.Database.ExecuteTableFunctionAsync<ProductDto>(..., cancellationToken);
+services.AddDbContext<AppDbContext>((sp, options) =>
+{
+    options
+        .UseSqlServer(connectionString) // any provider
+        .AddInterceptors(
+            sp.GetRequiredService<SoftDeletableInterceptor>(),
+            sp.GetRequiredService<TimeAuditedInterceptor>());
+});
 ```
 
-### Scalar-valued functions
+### `SoftDeletableInterceptor`
 
-```csharp
-decimal? total = context.Database.ExecuteScalarFunction<decimal>(
-    schema: "dbo",
-    name: "fn_GetOrderTotal",
-    parameters: [new SqlParameter("@OrderId", orderId)]);
+Fires on `SavingChanges`/`SavingChangesAsync`. For every entity tracked as `Deleted` that implements `ISoftDeletable`, it sets `IsDeleted = true` and changes the state to `Modified` — preventing a physical `DELETE` from being issued.
 
-await context.Database.ExecuteScalarFunctionAsync<decimal>(..., cancellationToken);
-```
+Pair it with a configuration deriving from `EnumeratorConfiguration<TEntity, TKey>`, which applies the matching `HasQueryFilter(e => !e.IsDeleted)`. Without that filter the flag is set but never read.
 
-All methods sanitize schema/name inputs and use parameterized SQL to prevent injection.
+### `TimeAuditedInterceptor`
+
+Fires on `SavingChanges`/`SavingChangesAsync`. For every entity implementing `ITimeAudited`:
+
+- `EntityState.Added` → sets `CreatedAt = DateTimeOffset.UtcNow`
+- `EntityState.Modified` → sets `EditedAt = DateTimeOffset.UtcNow`
+
+`CreatedBy` / `EditedBy` are **not** set automatically by this interceptor — implement a custom `SaveChangesInterceptor` for user auditing and register it alongside the built-in ones.
+
+Both interceptors run on save. The expression-based `Delete` / `Update` repository overloads execute immediately and bypass the change tracker, so neither interceptor fires for them.

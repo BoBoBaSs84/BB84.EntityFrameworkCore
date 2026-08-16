@@ -7,7 +7,7 @@ using System.Data.Common;
 
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace BB84.EntityFrameworkCore.Repositories.Extensions;
+namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions;
 
 /// <summary>
 /// Represents extension methods for the <see cref="DatabaseFacade"/> class to execute stored

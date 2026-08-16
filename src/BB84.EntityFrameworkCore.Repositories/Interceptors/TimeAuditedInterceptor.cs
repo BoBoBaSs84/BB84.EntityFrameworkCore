@@ -9,20 +9,19 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
-namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors;
+namespace BB84.EntityFrameworkCore.Repositories.Interceptors;
 
 /// <summary>
-/// Intercepts save operations in a <see cref="DbContext"/> to enforce soft delete behavior for
-/// entities implementing the <see cref="ISoftDeletable"/> interface.
+/// A save changes interceptor that automatically updates audit timestamps for entities
+/// implementing the <see cref="ITimeAudited"/> interface.
 /// </summary>
 /// <remarks>
-/// This interceptor modifies the behavior of entities marked for deletion by setting their
-/// <see cref="ISoftDeletable.IsDeleted"/> property to <see langword="true"/> and changing their
-/// state to <see cref="EntityState.Modified"/>. This ensures that soft-deleted entities are not
-/// physically removed from the database.
+/// This interceptor updates the <see cref="ITimeAudited.CreatedAt"/> property to the current
+/// UTC time when an entity is added and the <see cref="ITimeAudited.EditedAt"/> property to
+/// the current UTC time when an entity is modified.
 /// </remarks>
 /// <inheritdoc cref="SaveChangesInterceptor"/>
-public sealed class SoftDeletableInterceptor : SaveChangesInterceptor
+public sealed class TimeAuditedInterceptor : SaveChangesInterceptor
 {
 	/// <inheritdoc/>
 	public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)
@@ -39,7 +38,7 @@ public sealed class SoftDeletableInterceptor : SaveChangesInterceptor
 	}
 
 	/// <summary>
-	/// Intercepts and processes entities implementing <see cref="ISoftDeletable"/> in the
+	/// Intercepts and processes entities implementing <see cref="ITimeAudited"/> in the
 	/// specified <see cref="DbContext"/>.
 	/// </summary>
 	/// <param name="dbContext">
@@ -49,20 +48,21 @@ public sealed class SoftDeletableInterceptor : SaveChangesInterceptor
 	{
 		if (dbContext is not null)
 		{
-			IEnumerable<EntityEntry<ISoftDeletable>> entityEntries = dbContext.ChangeTracker.Entries<ISoftDeletable>();
+			IEnumerable<EntityEntry<ITimeAudited>> entityEntries = dbContext.ChangeTracker.Entries<ITimeAudited>();
 
-			foreach (EntityEntry<ISoftDeletable> entityEntry in entityEntries)
+			foreach (EntityEntry<ITimeAudited> entityEntry in entityEntries)
 			{
 				switch (entityEntry.State)
 				{
-					case EntityState.Deleted:
-						entityEntry.Entity.IsDeleted = true;
-						entityEntry.State = EntityState.Modified;
-						break;
+					case EntityState.Added:
+						entityEntry.Entity.CreatedAt = DateTimeOffset.UtcNow;
+						continue;
+					case EntityState.Modified:
+						entityEntry.Entity.EditedAt = DateTimeOffset.UtcNow;
+						continue;
 					case EntityState.Detached:
 					case EntityState.Unchanged:
-					case EntityState.Modified:
-					case EntityState.Added:
+					case EntityState.Deleted:
 					default:
 						break;
 				}

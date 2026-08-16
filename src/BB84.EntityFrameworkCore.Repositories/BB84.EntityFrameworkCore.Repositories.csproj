@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<Description>This package contains frequently used repository implementations of their respective abstractions.</Description>
+		<Description>This package contains frequently used repository implementations of their respective abstractions, along with provider agnostic entity type configurations and save changes interceptors.</Description>
 		<!-- CS1573: the asynchronous query cores inherit their parameter documentation from the
 		     synchronous ones and only document the additional cancellation token themselves. -->
 		<NoWarn>$(NoWarn);CS1573</NoWarn>
