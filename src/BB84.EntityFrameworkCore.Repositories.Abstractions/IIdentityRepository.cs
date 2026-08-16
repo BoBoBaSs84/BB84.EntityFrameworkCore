@@ -69,145 +69,90 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 	int Delete(IEnumerable<TKey> ids);
 
 	/// <inheritdoc cref="Delete(TKey)"/>
-	/// <param name="token">The cancellation token to cancel the request.</param>
-	Task<int> DeleteAsync(TKey id, CancellationToken token = default);
+	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	Task<int> DeleteAsync(TKey id, CancellationToken cancellationToken = default);
 
 	/// <inheritdoc cref="Delete(IEnumerable{TKey})"/>
-	/// <param name="token">The cancellation token to cancel the request.</param>
-	Task<int> DeleteAsync(IEnumerable<TKey> ids, CancellationToken token = default);
+	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
+	Task<int> DeleteAsync(IEnumerable<TKey> ids, CancellationToken cancellationToken = default);
 
 	/// <summary>
-	/// Retrieves an entity by its unique identifier.
-	/// </summary>
-	/// <param name="id">The unique identifier of the entity to retrieve.</param>
-	/// <param name="ignoreQueryFilters">
-	/// A value indicating whether to ignore query filters, such as global filters or soft delete filters.
-	/// </param>
-	/// <param name="trackChanges">
-	/// A value indicating whether the retrieved entity should be tracked by the context.
-	/// </param>
-	/// <param name="includeProperties">
-	/// An array of related entity property names to include in the query.
-	/// </param>
-	/// <returns>
-	/// The entity that matches the specified identifier, or <see langword="null"/> if no such entity exists.
-	/// </returns>
-	TEntity? GetById(
-		TKey id,
-		bool ignoreQueryFilters = false,
-		bool trackChanges = false,
-		params string[] includeProperties);
-
-	/// <summary>
-	/// Retrieves a projection of an entity identified by the specified key.
+	/// Returns the entity with the specified <paramref name="id"/>, or <see langword="null"/>
+	/// when no such entity exists.
 	/// </summary>
 	/// <remarks>
-	/// Use <paramref name="ignoreQueryFilters"/> with caution, as ignoring query filters may expose entities that
-	/// are normally excluded (such as soft-deleted records or tenant-specific data). The <paramref name="fieldSelector"/>
-	/// parameter allows for additional shaping of the result after the initial projection.
+	/// The identifier acts as an additional condition. Anything the <paramref name="query"/>
+	/// already filters by still applies.
 	/// </remarks>
-	/// <typeparam name="TResult">The type of the result returned by the selector expression.</typeparam>
-	/// <param name="id">The unique identifier of the entity to retrieve.</param>
-	/// <param name="selector">
-	/// An expression that defines the projection to apply to the entity. This determines which fields are included in the result.
-	/// </param>
-	/// <param name="fieldSelector">
-	/// An optional expression to further select or transform the projected result. If null, the entire projection defined by
-	/// <paramref name="selector"/> is returned.
-	/// </param>
-	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
-	/// <returns>
-	/// The projected result of type <typeparamref name="TResult"/> if an entity with the specified identifier exists; otherwise, null.
-	/// </returns>
+	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
+	/// <param name="query">The query describing how to read.</param>
+	/// <returns>The matching entity, or <see langword="null"/>.</returns>
+	TEntity? GetById(TKey id, Query<TEntity>? query = null);
+
+	/// <inheritdoc cref="GetById(TKey, Query{TEntity})"/>
+	/// <typeparam name="TResult">The type the entity is projected into.</typeparam>
+	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
+	/// <param name="selector">The projection applied to the matching entity.</param>
+	/// <param name="query">The query describing how to read.</param>
 	TResult? GetById<TResult>(
 		TKey id,
 		Expression<Func<TEntity, TResult>> selector,
-		Expression<Func<TResult, TResult>>? fieldSelector = null,
-		bool ignoreQueryFilters = false);
+		Query<TEntity>? query = null);
 
-	/// <inheritdoc cref="GetById(TKey, bool, bool, string[])"/>
-	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <inheritdoc cref="GetById(TKey, Query{TEntity})"/>
+	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
 	Task<TEntity?> GetByIdAsync(
 		TKey id,
-		bool ignoreQueryFilters = false,
-		bool trackChanges = false,
-		CancellationToken token = default,
-		params string[] includeProperties);
+		Query<TEntity>? query = null,
+		CancellationToken cancellationToken = default);
 
-	/// <inheritdoc cref="GetById{TResult}(TKey, Expression{Func{TEntity, TResult}}, Expression{Func{TResult, TResult}}, bool)"/>
-	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <inheritdoc cref="GetById{TResult}(TKey, Expression{Func{TEntity, TResult}}, Query{TEntity})"/>
+	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
 	Task<TResult?> GetByIdAsync<TResult>(
 		TKey id,
 		Expression<Func<TEntity, TResult>> selector,
-		Expression<Func<TResult, TResult>>? fieldSelector = null,
-		bool ignoreQueryFilters = false,
-		CancellationToken token = default);
+		Query<TEntity>? query = null,
+		CancellationToken cancellationToken = default);
 
 	/// <summary>
-	/// Retrieves a collection of entities that match the specified identifiers.
-	/// </summary>
-	/// <param name="ids">A collection of identifiers used to filter the entities.</param>
-	/// <param name="ignoreQueryFilters">
-	/// A value indicating whether to ignore any query filters applied to the entity type.
-	/// </param>
-	/// <param name="trackChanges">
-	/// A value indicating whether the returned entities should be tracked by the context.
-	/// </param>
-	/// <param name="includeProperties">
-	/// An array of related entity property names to include in the query results.
-	/// </param>
-	/// <returns>
-	/// A read only collection of entities of type <typeparamref name="TEntity"/> that match the
-	/// specified identifiers. If no entities match, an empty collection is returned.
-	/// </returns>
-	IReadOnlyList<TEntity> GetByIds(
-		IEnumerable<TKey> ids,
-		bool ignoreQueryFilters = false,
-		bool trackChanges = false,
-		params string[] includeProperties);
-
-	/// <summary>
-	/// Retrieves entities by their identifiers and projects them into the specified result type.
+	/// Returns the entities matching the specified <paramref name="ids"/>.
 	/// </summary>
 	/// <remarks>
-	/// The order of the returned results is not guaranteed to match the order of the provided identifiers.
-	/// If an identifier does not correspond to an existing entity, it is omitted from the results. This
-	/// method is typically used to efficiently fetch and project multiple entities in a single query.
+	/// The order of the results is not guaranteed to match the order of the identifiers, and an
+	/// identifier without a matching row is simply absent from the result. The identifiers act
+	/// as an additional condition, so anything the <paramref name="query"/> already filters by
+	/// still applies.
 	/// </remarks>
-	/// <typeparam name="TResult">The type of the result returned for each entity.</typeparam>
-	/// <param name="ids">A collection of entity identifiers to retrieve.</param>
-	/// <param name="selector">An expression that defines the projection from the entity to the result type.</param>
-	/// <param name="fieldSelector">
-	/// An optional expression to further select or shape the projected result. If null, the full result from the selector is returned.
-	/// </param>
-	/// <param name="ignoreQueryFilters">true to ignore any global query filters applied to the entity type; otherwise, false.</param>
-	/// <returns>
-	/// An read only collection of projected results of <typeparamref name="TResult"/> corresponding to the specified identifiers.
-	/// The collection may be empty if no entities are found.
-	/// </returns>
+	/// <param name="ids">The primary keys of the <typeparamref name="TEntity"/>.</param>
+	/// <param name="query">The query describing how to read.</param>
+	/// <returns>The matching entities.</returns>
+	IReadOnlyList<TEntity> GetByIds(IEnumerable<TKey> ids, Query<TEntity>? query = null);
+
+	/// <inheritdoc cref="GetByIds(IEnumerable{TKey}, Query{TEntity})"/>
+	/// <typeparam name="TResult">The type the entities are projected into.</typeparam>
+	/// <param name="ids">The primary keys of the <typeparamref name="TEntity"/>.</param>
+	/// <param name="selector">The projection applied to each matching entity.</param>
+	/// <param name="query">The query describing how to read.</param>
 	IReadOnlyList<TResult> GetByIds<TResult>(
 		IEnumerable<TKey> ids,
 		Expression<Func<TEntity, TResult>> selector,
-		Expression<Func<TResult, TResult>>? fieldSelector = null,
-		bool ignoreQueryFilters = false);
+		Query<TEntity>? query = null);
 
-	/// <inheritdoc cref="GetByIds(IEnumerable{TKey}, bool, bool, string[])"/>
-	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <inheritdoc cref="GetByIds(IEnumerable{TKey}, Query{TEntity})"/>
+	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
 	Task<IReadOnlyList<TEntity>> GetByIdsAsync(
 		IEnumerable<TKey> ids,
-		bool ignoreQueryFilters = false,
-		bool trackChanges = false,
-		CancellationToken token = default,
-		params string[] includeProperties);
+		Query<TEntity>? query = null,
+		CancellationToken cancellationToken = default);
 
-	/// <inheritdoc cref="GetByIds{TResult}(IEnumerable{TKey}, Expression{Func{TEntity, TResult}}, Expression{Func{TResult, TResult}}, bool)"/>
-	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <inheritdoc cref="GetByIds{TResult}(IEnumerable{TKey}, Expression{Func{TEntity, TResult}}, Query{TEntity})"/>
+	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
 	Task<IReadOnlyList<TResult>> GetByIdsAsync<TResult>(
 		IEnumerable<TKey> ids,
 		Expression<Func<TEntity, TResult>> selector,
-		Expression<Func<TResult, TResult>>? fieldSelector = null,
-		bool ignoreQueryFilters = false,
-		CancellationToken token = default);
+		Query<TEntity>? query = null,
+		CancellationToken cancellationToken = default);
+
 
 	/// <summary>
 	/// Updates the entity identified by the specified identifier with the provided property changes.
@@ -248,18 +193,18 @@ public interface IIdentityRepository<TEntity, TKey> : IGenericRepository<TEntity
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls);
 
 	/// <inheritdoc cref="Update(TKey, Action{UpdateSettersBuilder{TEntity}})"/>
-	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
 	Task<int> UpdateAsync(
 		TKey id,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
-		CancellationToken token = default);
+		CancellationToken cancellationToken = default);
 
 	/// <inheritdoc cref="Update(IEnumerable{TKey}, Action{UpdateSettersBuilder{TEntity}})"/>
-	/// <param name="token">The cancellation token to cancel the request.</param>
+	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
 	Task<int> UpdateAsync(
 		IEnumerable<TKey> ids,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
-		CancellationToken token = default);
+		CancellationToken cancellationToken = default);
 }
 
 /// <inheritdoc cref="IIdentityRepository{TEntity, TKey}"/>
