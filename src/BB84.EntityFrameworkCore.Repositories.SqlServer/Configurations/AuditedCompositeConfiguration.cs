@@ -12,17 +12,17 @@ using Base = BB84.EntityFrameworkCore.Repositories.Configurations;
 
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 
-/// <inheritdoc cref="Base.AuditedCompositeConfiguration{TEntity, TCreator, TEdited}"/>
+/// <inheritdoc cref="Base.AuditedCompositeConfiguration{TEntity, TCreator, TEditor}"/>
 /// <remarks>
 /// Nothing in this rung is SQL Server specific. The type exists so that the ladder is complete
 /// in both namespaces and a consumer can pick the namespace rather than the type.
 /// </remarks>
-public abstract class AuditedCompositeConfiguration<TEntity, TCreator, TEdited> : Base.AuditedCompositeConfiguration<TEntity, TCreator, TEdited>, IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IAuditedCompositeEntity<TCreator, TEdited>
+public abstract class AuditedCompositeConfiguration<TEntity, TCreator, TEditor> : Base.AuditedCompositeConfiguration<TEntity, TCreator, TEditor>, IEntityTypeConfiguration<TEntity>
+	where TEntity : class, IAuditedCompositeEntity<TCreator, TEditor>
 	where TCreator : notnull
 { }
 
-/// <inheritdoc cref="AuditedCompositeConfiguration{TEntity, TCreator, TEdited}"/>
+/// <inheritdoc cref="AuditedCompositeConfiguration{TEntity, TCreator, TEditor}"/>
 /// <remarks>
 /// The creator and editor columns are mapped as <b>sysname</b>.
 /// </remarks>

@@ -13,7 +13,7 @@ namespace BB84.EntityFrameworkCore.Entities.Abstractions;
 /// soft deletion functionality.
 /// </summary>
 /// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
-public interface IEnumeratorEntity<TKey> : IIdentityEntity<TKey>, IEnumerator, ISoftDeletable
+public interface IEnumeratorEntity<TKey> : IIdentityEntity<TKey>, IEnumeration, ISoftDeletable
 	where TKey : IEquatable<TKey>
 { }
 

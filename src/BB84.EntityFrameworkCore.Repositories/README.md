@@ -111,13 +111,13 @@ Provider-agnostic `IEntityTypeConfiguration<TEntity>` base classes in `BB84.Enti
 | Configuration class                                          | For entity type                               |
 | ------------------------------------------------------------ | --------------------------------------------- |
 | `IdentityConfiguration<TEntity, TKey>`                       | `IIdentityEntity<TKey>`                       |
-| `AuditedConfiguration<TEntity, TKey, TCreator, TEdited>`     | `IAuditedEntity<TKey, TCreator, TEdited>`     |
-| `FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>` | `IFullAuditedEntity<TKey, TCreator, TEdited>` |
+| `AuditedConfiguration<TEntity, TKey, TCreator, TEditor>`     | `IAuditedEntity<TKey, TCreator, TEditor>`     |
+| `FullAuditedConfiguration<TEntity, TKey, TCreator, TEditor>` | `IFullAuditedEntity<TKey, TCreator, TEditor>` |
 | `CompositeConfiguration<TEntity>`                            | `ICompositeEntity`                            |
-| `AuditedCompositeConfiguration<TEntity, TCreator, TEdited>`  | `IAuditedCompositeEntity<TCreator, TEdited>`  |
+| `AuditedCompositeConfiguration<TEntity, TCreator, TEditor>`  | `IAuditedCompositeEntity<TCreator, TEditor>`  |
 | `EnumeratorConfiguration<TEntity, TKey>`                     | `IEnumeratorEntity<TKey>`                     |
 
-Each ladder has narrower generic aliases that default the key to `Guid` (`int` for the enumerator) and the creator/editor to `string`.
+Each ladder has narrower generic aliases: one that supplies the key and defaults the creator/editor to `string`, and one that supplies nothing and defaults the key to `Guid` (`int` for the enumerator) as well. There is deliberately no alias that defaults the key alone — pick the full form and name every parameter when the creator or editor type is not `string`.
 
 On SQL Server, use the same type names from `BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations` instead — those derive from these and add clustering, `NEWID()` defaults and `sysname` audit columns.
 

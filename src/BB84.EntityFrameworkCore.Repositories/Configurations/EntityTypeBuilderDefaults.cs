@@ -60,12 +60,12 @@ internal static class EntityTypeBuilderDefaults
 	/// </summary>
 	/// <typeparam name="TEntity">The type of the entity being configured.</typeparam>
 	/// <typeparam name="TCreator">The type representing the creator of the entity.</typeparam>
-	/// <typeparam name="TEdited">The type representing the editor of the entity.</typeparam>
+	/// <typeparam name="TEditor">The type representing the editor of the entity.</typeparam>
 	/// <param name="builder">The builder for the entity type being configured.</param>
 	/// <param name="createdByOrder">The ordering of the creator column within the table.</param>
 	/// <param name="editedByOrder">The ordering of the editor column within the table.</param>
-	internal static void ApplyUserAuditColumns<TEntity, TCreator, TEdited>(EntityTypeBuilder<TEntity> builder, int createdByOrder, int editedByOrder)
-		where TEntity : class, IUserAudited<TCreator, TEdited>
+	internal static void ApplyUserAuditColumns<TEntity, TCreator, TEditor>(EntityTypeBuilder<TEntity> builder, int createdByOrder, int editedByOrder)
+		where TEntity : class, IUserAudited<TCreator, TEditor>
 		where TCreator : notnull
 	{
 		builder.Property(e => e.CreatedBy)
