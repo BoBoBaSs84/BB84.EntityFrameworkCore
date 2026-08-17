@@ -11,42 +11,42 @@ namespace BB84.EntityFrameworkCore.Repositories.Tests;
 public sealed class JobTests : UnitTestBase
 {
 	[TestMethod]
-	public void UpdateByIdTest()
+	public void ExecuteUpdateByIdTest()
 	{
 		JobRepository repository = new(DbContext);
 
-		int updated = repository.Update(Guid.NewGuid(), s => s.SetProperty(p => p.Name, "Tester"));
+		int updated = repository.ExecuteUpdate(Guid.NewGuid(), s => s.SetProperty(p => p.Name, "Tester"));
 
 		Assert.AreEqual(0, updated);
 	}
 
 	[TestMethod]
-	public void UpdateByIdsTest()
+	public void ExecuteUpdateByIdsTest()
 	{
 		JobRepository repository = new(DbContext);
 
-		int updated = repository.Update([Guid.NewGuid(), Guid.NewGuid()], s => s.SetProperty(p => p.Name, "Tester"));
+		int updated = repository.ExecuteUpdate([Guid.NewGuid(), Guid.NewGuid()], s => s.SetProperty(p => p.Name, "Tester"));
 
 		Assert.AreEqual(0, updated);
 	}
 
 	[TestMethod]
-	public async Task UpdateByIdAsyncTest()
+	public async Task ExecuteUpdateByIdAsyncTest()
 	{
 		JobRepository repository = new(DbContext);
 
-		int updated = await repository.UpdateAsync(Guid.NewGuid(), s => s.SetProperty(p => p.Name, "Tester"), TestContext.CancellationToken)
+		int updated = await repository.ExecuteUpdateAsync(Guid.NewGuid(), s => s.SetProperty(p => p.Name, "Tester"), TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(0, updated);
 	}
 
 	[TestMethod]
-	public async Task UpdateByIdsAsyncTest()
+	public async Task ExecuteUpdateByIdsAsyncTest()
 	{
 		JobRepository repository = new(DbContext);
 
-		int updated = await repository.UpdateAsync([Guid.NewGuid(), Guid.NewGuid()], s => s.SetProperty(p => p.Name, "Tester"), TestContext.CancellationToken)
+		int updated = await repository.ExecuteUpdateAsync([Guid.NewGuid(), Guid.NewGuid()], s => s.SetProperty(p => p.Name, "Tester"), TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(0, updated);

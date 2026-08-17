@@ -15,8 +15,9 @@ namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 /// <remarks>
 /// <para>
 /// The entity based methods stage their change in the change tracker and take effect on the
-/// next save operation, which is the caller's responsibility. The expression based methods
-/// execute immediately and bypass the change tracker entirely, so no interceptor runs for them.
+/// next save operation, which is the caller's responsibility. The <c>Execute</c> prefixed
+/// methods execute immediately and bypass the change tracker entirely, so no interceptor runs
+/// for them.
 /// </para>
 /// <para>
 /// Depend on this rather than on <see cref="IGenericRepository{TEntity}"/> wherever a component
@@ -103,7 +104,7 @@ public interface IWriteRepository<TEntity>
 	/// </remarks>
 	/// <param name="expression">The condition to fulfill to be deleted.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
-	int Delete(Expression<Func<TEntity, bool>> expression);
+	int ExecuteDelete(Expression<Func<TEntity, bool>> expression);
 
 	/// <inheritdoc cref="Delete(TEntity)"/>
 	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
@@ -119,9 +120,9 @@ public interface IWriteRepository<TEntity>
 		IEnumerable<TEntity> entities,
 		CancellationToken cancellationToken = default);
 
-	/// <inheritdoc cref="Delete(Expression{Func{TEntity, bool}})"/>
+	/// <inheritdoc cref="ExecuteDelete(Expression{Func{TEntity, bool}})"/>
 	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
-	Task<int> DeleteAsync(
+	Task<int> ExecuteDeleteAsync(
 		Expression<Func<TEntity, bool>> expression,
 		CancellationToken cancellationToken = default);
 
@@ -166,7 +167,7 @@ public interface IWriteRepository<TEntity>
 	/// <param name="expression">The condition to fulfill to be updated.</param>
 	/// <param name="setPropertyCalls">A collection of set property statements specifying properties to update.</param>
 	/// <returns>The total number of rows updated in the database.</returns>
-	int Update(
+	int ExecuteUpdate(
 		Expression<Func<TEntity, bool>> expression,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls);
 
@@ -184,9 +185,9 @@ public interface IWriteRepository<TEntity>
 		IEnumerable<TEntity> entities,
 		CancellationToken cancellationToken = default);
 
-	/// <inheritdoc cref="Update(Expression{Func{TEntity, bool}}, Action{UpdateSettersBuilder{TEntity}})"/>
+	/// <inheritdoc cref="ExecuteUpdate(Expression{Func{TEntity, bool}}, Action{UpdateSettersBuilder{TEntity}})"/>
 	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
-	Task<int> UpdateAsync(
+	Task<int> ExecuteUpdateAsync(
 		Expression<Func<TEntity, bool>> expression,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
 		CancellationToken cancellationToken = default);

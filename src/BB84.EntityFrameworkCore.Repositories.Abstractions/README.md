@@ -119,12 +119,14 @@ Streaming yields rows as they arrive. The sequence is lazy, so it has to be enum
 **Update** — declared on `IWriteRepository<TEntity>`
 
 - `Update(entity)` / `Update(entities)` — marks entity/entities as `Modified`
-- `Update(expression, setPropertyCalls)` — bulk `ExecuteUpdate` (bypasses change tracker)
+- `ExecuteUpdate(expression, setPropertyCalls)` — immediate bulk `UPDATE` (bypasses change tracker)
 
 **Delete** — declared on `IWriteRepository<TEntity>`
 
 - `Delete(entity)` / `Delete(entities)` — marks entity/entities as `Deleted`
-- `Delete(expression)` — bulk `ExecuteDelete` (bypasses change tracker)
+- `ExecuteDelete(expression)` — immediate bulk `DELETE` (bypasses change tracker)
+
+The `Execute` prefix marks the immediate operations, matching EF Core's own `IQueryable.ExecuteDelete()` / `ExecuteUpdate()`. They run against the database there and then, so no save changes interceptor fires for them — auditing is skipped, and `ExecuteDelete` deletes permanently even for soft deletable entities.
 
 ## `IIdentityRepository<TEntity, TKey>` / `IIdentityRepository<TEntity>`
 
@@ -140,11 +142,13 @@ The key condition is **added** to the query rather than replacing it, so a `Wher
 
 **Additional delete methods** — declared on `IWriteIdentityRepository<TEntity, TKey>`
 
-- `Delete(id)` / `Delete(ids)` — bulk `ExecuteDelete` by key(s)
+- `ExecuteDelete(id)` / `ExecuteDelete(ids)` — immediate bulk `DELETE` by key(s)
 
 **Additional update methods** — declared on `IWriteIdentityRepository<TEntity, TKey>`
 
-- `Update(id, setPropertyCalls)` / `Update(ids, setPropertyCalls)` — bulk `ExecuteUpdate` by key(s)
+- `ExecuteUpdate(id, setPropertyCalls)` / `ExecuteUpdate(ids, setPropertyCalls)` — immediate bulk `UPDATE` by key(s)
+
+Every method on `IWriteIdentityRepository<TEntity, TKey>` is of the immediate kind — there is no key-based deferred operation.
 
 ## `IEnumeratorRepository<TEntity, TKey>` / `IEnumeratorRepository<TEntity>`
 
@@ -174,8 +178,18 @@ Extends `IIdentityRepository` with name-based lookups, declared on `IReadEnumera
 | `includeProperties: [nameof(X.Nav)]`                        | `Include = [x => x.Nav]`                                        |
 | `fieldSelector: …`                                          | removed — compose it into `selector`                            |
 | `token:`                                                    | `cancellationToken:`                                            |
+| `Delete(expression)`                                        | `ExecuteDelete(expression)`                                     |
+| `DeleteAsync(expression, …)`                                | `ExecuteDeleteAsync(expression, …)`                             |
+| `Delete(id)` / `Delete(ids)`                                | `ExecuteDelete(id)` / `ExecuteDelete(ids)`                      |
+| `DeleteAsync(id, …)` / `DeleteAsync(ids, …)`                | `ExecuteDeleteAsync(id, …)` / `ExecuteDeleteAsync(ids, …)`      |
+| `Update(expression, setPropertyCalls)`                      | `ExecuteUpdate(expression, setPropertyCalls)`                   |
+| `UpdateAsync(expression, setPropertyCalls, …)`              | `ExecuteUpdateAsync(expression, setPropertyCalls, …)`           |
+| `Update(id, …)` / `Update(ids, …)`                          | `ExecuteUpdate(id, …)` / `ExecuteUpdate(ids, …)`                |
+| `UpdateAsync(id, …)` / `UpdateAsync(ids, …)`                | `ExecuteUpdateAsync(id, …)` / `ExecuteUpdateAsync(ids, …)`      |
 
 Every `Async` method now takes its cancellation token **last**. Call sites that passed arguments positionally around the old token position need checking, not just recompiling.
+
+The `Execute` renames cover the immediate operations only; the entity based `Delete(entity)`, `Delete(entities)`, `Update(entity)` and `Update(entities)` keep their names. Both sets used to share a name while differing in whether they defer to a save operation and whether interceptors run — the rename makes that difference visible at the call site. Each rename is mechanical, but it breaks every call site of the immediate overloads; there are no `[Obsolete]` forwarders.
 
 ## `ICurrentUserProvider<TUser>` / `ICurrentUserProvider`
 
