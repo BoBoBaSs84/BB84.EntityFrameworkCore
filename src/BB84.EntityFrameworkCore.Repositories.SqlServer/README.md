@@ -90,11 +90,17 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 ## `PropertyBuilderExtensions`
 
-Extension methods on `PropertyBuilder` that set the SQL Server column type in one call. All methods return the same `PropertyBuilder` for chaining.
+Extension methods that set the SQL Server column type in one call, each in two forms. The generic form extends `PropertyBuilder<TProperty>` and returns it unchanged, so the property type survives the call and anything typed later in the chain — `HasDefaultValue`, `HasConversion`, `HasValueGenerator` — stays compile-time checked. The non-generic form extends `PropertyBuilder` and exists for the `Property(string)` path used by shadow properties. A lambda-based `Property` call picks the generic form automatically.
+
+```csharp
+builder.Property(e => e.Price)      // PropertyBuilder<decimal>
+    .IsDecimalColumn(10, 2)         // PropertyBuilder<decimal> — type kept
+    .HasDefaultValue(0m);           // takes decimal, not object
+```
 
 | Method                              | SQL Server type                   | Parameters                                                       |
 | ----------------------------------- | --------------------------------- | ---------------------------------------------------------------- |
-| `IsBinaryColumn(precision)`         | `binary(n)`                       | `precision`: 1–8000 (default 8000)                               |
+| `IsBinaryColumn(length)`            | `binary(n)`                       | `length`: 1–8000 (default 8000); `binary` has no `max` form      |
 | `IsDateColumn()`                    | `date`                            | —                                                                |
 | `IsDateTimeColumn(small)`           | `datetime` / `smalldatetime`      | `small: false` → `datetime`                                      |
 | `IsDateTime2Column(precision)`      | `datetime2(n)`                    | `precision`: 0–7 (default 7)                                     |
@@ -104,10 +110,10 @@ Extension methods on `PropertyBuilder` that set the SQL Server column type in on
 | `IsSysNameColumn()`                 | `sysname`                         | —                                                                |
 | `IsTimeColumn(precision)`           | `time(n)`                         | `precision`: 0–7 (default 7)                                     |
 | `IsUniqueIdentifierColumn()`        | `uniqueidentifier`                | —                                                                |
-| `IsVarbinaryColumn(precision)`      | `varbinary(n)` / `varbinary(max)` | `precision`: 0–8000; 0 → `varbinary(max)` (default 0)            |
+| `IsVarbinaryColumn(length)`         | `varbinary(n)` / `varbinary(max)` | `length`: 0–8000; 0 → `varbinary(max)` (default 0)               |
 | `IsXmlColumn()`                     | `xml`                             | —                                                                |
 
-Methods with a precision parameter throw `ArgumentOutOfRangeException` when the value is outside the valid range.
+Methods with a precision or length parameter throw `ArgumentOutOfRangeException` when the value is outside the valid range.
 
 ```csharp
 public class OrderConfiguration : IdentityConfiguration<Order>

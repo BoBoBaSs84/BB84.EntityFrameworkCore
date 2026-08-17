@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions;
 
 /// <summary>
-/// Provides extension methods for configuring entity types in a relational database context.
+/// Provides extension methods for configuring entity types against SQL Server.
 /// </summary>
 /// <remarks>
 /// The <see cref="EntityTypeBuilderExtensions"/> class contains methods to simplify the
