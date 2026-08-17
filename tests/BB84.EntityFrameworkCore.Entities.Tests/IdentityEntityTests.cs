@@ -23,7 +23,21 @@ public sealed class IdentityEntityTests
 
 		Assert.IsNotNull(entity);
 		Assert.AreEqual(id, entity.Id);
-		Assert.IsNull(entity.Timestamp);
+		Assert.IsEmpty(entity.Timestamp);
+	}
+
+	[TestMethod]
+	public void IdentityEntityTimestampIsAssignableTest()
+	{
+		byte[] timestamp = [1, 2, 3, 4, 5, 6, 7, 8];
+
+		IIdentityEntity entity = new TestClass()
+		{
+			Id = Guid.NewGuid(),
+			Timestamp = timestamp
+		};
+
+		Assert.AreSequenceEqual(timestamp, entity.Timestamp);
 	}
 
 	private sealed class TestClass : IdentityEntity

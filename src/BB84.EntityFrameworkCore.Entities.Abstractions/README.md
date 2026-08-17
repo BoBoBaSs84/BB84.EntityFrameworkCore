@@ -18,7 +18,7 @@ These fine-grained interfaces are the building blocks composed by the entity-lev
 | Interface                         | Members                                                |
 | --------------------------------- | ------------------------------------------------------ |
 | `IIdentity<TKey>`                 | `TKey Id`                                              |
-| `IConcurrency`                    | `byte[]? Timestamp` (rowversion)                       |
+| `IConcurrency`                    | `byte[] Timestamp` (rowversion)                        |
 | `ITimeAudited`                    | `DateTimeOffset CreatedAt`, `DateTimeOffset? EditedAt` |
 | `IUserAudited<TCreator, TEditor>` | `TCreator CreatedBy`, `TEditor EditedBy`               |
 | `IUserAudited`                    | Shorthand: `IUserAudited<string, string?>`             |
@@ -86,6 +86,36 @@ Lookup/reference data. Extends `IIdentityEntity<TKey>` with `IEnumerator` and `I
 public interface IEnumeratorEntity<TKey> : IIdentityEntity<TKey>, IEnumerator, ISoftDeletable
     where TKey : IEquatable<TKey>
 ```
+
+## Concurrency tokens
+
+`IConcurrency.Timestamp` is settable, which is what makes the disconnected update work. An entity is read, mapped to a DTO, sent over the wire and posted back; assign the original token onto the reconstructed entity before updating it, so it reaches the `WHERE` predicate:
+
+```csharp
+OrderEntity entity = new()
+{
+    Id = dto.Id,
+    TotalAmount = dto.TotalAmount,
+    Timestamp = dto.Timestamp   // the value read earlier
+};
+
+repository.Update(entity);
+
+try
+{
+    await context.SaveChangesAsync(cancellationToken);
+}
+catch (DbUpdateConcurrencyException)
+{
+    // another transaction changed the row in the meantime
+}
+```
+
+Leave `Timestamp` unset and the update is not guarded — it succeeds regardless of what happened to the row in between. The value is store generated, so never assign it on a newly created entity, and never assign anything other than a value read from the database.
+
+The token is shaped for SQL Server `rowversion`. Providers without an eight byte row version need their own mapping for the property.
+
+> **Changed in 5.0:** `Timestamp` was get-only before, so the original value could not be restored on a detached entity and optimistic concurrency never fired for the case it exists for. Hand-written implementations of `IConcurrency` need a setter added. The shipped entities also start out with an empty array rather than `null`.
 
 ## Usage
 

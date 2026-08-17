@@ -78,3 +78,5 @@ public class LedgerEntry : IdentityEntity<long>
 ```
 
 > **Note:** `FullAuditedEntity` adds time auditing (`CreatedAt`/`EditedAt`) to the identity and user-audit features. Soft delete (`IsDeleted`) is a separate concern — it is provided by `IEnumeratorEntity` (and thus `EnumeratorEntity`), not by `FullAuditedEntity`. Add `ISoftDeletable` manually to your entity if you need soft delete combined with full auditing.
+
+> **Changed in 5.0:** `Timestamp` is now settable and starts out as an empty array rather than `null`. Assign the previously read value onto a reconstructed entity before updating it, or the update is not guarded by the concurrency token — see the [abstractions README](../BB84.EntityFrameworkCore.Entities.Abstractions/README.md#concurrency-tokens).

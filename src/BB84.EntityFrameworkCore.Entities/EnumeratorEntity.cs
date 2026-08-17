@@ -20,7 +20,7 @@ public abstract class EnumeratorEntity<TKey> : IEnumeratorEntity<TKey>
 	public TKey Id { get; set; } = default!;
 
 	/// <inheritdoc/>
-	public byte[] Timestamp { get; } = default!;
+	public byte[] Timestamp { get; set; } = [];
 
 	/// <inheritdoc/>
 	public required string Name { get; set; }

@@ -14,5 +14,5 @@ namespace BB84.EntityFrameworkCore.Entities;
 public abstract class CompositeEntity : ICompositeEntity
 {
 	/// <inheritdoc/>
-	public byte[] Timestamp { get; } = default!;
+	public byte[] Timestamp { get; set; } = [];
 }
