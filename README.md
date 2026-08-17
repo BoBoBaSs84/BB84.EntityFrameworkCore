@@ -47,10 +47,24 @@ dotnet build
 dotnet test
 ```
 
-The repository tests start a SQL Server container through
-[Testcontainers](https://testcontainers.com/), so a running Docker daemon is required for
-`dotnet test`. The entity tests have no such dependency. On Apple silicon the SQL Server image
-runs under emulation, which works but is noticeably slower.
+The tests are split by what they need. The entity tests and the provider-agnostic repository
+tests run on SQLite in memory and need nothing installed — together they take a couple of
+seconds:
+
+```powershell
+dotnet test tests/BB84.EntityFrameworkCore.Entities.Tests
+dotnet test tests/BB84.EntityFrameworkCore.Repositories.Agnostic.Tests
+```
+
+Only `BB84.EntityFrameworkCore.Repositories.Tests` needs Docker. It starts a SQL Server container
+through [Testcontainers](https://testcontainers.com/) and covers what genuinely requires SQL
+Server: temporal tables, `rowversion` concurrency, the T-SQL emitting extensions and the provider
+column types. On Apple silicon that image runs under emulation, which works but is noticeably
+slower.
+
+The agnostic suite deliberately does not reference the SqlServer package, so a provider-specific
+call leaking into `BB84.EntityFrameworkCore.Repositories` is a compile error rather than a
+surprise on another database.
 
 ## 🏗️ Project structure
 
@@ -64,7 +78,9 @@ BB84.EntityFrameworkCore/
 │   └── BB84.EntityFrameworkCore.Repositories.SqlServer/  # SQL Server configurations and extensions
 ├── tests/
 │   ├── BB84.EntityFrameworkCore.Entities.Tests/          # Entity unit tests
-│   └── BB84.EntityFrameworkCore.Repositories.Tests/      # Repository integration tests (requires Docker)
+│   ├── BB84.EntityFrameworkCore.TestSupport.Tests/       # Test model shared by both repository suites
+│   ├── BB84.EntityFrameworkCore.Repositories.Agnostic.Tests/ # Provider-agnostic tests (SQLite in memory)
+│   └── BB84.EntityFrameworkCore.Repositories.Tests/      # SQL Server tests (requires Docker)
 └── docs/                                                 # DocFX documentation source
 ```
 

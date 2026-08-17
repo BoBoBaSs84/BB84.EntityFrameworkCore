@@ -5,7 +5,7 @@
 // LICENSE file in the root directory of this source tree.
 using BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 using BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions;
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
+using BB84.EntityFrameworkCore.TestSupport.Entities;
 
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -15,21 +15,21 @@ internal sealed class PersonConfiguration : AuditedConfiguration<PersonEntity>
 {
 	public override void Configure(EntityTypeBuilder<PersonEntity> builder)
 	{
-		builder.ToHistoryTable("Persons", TestDbContext.DefaultSchema);
+		_ = builder.ToHistoryTable("Persons", TestDbContext.DefaultSchema);
 
-		builder.Property(x => x.Settings)
+		_ = builder.Property(x => x.Settings)
 			.IsXmlColumn();
 
-		builder.Property(x => x.DateOfBirth)
+		_ = builder.Property(x => x.DateOfBirth)
 			.IsDateColumn();
 
-		builder.Property(p => p.StartDate)
+		_ = builder.Property(p => p.StartDate)
 			.IsDateTimeOffsetColumn();
 
-		builder.Property(p => p.Evaluation)
+		_ = builder.Property(p => p.Evaluation)
 			.IsDateTime2Column();
 
-		builder.Property(x => x.Salary)
+		_ = builder.Property(x => x.Salary)
 			.IsMoneyColumn(true);
 
 		base.Configure(builder);

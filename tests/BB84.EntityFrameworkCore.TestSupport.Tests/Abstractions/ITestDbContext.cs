@@ -5,7 +5,7 @@
 // LICENSE file in the root directory of this source tree.
 using BB84.EntityFrameworkCore.Repositories.Abstractions;
 
-namespace BB84.EntityFrameworkCore.Repositories.Tests.Abstractions;
+namespace BB84.EntityFrameworkCore.TestSupport.Abstractions;
 
 public interface ITestDbContext : IDbContext
 { }

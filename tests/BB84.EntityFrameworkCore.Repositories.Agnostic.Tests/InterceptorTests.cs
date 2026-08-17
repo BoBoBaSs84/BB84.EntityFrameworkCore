@@ -4,25 +4,24 @@
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
 using BB84.EntityFrameworkCore.Repositories.Abstractions;
+using BB84.EntityFrameworkCore.Repositories.Agnostic.Tests.Persistence;
 using BB84.EntityFrameworkCore.Repositories.Interceptors;
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence;
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
+using BB84.EntityFrameworkCore.TestSupport.Entities;
 
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Time.Testing;
 
-namespace BB84.EntityFrameworkCore.Repositories.Tests;
+namespace BB84.EntityFrameworkCore.Repositories.Agnostic.Tests;
 
 /// <summary>
 /// Covers the audit interceptors against a controlled clock and a controlled identity.
 /// </summary>
 /// <remarks>
-/// These build their own context rather than deriving from <see cref="UnitTestBase"/>, because
-/// the point is to supply interceptors other than the shared ones.
+/// These build their own context rather than using the inherited one, because the point is to
+/// supply interceptors other than the defaults.
 /// </remarks>
 [TestClass]
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, unit testing.")]
-public sealed class InterceptorTests
+public sealed class InterceptorTests : UnitTestBase
 {
 	private static readonly DateTimeOffset CreatedAt = new(2026, 8, 16, 10, 30, 0, TimeSpan.Zero);
 	private static readonly DateTimeOffset EditedAt = new(2026, 8, 16, 14, 45, 0, TimeSpan.Zero);
@@ -47,7 +46,6 @@ public sealed class InterceptorTests
 		Assert.AreEqual(CreatedAt, entity.CreatedAt);
 		Assert.AreEqual(EditedAt, entity.EditedAt);
 
-		Purge(dbContext, entity);
 	}
 
 	[TestMethod]
@@ -69,7 +67,6 @@ public sealed class InterceptorTests
 
 		Assert.AreEqual(first.CreatedAt, second.CreatedAt);
 
-		Purge(dbContext, first, second);
 	}
 
 	[TestMethod]
@@ -90,7 +87,6 @@ public sealed class InterceptorTests
 		Assert.AreEqual("DOMAIN\\Creator", entity.CreatedBy);
 		Assert.AreEqual("DOMAIN\\Creator", entity.EditedBy);
 
-		Purge(dbContext, entity);
 	}
 
 	[TestMethod]
@@ -101,22 +97,8 @@ public sealed class InterceptorTests
 		Assert.AreEqual($"{Environment.MachineName}\\{Environment.UserName}", provider.GetCurrentUser());
 	}
 
-	private static TestDbContext GetTestContext(TimeProvider timeProvider, string currentUser)
-		=> new(
-			UnitTestBase.GetContextOptions(),
-			new SoftDeletableInterceptor(),
-			new TimeAuditedInterceptor(timeProvider),
-			new UserAuditedInterceptor(new StubUserProvider(currentUser)));
-
-	private static void Purge(TestDbContext dbContext, params SkillEntity[] entities)
-	{
-		Guid[] ids = [.. entities.Select(x => x.Id)];
-
-		dbContext.Set<SkillEntity>()
-			.AsQueryable()
-			.Where(x => ids.Contains(x.Id))
-			.ExecuteDelete();
-	}
+	private TestDbContext GetTestContext(TimeProvider timeProvider, string currentUser)
+		=> CreateContext(timeProvider, new StubUserProvider(currentUser));
 
 	private sealed class StubUserProvider(string currentUser) : ICurrentUserProvider
 	{

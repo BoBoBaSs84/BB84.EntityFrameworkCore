@@ -6,12 +6,12 @@
 #pragma warning disable CA1866 // Use char overload
 #pragma warning disable CA1847 // Use char literal for a single character lookup
 using BB84.EntityFrameworkCore.Repositories.Abstractions;
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Repositories;
+using BB84.EntityFrameworkCore.TestSupport.Entities;
+using BB84.EntityFrameworkCore.TestSupport.Repositories;
 
 using Microsoft.EntityFrameworkCore;
 
-namespace BB84.EntityFrameworkCore.Repositories.Tests;
+namespace BB84.EntityFrameworkCore.Repositories.Agnostic.Tests;
 
 [TestClass]
 public sealed class RepositoryOverloadTests : UnitTestBase

@@ -5,7 +5,7 @@
 // LICENSE file in the root directory of this source tree.
 using BB84.EntityFrameworkCore.Entities;
 
-namespace BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
+namespace BB84.EntityFrameworkCore.TestSupport.Entities;
 
 public sealed class SkillEntity : FullAuditedEntity
 {
