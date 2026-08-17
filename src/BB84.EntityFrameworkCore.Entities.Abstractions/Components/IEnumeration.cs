@@ -1,4 +1,4 @@
-﻿// Copyright: 2024 Robert Peter Meyer
+// Copyright: 2024 Robert Peter Meyer
 // License: MIT
 //
 // This source code is licensed under the MIT license found in the
@@ -9,11 +9,11 @@ namespace BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 /// Defines a contract for entities that support enumerator functionality.
 /// </summary>
 /// <remarks>
-/// The <see cref="IEnumerator"/> interface is designed to provide a standardized way to
+/// The <see cref="IEnumeration"/> interface is designed to provide a standardized way to
 /// define enumerators within entities. It includes properties for the name and description
 /// so that each enumerator can be clearly identified and documented.
 /// </remarks>
-public interface IEnumerator
+public interface IEnumeration
 {
 	/// <summary>
 	/// Gets or sets the name of the enumerator.

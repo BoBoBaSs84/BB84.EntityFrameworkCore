@@ -13,21 +13,21 @@ dotnet add package BB84.EntityFrameworkCore.Entities
 
 ## Implementations
 
-Each abstract class mirrors the interface hierarchy. Convenience overloads follow the same defaulting pattern as the interfaces (`TKey` → `Guid`, `TCreator`/`TEdited` → `string`/`string?`).
+Each abstract class mirrors the interface hierarchy. Convenience overloads follow the same defaulting pattern as the interfaces (`TKey` → `Guid`, `TCreator`/`TEditor` → `string`/`string?`).
 
 | Abstract class                               | Implements                                    | Notes                                     |
 | -------------------------------------------- | --------------------------------------------- | ----------------------------------------- |
 | `IdentityEntity<TKey>`                       | `IIdentityEntity<TKey>`                       |                                           |
 | `IdentityEntity`                             | `IIdentityEntity`                             | `TKey` = `Guid`                           |
-| `AuditedEntity<TKey, TCreator, TEdited>`     | `IAuditedEntity<TKey, TCreator, TEdited>`     |                                           |
-| `AuditedEntity<TKey>`                        | `IAuditedEntity<TKey>`                        | `TCreator`/`TEdited` = `string`/`string?` |
+| `AuditedEntity<TKey, TCreator, TEditor>`     | `IAuditedEntity<TKey, TCreator, TEditor>`     |                                           |
+| `AuditedEntity<TKey>`                        | `IAuditedEntity<TKey>`                        | `TCreator`/`TEditor` = `string`/`string?` |
 | `AuditedEntity`                              | `IAuditedEntity`                              | `TKey` = `Guid`                           |
-| `FullAuditedEntity<TKey, TCreator, TEdited>` | `IFullAuditedEntity<TKey, TCreator, TEdited>` | Adds `CreatedAt`, `EditedAt`              |
+| `FullAuditedEntity<TKey, TCreator, TEditor>` | `IFullAuditedEntity<TKey, TCreator, TEditor>` | Adds `CreatedAt`, `EditedAt`              |
 | `FullAuditedEntity<TKey>`                    | `IFullAuditedEntity<TKey>`                    |                                           |
 | `FullAuditedEntity`                          | `IFullAuditedEntity`                          | `TKey` = `Guid`                           |
 | `CompositeEntity`                            | `ICompositeEntity`                            |                                           |
-| `AuditedCompositeEntity<TCreator, TEdited>`  | `IAuditedCompositeEntity<TCreator, TEdited>`  |                                           |
-| `AuditedCompositeEntity`                     | `IAuditedCompositeEntity`                     | `TCreator`/`TEdited` = `string`/`string?` |
+| `AuditedCompositeEntity<TCreator, TEditor>`  | `IAuditedCompositeEntity<TCreator, TEditor>`  |                                           |
+| `AuditedCompositeEntity`                     | `IAuditedCompositeEntity`                     | `TCreator`/`TEditor` = `string`/`string?` |
 | `EnumeratorEntity<TKey>`                     | `IEnumeratorEntity<TKey>`                     |                                           |
 | `EnumeratorEntity`                           | `IEnumeratorEntity`                           | `TKey` = `int`                            |
 
@@ -67,7 +67,7 @@ public class OrderItem : CompositeEntity
 // Lookup table (int PK, Name unique, soft-deletable)
 public class ProductCategory : EnumeratorEntity
 {
-    // Name and Description come from IEnumerator via EnumeratorEntity
+    // Name and Description come from IEnumeration via EnumeratorEntity
 }
 
 // Custom key type

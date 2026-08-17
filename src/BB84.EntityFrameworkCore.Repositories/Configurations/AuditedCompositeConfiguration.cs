@@ -12,7 +12,7 @@ namespace BB84.EntityFrameworkCore.Repositories.Configurations;
 
 /// <summary>
 /// Provides a base configuration for entities that implement the
-/// <see cref="IAuditedCompositeEntity{TCreator, TEdited}"/> interface.
+/// <see cref="IAuditedCompositeEntity{TCreator, TEditor}"/> interface.
 /// </summary>
 /// <remarks>
 /// This abstract class provides a reusable configuration for audited composite entities,
@@ -23,20 +23,20 @@ namespace BB84.EntityFrameworkCore.Repositories.Configurations;
 /// </remarks>
 /// <typeparam name="TEntity">The type of the entity being configured.</typeparam>
 /// <typeparam name="TCreator">The type representing the creator of the entity.</typeparam>
-/// <typeparam name="TEdited">The type representing the editor of the entity.</typeparam>
-public abstract class AuditedCompositeConfiguration<TEntity, TCreator, TEdited> : IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IAuditedCompositeEntity<TCreator, TEdited>
+/// <typeparam name="TEditor">The type representing the editor of the entity.</typeparam>
+public abstract class AuditedCompositeConfiguration<TEntity, TCreator, TEditor> : IEntityTypeConfiguration<TEntity>
+	where TEntity : class, IAuditedCompositeEntity<TCreator, TEditor>
 	where TCreator : notnull
 {
 	/// <inheritdoc/>
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
 	{
 		EntityTypeBuilderDefaults.ApplyConcurrencyToken(builder, columnOrder: 3);
-		EntityTypeBuilderDefaults.ApplyUserAuditColumns<TEntity, TCreator, TEdited>(builder, createdByOrder: 4, editedByOrder: 5);
+		EntityTypeBuilderDefaults.ApplyUserAuditColumns<TEntity, TCreator, TEditor>(builder, createdByOrder: 4, editedByOrder: 5);
 	}
 }
 
-/// <inheritdoc cref="AuditedCompositeConfiguration{TEntity, TCreator, TEdited}"/>
+/// <inheritdoc cref="AuditedCompositeConfiguration{TEntity, TCreator, TEditor}"/>
 public abstract class AuditedCompositeConfiguration<TEntity> : AuditedCompositeConfiguration<TEntity, string, string?>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IAuditedCompositeEntity
 { }

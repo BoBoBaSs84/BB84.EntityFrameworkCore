@@ -1,4 +1,4 @@
-﻿// Copyright: 2024 Robert Peter Meyer
+// Copyright: 2024 Robert Peter Meyer
 // License: MIT
 //
 // This source code is licensed under the MIT license found in the
@@ -13,32 +13,26 @@ namespace BB84.EntityFrameworkCore.Entities.Abstractions;
 /// </summary>
 /// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
 /// <typeparam name="TCreator">The type representing the user or entity that created this entity.</typeparam>
-/// <typeparam name="TEdited">The type representing the user or entity that last modified this entity.</typeparam>
-public interface IAuditedEntity<TKey, TCreator, TEdited> : IIdentityEntity<TKey>, IUserAudited<TCreator, TEdited>
+/// <typeparam name="TEditor">The type representing the user or entity that last modified this entity.</typeparam>
+public interface IAuditedEntity<TKey, TCreator, TEditor> : IIdentityEntity<TKey>, IUserAudited<TCreator, TEditor>
 	where TKey : IEquatable<TKey>
 	where TCreator : notnull
 { }
 
-/// <inheritdoc cref="IAuditedEntity{TKey, TCreator, TEdited}"/>
+/// <inheritdoc cref="IAuditedEntity{TKey, TCreator, TEditor}"/>
 /// <remarks>
-/// The creator and editor types default to <see cref="string"/>.
+/// <typeparamref name="TKey"/> is supplied; <c>TCreator</c> defaults to <see cref="string"/>
+/// and <c>TEditor</c> to <see cref="string"/>. For a custom creator or editor type use
+/// <see cref="IAuditedEntity{TKey, TCreator, TEditor}"/> and name all three.
 /// </remarks>
 public interface IAuditedEntity<TKey> : IAuditedEntity<TKey, string, string?>, IUserAudited
 	where TKey : IEquatable<TKey>
 { }
 
-/// <inheritdoc cref="IAuditedEntity{TKey, TCreator, TEdited}"/>
+/// <inheritdoc cref="IAuditedEntity{TKey, TCreator, TEditor}"/>
 /// <remarks>
-/// The unique identifier type defaults to <see cref="Guid"/>.
-/// </remarks>
-public interface IAuditedEntity<TCreator, TEdited> : IAuditedEntity<Guid, TCreator, TEdited>, IIdentityEntity
-	where TCreator : notnull
-{ }
-
-/// <inheritdoc cref="IAuditedEntity{TKey, TCreator, TEdited}"/>
-/// <remarks>
-/// The unique identifier type defaults to <see cref="Guid"/> and the creator and editor
-/// types default to <see cref="string"/>.
+/// Nothing is supplied; <c>TKey</c> defaults to <see cref="Guid"/>, <c>TCreator</c> to
+/// <see cref="string"/> and <c>TEditor</c> to <see cref="string"/>.
 /// </remarks>
 public interface IAuditedEntity : IAuditedEntity<Guid, string, string?>, IIdentityEntity, IUserAudited
 { }

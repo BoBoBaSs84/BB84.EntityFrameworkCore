@@ -19,10 +19,10 @@ dotnet add package BB84.EntityFrameworkCore.Repositories.SqlServer
 
 Each configuration ladder exists twice, under the **same type names**:
 
-| Namespace                                                | Applies                                                                     |
-| -------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `BB84.EntityFrameworkCore.Repositories.Configurations`   | Key declaration, column order, concurrency token, audit columns, soft delete filter |
-| `BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations` | The above, plus clustering, `NEWID()` defaults and `sysname` audit columns |
+| Namespace                                                        | Applies                                                                             |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `BB84.EntityFrameworkCore.Repositories.Configurations`           | Key declaration, column order, concurrency token, audit columns, soft delete filter |
+| `BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations` | The above, plus clustering, `NEWID()` defaults and `sysname` audit columns          |
 
 Pick the namespace, not the type. On SQL Server, keep importing this package's namespace and nothing changes. On any other provider, import the agnostic one and you get everything except the three SQL Server calls.
 
@@ -36,14 +36,14 @@ using SqlServerConfigurations = BB84.EntityFrameworkCore.Repositories.SqlServer.
 
 Inherit from these in your `IEntityTypeConfiguration<TEntity>` implementations and call `base.Configure(builder)` to apply the standard column order, constraints, concurrency tokens, and indexes. Override before or after the base call to add entity-specific configuration.
 
-| Configuration class                                          | For entity type                               | What `base.Configure` applies                                                                                                                                        |
-| ------------------------------------------------------------ | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `IdentityConfiguration<TEntity, TKey>`                       | `IIdentityEntity<TKey>`                       | Non-clustered PK, `Id` (`ValueGeneratedOnAdd`), `Timestamp` as concurrency token                                                                                     |
-| `AuditedConfiguration<TEntity, TKey, TCreator, TEdited>`     | `IAuditedEntity<TKey, TCreator, TEdited>`     | Above + `CreatedBy` (required), `EditedBy` (optional); `string` overload maps both as `sysname`                                                                      |
-| `FullAuditedConfiguration<TEntity, TKey, TCreator, TEdited>` | `IFullAuditedEntity<TKey, TCreator, TEdited>` | Above + `CreatedAt` (required), `EditedAt` (optional); `Guid` overload adds `NEWID()` default                                                                        |
-| `CompositeConfiguration<TEntity>`                            | `ICompositeEntity`                            | `Timestamp` as concurrency token                                                                                                                                     |
-| `AuditedCompositeConfiguration<TEntity, TCreator, TEdited>`  | `IAuditedCompositeEntity<TCreator, TEdited>`  | Above + audit user columns                                                                                                                                           |
-| `EnumeratorConfiguration<TEntity, TKey>`                     | `IEnumeratorEntity<TKey>`                     | Non-clustered PK, `Name` (`nvarchar(64)`, unique index, non-unicode), `Description` (`nvarchar(256)`), `IsDeleted` default `false`; `int` overload uses clustered PK |
+| Configuration class                                          | For entity type                               | What `base.Configure` applies                                                                                                                                         |
+| ------------------------------------------------------------ | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `IdentityConfiguration<TEntity, TKey>`                       | `IIdentityEntity<TKey>`                       | Non-clustered PK, `Id` (`ValueGeneratedOnAdd`), `Timestamp` as concurrency token                                                                                      |
+| `AuditedConfiguration<TEntity, TKey, TCreator, TEditor>`     | `IAuditedEntity<TKey, TCreator, TEditor>`     | Above + `CreatedBy` (required), `EditedBy` (optional); the `<TEntity, TKey>` overload maps both as `sysname`, the `<TEntity>` overload adds the `NEWID()` default too |
+| `FullAuditedConfiguration<TEntity, TKey, TCreator, TEditor>` | `IFullAuditedEntity<TKey, TCreator, TEditor>` | Above + `CreatedAt` (required), `EditedAt` (optional); same overload behaviour                                                                                        |
+| `CompositeConfiguration<TEntity>`                            | `ICompositeEntity`                            | `Timestamp` as concurrency token                                                                                                                                      |
+| `AuditedCompositeConfiguration<TEntity, TCreator, TEditor>`  | `IAuditedCompositeEntity<TCreator, TEditor>`  | Above + audit user columns                                                                                                                                            |
+| `EnumeratorConfiguration<TEntity, TKey>`                     | `IEnumeratorEntity<TKey>`                     | Non-clustered PK, `Name` (`nvarchar(64)`, unique index, non-unicode), `Description` (`nvarchar(256)`), `IsDeleted` default `false`; `int` overload uses clustered PK  |
 
 ```csharp
 public class ProductConfiguration : IdentityConfiguration<Product>

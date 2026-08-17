@@ -12,14 +12,14 @@ using Base = BB84.EntityFrameworkCore.Repositories.Configurations;
 
 namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 
-/// <inheritdoc cref="Base.AuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
+/// <inheritdoc cref="Base.AuditedConfiguration{TEntity, TKey, TCreator, TEditor}"/>
 /// <remarks>
 /// Applies the provider-agnostic configuration of
-/// <see cref="Base.AuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/> and tunes it for
+/// <see cref="Base.AuditedConfiguration{TEntity, TKey, TCreator, TEditor}"/> and tunes it for
 /// SQL Server by declaring the primary key as non clustered.
 /// </remarks>
-public abstract class AuditedConfiguration<TEntity, TKey, TCreator, TEdited> : Base.AuditedConfiguration<TEntity, TKey, TCreator, TEdited>, IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IAuditedEntity<TKey, TCreator, TEdited>
+public abstract class AuditedConfiguration<TEntity, TKey, TCreator, TEditor> : Base.AuditedConfiguration<TEntity, TKey, TCreator, TEditor>, IEntityTypeConfiguration<TEntity>
+	where TEntity : class, IAuditedEntity<TKey, TCreator, TEditor>
 	where TKey : IEquatable<TKey>
 	where TCreator : notnull
 {
@@ -32,9 +32,12 @@ public abstract class AuditedConfiguration<TEntity, TKey, TCreator, TEdited> : B
 	}
 }
 
-/// <inheritdoc cref="AuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
+/// <inheritdoc cref="AuditedConfiguration{TEntity, TKey, TCreator, TEditor}"/>
 /// <remarks>
-/// The creator and editor columns are mapped as <b>sysname</b>.
+/// <typeparamref name="TKey"/> is supplied; <c>TCreator</c> and <c>TEditor</c> default to
+/// <see cref="string"/> and their columns are mapped as <b>sysname</b>. For a custom creator
+/// or editor type use <see cref="AuditedConfiguration{TEntity, TKey, TCreator, TEditor}"/> and
+/// name all four.
 /// </remarks>
 public abstract class AuditedConfiguration<TEntity, TKey> : AuditedConfiguration<TEntity, TKey, string, string?>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IAuditedEntity<TKey>
@@ -49,27 +52,11 @@ public abstract class AuditedConfiguration<TEntity, TKey> : AuditedConfiguration
 	}
 }
 
-/// <inheritdoc cref="AuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
+/// <inheritdoc cref="AuditedConfiguration{TEntity, TKey, TCreator, TEditor}"/>
 /// <remarks>
-/// The identifier column defaults to <c>NEWID()</c>.
-/// </remarks>
-public abstract class AuditedConfiguration<TEntity, TCreator, TEdited> : AuditedConfiguration<TEntity, Guid, TCreator, TEdited>, IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IAuditedEntity<TCreator, TEdited>
-	where TCreator : notnull
-{
-	/// <inheritdoc/>
-	public override void Configure(EntityTypeBuilder<TEntity> builder)
-	{
-		base.Configure(builder);
-
-		EntityTypeBuilderDefaults.ApplyGuidIdDefault(builder);
-	}
-}
-
-/// <inheritdoc cref="AuditedConfiguration{TEntity, TKey, TCreator, TEdited}"/>
-/// <remarks>
-/// The identifier column defaults to <c>NEWID()</c> and the creator and editor columns are
-/// mapped as <b>sysname</b>.
+/// Only <typeparamref name="TEntity"/> is supplied; <c>TKey</c> defaults to <see cref="Guid"/>
+/// and the identifier column defaults to <c>NEWID()</c>, while <c>TCreator</c> and
+/// <c>TEditor</c> default to <see cref="string"/> and are mapped as <b>sysname</b>.
 /// </remarks>
 public abstract class AuditedConfiguration<TEntity> : AuditedConfiguration<TEntity, Guid, string, string?>,
 	IEntityTypeConfiguration<TEntity> where TEntity : class, IAuditedEntity

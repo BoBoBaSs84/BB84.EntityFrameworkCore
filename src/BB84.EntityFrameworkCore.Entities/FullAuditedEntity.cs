@@ -1,4 +1,4 @@
-﻿// Copyright: 2024 Robert Peter Meyer
+// Copyright: 2024 Robert Peter Meyer
 // License: MIT
 //
 // This source code is licensed under the MIT license found in the
@@ -13,8 +13,8 @@ namespace BB84.EntityFrameworkCore.Entities;
 /// </summary>
 /// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
 /// <typeparam name="TCreator">The type representing the creator of the entity.</typeparam>
-/// <typeparam name="TEdited">The type representing the editor of the entity.</typeparam>
-public abstract class FullAuditedEntity<TKey, TCreator, TEdited> : IdentityEntity<TKey>, IFullAuditedEntity<TKey, TCreator, TEdited>
+/// <typeparam name="TEditor">The type representing the editor of the entity.</typeparam>
+public abstract class FullAuditedEntity<TKey, TCreator, TEditor> : IdentityEntity<TKey>, IFullAuditedEntity<TKey, TCreator, TEditor>
 	where TKey : IEquatable<TKey>
 	where TCreator : notnull
 {
@@ -23,28 +23,25 @@ public abstract class FullAuditedEntity<TKey, TCreator, TEdited> : IdentityEntit
 	/// <inheritdoc/>
 	public DateTimeOffset CreatedAt { get; set; } = default!;
 	/// <inheritdoc/>
-	public TEdited EditedBy { get; set; } = default!;
+	public TEditor EditedBy { get; set; } = default!;
 	/// <inheritdoc/>
 	public DateTimeOffset? EditedAt { get; set; } = default!;
 }
 
-/// <inheritdoc cref="FullAuditedEntity{TKey, TCreator, TEdited}"/>
+/// <inheritdoc cref="FullAuditedEntity{TKey, TCreator, TEditor}"/>
 /// <remarks>
-/// The creator and editor columns are of type <see cref="string"/>.
+/// <typeparamref name="TKey"/> is supplied; <c>TCreator</c> defaults to <see cref="string"/>
+/// and <c>TEditor</c> to <see cref="string"/>. For a custom creator or editor type use
+/// <see cref="FullAuditedEntity{TKey, TCreator, TEditor}"/> and name all three.
 /// </remarks>
 public abstract class FullAuditedEntity<TKey> : FullAuditedEntity<TKey, string, string?>, IFullAuditedEntity<TKey>
 	where TKey : IEquatable<TKey>
 { }
 
-
-/// <inheritdoc cref="FullAuditedEntity{TKey, TCreator, TEdited}"/>
+/// <inheritdoc cref="FullAuditedEntity{TKey, TCreator, TEditor}"/>
 /// <remarks>
-/// The identity column is of type <see cref="Guid"/>.
+/// Nothing is supplied; <c>TKey</c> defaults to <see cref="Guid"/>, <c>TCreator</c> to
+/// <see cref="string"/> and <c>TEditor</c> to <see cref="string"/>.
 /// </remarks>
-public abstract class FullAuditedEntity<TCreator, TEdited> : FullAuditedEntity<Guid, TCreator, TEdited>, IFullAuditedEntity<TCreator, TEdited>
-	where TCreator : notnull
-{ }
-
-/// <inheritdoc cref="FullAuditedEntity{TKey, TCreator, TEdited}"/>
 public abstract class FullAuditedEntity : FullAuditedEntity<Guid, string, string?>, IFullAuditedEntity
 { }

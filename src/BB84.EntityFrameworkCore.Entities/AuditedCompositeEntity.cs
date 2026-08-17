@@ -13,8 +13,8 @@ namespace BB84.EntityFrameworkCore.Entities;
 /// editor, and a concurrency timestamp.
 /// </summary>
 /// <typeparam name="TCreator">The type of the entity or user responsible for creating the entity.</typeparam>
-/// <typeparam name="TEdited">The type of the entity or user responsible for editing the entity.</typeparam>
-public abstract class AuditedCompositeEntity<TCreator, TEdited> : IAuditedCompositeEntity<TCreator, TEdited>
+/// <typeparam name="TEditor">The type of the entity or user responsible for editing the entity.</typeparam>
+public abstract class AuditedCompositeEntity<TCreator, TEditor> : IAuditedCompositeEntity<TCreator, TEditor>
 	where TCreator : notnull
 {
 	/// <inheritdoc/>
@@ -24,10 +24,10 @@ public abstract class AuditedCompositeEntity<TCreator, TEdited> : IAuditedCompos
 	public TCreator CreatedBy { get; set; } = default!;
 
 	/// <inheritdoc/>
-	public TEdited EditedBy { get; set; } = default!;
+	public TEditor EditedBy { get; set; } = default!;
 }
 
-/// <inheritdoc cref="AuditedCompositeEntity{TCreator, TEdited}"/>
+/// <inheritdoc cref="AuditedCompositeEntity{TCreator, TEditor}"/>
 /// <remarks>
 /// The creator and editor types default to <see cref="string"/>.
 /// </remarks>

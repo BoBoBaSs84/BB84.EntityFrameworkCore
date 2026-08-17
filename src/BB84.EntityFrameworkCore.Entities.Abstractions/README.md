@@ -23,7 +23,7 @@ These fine-grained interfaces are the building blocks composed by the entity-lev
 | `IUserAudited<TCreator, TEditor>` | `TCreator CreatedBy`, `TEditor EditedBy`               |
 | `IUserAudited`                    | Shorthand: `IUserAudited<string, string?>`             |
 | `ISoftDeletable`                  | `bool IsDeleted`                                       |
-| `IEnumerator`                     | `string Name`, `string? Description`                   |
+| `IEnumeration`                    | `string Name`, `string? Description`                   |
 
 ## Entity interfaces
 
@@ -80,10 +80,10 @@ Extends `ICompositeEntity` with `IUserAudited`. The non-generic overload default
 
 ### `IEnumeratorEntity<TKey>` / `IEnumeratorEntity`
 
-Lookup/reference data. Extends `IIdentityEntity<TKey>` with `IEnumerator` and `ISoftDeletable`. The non-generic overload defaults `TKey` to `int`.
+Lookup/reference data. Extends `IIdentityEntity<TKey>` with `IEnumeration` and `ISoftDeletable`. The non-generic overload defaults `TKey` to `int`.
 
 ```csharp
-public interface IEnumeratorEntity<TKey> : IIdentityEntity<TKey>, IEnumerator, ISoftDeletable
+public interface IEnumeratorEntity<TKey> : IIdentityEntity<TKey>, IEnumeration, ISoftDeletable
     where TKey : IEquatable<TKey>
 ```
 

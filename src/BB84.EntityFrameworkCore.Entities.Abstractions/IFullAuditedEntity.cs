@@ -1,4 +1,4 @@
-﻿// Copyright: 2024 Robert Peter Meyer
+// Copyright: 2024 Robert Peter Meyer
 // License: MIT
 //
 // This source code is licensed under the MIT license found in the
@@ -19,26 +19,20 @@ public interface IFullAuditedEntity<TKey, TCreator, TEditor> : IIdentityEntity<T
 	where TCreator : notnull
 { }
 
-/// <inheritdoc cref="IFullAuditedEntity{TKey, TCreator, TEdited}"/>
+/// <inheritdoc cref="IFullAuditedEntity{TKey, TCreator, TEditor}"/>
 /// <remarks>
-/// The creator and editor columns are of type <see cref="string"/>.
+/// <typeparamref name="TKey"/> is supplied; <c>TCreator</c> defaults to <see cref="string"/>
+/// and <c>TEditor</c> to <see cref="string"/>. For a custom creator or editor type use
+/// <see cref="IFullAuditedEntity{TKey, TCreator, TEditor}"/> and name all three.
 /// </remarks>
 public interface IFullAuditedEntity<TKey> : IFullAuditedEntity<TKey, string, string?>, IUserAudited
 	where TKey : IEquatable<TKey>
 { }
 
-/// <inheritdoc cref="IFullAuditedEntity{TKey, TCreator, TEdited}"/>
+/// <inheritdoc cref="IFullAuditedEntity{TKey, TCreator, TEditor}"/>
 /// <remarks>
-/// The identity column is of type <see cref="Guid"/>.
-/// </remarks>
-public interface IFullAuditedEntity<TCreator, TEdited> : IFullAuditedEntity<Guid, TCreator, TEdited>, IIdentityEntity
-	where TCreator : notnull
-{ }
-
-/// <inheritdoc cref="IFullAuditedEntity{TKey, TCreator, TEdited}"/>
-/// <remarks>
-/// The identity column is of type <see cref="Guid"/> and the creator and editor columns are
-/// of type <see cref="string"/>.
+/// Nothing is supplied; <c>TKey</c> defaults to <see cref="Guid"/>, <c>TCreator</c> to
+/// <see cref="string"/> and <c>TEditor</c> to <see cref="string"/>.
 /// </remarks>
 public interface IFullAuditedEntity : IFullAuditedEntity<Guid, string, string?>, IIdentityEntity, IUserAudited
 { }
