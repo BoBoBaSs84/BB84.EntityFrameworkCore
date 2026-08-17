@@ -18,7 +18,7 @@ public abstract class AuditedCompositeEntity<TCreator, TEdited> : IAuditedCompos
 	where TCreator : notnull
 {
 	/// <inheritdoc/>
-	public byte[] Timestamp { get; } = default!;
+	public byte[] Timestamp { get; set; } = [];
 
 	/// <inheritdoc/>
 	public TCreator CreatedBy { get; set; } = default!;

@@ -19,7 +19,7 @@ public abstract class IdentityEntity<TKey> : IIdentityEntity<TKey>
 	public TKey Id { get; set; } = default!;
 
 	/// <inheritdoc/>
-	public byte[] Timestamp { get; } = default!;
+	public byte[] Timestamp { get; set; } = [];
 }
 
 /// <inheritdoc cref="IdentityEntity{TKey}"/>
