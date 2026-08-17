@@ -49,7 +49,7 @@ public class Order : AuditedEntity
     public decimal TotalAmount { get; set; }
 }
 
-// Fully audited entity — tracks who and when, plus supports soft delete
+// Fully audited entity — tracks who and when
 public class Invoice : FullAuditedEntity
 {
     public string Number { get; set; } = string.Empty;
