@@ -20,6 +20,13 @@ namespace BB84.EntityFrameworkCore.Repositories.Abstractions;
 /// for them.
 /// </para>
 /// <para>
+/// <see cref="Delete(TEntity)"/> and <see cref="Update(TEntity)"/> have no asynchronous
+/// counterpart, because marking an entity in the change tracker is a synchronous in memory
+/// operation with nothing to await. Call them and then await the save operation. The exception
+/// is <see cref="CreateAsync(TEntity, CancellationToken)"/>, which does await when the entity
+/// uses a value generator that queries the store.
+/// </para>
+/// <para>
 /// Depend on this rather than on <see cref="IGenericRepository{TEntity}"/> wherever a component
 /// only writes, such as an importer or the command side of a CQRS split.
 /// </para>
@@ -106,20 +113,6 @@ public interface IWriteRepository<TEntity>
 	/// <returns>The total number of rows deleted in the database.</returns>
 	int ExecuteDelete(Expression<Func<TEntity, bool>> expression);
 
-	/// <inheritdoc cref="Delete(TEntity)"/>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
-	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
-	Task DeleteAsync(
-		TEntity entity,
-		CancellationToken cancellationToken = default);
-
-	/// <inheritdoc cref="Delete(IEnumerable{TEntity})"/>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
-	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
-	Task DeleteAsync(
-		IEnumerable<TEntity> entities,
-		CancellationToken cancellationToken = default);
-
 	/// <inheritdoc cref="ExecuteDelete(Expression{Func{TEntity, bool}})"/>
 	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
 	Task<int> ExecuteDeleteAsync(
@@ -170,20 +163,6 @@ public interface IWriteRepository<TEntity>
 	int ExecuteUpdate(
 		Expression<Func<TEntity, bool>> expression,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls);
-
-	/// <inheritdoc cref="Update(TEntity)"/>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
-	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
-	Task UpdateAsync(
-		TEntity entity,
-		CancellationToken cancellationToken = default);
-
-	/// <inheritdoc cref="Update(IEnumerable{TEntity})"/>
-	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
-	/// <returns>The <see cref="Task"/> representing the asynchronous operation.</returns>
-	Task UpdateAsync(
-		IEnumerable<TEntity> entities,
-		CancellationToken cancellationToken = default);
 
 	/// <inheritdoc cref="ExecuteUpdate(Expression{Func{TEntity, bool}}, Action{UpdateSettersBuilder{TEntity}})"/>
 	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>

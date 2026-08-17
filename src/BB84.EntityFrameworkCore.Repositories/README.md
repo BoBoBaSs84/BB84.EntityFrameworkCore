@@ -97,6 +97,13 @@ repository.Create(entity);
 await dbContext.SaveChangesAsync(cancellationToken);
 ```
 
+`Delete(entity)` and `Update(entity)` are synchronous on purpose — they only mark the entity in the change tracker, and the database work happens in the save:
+
+```csharp
+repository.Delete(entity);
+await dbContext.SaveChangesAsync(cancellationToken);
+```
+
 ## Configuration base classes
 
 Provider-agnostic `IEntityTypeConfiguration<TEntity>` base classes in `BB84.EntityFrameworkCore.Repositories.Configurations`. They apply key declaration, column ordering, the concurrency token, audit columns and — for enumerator entities — the name/description constraints, unique index and soft delete query filter. Everything they do is EF Core or EF Core Relational, so they work on PostgreSQL, SQLite, MySQL and Oracle.

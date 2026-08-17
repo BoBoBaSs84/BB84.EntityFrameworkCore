@@ -113,7 +113,7 @@ public sealed class PersonTypeTests : UnitTestBase
 		await repository.CreateAsync(entity, TestContext.CancellationToken);
 		_ = await DbContext.SaveChangesAsync(TestContext.CancellationToken);
 
-		await repository.DeleteAsync(entity, TestContext.CancellationToken);
+		repository.Delete(entity);
 		_ = await DbContext.SaveChangesAsync(TestContext.CancellationToken);
 
 		Assert.IsTrue(entity.IsDeleted);

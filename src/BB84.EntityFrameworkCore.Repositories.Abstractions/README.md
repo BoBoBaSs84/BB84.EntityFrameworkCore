@@ -93,7 +93,9 @@ There is no `IWriteEnumeratorRepository`: an enumerator repository adds only nam
 
 ## `IGenericRepository<TEntity>`
 
-The base repository interface, composing `IReadRepository<TEntity>` and `IWriteRepository<TEntity>`. All methods have synchronous and asynchronous variants, and every `Async` variant takes `CancellationToken cancellationToken` last.
+The base repository interface, composing `IReadRepository<TEntity>` and `IWriteRepository<TEntity>`. Every `Async` variant takes `CancellationToken cancellationToken` last.
+
+An `Async` variant exists only where there is something to await. Marking an entity in the change tracker is a synchronous in-memory operation, so `Delete(entity)` and `Update(entity)` have no asynchronous counterpart — call them and then await the save. `CreateAsync` is the exception, because `DbSet.AddAsync` genuinely awaits when the entity uses a value generator that queries the store, such as HiLo.
 
 **Create** — declared on `IWriteRepository<TEntity>`
 
@@ -118,12 +120,12 @@ Streaming yields rows as they arrive. The sequence is lazy, so it has to be enum
 
 **Update** — declared on `IWriteRepository<TEntity>`
 
-- `Update(entity)` / `Update(entities)` — marks entity/entities as `Modified`
+- `Update(entity)` / `Update(entities)` — marks entity/entities as `Modified`; no `Async` variant
 - `ExecuteUpdate(expression, setPropertyCalls)` — immediate bulk `UPDATE` (bypasses change tracker)
 
 **Delete** — declared on `IWriteRepository<TEntity>`
 
-- `Delete(entity)` / `Delete(entities)` — marks entity/entities as `Deleted`
+- `Delete(entity)` / `Delete(entities)` — marks entity/entities as `Deleted`; no `Async` variant
 - `ExecuteDelete(expression)` — immediate bulk `DELETE` (bypasses change tracker)
 
 The `Execute` prefix marks the immediate operations, matching EF Core's own `IQueryable.ExecuteDelete()` / `ExecuteUpdate()`. They run against the database there and then, so no save changes interceptor fires for them — auditing is skipped, and `ExecuteDelete` deletes permanently even for soft deletable entities.
@@ -186,8 +188,12 @@ Extends `IIdentityRepository` with name-based lookups, declared on `IReadEnumera
 | `UpdateAsync(expression, setPropertyCalls, …)`              | `ExecuteUpdateAsync(expression, setPropertyCalls, …)`           |
 | `Update(id, …)` / `Update(ids, …)`                          | `ExecuteUpdate(id, …)` / `ExecuteUpdate(ids, …)`                |
 | `UpdateAsync(id, …)` / `UpdateAsync(ids, …)`                | `ExecuteUpdateAsync(id, …)` / `ExecuteUpdateAsync(ids, …)`      |
+| `await DeleteAsync(entity)` / `await DeleteAsync(entities)` | removed — `Delete(entity)` / `Delete(entities)`                 |
+| `await UpdateAsync(entity)` / `await UpdateAsync(entities)` | removed — `Update(entity)` / `Update(entities)`                 |
 
 Every `Async` method now takes its cancellation token **last**. Call sites that passed arguments positionally around the old token position need checking, not just recompiling.
+
+The four removed entity overloads were `Async` in name only: they checked the token, mutated the change tracker synchronously and returned a completed task. Migration is dropping the `await` and the `Async` suffix. Nothing is lost, because the database work always happened in the save operation, not in these methods.
 
 The `Execute` renames cover the immediate operations only; the entity based `Delete(entity)`, `Delete(entities)`, `Update(entity)` and `Update(entities)` keep their names. Both sets used to share a name while differing in whether they defer to a save operation and whether interceptors run — the rename makes that difference visible at the call site. Each rename is mechanical, but it breaks every call site of the immediate overloads; there are no `[Obsolete]` forwarders.
 

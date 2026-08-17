@@ -52,28 +52,6 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		=> _dbSet.Where(expression).ExecuteDelete();
 
 	/// <inheritdoc/>
-	public Task DeleteAsync(TEntity entity, CancellationToken cancellationToken = default)
-	{
-		if (cancellationToken.IsCancellationRequested)
-			return Task.FromCanceled(cancellationToken);
-
-		_ = _dbSet.Remove(entity);
-
-		return Task.CompletedTask;
-	}
-
-	/// <inheritdoc/>
-	public Task DeleteAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
-	{
-		if (cancellationToken.IsCancellationRequested)
-			return Task.FromCanceled(cancellationToken);
-
-		_dbSet.RemoveRange(entities);
-
-		return Task.CompletedTask;
-	}
-
-	/// <inheritdoc/>
 	public async Task<int> ExecuteDeleteAsync(Expression<Func<TEntity, bool>> expression, CancellationToken cancellationToken = default)
 		=> await _dbSet.Where(expression).ExecuteDeleteAsync(cancellationToken).ConfigureAwait(false);
 
@@ -144,28 +122,6 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		Expression<Func<TEntity, bool>> expression,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls)
 		=> _dbSet.Where(expression).ExecuteUpdate(setPropertyCalls);
-
-	/// <inheritdoc/>
-	public Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default)
-	{
-		if (cancellationToken.IsCancellationRequested)
-			return Task.FromCanceled(cancellationToken);
-
-		_ = _dbSet.Update(entity);
-
-		return Task.CompletedTask;
-	}
-
-	/// <inheritdoc/>
-	public Task UpdateAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
-	{
-		if (cancellationToken.IsCancellationRequested)
-			return Task.FromCanceled(cancellationToken);
-
-		_dbSet.UpdateRange(entities);
-
-		return Task.CompletedTask;
-	}
 
 	/// <inheritdoc/>
 	public async Task<int> ExecuteUpdateAsync(

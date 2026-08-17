@@ -105,6 +105,8 @@ public sealed class PersonJobTests : UnitTestBase
 		PersonJobEntity personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
 
 		repository.Delete(personJob);
+
+		Assert.AreEqual(EntityState.Deleted, DbContext.Entry(personJob).State);
 	}
 
 	[TestMethod]
@@ -115,30 +117,6 @@ public sealed class PersonJobTests : UnitTestBase
 		List<PersonJobEntity> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
 
 		repository.Delete(personJobs);
-	}
-
-	[TestMethod]
-	public async Task DeleteAsyncTest()
-	{
-		PersonJobRepository repository = new(DbContext);
-
-		PersonJobEntity personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
-
-		await repository.DeleteAsync(personJob, TestContext.CancellationToken)
-			.ConfigureAwait(false);
-
-		Assert.AreEqual(EntityState.Deleted, DbContext.Entry(personJob).State);
-	}
-
-	[TestMethod]
-	public async Task DeleteRangeAsyncTest()
-	{
-		PersonJobRepository repository = new(DbContext);
-
-		List<PersonJobEntity> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
-
-		await repository.DeleteAsync(personJobs, TestContext.CancellationToken)
-			.ConfigureAwait(false);
 
 		Assert.AreEqual(EntityState.Deleted, DbContext.Entry(personJobs[0]).State);
 	}
@@ -151,6 +129,8 @@ public sealed class PersonJobTests : UnitTestBase
 		PersonJobEntity personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
 
 		repository.Update(personJob);
+
+		Assert.AreEqual(EntityState.Modified, DbContext.Entry(personJob).State);
 	}
 
 	[TestMethod]
@@ -161,46 +141,8 @@ public sealed class PersonJobTests : UnitTestBase
 		List<PersonJobEntity> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
 
 		repository.Update(personJobs);
-	}
-
-	[TestMethod]
-	public async Task UpdateAsyncTest()
-	{
-		PersonJobRepository repository = new(DbContext);
-
-		PersonJobEntity personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
-
-		await repository.UpdateAsync(personJob, TestContext.CancellationToken)
-			.ConfigureAwait(false);
-
-		Assert.AreEqual(EntityState.Modified, DbContext.Entry(personJob).State);
-	}
-
-	[TestMethod]
-	public async Task UpdateRangeAsyncTest()
-	{
-		PersonJobRepository repository = new(DbContext);
-
-		List<PersonJobEntity> personJobs = [new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() }];
-
-		await repository.UpdateAsync(personJobs, TestContext.CancellationToken)
-			.ConfigureAwait(false);
 
 		Assert.AreEqual(EntityState.Modified, DbContext.Entry(personJobs[0]).State);
-	}
-
-	[TestMethod]
-	public async Task DeleteAsyncCancelledTest()
-	{
-		PersonJobRepository repository = new(DbContext);
-
-		PersonJobEntity personJob = new() { PersonId = Guid.NewGuid(), JobId = Guid.NewGuid() };
-
-		_ = await Assert.ThrowsExactlyAsync<TaskCanceledException>(
-			() => repository.DeleteAsync(personJob, new CancellationToken(true)))
-			.ConfigureAwait(false);
-
-		Assert.AreEqual(EntityState.Detached, DbContext.Entry(personJob).State);
 	}
 
 	public TestContext TestContext { get; set; }
