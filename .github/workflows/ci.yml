@@ -16,8 +16,10 @@ env:
   CONFIGURATION: Release
 
 jobs:
-  build-and-test:
-    name: Build & Test
+  # Everything that needs no container. Runs in seconds, so an ordinary regression
+  # is not hidden behind a SQL Server image pull or a Docker outage.
+  agnostic:
+    name: Build & Test (provider-agnostic)
     runs-on: ubuntu-latest
 
     steps:
@@ -33,12 +35,49 @@ jobs:
       - name: Build solution
         run: dotnet build ${{ env.SOLUTION }} --configuration ${{ env.CONFIGURATION }} --no-restore
 
-      - name: Run tests
-        run: dotnet test ${{ env.SOLUTION }} --configuration ${{ env.CONFIGURATION }} --no-build --verbosity normal --logger "trx"
+      - name: Run entity tests
+        run: >
+          dotnet test tests/BB84.EntityFrameworkCore.Entities.Tests
+          --configuration ${{ env.CONFIGURATION }} --no-build --verbosity normal --logger "trx"
+
+      - name: Run provider-agnostic repository tests
+        run: >
+          dotnet test tests/BB84.EntityFrameworkCore.Repositories.Agnostic.Tests
+          --configuration ${{ env.CONFIGURATION }} --no-build --verbosity normal --logger "trx"
 
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: test-results
+          name: test-results-agnostic
+          path: "**/TestResults/*.trx"
+
+  sqlserver:
+    name: Build & Test (SQL Server)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ env.SOLUTION }}
+
+      - name: Build solution
+        run: dotnet build ${{ env.SOLUTION }} --configuration ${{ env.CONFIGURATION }} --no-restore
+
+      # Starts a SQL Server container through Testcontainers.
+      - name: Run SQL Server repository tests
+        run: >
+          dotnet test tests/BB84.EntityFrameworkCore.Repositories.Tests
+          --configuration ${{ env.CONFIGURATION }} --no-build --verbosity normal --logger "trx"
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-results-sqlserver
           path: "**/TestResults/*.trx"

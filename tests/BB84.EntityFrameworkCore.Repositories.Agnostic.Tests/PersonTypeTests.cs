@@ -3,12 +3,12 @@
 //
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Repositories;
+using BB84.EntityFrameworkCore.TestSupport.Entities;
+using BB84.EntityFrameworkCore.TestSupport.Repositories;
 
 using Microsoft.EntityFrameworkCore;
 
-namespace BB84.EntityFrameworkCore.Repositories.Tests;
+namespace BB84.EntityFrameworkCore.Repositories.Agnostic.Tests;
 
 [TestClass]
 public sealed class PersonTypeTests : UnitTestBase

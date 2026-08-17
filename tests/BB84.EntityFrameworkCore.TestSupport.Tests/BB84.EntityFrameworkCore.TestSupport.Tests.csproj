@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<IsPackable>False</IsPackable>
+		<!-- Holds the shared test model, not tests. Named "…Tests" so the test conventions in
+		     Directory.Build.props apply; MSTest is referenced only because those conventions
+		     inject a global using for it. -->
+		<IsTestProject>False</IsTestProject>
+		<RootNamespace>BB84.EntityFrameworkCore.TestSupport</RootNamespace>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="MSTest" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\BB84.EntityFrameworkCore.Repositories\BB84.EntityFrameworkCore.Repositories.csproj" />
+	</ItemGroup>
+</Project>

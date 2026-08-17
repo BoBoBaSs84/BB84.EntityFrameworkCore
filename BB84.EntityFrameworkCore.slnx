@@ -22,6 +22,8 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/BB84.EntityFrameworkCore.Entities.Tests/BB84.EntityFrameworkCore.Entities.Tests.csproj" />
+    <Project Path="tests/BB84.EntityFrameworkCore.Repositories.Agnostic.Tests/BB84.EntityFrameworkCore.Repositories.Agnostic.Tests.csproj" />
     <Project Path="tests/BB84.EntityFrameworkCore.Repositories.Tests/BB84.EntityFrameworkCore.Repositories.Tests.csproj" />
+    <Project Path="tests/BB84.EntityFrameworkCore.TestSupport.Tests/BB84.EntityFrameworkCore.TestSupport.Tests.csproj" />
   </Folder>
 </Solution>

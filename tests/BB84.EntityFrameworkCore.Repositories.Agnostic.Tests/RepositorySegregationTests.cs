@@ -5,13 +5,13 @@
 // LICENSE file in the root directory of this source tree.
 using System.Reflection;
 
+using BB84.EntityFrameworkCore.Repositories.Abstractions;
+using BB84.EntityFrameworkCore.TestSupport.Entities;
+using BB84.EntityFrameworkCore.TestSupport.Repositories;
+
 using Microsoft.EntityFrameworkCore;
 
-using BB84.EntityFrameworkCore.Repositories.Abstractions;
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Entities;
-using BB84.EntityFrameworkCore.Repositories.Tests.Persistence.Repositories;
-
-namespace BB84.EntityFrameworkCore.Repositories.Tests;
+namespace BB84.EntityFrameworkCore.Repositories.Agnostic.Tests;
 
 /// <summary>
 /// Covers the read and write split of the repository abstractions.

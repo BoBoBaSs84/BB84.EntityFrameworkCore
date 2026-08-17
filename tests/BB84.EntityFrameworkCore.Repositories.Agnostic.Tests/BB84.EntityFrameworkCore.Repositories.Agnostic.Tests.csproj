@@ -4,13 +4,13 @@
 		<IsTestProject>True</IsTestProject>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
 		<PackageReference Include="Microsoft.Extensions.TimeProvider.Testing" />
 		<PackageReference Include="MSTest" />
-		<PackageReference Include="Testcontainers.MsSql" />
 	</ItemGroup>
+	<!-- No reference to BB84.EntityFrameworkCore.Repositories.SqlServer, deliberately: its absence
+	     is what turns a provider-specific call in the agnostic package into a compile error. -->
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\BB84.EntityFrameworkCore.Repositories.SqlServer\BB84.EntityFrameworkCore.Repositories.SqlServer.csproj" />
 		<ProjectReference Include="..\..\src\BB84.EntityFrameworkCore.Repositories\BB84.EntityFrameworkCore.Repositories.csproj" />
 		<ProjectReference Include="..\BB84.EntityFrameworkCore.TestSupport.Tests\BB84.EntityFrameworkCore.TestSupport.Tests.csproj" />
 	</ItemGroup>

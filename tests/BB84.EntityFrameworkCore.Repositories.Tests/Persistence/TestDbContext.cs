@@ -4,7 +4,7 @@
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
 using BB84.EntityFrameworkCore.Repositories.Interceptors;
-using BB84.EntityFrameworkCore.Repositories.Tests.Abstractions;
+using BB84.EntityFrameworkCore.TestSupport.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
 
@@ -20,7 +20,7 @@ public sealed class TestDbContext(DbContextOptions<TestDbContext> options, SoftD
 		base.OnModelCreating(modelBuilder);
 
 		modelBuilder.HasDefaultSchema(DefaultSchema);
-		modelBuilder.ApplyConfigurationsFromAssembly(typeof(UnitTestBase).Assembly);
+		modelBuilder.ApplyConfigurationsFromAssembly(typeof(TestDbContext).Assembly);
 	}
 
 	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
