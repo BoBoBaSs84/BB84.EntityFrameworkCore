@@ -43,7 +43,7 @@ public interface IWriteIdentityRepository<TEntity, TKey> : IWriteRepository<TEnt
 	/// </remarks>
 	/// <param name="id">The primary key of the <typeparamref name="TEntity"/>.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
-	int Delete(TKey id);
+	int ExecuteDelete(TKey id);
 
 	/// <summary>
 	/// Deletes all database rows for the <typeparamref name="TEntity"/> instances which matches
@@ -64,24 +64,31 @@ public interface IWriteIdentityRepository<TEntity, TKey> : IWriteRepository<TEnt
 	/// </remarks>
 	/// <param name="ids">The primary keys of the <typeparamref name="TEntity"/>.</param>
 	/// <returns>The total number of rows deleted in the database.</returns>
-	int Delete(IEnumerable<TKey> ids);
+	int ExecuteDelete(IEnumerable<TKey> ids);
 
-	/// <inheritdoc cref="Delete(TKey)"/>
+	/// <inheritdoc cref="ExecuteDelete(TKey)"/>
 	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
-	Task<int> DeleteAsync(TKey id, CancellationToken cancellationToken = default);
+	Task<int> ExecuteDeleteAsync(TKey id, CancellationToken cancellationToken = default);
 
-	/// <inheritdoc cref="Delete(IEnumerable{TKey})"/>
+	/// <inheritdoc cref="ExecuteDelete(IEnumerable{TKey})"/>
 	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
-	Task<int> DeleteAsync(IEnumerable<TKey> ids, CancellationToken cancellationToken = default);
+	Task<int> ExecuteDeleteAsync(IEnumerable<TKey> ids, CancellationToken cancellationToken = default);
 
 	/// <summary>
 	/// Updates the entity identified by the specified identifier with the provided property changes.
 	/// </summary>
 	/// <remarks>
+	/// <para>
 	/// This operation executes immediately against the database, rather than being deferred
 	/// until save changes is called. It also does not interact with the EF change tracker in
 	/// any way: entity instances which happen to be tracked when this operation is invoked
 	/// aren't taken into account, and aren't updated to reflect the changes.
+	/// </para>
+	/// <para>
+	/// <b>Auditing does not happen for this operation.</b> Because no save operation takes
+	/// place, save changes interceptors never run, so the audit columns are left untouched
+	/// unless <paramref name="setPropertyCalls"/> sets them explicitly.
+	/// </para>
 	/// </remarks>
 	/// <param name="id">The unique identifier of the entity to update.</param>
 	/// <param name="setPropertyCalls">A lambda expression specifying the properties to update and their new values.</param>
@@ -89,7 +96,7 @@ public interface IWriteIdentityRepository<TEntity, TKey> : IWriteRepository<TEnt
 	/// The number of entities updated. Typically, this will be 1 if the update is successful,
 	/// or 0 if no entity matches the specified <paramref name="id"/>.
 	/// </returns>
-	int Update(
+	int ExecuteUpdate(
 		TKey id,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls);
 
@@ -97,10 +104,17 @@ public interface IWriteIdentityRepository<TEntity, TKey> : IWriteRepository<TEnt
 	/// Updates the entities identified by the specified identifiers with the provided property changes.
 	/// </summary>
 	/// <remarks>
+	/// <para>
 	/// This operation executes immediately against the database, rather than being deferred
 	/// until save changes is called. It also does not interact with the EF change tracker in
 	/// any way: entity instances which happen to be tracked when this operation is invoked
 	/// aren't taken into account, and aren't updated to reflect the changes.
+	/// </para>
+	/// <para>
+	/// <b>Auditing does not happen for this operation.</b> Because no save operation takes
+	/// place, save changes interceptors never run, so the audit columns are left untouched
+	/// unless <paramref name="setPropertyCalls"/> sets them explicitly.
+	/// </para>
 	/// </remarks>
 	/// <param name="ids">The unique identifiers of the entities to update.</param>
 	/// <param name="setPropertyCalls">A lambda expression specifying the properties to update and their new values.</param>
@@ -108,20 +122,20 @@ public interface IWriteIdentityRepository<TEntity, TKey> : IWriteRepository<TEnt
 	/// The number of entities updated. Typically, this will be 1 if the update is successful,
 	/// or 0 if no entity matches the specified <paramref name="ids"/>.
 	/// </returns>
-	int Update(
+	int ExecuteUpdate(
 		IEnumerable<TKey> ids,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls);
 
-	/// <inheritdoc cref="Update(TKey, Action{UpdateSettersBuilder{TEntity}})"/>
+	/// <inheritdoc cref="ExecuteUpdate(TKey, Action{UpdateSettersBuilder{TEntity}})"/>
 	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
-	Task<int> UpdateAsync(
+	Task<int> ExecuteUpdateAsync(
 		TKey id,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
 		CancellationToken cancellationToken = default);
 
-	/// <inheritdoc cref="Update(IEnumerable{TKey}, Action{UpdateSettersBuilder{TEntity}})"/>
+	/// <inheritdoc cref="ExecuteUpdate(IEnumerable{TKey}, Action{UpdateSettersBuilder{TEntity}})"/>
 	/// <param name="cancellationToken">The cancellation token to cancel the request.</param>
-	Task<int> UpdateAsync(
+	Task<int> ExecuteUpdateAsync(
 		IEnumerable<TKey> ids,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
 		CancellationToken cancellationToken = default);

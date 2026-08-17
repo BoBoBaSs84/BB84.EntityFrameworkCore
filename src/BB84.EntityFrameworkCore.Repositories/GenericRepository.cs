@@ -48,7 +48,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		=> _dbSet.RemoveRange(entities);
 
 	/// <inheritdoc/>
-	public int Delete(Expression<Func<TEntity, bool>> expression)
+	public int ExecuteDelete(Expression<Func<TEntity, bool>> expression)
 		=> _dbSet.Where(expression).ExecuteDelete();
 
 	/// <inheritdoc/>
@@ -74,7 +74,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
-	public async Task<int> DeleteAsync(Expression<Func<TEntity, bool>> expression, CancellationToken cancellationToken = default)
+	public async Task<int> ExecuteDeleteAsync(Expression<Func<TEntity, bool>> expression, CancellationToken cancellationToken = default)
 		=> await _dbSet.Where(expression).ExecuteDeleteAsync(cancellationToken).ConfigureAwait(false);
 
 	/// <inheritdoc/>
@@ -140,7 +140,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 		=> _dbSet.UpdateRange(entities);
 
 	/// <inheritdoc/>
-	public int Update(
+	public int ExecuteUpdate(
 		Expression<Func<TEntity, bool>> expression,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls)
 		=> _dbSet.Where(expression).ExecuteUpdate(setPropertyCalls);
@@ -168,7 +168,7 @@ public abstract class GenericRepository<TEntity>(IDbContext dbContext) : IGeneri
 	}
 
 	/// <inheritdoc/>
-	public async Task<int> UpdateAsync(
+	public async Task<int> ExecuteUpdateAsync(
 		Expression<Func<TEntity, bool>> expression,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
 		CancellationToken cancellationToken = default)

@@ -12,42 +12,42 @@ namespace BB84.EntityFrameworkCore.Repositories.Tests;
 public sealed class PersonTests : UnitTestBase
 {
 	[TestMethod]
-	public void DeleteByIdTest()
+	public void ExecuteDeleteByIdTest()
 	{
 		PersonRepository repository = new(DbContext);
 
-		int deleted = repository.Delete(Guid.NewGuid());
+		int deleted = repository.ExecuteDelete(Guid.NewGuid());
 
 		Assert.AreEqual(0, deleted);
 	}
 
 	[TestMethod]
-	public void DeleteByIdsTest()
+	public void ExecuteDeleteByIdsTest()
 	{
 		PersonRepository repository = new(DbContext);
 
-		int deleted = repository.Delete([Guid.NewGuid(), Guid.NewGuid()]);
+		int deleted = repository.ExecuteDelete([Guid.NewGuid(), Guid.NewGuid()]);
 
 		Assert.AreEqual(0, deleted);
 	}
 
 	[TestMethod]
-	public async Task DeleteByIdAsyncTest()
+	public async Task ExecuteDeleteByIdAsyncTest()
 	{
 		PersonRepository repository = new(DbContext);
 
-		int deleted = await repository.DeleteAsync(Guid.NewGuid(), TestContext.CancellationToken)
+		int deleted = await repository.ExecuteDeleteAsync(Guid.NewGuid(), TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(0, deleted);
 	}
 
 	[TestMethod]
-	public async Task DeleteByIdsAsyncTest()
+	public async Task ExecuteDeleteByIdsAsyncTest()
 	{
 		PersonRepository repository = new(DbContext);
 
-		int deleted = await repository.DeleteAsync([Guid.NewGuid(), Guid.NewGuid()], TestContext.CancellationToken)
+		int deleted = await repository.ExecuteDeleteAsync([Guid.NewGuid(), Guid.NewGuid()], TestContext.CancellationToken)
 			.ConfigureAwait(false);
 
 		Assert.AreEqual(0, deleted);

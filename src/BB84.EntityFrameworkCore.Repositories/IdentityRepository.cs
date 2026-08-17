@@ -28,20 +28,20 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
-	public int Delete(TKey id)
-		=> Delete(ById(id));
+	public int ExecuteDelete(TKey id)
+		=> ExecuteDelete(ById(id));
 
 	/// <inheritdoc/>
-	public int Delete(IEnumerable<TKey> ids)
-		=> Delete(ByIds(ids));
+	public int ExecuteDelete(IEnumerable<TKey> ids)
+		=> ExecuteDelete(ByIds(ids));
 
 	/// <inheritdoc/>
-	public async Task<int> DeleteAsync(TKey id, CancellationToken cancellationToken = default)
-		=> await DeleteAsync(ById(id), cancellationToken).ConfigureAwait(false);
+	public async Task<int> ExecuteDeleteAsync(TKey id, CancellationToken cancellationToken = default)
+		=> await ExecuteDeleteAsync(ById(id), cancellationToken).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public async Task<int> DeleteAsync(IEnumerable<TKey> ids, CancellationToken cancellationToken = default)
-		=> await DeleteAsync(ByIds(ids), cancellationToken).ConfigureAwait(false);
+	public async Task<int> ExecuteDeleteAsync(IEnumerable<TKey> ids, CancellationToken cancellationToken = default)
+		=> await ExecuteDeleteAsync(ByIds(ids), cancellationToken).ConfigureAwait(false);
 
 	/// <inheritdoc/>
 	public TEntity? GetById(TKey id, Query<TEntity>? query = null)
@@ -76,30 +76,30 @@ public abstract class IdentityRepository<TEntity, TKey>(IDbContext dbContext) : 
 		=> await GetListAsync(selector, WithCondition(query, ByIds(ids)), cancellationToken).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public int Update(
+	public int ExecuteUpdate(
 		TKey id,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls)
-		=> Update(ById(id), setPropertyCalls);
+		=> ExecuteUpdate(ById(id), setPropertyCalls);
 
 	/// <inheritdoc/>
-	public int Update(
+	public int ExecuteUpdate(
 		IEnumerable<TKey> ids,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls)
-		=> Update(ByIds(ids), setPropertyCalls);
+		=> ExecuteUpdate(ByIds(ids), setPropertyCalls);
 
 	/// <inheritdoc/>
-	public async Task<int> UpdateAsync(
+	public async Task<int> ExecuteUpdateAsync(
 		TKey id,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
 		CancellationToken cancellationToken = default)
-		=> await UpdateAsync(ById(id), setPropertyCalls, cancellationToken).ConfigureAwait(false);
+		=> await ExecuteUpdateAsync(ById(id), setPropertyCalls, cancellationToken).ConfigureAwait(false);
 
 	/// <inheritdoc/>
-	public async Task<int> UpdateAsync(
+	public async Task<int> ExecuteUpdateAsync(
 		IEnumerable<TKey> ids,
 		Action<UpdateSettersBuilder<TEntity>> setPropertyCalls,
 		CancellationToken cancellationToken = default)
-		=> await UpdateAsync(ByIds(ids), setPropertyCalls, cancellationToken).ConfigureAwait(false);
+		=> await ExecuteUpdateAsync(ByIds(ids), setPropertyCalls, cancellationToken).ConfigureAwait(false);
 
 	/// <summary>
 	/// Returns the condition that matches the <typeparamref name="TEntity"/> with the provided <paramref name="id"/>.

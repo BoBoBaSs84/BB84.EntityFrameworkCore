@@ -293,7 +293,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 	}
 
 	[TestMethod]
-	public void DeleteByConditionRemovesMatchingEntitiesTest()
+	public void ExecuteDeleteByConditionRemovesMatchingEntitiesTest()
 	{
 		SkillRepository repository = new(DbContext);
 		string uniqueName = $"Skill-{Guid.NewGuid():N}";
@@ -311,7 +311,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 
 		try
 		{
-			int deleted = repository.Delete(x => x.Name == uniqueName);
+			int deleted = repository.ExecuteDelete(x => x.Name == uniqueName);
 
 			SkillEntity? result = repository.GetSingle(new() { Where = x => x.Name == uniqueName });
 
@@ -327,7 +327,7 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 	}
 
 	[TestMethod]
-	public void UpdateByConditionAndIdsModifyMatchingEntitiesTest()
+	public void ExecuteUpdateByConditionAndIdsModifyMatchingEntitiesTest()
 	{
 		JobRepository repository = new(DbContext);
 		string uniquePrefix = $"Job-{Guid.NewGuid():N}";
@@ -351,12 +351,12 @@ public sealed class RepositoryOverloadTests : UnitTestBase
 
 		try
 		{
-			int updatedByCondition = repository.Update(
+			int updatedByCondition = repository.ExecuteUpdate(
 				expression: x => x.Name.StartsWith(uniquePrefix),
 				setPropertyCalls: s => s.SetProperty(p => p.Description, "AfterCondition")
 				);
 
-			int updatedByIds = repository.Update(
+			int updatedByIds = repository.ExecuteUpdate(
 				ids: [first.Id, second.Id],
 				setPropertyCalls: s => s.SetProperty(p => p.Name, "Updated")
 				);

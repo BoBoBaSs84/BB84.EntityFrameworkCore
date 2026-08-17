@@ -50,7 +50,7 @@ Two things to keep in mind:
 
 ### `IdentityRepository<TEntity, TKey>` / `IdentityRepository<TEntity>`
 
-Extends `GenericRepository<TEntity>` with key-based `GetById`, `GetByIds`, and bulk `Delete`/`Update` by ID. The non-generic overload defaults `TKey` to `Guid`.
+Extends `GenericRepository<TEntity>` with key-based `GetById`, `GetByIds`, and immediate bulk `ExecuteDelete`/`ExecuteUpdate` by ID. The non-generic overload defaults `TKey` to `Guid`.
 
 ### `EnumeratorRepository<TEntity, TKey>` / `EnumeratorRepository<TEntity>`
 
@@ -176,4 +176,4 @@ public sealed class HttpCurrentUserProvider(IHttpContextAccessor accessor) : ICu
 
 For audit columns that are not `string`, use the generic `UserAuditedInterceptor<TUser>` with a matching `ICurrentUserProvider<TUser>`.
 
-All three interceptors run on save. The expression-based `Delete` / `Update` repository overloads execute immediately and bypass the change tracker, so none of them fire for those.
+All three interceptors run on save. The `ExecuteDelete` / `ExecuteUpdate` repository methods execute immediately and bypass the change tracker, so none of them fire for those.
