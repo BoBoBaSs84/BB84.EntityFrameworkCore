@@ -45,6 +45,8 @@ Inherit from these in your `IEntityTypeConfiguration<TEntity>` implementations a
 | `AuditedCompositeConfiguration<TEntity, TCreator, TEditor>`  | `IAuditedCompositeEntity<TCreator, TEditor>`  | Above + audit user columns                                                                                                                                            |
 | `EnumeratorConfiguration<TEntity, TKey>`                     | `IEnumeratorEntity<TKey>`                     | Non-clustered PK, `Name` (`nvarchar(64)`, unique index, non-unicode), `Description` (`nvarchar(256)`), `IsDeleted` default `false`; `int` overload uses clustered PK  |
 
+These stop at the `byte[]` rung on purpose. The token type is a parameter on the agnostic bases in `BB84.EntityFrameworkCore.Repositories`, but on SQL Server the concurrency token is a `rowversion` and a `rowversion` is eight bytes — there is nothing here for another type to map onto. An entity with a different token type belongs on the agnostic configuration bases.
+
 ```csharp
 public class ProductConfiguration : IdentityConfiguration<Product>
 {

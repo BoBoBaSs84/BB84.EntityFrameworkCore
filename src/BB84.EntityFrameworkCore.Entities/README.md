@@ -13,23 +13,29 @@ dotnet add package BB84.EntityFrameworkCore.Entities
 
 ## Implementations
 
-Each abstract class mirrors the interface hierarchy. Convenience overloads follow the same defaulting pattern as the interfaces (`TKey` → `Guid`, `TCreator`/`TEditor` → `string`/`string?`).
+Each abstract class mirrors the interface hierarchy. Convenience overloads follow the same defaulting pattern as the interfaces (`TToken` → `byte[]`, `TKey` → `Guid`, `TCreator`/`TEditor` → `string`/`string?`).
 
-| Abstract class                               | Implements                                    | Notes                                     |
-| -------------------------------------------- | --------------------------------------------- | ----------------------------------------- |
-| `IdentityEntity<TKey>`                       | `IIdentityEntity<TKey>`                       |                                           |
-| `IdentityEntity`                             | `IIdentityEntity`                             | `TKey` = `Guid`                           |
-| `AuditedEntity<TKey, TCreator, TEditor>`     | `IAuditedEntity<TKey, TCreator, TEditor>`     |                                           |
-| `AuditedEntity<TKey>`                        | `IAuditedEntity<TKey>`                        | `TCreator`/`TEditor` = `string`/`string?` |
-| `AuditedEntity`                              | `IAuditedEntity`                              | `TKey` = `Guid`                           |
-| `FullAuditedEntity<TKey, TCreator, TEditor>` | `IFullAuditedEntity<TKey, TCreator, TEditor>` | Adds `CreatedAt`, `EditedAt`              |
-| `FullAuditedEntity<TKey>`                    | `IFullAuditedEntity<TKey>`                    |                                           |
-| `FullAuditedEntity`                          | `IFullAuditedEntity`                          | `TKey` = `Guid`                           |
-| `CompositeEntity`                            | `ICompositeEntity`                            |                                           |
-| `AuditedCompositeEntity<TCreator, TEditor>`  | `IAuditedCompositeEntity<TCreator, TEditor>`  |                                           |
-| `AuditedCompositeEntity`                     | `IAuditedCompositeEntity`                     | `TCreator`/`TEditor` = `string`/`string?` |
-| `EnumeratorEntity<TKey>`                     | `IEnumeratorEntity<TKey>`                     |                                           |
-| `EnumeratorEntity`                           | `IEnumeratorEntity`                           | `TKey` = `int`                            |
+| Abstract class                                       | Implements                                            | Notes                                     |
+| ---------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------- |
+| `IdentityEntity<TKey, TToken>`                       | `IIdentityEntity<TKey, TToken>`                       |                                           |
+| `IdentityEntity<TKey>`                               | `IIdentityEntity<TKey>`                               | `TToken` = `byte[]`                       |
+| `IdentityEntity`                                     | `IIdentityEntity`                                     | `TKey` = `Guid`                           |
+| `AuditedEntity<TKey, TCreator, TEditor, TToken>`     | `IAuditedEntity<TKey, TCreator, TEditor, TToken>`     |                                           |
+| `AuditedEntity<TKey, TCreator, TEditor>`             | `IAuditedEntity<TKey, TCreator, TEditor>`             | `TToken` = `byte[]`                       |
+| `AuditedEntity<TKey>`                                | `IAuditedEntity<TKey>`                                | `TCreator`/`TEditor` = `string`/`string?` |
+| `AuditedEntity`                                      | `IAuditedEntity`                                      | `TKey` = `Guid`                           |
+| `FullAuditedEntity<TKey, TCreator, TEditor, TToken>` | `IFullAuditedEntity<TKey, TCreator, TEditor, TToken>` | Adds `CreatedAt`, `EditedAt`              |
+| `FullAuditedEntity<TKey, TCreator, TEditor>`         | `IFullAuditedEntity<TKey, TCreator, TEditor>`         | `TToken` = `byte[]`                       |
+| `FullAuditedEntity<TKey>`                            | `IFullAuditedEntity<TKey>`                            |                                           |
+| `FullAuditedEntity`                                  | `IFullAuditedEntity`                                  | `TKey` = `Guid`                           |
+| `CompositeEntity<TToken>`                            | `ICompositeEntity<TToken>`                            |                                           |
+| `CompositeEntity`                                    | `ICompositeEntity`                                    | `TToken` = `byte[]`                       |
+| `AuditedCompositeEntity<TCreator, TEditor, TToken>`  | `IAuditedCompositeEntity<TCreator, TEditor, TToken>`  |                                           |
+| `AuditedCompositeEntity<TCreator, TEditor>`          | `IAuditedCompositeEntity<TCreator, TEditor>`          | `TToken` = `byte[]`                       |
+| `AuditedCompositeEntity`                             | `IAuditedCompositeEntity`                             | `TCreator`/`TEditor` = `string`/`string?` |
+| `EnumeratorEntity<TKey, TToken>`                     | `IEnumeratorEntity<TKey, TToken>`                     |                                           |
+| `EnumeratorEntity<TKey>`                             | `IEnumeratorEntity<TKey>`                             | `TToken` = `byte[]`                       |
+| `EnumeratorEntity`                                   | `IEnumeratorEntity`                                   | `TKey` = `int`                            |
 
 ## Usage
 

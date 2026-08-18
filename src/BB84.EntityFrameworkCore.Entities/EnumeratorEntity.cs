@@ -1,4 +1,4 @@
-﻿// Copyright: 2024 Robert Peter Meyer
+// Copyright: 2024 Robert Peter Meyer
 // License: MIT
 //
 // This source code is licensed under the MIT license found in the
@@ -13,14 +13,15 @@ namespace BB84.EntityFrameworkCore.Entities;
 /// support for soft deletion functionality.
 /// </summary>
 /// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
-public abstract class EnumeratorEntity<TKey> : IEnumeratorEntity<TKey>
+/// <typeparam name="TToken">The type of the concurrency token.</typeparam>
+public abstract class EnumeratorEntity<TKey, TToken> : IEnumeratorEntity<TKey, TToken>
 	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
 	public TKey Id { get; set; } = default!;
 
 	/// <inheritdoc/>
-	public byte[] Timestamp { get; set; } = [];
+	public TToken Timestamp { get; set; } = default!;
 
 	/// <inheritdoc/>
 	public required string Name { get; set; }
@@ -32,9 +33,25 @@ public abstract class EnumeratorEntity<TKey> : IEnumeratorEntity<TKey>
 	public bool IsDeleted { get; set; }
 }
 
-/// <inheritdoc cref="EnumeratorEntity{TKey}"/>
+/// <inheritdoc cref="EnumeratorEntity{TKey, TToken}"/>
 /// <remarks>
-/// The unique identifier type defaults to <see cref="int"/>.
+/// <typeparamref name="TKey"/> is supplied; <c>TToken</c> defaults to a <see cref="byte"/> array.
+/// For a custom token type use <see cref="EnumeratorEntity{TKey, TToken}"/> and name both.
 /// </remarks>
-public abstract class EnumeratorEntity : EnumeratorEntity<int>, IEnumeratorEntity
-{ }
+public abstract class EnumeratorEntity<TKey> : EnumeratorEntity<TKey, byte[]>, IEnumeratorEntity<TKey>
+	where TKey : IEquatable<TKey>
+{
+	/// <summary>
+	/// Initializes a new instance of the <see cref="EnumeratorEntity{TKey}"/> class.
+	/// </summary>
+	/// <inheritdoc cref="IdentityEntity{TKey}()" path="/remarks"/>
+	protected EnumeratorEntity()
+		=> Timestamp = [];
+}
+
+/// <inheritdoc cref="EnumeratorEntity{TKey, TToken}"/>
+/// <remarks>
+/// The unique identifier type defaults to <see cref="int"/> and the token to a
+/// <see cref="byte"/> array.
+/// </remarks>
+public abstract class EnumeratorEntity : EnumeratorEntity<int>, IEnumeratorEntity;

@@ -15,6 +15,12 @@ namespace BB84.EntityFrameworkCore.Repositories.Agnostic.Tests.Persistence;
 /// </summary>
 /// <remarks>
 /// <para>
+/// Only <see cref="byte"/> array tokens are emulated. Since the token type became a parameter of
+/// <see cref="IConcurrency{TToken}"/>, an entity is free to use one this class knows nothing about
+/// — <c>randomblob(8)</c> would be the wrong value and the rotating trigger the wrong mechanism —
+/// so anything else is left to its own configuration.
+/// </para>
+/// <para>
 /// The agnostic configurations mark <see cref="IConcurrency.Timestamp"/> as a concurrency token
 /// that is generated on add or update. On SQL Server the <see cref="byte"/> array plus that
 /// combination is convention-mapped to <c>rowversion</c> and the store fills it in. SQLite has no
@@ -55,7 +61,7 @@ internal static class RowVersionEmulation
 		{
 			IMutableProperty? timestamp = entityType.FindProperty(nameof(IConcurrency.Timestamp));
 
-			if (timestamp is null || !timestamp.IsConcurrencyToken)
+			if (timestamp is null || !timestamp.IsConcurrencyToken || timestamp.ClrType != typeof(byte[]))
 				continue;
 
 			timestamp.SetDefaultValueSql(DefaultValueSql);
@@ -82,7 +88,7 @@ internal static class RowVersionEmulation
 
 			IProperty? timestamp = entityType.FindProperty(nameof(IConcurrency.Timestamp));
 
-			if (timestamp is null || !timestamp.IsConcurrencyToken)
+			if (timestamp is null || !timestamp.IsConcurrencyToken || timestamp.ClrType != typeof(byte[]))
 				continue;
 
 			string table = entityType.GetTableName()!;

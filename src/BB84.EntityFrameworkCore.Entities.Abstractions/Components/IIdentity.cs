@@ -18,5 +18,4 @@ public interface IIdentity<TKey> where TKey : IEquatable<TKey>
 }
 
 /// <inheritdoc cref="IIdentity{TKey}"/>
-public interface IIdentity : IIdentity<Guid>
-{ }
+public interface IIdentity : IIdentity<Guid>;

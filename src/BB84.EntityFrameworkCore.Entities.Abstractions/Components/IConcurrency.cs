@@ -1,4 +1,4 @@
-﻿// Copyright: 2024 Robert Peter Meyer
+// Copyright: 2024 Robert Peter Meyer
 // License: MIT
 //
 // This source code is licensed under the MIT license found in the
@@ -6,17 +6,18 @@
 namespace BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 
 /// <summary>
-/// Defines a contract for entities that support concurrency control through a timestamp.
+/// Defines a contract for entities that support concurrency control through a store generated token.
 /// </summary>
 /// <remarks>
 /// Implementations of this interface typically use the <see cref="Timestamp"/> property to manage
 /// concurrency by ensuring that updates to an entity are based on the most recent version.
 /// This is commonly used in scenarios such as optimistic concurrency control in databases.
 /// </remarks>
-public interface IConcurrency
+/// <typeparam name="TToken">The type of the concurrency token.</typeparam>
+public interface IConcurrency<TToken>
 {
 	/// <summary>
-	/// Gets or sets the timestamp associated with the current entity.
+	/// Gets or sets the concurrency token associated with the current entity.
 	/// </summary>
 	/// <remarks>
 	/// <para>
@@ -33,9 +34,22 @@ public interface IConcurrency
 	/// fail to match.
 	/// </para>
 	/// <para>
-	/// The token is shaped for SQL Server <c>rowversion</c>. Providers without an eight byte row
-	/// version need their own mapping for this property.
+	/// The token type is the provider's business: <see cref="byte"/> array for a SQL Server
+	/// <c>rowversion</c>, <see cref="uint"/> for a PostgreSQL <c>xmin</c>, or a <see cref="Guid"/>
+	/// or incrementing <see cref="int"/> rotated by the application. Whatever is chosen, the store
+	/// has to be told to generate it — see the entity type configuration base classes of the
+	/// <c>BB84.EntityFrameworkCore.Repositories</c> package.
 	/// </para>
 	/// </remarks>
-	byte[] Timestamp { get; set; }
+	TToken Timestamp { get; set; }
 }
+
+/// <summary>
+/// Defines a contract for entities that support concurrency control through a store generated token.
+/// </summary>
+/// <remarks>
+/// The token is a <see cref="byte"/> array, shaped for SQL Server <c>rowversion</c>. Providers
+/// without an eight byte row version should name their own token type through
+/// <see cref="IConcurrency{TToken}"/> rather than mapping something else onto this one.
+/// </remarks>
+public interface IConcurrency : IConcurrency<byte[]>;

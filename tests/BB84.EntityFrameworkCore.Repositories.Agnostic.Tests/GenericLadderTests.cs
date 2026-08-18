@@ -78,33 +78,45 @@ public sealed class GenericLadderTests
 
 	// ---- entity ladder -------------------------------------------------------------------
 
+	private sealed class CompositeTokenedProbe : CompositeEntity<Guid>;
 	private sealed class CompositeProbe : CompositeEntity;
+	private sealed class IdentityTokenedProbe : IdentityEntity<int, Guid>;
 	private sealed class IdentityKeyedProbe : IdentityEntity<int>;
 	private sealed class IdentityProbe : IdentityEntity;
+	private sealed class EnumeratorTokenedProbe : EnumeratorEntity<long, Guid>;
 	private sealed class EnumeratorKeyedProbe : EnumeratorEntity<long>;
 	private sealed class EnumeratorProbe : EnumeratorEntity;
+	private sealed class AuditedTokenedProbe : AuditedEntity<int, int, int?, Guid>;
 	private sealed class AuditedFullyNamedProbe : AuditedEntity<int, int, int?>;
 	private sealed class AuditedKeyedProbe : AuditedEntity<int>;
 	private sealed class AuditedProbe : AuditedEntity;
+	private sealed class FullAuditedTokenedProbe : FullAuditedEntity<int, int, int?, Guid>;
 	private sealed class FullAuditedFullyNamedProbe : FullAuditedEntity<int, int, int?>;
 	private sealed class FullAuditedKeyedProbe : FullAuditedEntity<int>;
 	private sealed class FullAuditedProbe : FullAuditedEntity;
+	private sealed class AuditedCompositeTokenedProbe : AuditedCompositeEntity<int, int?, Guid>;
 	private sealed class AuditedCompositeNamedProbe : AuditedCompositeEntity<int, int?>;
 	private sealed class AuditedCompositeProbe : AuditedCompositeEntity;
 
 	// ---- configuration ladder ------------------------------------------------------------
 
+	private abstract class IdentityTokenedConfigurationProbe : IdentityConfiguration<IdentityTokenedProbe, int, Guid>;
 	private abstract class IdentityKeyedConfigurationProbe : IdentityConfiguration<IdentityKeyedProbe, int>;
 	private abstract class IdentityConfigurationProbe : IdentityConfiguration<IdentityProbe>;
+	private abstract class CompositeTokenedConfigurationProbe : CompositeConfiguration<CompositeTokenedProbe, Guid>;
 	private abstract class CompositeConfigurationProbe : CompositeConfiguration<CompositeProbe>;
+	private abstract class EnumeratorTokenedConfigurationProbe : EnumeratorConfiguration<EnumeratorTokenedProbe, long, Guid>;
 	private abstract class EnumeratorKeyedConfigurationProbe : EnumeratorConfiguration<EnumeratorKeyedProbe, long>;
 	private abstract class EnumeratorConfigurationProbe : EnumeratorConfiguration<EnumeratorProbe>;
+	private abstract class AuditedTokenedConfigurationProbe : AuditedConfiguration<AuditedTokenedProbe, int, int, int?, Guid>;
 	private abstract class AuditedFullyNamedConfigurationProbe : AuditedConfiguration<AuditedFullyNamedProbe, int, int, int?>;
 	private abstract class AuditedKeyedConfigurationProbe : AuditedConfiguration<AuditedKeyedProbe, int>;
 	private abstract class AuditedConfigurationProbe : AuditedConfiguration<AuditedProbe>;
+	private abstract class FullAuditedTokenedConfigurationProbe : FullAuditedConfiguration<FullAuditedTokenedProbe, int, int, int?, Guid>;
 	private abstract class FullAuditedFullyNamedConfigurationProbe : FullAuditedConfiguration<FullAuditedFullyNamedProbe, int, int, int?>;
 	private abstract class FullAuditedKeyedConfigurationProbe : FullAuditedConfiguration<FullAuditedKeyedProbe, int>;
 	private abstract class FullAuditedConfigurationProbe : FullAuditedConfiguration<FullAuditedProbe>;
+	private abstract class AuditedCompositeTokenedConfigurationProbe : AuditedCompositeConfiguration<AuditedCompositeTokenedProbe, int, int?, Guid>;
 	private abstract class AuditedCompositeNamedConfigurationProbe : AuditedCompositeConfiguration<AuditedCompositeNamedProbe, int, int?>;
 	private abstract class AuditedCompositeConfigurationProbe : AuditedCompositeConfiguration<AuditedCompositeProbe>;
 

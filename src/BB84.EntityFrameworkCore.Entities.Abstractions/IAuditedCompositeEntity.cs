@@ -1,4 +1,4 @@
-﻿// Copyright: 2024 Robert Peter Meyer
+// Copyright: 2024 Robert Peter Meyer
 // License: MIT
 //
 // This source code is licensed under the MIT license found in the
@@ -13,13 +13,22 @@ namespace BB84.EntityFrameworkCore.Entities.Abstractions;
 /// </summary>
 /// <typeparam name="TCreator">The type of the user or entity responsible for creating the entity.</typeparam>
 /// <typeparam name="TEditor">The type of the user or entity responsible for editing or modifying the entity.</typeparam>
-public interface IAuditedCompositeEntity<TCreator, TEditor> : IConcurrency, IUserAudited<TCreator, TEditor>
-	where TCreator : notnull
-{ }
+/// <typeparam name="TToken">The type of the concurrency token.</typeparam>
+public interface IAuditedCompositeEntity<TCreator, TEditor, TToken> : IConcurrency<TToken>, IUserAudited<TCreator, TEditor>
+	where TCreator : notnull;
 
-/// <inheritdoc cref="IAuditedCompositeEntity{TCreator, TEditor}"/>
+/// <inheritdoc cref="IAuditedCompositeEntity{TCreator, TEditor, TToken}"/>
 /// <remarks>
-/// The creator and editor types default to <see cref="string"/>.
+/// The creator and editor types are supplied; <c>TToken</c> defaults to a <see cref="byte"/> array.
+/// For a custom token type use <see cref="IAuditedCompositeEntity{TCreator, TEditor, TToken}"/>
+/// and name all three.
 /// </remarks>
-public interface IAuditedCompositeEntity : IAuditedCompositeEntity<string, string?>
-{ }
+public interface IAuditedCompositeEntity<TCreator, TEditor> : IAuditedCompositeEntity<TCreator, TEditor, byte[]>, IConcurrency
+	where TCreator : notnull;
+
+/// <inheritdoc cref="IAuditedCompositeEntity{TCreator, TEditor, TToken}"/>
+/// <remarks>
+/// The creator and editor types default to <see cref="string"/> and the token to a
+/// <see cref="byte"/> array.
+/// </remarks>
+public interface IAuditedCompositeEntity : IAuditedCompositeEntity<string, string?>, IUserAudited;

@@ -9,13 +9,13 @@ namespace BB84.EntityFrameworkCore.Entities;
 
 /// <summary>
 /// This abstract class provides a base implementation for entities that track auditing information,
-/// including the creator and the last editor, a unique identifier and a timestamp for concurrency
-/// control.
+/// including the creator and the last editor, a unique identifier and a concurrency token.
 /// </summary>
 /// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
 /// <typeparam name="TCreator">The type representing the creator of the entity.</typeparam>
 /// <typeparam name="TEditor">The type representing the last editor of the entity.</typeparam>
-public abstract class AuditedEntity<TKey, TCreator, TEditor> : IdentityEntity<TKey>, IAuditedEntity<TKey, TCreator, TEditor>
+/// <typeparam name="TToken">The type of the concurrency token.</typeparam>
+public abstract class AuditedEntity<TKey, TCreator, TEditor, TToken> : IdentityEntity<TKey, TToken>, IAuditedEntity<TKey, TCreator, TEditor, TToken>
 	where TKey : IEquatable<TKey>
 	where TCreator : notnull
 {
@@ -26,20 +26,38 @@ public abstract class AuditedEntity<TKey, TCreator, TEditor> : IdentityEntity<TK
 	public TEditor EditedBy { get; set; } = default!;
 }
 
-/// <inheritdoc cref="AuditedEntity{TKey, TCreator, TEditor}"/>
+/// <inheritdoc cref="AuditedEntity{TKey, TCreator, TEditor, TToken}"/>
 /// <remarks>
-/// <typeparamref name="TKey"/> is supplied; <c>TCreator</c> defaults to <see cref="string"/>
-/// and <c>TEditor</c> to <see cref="string"/>. For a custom creator or editor type use
-/// <see cref="AuditedEntity{TKey, TCreator, TEditor}"/> and name all three.
+/// The key, creator and editor types are supplied; <c>TToken</c> defaults to a <see cref="byte"/>
+/// array. For a custom token type use <see cref="AuditedEntity{TKey, TCreator, TEditor, TToken}"/>
+/// and name all four.
+/// </remarks>
+public abstract class AuditedEntity<TKey, TCreator, TEditor> : AuditedEntity<TKey, TCreator, TEditor, byte[]>, IAuditedEntity<TKey, TCreator, TEditor>
+	where TKey : IEquatable<TKey>
+	where TCreator : notnull
+{
+	/// <summary>
+	/// Initializes a new instance of the <see cref="AuditedEntity{TKey, TCreator, TEditor}"/> class.
+	/// </summary>
+	/// <inheritdoc cref="IdentityEntity{TKey}()" path="/remarks"/>
+	protected AuditedEntity()
+		=> Timestamp = [];
+}
+
+/// <inheritdoc cref="AuditedEntity{TKey, TCreator, TEditor, TToken}"/>
+/// <remarks>
+/// <typeparamref name="TKey"/> is supplied; <c>TCreator</c> defaults to <see cref="string"/>,
+/// <c>TEditor</c> to <see cref="string"/> and <c>TToken</c> to a <see cref="byte"/> array. For a
+/// custom creator or editor type use <see cref="AuditedEntity{TKey, TCreator, TEditor}"/> and
+/// name all three.
 /// </remarks>
 public abstract class AuditedEntity<TKey> : AuditedEntity<TKey, string, string?>, IAuditedEntity<TKey>
-	where TKey : IEquatable<TKey>
-{ }
+	where TKey : IEquatable<TKey>;
 
-/// <inheritdoc cref="AuditedEntity{TKey, TCreator, TEditor}"/>
+/// <inheritdoc cref="AuditedEntity{TKey, TCreator, TEditor, TToken}"/>
 /// <remarks>
 /// Nothing is supplied; <c>TKey</c> defaults to <see cref="Guid"/>, <c>TCreator</c> to
-/// <see cref="string"/> and <c>TEditor</c> to <see cref="string"/>.
+/// <see cref="string"/>, <c>TEditor</c> to <see cref="string"/> and <c>TToken</c> to a
+/// <see cref="byte"/> array.
 /// </remarks>
-public abstract class AuditedEntity : AuditedEntity<Guid, string, string?>, IAuditedEntity
-{ }
+public abstract class AuditedEntity : AuditedEntity<Guid, string, string?>, IAuditedEntity;
