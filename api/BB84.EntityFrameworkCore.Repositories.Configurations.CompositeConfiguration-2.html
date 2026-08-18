@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class AuditedConfiguration&lt;TEntity, TCreator, TEdited&gt; </title>
+      <title>Class CompositeConfiguration&lt;TEntity, TToken&gt; </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class AuditedConfiguration&lt;TEntity, TCreator, TEdited&gt; ">
+      <meta name="title" content="Class CompositeConfiguration&lt;TEntity, TToken&gt; ">
       
-      <meta name="description" content="Represents an abstract base class for configuring the entities of type  for identity-related and time audited entities in the Entity Framework Core model.">
+      <meta name="description" content="Represents an abstract base class for configuring entity types that implement the  interface.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v4.5.0725.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_3.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration%603%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v5.0.0818.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_Configurations_CompositeConfiguration_2.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.Configurations.CompositeConfiguration%602%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -80,28 +80,26 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`3">
+        <article data-uid="BB84.EntityFrameworkCore.Repositories.Configurations.CompositeConfiguration`2">
 
 
 
-  <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_3" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`3" class="text-break">
-Class AuditedConfiguration&lt;TEntity, TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/AuditedConfiguration.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  <h1 id="BB84_EntityFrameworkCore_Repositories_Configurations_CompositeConfiguration_2" data-uid="BB84.EntityFrameworkCore.Repositories.Configurations.CompositeConfiguration`2" class="text-break">
+Class CompositeConfiguration&lt;TEntity, TToken&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Configurations/CompositeConfiguration.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="BB84.html">BB84</a>.<a class="xref" href="BB84.EntityFrameworkCore.html">EntityFrameworkCore</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.html">Repositories</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.html">SqlServer</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.html">Configurations</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.SqlServer.dll</dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BB84.html">BB84</a>.<a class="xref" href="BB84.EntityFrameworkCore.html">EntityFrameworkCore</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.html">Repositories</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.Configurations.html">Configurations</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Represents an abstract base class for configuring the entities of type
-<a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-3.html">IAuditedEntity&lt;TKey, TCreator, TEdited&gt;</a> for identity-related and time audited
-entities in the Entity Framework Core model.</p>
+  <div class="markdown summary"><p>Represents an abstract base class for configuring entity types that implement the
+<a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.ICompositeEntity-1.html">ICompositeEntity&lt;TToken&gt;</a> interface.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SuppressMessage(&quot;Style&quot;, &quot;IDE0058&quot;, Justification = &quot;Not relevant here, entity type configuration.&quot;)]
-public abstract class AuditedConfiguration&lt;TEntity, TCreator, TEdited&gt; : AuditedConfiguration&lt;TEntity, Guid, TCreator, TEdited&gt;, IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IAuditedEntity&lt;TCreator, TEdited&gt; where TCreator : notnull</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class CompositeConfiguration&lt;TEntity, TToken&gt; : IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, ICompositeEntity&lt;TToken&gt;</code></pre>
   </div>
 
 
@@ -111,11 +109,8 @@ public abstract class AuditedConfiguration&lt;TEntity, TCreator, TEdited&gt; : A
     <dt><code>TEntity</code></dt>
     <dd><p>The type of the entity being configured.</p>
 </dd>
-    <dt><code>TCreator</code></dt>
-    <dd><p>The type representing the creator of the entity.</p>
-</dd>
-    <dt><code>TEdited</code></dt>
-    <dd><p>The type representing the editor of the entity.</p>
+    <dt><code>TToken</code></dt>
+    <dd><p>The type of the concurrency token.</p>
 </dd>
   </dl>
 
@@ -123,8 +118,7 @@ public abstract class AuditedConfiguration&lt;TEntity, TCreator, TEdited&gt; : A
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.html">AuditedConfiguration</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>, TCreator, TEdited&gt;</div>
-      <div><span class="xref">AuditedConfiguration&lt;TEntity, TCreator, TEdited&gt;</span></div>
+      <div><span class="xref">CompositeConfiguration&lt;TEntity, TToken&gt;</span></div>
     </dd>
   </dl>
 
@@ -135,13 +129,16 @@ public abstract class AuditedConfiguration&lt;TEntity, TCreator, TEdited&gt; : A
     </dd>
   </dl>
 
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Configurations.CompositeConfiguration-1.html">CompositeConfiguration&lt;TEntity&gt;</a></div>
+    </dd>
+  </dl>
 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_4_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__">AuditedConfiguration&lt;TEntity, Guid, TCreator, TEdited&gt;.Configure(EntityTypeBuilder&lt;TEntity&gt;)</a>
-    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -168,10 +165,10 @@ public abstract class AuditedConfiguration&lt;TEntity, TCreator, TEdited&gt; : A
 
 
 
-  <h2 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_3_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>This class provides a default configuration for audited entities, including primary key setup,
-concurrency token configuration, and required properties for creator and editor fields.
-Derived classes can override the <a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration-4.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_4_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__">Configure(EntityTypeBuilder&lt;TEntity&gt;)</a> method to customize the configuration.</p>
+  <h2 id="BB84_EntityFrameworkCore_Repositories_Configurations_CompositeConfiguration_2_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This class is intended to be used as a base for defining entity type configurations in
+Entity Framework Core. It provides a default implementation for configuring common properties,
+such as the <code>Timestamp</code> property.</p>
 </div>
 
 
@@ -179,11 +176,11 @@ Derived classes can override the <a class="xref" href="BB84.EntityFrameworkCore.
 </h2>
 
 
-  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_3_Configure_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`3.Configure*"></a>
+  <a id="BB84_EntityFrameworkCore_Repositories_Configurations_CompositeConfiguration_2_Configure_" data-uid="BB84.EntityFrameworkCore.Repositories.Configurations.CompositeConfiguration`2.Configure*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_AuditedConfiguration_3_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.AuditedConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Configurations_CompositeConfiguration_2_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__" data-uid="BB84.EntityFrameworkCore.Repositories.Configurations.CompositeConfiguration`2.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
   Configure(EntityTypeBuilder&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/AuditedConfiguration.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Configurations/CompositeConfiguration.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configures the entity of type <code class="typeparamref">TEntity</code>.</p>
@@ -191,7 +188,7 @@ Derived classes can override the <a class="xref" href="BB84.EntityFrameworkCore.
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Configure(EntityTypeBuilder&lt;TEntity&gt; builder)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Configure(EntityTypeBuilder&lt;TEntity&gt; builder)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -216,7 +213,7 @@ Derived classes can override the <a class="xref" href="BB84.EntityFrameworkCore.
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/AuditedConfiguration.cs/#L61" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Configurations/CompositeConfiguration.cs/#L24" class="edit-link">Edit this page</a>
         </div>
 
 

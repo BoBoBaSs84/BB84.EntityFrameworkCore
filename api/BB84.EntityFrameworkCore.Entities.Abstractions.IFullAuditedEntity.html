@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v4.5.0725.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Entities_Abstractions_IFullAuditedEntity.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v5.0.0818.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Entities_Abstractions_IFullAuditedEntity.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_Abstractions_IFullAuditedEntity" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity" class="text-break">
-Interface IFullAuditedEntity  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Entities.Abstractions/IFullAuditedEntity.cs/#L43"><i class="bi bi-code-slash"></i></a>
+Interface IFullAuditedEntity  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Entities.Abstractions/IFullAuditedEntity.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -99,7 +99,7 @@ creator, creation, last editor, last modification date and unique identity.</p>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IFullAuditedEntity : IFullAuditedEntity&lt;Guid, string, string?&gt;, ITimeAudited, IIdentityEntity, IIdentityEntity&lt;Guid&gt;, IIdentity&lt;Guid&gt;, IConcurrency, IUserAudited, IUserAudited&lt;string, string?&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IFullAuditedEntity : IFullAuditedEntity&lt;Guid, string, string?&gt;, IFullAuditedEntity&lt;Guid, string, string?, byte[]&gt;, ITimeAudited, IIdentityEntity, IIdentityEntity&lt;Guid&gt;, IIdentityEntity&lt;Guid, byte[]&gt;, IIdentity&lt;Guid&gt;, IConcurrency, IConcurrency&lt;byte[]&gt;, IUserAudited, IUserAudited&lt;string, string?&gt;</code></pre>
   </div>
 
 
@@ -121,7 +121,7 @@ creator, creation, last editor, last modification date and unique identity.</p>
       <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity-1.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IIdentity_1_Id">IIdentity&lt;Guid&gt;.Id</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency_Timestamp">IConcurrency.Timestamp</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency-1.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency_1_Timestamp">IConcurrency&lt;byte[]&gt;.Timestamp</a>
     </div>
     <div>
       <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_CreatedBy">IUserAudited&lt;string, string&gt;.CreatedBy</a>
@@ -135,8 +135,9 @@ creator, creation, last editor, last modification date and unique identity.</p>
 
 
   <h2 id="BB84_EntityFrameworkCore_Entities_Abstractions_IFullAuditedEntity_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>The identity column is of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a> and the creator and editor columns are
-of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>.</p>
+  <div class="markdown level0 remarks"><p>Nothing is supplied; <code>TKey</code> defaults to <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>, <code>TCreator</code> to
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <code>TEditor</code> to <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> and <code>TToken</code> to a
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a> array.</p>
 </div>
 
 
@@ -144,7 +145,7 @@ of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.stri
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Entities.Abstractions/IFullAuditedEntity.cs/#L43" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Entities.Abstractions/IFullAuditedEntity.cs/#L48" class="edit-link">Edit this page</a>
         </div>
 
 

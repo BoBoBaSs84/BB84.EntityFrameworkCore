@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IConcurrency ">
       
-      <meta name="description" content="Defines a contract for entities that support concurrency control through a timestamp.">
+      <meta name="description" content="Defines a contract for entities that support concurrency control through a store generated token.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v4.5.0725.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v5.0.0818.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency" class="text-break">
-Interface IConcurrency  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/IConcurrency.cs/#L16"><i class="bi bi-code-slash"></i></a>
+Interface IConcurrency  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/IConcurrency.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,12 +93,12 @@ Interface IConcurrency  <a class="header-action link-secondary" title="View sour
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.Abstractions.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Defines a contract for entities that support concurrency control through a timestamp.</p>
+  <div class="markdown summary"><p>Defines a contract for entities that support concurrency control through a store generated token.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IConcurrency</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IConcurrency : IConcurrency&lt;byte[]&gt;</code></pre>
   </div>
 
 
@@ -107,58 +107,29 @@ Interface IConcurrency  <a class="header-action link-secondary" title="View sour
 
 
 
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency-1.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency_1_Timestamp">IConcurrency&lt;byte[]&gt;.Timestamp</a>
+    </div>
+  </dd></dl>
 
 
 
 
   <h2 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>Implementations of this interface typically use the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency_Timestamp">Timestamp</a> property to manage
-concurrency by ensuring that updates to an entity are based on the most recent version.
-This is commonly used in scenarios such as optimistic concurrency control in databases.</p>
+  <div class="markdown level0 remarks"><p>The token is a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a> array, shaped for SQL Server <code>rowversion</code>. Providers
+without an eight byte row version should name their own token type through
+<a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency-1.html">IConcurrency&lt;TToken&gt;</a> rather than mapping something else onto this one.</p>
 </div>
-
-
-  <h2 class="section" id="properties">Properties
-</h2>
-
-
-  <a id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency_Timestamp_" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.Timestamp*"></a>
-
-  <h3 id="BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency_Timestamp" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.Timestamp">
-  Timestamp
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/IConcurrency.cs/#L21"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Gets the timestamp associated with the current entity.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">byte[] Timestamp { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
 
 
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/IConcurrency.cs/#L16" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Entities.Abstractions/Components/IConcurrency.cs/#L55" class="edit-link">Edit this page</a>
         </div>
 
 

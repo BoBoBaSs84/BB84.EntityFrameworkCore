@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Interface IWriteIdentityRepository&lt;TEntity, TKey&gt; </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface IWriteIdentityRepository&lt;TEntity, TKey&gt; ">
+      
+      <meta name="description" content="Defines the write half of a repository for entities of type  with a primary key of type TKey.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v5.0.0818.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository%602%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2">
+
+
+
+  <h1 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2" class="text-break">
+Interface IWriteIdentityRepository&lt;TEntity, TKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IWriteIdentityRepository.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BB84.html">BB84</a>.<a class="xref" href="BB84.EntityFrameworkCore.html">EntityFrameworkCore</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.html">Repositories</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.html">Abstractions</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.Abstractions.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Defines the write half of a repository for entities of type
+<a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity-1.html">IIdentityEntity&lt;TKey&gt;</a> with a primary key of type <code class="typeparamref">TKey</code>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IWriteIdentityRepository&lt;TEntity, TKey&gt; : IWriteRepository&lt;TEntity&gt; where TEntity : class, IIdentityEntity&lt;TKey&gt; where TKey : IEquatable&lt;TKey&gt;</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd><p>The type of the entity managed by the repository.</p>
+</dd>
+    <dt><code>TKey</code></dt>
+    <dd><p>The type of the primary key for the entity.</p>
+</dd>
+  </dl>
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteRepository_1_Create__0_">IWriteRepository&lt;TEntity&gt;.Create(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteRepository_1_Create_System_Collections_Generic_IEnumerable__0__">IWriteRepository&lt;TEntity&gt;.Create(IEnumerable&lt;TEntity&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteRepository_1_CreateAsync__0_System_Threading_CancellationToken_">IWriteRepository&lt;TEntity&gt;.CreateAsync(TEntity, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteRepository_1_CreateAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_">IWriteRepository&lt;TEntity&gt;.CreateAsync(IEnumerable&lt;TEntity&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteRepository_1_Delete__0_">IWriteRepository&lt;TEntity&gt;.Delete(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteRepository_1_Delete_System_Collections_Generic_IEnumerable__0__">IWriteRepository&lt;TEntity&gt;.Delete(IEnumerable&lt;TEntity&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteRepository_1_ExecuteDelete_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___">IWriteRepository&lt;TEntity&gt;.ExecuteDelete(Expression&lt;Func&lt;TEntity, bool&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteRepository_1_ExecuteDeleteAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Threading_CancellationToken_">IWriteRepository&lt;TEntity&gt;.ExecuteDeleteAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteRepository_1_Update__0_">IWriteRepository&lt;TEntity&gt;.Update(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteRepository_1_Update_System_Collections_Generic_IEnumerable__0__">IWriteRepository&lt;TEntity&gt;.Update(IEnumerable&lt;TEntity&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteRepository_1_ExecuteUpdate_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___">IWriteRepository&lt;TEntity&gt;.ExecuteUpdate(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteRepository-1.html#BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteRepository_1_ExecuteUpdateAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___System_Threading_CancellationToken_">IWriteRepository&lt;TEntity&gt;.ExecuteUpdateAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt;, CancellationToken)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>Extends <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteRepository-1.html">IWriteRepository&lt;TEntity&gt;</a> with key based bulk operations. Every method
+declared here executes immediately and bypasses the change tracker, so no interceptor runs
+for any of them.</p>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteDelete_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteDelete*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteDelete_System_Collections_Generic_IEnumerable__1__" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteDelete(System.Collections.Generic.IEnumerable{`1})">
+  ExecuteDelete(IEnumerable&lt;TKey&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IWriteIdentityRepository.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deletes all database rows for the <code class="typeparamref">TEntity</code> instances which matches
+the <code class="paramref">ids</code> from the database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int ExecuteDelete(IEnumerable&lt;TKey&gt; ids)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ids</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TKey&gt;</dt>
+    <dd><p>The primary keys of the <code class="typeparamref">TEntity</code>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The total number of rows deleted in the database.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteDelete_System_Collections_Generic_IEnumerable__1___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.
+</p>
+<p>
+<b>This deletes permanently, even for soft deletable entity types.</b> Because no save
+operation takes place, save changes interceptors never run, and the soft deletable
+interceptor therefore cannot turn the deletion into a flag update. The rows are gone.
+</p>
+</div>
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteDelete_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteDelete*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteDelete__1_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteDelete(`1)">
+  ExecuteDelete(TKey)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IWriteIdentityRepository.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deletes the database row for the <code class="typeparamref">TEntity</code> instance which matches
+the <code class="paramref">id</code> from the database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int ExecuteDelete(TKey id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <span class="xref">TKey</span></dt>
+    <dd><p>The primary key of the <code class="typeparamref">TEntity</code>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The total number of rows deleted in the database.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteDelete__1__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.
+</p>
+<p>
+<b>This deletes permanently, even for soft deletable entity types.</b> Because no save
+operation takes place, save changes interceptors never run, and the soft deletable
+interceptor therefore cannot turn the deletion into a flag update. The rows are gone.
+</p>
+</div>
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteDeleteAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteDeleteAsync*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteDeleteAsync_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteDeleteAsync(System.Collections.Generic.IEnumerable{`1},System.Threading.CancellationToken)">
+  ExecuteDeleteAsync(IEnumerable&lt;TKey&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IWriteIdentityRepository.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deletes all database rows for the <code class="typeparamref">TEntity</code> instances which matches
+the <code class="paramref">ids</code> from the database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;int&gt; ExecuteDeleteAsync(IEnumerable&lt;TKey&gt; ids, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ids</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TKey&gt;</dt>
+    <dd><p>The primary keys of the <code class="typeparamref">TEntity</code>.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token to cancel the request.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>The total number of rows deleted in the database.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteDeleteAsync_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.
+</p>
+<p>
+<b>This deletes permanently, even for soft deletable entity types.</b> Because no save
+operation takes place, save changes interceptors never run, and the soft deletable
+interceptor therefore cannot turn the deletion into a flag update. The rows are gone.
+</p>
+</div>
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteDeleteAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteDeleteAsync*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteDeleteAsync__1_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteDeleteAsync(`1,System.Threading.CancellationToken)">
+  ExecuteDeleteAsync(TKey, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IWriteIdentityRepository.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deletes the database row for the <code class="typeparamref">TEntity</code> instance which matches
+the <code class="paramref">id</code> from the database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;int&gt; ExecuteDeleteAsync(TKey id, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <span class="xref">TKey</span></dt>
+    <dd><p>The primary key of the <code class="typeparamref">TEntity</code>.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token to cancel the request.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>The total number of rows deleted in the database.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteDeleteAsync__1_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.
+</p>
+<p>
+<b>This deletes permanently, even for soft deletable entity types.</b> Because no save
+operation takes place, save changes interceptors never run, and the soft deletable
+interceptor therefore cannot turn the deletion into a flag update. The rows are gone.
+</p>
+</div>
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteUpdate_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteUpdate*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteUpdate_System_Collections_Generic_IEnumerable__1__System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteUpdate(System.Collections.Generic.IEnumerable{`1},System.Action{Microsoft.EntityFrameworkCore.Query.UpdateSettersBuilder{`0}})">
+  ExecuteUpdate(IEnumerable&lt;TKey&gt;, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IWriteIdentityRepository.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates the entities identified by the specified identifiers with the provided property changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int ExecuteUpdate(IEnumerable&lt;TKey&gt; ids, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt; setPropertyCalls)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ids</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TKey&gt;</dt>
+    <dd><p>The unique identifiers of the entities to update.</p>
+</dd>
+    <dt><code>setPropertyCalls</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.query.updatesettersbuilder-1">UpdateSettersBuilder</a>&lt;TEntity&gt;&gt;</dt>
+    <dd><p>A lambda expression specifying the properties to update and their new values.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of entities updated. Typically, this will be 1 if the update is successful,
+or 0 if no entity matches the specified <code class="paramref">ids</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteUpdate_System_Collections_Generic_IEnumerable__1__System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.
+</p>
+<p>
+<b>Auditing does not happen for this operation.</b> Because no save operation takes
+place, save changes interceptors never run, so the audit columns are left untouched
+unless <code class="paramref">setPropertyCalls</code> sets them explicitly.
+</p>
+</div>
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteUpdate_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteUpdate*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteUpdate__1_System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteUpdate(`1,System.Action{Microsoft.EntityFrameworkCore.Query.UpdateSettersBuilder{`0}})">
+  ExecuteUpdate(TKey, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IWriteIdentityRepository.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates the entity identified by the specified identifier with the provided property changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int ExecuteUpdate(TKey id, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt; setPropertyCalls)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <span class="xref">TKey</span></dt>
+    <dd><p>The unique identifier of the entity to update.</p>
+</dd>
+    <dt><code>setPropertyCalls</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.query.updatesettersbuilder-1">UpdateSettersBuilder</a>&lt;TEntity&gt;&gt;</dt>
+    <dd><p>A lambda expression specifying the properties to update and their new values.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of entities updated. Typically, this will be 1 if the update is successful,
+or 0 if no entity matches the specified <code class="paramref">id</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteUpdate__1_System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.
+</p>
+<p>
+<b>Auditing does not happen for this operation.</b> Because no save operation takes
+place, save changes interceptors never run, so the audit columns are left untouched
+unless <code class="paramref">setPropertyCalls</code> sets them explicitly.
+</p>
+</div>
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteUpdateAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteUpdateAsync*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteUpdateAsync_System_Collections_Generic_IEnumerable__1__System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteUpdateAsync(System.Collections.Generic.IEnumerable{`1},System.Action{Microsoft.EntityFrameworkCore.Query.UpdateSettersBuilder{`0}},System.Threading.CancellationToken)">
+  ExecuteUpdateAsync(IEnumerable&lt;TKey&gt;, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IWriteIdentityRepository.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates the entities identified by the specified identifiers with the provided property changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;int&gt; ExecuteUpdateAsync(IEnumerable&lt;TKey&gt; ids, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt; setPropertyCalls, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ids</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TKey&gt;</dt>
+    <dd><p>The unique identifiers of the entities to update.</p>
+</dd>
+    <dt><code>setPropertyCalls</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.query.updatesettersbuilder-1">UpdateSettersBuilder</a>&lt;TEntity&gt;&gt;</dt>
+    <dd><p>A lambda expression specifying the properties to update and their new values.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token to cancel the request.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>The number of entities updated. Typically, this will be 1 if the update is successful,
+or 0 if no entity matches the specified <code class="paramref">ids</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteUpdateAsync_System_Collections_Generic_IEnumerable__1__System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.
+</p>
+<p>
+<b>Auditing does not happen for this operation.</b> Because no save operation takes
+place, save changes interceptors never run, so the audit columns are left untouched
+unless <code class="paramref">setPropertyCalls</code> sets them explicitly.
+</p>
+</div>
+
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteUpdateAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteUpdateAsync*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteUpdateAsync__1_System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository`2.ExecuteUpdateAsync(`1,System.Action{Microsoft.EntityFrameworkCore.Query.UpdateSettersBuilder{`0}},System.Threading.CancellationToken)">
+  ExecuteUpdateAsync(TKey, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IWriteIdentityRepository.cs/#L131"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates the entity identified by the specified identifier with the provided property changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;int&gt; ExecuteUpdateAsync(TKey id, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt; setPropertyCalls, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <span class="xref">TKey</span></dt>
+    <dd><p>The unique identifier of the entity to update.</p>
+</dd>
+    <dt><code>setPropertyCalls</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.query.updatesettersbuilder-1">UpdateSettersBuilder</a>&lt;TEntity&gt;&gt;</dt>
+    <dd><p>A lambda expression specifying the properties to update and their new values.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token to cancel the request.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>The number of entities updated. Typically, this will be 1 if the update is successful,
+or 0 if no entity matches the specified <code class="paramref">id</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Abstractions_IWriteIdentityRepository_2_ExecuteUpdateAsync__1_System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+This operation executes immediately against the database, rather than being deferred
+until save changes is called. It also does not interact with the EF change tracker in
+any way: entity instances which happen to be tracked when this operation is invoked
+aren't taken into account, and aren't updated to reflect the changes.
+</p>
+<p>
+<b>Auditing does not happen for this operation.</b> Because no save operation takes
+place, save changes interceptors never run, so the audit columns are left untouched
+unless <code class="paramref">setPropertyCalls</code> sets them explicitly.
+</p>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.Abstractions/IWriteIdentityRepository.cs/#L23" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

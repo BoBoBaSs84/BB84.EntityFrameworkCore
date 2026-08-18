@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class FullAuditedConfiguration&lt;TEntity, TCreator, TEdited&gt; </title>
+      <title>Class EnumeratorConfiguration&lt;TEntity, TKey, TToken&gt; </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class FullAuditedConfiguration&lt;TEntity, TCreator, TEdited&gt; ">
+      <meta name="title" content="Class EnumeratorConfiguration&lt;TEntity, TKey, TToken&gt; ">
       
-      <meta name="description" content="Provides a base configuration for entities that implement the  interface.">
+      <meta name="description" content="Represents an abstract base class for configuring entity types that implement the  interface.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v4.5.0725.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_3.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration%603%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v5.0.0818.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_Configurations_EnumeratorConfiguration_3.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.Configurations.EnumeratorConfiguration%603%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -80,27 +80,27 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`3">
+        <article data-uid="BB84.EntityFrameworkCore.Repositories.Configurations.EnumeratorConfiguration`3">
 
 
 
-  <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_3" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`3" class="text-break">
-Class FullAuditedConfiguration&lt;TEntity, TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/FullAuditedConfiguration.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  <h1 id="BB84_EntityFrameworkCore_Repositories_Configurations_EnumeratorConfiguration_3" data-uid="BB84.EntityFrameworkCore.Repositories.Configurations.EnumeratorConfiguration`3" class="text-break">
+Class EnumeratorConfiguration&lt;TEntity, TKey, TToken&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Configurations/EnumeratorConfiguration.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="BB84.html">BB84</a>.<a class="xref" href="BB84.EntityFrameworkCore.html">EntityFrameworkCore</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.html">Repositories</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.html">SqlServer</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.html">Configurations</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.SqlServer.dll</dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BB84.html">BB84</a>.<a class="xref" href="BB84.EntityFrameworkCore.html">EntityFrameworkCore</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.html">Repositories</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.Configurations.html">Configurations</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Provides a base configuration for entities that implement the
-<a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-3.html">IFullAuditedEntity&lt;TKey, TCreator, TEditor&gt;</a> interface.</p>
+  <div class="markdown summary"><p>Represents an abstract base class for configuring entity types that implement the
+<a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity-2.html">IEnumeratorEntity&lt;TKey, TToken&gt;</a> interface.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[SuppressMessage(&quot;Style&quot;, &quot;IDE0058&quot;, Justification = &quot;Not relevant here, entity type configuration.&quot;)]
-public abstract class FullAuditedConfiguration&lt;TEntity, TCreator, TEdited&gt; : FullAuditedConfiguration&lt;TEntity, Guid, TCreator, TEdited&gt;, IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IFullAuditedEntity&lt;TCreator, TEdited&gt; where TCreator : notnull</code></pre>
+public abstract class EnumeratorConfiguration&lt;TEntity, TKey, TToken&gt; : IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IEnumeratorEntity&lt;TKey, TToken&gt; where TKey : IEquatable&lt;TKey&gt;</code></pre>
   </div>
 
 
@@ -110,11 +110,11 @@ public abstract class FullAuditedConfiguration&lt;TEntity, TCreator, TEdited&gt;
     <dt><code>TEntity</code></dt>
     <dd><p>The type of the entity being configured.</p>
 </dd>
-    <dt><code>TCreator</code></dt>
-    <dd><p>The type representing the creator of the entity.</p>
+    <dt><code>TKey</code></dt>
+    <dd><p>The type of the key for the entity.</p>
 </dd>
-    <dt><code>TEdited</code></dt>
-    <dd><p>The type representing the editor of the entity.</p>
+    <dt><code>TToken</code></dt>
+    <dd><p>The type of the concurrency token.</p>
 </dd>
   </dl>
 
@@ -122,8 +122,7 @@ public abstract class FullAuditedConfiguration&lt;TEntity, TCreator, TEdited&gt;
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-4.html">FullAuditedConfiguration</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>, TCreator, TEdited&gt;</div>
-      <div><span class="xref">FullAuditedConfiguration&lt;TEntity, TCreator, TEdited&gt;</span></div>
+      <div><span class="xref">EnumeratorConfiguration&lt;TEntity, TKey, TToken&gt;</span></div>
     </dd>
   </dl>
 
@@ -134,13 +133,16 @@ public abstract class FullAuditedConfiguration&lt;TEntity, TCreator, TEdited&gt;
     </dd>
   </dl>
 
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Configurations.EnumeratorConfiguration-2.html">EnumeratorConfiguration&lt;TEntity, TKey&gt;</a></div>
+    </dd>
+  </dl>
 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-4.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_4_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__">FullAuditedConfiguration&lt;TEntity, Guid, TCreator, TEdited&gt;.Configure(EntityTypeBuilder&lt;TEntity&gt;)</a>
-    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -167,10 +169,23 @@ public abstract class FullAuditedConfiguration&lt;TEntity, TCreator, TEdited&gt;
 
 
 
-  <h2 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_3_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>This configuration defines common properties for audited entities, including primary key,
-timestamps and audit fields such as creator and editor. It is intended to be used as a
-base class for configuring entities that require full auditing support.</p>
+  <h2 id="BB84_EntityFrameworkCore_Repositories_Configurations_EnumeratorConfiguration_3_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>
+This class defines a standard configuration for entities, including primary key setup,
+concurrency tokens, property constraints and indexing.
+</p>
+<p>
+A global query filter excluding soft deleted rows is applied, so that entities marked as
+deleted by the soft deletable interceptor are no longer returned by queries. Pass
+<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> for the <code>ignoreQueryFilters</code> parameter of the repository read
+methods to include them again.
+</p>
+<p>
+Be aware that a <b>required</b> navigation pointing at a soft deletable entity type
+interacts badly with this filter: filtering out the principal row also removes the
+dependents that require it. Model such navigations as optional, or apply a matching filter
+to both ends of the relationship.
+</p>
 </div>
 
 
@@ -178,11 +193,11 @@ base class for configuring entities that require full auditing support.</p>
 </h2>
 
 
-  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_3_Configure_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`3.Configure*"></a>
+  <a id="BB84_EntityFrameworkCore_Repositories_Configurations_EnumeratorConfiguration_3_Configure_" data-uid="BB84.EntityFrameworkCore.Repositories.Configurations.EnumeratorConfiguration`3.Configure*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_FullAuditedConfiguration_3_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Configurations_EnumeratorConfiguration_3_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__" data-uid="BB84.EntityFrameworkCore.Repositories.Configurations.EnumeratorConfiguration`3.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
   Configure(EntityTypeBuilder&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/FullAuditedConfiguration.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Configurations/EnumeratorConfiguration.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configures the entity of type <code class="typeparamref">TEntity</code>.</p>
@@ -190,7 +205,7 @@ base class for configuring entities that require full auditing support.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Configure(EntityTypeBuilder&lt;TEntity&gt; builder)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Configure(EntityTypeBuilder&lt;TEntity&gt; builder)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -215,7 +230,7 @@ base class for configuring entities that require full auditing support.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/FullAuditedConfiguration.cs/#L68" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Configurations/EnumeratorConfiguration.cs/#L40" class="edit-link">Edit this page</a>
         </div>
 
 

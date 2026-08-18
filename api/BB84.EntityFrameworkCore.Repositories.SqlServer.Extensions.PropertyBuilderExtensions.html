@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class PropertyBuilderExtensions ">
       
-      <meta name="description" content="Provides extension methods for configuring property data types in a relational database using the  class.">
+      <meta name="description" content="Provides extension methods for configuring SQL Server column types using the  and  classes.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v4.5.0725.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v5.0.0818.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions" class="text-break">
-Class PropertyBuilderExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L21"><i class="bi bi-code-slash"></i></a>
+Class PropertyBuilderExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -93,8 +93,8 @@ Class PropertyBuilderExtensions  <a class="header-action link-secondary" title="
   <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.SqlServer.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Provides extension methods for configuring property data types in a relational
-database using the <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder">PropertyBuilder</a> class.</p>
+  <div class="markdown summary"><p>Provides extension methods for configuring SQL Server column types using the
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder">PropertyBuilder</a> and <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder&lt;TProperty&gt;</a> classes.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -145,10 +145,20 @@ database using the <a class="xref" href="https://learn.microsoft.com/dotnet/api/
 
 
   <h2 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>The <a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html">PropertyBuilderExtensions</a> class provides extension methods that allow
-developers to specify the SQL data type for a property when using Entity Framework Core
-to map their domain models to a relational database. Each method configures the column
-type for the property being built, enabling precise control over the database schema.</p>
+  <div class="markdown level0 remarks"><p>
+The <a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html">PropertyBuilderExtensions</a> class provides extension methods that allow
+developers to specify the SQL Server data type for a property when using Entity Framework
+Core to map their domain models to the database. Each method configures the column type for
+the property being built, enabling precise control over the database schema.
+</p>
+<p>
+Every method comes in two forms. The generic form extends
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder&lt;TProperty&gt;</a> and returns it unchanged, so the property type
+survives the call and anything typed further along the chain — <code>HasDefaultValue</code>,
+<code>HasConversion</code>, <code>HasValueGenerator</code> — stays compile-time checked. The non-generic
+form exists for the <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.entitytypebuilder.property#microsoft-entityframeworkcore-metadata-builders-entitytypebuilder-property(system-string)">Property(string)</a> path used by shadow
+properties, where no property type is available.
+</p>
 </div>
 
 
@@ -160,10 +170,10 @@ type for the property being built, enabling precise control over the database sc
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsBinaryColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsBinaryColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)">
   IsBinaryColumn(PropertyBuilder, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>binary</code> when targeting a relational database.</p>
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>binary</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -177,8 +187,7 @@ type for the property being built, enabling precise control over the database sc
     <dd><p>The builder for the property being configured.</p>
 </dd>
     <dt><code>length</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>This can be a value from 1 through 8,000. max indicates that the maximum
-storage size is <code>2^31-1</code> bytes.</p>
+    <dd><p>This can be a value from 1 through 8,000.</p>
 </dd>
   </dl>
 
@@ -196,6 +205,66 @@ storage size is <code>2^31-1</code> bytes.</p>
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">length</code> is less than 1 or greater than 8,000.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsBinaryColumn_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsBinaryColumn*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsBinaryColumn__1_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder___0__System_Int32_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsBinaryColumn``1(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder{``0},System.Int32)">
+  IsBinaryColumn&lt;TProperty&gt;(PropertyBuilder&lt;TProperty&gt;, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>binary</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PropertyBuilder&lt;TProperty&gt; IsBinaryColumn&lt;TProperty&gt;(this PropertyBuilder&lt;TProperty&gt; builder, int length = 8000)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The builder for the property being configured.</p>
+</dd>
+    <dt><code>length</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>This can be a value from 1 through 8,000.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The same builder instance so that multiple calls can be chained.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TProperty</code></dt>
+    <dd><p>The type of the property being configured.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">length</code> is less than 1 or greater than 8,000.</p>
+</dd>
+  </dl>
 
 
 
@@ -203,10 +272,10 @@ storage size is <code>2^31-1</code> bytes.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)">
   IsDateColumn(PropertyBuilder)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Configures the data type of the column to <b>date</b> when targeting a relational database.</p>
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>date</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -238,14 +307,59 @@ storage size is <code>2^31-1</code> bytes.</p>
 
 
 
+  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateColumn_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateColumn*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateColumn__1_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder___0__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateColumn``1(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder{``0})">
+  IsDateColumn&lt;TProperty&gt;(PropertyBuilder&lt;TProperty&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>date</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PropertyBuilder&lt;TProperty&gt; IsDateColumn&lt;TProperty&gt;(this PropertyBuilder&lt;TProperty&gt; builder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The builder for the property being configured.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The same builder instance so that multiple calls can be chained.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TProperty</code></dt>
+    <dd><p>The type of the property being configured.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTime2Column_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTime2Column*"></a>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTime2Column_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTime2Column(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)">
   IsDateTime2Column(PropertyBuilder, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L87"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>datetime2</code> when targeting a relational database.</p>
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>datetime2</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -278,6 +392,67 @@ of digits for the fractional part of the seconds.</p>
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">precision</code> is less than 0 or greater than 7.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTime2Column_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTime2Column*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTime2Column__1_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder___0__System_Int32_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTime2Column``1(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder{``0},System.Int32)">
+  IsDateTime2Column&lt;TProperty&gt;(PropertyBuilder&lt;TProperty&gt;, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>datetime2</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PropertyBuilder&lt;TProperty&gt; IsDateTime2Column&lt;TProperty&gt;(this PropertyBuilder&lt;TProperty&gt; builder, int precision = 7)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The builder for the property being configured.</p>
+</dd>
+    <dt><code>precision</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The optional type parameter fractional seconds precision specifies the number
+of digits for the fractional part of the seconds.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The same builder instance so that multiple calls can be chained.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TProperty</code></dt>
+    <dd><p>The type of the property being configured.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">precision</code> is less than 0 or greater than 7.</p>
+</dd>
+  </dl>
 
 
 
@@ -285,11 +460,10 @@ of digits for the fractional part of the seconds.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTimeColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Boolean)">
   IsDateTimeColumn(PropertyBuilder, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L69"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>datetime</code> or <code>smalldatetime</code> when targeting a
-relational database.</p>
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>datetime</code> or <code>smalldatetime</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -324,14 +498,62 @@ relational database.</p>
 
 
 
+  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTimeColumn_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeColumn*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTimeColumn__1_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder___0__System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeColumn``1(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder{``0},System.Boolean)">
+  IsDateTimeColumn&lt;TProperty&gt;(PropertyBuilder&lt;TProperty&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>datetime</code> or <code>smalldatetime</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PropertyBuilder&lt;TProperty&gt; IsDateTimeColumn&lt;TProperty&gt;(this PropertyBuilder&lt;TProperty&gt; builder, bool small = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The builder for the property being configured.</p>
+</dd>
+    <dt><code>small</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Indicates if <b>small date time</b> should be used.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The same builder instance so that multiple calls can be chained.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TProperty</code></dt>
+    <dd><p>The type of the property being configured.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTimeOffsetColumn_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeOffsetColumn*"></a>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTimeOffsetColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeOffsetColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)">
   IsDateTimeOffsetColumn(PropertyBuilder, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L105"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>datetimeoffset</code> when targeting a relational database.</p>
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>datetimeoffset</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -367,7 +589,63 @@ of digits for the fractional part of the seconds.</p>
   <h4 class="section">Exceptions</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
-    <dd></dd>
+    <dd><p><code class="paramref">precision</code> is less than 0 or greater than 7.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTimeOffsetColumn_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeOffsetColumn*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDateTimeOffsetColumn__1_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder___0__System_Int32_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDateTimeOffsetColumn``1(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder{``0},System.Int32)">
+  IsDateTimeOffsetColumn&lt;TProperty&gt;(PropertyBuilder&lt;TProperty&gt;, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>datetimeoffset</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PropertyBuilder&lt;TProperty&gt; IsDateTimeOffsetColumn&lt;TProperty&gt;(this PropertyBuilder&lt;TProperty&gt; builder, int precision = 7)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The builder for the property being configured.</p>
+</dd>
+    <dt><code>precision</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The optional type parameter fractional seconds precision specifies the number
+of digits for the fractional part of the seconds.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The same builder instance so that multiple calls can be chained.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TProperty</code></dt>
+    <dd><p>The type of the property being configured.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">precision</code> is less than 0 or greater than 7.</p>
+</dd>
   </dl>
 
 
@@ -376,10 +654,10 @@ of digits for the fractional part of the seconds.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDecimalColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_System_Int32_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDecimalColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32,System.Int32)">
   IsDecimalColumn(PropertyBuilder, int, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L124"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>decimal</code> when targeting a relational database.</p>
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>decimal</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -417,7 +695,67 @@ of digits for the fractional part of the seconds.</p>
   <h4 class="section">Exceptions</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
-    <dd></dd>
+    <dd><p><code class="paramref">precision</code> is less than 1 or greater than 38, or <code class="paramref">scale</code>
+is less than 0 or greater than <code class="paramref">precision</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDecimalColumn_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDecimalColumn*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsDecimalColumn__1_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder___0__System_Int32_System_Int32_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsDecimalColumn``1(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder{``0},System.Int32,System.Int32)">
+  IsDecimalColumn&lt;TProperty&gt;(PropertyBuilder&lt;TProperty&gt;, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>decimal</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PropertyBuilder&lt;TProperty&gt; IsDecimalColumn&lt;TProperty&gt;(this PropertyBuilder&lt;TProperty&gt; builder, int precision = 18, int scale = 2)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The builder for the property being configured.</p>
+</dd>
+    <dt><code>precision</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The maximum total number of decimal digits to be stored.</p>
+</dd>
+    <dt><code>scale</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of decimal digits that are stored to the right of the decimal point.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The same builder instance so that multiple calls can be chained.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TProperty</code></dt>
+    <dd><p>The type of the property being configured.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">precision</code> is less than 1 or greater than 38, or <code class="paramref">scale</code>
+is less than 0 or greater than <code class="paramref">precision</code>.</p>
+</dd>
   </dl>
 
 
@@ -426,10 +764,10 @@ of digits for the fractional part of the seconds.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsMoneyColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsMoneyColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Boolean)">
   IsMoneyColumn(PropertyBuilder, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L138"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Configures the data type of the column to <b>money</b> when targeting a relational database.</p>
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>money</code> or <code>smallmoney</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -464,14 +802,62 @@ of digits for the fractional part of the seconds.</p>
 
 
 
+  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsMoneyColumn_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsMoneyColumn*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsMoneyColumn__1_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder___0__System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsMoneyColumn``1(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder{``0},System.Boolean)">
+  IsMoneyColumn&lt;TProperty&gt;(PropertyBuilder&lt;TProperty&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L143"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>money</code> or <code>smallmoney</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PropertyBuilder&lt;TProperty&gt; IsMoneyColumn&lt;TProperty&gt;(this PropertyBuilder&lt;TProperty&gt; builder, bool small = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The builder for the property being configured.</p>
+</dd>
+    <dt><code>small</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Indicates if <b>small money</b> should be used.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The same builder instance so that multiple calls can be chained.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TProperty</code></dt>
+    <dd><p>The type of the property being configured.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsSysNameColumn_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsSysNameColumn*"></a>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsSysNameColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsSysNameColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)">
   IsSysNameColumn(PropertyBuilder)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L151"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Configures the data type of the column to <b>sysname</b> when targeting a relational database.</p>
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>sysname</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -503,14 +889,59 @@ of digits for the fractional part of the seconds.</p>
 
 
 
+  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsSysNameColumn_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsSysNameColumn*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsSysNameColumn__1_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder___0__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsSysNameColumn``1(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder{``0})">
+  IsSysNameColumn&lt;TProperty&gt;(PropertyBuilder&lt;TProperty&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>sysname</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PropertyBuilder&lt;TProperty&gt; IsSysNameColumn&lt;TProperty&gt;(this PropertyBuilder&lt;TProperty&gt; builder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The builder for the property being configured.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The same builder instance so that multiple calls can be chained.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TProperty</code></dt>
+    <dd><p>The type of the property being configured.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsTimeColumn_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsTimeColumn*"></a>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsTimeColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsTimeColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)">
   IsTimeColumn(PropertyBuilder, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L169"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Configures the data type of the column to <b>time</b> when targeting a relational database.</p>
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>time</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -543,6 +974,67 @@ The default fractional scale is 7 (100ns).</p>
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">precision</code> is less than 0 or greater than 7.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsTimeColumn_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsTimeColumn*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsTimeColumn__1_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder___0__System_Int32_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsTimeColumn``1(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder{``0},System.Int32)">
+  IsTimeColumn&lt;TProperty&gt;(PropertyBuilder&lt;TProperty&gt;, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>time</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PropertyBuilder&lt;TProperty&gt; IsTimeColumn&lt;TProperty&gt;(this PropertyBuilder&lt;TProperty&gt; builder, int precision = 7)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The builder for the property being configured.</p>
+</dd>
+    <dt><code>precision</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>This can be an integer from 0 to 7.
+The default fractional scale is 7 (100ns).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The same builder instance so that multiple calls can be chained.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TProperty</code></dt>
+    <dd><p>The type of the property being configured.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">precision</code> is less than 0 or greater than 7.</p>
+</dd>
+  </dl>
 
 
 
@@ -550,10 +1042,10 @@ The default fractional scale is 7 (100ns).</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsUniqueIdentifierColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsUniqueIdentifierColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)">
   IsUniqueIdentifierColumn(PropertyBuilder)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L182"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>uniqueidentifier</code> when targeting a relational database.</p>
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>uniqueidentifier</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -585,14 +1077,59 @@ The default fractional scale is 7 (100ns).</p>
 
 
 
+  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsUniqueIdentifierColumn_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsUniqueIdentifierColumn*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsUniqueIdentifierColumn__1_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder___0__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsUniqueIdentifierColumn``1(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder{``0})">
+  IsUniqueIdentifierColumn&lt;TProperty&gt;(PropertyBuilder&lt;TProperty&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L187"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>uniqueidentifier</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PropertyBuilder&lt;TProperty&gt; IsUniqueIdentifierColumn&lt;TProperty&gt;(this PropertyBuilder&lt;TProperty&gt; builder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The builder for the property being configured.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The same builder instance so that multiple calls can be chained.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TProperty</code></dt>
+    <dd><p>The type of the property being configured.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsVarbinaryColumn_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsVarbinaryColumn*"></a>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsVarbinaryColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsVarbinaryColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder,System.Int32)">
   IsVarbinaryColumn(PropertyBuilder, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L136"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L202"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Configures the data type of the column to <b>varbinary</b> when targeting a relational database.</p>
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>varbinary</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -606,7 +1143,10 @@ The default fractional scale is 7 (100ns).</p>
     <dd><p>The builder for the property being configured.</p>
 </dd>
     <dt><code>length</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>This can be a value from 0 through 8,000. The default value is 0 (max).</p>
+    <dd><p>This can be a value from 1 through 8,000, or 0 (the default) for
+<code>varbinary(max)</code>, which stores up to <code>2^31-1</code> bytes. Note that <code>binary</code>
+has no <code>max</code> form, which is why <a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsBinaryColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_">IsBinaryColumn(PropertyBuilder, int)</a>
+has no such sentinel.</p>
 </dd>
   </dl>
 
@@ -624,6 +1164,69 @@ The default fractional scale is 7 (100ns).</p>
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">length</code> is less than 0 or greater than 8,000.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsVarbinaryColumn_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsVarbinaryColumn*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsVarbinaryColumn__1_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder___0__System_Int32_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsVarbinaryColumn``1(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder{``0},System.Int32)">
+  IsVarbinaryColumn&lt;TProperty&gt;(PropertyBuilder&lt;TProperty&gt;, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L207"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>varbinary</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PropertyBuilder&lt;TProperty&gt; IsVarbinaryColumn&lt;TProperty&gt;(this PropertyBuilder&lt;TProperty&gt; builder, int length = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The builder for the property being configured.</p>
+</dd>
+    <dt><code>length</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>This can be a value from 1 through 8,000, or 0 (the default) for
+<code>varbinary(max)</code>, which stores up to <code>2^31-1</code> bytes. Note that <code>binary</code>
+has no <code>max</code> form, which is why <a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.html#BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsBinaryColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_System_Int32_">IsBinaryColumn(PropertyBuilder, int)</a>
+has no such sentinel.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The same builder instance so that multiple calls can be chained.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TProperty</code></dt>
+    <dd><p>The type of the property being configured.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">length</code> is less than 0 or greater than 8,000.</p>
+</dd>
+  </dl>
 
 
 
@@ -631,10 +1234,10 @@ The default fractional scale is 7 (100ns).</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsXmlColumn_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsXmlColumn(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder)">
   IsXmlColumn(PropertyBuilder)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L215"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Configures the data type of the column to <b>xml</b> when targeting a relational database.</p>
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>xml</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -666,11 +1269,56 @@ The default fractional scale is 7 (100ns).</p>
 
 
 
+  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsXmlColumn_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsXmlColumn*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Extensions_PropertyBuilderExtensions_IsXmlColumn__1_Microsoft_EntityFrameworkCore_Metadata_Builders_PropertyBuilder___0__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Extensions.PropertyBuilderExtensions.IsXmlColumn``1(Microsoft.EntityFrameworkCore.Metadata.Builders.PropertyBuilder{``0})">
+  IsXmlColumn&lt;TProperty&gt;(PropertyBuilder&lt;TProperty&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L220"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configures the data type of the column to <code>xml</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PropertyBuilder&lt;TProperty&gt; IsXmlColumn&lt;TProperty&gt;(this PropertyBuilder&lt;TProperty&gt; builder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The builder for the property being configured.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.metadata.builders.propertybuilder-1">PropertyBuilder</a>&lt;TProperty&gt;</dt>
+    <dd><p>The same builder instance so that multiple calls can be chained.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TProperty</code></dt>
+    <dd><p>The type of the property being configured.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L21" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Extensions/PropertyBuilderExtensions.cs/#L31" class="edit-link">Edit this page</a>
         </div>
 
 

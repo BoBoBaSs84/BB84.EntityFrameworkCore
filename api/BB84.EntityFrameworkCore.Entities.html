@@ -94,46 +94,55 @@ Classes
       <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity.html">AuditedCompositeEntity</a></dt>
       <dd><p>This abstract class provides a base implementation for entities that are composed
 of multiple related components and require auditing information, including the creator,
-editor, and a concurrency timestamp.</p>
+editor, and a concurrency token.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html">AuditedCompositeEntity&lt;TCreator, TEdited&gt;</a></dt>
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-2.html">AuditedCompositeEntity&lt;TCreator, TEditor&gt;</a></dt>
       <dd><p>This abstract class provides a base implementation for entities that are composed
 of multiple related components and require auditing information, including the creator,
-editor, and a concurrency timestamp.</p>
+editor, and a concurrency token.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedCompositeEntity-3.html">AuditedCompositeEntity&lt;TCreator, TEditor, TToken&gt;</a></dt>
+      <dd><p>This abstract class provides a base implementation for entities that are composed
+of multiple related components and require auditing information, including the creator,
+editor, and a concurrency token.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity.html">AuditedEntity</a></dt>
       <dd><p>This abstract class provides a base implementation for entities that track auditing information,
-including the creator and the last editor, a unique identifier and a timestamp for concurrency
-control.</p>
+including the creator and the last editor, a unique identifier and a concurrency token.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-1.html">AuditedEntity&lt;TKey&gt;</a></dt>
       <dd><p>This abstract class provides a base implementation for entities that track auditing information,
-including the creator and the last editor, a unique identifier and a timestamp for concurrency
-control.</p>
+including the creator and the last editor, a unique identifier and a concurrency token.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-2.html">AuditedEntity&lt;TCreator, TEdited&gt;</a></dt>
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html">AuditedEntity&lt;TKey, TCreator, TEditor&gt;</a></dt>
       <dd><p>This abstract class provides a base implementation for entities that track auditing information,
-including the creator and the last editor, a unique identifier and a timestamp for concurrency
-control.</p>
+including the creator and the last editor, a unique identifier and a concurrency token.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html">AuditedEntity&lt;TKey, TCreator, TEdited&gt;</a></dt>
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-4.html">AuditedEntity&lt;TKey, TCreator, TEditor, TToken&gt;</a></dt>
       <dd><p>This abstract class provides a base implementation for entities that track auditing information,
-including the creator and the last editor, a unique identifier and a timestamp for concurrency
-control.</p>
+including the creator and the last editor, a unique identifier and a concurrency token.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.CompositeEntity.html">CompositeEntity</a></dt>
+      <dd><p>This abstract class provides a base implementation for entities that are
+composed of multiple related components.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.CompositeEntity-1.html">CompositeEntity&lt;TToken&gt;</a></dt>
       <dd><p>This abstract class provides a base implementation for entities that are
 composed of multiple related components.</p>
 </dd>
@@ -153,6 +162,13 @@ support for soft deletion functionality.</p>
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.EnumeratorEntity-2.html">EnumeratorEntity&lt;TKey, TToken&gt;</a></dt>
+      <dd><p>Represents an abstract base class for entities that provides properties for the name
+and description, with a unique identifier of type <code class="typeparamref">TKey</code> and the
+support for soft deletion functionality.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity.html">FullAuditedEntity</a></dt>
       <dd><p>This abstract class provides a base implementation for entities that provides properties
 to track the creator, creation time, editor, and last modification time of the entity.</p>
@@ -165,13 +181,13 @@ to track the creator, creation time, editor, and last modification time of the e
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-2.html">FullAuditedEntity&lt;TCreator, TEdited&gt;</a></dt>
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html">FullAuditedEntity&lt;TKey, TCreator, TEditor&gt;</a></dt>
       <dd><p>This abstract class provides a base implementation for entities that provides properties
 to track the creator, creation time, editor, and last modification time of the entity.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-3.html">FullAuditedEntity&lt;TKey, TCreator, TEdited&gt;</a></dt>
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.FullAuditedEntity-4.html">FullAuditedEntity&lt;TKey, TCreator, TEditor, TToken&gt;</a></dt>
       <dd><p>This abstract class provides a base implementation for entities that provides properties
 to track the creator, creation time, editor, and last modification time of the entity.</p>
 </dd>
@@ -179,13 +195,19 @@ to track the creator, creation time, editor, and last modification time of the e
     <dl class="jumplist">
       <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.IdentityEntity.html">IdentityEntity</a></dt>
       <dd><p>This abstract class provides a base implementation for entities that require a unique
-identifier and a timestamp for concurrency control.</p>
+identifier and a concurrency token.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.IdentityEntity-1.html">IdentityEntity&lt;TKey&gt;</a></dt>
       <dd><p>This abstract class provides a base implementation for entities that require a unique
-identifier and a timestamp for concurrency control.</p>
+identifier and a concurrency token.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.IdentityEntity-2.html">IdentityEntity&lt;TKey, TToken&gt;</a></dt>
+      <dd><p>This abstract class provides a base implementation for entities that require a unique
+identifier and a concurrency token.</p>
 </dd>
     </dl>
 

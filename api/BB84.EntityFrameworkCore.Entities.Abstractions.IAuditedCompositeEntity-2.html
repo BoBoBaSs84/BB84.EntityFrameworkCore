@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v4.5.0725.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Entities_Abstractions_IAuditedCompositeEntity_2.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity%602%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v5.0.0818.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Entities_Abstractions_IAuditedCompositeEntity_2.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity%602%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_Abstractions_IAuditedCompositeEntity_2" data-uid="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity`2" class="text-break">
-Interface IAuditedCompositeEntity&lt;TCreator, TEditor&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedCompositeEntity.cs/#L16"><i class="bi bi-code-slash"></i></a>
+Interface IAuditedCompositeEntity&lt;TCreator, TEditor&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedCompositeEntity.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -99,7 +99,7 @@ with additional concurrency control mechanisms.</p>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IAuditedCompositeEntity&lt;TCreator, TEditor&gt; : IConcurrency, IUserAudited&lt;TCreator, TEditor&gt; where TCreator : notnull</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IAuditedCompositeEntity&lt;TCreator, TEditor&gt; : IAuditedCompositeEntity&lt;TCreator, TEditor, byte[]&gt;, IUserAudited&lt;TCreator, TEditor&gt;, IConcurrency, IConcurrency&lt;byte[]&gt; where TCreator : notnull</code></pre>
   </div>
 
 
@@ -121,26 +121,31 @@ with additional concurrency control mechanisms.</p>
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency_Timestamp">IConcurrency.Timestamp</a>
-    </div>
-    <div>
       <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_CreatedBy">IUserAudited&lt;TCreator, TEditor&gt;.CreatedBy</a>
     </div>
     <div>
       <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IUserAudited_2_EditedBy">IUserAudited&lt;TCreator, TEditor&gt;.EditedBy</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency-1.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_IConcurrency_1_Timestamp">IConcurrency&lt;byte[]&gt;.Timestamp</a>
     </div>
   </dd></dl>
 
 
 
 
+  <h2 id="BB84_EntityFrameworkCore_Entities_Abstractions_IAuditedCompositeEntity_2_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>The creator and editor types are supplied; <code>TToken</code> defaults to a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a> array.
+For a custom token type use <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity-3.html">IAuditedCompositeEntity&lt;TCreator, TEditor, TToken&gt;</a>
+and name all three.</p>
+</div>
 
 
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedCompositeEntity.cs/#L16" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Entities.Abstractions/IAuditedCompositeEntity.cs/#L26" class="edit-link">Edit this page</a>
         </div>
 
 

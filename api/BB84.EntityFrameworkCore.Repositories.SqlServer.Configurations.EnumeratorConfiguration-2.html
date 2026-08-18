@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v4.5.0725.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_EnumeratorConfiguration_2.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration%602%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v5.0.0818.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_EnumeratorConfiguration_2.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration%602%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_EnumeratorConfiguration_2" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`2" class="text-break">
-Class EnumeratorConfiguration&lt;TEntity, TKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/EnumeratorConfiguration.cs/#L24"><i class="bi bi-code-slash"></i></a>
+Class EnumeratorConfiguration&lt;TEntity, TKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/EnumeratorConfiguration.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -94,13 +94,12 @@ Class EnumeratorConfiguration&lt;TEntity, TKey&gt;  <a class="header-action link
   </div>
 
   <div class="markdown summary"><p>Represents an abstract base class for configuring entity types that implement the
-<a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity-1.html">IEnumeratorEntity&lt;TKey&gt;</a> interface.</p>
+<a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity-2.html">IEnumeratorEntity&lt;TKey, TToken&gt;</a> interface.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[SuppressMessage(&quot;Style&quot;, &quot;IDE0058&quot;, Justification = &quot;Not relevant here, entity type configuration.&quot;)]
-public abstract class EnumeratorConfiguration&lt;TEntity, TKey&gt; : IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IEnumeratorEntity&lt;TKey&gt; where TKey : IEquatable&lt;TKey&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class EnumeratorConfiguration&lt;TEntity, TKey&gt; : EnumeratorConfiguration&lt;TEntity, TKey&gt;, IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IEnumeratorEntity&lt;TKey&gt; where TKey : IEquatable&lt;TKey&gt;</code></pre>
   </div>
 
 
@@ -119,6 +118,8 @@ public abstract class EnumeratorConfiguration&lt;TEntity, TKey&gt; : IEntityType
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Configurations.EnumeratorConfiguration-3.html">EnumeratorConfiguration</a>&lt;TEntity, TKey, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Configurations.EnumeratorConfiguration-2.html">EnumeratorConfiguration</a>&lt;TEntity, TKey&gt;</div>
       <div><span class="xref">EnumeratorConfiguration&lt;TEntity, TKey&gt;</span></div>
     </dd>
   </dl>
@@ -140,6 +141,9 @@ public abstract class EnumeratorConfiguration&lt;TEntity, TKey&gt; : IEntityType
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Configurations.EnumeratorConfiguration-3.html#BB84_EntityFrameworkCore_Repositories_Configurations_EnumeratorConfiguration_3_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__">EnumeratorConfiguration&lt;TEntity, TKey, byte[]&gt;.Configure(EntityTypeBuilder&lt;TEntity&gt;)</a>
+    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -167,8 +171,22 @@ public abstract class EnumeratorConfiguration&lt;TEntity, TKey&gt; : IEntityType
 
 
   <h2 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_EnumeratorConfiguration_2_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>This class defines a standard configuration for entities, including primary key setup,
-concurrency tokens, property constraints and indexing.</p>
+  <div class="markdown level0 remarks"><p>
+This class defines a standard configuration for entities, including primary key setup,
+concurrency tokens, property constraints and indexing.
+</p>
+<p>
+A global query filter excluding soft deleted rows is applied, so that entities marked as
+deleted by the soft deletable interceptor are no longer returned by queries. Pass
+<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> for the <code>ignoreQueryFilters</code> parameter of the repository read
+methods to include them again.
+</p>
+<p>
+Be aware that a <b>required</b> navigation pointing at a soft deletable entity type
+interacts badly with this filter: filtering out the principal row also removes the
+dependents that require it. Model such navigations as optional, or apply a matching filter
+to both ends of the relationship.
+</p>
 </div>
 
 
@@ -180,7 +198,7 @@ concurrency tokens, property constraints and indexing.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Configurations_EnumeratorConfiguration_2_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.EnumeratorConfiguration`2.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{`0})">
   Configure(EntityTypeBuilder&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/EnumeratorConfiguration.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/EnumeratorConfiguration.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Configures the entity of type <code class="typeparamref">TEntity</code>.</p>
@@ -188,7 +206,7 @@ concurrency tokens, property constraints and indexing.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Configure(EntityTypeBuilder&lt;TEntity&gt; builder)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Configure(EntityTypeBuilder&lt;TEntity&gt; builder)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -213,7 +231,7 @@ concurrency tokens, property constraints and indexing.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/EnumeratorConfiguration.cs/#L24" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Configurations/EnumeratorConfiguration.cs/#L21" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v4.5.0725.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_SoftDeletableInterceptor.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v5.0.0818.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_Interceptors_SoftDeletableInterceptor.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.Interceptors.SoftDeletableInterceptor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -80,17 +80,17 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor">
+        <article data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors.SoftDeletableInterceptor">
 
 
 
-  <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_SoftDeletableInterceptor" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor" class="text-break">
-Class SoftDeletableInterceptor  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/SoftDeletableInterceptor.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <h1 id="BB84_EntityFrameworkCore_Repositories_Interceptors_SoftDeletableInterceptor" data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors.SoftDeletableInterceptor" class="text-break">
+Class SoftDeletableInterceptor  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Interceptors/SoftDeletableInterceptor.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="BB84.html">BB84</a>.<a class="xref" href="BB84.EntityFrameworkCore.html">EntityFrameworkCore</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.html">Repositories</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.html">SqlServer</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.html">Interceptors</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.SqlServer.dll</dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BB84.html">BB84</a>.<a class="xref" href="BB84.EntityFrameworkCore.html">EntityFrameworkCore</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.html">Repositories</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.Interceptors.html">Interceptors</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.dll</dd></dl>
   </div>
 
   <div class="markdown summary"><p>Intercepts save operations in a <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext">DbContext</a> to enforce soft delete behavior for
@@ -173,7 +173,7 @@ entities implementing the <a class="xref" href="BB84.EntityFrameworkCore.Entitie
 
 
 
-  <h2 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_SoftDeletableInterceptor_remarks">Remarks</h2>
+  <h2 id="BB84_EntityFrameworkCore_Repositories_Interceptors_SoftDeletableInterceptor_remarks">Remarks</h2>
   <div class="markdown level0 remarks"><p>This interceptor modifies the behavior of entities marked for deletion by setting their
 <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ISoftDeletable_IsDeleted">IsDeleted</a> property to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> and changing their
 state to <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.entitystate#microsoft-entityframeworkcore-entitystate-modified">Modified</a>. This ensures that soft-deleted entities are not
@@ -185,11 +185,11 @@ physically removed from the database.</p>
 </h2>
 
 
-  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_SoftDeletableInterceptor_SavingChanges_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChanges*"></a>
+  <a id="BB84_EntityFrameworkCore_Repositories_Interceptors_SoftDeletableInterceptor_SavingChanges_" data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors.SoftDeletableInterceptor.SavingChanges*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_SoftDeletableInterceptor_SavingChanges_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChanges(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32})">
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Interceptors_SoftDeletableInterceptor_SavingChanges_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__" data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors.SoftDeletableInterceptor.SavingChanges(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32})">
   SavingChanges(DbContextEventData, InterceptionResult&lt;int&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/SoftDeletableInterceptor.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Interceptors/SoftDeletableInterceptor.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Called at the start of <see cref="O:DbContext.SaveChanges"></see>.</p>
@@ -234,11 +234,11 @@ is to return the <code class="paramref">result</code> value passed in.</p>
 
 
 
-  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_SoftDeletableInterceptor_SavingChangesAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChangesAsync*"></a>
+  <a id="BB84_EntityFrameworkCore_Repositories_Interceptors_SoftDeletableInterceptor_SavingChangesAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors.SoftDeletableInterceptor.SavingChangesAsync*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_SoftDeletableInterceptor_SavingChangesAsync_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.SavingChangesAsync(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32},System.Threading.CancellationToken)">
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Interceptors_SoftDeletableInterceptor_SavingChangesAsync_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors.SoftDeletableInterceptor.SavingChangesAsync(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32},System.Threading.CancellationToken)">
   SavingChangesAsync(DbContextEventData, InterceptionResult&lt;int&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/SoftDeletableInterceptor.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Interceptors/SoftDeletableInterceptor.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Called at the start of <see cref="O:DbContext.SaveChangesAsync"></see>.</p>
@@ -296,7 +296,7 @@ is to return the <code class="paramref">result</code> value passed in.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/SoftDeletableInterceptor.cs/#L25" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Interceptors/SoftDeletableInterceptor.cs/#L25" class="edit-link">Edit this page</a>
         </div>
 
 

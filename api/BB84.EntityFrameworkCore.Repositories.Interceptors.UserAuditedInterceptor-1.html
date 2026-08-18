@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class TimeAuditedInterceptor </title>
+      <title>Class UserAuditedInterceptor&lt;TUser&gt; </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class TimeAuditedInterceptor ">
+      <meta name="title" content="Class UserAuditedInterceptor&lt;TUser&gt; ">
       
-      <meta name="description" content="A save changes interceptor that automatically updates audit timestamps for entities implementing the  interface.">
+      <meta name="description" content="A save changes interceptor that automatically fills the audit columns for entities implementing the  interface.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v4.5.0725.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v5.0.0818.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_Interceptors_UserAuditedInterceptor_1.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.Interceptors.UserAuditedInterceptor%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -80,37 +80,43 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor">
+        <article data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors.UserAuditedInterceptor`1">
 
 
 
-  <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor" class="text-break">
-Class TimeAuditedInterceptor  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <h1 id="BB84_EntityFrameworkCore_Repositories_Interceptors_UserAuditedInterceptor_1" data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors.UserAuditedInterceptor`1" class="text-break">
+Class UserAuditedInterceptor&lt;TUser&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Interceptors/UserAuditedInterceptor.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="BB84.html">BB84</a>.<a class="xref" href="BB84.EntityFrameworkCore.html">EntityFrameworkCore</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.html">Repositories</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.html">SqlServer</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.html">Interceptors</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.SqlServer.dll</dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BB84.html">BB84</a>.<a class="xref" href="BB84.EntityFrameworkCore.html">EntityFrameworkCore</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.html">Repositories</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.Interceptors.html">Interceptors</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>A save changes interceptor that automatically updates audit timestamps for entities
-implementing the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html">ITimeAudited</a> interface.</p>
+  <div class="markdown summary"><p>A save changes interceptor that automatically fills the audit columns for entities
+implementing the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html">IUserAudited&lt;TCreator, TEditor&gt;</a> interface.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class TimeAuditedInterceptor : SaveChangesInterceptor, ISaveChangesInterceptor, IInterceptor</code></pre>
+    <pre><code class="lang-csharp hljs">public class UserAuditedInterceptor&lt;TUser&gt; : SaveChangesInterceptor, ISaveChangesInterceptor, IInterceptor where TUser : notnull</code></pre>
   </div>
 
 
 
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TUser</code></dt>
+    <dd><p>The type representing the user.</p>
+</dd>
+  </dl>
 
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.diagnostics.savechangesinterceptor">SaveChangesInterceptor</a></div>
-      <div><span class="xref">TimeAuditedInterceptor</span></div>
+      <div><span class="xref">UserAuditedInterceptor&lt;TUser&gt;</span></div>
     </dd>
   </dl>
 
@@ -122,6 +128,12 @@ implementing the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstrac
     </dd>
   </dl>
 
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Interceptors.UserAuditedInterceptor.html">UserAuditedInterceptor</a></div>
+    </dd>
+  </dl>
 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
@@ -163,6 +175,9 @@ implementing the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstrac
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
@@ -173,22 +188,75 @@ implementing the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstrac
 
 
 
-  <h2 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>This interceptor updates the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_CreatedAt">CreatedAt</a> property to the current
-UTC time when an entity is added and the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html#BB84_EntityFrameworkCore_Entities_Abstractions_Components_ITimeAudited_EditedAt">EditedAt</a> property to
-the current UTC time when an entity is modified.</p>
+  <h2 id="BB84_EntityFrameworkCore_Repositories_Interceptors_UserAuditedInterceptor_1_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>
+This interceptor sets the creator when an entity is added and the last editor when an
+entity is modified, using the identity returned by the supplied provider.
+</p>
+<p>
+The provider is asked once per save operation, so every entity taking part in one save
+records the same identity.
+</p>
 </div>
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BB84_EntityFrameworkCore_Repositories_Interceptors_UserAuditedInterceptor_1__ctor_" data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors.UserAuditedInterceptor`1.#ctor*"></a>
+
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Interceptors_UserAuditedInterceptor_1__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_ICurrentUserProvider__0__" data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors.UserAuditedInterceptor`1.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.ICurrentUserProvider{`0})">
+  UserAuditedInterceptor(ICurrentUserProvider&lt;TUser&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Interceptors/UserAuditedInterceptor.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A save changes interceptor that automatically fills the audit columns for entities
+implementing the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html">IUserAudited&lt;TCreator, TEditor&gt;</a> interface.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UserAuditedInterceptor(ICurrentUserProvider&lt;TUser&gt; currentUserProvider)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>currentUserProvider</code> <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.ICurrentUserProvider-1.html">ICurrentUserProvider</a>&lt;TUser&gt;</dt>
+    <dd><p>The provider supplying the current user.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_Interceptors_UserAuditedInterceptor_1__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_ICurrentUserProvider__0___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+This interceptor sets the creator when an entity is added and the last editor when an
+entity is modified, using the identity returned by the supplied provider.
+</p>
+<p>
+The provider is asked once per save operation, so every entity taking part in one save
+records the same identity.
+</p>
+</div>
+
+
 
 
   <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_SavingChanges_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChanges*"></a>
+  <a id="BB84_EntityFrameworkCore_Repositories_Interceptors_UserAuditedInterceptor_1_SavingChanges_" data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors.UserAuditedInterceptor`1.SavingChanges*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_SavingChanges_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChanges(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32})">
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Interceptors_UserAuditedInterceptor_1_SavingChanges_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__" data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors.UserAuditedInterceptor`1.SavingChanges(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32})">
   SavingChanges(DbContextEventData, InterceptionResult&lt;int&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Interceptors/UserAuditedInterceptor.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Called at the start of <see cref="O:DbContext.SaveChanges"></see>.</p>
@@ -233,11 +301,11 @@ is to return the <code class="paramref">result</code> value passed in.</p>
 
 
 
-  <a id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_SavingChangesAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChangesAsync*"></a>
+  <a id="BB84_EntityFrameworkCore_Repositories_Interceptors_UserAuditedInterceptor_1_SavingChangesAsync_" data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors.UserAuditedInterceptor`1.SavingChangesAsync*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors_TimeAuditedInterceptor_SavingChangesAsync_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.SavingChangesAsync(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32},System.Threading.CancellationToken)">
+  <h3 id="BB84_EntityFrameworkCore_Repositories_Interceptors_UserAuditedInterceptor_1_SavingChangesAsync_Microsoft_EntityFrameworkCore_Diagnostics_DbContextEventData_Microsoft_EntityFrameworkCore_Diagnostics_InterceptionResult_System_Int32__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors.UserAuditedInterceptor`1.SavingChangesAsync(Microsoft.EntityFrameworkCore.Diagnostics.DbContextEventData,Microsoft.EntityFrameworkCore.Diagnostics.InterceptionResult{System.Int32},System.Threading.CancellationToken)">
   SavingChangesAsync(DbContextEventData, InterceptionResult&lt;int&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Interceptors/UserAuditedInterceptor.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Called at the start of <see cref="O:DbContext.SaveChangesAsync"></see>.</p>
@@ -295,7 +363,7 @@ is to return the <code class="paramref">result</code> value passed in.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories.SqlServer/Interceptors/TimeAuditedInterceptor.cs/#L24" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Interceptors/UserAuditedInterceptor.cs/#L32" class="edit-link">Edit this page</a>
         </div>
 
 

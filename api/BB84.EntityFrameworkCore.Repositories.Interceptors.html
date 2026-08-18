@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors </title>
+      <title>Namespace BB84.EntityFrameworkCore.Repositories.Interceptors </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors ">
+      <meta name="title" content="Namespace BB84.EntityFrameworkCore.Repositories.Interceptors ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -80,9 +80,9 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors">
+        <article data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors">
 
-  <h1 id="BB84_EntityFrameworkCore_Repositories_SqlServer_Interceptors" data-uid="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors" class="text-break">Namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors</h1>
+  <h1 id="BB84_EntityFrameworkCore_Repositories_Interceptors" data-uid="BB84.EntityFrameworkCore.Repositories.Interceptors" class="text-break">Namespace BB84.EntityFrameworkCore.Repositories.Interceptors</h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
@@ -91,15 +91,33 @@
 Classes
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.SoftDeletableInterceptor.html">SoftDeletableInterceptor</a></dt>
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Interceptors.EnvironmentUserProvider.html">EnvironmentUserProvider</a></dt>
+      <dd><p>A current user provider that reports the operating system user running the process,
+in the form <code>MachineName\UserName</code>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Interceptors.SoftDeletableInterceptor.html">SoftDeletableInterceptor</a></dt>
       <dd><p>Intercepts save operations in a <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext">DbContext</a> to enforce soft delete behavior for
 entities implementing the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ISoftDeletable.html">ISoftDeletable</a> interface.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Interceptors.TimeAuditedInterceptor.html">TimeAuditedInterceptor</a></dt>
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Interceptors.TimeAuditedInterceptor.html">TimeAuditedInterceptor</a></dt>
       <dd><p>A save changes interceptor that automatically updates audit timestamps for entities
 implementing the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.ITimeAudited.html">ITimeAudited</a> interface.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Interceptors.UserAuditedInterceptor.html">UserAuditedInterceptor</a></dt>
+      <dd><p>A save changes interceptor that automatically fills the audit columns for entities
+implementing the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html">IUserAudited&lt;TCreator, TEditor&gt;</a> interface.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Interceptors.UserAuditedInterceptor-1.html">UserAuditedInterceptor&lt;TUser&gt;</a></dt>
+      <dd><p>A save changes interceptor that automatically fills the audit columns for entities
+implementing the <a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html">IUserAudited&lt;TCreator, TEditor&gt;</a> interface.</p>
 </dd>
     </dl>
 

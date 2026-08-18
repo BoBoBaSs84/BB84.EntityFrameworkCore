@@ -103,6 +103,12 @@ with additional concurrency control mechanisms.</p>
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedCompositeEntity-3.html">IAuditedCompositeEntity&lt;TCreator, TEditor, TToken&gt;</a></dt>
+      <dd><p>Represents an entity contract that supports auditing for creation and modification,
+with additional concurrency control mechanisms.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity.html">IAuditedEntity</a></dt>
       <dd><p>Represents an entity contract that is audited with information about its creation
 and last modification.</p>
@@ -115,19 +121,24 @@ and last modification.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-2.html">IAuditedEntity&lt;TCreator, TEdited&gt;</a></dt>
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-3.html">IAuditedEntity&lt;TKey, TCreator, TEditor&gt;</a></dt>
       <dd><p>Represents an entity contract that is audited with information about its creation
 and last modification.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-3.html">IAuditedEntity&lt;TKey, TCreator, TEdited&gt;</a></dt>
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-4.html">IAuditedEntity&lt;TKey, TCreator, TEditor, TToken&gt;</a></dt>
       <dd><p>Represents an entity contract that is audited with information about its creation
 and last modification.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.ICompositeEntity.html">ICompositeEntity</a></dt>
+      <dd><p>Represents an entity contract that is composed of multiple related components or sub-entities.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.ICompositeEntity-1.html">ICompositeEntity&lt;TToken&gt;</a></dt>
       <dd><p>Represents an entity contract that is composed of multiple related components or sub-entities.</p>
 </dd>
     </dl>
@@ -146,6 +157,13 @@ soft deletion functionality.</p>
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IEnumeratorEntity-2.html">IEnumeratorEntity&lt;TKey, TToken&gt;</a></dt>
+      <dd><p>Represents an entity contract that provides properties for the name and description,
+with a unique identifier of type <code class="typeparamref">TKey</code> and the support for
+soft deletion functionality.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity.html">IFullAuditedEntity</a></dt>
       <dd><p>Defines an entity contract that is fully audited, including information about its
 creator, creation, last editor, last modification date and unique identity.</p>
@@ -158,13 +176,13 @@ creator, creation, last editor, last modification date and unique identity.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-2.html">IFullAuditedEntity&lt;TCreator, TEdited&gt;</a></dt>
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-3.html">IFullAuditedEntity&lt;TKey, TCreator, TEditor&gt;</a></dt>
       <dd><p>Defines an entity contract that is fully audited, including information about its
 creator, creation, last editor, last modification date and unique identity.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-3.html">IFullAuditedEntity&lt;TKey, TCreator, TEditor&gt;</a></dt>
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-4.html">IFullAuditedEntity&lt;TKey, TCreator, TEditor, TToken&gt;</a></dt>
       <dd><p>Defines an entity contract that is fully audited, including information about its
 creator, creation, last editor, last modification date and unique identity.</p>
 </dd>
@@ -176,6 +194,11 @@ creator, creation, last editor, last modification date and unique identity.</p>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity-1.html">IIdentityEntity&lt;TKey&gt;</a></dt>
+      <dd><p>Represents an entity contract with a unique identifier and concurrency control.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity-2.html">IIdentityEntity&lt;TKey, TToken&gt;</a></dt>
       <dd><p>Represents an entity contract with a unique identifier and concurrency control.</p>
 </dd>
     </dl>

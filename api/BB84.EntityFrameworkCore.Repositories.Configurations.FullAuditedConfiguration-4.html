@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class AuditedEntity&lt;TCreator, TEdited&gt; </title>
+      <title>Class FullAuditedConfiguration&lt;TEntity, TKey, TCreator, TEditor&gt; </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class AuditedEntity&lt;TCreator, TEdited&gt; ">
+      <meta name="title" content="Class FullAuditedConfiguration&lt;TEntity, TKey, TCreator, TEditor&gt; ">
       
-      <meta name="description" content="This abstract class provides a base implementation for entities that track auditing information, including the creator and the last editor, a unique identifier and a timestamp for concurrency control.">
+      <meta name="description" content="Provides a base configuration for entities that implement the  interface.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v4.5.0725.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Entities_AuditedEntity_2.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Entities.AuditedEntity%602%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v5.0.0818.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_Configurations_FullAuditedConfiguration_4.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.Configurations.FullAuditedConfiguration%604%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -80,38 +80,43 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="BB84.EntityFrameworkCore.Entities.AuditedEntity`2">
+        <article data-uid="BB84.EntityFrameworkCore.Repositories.Configurations.FullAuditedConfiguration`4">
 
 
 
-  <h1 id="BB84_EntityFrameworkCore_Entities_AuditedEntity_2" data-uid="BB84.EntityFrameworkCore.Entities.AuditedEntity`2" class="text-break">
-Class AuditedEntity&lt;TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Entities/AuditedEntity.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  <h1 id="BB84_EntityFrameworkCore_Repositories_Configurations_FullAuditedConfiguration_4" data-uid="BB84.EntityFrameworkCore.Repositories.Configurations.FullAuditedConfiguration`4" class="text-break">
+Class FullAuditedConfiguration&lt;TEntity, TKey, TCreator, TEditor&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Configurations/FullAuditedConfiguration.cs/#L58"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="BB84.html">BB84</a>.<a class="xref" href="BB84.EntityFrameworkCore.html">EntityFrameworkCore</a>.<a class="xref" href="BB84.EntityFrameworkCore.Entities.html">Entities</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Entities.dll</dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BB84.html">BB84</a>.<a class="xref" href="BB84.EntityFrameworkCore.html">EntityFrameworkCore</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.html">Repositories</a>.<a class="xref" href="BB84.EntityFrameworkCore.Repositories.Configurations.html">Configurations</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BB84.EntityFrameworkCore.Repositories.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>This abstract class provides a base implementation for entities that track auditing information,
-including the creator and the last editor, a unique identifier and a timestamp for concurrency
-control.</p>
+  <div class="markdown summary"><p>Provides a base configuration for entities that implement the
+<a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IFullAuditedEntity-4.html">IFullAuditedEntity&lt;TKey, TCreator, TEditor, TToken&gt;</a> interface.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class AuditedEntity&lt;TCreator, TEdited&gt; : AuditedEntity&lt;Guid, TCreator, TEdited&gt;, IAuditedEntity&lt;TCreator, TEdited&gt;, IAuditedEntity&lt;Guid, TCreator, TEdited&gt;, IUserAudited&lt;TCreator, TEdited&gt;, IIdentityEntity, IIdentityEntity&lt;Guid&gt;, IIdentity&lt;Guid&gt;, IConcurrency where TCreator : notnull</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class FullAuditedConfiguration&lt;TEntity, TKey, TCreator, TEditor&gt; : FullAuditedConfiguration&lt;TEntity, TKey, TCreator, TEditor, byte[]&gt;, IEntityTypeConfiguration&lt;TEntity&gt; where TEntity : class, IFullAuditedEntity&lt;TKey, TCreator, TEditor&gt; where TKey : IEquatable&lt;TKey&gt; where TCreator : notnull</code></pre>
   </div>
 
 
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd><p>The type of the entity being configured.</p>
+</dd>
+    <dt><code>TKey</code></dt>
+    <dd><p>The type of the primary key for the entity.</p>
+</dd>
     <dt><code>TCreator</code></dt>
     <dd><p>The type representing the creator of the entity.</p>
 </dd>
-    <dt><code>TEdited</code></dt>
-    <dd><p>The type representing the last editor of the entity.</p>
+    <dt><code>TEditor</code></dt>
+    <dd><p>The type representing the editor of the entity.</p>
 </dd>
   </dl>
 
@@ -119,40 +124,32 @@ control.</p>
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.IdentityEntity-1.html">IdentityEntity</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</div>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html">AuditedEntity</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>, TCreator, TEdited&gt;</div>
-      <div><span class="xref">AuditedEntity&lt;TCreator, TEdited&gt;</span></div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Configurations.FullAuditedConfiguration-5.html">FullAuditedConfiguration</a>&lt;TEntity, TKey, TCreator, TEditor, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</div>
+      <div><span class="xref">FullAuditedConfiguration&lt;TEntity, TKey, TCreator, TEditor&gt;</span></div>
     </dd>
   </dl>
 
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-2.html">IAuditedEntity</a>&lt;TCreator, TEdited&gt;</div>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-3.html">IAuditedEntity</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>, TCreator, TEdited&gt;</div>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html">IUserAudited</a>&lt;TCreator, TEdited&gt;</div>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity.html">IIdentityEntity</a></div>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity-1.html">IIdentityEntity</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</div>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity-1.html">IIdentity</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</div>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.html">IConcurrency</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.ientitytypeconfiguration-1">IEntityTypeConfiguration</a>&lt;TEntity&gt;</div>
     </dd>
   </dl>
 
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Configurations.FullAuditedConfiguration-1.html">FullAuditedConfiguration&lt;TEntity&gt;</a></div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Configurations.FullAuditedConfiguration-2.html">FullAuditedConfiguration&lt;TEntity, TKey&gt;</a></div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations.FullAuditedConfiguration-4.html">FullAuditedConfiguration&lt;TEntity, TKey, TCreator, TEditor&gt;</a></div>
+    </dd>
+  </dl>
 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_CreatedBy">AuditedEntity&lt;Guid, TCreator, TEdited&gt;.CreatedBy</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_3_EditedBy">AuditedEntity&lt;Guid, TCreator, TEdited&gt;.EditedBy</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.IdentityEntity-1.html#BB84_EntityFrameworkCore_Entities_IdentityEntity_1_Id">IdentityEntity&lt;Guid&gt;.Id</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.IdentityEntity-1.html#BB84_EntityFrameworkCore_Entities_IdentityEntity_1_Timestamp">IdentityEntity&lt;Guid&gt;.Timestamp</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Configurations.FullAuditedConfiguration-5.html#BB84_EntityFrameworkCore_Repositories_Configurations_FullAuditedConfiguration_5_Configure_Microsoft_EntityFrameworkCore_Metadata_Builders_EntityTypeBuilder__0__">FullAuditedConfiguration&lt;TEntity, TKey, TCreator, TEditor, byte[]&gt;.Configure(EntityTypeBuilder&lt;TEntity&gt;)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -180,8 +177,10 @@ control.</p>
 
 
 
-  <h2 id="BB84_EntityFrameworkCore_Entities_AuditedEntity_2_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>The unique identifier is of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>.</p>
+  <h2 id="BB84_EntityFrameworkCore_Repositories_Configurations_FullAuditedConfiguration_4_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This configuration defines common properties for audited entities, including primary key,
+timestamps and audit fields such as creator and editor. It is intended to be used as a
+base class for configuring entities that require full auditing support.</p>
 </div>
 
 
@@ -189,7 +188,7 @@ control.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Entities/AuditedEntity.cs/#L41" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/Configurations/FullAuditedConfiguration.cs/#L58" class="edit-link">Edit this page</a>
         </div>
 
 

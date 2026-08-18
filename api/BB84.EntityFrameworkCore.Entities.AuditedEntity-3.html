@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class AuditedEntity&lt;TKey, TCreator, TEdited&gt; </title>
+      <title>Class AuditedEntity&lt;TKey, TCreator, TEditor&gt; </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class AuditedEntity&lt;TKey, TCreator, TEdited&gt; ">
+      <meta name="title" content="Class AuditedEntity&lt;TKey, TCreator, TEditor&gt; ">
       
-      <meta name="description" content="This abstract class provides a base implementation for entities that track auditing information, including the creator and the last editor, a unique identifier and a timestamp for concurrency control.">
+      <meta name="description" content="This abstract class provides a base implementation for entities that track auditing information, including the creator and the last editor, a unique identifier and a concurrency token.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v4.5.0725.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Entities_AuditedEntity_3.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Entities.AuditedEntity%603%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v5.0.0818.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Entities_AuditedEntity_3.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Entities.AuditedEntity%603%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Entities_AuditedEntity_3" data-uid="BB84.EntityFrameworkCore.Entities.AuditedEntity`3" class="text-break">
-Class AuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Entities/AuditedEntity.cs/#L18"><i class="bi bi-code-slash"></i></a>
+Class AuditedEntity&lt;TKey, TCreator, TEditor&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Entities/AuditedEntity.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -94,13 +94,12 @@ Class AuditedEntity&lt;TKey, TCreator, TEdited&gt;  <a class="header-action link
   </div>
 
   <div class="markdown summary"><p>This abstract class provides a base implementation for entities that track auditing information,
-including the creator and the last editor, a unique identifier and a timestamp for concurrency
-control.</p>
+including the creator and the last editor, a unique identifier and a concurrency token.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class AuditedEntity&lt;TKey, TCreator, TEdited&gt; : IdentityEntity&lt;TKey&gt;, IAuditedEntity&lt;TKey, TCreator, TEdited&gt;, IIdentityEntity&lt;TKey&gt;, IIdentity&lt;TKey&gt;, IConcurrency, IUserAudited&lt;TCreator, TEdited&gt; where TKey : IEquatable&lt;TKey&gt; where TCreator : notnull</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class AuditedEntity&lt;TKey, TCreator, TEditor&gt; : AuditedEntity&lt;TKey, TCreator, TEditor, byte[]&gt;, IAuditedEntity&lt;TKey, TCreator, TEditor&gt;, IAuditedEntity&lt;TKey, TCreator, TEditor, byte[]&gt;, IUserAudited&lt;TCreator, TEditor&gt;, IIdentityEntity&lt;TKey&gt;, IIdentityEntity&lt;TKey, byte[]&gt;, IIdentity&lt;TKey&gt;, IConcurrency, IConcurrency&lt;byte[]&gt; where TKey : IEquatable&lt;TKey&gt; where TCreator : notnull</code></pre>
   </div>
 
 
@@ -113,7 +112,7 @@ control.</p>
     <dt><code>TCreator</code></dt>
     <dd><p>The type representing the creator of the entity.</p>
 </dd>
-    <dt><code>TEdited</code></dt>
+    <dt><code>TEditor</code></dt>
     <dd><p>The type representing the last editor of the entity.</p>
 </dd>
   </dl>
@@ -122,19 +121,23 @@ control.</p>
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.IdentityEntity-1.html">IdentityEntity</a>&lt;TKey&gt;</div>
-      <div><span class="xref">AuditedEntity&lt;TKey, TCreator, TEdited&gt;</span></div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.IdentityEntity-2.html">IdentityEntity</a>&lt;TKey, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-4.html">AuditedEntity</a>&lt;TKey, TCreator, TEditor, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</div>
+      <div><span class="xref">AuditedEntity&lt;TKey, TCreator, TEditor&gt;</span></div>
     </dd>
   </dl>
 
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-3.html">IAuditedEntity</a>&lt;TKey, TCreator, TEdited&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-3.html">IAuditedEntity</a>&lt;TKey, TCreator, TEditor&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IAuditedEntity-4.html">IAuditedEntity</a>&lt;TKey, TCreator, TEditor, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html">IUserAudited</a>&lt;TCreator, TEditor&gt;</div>
       <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity-1.html">IIdentityEntity</a>&lt;TKey&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.IIdentityEntity-2.html">IIdentityEntity</a>&lt;TKey, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</div>
       <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IIdentity-1.html">IIdentity</a>&lt;TKey&gt;</div>
       <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency.html">IConcurrency</a></div>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IUserAudited-2.html">IUserAudited</a>&lt;TCreator, TEdited&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.Abstractions.Components.IConcurrency-1.html">IConcurrency</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</div>
     </dd>
   </dl>
 
@@ -143,7 +146,6 @@ control.</p>
     <dd>
       <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity.html">AuditedEntity</a></div>
       <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-1.html">AuditedEntity&lt;TKey&gt;</a></div>
-      <div><a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-2.html">AuditedEntity&lt;TCreator, TEdited&gt;</a></div>
     </dd>
   </dl>
 
@@ -151,10 +153,16 @@ control.</p>
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.IdentityEntity-1.html#BB84_EntityFrameworkCore_Entities_IdentityEntity_1_Id">IdentityEntity&lt;TKey&gt;.Id</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-4.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_4_CreatedBy">AuditedEntity&lt;TKey, TCreator, TEditor, byte[]&gt;.CreatedBy</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Entities.IdentityEntity-1.html#BB84_EntityFrameworkCore_Entities_IdentityEntity_1_Timestamp">IdentityEntity&lt;TKey&gt;.Timestamp</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-4.html#BB84_EntityFrameworkCore_Entities_AuditedEntity_4_EditedBy">AuditedEntity&lt;TKey, TCreator, TEditor, byte[]&gt;.EditedBy</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.IdentityEntity-2.html#BB84_EntityFrameworkCore_Entities_IdentityEntity_2_Id">IdentityEntity&lt;TKey, byte[]&gt;.Id</a>
+    </div>
+    <div>
+      <a class="xref" href="BB84.EntityFrameworkCore.Entities.IdentityEntity-2.html#BB84_EntityFrameworkCore_Entities_IdentityEntity_2_Timestamp">IdentityEntity&lt;TKey, byte[]&gt;.Timestamp</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -182,72 +190,45 @@ control.</p>
 
 
 
+  <h2 id="BB84_EntityFrameworkCore_Entities_AuditedEntity_3_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>The key, creator and editor types are supplied; <code>TToken</code> defaults to a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>
+array. For a custom token type use <a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-4.html">AuditedEntity&lt;TKey, TCreator, TEditor, TToken&gt;</a>
+and name all four.</p>
+</div>
 
 
-  <h2 class="section" id="properties">Properties
+  <h2 class="section" id="constructors">Constructors
 </h2>
 
 
-  <a id="BB84_EntityFrameworkCore_Entities_AuditedEntity_3_CreatedBy_" data-uid="BB84.EntityFrameworkCore.Entities.AuditedEntity`3.CreatedBy*"></a>
+  <a id="BB84_EntityFrameworkCore_Entities_AuditedEntity_3__ctor_" data-uid="BB84.EntityFrameworkCore.Entities.AuditedEntity`3.#ctor*"></a>
 
-  <h3 id="BB84_EntityFrameworkCore_Entities_AuditedEntity_3_CreatedBy" data-uid="BB84.EntityFrameworkCore.Entities.AuditedEntity`3.CreatedBy">
-  CreatedBy
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Entities/AuditedEntity.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <h3 id="BB84_EntityFrameworkCore_Entities_AuditedEntity_3__ctor" data-uid="BB84.EntityFrameworkCore.Entities.AuditedEntity`3.#ctor">
+  AuditedEntity()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Entities/AuditedEntity.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets or sets the creator of the entity.</p>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="BB84.EntityFrameworkCore.Entities.AuditedEntity-3.html">AuditedEntity&lt;TKey, TCreator, TEditor&gt;</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TCreator CreatedBy { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected AuditedEntity()</code></pre>
   </div>
 
 
 
 
 
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">TCreator</span></dt>
-    <dd></dd>
-  </dl>
 
 
 
 
-
-
-
-
-  <a id="BB84_EntityFrameworkCore_Entities_AuditedEntity_3_EditedBy_" data-uid="BB84.EntityFrameworkCore.Entities.AuditedEntity`3.EditedBy*"></a>
-
-  <h3 id="BB84_EntityFrameworkCore_Entities_AuditedEntity_3_EditedBy" data-uid="BB84.EntityFrameworkCore.Entities.AuditedEntity`3.EditedBy">
-  EditedBy
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Entities/AuditedEntity.cs/#L26"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Gets or sets the last editor of the entity.</p>
+  <h4 class="section" id="BB84_EntityFrameworkCore_Entities_AuditedEntity_3__ctor_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The token starts out as an empty array rather than <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>. The generic base
+cannot express that for an arbitrary token type, so the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a> array rungs
+restore it here — the property was never null before the token type became a parameter.</p>
 </div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TEdited EditedBy { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">TEdited</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
 
 
 
@@ -256,7 +237,7 @@ control.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Entities/AuditedEntity.cs/#L18" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Entities/AuditedEntity.cs/#L35" class="edit-link">Edit this page</a>
         </div>
 
 

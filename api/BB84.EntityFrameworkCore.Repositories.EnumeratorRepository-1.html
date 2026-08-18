@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v4.5.0725.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.EnumeratorRepository%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v5.0.0818.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.EnumeratorRepository%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1" data-uid="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1" class="text-break">
-Class EnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories/EnumeratorRepository.cs/#L62"><i class="bi bi-code-slash"></i></a>
+Class EnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/EnumeratorRepository.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -98,7 +98,7 @@ Class EnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-secondar
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class EnumeratorRepository&lt;TEntity&gt; : EnumeratorRepository&lt;TEntity, int&gt;, IEnumeratorRepository&lt;TEntity&gt;, IEnumeratorRepository&lt;TEntity, int&gt;, IIdentityRepository&lt;TEntity, int&gt;, IGenericRepository&lt;TEntity&gt; where TEntity : class, IEnumeratorEntity</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class EnumeratorRepository&lt;TEntity&gt; : EnumeratorRepository&lt;TEntity, int&gt;, IEnumeratorRepository&lt;TEntity&gt;, IEnumeratorRepository&lt;TEntity, int&gt;, IIdentityRepository&lt;TEntity, int&gt;, IGenericRepository&lt;TEntity&gt;, IWriteIdentityRepository&lt;TEntity, int&gt;, IWriteRepository&lt;TEntity&gt;, IReadEnumeratorRepository&lt;TEntity&gt;, IReadEnumeratorRepository&lt;TEntity, int&gt;, IReadIdentityRepository&lt;TEntity, int&gt;, IReadRepository&lt;TEntity&gt; where TEntity : class, IEnumeratorEntity</code></pre>
   </div>
 
 
@@ -128,6 +128,12 @@ Class EnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-secondar
       <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IEnumeratorRepository-2.html">IEnumeratorRepository</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</div>
       <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IIdentityRepository-2.html">IIdentityRepository</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</div>
       <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IGenericRepository-1.html">IGenericRepository</a>&lt;TEntity&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteIdentityRepository-2.html">IWriteIdentityRepository</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteRepository-1.html">IWriteRepository</a>&lt;TEntity&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IReadEnumeratorRepository-1.html">IReadEnumeratorRepository</a>&lt;TEntity&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IReadEnumeratorRepository-2.html">IReadEnumeratorRepository</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IReadIdentityRepository-2.html">IReadIdentityRepository</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</div>
+      <div><a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IReadRepository-1.html">IReadRepository</a>&lt;TEntity&gt;</div>
     </dd>
   </dl>
 
@@ -136,16 +142,16 @@ Class EnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-secondar
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByName_System_String_System_Boolean_System_Boolean_">EnumeratorRepository&lt;TEntity, int&gt;.GetByName(string, bool, bool)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByName_System_String_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__">EnumeratorRepository&lt;TEntity, int&gt;.GetByName(string, Query&lt;TEntity&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByNameAsync_System_String_System_Boolean_System_Boolean_System_Threading_CancellationToken_">EnumeratorRepository&lt;TEntity, int&gt;.GetByNameAsync(string, bool, bool, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByNameAsync_System_String_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_">EnumeratorRepository&lt;TEntity, int&gt;.GetByNameAsync(string, Query&lt;TEntity&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByNames_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_">EnumeratorRepository&lt;TEntity, int&gt;.GetByNames(IEnumerable&lt;string&gt;, bool, bool)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByNames_System_Collections_Generic_IEnumerable_System_String__BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__">EnumeratorRepository&lt;TEntity, int&gt;.GetByNames(IEnumerable&lt;string&gt;, Query&lt;TEntity&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByNamesAsync_System_Collections_Generic_IEnumerable_System_String__System_Boolean_System_Boolean_System_Threading_CancellationToken_">EnumeratorRepository&lt;TEntity, int&gt;.GetByNamesAsync(IEnumerable&lt;string&gt;, bool, bool, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_GetByNamesAsync_System_Collections_Generic_IEnumerable_System_String__BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_">EnumeratorRepository&lt;TEntity, int&gt;.GetByNamesAsync(IEnumerable&lt;string&gt;, Query&lt;TEntity&gt;, CancellationToken)</a>
     </div>
     <div>
       <a class="xref" href="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_ByName_System_String_">EnumeratorRepository&lt;TEntity, int&gt;.ByName(string)</a>
@@ -154,61 +160,58 @@ Class EnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-secondar
       <a class="xref" href="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository-2.html#BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_2_ByNames_System_Collections_Generic_IEnumerable_System_String__">EnumeratorRepository&lt;TEntity, int&gt;.ByNames(IEnumerable&lt;string&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_Delete__1_">IdentityRepository&lt;TEntity, int&gt;.Delete(int)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_ExecuteDelete__1_">IdentityRepository&lt;TEntity, int&gt;.ExecuteDelete(int)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_Delete_System_Collections_Generic_IEnumerable__1__">IdentityRepository&lt;TEntity, int&gt;.Delete(IEnumerable&lt;int&gt;)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_ExecuteDelete_System_Collections_Generic_IEnumerable__1__">IdentityRepository&lt;TEntity, int&gt;.ExecuteDelete(IEnumerable&lt;int&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteAsync__1_System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, int&gt;.DeleteAsync(int, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_ExecuteDeleteAsync__1_System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, int&gt;.ExecuteDeleteAsync(int, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_DeleteAsync_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, int&gt;.DeleteAsync(IEnumerable&lt;int&gt;, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_ExecuteDeleteAsync_System_Collections_Generic_IEnumerable__1__System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, int&gt;.ExecuteDeleteAsync(IEnumerable&lt;int&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetById__1_System_Boolean_System_Boolean_System_String___">IdentityRepository&lt;TEntity, int&gt;.GetById(int, bool, bool, params string[])</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetById__1_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__">IdentityRepository&lt;TEntity, int&gt;.GetById(int, Query&lt;TEntity&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetById__1__1_System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Boolean_">IdentityRepository&lt;TEntity, int&gt;.GetById&lt;TResult&gt;(int, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, bool)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetById__1__1_System_Linq_Expressions_Expression_System_Func__0___0___BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__">IdentityRepository&lt;TEntity, int&gt;.GetById&lt;TResult&gt;(int, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Query&lt;TEntity&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdAsync__1_System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___">IdentityRepository&lt;TEntity, int&gt;.GetByIdAsync(int, bool, bool, CancellationToken, params string[])</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdAsync__1_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, int&gt;.GetByIdAsync(int, Query&lt;TEntity&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdAsync__1__1_System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Boolean_System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, int&gt;.GetByIdAsync&lt;TResult&gt;(int, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, bool, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdAsync__1__1_System_Linq_Expressions_Expression_System_Func__0___0___BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, int&gt;.GetByIdAsync&lt;TResult&gt;(int, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Query&lt;TEntity&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIds_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_String___">IdentityRepository&lt;TEntity, int&gt;.GetByIds(IEnumerable&lt;int&gt;, bool, bool, params string[])</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIds_System_Collections_Generic_IEnumerable__1__BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__">IdentityRepository&lt;TEntity, int&gt;.GetByIds(IEnumerable&lt;int&gt;, Query&lt;TEntity&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIds__1_System_Collections_Generic_IEnumerable__1__System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Boolean_">IdentityRepository&lt;TEntity, int&gt;.GetByIds&lt;TResult&gt;(IEnumerable&lt;int&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, bool)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIds__1_System_Collections_Generic_IEnumerable__1__System_Linq_Expressions_Expression_System_Func__0___0___BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__">IdentityRepository&lt;TEntity, int&gt;.GetByIds&lt;TResult&gt;(IEnumerable&lt;int&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Query&lt;TEntity&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdsAsync_System_Collections_Generic_IEnumerable__1__System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___">IdentityRepository&lt;TEntity, int&gt;.GetByIdsAsync(IEnumerable&lt;int&gt;, bool, bool, CancellationToken, params string[])</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdsAsync_System_Collections_Generic_IEnumerable__1__BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, int&gt;.GetByIdsAsync(IEnumerable&lt;int&gt;, Query&lt;TEntity&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdsAsync__1_System_Collections_Generic_IEnumerable__1__System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Boolean_System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, int&gt;.GetByIdsAsync&lt;TResult&gt;(IEnumerable&lt;int&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, bool, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_GetByIdsAsync__1_System_Collections_Generic_IEnumerable__1__System_Linq_Expressions_Expression_System_Func__0___0___BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, int&gt;.GetByIdsAsync&lt;TResult&gt;(IEnumerable&lt;int&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Query&lt;TEntity&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_Update__1_System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____">IdentityRepository&lt;TEntity, int&gt;.Update(int, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_ExecuteUpdate__1_System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___">IdentityRepository&lt;TEntity, int&gt;.ExecuteUpdate(int, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_Update_System_Collections_Generic_IEnumerable__1__System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____">IdentityRepository&lt;TEntity, int&gt;.Update(IEnumerable&lt;int&gt;, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_ExecuteUpdate_System_Collections_Generic_IEnumerable__1__System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___">IdentityRepository&lt;TEntity, int&gt;.ExecuteUpdate(IEnumerable&lt;int&gt;, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_UpdateAsync__1_System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, int&gt;.UpdateAsync(int, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_ExecuteUpdateAsync__1_System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, int&gt;.ExecuteUpdateAsync(int, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_UpdateAsync_System_Collections_Generic_IEnumerable__1__System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, int&gt;.UpdateAsync(IEnumerable&lt;int&gt;, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_ExecuteUpdateAsync_System_Collections_Generic_IEnumerable__1__System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___System_Threading_CancellationToken_">IdentityRepository&lt;TEntity, int&gt;.ExecuteUpdateAsync(IEnumerable&lt;int&gt;, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt;, CancellationToken)</a>
     </div>
     <div>
       <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_ById__1_">IdentityRepository&lt;TEntity, int&gt;.ById(int)</a>
     </div>
     <div>
       <a class="xref" href="BB84.EntityFrameworkCore.Repositories.IdentityRepository-2.html#BB84_EntityFrameworkCore_Repositories_IdentityRepository_2_ByIds_System_Collections_Generic_IEnumerable__1__">IdentityRepository&lt;TEntity, int&gt;.ByIds(IEnumerable&lt;int&gt;)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DbSet">GenericRepository&lt;TEntity&gt;.DbSet</a>
     </div>
     <div>
       <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Create__0_">GenericRepository&lt;TEntity&gt;.Create(TEntity)</a>
@@ -223,103 +226,52 @@ Class EnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-secondar
       <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CreateAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.CreateAsync(IEnumerable&lt;TEntity&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountAll_System_Boolean_">GenericRepository&lt;TEntity&gt;.CountAll(bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountAllAsync_System_Boolean_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.CountAllAsync(bool, CancellationToken)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_">GenericRepository&lt;TEntity&gt;.CountByCondition(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_">GenericRepository&lt;TEntity&gt;.CountByCondition(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByConditionAsync_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.CountByConditionAsync(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, CancellationToken)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.CountByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, CancellationToken)</a>
-    </div>
-    <div>
       <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Delete__0_">GenericRepository&lt;TEntity&gt;.Delete(TEntity)</a>
     </div>
     <div>
       <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Delete_System_Collections_Generic_IEnumerable__0__">GenericRepository&lt;TEntity&gt;.Delete(IEnumerable&lt;TEntity&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Delete_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___">GenericRepository&lt;TEntity&gt;.Delete(Expression&lt;Func&lt;TEntity, bool&gt;&gt;)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_ExecuteDelete_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___">GenericRepository&lt;TEntity&gt;.ExecuteDelete(Expression&lt;Func&lt;TEntity, bool&gt;&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync__0_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.DeleteAsync(TEntity, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_ExecuteDeleteAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.ExecuteDeleteAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.DeleteAsync(IEnumerable&lt;TEntity&gt;, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Count_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__">GenericRepository&lt;TEntity&gt;.Count(Query&lt;TEntity&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_DeleteAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.DeleteAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountAsync_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.CountAsync(Query&lt;TEntity&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetAll_System_Boolean_System_Boolean_">GenericRepository&lt;TEntity&gt;.GetAll(bool, bool)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetSingle_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__">GenericRepository&lt;TEntity&gt;.GetSingle(Query&lt;TEntity&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetAll__1_System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Boolean_">GenericRepository&lt;TEntity&gt;.GetAll&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, bool)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetSingle__1_System_Linq_Expressions_Expression_System_Func__0___0___BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__">GenericRepository&lt;TEntity&gt;.GetSingle&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Query&lt;TEntity&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetAllAsync_System_Boolean_System_Boolean_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.GetAllAsync(bool, bool, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetSingleAsync_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.GetSingleAsync(Query&lt;TEntity&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetAllAsync__1_System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Boolean_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.GetAllAsync&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, bool, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetSingleAsync__1_System_Linq_Expressions_Expression_System_Func__0___0___BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.GetSingleAsync&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Query&lt;TEntity&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_String___">GenericRepository&lt;TEntity&gt;.GetByCondition(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, bool, params string[])</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetList_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__">GenericRepository&lt;TEntity&gt;.GetList(Query&lt;TEntity&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_String___">GenericRepository&lt;TEntity&gt;.GetByCondition(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, bool, params string[])</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetList__1_System_Linq_Expressions_Expression_System_Func__0___0___BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__">GenericRepository&lt;TEntity&gt;.GetList&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Query&lt;TEntity&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByCondition__1_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_">GenericRepository&lt;TEntity&gt;.GetByCondition&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetListAsync_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.GetListAsync(Query&lt;TEntity&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByConditionAsync_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___">GenericRepository&lt;TEntity&gt;.GetByConditionAsync(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, bool, CancellationToken, params string[])</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetListAsync__1_System_Linq_Expressions_Expression_System_Func__0___0___BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.GetListAsync&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Query&lt;TEntity&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___">GenericRepository&lt;TEntity&gt;.GetByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, bool, CancellationToken, params string[])</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Stream_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.Stream(Query&lt;TEntity&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetByConditionAsync__1_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.GetByConditionAsync&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, CancellationToken)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___">GenericRepository&lt;TEntity&gt;.GetManyByCondition(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, bool, params string[])</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___">GenericRepository&lt;TEntity&gt;.GetManyByCondition(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, bool, params string[])</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByCondition__1_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__">GenericRepository&lt;TEntity&gt;.GetManyByCondition&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByConditionAsync_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___">GenericRepository&lt;TEntity&gt;.GetManyByConditionAsync(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, bool, CancellationToken, params string[])</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByConditionAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___">GenericRepository&lt;TEntity&gt;.GetManyByConditionAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, bool, CancellationToken, params string[])</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetManyByConditionAsync__1_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.GetManyByConditionAsync&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, CancellationToken)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_StreamAll_System_Boolean_System_Boolean_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.StreamAll(bool, bool, CancellationToken)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_StreamAll__1_System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Boolean_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.StreamAll&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, bool, CancellationToken)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_StreamByCondition_System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___">GenericRepository&lt;TEntity&gt;.StreamByCondition(Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, bool, CancellationToken, params string[])</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_StreamByCondition_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___">GenericRepository&lt;TEntity&gt;.StreamByCondition(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, bool, CancellationToken, params string[])</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_StreamByCondition__1_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.StreamByCondition&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Stream__1_System_Linq_Expressions_Expression_System_Func__0___0___BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.Stream&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Query&lt;TEntity&gt;, CancellationToken)</a>
     </div>
     <div>
       <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Update__0_">GenericRepository&lt;TEntity&gt;.Update(TEntity)</a>
@@ -328,58 +280,19 @@ Class EnumeratorRepository&lt;TEntity&gt;  <a class="header-action link-secondar
       <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Update_System_Collections_Generic_IEnumerable__0__">GenericRepository&lt;TEntity&gt;.Update(IEnumerable&lt;TEntity&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Update_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____">GenericRepository&lt;TEntity&gt;.Update(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_ExecuteUpdate_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___">GenericRepository&lt;TEntity&gt;.ExecuteUpdate(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync__0_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.UpdateAsync(TEntity, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_ExecuteUpdateAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.ExecuteUpdateAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt;, CancellationToken)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.UpdateAsync(IEnumerable&lt;TEntity&gt;, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_PrepareQuery_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Boolean_">GenericRepository&lt;TEntity&gt;.PrepareQuery(Query&lt;TEntity&gt;, bool)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_UpdateAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Linq_Expressions_Expression_System_Func_Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0__Microsoft_EntityFrameworkCore_Query_SetPropertyCalls__0____System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.UpdateAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Expression&lt;Func&lt;SetPropertyCalls&lt;TEntity&gt;, SetPropertyCalls&lt;TEntity&gt;&gt;&gt;, CancellationToken)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_ApplyProjection__1_System_Linq_IQueryable__0__System_Linq_Expressions_Expression_System_Func__0___0___">GenericRepository&lt;TEntity&gt;.ApplyProjection&lt;TResult&gt;(IQueryable&lt;TEntity&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_QueryCount_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_">GenericRepository&lt;TEntity&gt;.QueryCount(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_QueryCountAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.QueryCountAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, CancellationToken)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_QuerySingle_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_String___">GenericRepository&lt;TEntity&gt;.QuerySingle(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, bool, params string[])</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_QuerySingleAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Boolean_System_Threading_CancellationToken_System_String___">GenericRepository&lt;TEntity&gt;.QuerySingleAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, bool, CancellationToken, params string[])</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_QuerySingle__1_System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_">GenericRepository&lt;TEntity&gt;.QuerySingle&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_QuerySingleAsync__1_System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.QuerySingleAsync&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, CancellationToken)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_QueryMany_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___">GenericRepository&lt;TEntity&gt;.QueryMany(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, bool, params string[])</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_QueryManyAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___">GenericRepository&lt;TEntity&gt;.QueryManyAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, bool, CancellationToken, params string[])</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_QueryMany__1_System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__">GenericRepository&lt;TEntity&gt;.QueryMany&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_QueryManyAsync__1_System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.QueryManyAsync&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, CancellationToken)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_QueryManyStream_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_Threading_CancellationToken_System_String___">GenericRepository&lt;TEntity&gt;.QueryManyStream(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, bool, CancellationToken, params string[])</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_QueryManyStream__1_System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Threading_CancellationToken_">GenericRepository&lt;TEntity&gt;.QueryManyStream&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, CancellationToken)</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_PrepareQuery_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Func_System_Linq_IQueryable__0__System_Linq_IQueryable__0___System_Boolean_System_Func_System_Linq_IQueryable__0__System_Linq_IOrderedQueryable__0___System_Nullable_System_Int32__System_Nullable_System_Int32__System_Boolean_System_String___">GenericRepository&lt;TEntity&gt;.PrepareQuery(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Func&lt;IQueryable&lt;TEntity&gt;, IQueryable&lt;TEntity&gt;&gt;, bool, Func&lt;IQueryable&lt;TEntity&gt;, IOrderedQueryable&lt;TEntity&gt;&gt;, int?, int?, bool, params string[])</a>
-    </div>
-    <div>
-      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_ApplyProjection__1_System_Linq_IQueryable__0__System_Linq_Expressions_Expression_System_Func__0___0___System_Linq_Expressions_Expression_System_Func___0___0___">GenericRepository&lt;TEntity&gt;.ApplyProjection&lt;TResult&gt;(IQueryable&lt;TEntity&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Expression&lt;Func&lt;TResult, TResult&gt;&gt;)</a>
+      <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html#BB84_EntityFrameworkCore_Repositories_GenericRepository_1_WithCondition_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Linq_Expressions_Expression_System_Func__0_System_Boolean___">GenericRepository&lt;TEntity&gt;.WithCondition(Query&lt;TEntity&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -422,7 +335,7 @@ identity-based primary keys.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_EnumeratorRepository_1__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_" data-uid="BB84.EntityFrameworkCore.Repositories.EnumeratorRepository`1.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)">
   EnumeratorRepository(IDbContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories/EnumeratorRepository.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/EnumeratorRepository.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Provides an abstract base class for managing enumeration-based entities in a data store.</p>
@@ -460,7 +373,7 @@ identity-based primary keys.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v4.5.0725.0/src/BB84.EntityFrameworkCore.Repositories/EnumeratorRepository.cs/#L62" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/EnumeratorRepository.cs/#L62" class="edit-link">Edit this page</a>
         </div>
 
 
