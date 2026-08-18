@@ -12,7 +12,7 @@ namespace BB84.EntityFrameworkCore.Repositories.Configurations;
 
 /// <summary>
 /// Represents an abstract base class for configuring entity types that implement the
-/// <see cref="ICompositeEntity"/> interface.
+/// <see cref="ICompositeEntity{TToken}"/> interface.
 /// </summary>
 /// <remarks>
 /// This class is intended to be used as a base for defining entity type configurations in
@@ -20,10 +20,19 @@ namespace BB84.EntityFrameworkCore.Repositories.Configurations;
 /// such as the <c>Timestamp</c> property.
 /// </remarks>
 /// <typeparam name="TEntity">The type of the entity being configured.</typeparam>
-public abstract class CompositeConfiguration<TEntity> : IEntityTypeConfiguration<TEntity>
-	where TEntity : class, ICompositeEntity
+/// <typeparam name="TToken">The type of the concurrency token.</typeparam>
+public abstract class CompositeConfiguration<TEntity, TToken> : IEntityTypeConfiguration<TEntity>
+	where TEntity : class, ICompositeEntity<TToken>
 {
 	/// <inheritdoc/>
 	public virtual void Configure(EntityTypeBuilder<TEntity> builder)
-		=> EntityTypeBuilderDefaults.ApplyConcurrencyToken(builder, columnOrder: 3);
+		=> EntityTypeBuilderDefaults.ApplyConcurrencyToken<TEntity, TToken>(builder, columnOrder: 3);
 }
+
+/// <inheritdoc cref="CompositeConfiguration{TEntity, TToken}"/>
+/// <remarks>
+/// The token is a <see cref="byte"/> array. For a custom token type use
+/// <see cref="CompositeConfiguration{TEntity, TToken}"/> and name both.
+/// </remarks>
+public abstract class CompositeConfiguration<TEntity> : CompositeConfiguration<TEntity, byte[]>, IEntityTypeConfiguration<TEntity>
+	where TEntity : class, ICompositeEntity;

@@ -14,7 +14,7 @@ namespace BB84.EntityFrameworkCore.Repositories.Configurations;
 
 /// <summary>
 /// Represents an abstract base class for configuring entity types that implement the
-/// <see cref="IEnumeratorEntity{Tkey}"/> interface.
+/// <see cref="IEnumeratorEntity{TKey, TToken}"/> interface.
 /// </summary>
 /// <remarks>
 /// <para>
@@ -36,9 +36,10 @@ namespace BB84.EntityFrameworkCore.Repositories.Configurations;
 /// </remarks>
 /// <typeparam name="TEntity">The type of the entity being configured.</typeparam>
 /// <typeparam name="TKey">The type of the key for the entity.</typeparam>
+/// <typeparam name="TToken">The type of the concurrency token.</typeparam>
 [SuppressMessage("Style", "IDE0058", Justification = "Not relevant here, entity type configuration.")]
-public abstract class EnumeratorConfiguration<TEntity, TKey> : IEntityTypeConfiguration<TEntity>
-	where TEntity : class, IEnumeratorEntity<TKey>
+public abstract class EnumeratorConfiguration<TEntity, TKey, TToken> : IEntityTypeConfiguration<TEntity>
+	where TEntity : class, IEnumeratorEntity<TKey, TToken>
 	where TKey : IEquatable<TKey>
 {
 	/// <inheritdoc/>
@@ -50,7 +51,7 @@ public abstract class EnumeratorConfiguration<TEntity, TKey> : IEntityTypeConfig
 			.HasColumnOrder(1)
 			.IsRequired();
 
-		EntityTypeBuilderDefaults.ApplyConcurrencyToken(builder, columnOrder: 2);
+		EntityTypeBuilderDefaults.ApplyConcurrencyToken<TEntity, TToken>(builder, columnOrder: 2);
 
 		builder.Property(e => e.Name)
 			.HasColumnOrder(3)
@@ -75,10 +76,19 @@ public abstract class EnumeratorConfiguration<TEntity, TKey> : IEntityTypeConfig
 	}
 }
 
-/// <inheritdoc cref="EnumeratorConfiguration{TEntity, TKey}"/>
+/// <inheritdoc cref="EnumeratorConfiguration{TEntity, TKey, TToken}"/>
 /// <remarks>
-/// The identity column is of type <see cref="int"/>.
+/// <typeparamref name="TKey"/> is supplied; <c>TToken</c> defaults to a <see cref="byte"/> array.
+/// For a custom token type use <see cref="EnumeratorConfiguration{TEntity, TKey, TToken}"/> and
+/// name all three.
+/// </remarks>
+public abstract class EnumeratorConfiguration<TEntity, TKey> : EnumeratorConfiguration<TEntity, TKey, byte[]>
+	where TEntity : class, IEnumeratorEntity<TKey>
+	where TKey : IEquatable<TKey>;
+
+/// <inheritdoc cref="EnumeratorConfiguration{TEntity, TKey, TToken}"/>
+/// <remarks>
+/// The identity column is of type <see cref="int"/> and the token a <see cref="byte"/> array.
 /// </remarks>
 public abstract class EnumeratorConfiguration<TEntity> : EnumeratorConfiguration<TEntity, int>
-	where TEntity : class, IEnumeratorEntity
-{ }
+	where TEntity : class, IEnumeratorEntity;

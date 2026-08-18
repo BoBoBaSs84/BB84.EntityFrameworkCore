@@ -14,25 +14,35 @@ namespace BB84.EntityFrameworkCore.Entities.Abstractions;
 /// <typeparam name="TKey">The type of the unique identifier for the entity.</typeparam>
 /// <typeparam name="TCreator">The type representing the creator of the entity.</typeparam>
 /// <typeparam name="TEditor">The type representing the last editor of the entity.</typeparam>
-public interface IFullAuditedEntity<TKey, TCreator, TEditor> : IIdentityEntity<TKey>, IUserAudited<TCreator, TEditor>, ITimeAudited
+/// <typeparam name="TToken">The type of the concurrency token.</typeparam>
+public interface IFullAuditedEntity<TKey, TCreator, TEditor, TToken> : IIdentityEntity<TKey, TToken>, IUserAudited<TCreator, TEditor>, ITimeAudited
 	where TKey : IEquatable<TKey>
-	where TCreator : notnull
-{ }
+	where TCreator : notnull;
 
-/// <inheritdoc cref="IFullAuditedEntity{TKey, TCreator, TEditor}"/>
+/// <inheritdoc cref="IFullAuditedEntity{TKey, TCreator, TEditor, TToken}"/>
 /// <remarks>
-/// <typeparamref name="TKey"/> is supplied; <c>TCreator</c> defaults to <see cref="string"/>
-/// and <c>TEditor</c> to <see cref="string"/>. For a custom creator or editor type use
-/// <see cref="IFullAuditedEntity{TKey, TCreator, TEditor}"/> and name all three.
+/// The key, creator and editor types are supplied; <c>TToken</c> defaults to a <see cref="byte"/>
+/// array. For a custom token type use
+/// <see cref="IFullAuditedEntity{TKey, TCreator, TEditor, TToken}"/> and name all four.
+/// </remarks>
+public interface IFullAuditedEntity<TKey, TCreator, TEditor> : IFullAuditedEntity<TKey, TCreator, TEditor, byte[]>, IIdentityEntity<TKey>
+	where TKey : IEquatable<TKey>
+	where TCreator : notnull;
+
+/// <inheritdoc cref="IFullAuditedEntity{TKey, TCreator, TEditor, TToken}"/>
+/// <remarks>
+/// <typeparamref name="TKey"/> is supplied; <c>TCreator</c> defaults to <see cref="string"/>,
+/// <c>TEditor</c> to <see cref="string"/> and <c>TToken</c> to a <see cref="byte"/> array. For a
+/// custom creator or editor type use <see cref="IFullAuditedEntity{TKey, TCreator, TEditor}"/>
+/// and name all three.
 /// </remarks>
 public interface IFullAuditedEntity<TKey> : IFullAuditedEntity<TKey, string, string?>, IUserAudited
-	where TKey : IEquatable<TKey>
-{ }
+	where TKey : IEquatable<TKey>;
 
-/// <inheritdoc cref="IFullAuditedEntity{TKey, TCreator, TEditor}"/>
+/// <inheritdoc cref="IFullAuditedEntity{TKey, TCreator, TEditor, TToken}"/>
 /// <remarks>
 /// Nothing is supplied; <c>TKey</c> defaults to <see cref="Guid"/>, <c>TCreator</c> to
-/// <see cref="string"/> and <c>TEditor</c> to <see cref="string"/>.
+/// <see cref="string"/>, <c>TEditor</c> to <see cref="string"/> and <c>TToken</c> to a
+/// <see cref="byte"/> array.
 /// </remarks>
-public interface IFullAuditedEntity : IFullAuditedEntity<Guid, string, string?>, IIdentityEntity, IUserAudited
-{ }
+public interface IFullAuditedEntity : IFullAuditedEntity<Guid, string, string?>, IIdentityEntity, IUserAudited;

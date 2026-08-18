@@ -70,11 +70,11 @@ IReadOnlyList<Person> firstPage = repository.GetList(active with { Take = 25 });
 
 Each repository abstraction exists as two halves plus a composed alias:
 
-| Read                                       | Write                                       | Composed                                |
-| ------------------------------------------- | -------------------------------------------- | ---------------------------------------- |
-| `IReadRepository<TEntity>`                 | `IWriteRepository<TEntity>`                 | `IGenericRepository<TEntity>`           |
-| `IReadIdentityRepository<TEntity, TKey>`   | `IWriteIdentityRepository<TEntity, TKey>`   | `IIdentityRepository<TEntity, TKey>`    |
-| `IReadEnumeratorRepository<TEntity, TKey>` | —                                           | `IEnumeratorRepository<TEntity, TKey>`  |
+| Read                                       | Write                                     | Composed                               |
+| ------------------------------------------ | ----------------------------------------- | -------------------------------------- |
+| `IReadRepository<TEntity>`                 | `IWriteRepository<TEntity>`               | `IGenericRepository<TEntity>`          |
+| `IReadIdentityRepository<TEntity, TKey>`   | `IWriteIdentityRepository<TEntity, TKey>` | `IIdentityRepository<TEntity, TKey>`   |
+| `IReadEnumeratorRepository<TEntity, TKey>` | —                                         | `IEnumeratorRepository<TEntity, TKey>` |
 
 Depend on a half wherever a component only reads or only writes — a query handler, a reporting service, an importer, either side of a CQRS split. The dependency then states in its type what it is allowed to do, and a hand written test double only has to implement the half it needs.
 
@@ -89,7 +89,7 @@ public sealed class PriceReport(IReadRepository<Product> products)
 
 The composed interfaces add no members of their own, so nothing is reachable only through them. `GenericRepository<TEntity>` and its derivatives still implement the composed interfaces, and existing `IGenericRepository<TEntity>` consumers are unaffected.
 
-There is no `IWriteEnumeratorRepository`: an enumerator repository adds only name based *reads* on top of the identity repository, so its write half is exactly the inherited one.
+There is no `IWriteEnumeratorRepository`: an enumerator repository adds only name based _reads_ on top of the identity repository, so its write half is exactly the inherited one.
 
 ## `IGenericRepository<TEntity>`
 

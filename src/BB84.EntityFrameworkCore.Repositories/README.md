@@ -108,16 +108,18 @@ await dbContext.SaveChangesAsync(cancellationToken);
 
 Provider-agnostic `IEntityTypeConfiguration<TEntity>` base classes in `BB84.EntityFrameworkCore.Repositories.Configurations`. They apply key declaration, column ordering, the concurrency token, audit columns and — for enumerator entities — the name/description constraints, unique index and soft delete query filter. Everything they do is EF Core or EF Core Relational, so they work on PostgreSQL, SQLite, MySQL and Oracle.
 
-| Configuration class                                          | For entity type                               |
-| ------------------------------------------------------------ | --------------------------------------------- |
-| `IdentityConfiguration<TEntity, TKey>`                       | `IIdentityEntity<TKey>`                       |
-| `AuditedConfiguration<TEntity, TKey, TCreator, TEditor>`     | `IAuditedEntity<TKey, TCreator, TEditor>`     |
-| `FullAuditedConfiguration<TEntity, TKey, TCreator, TEditor>` | `IFullAuditedEntity<TKey, TCreator, TEditor>` |
-| `CompositeConfiguration<TEntity>`                            | `ICompositeEntity`                            |
-| `AuditedCompositeConfiguration<TEntity, TCreator, TEditor>`  | `IAuditedCompositeEntity<TCreator, TEditor>`  |
-| `EnumeratorConfiguration<TEntity, TKey>`                     | `IEnumeratorEntity<TKey>`                     |
+| Configuration class                                                  | For entity type                                       |
+| -------------------------------------------------------------------- | ----------------------------------------------------- |
+| `IdentityConfiguration<TEntity, TKey, TToken>`                       | `IIdentityEntity<TKey, TToken>`                       |
+| `AuditedConfiguration<TEntity, TKey, TCreator, TEditor, TToken>`     | `IAuditedEntity<TKey, TCreator, TEditor, TToken>`     |
+| `FullAuditedConfiguration<TEntity, TKey, TCreator, TEditor, TToken>` | `IFullAuditedEntity<TKey, TCreator, TEditor, TToken>` |
+| `CompositeConfiguration<TEntity, TToken>`                            | `ICompositeEntity<TToken>`                            |
+| `AuditedCompositeConfiguration<TEntity, TCreator, TEditor, TToken>`  | `IAuditedCompositeEntity<TCreator, TEditor, TToken>`  |
+| `EnumeratorConfiguration<TEntity, TKey, TToken>`                     | `IEnumeratorEntity<TKey, TToken>`                     |
 
-Each ladder has narrower generic aliases: one that supplies the key and defaults the creator/editor to `string`, and one that supplies nothing and defaults the key to `Guid` (`int` for the enumerator) as well. There is deliberately no alias that defaults the key alone — pick the full form and name every parameter when the creator or editor type is not `string`.
+Each ladder has narrower generic aliases: one that defaults the concurrency token to `byte[]`, one that supplies the key and defaults the creator/editor to `string`, and one that supplies nothing and defaults the key to `Guid` (`int` for the enumerator) as well. There is deliberately no alias that defaults the key alone — pick the full form and name every parameter when the creator or editor type is not `string`.
+
+The token rung is the one to reach for on a provider without an eight byte row version. It marks the property as a concurrency token generated on add or update, which suits `rowversion` and PostgreSQL's `xmin`; for a token the application rotates itself, override the generation strategy after the `base.Configure(builder)` call.
 
 On SQL Server, use the same type names from `BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations` instead — those derive from these and add clustering, `NEWID()` defaults and `sysname` audit columns.
 

@@ -43,11 +43,16 @@ internal static class EntityTypeBuilderDefaults
 	/// <summary>
 	/// Configures the concurrency token of the entity.
 	/// </summary>
+	/// <remarks>
+	/// The token type has to be named explicitly — it appears nowhere in the parameter list, so
+	/// there is nothing for the compiler to infer it from.
+	/// </remarks>
 	/// <typeparam name="TEntity">The type of the entity being configured.</typeparam>
+	/// <typeparam name="TToken">The type of the concurrency token.</typeparam>
 	/// <param name="builder">The builder for the entity type being configured.</param>
 	/// <param name="columnOrder">The zero based ordering of the column within the table.</param>
-	internal static void ApplyConcurrencyToken<TEntity>(EntityTypeBuilder<TEntity> builder, int columnOrder)
-		where TEntity : class, IConcurrency
+	internal static void ApplyConcurrencyToken<TEntity, TToken>(EntityTypeBuilder<TEntity> builder, int columnOrder)
+		where TEntity : class, IConcurrency<TToken>
 	{
 		builder.Property(e => e.Timestamp)
 			.HasColumnOrder(columnOrder)

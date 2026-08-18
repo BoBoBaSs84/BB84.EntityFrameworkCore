@@ -1,4 +1,4 @@
-﻿// Copyright: 2024 Robert Peter Meyer
+// Copyright: 2024 Robert Peter Meyer
 // License: MIT
 //
 // This source code is licensed under the MIT license found in the
@@ -12,8 +12,15 @@ namespace BB84.EntityFrameworkCore.Entities.Abstractions;
 /// </summary>
 /// <remarks>
 /// This interface is typically implemented by entities that aggregate other entities or components
-/// into a single cohesive unit. It extends the <see cref="IConcurrency"/> interface, indicating that
-/// implementations may also support concurrency-related operations.
+/// into a single cohesive unit. It extends the <see cref="IConcurrency{TToken}"/> interface, indicating
+/// that implementations may also support concurrency-related operations.
 /// </remarks>
-public interface ICompositeEntity : IConcurrency
-{ }
+/// <typeparam name="TToken">The type of the concurrency token.</typeparam>
+public interface ICompositeEntity<TToken> : IConcurrency<TToken>;
+
+/// <inheritdoc cref="ICompositeEntity{TToken}"/>
+/// <remarks>
+/// The token is a <see cref="byte"/> array. For a custom token type use
+/// <see cref="ICompositeEntity{TToken}"/> and name it.
+/// </remarks>
+public interface ICompositeEntity : ICompositeEntity<byte[]>, IConcurrency;

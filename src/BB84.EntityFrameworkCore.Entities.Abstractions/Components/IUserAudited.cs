@@ -26,5 +26,4 @@ public interface IUserAudited<TCreator, TEditor>
 }
 
 /// <inheritdoc cref="IUserAudited{TCreator, TEditor}"/>
-public interface IUserAudited : IUserAudited<string, string?>
-{ }
+public interface IUserAudited : IUserAudited<string, string?>;
