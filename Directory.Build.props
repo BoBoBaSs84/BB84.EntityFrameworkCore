@@ -20,7 +20,7 @@
 		<Deterministic>True</Deterministic>
 		<EnableNETAnalyzers>True</EnableNETAnalyzers>
 		<EnablePackageValidation>True</EnablePackageValidation>
-		<!-- <PackageValidationBaselineVersion>5.0.0</PackageValidationBaselineVersion> -->
+		<PackageValidationBaselineVersion>5.0.818</PackageValidationBaselineVersion>
 		<GenerateAssemblyInfo>True</GenerateAssemblyInfo>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<ImplicitUsings>enable</ImplicitUsings>
