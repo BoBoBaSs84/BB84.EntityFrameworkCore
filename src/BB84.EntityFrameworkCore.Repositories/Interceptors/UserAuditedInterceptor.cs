@@ -27,12 +27,22 @@ namespace BB84.EntityFrameworkCore.Repositories.Interceptors;
 /// </para>
 /// </remarks>
 /// <typeparam name="TUser">The type representing the user.</typeparam>
-/// <param name="currentUserProvider">The provider supplying the current user.</param>
 /// <inheritdoc cref="SaveChangesInterceptor"/>
-public class UserAuditedInterceptor<TUser>(ICurrentUserProvider<TUser> currentUserProvider) : SaveChangesInterceptor
+public class UserAuditedInterceptor<TUser> : SaveChangesInterceptor
 	where TUser : notnull
 {
-	private readonly ICurrentUserProvider<TUser> _currentUserProvider = currentUserProvider;
+	private readonly ICurrentUserProvider<TUser> _currentUserProvider;
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="UserAuditedInterceptor{TUser}"/> class.
+	/// </summary>
+	/// <param name="currentUserProvider">The provider supplying the current user.</param>
+	public UserAuditedInterceptor(ICurrentUserProvider<TUser> currentUserProvider)
+	{
+		ArgumentNullException.ThrowIfNull(currentUserProvider, nameof(currentUserProvider));
+
+		_currentUserProvider = currentUserProvider;
+	}
 
 	/// <inheritdoc/>
 	public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)
