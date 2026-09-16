@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v5.0.0818.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_GenericRepository_1.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.GenericRepository%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/new/v5.0.0916.0/apiSpec/new?filename=BB84_EntityFrameworkCore_Repositories_GenericRepository_1.md&amp;value=---%0Auid%3A%20BB84.EntityFrameworkCore.Repositories.GenericRepository%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,7 +85,7 @@
 
 
   <h1 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1" class="text-break">
-Class GenericRepository&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L21"><i class="bi bi-code-slash"></i></a>
+Class GenericRepository&lt;TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -184,10 +184,10 @@ dependency then states in its type what it is allowed to do.
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.#ctor(BB84.EntityFrameworkCore.Repositories.Abstractions.IDbContext)">
   GenericRepository(IDbContext)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The generic repository implementation.</p>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="BB84.EntityFrameworkCore.Repositories.GenericRepository-1.html">GenericRepository&lt;TEntity&gt;</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -209,17 +209,6 @@ dependency then states in its type what it is allowed to do.
 
 
 
-  <h4 class="section" id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1__ctor_BB84_EntityFrameworkCore_Repositories_Abstractions_IDbContext__remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p>
-The composition of <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IReadRepository-1.html">IReadRepository&lt;TEntity&gt;</a> and
-<a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWriteRepository-1.html">IWriteRepository&lt;TEntity&gt;</a>, and the interface a repository implementation
-declares. It adds no members of its own.
-</p>
-<p>
-Depend on one of the halves instead wherever a component only reads or only writes; the
-dependency then states in its type what it is allowed to do.
-</p>
-</div>
 
 
 
@@ -232,7 +221,7 @@ dependency then states in its type what it is allowed to do.
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_ApplyProjection__1_System_Linq_IQueryable__0__System_Linq_Expressions_Expression_System_Func__0___0___" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.ApplyProjection``1(System.Linq.IQueryable{`0},System.Linq.Expressions.Expression{System.Func{`0,``0}})">
   ApplyProjection&lt;TResult&gt;(IQueryable&lt;TEntity&gt;, Expression&lt;Func&lt;TEntity, TResult&gt;&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L192"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L202"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Projects the elements of the source query into <code class="typeparamref">TResult</code>.</p>
@@ -280,7 +269,7 @@ dependency then states in its type what it is allowed to do.
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Count_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Count(BB84.EntityFrameworkCore.Repositories.Abstractions.Query{`0})">
   Count(Query&lt;TEntity&gt;?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L69"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Counts the entities matching the specified <code class="paramref">query</code>.</p>
@@ -323,7 +312,7 @@ includes and tracking are ignored, because none of them can change how many rows
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CountAsync_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CountAsync(BB84.EntityFrameworkCore.Repositories.Abstractions.Query{`0},System.Threading.CancellationToken)">
   CountAsync(Query&lt;TEntity&gt;?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L73"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Counts the entities matching the specified <code class="paramref">query</code>.</p>
@@ -369,7 +358,7 @@ includes and tracking are ignored, because none of them can change how many rows
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Create_System_Collections_Generic_IEnumerable__0__" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Create(System.Collections.Generic.IEnumerable{`0})">
   Create(IEnumerable&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds the specified collection of entities to the underlying data store.</p>
@@ -406,7 +395,7 @@ changes to the entity will be persisted to the database during the next save ope
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Create__0_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Create(`0)">
   Create(TEntity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds the specified entity to the underlying data store.</p>
@@ -443,7 +432,7 @@ changes to the entity will be persisted to the database during the next save ope
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CreateAsync_System_Collections_Generic_IEnumerable__0__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CreateAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)">
   CreateAsync(IEnumerable&lt;TEntity&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds the specified collection of entities to the underlying data store.</p>
@@ -489,7 +478,7 @@ changes to the entity will be persisted to the database during the next save ope
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_CreateAsync__0_System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.CreateAsync(`0,System.Threading.CancellationToken)">
   CreateAsync(TEntity, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds the specified entity to the underlying data store.</p>
@@ -535,7 +524,7 @@ changes to the entity will be persisted to the database during the next save ope
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Delete_System_Collections_Generic_IEnumerable__0__" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Delete(System.Collections.Generic.IEnumerable{`0})">
   Delete(IEnumerable&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L57"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes the specified collection of entities from the underlying data store.</p>
@@ -572,7 +561,7 @@ changes to the entity will be persisted to the database during the next save ope
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Delete__0_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Delete(`0)">
   Delete(TEntity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L53"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes the specified entity from the underlying data store.</p>
@@ -609,7 +598,7 @@ changes to the entity will be persisted to the database during the next save ope
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_ExecuteDelete_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.ExecuteDelete(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
   ExecuteDelete(Expression&lt;Func&lt;TEntity, bool&gt;&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes all database rows for the <code class="typeparamref">TEntity</code> instances which match
@@ -663,7 +652,7 @@ Use <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWr
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_ExecuteDeleteAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.ExecuteDeleteAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)">
   ExecuteDeleteAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Deletes all database rows for the <code class="typeparamref">TEntity</code> instances which match
@@ -720,7 +709,7 @@ Use <a class="xref" href="BB84.EntityFrameworkCore.Repositories.Abstractions.IWr
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_ExecuteUpdate_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.ExecuteUpdate(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Action{Microsoft.EntityFrameworkCore.Query.UpdateSettersBuilder{`0}})">
   ExecuteUpdate(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L131"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates all database rows for the <code class="typeparamref">TEntity</code> instances which match
@@ -777,7 +766,7 @@ unless <code class="paramref">setPropertyCalls</code> sets them explicitly. Use
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_ExecuteUpdateAsync_System_Linq_Expressions_Expression_System_Func__0_System_Boolean___System_Action_Microsoft_EntityFrameworkCore_Query_UpdateSettersBuilder__0___System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.ExecuteUpdateAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Action{Microsoft.EntityFrameworkCore.Query.UpdateSettersBuilder{`0}},System.Threading.CancellationToken)">
   ExecuteUpdateAsync(Expression&lt;Func&lt;TEntity, bool&gt;&gt;, Action&lt;UpdateSettersBuilder&lt;TEntity&gt;&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L137"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates all database rows for the <code class="typeparamref">TEntity</code> instances which match
@@ -837,7 +826,7 @@ unless <code class="paramref">setPropertyCalls</code> sets them explicitly. Use
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetList_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetList(BB84.EntityFrameworkCore.Repositories.Abstractions.Query{`0})">
   GetList(Query&lt;TEntity&gt;?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L93"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the entities matching the specified <code class="paramref">query</code>.</p>
@@ -880,7 +869,7 @@ reads large enough that holding every row in memory is a problem.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetListAsync_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetListAsync(BB84.EntityFrameworkCore.Repositories.Abstractions.Query{`0},System.Threading.CancellationToken)">
   GetListAsync(Query&lt;TEntity&gt;?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L101"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the entities matching the specified <code class="paramref">query</code>.</p>
@@ -926,7 +915,7 @@ reads large enough that holding every row in memory is a problem.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetListAsync__1_System_Linq_Expressions_Expression_System_Func__0___0___BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetListAsync``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},BB84.EntityFrameworkCore.Repositories.Abstractions.Query{`0},System.Threading.CancellationToken)">
   GetListAsync&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Query&lt;TEntity&gt;?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L105"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the entities matching the specified <code class="paramref">query</code>.</p>
@@ -981,7 +970,7 @@ reads large enough that holding every row in memory is a problem.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetList__1_System_Linq_Expressions_Expression_System_Func__0___0___BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetList``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},BB84.EntityFrameworkCore.Repositories.Abstractions.Query{`0})">
   GetList&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Query&lt;TEntity&gt;?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L97"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the entities matching the specified <code class="paramref">query</code>.</p>
@@ -1033,7 +1022,7 @@ reads large enough that holding every row in memory is a problem.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetSingle_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetSingle(BB84.EntityFrameworkCore.Repositories.Abstractions.Query{`0})">
   GetSingle(Query&lt;TEntity&gt;?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L77"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the single entity matching the specified <code class="paramref">query</code>, or
@@ -1083,7 +1072,7 @@ reads large enough that holding every row in memory is a problem.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetSingleAsync_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetSingleAsync(BB84.EntityFrameworkCore.Repositories.Abstractions.Query{`0},System.Threading.CancellationToken)">
   GetSingleAsync(Query&lt;TEntity&gt;?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the single entity matching the specified <code class="paramref">query</code>, or
@@ -1136,7 +1125,7 @@ reads large enough that holding every row in memory is a problem.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetSingleAsync__1_System_Linq_Expressions_Expression_System_Func__0___0___BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetSingleAsync``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},BB84.EntityFrameworkCore.Repositories.Abstractions.Query{`0},System.Threading.CancellationToken)">
   GetSingleAsync&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Query&lt;TEntity&gt;?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L89"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the single entity matching the specified <code class="paramref">query</code>, or
@@ -1198,7 +1187,7 @@ reads large enough that holding every row in memory is a problem.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_GetSingle__1_System_Linq_Expressions_Expression_System_Func__0___0___BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.GetSingle``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},BB84.EntityFrameworkCore.Repositories.Abstractions.Query{`0})">
   GetSingle&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Query&lt;TEntity&gt;?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L81"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the single entity matching the specified <code class="paramref">query</code>, or
@@ -1257,7 +1246,7 @@ reads large enough that holding every row in memory is a problem.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_PrepareQuery_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Boolean_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.PrepareQuery(BB84.EntityFrameworkCore.Repositories.Abstractions.Query{`0},System.Boolean)">
   PrepareQuery(Query&lt;TEntity&gt;?, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L147"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L157"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Composes the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable&lt;T&gt;</a> described by the specified
@@ -1305,7 +1294,7 @@ when building a repository method the interface does not cover.</p>
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Stream_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Stream(BB84.EntityFrameworkCore.Repositories.Abstractions.Query{`0},System.Threading.CancellationToken)">
   Stream(Query&lt;TEntity&gt;?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L109"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Streams the entities matching the specified <code class="paramref">query</code>.</p>
@@ -1359,7 +1348,7 @@ entity yielded and the point of streaming is lost.
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Stream__1_System_Linq_Expressions_Expression_System_Func__0___0___BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Threading_CancellationToken_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Stream``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},BB84.EntityFrameworkCore.Repositories.Abstractions.Query{`0},System.Threading.CancellationToken)">
   Stream&lt;TResult&gt;(Expression&lt;Func&lt;TEntity, TResult&gt;&gt;, Query&lt;TEntity&gt;?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L116"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Streams the entities matching the specified <code class="paramref">query</code>.</p>
@@ -1422,7 +1411,7 @@ entity yielded and the point of streaming is lost.
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Update_System_Collections_Generic_IEnumerable__0__" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Update(System.Collections.Generic.IEnumerable{`0})">
   Update(IEnumerable&lt;TEntity&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L127"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates the specified collection of entities in the underlying data store.</p>
@@ -1459,7 +1448,7 @@ changes to the entities will be persisted to the database during the next save o
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_Update__0_" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.Update(`0)">
   Update(TEntity)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L123"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Updates the specified entity in the underlying data store.</p>
@@ -1496,7 +1485,7 @@ changes to the entity will be persisted to the database during the next save ope
 
   <h3 id="BB84_EntityFrameworkCore_Repositories_GenericRepository_1_WithCondition_BB84_EntityFrameworkCore_Repositories_Abstractions_Query__0__System_Linq_Expressions_Expression_System_Func__0_System_Boolean___" data-uid="BB84.EntityFrameworkCore.Repositories.GenericRepository`1.WithCondition(BB84.EntityFrameworkCore.Repositories.Abstractions.Query{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
   WithCondition(Query&lt;TEntity&gt;?, Expression&lt;Func&lt;TEntity, bool&gt;&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L208"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L218"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the specified <code class="paramref">query</code> with an additional condition applied.</p>
@@ -1543,7 +1532,7 @@ repositories to add their key or name condition.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0818.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L21" class="edit-link">Edit this page</a>
+          <a href="https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/v5.0.0916.0/src/BB84.EntityFrameworkCore.Repositories/GenericRepository.cs/#L20" class="edit-link">Edit this page</a>
         </div>
 
 
