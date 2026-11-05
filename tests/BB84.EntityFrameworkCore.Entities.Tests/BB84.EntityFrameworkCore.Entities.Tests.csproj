@@ -1,11 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<IsPackable>False</IsPackable>
-		<IsTestProject>True</IsTestProject>
-	</PropertyGroup>
-	<ItemGroup>
-	  <PackageReference Include="MSTest" />
-	</ItemGroup>
+﻿<Project Sdk="MSTest.Sdk">
 	<ItemGroup>
 		<ProjectReference Include="..\..\src\BB84.EntityFrameworkCore.Entities\BB84.EntityFrameworkCore.Entities.csproj" />
 	</ItemGroup>

@@ -1,12 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<IsPackable>False</IsPackable>
-		<IsTestProject>True</IsTestProject>
-	</PropertyGroup>
+﻿<Project Sdk="MSTest.Sdk">
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
 		<PackageReference Include="Microsoft.Extensions.TimeProvider.Testing" />
-		<PackageReference Include="MSTest" />
 	</ItemGroup>
 	<!-- No reference to BB84.EntityFrameworkCore.Repositories.SqlServer, deliberately: its absence
 	     is what turns a provider-specific call in the agnostic package into a compile error. -->
