@@ -1,12 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<IsPackable>False</IsPackable>
-		<IsTestProject>True</IsTestProject>
-	</PropertyGroup>
+﻿<Project Sdk="MSTest.Sdk">
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
 		<PackageReference Include="Microsoft.Extensions.TimeProvider.Testing" />
-		<PackageReference Include="MSTest" />
 		<PackageReference Include="Testcontainers.MsSql" />
 	</ItemGroup>
 	<ItemGroup>

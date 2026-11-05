@@ -8,7 +8,7 @@
 		<RootNamespace>BB84.EntityFrameworkCore.TestSupport</RootNamespace>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="MSTest" />
+		<PackageReference Include="MSTest.TestFramework" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\..\src\BB84.EntityFrameworkCore.Repositories\BB84.EntityFrameworkCore.Repositories.csproj" />

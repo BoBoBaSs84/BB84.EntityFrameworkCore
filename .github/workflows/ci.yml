@@ -28,6 +28,8 @@ jobs:
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
 
       - name: Restore dependencies
         run: dotnet restore ${{ env.SOLUTION }}
@@ -38,19 +40,19 @@ jobs:
       - name: Run entity tests
         run: >
           dotnet test tests/BB84.EntityFrameworkCore.Entities.Tests
-          --configuration ${{ env.CONFIGURATION }} --no-build --verbosity normal --logger "trx"
+          --configuration ${{ env.CONFIGURATION }} --no-build --verbosity normal --report-trx --results-directory ./test-results
 
       - name: Run provider-agnostic repository tests
         run: >
           dotnet test tests/BB84.EntityFrameworkCore.Repositories.Agnostic.Tests
-          --configuration ${{ env.CONFIGURATION }} --no-build --verbosity normal --logger "trx"
+          --configuration ${{ env.CONFIGURATION }} --no-build --verbosity normal --report-trx --results-directory ./test-results
 
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: test-results-agnostic
-          path: "**/TestResults/*.trx"
+          path: ./test-results/*.trx
 
   sqlserver:
     name: Build & Test (SQL Server)
@@ -62,6 +64,8 @@ jobs:
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
 
       - name: Restore dependencies
         run: dotnet restore ${{ env.SOLUTION }}
@@ -73,11 +77,11 @@ jobs:
       - name: Run SQL Server repository tests
         run: >
           dotnet test tests/BB84.EntityFrameworkCore.Repositories.Tests
-          --configuration ${{ env.CONFIGURATION }} --no-build --verbosity normal --logger "trx"
+          --configuration ${{ env.CONFIGURATION }} --no-build --verbosity normal --report-trx --results-directory ./test-results
 
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: test-results-sqlserver
-          path: "**/TestResults/*.trx"
+          path: ./test-results/*.trx
