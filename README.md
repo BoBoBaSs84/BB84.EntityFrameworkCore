@@ -9,7 +9,7 @@
 [![C#](https://img.shields.io/badge/C%23-14.0-239120)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore)
 [![Issues](https://img.shields.io/github/issues/BoBoBaSs84/BB84.EntityFrameworkCore)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/issues)
 [![Commit](https://img.shields.io/github/last-commit/BoBoBaSs84/BB84.EntityFrameworkCore)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/commit/main)
-[![License](https://img.shields.io/github/license/BoBoBaSs84/BB84.EntityFrameworkCore)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![RepoSize](https://img.shields.io/github/repo-size/BoBoBaSs84/BB84.EntityFrameworkCore)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore)
 [![Release](https://img.shields.io/github/v/release/BoBoBaSs84/BB84.EntityFrameworkCore)](https://github.com/BoBoBaSs84/BB84.EntityFrameworkCore/releases/latest)
 
