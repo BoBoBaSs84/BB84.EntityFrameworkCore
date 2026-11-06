@@ -44,9 +44,24 @@ updates:
       time: "04:00"
       timezone: "Europe/Berlin"
     assignees: ["BoBoBaSs84"]
-    labels: ["dependencies", "github_actions"]
+    labels: ["dependencies", "github-actions"]
     commit-message:
       prefix: "ci(deps)"
     groups:
       actions:
         patterns: ["*"]
+
+  - package-ecosystem: "dotnet-sdk"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+      timezone: "Europe/Berlin"
+    assignees: ["BoBoBaSs84"]
+    labels: ["dependencies", "dotnet-sdk"]
+    commit-message:
+      prefix: "chore(deps)"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
