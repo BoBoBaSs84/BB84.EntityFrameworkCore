@@ -7,7 +7,7 @@
          Keep in sync with MSTest.Sdk in global.json. -->
     <PackageVersion Include="MSTest.TestFramework" Version="4.5.3" Condition="'$(UsingMSTestSdk)' != 'true'" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.15" />
-    <PackageVersion Include="Microsoft.Extensions.TimeProvider.Testing" Version="11.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.TimeProvider.Testing" Version="11.0.1" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.15" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.15" />
     <PackageVersion Include="Testcontainers.MsSql" Version="4.17.0" />
