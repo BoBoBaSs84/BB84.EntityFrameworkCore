@@ -211,4 +211,4 @@ decimal? total = context.Database.ExecuteScalarFunction<decimal>(
 await context.Database.ExecuteScalarFunctionAsync<decimal>(..., cancellationToken);
 ```
 
-All methods sanitize schema/name inputs and use parameterized SQL to prevent injection. The parameter sequence is materialized once on entry, so a lazily generated `IEnumerable<DbParameter>` is safe to pass.
+All methods use parameterized SQL for values. The schema and name are written into the command as delimited identifiers, with any `]` inside them doubled the way `QUOTENAME` does it, so they cannot break out of the identifier. Parameter names are written into the command too, so a name that is not a plain T-SQL variable name (letters, digits, `_`, `#`, `@`, `$`; not starting with a digit) is rejected with an `ArgumentException`. The parameter sequence is materialized once on entry, so a lazily generated `IEnumerable<DbParameter>` is safe to pass.

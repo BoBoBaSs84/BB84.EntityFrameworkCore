@@ -104,6 +104,29 @@ public sealed class DatabaseFacadeExtensionsGuardTests
 		Assert.AreEqual("parameter", exception.ParamName);
 	}
 
+	/// <summary>
+	/// The parameter name is written into the command text, so anything that is not a plain
+	/// variable name must be refused before a command is built.
+	/// </summary>
+	[TestMethod]
+	[DataRow("@Input); DROP TABLE [dbo].[Users];--")]
+	[DataRow("@Input = 1; DROP TABLE [dbo].[Users];--")]
+	[DataRow("@In put")]
+	[DataRow("@In-put")]
+	[DataRow("@1Input")]
+	public void ShouldRejectAParameterNameThatIsNotAVariableName(string parameterName)
+	{
+		using OfflineContext context = new();
+		SqlParameter[] parameters = [new() { ParameterName = parameterName, Value = 1 }];
+
+		Assert.AreEqual("parameter", Assert.ThrowsExactly<ArgumentException>(
+			() => context.Database.ExecuteScalarFunction<int>(Schema, Name, parameters)).ParamName);
+		Assert.AreEqual("parameter", Assert.ThrowsExactly<ArgumentException>(
+			() => context.Database.ExecuteTableFunction<int>(Schema, Name, parameters)).ParamName);
+		Assert.AreEqual("parameter", Assert.ThrowsExactly<ArgumentException>(
+			() => context.Database.ExecuteProcedure(Schema, Name, parameters)).ParamName);
+	}
+
 	private static void AssertRejects(string parameterName, Action action)
 	{
 		ArgumentNullException exception = Assert.ThrowsExactly<ArgumentNullException>(action);
