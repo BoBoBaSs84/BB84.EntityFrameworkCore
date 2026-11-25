@@ -21,6 +21,9 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
 	private const string GetTableValuesFunctionName = "fn_GetTableValues";
 	private const string GetValuesProcedureName = "sp_GetValues";
 	private const string SetValueProcedureName = "sp_SetValue";
+	private const string BracketProcedureName = "sp_Odd]Name";
+	private const string EscapedBracketProcedureName = "sp_Odd]]Name";
+	private const string CanaryTableName = "InjectionCanary";
 	private readonly CancellationToken _testToken = CancellationToken.None;
 
 	[ClassInitialize]
@@ -66,6 +69,17 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
         SET @Output = @Input * 3;
       END
       """);
+
+		_ = dbContext.Database.ExecuteSqlRaw($"""
+      CREATE PROCEDURE [{Schema}].[{EscapedBracketProcedureName}]
+        @Input INT
+      AS
+      BEGIN
+        SELECT [Value] = @Input;
+      END
+      """);
+
+		_ = dbContext.Database.ExecuteSqlRaw($"CREATE TABLE [{Schema}].[{CanaryTableName}] ([Id] INT NOT NULL)");
 	}
 
 	[ClassCleanup]
@@ -77,7 +91,56 @@ public sealed class DatabaseFacadeExtensionsTests : UnitTestBase
 		_ = dbContext.Database.ExecuteSqlRaw($"DROP FUNCTION IF EXISTS [{Schema}].[{GetTableValuesFunctionName}]");
 		_ = dbContext.Database.ExecuteSqlRaw($"DROP PROCEDURE IF EXISTS [{Schema}].[{GetValuesProcedureName}]");
 		_ = dbContext.Database.ExecuteSqlRaw($"DROP PROCEDURE IF EXISTS [{Schema}].[{SetValueProcedureName}]");
+		_ = dbContext.Database.ExecuteSqlRaw($"DROP PROCEDURE IF EXISTS [{Schema}].[{EscapedBracketProcedureName}]");
+		_ = dbContext.Database.ExecuteSqlRaw($"DROP TABLE IF EXISTS [{Schema}].[{CanaryTableName}]");
 	}
+
+	/// <summary>
+	/// A closing bracket in the name must not end the delimited identifier: the whole string
+	/// is one (missing) object name, so the statement smuggled after it never runs.
+	/// </summary>
+	[TestMethod]
+	public void ExecuteProcedureShouldNotRunSqlInjectedThroughTheName()
+	{
+		SqlParameter input = new("@Input", SqlDbType.Int) { Value = 1 };
+		string name = $"{GetValuesProcedureName}]; DROP TABLE [{Schema}].[{CanaryTableName}];--";
+
+		_ = Assert.ThrowsExactly<SqlException>(() => DbContext.Database.ExecuteProcedure(Schema, name, [input]));
+
+		Assert.IsTrue(CanaryExists(), "the injected DROP TABLE must not have run");
+	}
+
+	/// <inheritdoc cref="ExecuteProcedureShouldNotRunSqlInjectedThroughTheName"/>
+	[TestMethod]
+	public void ExecuteScalarFunctionShouldNotRunSqlInjectedThroughTheSchema()
+	{
+		SqlParameter input = new("@Input", SqlDbType.Int) { Value = 1 };
+		string schema = $"{Schema}].[{GetScalarValueFunctionName}](1); DROP TABLE [{Schema}].[{CanaryTableName}];--";
+
+		_ = Assert.ThrowsExactly<SqlException>(() => DbContext.Database.ExecuteScalarFunction<int>(schema, GetScalarValueFunctionName, [input]));
+
+		Assert.IsTrue(CanaryExists(), "the injected DROP TABLE must not have run");
+	}
+
+	/// <summary>
+	/// An object whose real name contains a closing bracket is still reachable.
+	/// </summary>
+	[TestMethod]
+	public void ExecuteProcedureShouldReachAnObjectWithABracketInItsName()
+	{
+		SqlParameter input = new("@Input", SqlDbType.Int) { Value = 21 };
+
+		IReadOnlyList<int> result = DbContext.Database
+			.ExecuteProcedure<int>(Schema, BracketProcedureName, [input]);
+
+		Assert.HasCount(1, result);
+		Assert.AreEqual(21, result[0]);
+	}
+
+	private bool CanaryExists()
+		=> DbContext.Database
+			.SqlQueryRaw<int>($"SELECT [Value] = CASE WHEN OBJECT_ID(N'[{Schema}].[{CanaryTableName}]', N'U') IS NULL THEN 0 ELSE 1 END")
+			.Single() == 1;
 
 	[TestMethod]
 	public void ExecuteScalarFunctionTest()
