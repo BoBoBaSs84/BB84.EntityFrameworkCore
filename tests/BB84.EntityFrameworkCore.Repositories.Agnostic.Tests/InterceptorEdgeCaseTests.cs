@@ -3,11 +3,14 @@
 //
 // This source code is licensed under the MIT license found in the
 // LICENSE file in the root directory of this source tree.
+using BB84.EntityFrameworkCore.Entities;
 using BB84.EntityFrameworkCore.Entities.Abstractions.Components;
+using BB84.EntityFrameworkCore.Repositories.Abstractions;
 using BB84.EntityFrameworkCore.Repositories.Agnostic.Tests.Persistence;
 using BB84.EntityFrameworkCore.Repositories.Interceptors;
 using BB84.EntityFrameworkCore.TestSupport.Entities;
 
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Time.Testing;
 
@@ -109,11 +112,11 @@ public sealed class InterceptorEdgeCaseTests : UnitTestBase
 	/// The editor's nullability does not decide whether the user audit interceptor sees an entity.
 	/// </summary>
 	/// <remarks>
-	/// <see cref="UserAuditedInterceptor{TUser}"/> matches on
-	/// <c>Entries&lt;IUserAudited&lt;TUser, TUser?&gt;&gt;()</c>, which reads as though an entity
-	/// declaring a non-nullable editor would be skipped. It is not: nullable reference annotations
-	/// are erased at runtime, so both spellings are the same constructed type and both are
-	/// intercepted. Pinned here so the apparent distinction is not "fixed" into a real one.
+	/// For a reference type user, an entity declaring a non-nullable editor is not a separate case:
+	/// nullable reference annotations are erased at runtime, so both spellings are the same
+	/// constructed type and both are intercepted. Pinned here so the apparent distinction is not
+	/// "fixed" into a real one. Value types do differ, see
+	/// <see cref="UserAuditedInterceptorShouldRecordAValueTypeUser"/>.
 	/// </remarks>
 	[TestMethod]
 	public void UserAuditedInterceptorShouldNotDistinguishTheEditorsNullability()
@@ -126,9 +129,71 @@ public sealed class InterceptorEdgeCaseTests : UnitTestBase
 		Assert.Contains(typeof(IUserAudited<string, string?>), typeof(NonNullableEditorProbe).GetInterfaces());
 	}
 
+	/// <summary>
+	/// A value-type user is recorded, whether the editor is nullable or not.
+	/// </summary>
+	/// <remarks>
+	/// Unlike for <see cref="string"/>, <c>IUserAudited&lt;int, int?&gt;</c> and
+	/// <c>IUserAudited&lt;int, int&gt;</c> are two distinct types, and the interceptor once
+	/// matched only the latter, so an <c>int?</c> editor silently got no audit at all.
+	/// </remarks>
+	[TestMethod]
+	public void UserAuditedInterceptorShouldRecordAValueTypeUser()
+	{
+		using SqliteConnection connection = new("Data Source=:memory:");
+		connection.Open();
+		using IntUserDbContext context = new(connection);
+		context.Database.EnsureCreated();
+		NullableIntEditorEntity nullableEditor = new() { Name = "Nullable" };
+		IntEditorEntity plainEditor = new() { Name = "Plain" };
+
+		context.AddRange(nullableEditor, plainEditor);
+		context.SaveChanges();
+
+		Assert.AreEqual(42, nullableEditor.CreatedBy);
+		Assert.IsNull(nullableEditor.EditedBy, "an insert is not an edit");
+		Assert.AreEqual(42, plainEditor.CreatedBy);
+
+		nullableEditor.Name = "Nullable, edited";
+		plainEditor.Name = "Plain, edited";
+		context.SaveChanges();
+
+		Assert.AreEqual(42, nullableEditor.EditedBy);
+		Assert.AreEqual(42, plainEditor.EditedBy);
+	}
+
 	private sealed class NonNullableEditorProbe : IUserAudited<string, string>
 	{
 		public string CreatedBy { get; set; } = string.Empty;
 		public string EditedBy { get; set; } = string.Empty;
+	}
+
+	private sealed class NullableIntEditorEntity : FullAuditedEntity<Guid, int, int?>
+	{
+		public required string Name { get; set; }
+	}
+
+	private sealed class IntEditorEntity : FullAuditedEntity<Guid, int, int>
+	{
+		public required string Name { get; set; }
+	}
+
+	private sealed class IntUserProvider : ICurrentUserProvider<int>
+	{
+		public int GetCurrentUser() => 42;
+	}
+
+	private sealed class IntUserDbContext(SqliteConnection connection) : DbContext
+	{
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+			=> optionsBuilder
+				.UseSqlite(connection)
+				.AddInterceptors(new UserAuditedInterceptor<int>(new IntUserProvider()));
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			modelBuilder.Entity<NullableIntEditorEntity>();
+			modelBuilder.Entity<IntEditorEntity>();
+		}
 	}
 }

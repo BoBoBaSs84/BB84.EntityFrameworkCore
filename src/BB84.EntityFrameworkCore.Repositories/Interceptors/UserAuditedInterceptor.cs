@@ -31,6 +31,19 @@ namespace BB84.EntityFrameworkCore.Repositories.Interceptors;
 public class UserAuditedInterceptor<TUser> : SaveChangesInterceptor
 	where TUser : notnull
 {
+	/// <summary>
+	/// The audit interfaces this interceptor fills: the editor typed as <typeparamref name="TUser"/>
+	/// and, for a value type, as <see cref="Nullable{T}"/> of it.
+	/// </summary>
+	/// <remarks>
+	/// <c>TUser?</c> cannot express the second one: with <typeparamref name="TUser"/> only
+	/// constrained to <c>notnull</c>, the compiler reads it as <typeparamref name="TUser"/> itself.
+	/// For a reference type both spellings are one type anyway, nullable annotations being erased.
+	/// </remarks>
+	private static readonly Type[] AuditedTypes = typeof(TUser).IsValueType
+		? [typeof(IUserAudited<TUser, TUser>), typeof(IUserAudited<,>).MakeGenericType(typeof(TUser), typeof(Nullable<>).MakeGenericType(typeof(TUser)))]
+		: [typeof(IUserAudited<TUser, TUser>)];
+
 	private readonly ICurrentUserProvider<TUser> _currentUserProvider;
 
 	/// <summary>
@@ -69,18 +82,19 @@ public class UserAuditedInterceptor<TUser> : SaveChangesInterceptor
 	{
 		if (dbContext is not null)
 		{
-			IEnumerable<EntityEntry<IUserAudited<TUser, TUser?>>> entityEntries = dbContext.ChangeTracker.Entries<IUserAudited<TUser, TUser?>>();
+			IEnumerable<EntityEntry> entityEntries = dbContext.ChangeTracker.Entries()
+				.Where(x => AuditedTypes.Any(t => t.IsAssignableFrom(x.Metadata.ClrType)));
 			TUser currentUser = _currentUserProvider.GetCurrentUser();
 
-			foreach (EntityEntry<IUserAudited<TUser, TUser?>> entityEntry in entityEntries)
+			foreach (EntityEntry entityEntry in entityEntries)
 			{
 				switch (entityEntry.State)
 				{
 					case EntityState.Added:
-						entityEntry.Entity.CreatedBy = currentUser;
+						entityEntry.Property(nameof(IUserAudited<TUser, TUser>.CreatedBy)).CurrentValue = currentUser;
 						continue;
 					case EntityState.Modified:
-						entityEntry.Entity.EditedBy = currentUser;
+						entityEntry.Property(nameof(IUserAudited<TUser, TUser>.EditedBy)).CurrentValue = currentUser;
 						continue;
 					case EntityState.Detached:
 					case EntityState.Unchanged:
