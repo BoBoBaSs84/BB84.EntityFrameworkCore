@@ -6,6 +6,7 @@
 using System.Diagnostics.CodeAnalysis;
 
 using BB84.EntityFrameworkCore.Entities.Abstractions;
+using BB84.EntityFrameworkCore.Repositories.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -23,9 +24,9 @@ namespace BB84.EntityFrameworkCore.Repositories.Configurations;
 /// </para>
 /// <para>
 /// A global query filter excluding soft deleted rows is applied, so that entities marked as
-/// deleted by the soft deletable interceptor are no longer returned by queries. Pass
-/// <see langword="true"/> for the <c>ignoreQueryFilters</c> parameter of the repository read
-/// methods to include them again.
+/// deleted by the soft deletable interceptor are no longer returned by queries. Set
+/// <see cref="Query{TEntity}.IgnoreQueryFilters"/> to <see langword="true"/> on the query passed
+/// to the repository read methods to include them again.
 /// </para>
 /// <para>
 /// Be aware that a <b>required</b> navigation pointing at a soft deletable entity type
