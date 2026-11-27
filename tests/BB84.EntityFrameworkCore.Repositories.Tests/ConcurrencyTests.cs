@@ -84,9 +84,8 @@ public sealed class ConcurrencyTests : UnitTestBase
 			using TestDbContext posting = GetTestContext();
 			SkillRepository repository = new(posting);
 
-			// A fresh instance standing in for what comes back over the wire. Every column has
-			// to be carried, not just the token: the update marks them all as modified, so a
-			// partial entity writes nulls over whatever it left out.
+			// A fresh instance standing in for what comes back over the wire. The creation audit
+			// columns are left out: they are write-once, so the update does not touch them.
 			SkillEntity detached = new()
 			{
 				Id = read.Id,
@@ -94,8 +93,6 @@ public sealed class ConcurrencyTests : UnitTestBase
 				Description = "Posted back.",
 				IsCritical = read.IsCritical,
 				Reference = read.Reference,
-				CreatedBy = read.CreatedBy,
-				CreatedAt = read.CreatedAt,
 				Timestamp = read.Timestamp
 			};
 
@@ -108,6 +105,8 @@ public sealed class ConcurrencyTests : UnitTestBase
 
 			Assert.IsNotNull(reloaded);
 			Assert.AreEqual("Posted back.", reloaded.Description);
+			Assert.AreEqual(read.CreatedBy, reloaded.CreatedBy);
+			Assert.AreEqual(read.CreatedAt, reloaded.CreatedAt);
 		}
 		finally
 		{

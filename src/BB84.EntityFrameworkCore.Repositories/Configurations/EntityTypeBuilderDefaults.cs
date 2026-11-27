@@ -8,6 +8,7 @@ using System.Diagnostics.CodeAnalysis;
 using BB84.EntityFrameworkCore.Entities.Abstractions.Components;
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BB84.EntityFrameworkCore.Repositories.Configurations;
@@ -63,6 +64,10 @@ internal static class EntityTypeBuilderDefaults
 	/// <summary>
 	/// Configures the creator and editor columns of the entity.
 	/// </summary>
+	/// <remarks>
+	/// The creator column is write-once: an update never writes it, so a disconnected entity
+	/// that does not carry the creator cannot overwrite it.
+	/// </remarks>
 	/// <typeparam name="TEntity">The type of the entity being configured.</typeparam>
 	/// <typeparam name="TCreator">The type representing the creator of the entity.</typeparam>
 	/// <typeparam name="TEditor">The type representing the editor of the entity.</typeparam>
@@ -75,7 +80,8 @@ internal static class EntityTypeBuilderDefaults
 	{
 		builder.Property(e => e.CreatedBy)
 			.HasColumnOrder(createdByOrder)
-			.IsRequired();
+			.IsRequired()
+			.Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
 
 		builder.Property(e => e.EditedBy)
 			.HasColumnOrder(editedByOrder)

@@ -8,6 +8,7 @@ using System.Diagnostics.CodeAnalysis;
 using BB84.EntityFrameworkCore.Entities.Abstractions;
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BB84.EntityFrameworkCore.Repositories.Configurations;
@@ -41,7 +42,8 @@ public abstract class FullAuditedConfiguration<TEntity, TKey, TCreator, TEditor,
 
 		builder.Property(p => p.CreatedAt)
 			.HasColumnOrder(4)
-			.IsRequired();
+			.IsRequired()
+			.Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
 
 		builder.Property(p => p.EditedAt)
 			.HasColumnOrder(6)

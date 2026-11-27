@@ -119,6 +119,8 @@ Provider-agnostic `IEntityTypeConfiguration<TEntity>` base classes in `BB84.Enti
 
 Each ladder has narrower generic aliases: one that defaults the concurrency token to `byte[]`, one that supplies the key and defaults the creator/editor to `string`, and one that supplies nothing and defaults the key to `Guid` (`int` for the enumerator) as well. There is deliberately no alias that defaults the key alone — pick the full form and name every parameter when the creator or editor type is not `string`.
 
+The creation audit columns (`CreatedBy`, and `CreatedAt` on the full audited ladder) are write-once: they are written on insert and never on update. A disconnected entity rebuilt from a data transfer object can therefore be passed to `Update` without carrying them, and it does not overwrite them.
+
 The token rung is the one to reach for on a provider without an eight byte row version. It marks the property as a concurrency token generated on add or update, which suits `rowversion` and PostgreSQL's `xmin`; for a token the application rotates itself, override the generation strategy after the `base.Configure(builder)` call.
 
 On SQL Server, use the same type names from `BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations` instead — those derive from these and add clustering, `NEWID()` defaults and `sysname` audit columns.
