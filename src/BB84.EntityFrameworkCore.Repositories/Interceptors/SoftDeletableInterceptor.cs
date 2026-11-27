@@ -20,6 +20,11 @@ namespace BB84.EntityFrameworkCore.Repositories.Interceptors;
 /// <see cref="ISoftDeletable.IsDeleted"/> property to <see langword="true"/> and changing their
 /// state to <see cref="EntityState.Modified"/>. This ensures that soft-deleted entities are not
 /// physically removed from the database.
+/// <para>
+/// Register this interceptor before <see cref="TimeAuditedInterceptor"/> and
+/// <see cref="UserAuditedInterceptor"/>, so they see a soft delete as an edit and set the
+/// edited audit values.
+/// </para>
 /// </remarks>
 /// <inheritdoc cref="SaveChangesInterceptor"/>
 public sealed class SoftDeletableInterceptor : SaveChangesInterceptor
