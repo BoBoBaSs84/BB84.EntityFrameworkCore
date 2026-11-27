@@ -38,4 +38,40 @@ public sealed class SkillTests : UnitTestBase
 		Assert.IsNotNull(dbSkill);
 		Assert.AreNotEqual(DateTimeOffset.MinValue, dbSkill.EditedAt);
 	}
+
+	[TestMethod]
+	public void SkillDisconnectedUpdateKeepsCreationAuditTest()
+	{
+		SkillRepository repository = new(DbContext);
+		SkillEntity newSkill = new()
+		{
+			Name = "DisconnectedSkill",
+			Description = "Created before the disconnected update"
+		};
+
+		repository.Create(newSkill);
+		_ = DbContext.SaveChanges();
+		string createdBy = newSkill.CreatedBy;
+		DateTimeOffset createdAt = newSkill.CreatedAt;
+		DbContext.ChangeTracker.Clear();
+
+		// Rebuilt from a data transfer object that does not carry the creation audit columns.
+		SkillEntity detached = new()
+		{
+			Id = newSkill.Id,
+			Name = newSkill.Name,
+			Description = "Posted back.",
+			Timestamp = newSkill.Timestamp
+		};
+
+		repository.Update(detached);
+		Assert.AreEqual(1, DbContext.SaveChanges());
+		DbContext.ChangeTracker.Clear();
+
+		SkillEntity? dbSkill = repository.GetById(newSkill.Id);
+		Assert.IsNotNull(dbSkill);
+		Assert.AreEqual("Posted back.", dbSkill.Description);
+		Assert.AreEqual(createdBy, dbSkill.CreatedBy);
+		Assert.AreEqual(createdAt, dbSkill.CreatedAt);
+	}
 }
