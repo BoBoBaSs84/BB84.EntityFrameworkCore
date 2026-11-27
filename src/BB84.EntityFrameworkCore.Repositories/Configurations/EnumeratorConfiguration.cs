@@ -34,6 +34,13 @@ namespace BB84.EntityFrameworkCore.Repositories.Configurations;
 /// dependents that require it. Model such navigations as optional, or apply a matching filter
 /// to both ends of the relationship.
 /// </para>
+/// <para>
+/// The unique index on <c>Name</c> covers soft deleted rows as well, because an index filter is
+/// provider-specific SQL. A soft deleted name therefore cannot be created again: restore the
+/// soft deleted row instead, or override <see cref="Configure"/> and add a filter for your
+/// provider. The SQL Server configuration in <c>BB84.EntityFrameworkCore.Repositories.SqlServer</c>
+/// already does this.
+/// </para>
 /// </remarks>
 /// <typeparam name="TEntity">The type of the entity being configured.</typeparam>
 /// <typeparam name="TKey">The type of the key for the entity.</typeparam>
