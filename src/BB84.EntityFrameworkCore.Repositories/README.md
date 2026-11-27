@@ -148,6 +148,8 @@ services.AddDbContext<AppDbContext>((sp, options) =>
 });
 ```
 
+Register `SoftDeletableInterceptor` first, so the audit interceptors see a soft delete as an edit. Registered after them, it turns the `Deleted` entry into `Modified` too late: the audit interceptors skip it and the soft delete gets no `EditedAt` / `EditedBy`.
+
 ### `SoftDeletableInterceptor`
 
 Fires on `SavingChanges`/`SavingChangesAsync`. For every entity tracked as `Deleted` that implements `ISoftDeletable`, it sets `IsDeleted = true` and changes the state to `Modified` — preventing a physical `DELETE` from being issued.
