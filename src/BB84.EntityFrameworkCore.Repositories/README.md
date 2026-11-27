@@ -187,6 +187,6 @@ public sealed class HttpCurrentUserProvider(IHttpContextAccessor accessor) : ICu
 }
 ```
 
-For audit columns that are not `string`, use the generic `UserAuditedInterceptor<TUser>` with a matching `ICurrentUserProvider<TUser>`.
+For audit columns that are not `string`, use the generic `UserAuditedInterceptor<TUser>` with a matching `ICurrentUserProvider<TUser>`. It fills entities whose creator is `TUser` and whose editor is `TUser` or, for a value type such as `int` or `Guid`, `TUser?`.
 
 All three interceptors run on save. The `ExecuteDelete` / `ExecuteUpdate` repository methods execute immediately and bypass the change tracker, so none of them fire for those.
