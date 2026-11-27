@@ -21,6 +21,11 @@ namespace BB84.EntityFrameworkCore.Repositories.Interceptors;
 /// state to <see cref="EntityState.Modified"/>. This ensures that soft-deleted entities are not
 /// physically removed from the database.
 /// <para>
+/// Only <see cref="ISoftDeletable.IsDeleted"/> is marked as modified, so the generated update
+/// writes that column alone. Deleting a stub that carries only the key leaves every other column
+/// as stored.
+/// </para>
+/// <para>
 /// Register this interceptor before <see cref="TimeAuditedInterceptor"/> and
 /// <see cref="UserAuditedInterceptor"/>, so they see a soft delete as an edit and set the
 /// edited audit values.
@@ -61,8 +66,10 @@ public sealed class SoftDeletableInterceptor : SaveChangesInterceptor
 				switch (entityEntry.State)
 				{
 					case EntityState.Deleted:
-						entityEntry.Entity.IsDeleted = true;
-						entityEntry.State = EntityState.Modified;
+						// Unchanged first, so only IsDeleted is written: Modified would mark every column and let a key-only stub overwrite them.
+						entityEntry.State = EntityState.Unchanged;
+						entityEntry.Property(x => x.IsDeleted).CurrentValue = true;
+						entityEntry.Property(x => x.IsDeleted).IsModified = true;
 						break;
 					case EntityState.Detached:
 					case EntityState.Unchanged:
