@@ -152,7 +152,7 @@ Register `SoftDeletableInterceptor` first, so the audit interceptors see a soft 
 
 ### `SoftDeletableInterceptor`
 
-Fires on `SavingChanges`/`SavingChangesAsync`. For every entity tracked as `Deleted` that implements `ISoftDeletable`, it sets `IsDeleted = true` and changes the state to `Modified` — preventing a physical `DELETE` from being issued.
+Fires on `SavingChanges`/`SavingChangesAsync`. For every entity tracked as `Deleted` that implements `ISoftDeletable`, it sets `IsDeleted = true` and changes the state to `Modified` — preventing a physical `DELETE` from being issued. Only `IsDeleted` is marked as modified, so the `UPDATE` writes that column alone and deleting a key-only stub does not overwrite the other columns.
 
 Pair it with a configuration deriving from `EnumeratorConfiguration<TEntity, TKey>`, which applies the matching `HasQueryFilter(e => !e.IsDeleted)`. Without that filter the flag is set but never read.
 

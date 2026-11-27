@@ -54,6 +54,29 @@ public sealed class InterceptorEdgeCaseTests : UnitTestBase
 		Assert.IsTrue(DbContext.Set<PersonTypeEntity>().IgnoreQueryFilters().Any(x => x.Name == "Male"), "the row should still be there");
 	}
 
+	/// <summary>
+	/// Soft-deleting a stub that carries only the key and token writes <c>IsDeleted</c> alone.
+	/// </summary>
+	/// <remarks>
+	/// The interceptor once set the entry to <see cref="EntityState.Modified"/>, marking every
+	/// column, so the stub's empty values overwrote the stored row.
+	/// </remarks>
+	[TestMethod]
+	public void SoftDeletableInterceptorShouldOnlyWriteIsDeletedForAStub()
+	{
+		PersonTypeEntity stored = DbContext.Set<PersonTypeEntity>().AsNoTracking().Single(x => x.Name == "Male");
+		PersonTypeEntity stub = new() { Id = stored.Id, Name = string.Empty, Timestamp = stored.Timestamp };
+
+		DbContext.Set<PersonTypeEntity>().Remove(stub);
+		DbContext.SaveChanges();
+		DbContext.ChangeTracker.Clear();
+
+		PersonTypeEntity reloaded = DbContext.Set<PersonTypeEntity>().IgnoreQueryFilters().Single(x => x.Id == stored.Id);
+		Assert.IsTrue(reloaded.IsDeleted);
+		Assert.AreEqual(stored.Name, reloaded.Name);
+		Assert.AreEqual(stored.Description, reloaded.Description);
+	}
+
 	[TestMethod]
 	public void TimeAuditedInterceptorShouldDefaultToTheSystemClock()
 	{
