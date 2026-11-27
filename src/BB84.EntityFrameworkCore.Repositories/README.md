@@ -156,6 +156,14 @@ Fires on `SavingChanges`/`SavingChangesAsync`. For every entity tracked as `Dele
 
 Pair it with a configuration deriving from `EnumeratorConfiguration<TEntity, TKey>`, which applies the matching `HasQueryFilter(e => !e.IsDeleted)`. Without that filter the flag is set but never read.
 
+The unique index that configuration puts on `Name` still covers soft deleted rows, since an index filter is provider-specific SQL. Creating an enumerator with the name of a soft deleted one fails with a unique constraint violation. Restore the soft deleted row instead, or add a filter for your provider in an override of `Configure`, for example on PostgreSQL:
+
+```csharp
+builder.HasIndex(e => e.Name).HasFilter("\"IsDeleted\" = false");
+```
+
+The SQL Server `EnumeratorConfiguration` already filters the index to `[IsDeleted] = 0`.
+
 ### `TimeAuditedInterceptor`
 
 Fires on `SavingChanges`/`SavingChangesAsync`. For every entity implementing `ITimeAudited`:

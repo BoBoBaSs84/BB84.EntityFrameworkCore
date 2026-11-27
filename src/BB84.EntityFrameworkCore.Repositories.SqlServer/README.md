@@ -43,7 +43,7 @@ Inherit from these in your `IEntityTypeConfiguration<TEntity>` implementations a
 | `FullAuditedConfiguration<TEntity, TKey, TCreator, TEditor>` | `IFullAuditedEntity<TKey, TCreator, TEditor>` | Above + `CreatedAt` (required), `EditedAt` (optional); same overload behaviour                                                                                        |
 | `CompositeConfiguration<TEntity>`                            | `ICompositeEntity`                            | `Timestamp` as concurrency token                                                                                                                                      |
 | `AuditedCompositeConfiguration<TEntity, TCreator, TEditor>`  | `IAuditedCompositeEntity<TCreator, TEditor>`  | Above + audit user columns                                                                                                                                            |
-| `EnumeratorConfiguration<TEntity, TKey>`                     | `IEnumeratorEntity<TKey>`                     | Non-clustered PK, `Name` (`nvarchar(64)`, unique index, non-unicode), `Description` (`nvarchar(256)`), `IsDeleted` default `false`; `int` overload uses clustered PK  |
+| `EnumeratorConfiguration<TEntity, TKey>`                     | `IEnumeratorEntity<TKey>`                     | Non-clustered PK, `Name` (`nvarchar(64)`, unique index filtered to `[IsDeleted] = 0`, non-unicode), `Description` (`nvarchar(256)`), `IsDeleted` default `false`; `int` overload uses clustered PK  |
 
 These stop at the `byte[]` rung on purpose. The token type is a parameter on the agnostic bases in `BB84.EntityFrameworkCore.Repositories`, but on SQL Server the concurrency token is a `rowversion` and a `rowversion` is eight bytes — there is nothing here for another type to map onto. An entity with a different token type belongs on the agnostic configuration bases.
 
@@ -75,7 +75,7 @@ public class ProductCategoryConfiguration : EnumeratorConfiguration<ProductCateg
 {
     public override void Configure(EntityTypeBuilder<ProductCategory> builder)
     {
-        base.Configure(builder); // clustered int PK, Name unique index, IsDeleted default false
+        base.Configure(builder); // clustered int PK, Name unique among non-deleted rows, IsDeleted default false
         builder.ToTable("ProductCategories", "catalog");
     }
 }

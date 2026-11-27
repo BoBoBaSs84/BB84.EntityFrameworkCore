@@ -16,7 +16,9 @@ namespace BB84.EntityFrameworkCore.Repositories.SqlServer.Configurations;
 /// <remarks>
 /// Applies the provider-agnostic configuration of
 /// <see cref="Base.EnumeratorConfiguration{TEntity, TKey}"/> and tunes it for SQL Server by
-/// declaring the primary key as non clustered.
+/// declaring the primary key as non clustered and by filtering the unique index on
+/// <c>Name</c> to rows that are not soft deleted, so that the name of a soft deleted
+/// enumerator can be used again.
 /// </remarks>
 public abstract class EnumeratorConfiguration<TEntity, TKey> : Base.EnumeratorConfiguration<TEntity, TKey>, IEntityTypeConfiguration<TEntity>
 	where TEntity : class, IEnumeratorEntity<TKey>
@@ -28,6 +30,11 @@ public abstract class EnumeratorConfiguration<TEntity, TKey> : Base.EnumeratorCo
 		base.Configure(builder);
 
 		EntityTypeBuilderDefaults.ApplyKeyClustering<TEntity, TKey>(builder, clustered: false);
+
+		string isDeletedColumn = builder.Property(e => e.IsDeleted).Metadata.GetColumnName();
+
+		_ = builder.HasIndex(e => e.Name)
+			.HasFilter($"[{isDeletedColumn}] = 0");
 	}
 }
 
